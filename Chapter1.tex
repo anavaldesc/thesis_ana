@@ -2,79 +2,20 @@
 
 \renewcommand{\thechapter}{1}
 
-\chapter{Introduction}
+\chapter{Ultracold Atomic Systems}
 
-\section{Source of Nonlinearity in an Optical Fiber}
+\section{Degenerate quantum gases}
 
-The response of any dielectric to light becomes nonlinear
-for intense electromagnetic fields.  Standard optical fibers are made of
-fused silica which is a dielectric. The total polarization $\bf{P}$
-is nonlinear in the electric field $\bf{E}$ and is given by [1-5] -
-%\cite{Agrawal1,Bloembergen,Shen,Butcher,Boyd} -
-%1.1
-\begin{equation}
-{\bf P} = \epsilon_{0} \left( \chi^{(1)} : {\bf E} + \chi^{(2)} 
-: {\bf EE} + \chi^{(3)} : {\bf EEE} + \ldots \right),
-\end{equation}
-where $\epsilon_0$ is the permittivity of free-space, and
-$\chi^{(j)}$ 
-is the ${\it j}$-th order susceptibility of the dielectric. The linear
-susceptibility $\chi^{(1)}$ represents the dominant contribution to
-$\bf{P}$ and its effects are included through the refractive index
-n($\omega$) and the attenuation coefficient $\alpha(\omega)$. $\chi^{(2)}$
-is responsible for nonlinear effects such as sum-frequency generation and
-second harmonic generation \cite{Agrawal1, Shen}. Fused silica does not
-manifest these effects as it is centro-symmetric \cite{Newell}. Hence, the dominant nonlinear
-contribution to ${\bf P}$ is due to $\chi^{(3)}$ which results in effects
-such as third harmonic generation, four-wave-mixing,  self- and
-cross-phase modulation. The cubic nonlinearity results in an intensity
-dependent refractive index
+Degenerate quantum gases rock. Many years have passed since a handful of really smart people realized that the macroscopic properties comprising the thermodynamic state of a system can emerge from the right statistical ensembles of single particle behaviour or misbehaviour. For most models the math is relatively simple and the physics are intuitive, so in part thanks to the wonders of quantum degeneracy, things are kept rather simple in this thesis. 
 
-\begin{verbatim}
-122	23333
-1114	14444
-\end{verbatim}
+A definition for quantum degeneracy is that the motional state of an ensemble of particles in equilibrium becomes maximally degenerate. Bosons, who are famous for liking each other, bunch in some state while fermions, in a more discriminaory fashion, occupy states according to the Pauli exclusion principle.
 
-%1.2
-\begin{equation}
-\tilde{n}(\omega,|E|^2) = n(\omega)+n_2|E|^2 ,
-\end{equation}
-where n($\omega$) is the linear part given by the Sellmier
-equation which
-takes into account the resonance frequencies ($\omega_j$) of fused
-silica \cite{Agrawal1,Marcuse},
-%1.3
-\begin{equation}
-n^2(\omega) = 1 + \sum_{j=1}^m {B_j\omega^2_j \over \omega^2_j - \omega^2}
-\end{equation}
-and n$_2$ is given by
-%1.4
-\begin{equation}
-n_2 = {3 \over 8n}Re(\chi_{xxxx}^3)
-\end{equation}
-for an optical wave assumed to be linearly polarized along one of the 
-axes of a polarization maintaining fiber. The tensorial nature of $\chi^{(3)}$ needs to be
-considered for the case in which the light is not polarized along one of
-the fiber axes.\footnote{This is my footnote.  I started playing the piano when I was eight years old.  This is my footnote.  I started playing the piano when I was eight years old.  This is my footnote.  I started playing the piano when I was eight years old.  This is my footnote.  I started playing the piano when I was eight years old.}
+Quantum degeneracy has been experimentally realized for a couple of systems, most notably for dilute clouds of very cold atoms, where energy can take various forms ranging a couple of different energy scales. For instance if we pick an alkali atom (first column of your favorite periodic table), the known atomic structure has energy splittings of no more than a couple $\rm{eV}$ which is roughly $1/10 ^{22}$ of the energy input needed to fill the battery of a smartphone. If this was not ridiculous enough, the temperatures at which these gases finally become degenerate are close to $100 \, \rm{nK}$ which is roughly a trillionth of that. The diluteness of these gases only adds to their finesse, as typical densities range a few tens of trillions of particles per cubic centimeter, which compared to the air we breathe is about a hundred thousand times less dense. 
 
-The following is an equation array to ensure the long equation does not go outside the margins.
-\begin{eqnarray}
-W & = & \int d^3{\bf r} \left[ \sum_s \left( \int d^3{\bf v} {T_{0s} \langle h^2_s \rangle {\bf r} \over 2F_{0s}} - {q^2_s\varphi^2 n_{0s} \over T_{0s}} \right) + {|\delta {\bf B}|^2 \over 8 \pi} \right] \nonumber \\
-& = & \int d^3{\bf r} \left( \sum_s \int d^3{\bf v} {T_{0s}\delta f^2_s \over 2F_{0s}} + {|\delta {\bf B}|^2 \over 8\pi} \right) .
-\end{eqnarray} 
+The aspect of these sysems can be really diverse, but it useful for now to imagine a $10\, \rm{\mu m}$ blob, close to the actual size of a white-blood cell (or a tenth of the width of a human hair), floating around an ultra high vacuum (UHV) environment isolated from everything while being held by an optical trap. How one goes about making one of these is the subject of the next section.
 
-The experimentally measured value of $n_{2}$ for fused silica ranges from $2.2 - 3.4 \times
-10^{-20}$\,m$^2$/W, which is small compared to most other nonlinear media by
-at least 2 orders of magnitude \cite{Agrawal1}. Despite this, nonlinear effects are
-easily observed for silica fibers for relatively low input power levels due
-to the fact that the effective fiber core areas are small and the fiber losses are low. 
-Single mode fibers (those which propagate a single transverse mode of light for a given 
-wavelength) have effective fiber core diameters of the order of 5$\mu$m thus causing 
-the light intensities within the fiber to be large despite the smallness of the input 
-power. The low loss in the fiber ($<$10 dB/km) allows one to use long fibers to observe 
-nonlinear phenomena.
 
-\section{Physics of Pulse Propagation}
+\section{Making a quantum degenerate gas}
 
 Mathematically speaking, in the classical limit, pulse propagation in an
 optical fiber is governed by Maxwell's equations \cite{Agrawal2,Diament}, 
