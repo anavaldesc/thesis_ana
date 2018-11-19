@@ -1,0 +1,22 @@
+% This file contains a number of user defined commands
+% used throughout the main file. To add use the notation
+% \newcommand{NAME_OF_COMMAND}[NO_OF_ARGS]{COMMAND_ACTION}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Select the version that fits how you are making this LaTeX document (its driver).
+% The first two are the most likely ones to be needed.
+
+\newcommand{\mydriver}{pdftex}
+% \newcommand{\mydriver}{dvipdfmx}
+% \newcommand{\mydriver}{dvipdfm} 
+% \newcommand{\mydriver}{dvips} 
+% \newcommand{\mydriver}{dvipsone} 
+% \newcommand{\mydriver}{ps2pdf} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Unit formatter for inline math.
+\newcommand{\units}[3]{${#1 #2 \,\rm{#3}}$}
+
+% Used to get a vertical distance after \hline
+\newcommand{\tbsp}{\rule{0pt}{18pt}}
+

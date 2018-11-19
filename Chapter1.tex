@@ -2,23 +2,47 @@
 
 \renewcommand{\thechapter}{1}
 
-\chapter{Ultracold Atomic Systems}
+\chapter{Quantum degenerate gases}
 
-\section{Degenerate quantum gases}
+Qantum degeneracy is reached when an ensemble of particles in equilibrium maximally occupies a given quantum state. Bosons, who are famous for liking each other, will bunch together to fill such a state while fermions, in a more discriminatory fashion, will occupy different states according to the Pauli exclusion principle.
 
-Degenerate quantum gases rock. Many years have passed since a handful of really smart people realized that the macroscopic properties comprising the thermodynamic state of a system can emerge from the right statistical ensembles of single particle behaviour or misbehaviour. For most models the math is relatively simple and the physics are intuitive, so in part thanks to the wonders of quantum degeneracy, things are kept rather simple in this thesis. 
+Quantum degeneracy has been experimentally reached in a couple of systems \cite{}, most notably in dilute clouds of very cold atoms \cite{}. A mostly unambiguous measurement of quantum degeneracy is given by a larger than unity phase-space density, where for atomic vapors the phase-space quadratures are in the motional degrees of freedom (position and momentum). To better quantify this, take an alkali atom (first column of your favorite periodic table) as an example; atomic transitions display energies of a few \units{}{}{eV}, roughly a part in $10^{22}$ of the energy needed to recharge the battery of a contemporary electronic device, which sets the natural energy scale of the problem. The temperatures at which these atomic vapors are able to reach quantum degeneracy are on the order of a couple \units{}{100}{nK}, which itself corresponds to a trillionth of the atomic energy scale. The density of atoms in these gases is typically of a few \units{}{10^{15}}{cm^{-3}}, which compared to the density of air at standard atmospheric conditions (room-temperature and sea level) is $10^{5}$ times more dilute. While these scales vastly undershoot every-day experience, the characteristic phase-space density of a quantum degenerate gas overshoots it by approximately $10^{10}$. Finally, in therms of their aspect, they resemble a ~\units{}{10}{\mu m} blob, close to the actual size of a white-blood cell or a tenth of the width of a human hair. In the lab, they are kept floating around inside an ultra high vacuum (UHV) environment, isolated from everything but the occasional presence of light.
 
-A definition for quantum degeneracy is that the motional state of an ensemble of particles in equilibrium becomes maximally degenerate. Bosons, who are famous for liking each other, bunch in some state while fermions, in a more discriminaory fashion, occupy states according to the Pauli exclusion principle.
+\section{Cold atoms}
 
-Quantum degeneracy has been experimentally realized for a couple of systems, most notably for dilute clouds of very cold atoms, where energy can take various forms ranging a couple of different energy scales. For instance if we pick an alkali atom (first column of your favorite periodic table), the known atomic structure has energy splittings of no more than a couple $\rm{eV}$ which is roughly $1/10 ^{22}$ of the energy input needed to fill the battery of a smartphone. If this was not ridiculous enough, the temperatures at which these gases finally become degenerate are close to $100 \, \rm{nK}$ which is roughly a trillionth of that. The diluteness of these gases only adds to their finesse, as typical densities range a few tens of trillions of particles per cubic centimeter, which compared to the air we breathe is about a hundred thousand times less dense. 
+An extensive list of studies on cold atomic systems \cite{} can show how the pioneering work by X, Y, Z and others \cite{} has revolutionized quantum physics in recent times. Originally motivated by the advancement of precision measurement in the context of laser spectroscopy and accurate time-keeping \cite{}, the field has exploded into the more contemporary branches of quantum information and quantum simulation. Nevertheless, the ongoing development of both experimental and theoretical tools for cold atomic systems has made substantial contributions to the fields of statistical mechanics \cite{}, condensed-matter physics \cite{}, metrology \cite{}, optics \cite{}, chemistry \cite{}, among others. Cold neutral atoms serve as the starting point in the production of quantum degenerate gases, experiments on which constitute the main subject of this thesis. 
 
-The aspect of these sysems can be really diverse, but it useful for now to imagine a $10\, \rm{\mu m}$ blob, close to the actual size of a white-blood cell (or a tenth of the width of a human hair), floating around an ultra high vacuum (UHV) environment isolated from everything while being held by an optical trap. How one goes about making one of these is the subject of the next section.
+Laser cooling \cite{} is the method used to produce cold samples of neutral atoms in the lab. The technique has been reviewed extensively \cite{} and the specific details of the lab implementation that is relevant to this thesis have also been documented \cite{}. What this thesis contains is an author's inspired example of the various concepts revolving around laser cooling techniques and an in-depth analysis is presented.
 
+One of the simplest forms of light-matter interaction is one involving a simple two-level atom and a scalar electromagnetic (EM) plane wave. The interaction Hamiltonian is the dipole interaction 
 
-\section{Making a quantum degenerate gas}
+\begin{equation}
+	H_{d} = -e\,\vec{\rm{E}}(\vec{r}, t) \cdot \vec{r}, \nonumber\\
+\end{equation}
 
-Mathematically speaking, in the classical limit, pulse propagation in an
-optical fiber is governed by Maxwell's equations \cite{Agrawal2,Diament}, 
+with ${e}$ the charge of an electron and ${\vec{\rm{E}}(\vec{r}) = \rm{E}_0 \hat{\epsilon} \cos{(\vec{k}\cdot\vec{r} - \omega\, t)}}$ the electric field describing a plane wave with polarization along ${\hat{\epsilon}}$.
+
+\section{Making a cold atomic gas}
+
+XX Talk about the employed methods to laser cool
+
+\section{Study: vector laser-cooling}
+
+XX Talk about space-dep polarization gradient cooling
+
+\section{Ultracold atoms}
+
+While laser cooling can increase phase-space density to approach degeneracy, it is usually insufficient (though there exist ongoing efforts in laser cooling all the way to degeneracy \cite{•}). In the experiments described here, degeneracy is reached by means of a combination of Doppler-limited, sub-Doppler-limited laser cooling and forced evaporative cooling. 
+
+\section{Making a quantum degenerate Bose gas}
+
+XX Talk about the employed methods to get BEC
+
+\section{Study: degeneracy beyond the ground state}
+
+XX Talk about getting a BEC in say, the first excited state of a SHO.
+
+It's always good to have Maxwell's equations \cite{Agrawal2,Diament}, 
 %1.5
 \begin{eqnarray} 
 \vec{\nabla}\times\vec{E} & = &- {\partial \vec{B} \over \partial t} \nonumber\\
@@ -101,7 +125,6 @@ is time measured in a frame of reference moving at the group
 velocity
 v$_g$ of the pulse.
 
-\section{Numerical Pulse Propagation}
 
 The NLSE, like most nonlinear partial differential equations, is not
 amenable to analytical solution except in certain special cases where the
@@ -121,8 +144,6 @@ projects described in Chap.\ 3, simulations were carried out using a
 combination of the SSFM and finite difference schemes. The SSFM is also used 
  to arrive at the simulated results described in Chap.\ 4.
 
-\section{Experimental Pulse Diagnostics}
-
 With the advent of frequency resolved optical gating
 (FROG) \cite{Trebino,Kanejqe,Kaneoptlett}, it has become possible to not
 only measure the optical spectrum and optical time trace of a light pulse
@@ -137,7 +158,6 @@ propagation is a subject of interest in Chap.\ 4, where a highly simplified
 version of FROG \cite{OShealett} is used to measure pulse characteristics
 before and after a fiber.
 
-\section{Group Velocity Dispersion}
 
 Group velocity dispersion \cite{Agrawal3} (GVD) involves the temporal broadening of a pulse as it propagates through an optical fiber. From the NLSE (Eq.\ 1.6) one can derive length scales relevant to linear dispersion (L$_{D}$=T$_{0}^{2}$/$\beta_{2}$) and nonlinearity (L$_{NL}$=1/$\gamma$P$_{0}$). Here T$_{0}$ is the pulse width and P$_{0}$ is the peak power of the pulse. The regime in which the effects of GVD dominate and the effects of nonlinearity are negligible is given by -
 %1.10
@@ -147,11 +167,7 @@ Group velocity dispersion \cite{Agrawal3} (GVD) involves the temporal broadening
 
 In this regime, optical pulses propagate as they undergo symmetric temporal broadening and linear chirping without any spectral broadening. The sign of the GVD parameter $\beta_{2}$ determines the sign of the induced chirp. If the input pulse is chirped, then it may undergo some initial pulse compression followed by temporal broadening. Unlike the second-order dispersion associated with GVD, third-order dispersion causes asymmetric temporal broadening with leading and trailing edges. It becomes important, when the operating wavelength is near the zero dispersion wavelength of the fiber (the wavelength at which $\beta_{2}$=0). GVD starts to limit optical fiber communication systems when consecutive pulses broaden so much that they start to overlap.   
 
-\section{Self-Phase Modulation}
-
 Self-phase modulation \cite{Agrawal4} (SPM) is a phenomenon that leads to spectral broadening and modulation of optical pulses. In the absence of GVD, SPM induced spectral broadening occurs without change in the temporal pulse shape. The spectral broadening occurs as a consequence of an intensity dependent phase-shift. The project described in Chap.\ 2 has the property that L$_{NL}$ $<$ L $\ll$ L$_D$, i.e., the nonlinear term representing SPM dominates. In the regime where both SPM and GVD are non-negligible (as in Chap.\ 4), phenomena qualitatively different from those described in this section and the previous section can occur. Both temporal and spectral broadening can occur simultaneously. In the regime of femtosecond pulse propagation (as in Chap.\ 4), GVD, third-order dispersion, intrapulse Raman scattering (discussed in Chap.\ 2) and higher order nonlinear effects have to be taken into account. If the input pulse is asymmetric, then SPM effects dominate over all other effects, as is observed in Chap.\ 3. In some cases SPM can lead to pulse compression, and in the anomalous dispersion regime ($\beta_2 < 0$), the balance between GVD and SPM can lead to soliton formation. 
-
-\section{Four-wave-mixing}
 
 Four-wave-mixing (FWM) \cite{Agrawal10} is a parametric process involving
 the interaction
@@ -180,8 +196,6 @@ the field of optical communication systems, as it can cause cross-talk
 between neighboring channels in a wavelength division multiplexing scheme
 of communication.
 
-\section{Cross-Phase Modulation}
-
 Cross-phase modulation (XPM) \cite{Agrawal7} occurs in optical fibers when
 two or more optical pulses having different central wavelengths propagate 
 simultaneously inside a fiber, interacting through the fiber
@@ -199,8 +213,6 @@ depend only on the wavelength), are also the same unlike in general XPM. The
 effects of XPM are more pronounced when one of the pulses (the pump) has much 
 higher power than the other (the probe). Otherwise, the effects of self-phase 
 modulation (SPM) tend to dominate.
-
-\section{Stimulated Inelastic Scattering} 
 
 Other nonlinear effects (apart from those due to the cubic $\chi^{(3)}$
 nonlinearity) arise due to the interaction between the light
