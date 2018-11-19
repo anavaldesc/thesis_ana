@@ -1,110 +1,66 @@
 % June 2015 (TOC contents linked in blue in pdf file)
-%This template was prepared by Dorothea F. Brosius of the 
-%Institute for Electronics and Applied Physics, University of Maryland, College Park, MD
-%The template was last updated in June 2015
-%Thesis Main Page used with thesis.sty based on the
-%University of Maryland Electronic Thesis and Dissertation (ETD) Style Guide (2014)
+% This template was prepared by Dorothea F. Brosius of the 
+% Institute for Electronics and Applied Physics, University of Maryland, College Park, MD
+% The template was last updated in June 2015
+% Thesis Main Page used with thesis.sty based on the
+% University of Maryland Electronic Thesis and Dissertation (ETD) Style Guide (2014)
 
-%The YourInformation file was created by Freja Nordsiek, 2014.
-%Code for linking the TOC titles to the text in the pdf file was created by Freja Nordsiek, 2014.
+% The YourInformation file was created by Freja Nordsiek, 2014.
+% Code for linking the TOC titles to the text in the pdf file was created by Freja Nordsiek, 2014.
 
+% Modified by Francisco Salces-Carcoba 2018.
 
-% Select the version that fits how you are making this LaTeX document (its driver).
-% The first two are the most likely ones to be needed.
-%
-% \newcommand{\mydriver}{pdftex} %Making a PDF directly using pdflatex.
-%\newcommand{\mydriver}{dvipdfmx} %Making a DVI and converting that to PDF using dvipdfmx.
-% \newcommand{\mydriver}{dvipdfm} %Making a DVI and converting that to PDF using dvipdfm.
- \newcommand{\mydriver}{dvips} %Making a DVI and converting that to PS using dvips (may later be converted to PDF).  (Used with my pc)
-% \newcommand{\mydriver}{dvipsone} %Making a DVI and converting that to PS using dvipsone (may later be converted to PDF).
-% \newcommand{\mydriver}{ps2pdf} %Same as the one for dvips except it is compatible with Ghostscript's PDF writer.
+\input{usr_commands} 
 
+\documentclass[12pt,\mydriver]{thesis}
 
-\documentclass[12pt,\mydriver]{thesis}  %12pt is larger than 11pt
-
-\usepackage{titlesec}
-   \titleformat{\chapter}
-      {\normalfont\large}{Chapter \thechapter:}{1em}{}
-
-\usepackage{graphicx}
-\usepackage{cite}
-\usepackage{lscape}
-\usepackage{indentfirst}
-\usepackage{latexsym}
-\usepackage{multirow}
-\usepackage{tabls}
-\usepackage{wrapfig}
-\usepackage{slashbox}
-\usepackage{longtable}
-\usepackage{supertabular}
-\usepackage{subeqn}
-\usepackage{subfigure}
-%\usepackage[dvips, bookmarks, colorlinks=true, plainpages=false, citecolor=blue, urlcolor=blue, filecolor=blue, linkcolor=blue]{hyperref} 
-	%Works with PcTex.  You may have to choose one of the drivers above if dvips does not work.
-
-\newcommand{\tbsp}{\rule{0pt}{18pt}} %used to get a vertical distance after \hline
-\renewcommand{\baselinestretch}{2}
-\setlength{\textwidth}{5.9in}
-\setlength{\textheight}{9in}
-\setlength{\topmargin}{-.50in}
-%\setlength{\topmargin}{0in}    %use this setting if the printer makes the the top margin 1/2 inch instead of 1 inch
-\setlength{\oddsidemargin}{.55in}
-\setlength{\parindent}{.4in}
-\pagestyle{empty}
+\input{usr_packages}
+\input{usr_environments}
 
 \begin{document}
 
-\include{Abstract} %(must be first, required, non-numbered)
-\include{Titlepage} %(must follow Abstract, required, non-numbered)
-\include{Copyright} %(highly recommended, non-numbered)
+	\begin{title_env} 
+		\include{Abstract}  
+		\include{Titlepage} 
+		\include{Copyright}
+	\end{title_env}
 
-%Pages from this point start at lower-case Roman number ii)
-\pagestyle{plain}
-\pagenumbering{roman}
-\setcounter{page}{2}
+	\begin{preface_env}
+		\include{Preface} 
+		\include{Foreword}
+		\include{Dedication}
+		\include{Acknowledgements}
+	\end{preface_env}
+	
+	\begin{lists_env}
+		\tableofcontents 
+		\newpage
+		% \listoftables 
+		% \newpage
+		\listoffigures 
+		\newpage
+		\addcontentsline{toc}{chapter}{List of Abbreviations}
+		\include{Abbreviations}
+		\newpage
+	\end{lists_env}
 
-\include{Preface}  %(if present, start at lower-case Roman number ii)
-\include{Foreword} %(if present, lower-case Roman)
-\include{Dedication} %(if present, lower-case Roman)
-\include{Acknowledgements} %(if present, lower-case Roman)
+	\begin{chapter_env}
+		\include{Chapter1}
+		\include{Chapter2}
+		\include{Chapter3}
+		\include{supertabular}
+		\titleformat{\chapter}
+      		{\normalfont\large}{Appendix \thechapter:}{1em}{}
+		\include{AppendixA}
+		\include{AppendixB}
+	\end{chapter_env}
 
-\renewcommand{\baselinestretch}{1}
-\small\normalsize
-\tableofcontents %(required, lower-case Roman)
-\newpage
-%\listoftables %(if present, lower-case Roman)
-%\newpage
-\listoffigures %(if present, lower-case Roman)
-\newpage
-% LIST OF ABBREVIATIONS
-\addcontentsline{toc}{chapter}{List of Abbreviations}
-\include{Abbreviations}
-
-\newpage
-\setlength{\parskip}{0em}
-\renewcommand{\baselinestretch}{2}
-\small\normalsize
-
-%Pages from this point start at Arabic numeral 1
-\setcounter{page}{1}
-\pagenumbering{arabic}
-\include{Chapter1}
-\include{Chapter2}
-\include{Chapter3}
-\include{supertabular}
-\titleformat{\chapter}
-      {\normalfont\large}{Appendix \thechapter:}{1em}{}
-\include{AppendixA}
-\include{AppendixB}
-
-\renewcommand{\baselinestretch}{1}
-\small\normalsize
-\include{Bibliography}
-%When using Bibtex, delete the previous line and use the following
-%three lines.  
-%\newpage
-%\bibliographystyle{unsrt} 
-%\bibliography{Galactic,Dottie} %replace "Galactic,Dottie" with the
-%                 file name(s) of your bib file(s)
-
+	\begin{bib_env}
+		\include{Bibliography}
+		% When using Bibtex switch to:
+		% \newpage
+		% \bibliographystyle{unsrt} 
+		% \bibliography{bib_file_1, bib_file_2, ...}
+	\end{bib_env}
+	
 \end{document}
