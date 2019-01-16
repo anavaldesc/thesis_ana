@@ -1,0 +1,12 @@
+# Ignore
+
+syntax: glob
+*.log
+*.aux
+*.pdf
+*.fls
+*.lof
+*.pdf
+*.fdb_latexmk
+*synctex.gz
+*.toc
