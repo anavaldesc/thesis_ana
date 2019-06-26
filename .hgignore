@@ -11,3 +11,5 @@ syntax: glob
 *.fdb_latexmk
 *synctex.gz
 *.toc
+*.blg
+*.bbl
