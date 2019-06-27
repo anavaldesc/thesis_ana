@@ -1,0 +1,166 @@
+%%
+%% macros.tex
+%%
+
+% \newcommand{\onlinecite}[1]{\nocite{#1}\citenum{#1}}
+% Changes
+\def\cs{{\ {\clubsuit}}}
+
+% Length
+
+\def\nm{{\ {\rm nm}}}						% nm
+\def\mm{{\ {\rm mm}}}						% mm
+\def\cm{{\ {\rm cm}}}						% cm
+\def\micron{{\ \mu{\rm m}}}					% Microns
+\def\angstrom{{\ \mbox{{\rm \AA}}}}			% Angstroms
+
+% Electrons
+\def\tesla{{\ {\rm T}}}						% tesla
+\def\nohm{{\ {\rm n}\Omega}}				% nohm
+\def\uohm{{\ \mu\Omega}}					% uohm
+\def\mohm{{\ {\rm m}\Omega}}				% mohm
+\def\ohm{{\ \Omega}}						% ohm
+\def\kohm{{\ {\rm k}\Omega}}				% Kohm
+\def\Mohm{{\ {\rm M}\Omega}}				% Mohm
+\def\conductance#1{{\times{#1}\ \Omega^{-1}}} % Mhos
+
+\def\density#1{{\times{#1}\ {\rm cm}^{-2}}}				% Density
+\def\mobility#1{{\times{#1}\ {\rm cm}^{2}/{\rm V s}}} 	% Mobility
+\def\microvolt{{\ \mu{\rm V}}}				% Microvolts
+\def\volt{{\ {\rm V}}}						% volts
+
+% Current
+\def\pA{{\ {\rm pA}}}						% pA
+\def\nA{{\ {\rm nA}}}						% nA
+\def\uA{{\ \mu{\rm A}}}						% uA
+\def\mA{{\ {\rm mA}}}						% mA
+\def\amp{{\ {\rm A}}}						% A
+\def\kA{{\ {\rm kA}}}						% kA
+\def\MA{{\ {\rm MA}}}						% MA
+\def\GA{{\ {\rm GA}}}						% GA
+\def\TA{{\ {\rm TA}}}						% TA
+
+% Vots
+\def\volt{{\ {\rm V}}}						% V
+\def\mV{{\ {\rm mV}}}						% mV
+\def\uV{{\ \mu{\rm V}}}					% uV
+\def\nV{{\ {\rm nV}}}						% nV
+\def\pV{{\ {\rm pV}}}						% pV
+\def\fV{{\ {\rm fV}}}						% fV
+
+% Energy
+\def\eV{{\ {\rm eV}}}						% eV
+\def\meV{{\ {\rm meV}}}						% meV
+\def\ueV{{\ \mu{\rm eV}}}					% ueV
+\def\neV{{\ {\rm neV}}}						% neV
+
+% Frequency
+\def\uHz{{\ \mu{\rm Hz}}}					% uHz
+\def\mHz{{\ {\rm mHz}}}						% mHz
+\def\Hz{{\ {\rm Hz}}}						% Hz
+\def\kHz{{\ {\rm kHz}}}						% kHz
+\def\MHz{{\ {\rm MHz}}}						% MHz
+\def\GHz{{\ {\rm GHz}}}						% GHz
+\def\THz{{\ {\rm THz}}}						% THz
+
+% Time
+\def\fs{{\ {\rm fs}}}						% fs
+\def\ps{{\ {\rm ps}}}						% ps
+\def\ns{{\ {\rm ns}}}						% ns
+\def\us{{\ \mu{\rm s}}}						% us
+\def\ms{{\ {\rm ms}}}						% ms
+\def\second{{\ {\rm s}}}					% s
+
+% Temperature
+\def\kelvin{{\ {\rm K}}}					% K
+\def\mK{{\ {\rm mK}}}						% mK
+\def\uK{{\ \mu{\rm K}}}						% uK
+\def\nK{{\ {\rm nK}}}						% nK
+
+% mass
+\def\kg{{\ {\rm kg}}}					% kg
+\def\gram{{\ {\rm g}}}					% g
+\def\mg{{\ {\rm mg}}}						% mg
+\def\ug{{\ \mu{\rm g}}}						% ug
+\def\ng{{\ {\rm ng}}}						% ng
+
+
+% Magnetic Field
+\def\gauss{{\ {\rm G}}}					% T
+\def\tesla{{\ {\rm T}}}					% T
+\def\mT{{\ {\rm mT}}}						% mT
+\def\uT{{\ \mu{\rm T}}}						% uT
+\def\nT{{\ {\rm nT}}}						% nT
+
+% AMO abbriviations
+\def\Er{{{E_R}}}							% Er
+\def\kr{{{k_{\rm R}}}}							% kr
+\def\Rb87{^{87}\rm{Rb}}					% Rb 87
+\def\UoverTC{(U/t)_{\rm c}}					% t/U_c
+
+\def\nbar{\left<{\hat n}_k\right>}					% average number
+\def\nbarexpt{\left<n(k_x,k_y)\right>}				% average number
+
+% Specific Symbols
+\def\DeltaSAS{{\Delta_{{\rm SAS}}}}			% DeltaSAS
+\def\HeFour{{^4{\rm He}}}					% Helium 4
+\def\HeThree{{^3{\rm He}}}					% Helium 3
+\def\lb{{l_B}}								% Magnetic Length
+\def\DoverL{{d/\lb}}						% d/l
+\def\DoverLcrit{{\DoverL_{\rm crit}}}		% d/l_crit
+\def\Bpar{{B_{\|}}}							% B Parallel
+\def\Bperp{{B_{\perp}}}						% B Perpindicular
+\def\AlGaAs#1#2{{{\rm Al}_{#1}{\rm Ga}_{#2}{\rm As}}} % Al_xGa_{1-x}As
+\def\Schrodinger{{Schr\"odinger\ }}
+
+% Basic mathematical symbols
+\def\ex{{\mathbf e}_x}                            % e_x
+\def\ey{{\mathbf e}_y}                            % e_y
+\def\ez{{\mathbf e}_z}                            % e_z
+\def\epos{{\mathbf e}_+}                            % e_z
+\def\eneg{{\mathbf e}_-}                            % e_z
+\def\shorttimes{\!\times\!}                            % e_z
+\def\e1{{\mathbf e}_1}                            % e_1
+\def\e2{{\mathbf e}_2}                            % e_2
+\def\e3{{\mathbf e}_3}                            % e_3
+\def\e{{\mathbf e}}                            % e
+\def\k{{\mathbf k}}                            % k
+\def\x{{\mathbf x}}                            % x
+\def\q{{\mathbf q}}                            % x
+\mathchardef\Im="023D
+
+
+
+\def\shorteq{\! = \!}                            % e_z
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
+
+% Operators
+\def\fx{\hat{F}_x}  
+\def\fy{\hat{F}_y}  
+\def\fz{\hat{F}_z}  
+\def\fp{\hat{F}_+}  
+\def\fm{\hat{F}_-}  
+
+% Dressed state symbols
+\def\Omrf{\Omega_{RF}}
+\def\omrf{\omega_{RF}}
+
+
+%bra/ket commands
+\def\bra#1{\mathinner{\langle{#1}|}}
+\def\ket#1{\mathinner{|{#1}\rangle}}
+\def\braket#1{\mathinner{\langle{#1}\rangle}}
+\def\Bra#1{\left<#1\right|} 
+\def\Ket#1{\left|#1\right>}
+{\catcode`\|=\active
+  \gdef\Braket#1{\left<\mathcode`\|"8000\let|\BraVert {#1}\right>}}
+\def\BraVert{\egroup\,\mid@vertical\,\bgroup}
+\newcommand{\checkhat}[1]{\overset{\times}{#1}}
+%\newcommand{\checkhat}[1]{\check{\hat #1}}
+
+% RF dressed state commands
+\def\xyz{\ket{xyz}}
+% \newcommand{\xyz}{$\ket{x,y,z}$\xspace}
+
+% Other useful stuff
+\newcommand{\note}[1]{\textcolor{ForestGreen}{[\textrm{#1}]}} % Make 
