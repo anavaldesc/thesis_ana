@@ -93,8 +93,10 @@
 \def\nT{{\ {\rm nT}}}						% nT
 
 % AMO abbriviations
-\def\Er{{{E_R}}}							% Er
-\def\kr{{{k_{\rm R}}}}							% kr
+\def\Er{{{E_R}}}	
+\def\El{{{E_{\rm L}}}}						% Er
+\def\kr{{{k_{\rm R}}}}
+\def\kl{{{k_{\rm L}}}}								% kr
 \def\Rb87{^{87}\rm{Rb}}					% Rb 87
 \def\UoverTC{(U/t)_{\rm c}}					% t/U_c
 
@@ -141,10 +143,11 @@
 \def\fp{\hat{F}_+}  
 \def\fm{\hat{F}_-}  
 
-% Dressed state symbols
+% RF dressed state symbols
 \def\Omrf{\Omega_{RF}}
 \def\omrf{\omega_{RF}}
-
+\def\xyz{\ket{xyz}}
+\def\XYZ{\ket{XYZ}}
 
 %bra/ket commands
 \def\bra#1{\mathinner{\langle{#1}|}}
@@ -158,9 +161,6 @@
 \newcommand{\checkhat}[1]{\overset{\times}{#1}}
 %\newcommand{\checkhat}[1]{\check{\hat #1}}
 
-% RF dressed state commands
-\def\xyz{\ket{xyz}}
-% \newcommand{\xyz}{$\ket{x,y,z}$\xspace}
 
 % Other useful stuff
 \newcommand{\note}[1]{\textcolor{ForestGreen}{[\textrm{#1}]}} % Make 
