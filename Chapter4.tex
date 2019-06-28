@@ -5,29 +5,47 @@
 
 \chapter{Manipulation and detection of ultra-cold atoms}
 
-\section{Atomic structure}
+All of our experiments rely on the interaction of atoms with electric and magnetic fields, both for the preparation of ultra-cold atoms through laser cooling and trapping, for the engineering of interesting Hamiltonians and for detection. In this chapter I will first describe the electronic structure of $\Rb87$ which makes all of our experiments possible and then I will review the effects of the magnetic and electric interactions that are relevant to our experiments. I will not cover laser cooling which has been covered extensively in the literature (see~\cite{metcalf_deceleration_1999} for example). 
 
-\section{Magnetic fields}
-\subsection{Static magnetic fields}
-Uniform fields: Zeeman splitting, Breit-Rabi formula
-Gradients: Quadrupole potentials and Stern-Gerlach
+\section{Electronic structure of $^{87}$Rb}
 
-\subsection{Oscillatory fields}
-RF coupling and microwave coupling
 
-\section{Electric fields: Atom-light interaction}
+
+\section{Atomic interactions with electromagnetic fields}
+
+
+
+\section{Atom-light interaction}
+In the presence of an electric field $\mathbf E$ an atom can become polarized and therefore it's energy levels get shifted through the Stark effect~\cite{stark_beobachtungen_1914}. If the electric field is spatially uniform with respect to the atom's size the effect of the electric field on the atom can be described by the the Hamiltonian   
+%
+\begin{equation}
+\hat{H} = -\mathbf{\hat d}\cdot\mathbf{E},
+\label{eq:dipole_ham}	
+\end{equation}
+%
+where $\mathbf{\hat d}=-e\sum_j r_j$ is the atomic dipole operator, $e$ is the electron charge and $\hat r_j$ are the position operators of the atom's electrons relative to the center of mas of the atom. This approximation, known as the dipole approximation, treats the atom as a quantum object and the electric field as a classical object. Here I will only consider the case of oscillating electric fields $\mathbf{E}=E_0\cos(\omega t)\boldsymbol{\epsilon}$ (i.e. plane waves of electromagnetic radiation) which are relevant to our experiments. 
 
 Can break interaction into scalar, vector and tensor part. Interaction can also be resonant or off-resonant.
+
+\note{Why do you only get second order perturbation theory effects? I think it has something to do with unperturbed atomic states being eigenstates of the parity operator}
 
 \subsection{Scalar light shift: Dipole traps and optical lattices}
 
 \subsection{Vector light shift: Raman coupling}
 
-\section{Floquet}
-How to treat systems when RWA is not valid and how to create new effective (stroboscopic) Hamiltonians.
+\section{Magnetic interaction}
+\subsection{Static magnetic fields}
+Uniform fields: Zeeman splitting, Breit-Rabi formula
+Gradients: Quadrupole potentials and Stern-Gerlach
 
-\section{Absorption Imaging}
+\subsection{Oscillatory magnetic fields}
+RF coupling and microwave coupling
+
+\subsection{Selection rules}
+
+\section{Absorption imaging}
 \subsection{Time of flight imaging}
 \subsection{Partial transfer absorption imaging: magnetic field stabilization}
 
-
+\section{Floquet}
+How to treat systems when RWA is not valid and how to create new effective (stroboscopic) Hamiltonians.
