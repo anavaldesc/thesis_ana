@@ -14,7 +14,12 @@ The frequency resolution of Fourier transform spectroscopy is limited only by th
 \section{Operating principle of Fourier spectroscopy}
 
 Conventional spectroscopy techniques in atomic physics rely on using 
-a source of resonant electromagnetic radiation with a well known frequency that probes the internal structure of a system. For example, in absorption spectroscopy one sends a coherent source of light through an atomic medium and if the frequency of the light is resonant with an atomic transition it will be absorbed. Therefore to make this technique work one needs a coherent source of electromagnetic radiation with a frequency that is close to the energies if interest and a device to detect it. Something about Rabi spectroscopy  \todo{Citations!} 
+a source of resonant electromagnetic radiation with a well known frequency that probes the internal structure of a system. For example, in absorption spectroscopy~\cite{demtroder_doppler-limited_2008} one sends a coherent source of light through an atomic medium and if the frequency of the light is resonant with an atomic transition it will be absorbed. Other variants of spectroscopy (e.g. Rabi spectroscopy, spin-injection spectroscopy) work under a similar principle where the main underlying principle is that atoms absorb and emit photons with frequencies equal to the transition energies between internal states. 
+
+Fourier spectroscopy is different in the sense that the measurements happen in the time domain rather than 
+
+
+Therefore to make this technique work one needs a coherent source of electromagnetic radiation with a frequency that is close to the energies if interest and a device to detect it. Something about Rabi spectroscopy  \todo{Citations!} 
 
 This raises some technical challenges: 
 \begin{itemize}
@@ -23,21 +28,14 @@ This raises some technical challenges:
  \end{itemize}		
 
 
-
-Similarly other techniques like spin-injection spectroscopy rely on
-
 which offers the advantage of simultaneous recording
 of a large spectral interval and with it a short measuring time.
 	 
 
 
-\section{Introduction}
+% Cold-atom systems offer the possibility of engineering single-particle dispersions that are analogues to those present in condensed matter systems, thereby creating exotic atomic `materials', with interaction-dominated or topologically non-trivial band structures \cite{lindner_floquet_2011,radic_strong_2015}. The properties of such materials depend on their underlying band structure, and a multitude of techniques have been developed for measuring the single particle dispersion relation. Here we present a Fourier transform technique that employs the connection between the energy spectrum of a system and its dynamics. This connection has been exploited to study the spectrum of both condensed matter \cite{jonas_two-dimensional_2003} and cold atom systems \cite{yoshimura_diabatic-ramping_2014,wang_atom-interferometric_2015} alike. Here we implemented a Fourier transform spectroscopy technique and applied it to spin-orbit coupled (SOC) Bose-Einstein condensates (BECs) to obtain their dispersion relation.
 
-
-
-Cold-atom systems offer the possibility of engineering single-particle dispersions that are analogues to those present in condensed matter systems, thereby creating exotic atomic `materials', with interaction-dominated or topologically non-trivial band structures \cite{lindner_floquet_2011,radic_strong_2015}. The properties of such materials depend on their underlying band structure, and a multitude of techniques have been developed for measuring the single particle dispersion relation. Here we present a Fourier transform technique that employs the connection between the energy spectrum of a system and its dynamics. This connection has been exploited to study the spectrum of both condensed matter \cite{jonas_two-dimensional_2003} and cold atom systems \cite{yoshimura_diabatic-ramping_2014,wang_atom-interferometric_2015} alike. Here we implemented a Fourier transform spectroscopy technique and applied it to spin-orbit coupled (SOC) Bose-Einstein condensates (BECs) to obtain their dispersion relation.
-
-Spin-orbit coupling, naturally present in two-dimensional electron systems subject to an electric field perpendicular to the plane, is a necessary ingredient for phenomena such as the spin quantum Hall effect, and plays an important role in topological materials \cite{bychkov_oscillatory_1984-1,hasan_textitcolloquium_2010}. We engineered a Hamiltonian that has equal contributions of Rashba and Dresselhaus SOC \cite{lin_spin-orbit-coupled_2011}, in an ultra-cold atomic system by coupling the internal degrees of freedom of $^{87}\mathrm{Rb}$ atoms using  two laser fields \cite{dalibard_textitcolloquium_2011}. The fields change the spin state while imparting momentum to the system via two-photon Raman transitions \cite{lan_raman-dressed_2014,campbell_magnetic_2016}. The SOC term in the Hamiltonian can be made tunable by adding a periodic amplitude modulation in the Raman field \cite{jimenez-garcia_tunable_2015}.
+% Spin-orbit coupling, naturally present in two-dimensional electron systems subject to an electric field perpendicular to the plane, is a necessary ingredient for phenomena such as the spin quantum Hall effect, and plays an important role in topological materials \cite{bychkov_oscillatory_1984-1,hasan_textitcolloquium_2010}. We engineered a Hamiltonian that has equal contributions of Rashba and Dresselhaus SOC \cite{lin_spin-orbit-coupled_2011}, in an ultra-cold atomic system by coupling the internal degrees of freedom of $^{87}\mathrm{Rb}$ atoms using  two laser fields \cite{dalibard_textitcolloquium_2011}. The fields change the spin state while imparting momentum to the system via two-photon Raman transitions \cite{lan_raman-dressed_2014,campbell_magnetic_2016}. The SOC term in the Hamiltonian can be made tunable by adding a periodic amplitude modulation in the Raman field \cite{jimenez-garcia_tunable_2015}.
 
 Unlike the previous techniques used to measure the SOC dispersion in atomic systems \cite{cheuk_spin-injection_2012}, ours relies only on the unitary evolution of an initial state suddenly subjected to a SOC Hamiltonian and measuring occupation probabilities in a basis that does not diagonalize the Hamiltonian. In general, the initial state is not an eigenstate of the spin-orbit coupled Hamiltonian and undergoes unitary evolution. The spectral components of this time evolution are given by their relative energies, and using this time-domain evolution as a spectroscopic tool is useful for studying the energy spectrum of more complex time-dependent periodically driven systems \cite{jimenez-garcia_tunable_2015,eckardt_superfluid-insulator_2005,goldman_periodically_2014}, which are well suited for engineering and tuning Hamiltonians.
 
