@@ -5,45 +5,31 @@
 
 \chapter{Fourier Transform Spectroscopy}
 
-As we have discussed in Chapter 1, ultra-cold atom systems are an ideal platform for engineering Hamiltonians that are analogues to those present in condensed matter systems as well as new models with no material analogues. The properties of these engineered `materials' rely on their underlying energy structure and it is therefore important to develop spectroscopic techniques to characterize them. 
+As I have discussed in Chapter 1, ultra-cold atom systems are an ideal platform for engineering Hamiltonians that are analogues to those present in condensed matter systems as well as new models with no material analogues. The properties of these engineered `materials' rely on their underlying energy structure and it is therefore important to develop spectroscopic techniques to characterize them. 
+
+The frequency resolution of Fourier transform spectroscopy is limited only by the coherent evolution timescale of the system under study and can otherwise be applied to any system, for example, to measure the dispersion relation of a Rashba spin-orbit coupled gas (see Chapter 8) and the band structure of a sub-wavelength optical lattice (see Chapter 9).
 
 In this Chapter I will discuss a Fourier spectroscopy technique that employs the connection between the energy spectrum of a system and its quantum coherent dynamics. First I will give a general description of the Fourier transform spectroscopy technique. Then I will describe an experiment where we engineered a tunable spin-orbit coupled system and applied Fourier transform spectroscopy. 
 
-The frequency resolution of Fourier transform spectroscopy is limited only by the coherent evolution timescale of the Hamiltonian and can otherwise be applied to any system, for example, to measure the dispersion relation of a Rashba spin-orbit coupled gas (see Chapter 8) and the band structure of a sub-wavelength optical lattice (see Chapter 9).
+
+\section{Fourier spectroscopy and other spectroscopic techniques}
+
+Conventional spectroscopy techniques in atomic physics rely on using 
+a source of coherent electromagnetic radiation with a well known frequency that probes the internal structure of a system (atom). For example, in absorption spectroscopy~\cite{demtroder_doppler-limited_2008} a coherent light source is sent through an atomic medium and if the frequency of the light is resonant with an atomic transition it will be absorbed and a reduced transmission will be measured. Other variants of spectroscopy (e.g. Rabi spectroscopy~\cite{rabi_space_1937}, spin-injection spectroscopy~\cite{cheuk_spin-injection_2012}) work under a similar principle: atoms absorb and emit photons with frequencies equal to the transition energies between internal states. 
+
+Fourier transform spectroscopy instead employs the connection between the energy spectrum of a system and its dynamics. This connection has been exploited to study the spectrum of both condensed matter \cite{jonas_two-dimensional_2003} and cold atom systems \cite{yoshimura_diabatic-ramping_2014,wang_atom-interferometric_2015} alike.
+As opposed to other techniques, Fourier spectroscopy relies only on following the unitary evolution of an initial state suddenly subjected to a Hamiltonian of interest and measuring probabilities in a basis that does not diagonalize that Hamiltonian. This spectroscopic tool is also useful for studying the energy spectrum of more complex time-dependent periodically driven systems \cite{jimenez-garcia_tunable_2015,eckardt_superfluid-insulator_2005,goldman_periodically_2014}, which are well suited for engineering and tuning Hamiltonians.
+
+In summary, Fourier spectroscopy is a time-domain spectroscopic technique and it has the advantages of being very general and applicable to a wide range of systems and not requiring any additional hardware (like a coherent source of light or RF at the right frequency).
+
+
+% which offers the advantage of simultaneous recording
+% of a large spectral interval and with it a short measuring time.
+	 
 
 \section{Operating principle of Fourier spectroscopy}
 
-Conventional spectroscopy techniques in atomic physics rely on using 
-a source of resonant electromagnetic radiation with a well known frequency that probes the internal structure of a system. For example, in absorption spectroscopy~\cite{demtroder_doppler-limited_2008} one sends a coherent source of light through an atomic medium and if the frequency of the light is resonant with an atomic transition it will be absorbed. Other variants of spectroscopy (e.g. Rabi spectroscopy, spin-injection spectroscopy) work under a similar principle where the main underlying principle is that atoms absorb and emit photons with frequencies equal to the transition energies between internal states. 
-
-Fourier spectroscopy is different in the sense that the measurements happen in the time domain rather than 
-
-
-Therefore to make this technique work one needs a coherent source of electromagnetic radiation with a frequency that is close to the energies if interest and a device to detect it. Something about Rabi spectroscopy  \todo{Citations!} 
-
-This raises some technical challenges: 
-\begin{itemize}
-  \item A source with frequency close to that of interest might not be readily available (or the frequency might not even be known to us!)
-  \item  
- \end{itemize}		
-
-
-which offers the advantage of simultaneous recording
-of a large spectral interval and with it a short measuring time.
-	 
-
-
-% Cold-atom systems offer the possibility of engineering single-particle dispersions that are analogues to those present in condensed matter systems, thereby creating exotic atomic `materials', with interaction-dominated or topologically non-trivial band structures \cite{lindner_floquet_2011,radic_strong_2015}. The properties of such materials depend on their underlying band structure, and a multitude of techniques have been developed for measuring the single particle dispersion relation. Here we present a Fourier transform technique that employs the connection between the energy spectrum of a system and its dynamics. This connection has been exploited to study the spectrum of both condensed matter \cite{jonas_two-dimensional_2003} and cold atom systems \cite{yoshimura_diabatic-ramping_2014,wang_atom-interferometric_2015} alike. Here we implemented a Fourier transform spectroscopy technique and applied it to spin-orbit coupled (SOC) Bose-Einstein condensates (BECs) to obtain their dispersion relation.
-
-% Spin-orbit coupling, naturally present in two-dimensional electron systems subject to an electric field perpendicular to the plane, is a necessary ingredient for phenomena such as the spin quantum Hall effect, and plays an important role in topological materials \cite{bychkov_oscillatory_1984-1,hasan_textitcolloquium_2010}. We engineered a Hamiltonian that has equal contributions of Rashba and Dresselhaus SOC \cite{lin_spin-orbit-coupled_2011}, in an ultra-cold atomic system by coupling the internal degrees of freedom of $^{87}\mathrm{Rb}$ atoms using  two laser fields \cite{dalibard_textitcolloquium_2011}. The fields change the spin state while imparting momentum to the system via two-photon Raman transitions \cite{lan_raman-dressed_2014,campbell_magnetic_2016}. The SOC term in the Hamiltonian can be made tunable by adding a periodic amplitude modulation in the Raman field \cite{jimenez-garcia_tunable_2015}.
-
-Unlike the previous techniques used to measure the SOC dispersion in atomic systems \cite{cheuk_spin-injection_2012}, ours relies only on the unitary evolution of an initial state suddenly subjected to a SOC Hamiltonian and measuring occupation probabilities in a basis that does not diagonalize the Hamiltonian. In general, the initial state is not an eigenstate of the spin-orbit coupled Hamiltonian and undergoes unitary evolution. The spectral components of this time evolution are given by their relative energies, and using this time-domain evolution as a spectroscopic tool is useful for studying the energy spectrum of more complex time-dependent periodically driven systems \cite{jimenez-garcia_tunable_2015,eckardt_superfluid-insulator_2005,goldman_periodically_2014}, which are well suited for engineering and tuning Hamiltonians.
-
-This article is organized as follows. First we give a general description of the Fourier transform spectroscopy technique. We then describe the experimental procedure used to generate the spin-orbit coupling interaction in $^{87}$Rb BECs and apply the Fourier spectroscopy technique. Lastly we show the relative energies of our system and recover the SOC spectrum using the effective mass of the ground state. 
-
-\subsection*{Operating principle of Fourier spectroscopy}
-
-We focus on a system where we can measure the occupation probabilities of a set of orthonormal states $\{\ket{\psi_i}\}$ that fully span the accessible Hilbert space of the system. We then consider the time evolution of an arbitrary initial state $\ket{\Psi_0}=\sum\limits_{i}a_i\ket{\psi_i}$ as governed by a Hamiltonian $\hat{H}'(\{\Omega_i \})$ and observe the occupation probabilities of the $\{\ket{\psi_i}\}$ states of the measurement basis as a function of time. When $\hat{H}'$ is applied, the evolution of the initial state is $\ket{\Psi(t)}=\sum\limits_{i,j}a_ic_{i,j}e^{-iE'_jt/\hbar}\ket{\psi'_j}$, where $E'_j$ and $\ket{\psi'_j}$ are the eigenenergies and eigenstates of $\hat{H}'$, and $c_{i,j}(t)=\braket{\psi_i}{\psi'_j}$. The probability  
+We focus on a system where we can measure the occupation probabilities of a set of orthonormal states $\{\ket{\psi_i}\}$ that fully span the accessible Hilbert space of the system. We then consider the time evolution of an arbitrary initial state $\ket{\Psi_0}=\sum\limits_{i}a_i\ket{\psi_i}$ as governed by a Hamiltonian $\hat{H}'(\{\Omega_i \})$ and observe the occupation probabilities of the $\{\ket{\psi_i}\}$ states of the measurement basis as a function of time. When $\hat{H}'$ is applied, the evolution of the initial state is $\ket{\Psi(t)}=\sum\limits_{i,j}a_ic_{i,j}e^{-iE'_jt/\hbar}\ket{\psi'_j}$, where $E'_j$ and $\ket{\psi'_j}$ are the eigenenergies and eigenstates of $\hat{H}'$, and $c_{i,j}(t)=\braket{\psi_i}{\psi'_j}$. The probability 
 %
 \begin{align}
 P_k(t)=&|\braket{\psi_k}{\Psi(t)}|^2=\lvert\sum\limits_{i,j}a_ic_{i,j}c^{*}_{j,k}e^{-iE'_jt/\hbar}\rvert^2
@@ -53,10 +39,10 @@ P_k(t)=&|\braket{\psi_k}{\Psi(t)}|^2=\lvert\sum\limits_{i,j}a_ic_{i,j}c^{*}_{j,k
 of finding the system in a state $\ket{\psi_k}$ of the measurement basis can be expressed as a sum of oscillatory components, with amplitude given by the magnitude of the overlap integrals 
 \begin{align}
 %P_k(t)=\tilde{a}_k+\sum\limits_{i\neq j}\tilde{b}_{i,j,k}\cos(2\pi f_{j,j'}t),
-P_k(t)=1+\sum\limits_{i,j\neq l} 2\lvert a_ic_{i,j}c_{j,k}c_{i,j'}c_{k',k}\rvert \cos(2\pi f_{jj'}t),
+P_k(t)=1+\sum\limits_{i,j\neq l} 2\lvert a_i^2c_{i,j}c_{j,k}c_{i,l}c_{l,k}\rvert \cos(2\pi f_{j,l}t),
 \end{align}
-where $f_{jj'}=(E'_{j}-E'_{j'})/h$ is the frequency associated with the energy difference of two eigenstates of the Hamiltonian.
-Fourier spectroscopy relies on measuring the occupation probabilities of each state in the measurement basis as a function of time, and extracting the different frequency components $f_{jj'}$ directly by computing the discrete Fourier transform. The bandwidth and frequency resolution of the measurement are determined by the total sampling time and the number of samples. For $N$ samples separated by a time interval $\Delta t$, the highest resolved frequency will be $f_{\mathrm{bw}}=1/2\Delta t$, with resolution $\Delta f=1/\Delta tN$. This resolution can be decreased if the Fourier transform is calculated using certain types of windowing functions that enhance signal to noise.  Any  higher frequency  $f>f_{\mathrm{bw}}$ will be aliased and measured in the Fourier spectrum as $f_{\mathrm{alias}}=\vert f - m/\Delta t \vert$, where $m$ is an integer. If interactions are present in the system, the dynamics get modified in a time scale given by the magnitude of the interactions, giving an additional constraint to the smallest frequency components that can be resolved with our technique.
+where $f_{j,l}=(E'_{j}-E'_{l})/h$ is the frequency associated with the energy difference of two eigenstates of the Hamiltonian.
+Fourier spectroscopy relies on measuring the occupation probabilities of each state in the measurement basis as a function of time, and extracting the different frequency components $f_{j,l}$ directly by computing the discrete Fourier transform. The bandwidth and frequency resolution of the measurement are determined by the total sampling time and the number of samples. For $N$ samples separated by a time interval $\Delta t$, the highest resolved frequency will be $f_{\mathrm{bw}}=1/2\Delta t$, with resolution $\Delta f=1/\Delta tN$. This resolution can be decreased if the Fourier transform is calculated using certain types of windowing functions that enhance signal to noise.  Any  higher frequency  $f>f_{\mathrm{bw}}$ will be aliased and measured in the Fourier spectrum as $f_{\mathrm{alias}}=\vert f - m/\Delta t \vert$, where $m$ is an integer. If interactions are present in the system, the dynamics get modified in a time scale given by the magnitude of the interactions, giving an additional constraint to the smallest frequency components that can be resolved with our technique.
 
 Figure~\ref{fig:Figure1} illustrates the principle of Fourier spectroscopy for a three level system, initially prepared in the state $\ket{\Psi_0}=\ket{\psi_2}$, subject to the Hamiltonian
 %
@@ -76,7 +62,7 @@ E_1 & 0 & 0  \\
 where we measure the occupation probability as a function of time for each of the $\{\ket{\psi_1}, \ket{\psi_2},\ket{\psi_3}\}$ states. The three eigenenergies $E'_i=hf_i$ are displayed in figure~\ref{fig:Figure1}(a). The three energy differences $hf_{jj'}$ between the levels determine the oscillation frequencies of the occupation probabilities, as can be seen in figure~\ref{fig:Figure1}(b). Finally, a plot of the power spectral density (PSD) in figure~\ref{fig:Figure1}(c) shows three peaks at frequencies corresponding to the three relative energies of $\hat{H}'$.
 
 
-\begin{figure*}[bt]
+\begin{figure*}[ht]
 	\begin{center}
 		\includegraphics{Figures/Chapter5/Fig1.pdf}
 		\caption
@@ -89,9 +75,9 @@ where we measure the occupation probability as a function of time for each of th
 \end{figure*}
 
 
-\section*{Experiment}
+\section{Measuring the dispersion of a spin-orbit coupled BEC}
 
-We begin our experiments with a $^{87}$Rb BEC \cite{lin_rapid_2009} containing about $4\times 10^4$ atoms in the $5^2S_{1/2}$ electronic ground state, and in the $\ket{f=1,m_f=-1}$ hyperfine state. The BEC is confined in a crossed optical dipole trap formed by two $1064\nm$ beams propagating along $\ex+\ey$ and $\ey-\ex$, which give trapping frequencies   $(\omega_x,\omega_y,\omega_z)/2\pi=(42(3),34(2),133(3))\Hz$\footnote[2]{All uncertainties herein represent the uncorrelated combination of statistical and systematic errors.}. We break the degeneracy of the three $m_F$ magnetic sub-levels by applying a $1.9893(3)\,$mT bias field along $\mathbf{e}_z$ that produces a $\omega_Z / 2\pi  = 14.000(2) \MHz$ Zeeman splitting, and a quadratic Zeeman shift $\epsilon$ that shifts the energy of $\ket{f=1,m_F=0}$ by $-h\times 28.45\, \kHz$. We adiabatically transfer our BEC into $\ket{f=1,m_F=0}$ by slowly ramping the bias field, from  $B_i=1.9522(3)\,$mT to $B_f=1.9893(3)\,$mT in $50\,$ms while applying a $14\,\MHz$ radio-frequency magnetic field with approximately $20\,$kHz coupling strength that was ramped on $50$ ms before the bias field. We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
+We begin our experiments with a $^{87}$Rb BEC \cite{lin_rapid_2009} containing about $4\times 10^4$ atoms in the $5^2S_{1/2}$ electronic ground state, and in the $\ket{f=1,m_f=-1}$ hyperfine state. The BEC is confined in a crossed optical dipole trap formed by two $1064\nm$ beams propagating along $\ex+\ey$ and $\ey-\ex$, which give trapping frequencies   $(\omega_x,\omega_y,\omega_z)/2\pi=(42(3),34(2),133(3))\Hz$\footnote[2]{All uncertainties herein represent the uncorrelated combination of statistical and systematic errors.}. We break the degeneracy of the three $m_F$ magnetic sub-levels by applying a $1.9893(3)\,$mT bias field along $\mathbf{e}_z$ that produces a $\omega_Z / 2\pi  = 14.000(2) \MHz$ Zeeman splitting, and a quadratic Zeeman shift $\epsilon$ that shifts the energy of $\ket{f=1,m_F=0}$ by $-h\times 28.45\, \kHz$. We adiabatically transfer our BEC into $\ket{f=1,m_F=0}$ by slowly ramping the bias field, from  $B_i=1.9522(3)\,$mT to $B_f=1.9893(3)\,$mT in $50\,$ms while applying a $14\,\MHz$ radio-frequency magnetic field with approximately $20\,$kHz coupling strength that was ramped on $50$ ms before the bias field. We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following {}each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
 
 \begin{figure*}[bt]
 	\begin{center}
@@ -151,7 +137,7 @@ In order to map the full spin and momentum dependent band structure of $\hat{H}_
 
 We control the frequency and the detuning of the Raman beams using two acousto-optic modulators (AOMs), one of which is driven by up to three phase coherent frequencies. For each of the three coupling cases that we measured, we applied the Raman beams at detuning values within the interval $\pm 12 E_{\mathrm{L}}$ which corresponds to quasimomentum values $\pm 3k_{\mathrm{L}}$.
 
-\subsection*{Effective mass}
+\subsection{Effective mass}
 We recover the full spectrum of the system, rather than the relative energies, by measuring the effective mass of the nearly quadratic ground state of the dispersion, giving us an energy reference that we then use to shift the measured frequencies in the PSD. We measure the effective mass of the Raman dressed atoms by adiabatically preparing the BEC in the lowest eigenstate and inducing dipole oscillations. The effective mass of the dressed atoms  is related to the bare mass $m$ and the bare and dressed trapping frequencies $\omega$ and $\omega^{*}$ by the ratio $m^{*}/m=(\omega/\omega^{*})^2$. We measured this ratio following~\cite{lin_synthetic_2011}; we start in  $\ket{m_F=0,\, k_x=0}$ state and adiabatically turn on the Raman laser in $10\,\mathrm{ms}$ while also ramping the detuning to $\delta\approx0.5\,\El$, shifting the minima in the ground state energy away from zero quasi-momentum. We then suddenly bring the field back to resonance, exciting the BEC's dipole mode in the optical dipole trap. We measured the bare state frequency by using the Raman beams to initially induce motion but subsequently turn them off in $1\ms$ and let the BEC oscillate. For this set of measurements, we adjusted our optical dipole trap to give new trapping frequencies $(\omega_x, \omega_y, \omega_z)/2\pi=(35.6(4), 32.2(3), 133(3))\,\Hz$, nominally symmetric in the plane defined by $\ex$ and $\ey$. The Raman beams co-propagate with the optical dipole trap beams; therefore, the primary axes of the dipole trap frequencies are at a $45^{\circ}$ angle with respect to the direction of $\mathbf{k}_{\mathrm{L}}$. 
 
 Figure~\ref{fig:Figure4} shows the dipole oscillations along the $\mathbf{e}_{x}$ and $\mathbf{e}_{y}$ directions for the three different coupling regimes we explored, as well as the bare state motion. The resulting mass ratios for the three coupling regimes are $m/m^{*}=$  (i) $1.04(8)$, (ii) $0.71(7)$, and (iii) $0.62(4)$.
@@ -164,7 +150,7 @@ Figure~\ref{fig:Figure4} shows the dipole oscillations along the $\mathbf{e}_{x}
 	\end{center}
 \end{figure*}
 
-\section*{Measured dispersion}
+\section{Measured dispersion}
 
 We mapped the band structure of spin-orbit coupled atoms for three different coupling regimes. Figure~\ref{fig:Figure5}(a) shows representative traces of the measured occupation probabilities for short evolution times along with fits to the unitary evolution given by $\hat{H}_{\mathrm{SOC}}$ with $\delta$, $\Omega_0$, and $\Omega$ as free parameters. The fit parameters agree well with independent microwave and Raman power calibrations. In the lower two panels, where the Raman coupling strength is periodically modulated, the occupation probabilities oscillate with more than three frequencies since the full description of the system is given by the Floquet quasi-energy spectrum. Figure~\ref{fig:Figure5}(b),(c) shows the occupation probabilities for the parameter regime (iii)  for longer evolution times along with the PSD of the occupation probability of each spin state. 
 
@@ -257,24 +243,6 @@ $\hat{H}'(t)$ has terms proportional to $\sin(\Omega/\delta\omega\sin(\delta\ome
 to obtain the effective time independent Hamiltonian $\hat{H}_{Fl}$.
 
 
-%% Here is the endmatter stuff: Supplementary Info, etc.
-%% Use \item's to separate, default label is "Acknowledgments"
 
-%\begin{addendum}
-%\item We appreciate useful discussions with Stefan Natu.  This work was partially supported by the ARO's atomtronics MURI, by the AFOSR's Quantum Matter MURI, NIST, and the NSF through the PFC at the JQI.
- 
-%\item[Author Contributions] All authors excepting I.B.S contributed to the data taking effort.  All authors: analyzed data; performed numerical and analytical calculations; and contributed to writing the manuscript.  I.B.S. proposed the initial experiment (with great enthusiasm, but with little appreciation for the many technical hurdles to be resolved by the remainder of the team).
-
-%\item[Correspondence] Correspondence and requests for materials should be addressed to I.B.S.~ (email: ian.spielman@nist.gov).
-
-%\bibliography{MolmerSorensen}
-
-
-
-\section{How Fourier spectroscopy works}
-\section{Experiments with Fourier spectroscopy}
-I think here just the original experiments
-
-\subsection{Absolute energy from relative energies: measuring effective mass}
 
 
