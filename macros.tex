@@ -152,14 +152,13 @@
 %bra/ket commands
 \def\bra#1{\mathinner{\langle{#1}|}}
 \def\ket#1{\mathinner{|{#1}\rangle}}
-\def\braket#1{\mathinner{\langle{#1}\rangle}}
+\newcommand{\braket}[2]{\langle #1|#2\rangle}
 \def\Bra#1{\left<#1\right|} 
 \def\Ket#1{\left|#1\right>}
 {\catcode`\|=\active
   \gdef\Braket#1{\left<\mathcode`\|"8000\let|\BraVert {#1}\right>}}
 \def\BraVert{\egroup\,\mid@vertical\,\bgroup}
-\newcommand{\checkhat}[1]{\overset{\times}{#1}}
-%\newcommand{\checkhat}[1]{\check{\hat #1}}
+
 
 
 % Other useful stuff
