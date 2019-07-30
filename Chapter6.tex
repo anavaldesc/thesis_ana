@@ -2,68 +2,170 @@
 %Chapter 6
 
 
-
-
-% \newcommand{\rb}{$^{87}\mathrm{Rb}$\xspace}
-% \newcommand{\xyz}{$\ket{x,y,z}$\xspace}
-% \newcommand{\XYZ}{$\ket{X,Y,Z}$\xspace}
-
-% % Commands for bra-ket notation
-% \newcommand{\bra}[1]{\langle #1\vert}
-% \newcommand{\ket}[1]{\vert#1\rangle}
-% \newcommand{\braket}[2]{\langle #1\vert#2\rangle}
-
 \newcommand{\reffig}[1]{Fig.~\ref{#1}}
 \newcommand{\refeq}[1]{Eq.~(\ref{#1})}
 
 \renewcommand{\thechapter}{6}
 
 \chapter{Synthetic clock states}
+\label{ch:clock_states}
 
-Garc\'{\i}a
+ Most of our previous experiments used the hyperfine $\ket{m_F}$ states as effective spins and dressed them with an RF or Raman laser field. However, due to the linear dependence of their energies with respect to magnetic field, and the fact that we had two other AMO labs generating large magnetic fields and an elevator nearby, we always had to take special care to stabilize the magnetic field on the lab (see~\ref{sec:ptai} for details on magnetic field stabilization using partial transfer absorption imaging). Our system is not the only one suffering from this issues; decoherence of quantum systems due to uncontrolled fluctuations of the environment presents fundamental obstacles in quantum science. One way to go around this is to use of first order insensitive `clock' transitions which are insensitive to such fluctuations, however, they are not present in all systems or for arbitrary system parameters. Remarkably, under almost all circumstances, clock transitions can be synthesized using dynamical decoupling protocols. These protocols involve driving the system with an external oscillatory field, resulting in a dynamically protected `dressed' system.
 
-Decoherence of quantum systems due to uncontrolled fluctuations of the environment presents fundamental obstacles in quantum science.
-`Clock' transitions which are insensitive to such fluctuations are used to improve coherence, however, they are not present in all systems or for arbitrary system parameters.
-Here, we create a trio of synthetic clock transitions
-using continuous dynamical decoupling in a spin-1 Bose-Einstein condensate in which we observe a reduction of sensitivity to magnetic field noise of up to four orders of magnitude; this work complements the parallel work by Anderson et al.~(submitted, 2017).
-In addition, using a concatenated scheme, we demonstrate suppression of sensitivity to fluctuations in our control fields.
-These field-insensitive states represent an ideal foundation for the next generation of cold atom experiments focused on fragile many-body phases relevant to quantum magnetism, artificial gauge fields, and topological matter.
+The idea of using continuous dynamical decoupling (CDD) in the lab came from a theoretical proposal to engineer Rashba type SOC using Raman beams and a strong RF field~\cite{campbell_rashba_2016}. We decided to implement CDD to create `synthetic clock states', which was one of the ingredients in this proposal, as an intermediate step towards our final goal of engineering Rashba SOC. Just like with Fourier spectroscopy, CDD became a workhorse of the lab both for the stability it provides against environmental fluctuations but also because it has given us access to non-zero matrix coupling elements that we otherwise would not have when working with the bare $\ket{m_F}$ states. We have continued to use CDD  not only for engineering Rashba SOC (Chapter~\ref{ch:Rashba}) but also to engineer subwavelength optical lattices (Chapter~\ref{ch:raman_lattice}) and Hofstadter cylinders (\note{maybe not a Chapter since there are already too many...}). 
 
-The loss of coherence due to uncontrolled coupling to a fluctuating environment is a limiting performance factor for quantum technologies~\cite{chaudhry_decoherence_2012,myatt_decoherence_2000,schlosshauer_decoherence_2005,viola_dynamical_1998}.
-In select cases, first-order insensitive transitions --- `clock' transitions --- can mitigate the deleterious effect of the dominant noise sources, yet in most cases such transitions are absent~\cite{[{Quality oscillators that show remarkably precise and robust dynamics can be found even in biological systems. See for example the repressilator gene, }] potvin-trottier_synchronous_2016}.
-Remarkably, under almost all circumstances, clock transitions can be synthesized using dynamical decoupling protocols.
-These protocols involve driving the system with an external oscillatory field, resulting in a dynamically protected `dressed' system.
+This Chapter discusses the implementation of continuous dynamical decoupling (CCD) in our system of ultra-cold atoms. First I will give a general overview of dynamical decoupling and continuous dynamical decoupling techniques. Then I will describe our implementation of CDD using a strong RF field that couples the $F=1$ hyperfine manifold of $\Rb87$. Finally I discuss an implementation of concatenated CDD that renders the system first-order insensitive to both magnetic field noise and noise in the control field. This work was published in~\cite{trypogeorgos_synthetic_2018} and was done in parallel with~\cite{anderson_continuously_2018}.
 
- A number of dynamical decoupling protocols, pulsed or continuous, have been shown to isolate quantum systems from low-frequency environmental noise~\cite{cohen_continuous_2017,fanchini_continuously_2007,aharon_fully_2016,biercuk_optimized_2009,cai_robust_2012,bermudez_robust_2012,baumgart_ultrasensitive_2016,kazakov_magic_2015,sarkany_controlling_2014}.
-Continuous dynamical decoupling (CDD) relies on the application of time-periodic continuous control fields, rather than a series of quantum-logic pulses.
-Unlike conventional dynamical decoupling, CDD does not require any encoding overhead or quantum feedback measurements.
+\section{Basic principles of CDD}
 
-Thus far, CDD has inoculated multi-level systems in nitrogen vacancy centers in diamond, nuclear magnetic resonance experiments, and trapped atomic ions~\cite{laucht_dressed_2017,farfurnik_experimental_2017,noguchi_generation_2012,golter_protecting_2014,timoney_quantum_2011,webster_simple_2013,barfuss_strong_2015,rohr_synchronizing_2014}, from spatiotemporal magnetic field fluctuations.
-We demonstrate CDD in atomic Bose-Einstein condensates (BECs) producing a protected three-level system of dressed-states, whose Hamiltonian is fully controllable.
-The CDD-protected states are sensitive to fluctuations of the amplitude of the control field, and we  demonstrate that a second coupling field protects against those in a concatenated manner~\cite{cohen_continuous_2017,farfurnik_experimental_2017,cai_robust_2012}.
+The use of dynamical decoupling protocols as a way of beating decoherence was first theoretically proposed in~\cite{viola_dynamical_1998}.
 
-\begin{figure}[h]
+A number of dynamical decoupling protocols, pulsed or continuous, have been shown to isolate quantum systems from low-frequency environmental noise~\cite{cohen_continuous_2017,fanchini_continuously_2007,aharon_fully_2016,biercuk_optimized_2009,cai_robust_2012,bermudez_robust_2012,baumgart_ultrasensitive_2016,kazakov_magic_2015,sarkany_controlling_2014}. Continuous dynamical decoupling (CDD) relies on the application of time-periodic continuous control fields, rather than a series of quantum-logic pulses. Unlike conventional dynamical decoupling, CDD does not require any encoding overhead or quantum feedback measurements. 
+
+Thus far, CDD has inoculated multi-level systems in nitrogen vacancy centers in diamond, nuclear magnetic resonance experiments, and trapped atomic ions~\cite{laucht_dressed_2017,farfurnik_experimental_2017,noguchi_generation_2012,golter_protecting_2014,timoney_quantum_2011,webster_simple_2013,barfuss_strong_2015,rohr_synchronizing_2014}, from spatiotemporal magnetic field fluctuations.We demonstrate CDD in atomic BECs producing a protected three-level system of dressed-states, whose Hamiltonian is fully controllable. The CDD-protected states are sensitive to fluctuations of the amplitude of the control field, and we  demonstrate that a second coupling field protects against those in a concatenated manner~\cite{cohen_continuous_2017,farfurnik_experimental_2017,cai_robust_2012}.
+Some Bloch spheres and an explanation
+
+
+\section{CDD of a spin-1 system}
+\begin{figure}[!!h]
     \centering
-    \includegraphics[]{Figures/Chapter6/fig1.pdf}
-    \caption[The $\xyz$ states.]{(a) Left: dependence of the $5^2S_{1/2}$, $F=1$ ground state of $\Rb87$ on magnetic field, where the quadratic dependence of the $\ket{m_F=0}$ state's Zeeman shift has been exaggerated so it is visible on the same scale.
+    \includegraphics[]{Figures/Chapter6/fig1a.pdf}
+    \caption[Implementing CCD.]{{\bf a.} Setup for implementing CCD using a strong RF magnetic field. {\bf b.}  Left: dependence of the $5^2S_{1/2}$, $F=1$ ground state of $\Rb87$ on magnetic field, where the quadratic dependence of the $\ket{m_F=0}$ state's Zeeman shift has been exaggerated so it is visible on the same scale.
     Center: energies of the $\xyz$ eigenstates, for $\Omega/2\pi=\SI{200}{kHz}$ (black curves) and $\Omega=0$ (grey curves).
-    Right: TOF image of $\ket{z}$ at $\Delta=0$, showing the constituent $m_F$ states.
+    Right: TOF absorption image of $\ket{z}$ at $\Delta=0$, showing the constituent $m_F$ states.
     }
     \label{fig:1}
 \end{figure}
 
-
-\textit{System.}
 We implemented CDD using a strong radio-frequency (RF) magnetic field with strength $\Omega$, that linked the three $m_F$ states comprising the $F=1$ electronic ground state manifold of $\Rb87$.
-The RF field was linearly polarized along ${\bf e}_x$, and had angular frequency $\omega$ close to the Larmor frequency $\omega_0 = g_F \mu_{\rm B} B_0$ from a magnetic field $B_0 {\bf e}_z$; $g_F$ is the Lande $g$-factor and $\mu_{\rm B}$ is the Bohr magneton.
+The RF field was linearly polarized along ${\bf e}_x$, and had angular frequency $\omega$ close to the Larmor frequency $\omega_0 = g_F \mu_{\rm B} B_0$ from a magnetic field $B_0 {\bf e}_z$; $g_F$ is the Lande $g$-factor and $\mu_{\rm B}$ is the Bohr magneton. Our system was described by the RF Hamiltonian described in~\ref{seq:rf_coupling}
+
+\begin{equation}
+    \hat{H} = \hbar\Delta\fz+\hbar\epsilon(\fz^2-\hat{\mathbb{1}})+ \hbar\Omega \fx,
+    \label{eq:h0}
+\end{equation}
+with detuning $\Delta=\omega-\omega_0$; quadratic Zeeman shift $\epsilon$; spin-1 angular momentum operators $\hat F_{x,y,z}$; and identity operator $\hat{\mathbb 1}$.  
+
+\subsection{The $\xyz$ states}
+
+The eigenstates of Equation~\ref{eq:h0} are linear combinations of $\ket{m_F=0,\pm1}$. We denote this states by $\ket{x}$, $\ket{y}$ and $\ket{z}$. The eigenvalues are the root of the characteristic cubic polynomial $H(\lambda)=\Delta^2\epsilon + (\Delta^2 + \Omega^2) \lambda - \epsilon \lambda^2 - \lambda^3$ and are even functions with respect to $\Delta$ as can be seen by the leading order expansion for $\Delta\to 0$
+\begin{align}
+    \omega_x =& -\frac{\epsilon}{\Omega^2} \Delta^2 + \mathcal{O}(\Delta^4), \nonumber \\
+    \omega_y =& \frac 12 (-\epsilon + \tilde\Omega) - \frac{(\epsilon + \tilde\Omega)}{-\epsilon^2-4\Omega^2+\epsilon\tilde\Omega} \Delta^2 + \mathcal{O}(\Delta^4), \label{eq:exp} \\
+    \omega_z =& \frac 12 (-\epsilon - \tilde\Omega) + \frac{(\epsilon - \tilde\Omega)}{\epsilon^2+4\Omega^2+\epsilon\tilde\Omega} \Delta^2 + \mathcal{O}(\Delta^4), \nonumber
+\end{align}
+where $\tilde\Omega=\sqrt{\Omega^2+\epsilon^2}$
+The energy differences $\hbar\omega_{xy}$, $\hbar\omega_{zy}$ and $\hbar\omega_{zx}$ are only quadratically sensitive to $\Delta$ for $\Delta\ll\Omega$~\footnote{The energies are quadratic in $\Delta$ for $\Delta\ll\Omega$, and linear for $\Delta\gg\Omega$ with a slope of \SI{7}{MHz/mT}.} so that detuning fluctuations $\delta \Delta$ are suppressed to first order, making these a trio of synthetic clock states.
+
+
+We focused on the $zx$ transition since the curvature of $\omega_x$ and $\omega_z$ has the same sign for $\epsilon < \tilde \Omega$ (\refeq{eq:exp}).
+Since the quadratic term changes curvature it can be made arbitrarily small.
+However, this cancellation does not take place when we consider the dependence of $\epsilon$ on $\Delta$ from the Breit-Rabi expression.
+
+
+
+
+
+The energy differences $\hbar\omega_{xy}$, $\hbar\omega_{zy}$ and $\hbar\omega_{zx}$ are only quadratically sensitive to $\Delta$ for $\Delta\ll\Omega$~\footnote{The energies are quadratic in $\Delta$ for $\Delta\ll\Omega$, and linear for $\Delta\gg\Omega$ with a slope of \SI{7}{MHz/mT}.} so that detuning fluctuations $\delta \Delta$ are suppressed to first order, making these a trio of synthetic clock states.
+
+At an optimal $\Omega$, $\omega_{zx}$ depends quartically on $\Delta$~\cite{xu_coherence-protected_2012,rabl_strong_2009}. For $\Delta \gg \Omega$ the $\xyz$ states adiabatically connect to the corresponding $\ket{m_F=1,0,-1}$, states (\reffig{fig:1}b).
+As $\Omega\rightarrow 0^+$ and for $\Delta=0$, the $\xyz$ states continuously approach the $\XYZ$ states familiar from quantum chemistry~\cite{cooper_reaching_2013}.
+In contrast, as $\Omega\to\infty$ they become eigenstates of the $\hat F_x$ operator: $\ket{y,x,z} \to \ket{m_x=+1,0,-1}$.
+Unlike for the $m_F$ basis, an oscillatory magnetic field can drive transitions between all pairs of the $\xyz$ states with non-zero transition matrix elements (see Appendix~\ref{app:xyz} for more details).
+
+
+
+\textit{The $\xyz$ dressed basis}
+\label{app:xyz}
+
+The corresponding (non-normalized) eigenvectors are linear combinations of the $m_F$ basis states:
+\begin{align}
+    \ket x =& \ket{-1} + \ket{1}, \nonumber \\
+    \ket y =& \ket{-1} -\frac{\epsilon + \tilde\Omega}{\sqrt 2 \Omega} \ket 0 + \ket 1, \\
+    \ket z =& \ket{-1} -\frac{\epsilon - \tilde\Omega}{\sqrt 2 \Omega} \ket 0 + \ket 1. \nonumber
+\end{align}
+
+We measured the above decomposition of the $\xyz$ states to $m_F$ states using a projective measurement by abruptly turning off the dressing field $\Omega$ (see \reffig{fig:s1}).
+\begin{figure*}[ht]
+    \centering
+    \includegraphics[]{Figures/Chapter6/figS11}
+    \caption[State decomposition of the $\xyz$ states]{Decomposition of the $\xyz$ states on the $m_F$ basis for $\Omega/2\pi=\SI{145(1)}{kHz}$
+    The $\ket{m_F=-1,0,1}$ states correspond to blue, orange, gray respectively.}
+    \label{fig:s1}
+\end{figure*}
+\begin{figure*}[ht]
+    \centering
+    \includegraphics[]{Figures/Chapter6/figS12}
+    \caption[Transition matrix elements over $\Omega$ and $\Delta$.]{Transition matrix elements over $\Omega$ and $\Delta$.
+    There is an assymetry between coupling on the blue and red side of the resonance that corresponds to the counter- and co-rotating terms $\hat F_-$ and $\hat F_+$.}
+    \label{fig:s12}
+\end{figure*}
+
+
+For $\Delta=0$ and small coupling $\Omega / \epsilon \to 0$ with regard to the quadratic shift the $\ket y$ and $\ket x$ become symmetric and antisymmetric superpositions of the $\ket{m_F=-1, 1}$ states while $\ket z$ is predominantly composed of $\ket 0$
+\begin{align}
+    \ket x &= \ket{1} - \ket{-1}, \nonumber \\
+    \ket y &= \ket{1} + \ket{-1} + \frac{\Omega}{\epsilon}\ket 0, \\
+    \ket z &= \frac{\Omega}{\epsilon}(\ket{1} + \ket{-1}) -\ket 0. \nonumber
+\end{align}
+On the other hand, when $\Omega\to\infty$ they are independent of the driving field amplitude and continuously approach the eigenstates of the $\hat F_x$ operator
+\begin{align}
+    \ket x &= \ket{1} - \ket{-1}, \nonumber \\
+    \ket y &= \ket{1} + \sqrt 2 \ket 0 + \ket{-1}, \\
+    \ket y &= \ket{1} - \sqrt 2 \ket 0 + \ket{-1}. \nonumber
+\end{align}
+The states adiabatically map to the $\ket{m_F}$ states for $\Delta \gg \Omega$ as shown in \reffig{fig:s1}.
+For $\Delta/2\pi > \SI{200}{kHz}$ the $\xyz$ states are not yet fully deloaded to a single $m_F$ state since the population in other $m_F$ states is not negligible.
+$\ket z$ maps to $\ket 1$ ($\ket{-1}$) for positive (negative) detuning; $\ket y$ maps in the exact opposite way to $\ket z$; and $\ket x$ always maps to $\ket 0$.
+For large enough $\Delta$ the $zx$ and $xy$ transitions become degenerate and the system resembles an $F=1$ ground state at low magnetic field.
+\begin{figure*}[ht]
+    \centering
+    \includegraphics[]{Figures/Chapter6/figS13}
+    \caption{Left: The optimum response (solid) of the $zx$ transition to detuning fluctuations allowing for finite $\Delta$ compared to $\Delta=0$ (dashed).
+    Right: The values of $\Delta$ that correspond to the minimum derivative of $\omega_{zx}$.}
+    \label{fig:sopt}
+\end{figure*}
+\begin{figure*}[ht]
+    \centering
+    \includegraphics[]{Figures/Chapter6/figS2}
+    \caption[]{Characteristic spectroscopy curves for the $zx$ (left) and $zy$ (middle) transitions.
+    Two symmetric ARPs (right) define the resonant value of the magnetic field.
+    The width of the peak gets smaller as $\Delta$ gets closer to the resonant value.
+    Here $\Delta/2\pi=\SI{3}{kHz}$.}
+    \label{fig:s2}
+\end{figure*}
+
+
+
+
+
+
+
+\textit{Transition matrix elements}
+\label{app:me}
+The $\XYZ$ states transform under the application of the spin-1 operators as $\epsilon_{jkl}\hat F_j \ket k= i\hbar \ket l$, so that a resonant probe field can induce transitions between at least one pair of states, irrespectively of its polarization.
+
+
+The transition matrix elements between the $\xyz$ show a dependence on both $\Omega$ and $\Delta$ (see \reffig{fig:s12}).
+For $\Omega \ll \epsilon$ the matrix elements correspond to those of the $\ket{m_F}$ basis and $\langle x \vert \hat F_+ \vert y \rangle = 0$ as expected by angular momentum selection rules.
+When $\Omega$ and $\epsilon$ are comparable in magnitude al transition matrix elements are nonzero and the states can be coupled cyclically.
+As $\Omega \gg \epsilon$ the $\ket z$ and $\ket y$ states decouple and the system resembles an `undressed basis' following similar selection rules.
+
+
+
+
+
+
+\section{Experiment}
+
 We coupled the dressed states using a weaker probe field with strength $\Omega_p$, polarized along ${\bf e}_y$ with angular frequency $\omega+\omega_p$ (\reffig{fig:1}a).
 Using the rotating wave approximation (RWA) for the frame rotating at $\omega$ (valid when $\omega_0 \gg \Omega,\,\Omega_p,\,\omega_p$), the system is described by
 \begin{equation}
-    \hat{H} = \Delta\fz+\hbar\epsilon(\fz^2-\hat{\mathds{I}})+ \Omega \fx
-    + \Omega_p \left(\sin(\omega_p t) \fx + \cos(\omega_p t) \fy\right),
+    \hat{H} = \hbar\Delta\fz+\hbar\epsilon(\fz^2-\hat{\mathbb{1}})+ \hbar\Omega \fx
+    + \hbar\Omega_p \left(\sin(\omega_p t) \fx + \cos(\omega_p t) \fy\right),
     \label{eq:h}
 \end{equation}
-with detuning $\Delta=\omega-\omega_0$; quadratic Zeeman shift $\epsilon$; spin-1 angular momentum operators $\hat F_{x,y,z}$; and identity operator $\hat{\mathds I}$.  For $\Omega_p = 0$ the resulting eigenstates, denoted by $\ket{x}$, $\ket{y}$, and $\ket{z}$, are linear combinations of $\ket{m_F=0,\pm1}$.
+
 
 \begin{figure}[!!h]
     \centering
@@ -76,13 +178,10 @@ with detuning $\Delta=\omega-\omega_0$; quadratic Zeeman shift $\epsilon$; spin-
     The shading of the data points corresponds to the Rabi frequencies in \reffig{fig:3}.}
     \label{fig:2}
 \end{figure}
-The corresponding eigenvalues for $\Delta = 0$ are $\omega_x = 0$ and $\omega_{z,y} = -(\epsilon \pm \sqrt{4 \Omega^{2} + \epsilon^{2}})/2$.
-The energy differences $\hbar\omega_{xy}$, $\hbar\omega_{zy}$ and $\hbar\omega_{zx}$ are only quadratically sensitive to $\Delta$ for $\Delta\ll\Omega$~\footnote{The energies are quadratic in $\Delta$ for $\Delta\ll\Omega$, and linear for $\Delta\gg\Omega$ with a slope of \SI{7}{MHz/mT}.} so that detuning fluctuations $\delta \Delta$ are suppressed to first order, making these a trio of synthetic clock states.
-At an optimal $\Omega$, $\omega_{zx}$ depends quartically on $\Delta$~\cite{xu_coherence-protected_2012,rabl_strong_2009}.
-For $\Delta \gg \Omega$ the $\xyz$ states adiabatically connect to the corresponding $\ket{m_F=1,0,-1}$, states (\reffig{fig:1}b).
-As $\Omega\rightarrow 0^+$ and for $\Delta=0$, the $\xyz$ states continuously approach the $\XYZ$ states familiar from quantum chemistry.
-In contrast, as $\Omega\to\infty$ they become eigenstates of the $\hat F_x$ operator: $\ket{y,x,z} \to \ket{m_x=+1,0,-1}$.
-Unlike for the $m_F$ basis, an oscillatory magnetic field can drive transitions between all pairs of the $\xyz$ states with non-zero transition matrix elements (see Appendix~\ref{app:xyz} for more details).
+
+
+
+\section{System}
 
 Our BECs had $N\approx\num{5e4}$ atoms, and were held in a crossed dipole trap with trapping frequencies $(f_x,\, f_y,\, f_z) = (42(3),\, 34(2),\, 133(3))$\,Hz~\footnote{All uncertainties herein represent the uncorrelated combination of statistical and systematic uncertainties.}.
 The $B_0 \approx \SI{3.27}{mT}$ bias field lifted the ground state degeneracy, giving an $\omega_0/2\pi = \SI{22.9}{MHz}$ Larmor frequency, with a quadratic shift $\epsilon/2\pi=\SI{76.4}{kHz}$.
@@ -187,96 +286,6 @@ The effective quantization axis can be arbitrarily rotated so that the two syste
 Introducing a second coupling field shields the system from fluctuations of the first, a process which can be concatenated as needed.
 More broadly, synthetic clock states should prove generally useful in any situation where fluctuations of the coupling field can be made smaller than those of the environment.
 
-\textit{The $\xyz$ dressed basis}
-\label{app:xyz}
-The reduced Hamiltonian of Eq.~1 in the main text can be diagonalized analytically.
-The eigenvalues for $\Delta=0$ are $\omega_x = 0$, and $\omega_{z,y} = - \epsilon \pm \tilde\Omega$, where $\tilde\Omega = \sqrt{4 \Omega^2 + \epsilon^2}$ is a generalized Rabi frequency.
-The corresponding (non-normalized) eigenvectors are linear combinations of the $m_F$ basis states:
-\begin{align}
-    \ket x =& \ket{-1} + \ket{1}, \nonumber \\
-    \ket y =& \ket{-1} -\frac{\epsilon + \tilde\Omega}{\sqrt 2 \Omega} \ket 0 + \ket 1, \\
-    \ket z =& \ket{-1} -\frac{\epsilon - \tilde\Omega}{\sqrt 2 \Omega} \ket 0 + \ket 1. \nonumber
-\end{align}
-
-We measured the above decomposition of the $\xyz$ states to $m_F$ states using a projective measurement by abruptly turning off the dressing field $\Omega$ (see \reffig{fig:s1}).
-\begin{figure*}[ht]
-    \centering
-    \includegraphics[]{Figures/Chapter6/figS11}
-    \caption[State decomposition of the $\xyz$ states]{Decomposition of the $\xyz$ states on the $m_F$ basis for $\Omega/2\pi=\SI{145(1)}{kHz}$
-    The $\ket{m_F=-1,0,1}$ states correspond to blue, orange, gray respectively.}
-    \label{fig:s1}
-\end{figure*}
-\begin{figure*}[ht]
-    \centering
-    \includegraphics[]{Figures/Chapter6/figS12}
-    \caption[Transition matrix elements over $\Omega$ and $\Delta$.]{Transition matrix elements over $\Omega$ and $\Delta$.
-    There is an assymetry between coupling on the blue and red side of the resonance that corresponds to the counter- and co-rotating terms $\hat F_-$ and $\hat F_+$.}
-    \label{fig:s12}
-\end{figure*}
-
-
-For $\Delta=0$ and small coupling $\Omega / \epsilon \to 0$ with regard to the quadratic shift the $\ket y$ and $\ket x$ become symmetric and antisymmetric superpositions of the $\ket{m_F=-1, 1}$ states while $\ket z$ is predominantly composed of $\ket 0$
-\begin{align}
-    \ket x &= \ket{1} - \ket{-1}, \nonumber \\
-    \ket y &= \ket{1} + \ket{-1} + \frac{\Omega}{\epsilon}\ket 0, \\
-    \ket z &= \frac{\Omega}{\epsilon}(\ket{1} + \ket{-1}) -\ket 0. \nonumber
-\end{align}
-On the other hand, when $\Omega\to\infty$ they are independent of the driving field amplitude and continuously approach the eigenstates of the $\hat F_x$ operator
-\begin{align}
-    \ket x &= \ket{1} - \ket{-1}, \nonumber \\
-    \ket y &= \ket{1} + \sqrt 2 \ket 0 + \ket{-1}, \\
-    \ket y &= \ket{1} - \sqrt 2 \ket 0 + \ket{-1}. \nonumber
-\end{align}
-The states adiabatically map to the $\ket{m_F}$ states for $\Delta \gg \Omega$ as shown in \reffig{fig:s1}.
-For $\Delta/2\pi > \SI{200}{kHz}$ the $\xyz$ states are not yet fully deloaded to a single $m_F$ state since the population in other $m_F$ states is not negligible.
-$\ket z$ maps to $\ket 1$ ($\ket{-1}$) for positive (negative) detuning; $\ket y$ maps in the exact opposite way to $\ket z$; and $\ket x$ always maps to $\ket 0$.
-For large enough $\Delta$ the $zx$ and $xy$ transitions become degenerate and the system resembles an $F=1$ ground state at low magnetic field.
-\begin{figure*}[ht]
-    \centering
-    \includegraphics[]{Figures/Chapter6/figS13}
-    \caption{Left: The optimum response (solid) of the $zx$ transition to detuning fluctuations allowing for finite $\Delta$ compared to $\Delta=0$ (dashed).
-    Right: The values of $\Delta$ that correspond to the minimum derivative of $\omega_{zx}$.}
-    \label{fig:sopt}
-\end{figure*}
-\begin{figure*}[ht]
-    \centering
-    \includegraphics[]{Figures/Chapter6/figS2}
-    \caption[]{Characteristic spectroscopy curves for the $zx$ (left) and $zy$ (middle) transitions.
-    Two symmetric ARPs (right) define the resonant value of the magnetic field.
-    The width of the peak gets smaller as $\Delta$ gets closer to the resonant value.
-    Here $\Delta/2\pi=\SI{3}{kHz}$.}
-    \label{fig:s2}
-\end{figure*}
-
-
-
-
-\textit{Dependence on detuning}
-For nonzero values of the detuning $\Delta$, the eigenvalues are the root of the characteristic cubic polynomial $H(\lambda)=\Delta^2\epsilon + (\Delta^2 + \Omega^2) \lambda - \epsilon \lambda^2 - \lambda^3$.
-The eigenvalues are even functions with respect to $\Delta$ as can be seen by the leading order expansion for $\Delta\to 0$
-\begin{align}
-    \omega_x =& -\frac{\epsilon}{\Omega^2} \Delta^2 + \mathcal{O}(\Delta^4), \nonumber \\
-    \omega_y =& \frac 12 (-\epsilon + \tilde\Omega) - \frac{(\epsilon + \tilde\Omega)}{-\epsilon^2-4\Omega^2+\epsilon\tilde\Omega} \Delta^2 + \mathcal{O}(\Delta^4), \label{eq:exp} \\
-    \omega_z =& \frac 12 (-\epsilon - \tilde\Omega) + \frac{(\epsilon - \tilde\Omega)}{\epsilon^2+4\Omega^2+\epsilon\tilde\Omega} \Delta^2 + \mathcal{O}(\Delta^4). \nonumber
-\end{align}
-
-hence their resemblance to clock states.
-We focused on the $zx$ transition since the curvature of $\omega_x$ and $\omega_z$ has the same sign for $\epsilon < \tilde \Omega$ (\refeq{eq:exp}).
-Since the quadratic term changes curvature it can be made arbitrarily small.
-However, this cancellation does not take place when we consider the dependence of $\epsilon$ on $\Delta$ from the Breit-Rabi expression.
-
-
-
-
-\textit{Transition matrix elements}
-\label{app:me}
-The $\XYZ$ states transform under the application of the spin-1 operators as $\epsilon_{jkl}\hat F_j \ket k= i\hbar \ket l$, so that a resonant probe field can induce transitions between at least one pair of states, irrespectively of its polarization.
-
-
-The transition matrix elements between the $\xyz$ show a dependence on both $\Omega$ and $\Delta$ (see \reffig{fig:s12}).
-For $\Omega \ll \epsilon$ the matrix elements correspond to those of the $\ket{m_F}$ basis and $\langle x \vert \hat F_+ \vert y \rangle = 0$ as expected by angular momentum selection rules.
-When $\Omega$ and $\epsilon$ are comparable in magnitude al transition matrix elements are nonzero and the states can be coupled cyclically.
-As $\Omega \gg \epsilon$ the $\ket z$ and $\ket y$ states decouple and the system resembles an `undressed basis' following similar selection rules.
 
 
 \textit{Optimal response to noise}
