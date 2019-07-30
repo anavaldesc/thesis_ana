@@ -39,10 +39,25 @@ Dirac points occur in band structures when there is inversion ($\mathcal{P}$) an
 
 Something about quantum spin Hall effect and spin orbit coupling?
 
+\subsection{A physical interpretation of the Chern number}
+
+Consider a generic system that is described by the Hamiltonian
+
+\begin{equation}
+	\hat H =\left(\frac{\mathbf{p}^2}{2m}+\hat{V}({\mathbf{r}})\right)\hat{\mathbb{1}} + \mathbf{\Omega}(\mathbf{r})\cdot\hat{\mathbf{F}}
+	\label{eq:generic_topologic_Hamiltonian} 
+\end{equation}
+%
+where the vector $\mathbf{\Omega}(\mathbf r)=(\Omega_x(\r), \Omega_y(\r), \Omega_z(\r))$ describes a momentum dependent `magnetic field' or coupling between internal states and $\hat{\mathbf{F}}=(\fx, \fy, \fz)$. The eigenstates of~\ref{eq:generic_topologic_Hamiltonian} take the form
+%
+\begin{equation}
+	\ket{\psi_n(\r)}=\sum_{i}a_{i,n}(\k)\ket{i,\Omega(\r)}
+	\label{eq:generic_wavefunction}	
+\end{equation}
+
 \section{Macroscopic effects of topology}
 \subsection{Edge states}
 \subsection{Topological pumping}
-
 
 Topological order can be found in a wide range of physical systems, from atmospheric waves~\cite{delplace_topological_2017} and photonic materials~\cite{ozawa_topological_2019} to optomechanic~\cite{peano_topological_2015}, acoustic~\cite{yang_topological_2015} and atomic systems~\cite{cooper_topological_2018}. These topological effects are quantified in terms of integer valued invariants, such as the Chern number, applicable to the quantum Hall effect~\cite{thouless_quantized_1982,haldane_model_1988}, or the $\mathbb{Z}_2$ invariant suitable for topological insulators~\cite{kane_$z_2$_2005}. Here we engineered Rashba~\cite{noauthor_realization_nodate} spin-orbit coupling for a cold atomic gas giving non-trivial topology, yet without any lattice potential. We validated our procedure by spectroscopically measuring the full dispersion relation, and located the expected single Dirac point.  We then used matter-wave interferometry to measure the geometry underlying the dispersion relation, from which we obtained the topological index.  In contrast with crystalline materials, where topological indices take on integer values, our continuum system reveals a Chern number of 1/2.
 
