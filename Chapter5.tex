@@ -25,7 +25,19 @@ In this Chapter I will discuss the Fourier transform spectroscopy technique. Fir
 
 \section{Operating principle of Fourier spectroscopy}
 \label{sec:fs-theory}
-
+%
+\begin{figure*}[!ht]
+	\begin{center}
+		\includegraphics{Figures/Chapter5/Fig1.pdf}
+		\caption
+		{
+			{\bf a.} Eigenenergies of a three-level system described by $\hat{H}'(\Omega_1,\Omega_2,\Omega_3)$. 
+			{\bf b.} The system is prepared in $\ket{\psi_2}$ and subjected to $\hat{H}'$ at time $t_i$. The three panels show the occupation probabilities of the states $\ket{\psi_1}$ (blue), $\ket{\psi_2}$ (black), and $\ket{\psi_3}$ (red) in the measurement basis, for evolution times up to $t_f$. 
+			{\bf c.} Power spectral density of the occupation probabilities from panel b. The three peaks in the Fourier spectra correspond to the energy differences present in panel a.
+		\label{fig:Figure1}}
+	\end{center}
+\end{figure*}
+%
 We focus on a system where we can measure the occupation probabilities of a set of orthonormal states $\{\ket{\psi_i}\}$ that fully span the accessible Hilbert space of the system. We then consider the time evolution of an arbitrary initial state $\ket{\Psi_0}=\sum\limits_{i}a_i\ket{\psi_i}$ as governed by a Hamiltonian $\hat{H}'(\{\Omega_i \})$ and observe the occupation probabilities of the $\{\ket{\psi_i}\}$ states of the measurement basis as a function of time. When $\hat{H}'$ is applied, the evolution of the initial state is $\ket{\Psi(t)}=\sum\limits_{i,j}a_ic_{i,j}e^{-iE'_jt/\hbar}\ket{\psi'_j}$, where $E'_j$ and $\ket{\psi'_j}$ are the eigenenergies and eigenstates of $\hat{H}'$, and $c_{i,j}(t)=\braket{\psi_i}{\psi'_j}$. The probability 
 %
 \begin{align}
@@ -56,44 +68,30 @@ E_1 & 0 & 0  \\
 \end{pmatrix},
 \end{equation}
 %
-where we measure the occupation probability as a function of time for each of the $\{\ket{\psi_1}, \ket{\psi_2},\ket{\psi_3}\}$ states. The three eigenenergies $E'_i=hf_i$ that result from diagonalizing $\hat{H}'$are displayed in figure~\ref{fig:Figure1}(a). The three energy differences $hf_{jj'}$ between the levels determine the oscillation frequencies of the occupation probabilities, as can be seen in figure~\ref{fig:Figure1}(b). Finally, a plot of the power spectral densities (PSD) in figure~\ref{fig:Figure1}(c) shows three peaks at frequencies corresponding to the three relative energies of $\hat{H}'$. 
-
-
-\begin{figure*}[ht]
-	\begin{center}
-		\includegraphics{Figures/Chapter5/Fig1.pdf}
-		\caption
-		{
-			{\bf a)} Eigenenergies of a three-level system described by $\hat{H}'(\Omega_1,\Omega_2,\Omega_3)$. 
-			{\bf b)} The system is prepared in $\ket{\psi_2}$ and subjected to $\hat{H}'$ at time $t_i$. The three panels show the occupation probabilities of the states $\ket{\psi_1}$ (blue), $\ket{\psi_2}$ (black), and $\ket{\psi_3}$ (red) in the measurement basis, for evolution times up to $t_f$. 
-			{\bf c)} Power spectral density of the occupation probabilities from b). The three peaks in the Fourier spectra correspond to the energy differences present in a).
-		\label{fig:Figure1}}
-	\end{center}
-\end{figure*}
-
-
+where we measure the occupation probability as a function of time for each of the $\{\ket{\psi_1}, \ket{\psi_2},\ket{\psi_3}\}$ states. The three eigenenergies $E'_i=hf_i$ that result from diagonalizing $\hat{H}'$are displayed in figure~\ref{fig:Figure1}a. The three energy differences $hf_{jj'}$ between the levels determine the oscillation frequencies of the occupation probabilities, as can be seen in figure~\ref{fig:Figure1}b. Finally, a plot of the power spectral densities (PSD) in figure~\ref{fig:Figure1}c shows three peaks at frequencies corresponding to the three relative energies of $\hat{H}'$. 
+%
 \section{Measuring the dispersion of spin-orbit coupled BECs}
 \label{sec:fs-exp}
-
+%
 \subsection{Experimental procedure}
 
 % We applied the Fourier transform spectroscopy technique to measure the dispersion relation of BECs with SOC \note{I've probably introduced this concept already in a previous chapter}. 
 We followed the procedure described in Sec.~\ref{sec:making-becs} to produce $\Rb87$ BECs containing about $4\times 10^4$ atoms in the $5^2S_{1/2}$ electronic ground state, and in the $\ket{f=1,m_f=-1}$ hyperfine state. The BEC was confined in a crossed optical dipole trap formed by two $1064\nm$ beams propagating along $\ex+\ey$ and $\ey-\ex$, which gave trapping frequencies   $(\omega_x,\omega_y,\omega_z)/2\pi=(42(3),34(2),133(3))\Hz$. We broke the degeneracy of the three $m_F$ magnetic sub-levels by applying a $1.9893(3)\,$mT bias field along $\mathbf{e}_z$ that produces a $\omega_Z / 2\pi  = 14.000(2) \MHz$ Zeeman splitting, and a quadratic Zeeman shift $\epsilon$ that shifts the energy of $\ket{f=1,m_F=0}$ by $-h\times 28.45\, \kHz$. All of our experiments were performed with the system initialized in the $\ket{f=1,m_F=0}$ which we adiabatically prepared using ARP as described in~\ref{sec:arp}. Finally, we monitored and stabilized the magnetic field using partial transfer absorption imaging as described in~\ref{sec:ptai} by applying a pair of $\unit[250]{\mu s}$ microwave pulses, each of them detuned by $\pm \unit[2]{kHz}$ from the $\ket{f=1, m_F=0}\leftrightarrow\ket{f=2, mf=1}$ transition and then imaging the transfered population without any repumping light.  
 
 
-\begin{figure*}[bt]
+\begin{figure*}[!ht]
 	\begin{center}
 		\includegraphics{Figures/Chapter5/Fig2.pdf}
 		\caption
 		{
-			{\bf a)} Setup. A bias magnetic field $B_0\ez$, with $B_0=1.9893$\,mT splits the hyperfine energy levels of the $f=1$ manifold of $^{87}$Rb by $\omega_Z/2\pi=14$\,MHz. A pair of cross polarized Raman beams propagating along $\ex+\ey$ and $\ex-\ey$ couple the atoms' momentum and spin states. 
-			{\bf b)} The Raman frequencies are set to $\omega_A=\omega_L+\delta$ and $\omega_B=\omega_L+\omega_Z$. We add frequency sidebands to $\omega_B$, separated by $\pm \delta\omega$. The amplitude modulation from the interference between the multiple frequency components results in tunable SOC.
-			{\bf c)} SOC dispersion for Raman coupling strength $\Omega_0=12E_{\mathrm{L}}$ and $\Omega=0$, on four photon resonance.
+			{\bf a.} Setup. A bias magnetic field $B_0\ez$, with $B_0=1.9893$\,mT splits the hyperfine energy levels of the $f=1$ manifold of $^{87}$Rb by $\omega_Z/2\pi=14$\,MHz. A pair of cross polarized Raman beams propagating along $\ex+\ey$ and $\ex-\ey$ couple the atoms' momentum and spin states. 
+			{\bf b.} The Raman frequencies are set to $\omega_A=\omega_L+\delta$ and $\omega_B=\omega_L+\omega_Z$. We add frequency sidebands to $\omega_B$, separated by $\pm \delta\omega$. The amplitude modulation from the interference between the multiple frequency components results in tunable SOC.
+			{\bf c.} SOC dispersion for Raman coupling strength $\Omega_0=12E_{\mathrm{L}}$ and $\Omega=0$, on four photon resonance.
 		\label{fig:Figure2}}
 	\end{center}
 \end{figure*}
 
-We induced spin-orbit coupling using a pair of intersecting, cross polarized Raman laser beams propagating along $\mathbf{e}_x+\mathbf{e}_y$ and $\mathbf{e}_x-\mathbf{e}_y$, as shown in figure~\ref{fig:Figure2}(a) and (b). This beams have angular frequency $\omega_A=\omega_L+\delta$ and $\omega_B=\omega_L+\omega_Z$, where $2\delta$ is the, experimentally controllable, detuning from four photon resonance between $m_F=-1$ and $m_F=+1$. 
+We induced spin-orbit coupling using a pair of intersecting, cross polarized Raman laser beams propagating along $\mathbf{e}_x+\mathbf{e}_y$ and $\mathbf{e}_x-\mathbf{e}_y$, as shown in figure~\ref{fig:Figure2}a and b. This beams have angular frequency $\omega_A=\omega_L+\delta$ and $\omega_B=\omega_L+\omega_Z$, where $2\delta$ is the, experimentally controllable, detuning from four photon resonance between $m_F=-1$ and $m_F=+1$. 
 
 Our system was well described by the Hamiltonian including atom-light interaction along with the kinetic contribution
  
@@ -106,7 +104,7 @@ Our system was well described by the Hamiltonian including atom-light interactio
  %
 where $q$ is the quasimomentum, $\hat{F}_{x,y,z}$ are the spin-1 angular momentum matrices,  $\alpha=\hbar^2k_{\mathrm{L}}/m$ is the SOC strength, and $\Omega_{\mathrm{R}}$ is the Raman coupling strength, proportional to the Raman laser intensity. The Raman field coupled  $\ket{m_F=0,\, q=q_x}$ to $\ket{m_F=\pm1,\, q=q_x\mp 2k_{\mathrm{L}}}$, generating a spin change of $\Delta m_F=\pm1$ and imparting a $\mp 2k_{\mathrm{L}}$ momentum. The eigenstates of $\hat{H}_{\mathrm{SOC}}$ are linear combinations of these states and $\ket{m_F=0,\,q=q_x}$, and the set $\{\ket{m_F,q}\}$ constituted the measurement basis for Fourier transform spectroscopy.
 
-Figure \ref{fig:Figure2}(c) shows a typical band structure of our spin-1 SOC system as a function of quasimomentum for a large and negative quadratic Zeeman shift $-\epsilon>4E_{\mathrm{L}}$. In this parameter regime the ground state band has a nearly harmonic dispersion with an effective mass $m^{*} = \hbar^2[d^2E(k_x)/d^2x]^{-1}$, only slightly different from that of a free atom. 
+Figure \ref{fig:Figure2}c shows a typical band structure of our spin-1 SOC system as a function of quasimomentum for a large and negative quadratic Zeeman shift $-\epsilon>4E_{\mathrm{L}}$. In this parameter regime the ground state band has a nearly harmonic dispersion with an effective mass $m^{*} = \hbar^2[d^2E(k_x)/d^2x]^{-1}$, only slightly different from that of a free atom. 
 
 
 \subsection{Tunable SOC}
@@ -117,9 +115,9 @@ We engineered a highly tunable dispersion relation in which we can independently
 		\includegraphics{Figures/Chapter5/Fig3.pdf}
 		\caption
 		{
-			{\bf a)} Floquet quasi-energies of a three level Hamiltonian with SOC and time periodic coupling strength. The quasi-energies are grouped into manifolds consisting of three levels that get repeated with a periodicity equal to $\hbar\delta\omega$.
+			{\bf a.} Floquet quasi-energies of a three level Hamiltonian with SOC and time periodic coupling strength. The quasi-energies are grouped into manifolds consisting of three levels that get repeated with a periodicity equal to $\hbar\delta\omega$.
 %
-			{\bf b)} Energy differences of the Floquet quasi-energies. Each color represents the energy difference, separated by a fixed number of neighboring levels. When the number of neighboring levels is a multiple of 3, the energy differences are straight lines, a result of the periodic structure of the Floquet manifolds. 
+			{\bf b.} Energy differences of the Floquet quasi-energies. Each color represents the energy difference, separated by a fixed number of neighboring levels. When the number of neighboring levels is a multiple of 3, the energy differences are straight lines, a result of the periodic structure of the Floquet manifolds. 
 		\label{fig:Floquet}}
 	\end{center}
 \end{figure*}
@@ -135,7 +133,7 @@ so that $i\hbar\hat{U}^{\dag}\partial_t\hat{U}=\hbar\Omega_{\rm R}(t)\fx$. The t
 &\sin(z\sin\theta)= 2\sum_{n=0}^{\infty}J_{2n+1}(z)\sin((2n+1)\theta) \approx 0,
 \end{align*} 
 
-This approximation is valid for $\hbar\delta\omega > \vert\epsilon\vert+12E_{\rm{L}}$ and $\vert q_x\vert \leq 2\kl$ so that quasi-energy manifolds are well separated as in figure~\ref{fig:Floquet}(a). The Floquet Hamiltonian retained the form of equation~\ref{Eq:SOCone} with renormalized coefficients and an additional coupling term:
+This approximation is valid for $\hbar\delta\omega > \vert\epsilon\vert+12E_{\rm{L}}$ and $\vert q_x\vert \leq 2\kl$ so that quasi-energy manifolds are well separated as in figure~\ref{fig:Floquet}a. The Floquet Hamiltonian retained the form of equation~\ref{Eq:SOCone} with renormalized coefficients and an additional coupling term:
 
 \begin{align}
 \begin{split}
@@ -149,7 +147,7 @@ where $\tilde{\alpha}= J_0(\Omega/\delta\omega)\alpha$, $\tilde{\Omega}=1/4(\eps
 
 \subsection{Application of Fourier spectroscopy}
 
-We used Fourier transform spectroscopy to measure the spectrum of the SOC Hamiltonian (equation~\ref{Eq:SOCeff}) for three coupling regimes: (i) $\Omega_0\neq0$ and $\Omega=0$, (ii)  $\Omega_0=0$ and $\Omega\neq0$ and (iii) $\Omega_0\neq0$ and $\Omega\neq0$. We turned on the Raman laser non-adiabatically, in approximately $1	\,\mu\mathrm{s}$. We let the system evolve subject to $\hat{H}_{\mathrm{SOC}}$ for up to $900\, \mathrm{\mu s}$, and  then turned off the laser while releasing the atoms from the optical dipole trap. As usual, we resolved the spin and momentum distribution using Stern-Gerlach and a $\unit[21]{\ms}$ TOF which allowed us to measure the fraction of atoms in each state of the measurement basis $\{\ket{m_F, q}\}$. The density of sampling points and the maximum evolution time were chosen so that the bandwidth of the Fourier transform was comparable to, or larger than, the highest frequency in the evolution of the system while maximizing resolution. Experimental decoherence, which arises from magnetic field noise and small magnetic field gradients present in our aparatus, was an additional constraint that becomes significant around 1 ms. 
+We used Fourier transform spectroscopy to measure the spectrum of the SOC Hamiltonian (equation~\ref{Eq:SOCeff}) for three coupling regimes: (i) $\Omega_0\neq0$ and $\Omega=0$, (ii)  $\Omega_0=0$ and $\Omega\neq0$ and (iii) $\Omega_0\neq0$ and $\Omega\neq0$. We turned on the Raman laser non-adiabatically, in approximately $1	\,\mu\mathrm{s}$. We let the system evolve subject to $\hat{H}_{\mathrm{SOC}}$ for up to $900\, \mathrm{\mu s}$, and  then turned off the laser while releasing the atoms from the optical dipole trap. As usual, we resolved the spin and momentum distribution using Stern-Gerlach and a $\unit[21]{\ms}$ TOF which allowed us to measure the fraction of atoms in each state of the measurement basis $\{\ket{m_F, q}\}$. The density of sampling points and the maximum evolution time were chosen so that the bandwidth of the Fourier transform was comparable to, or larger than, the highest frequency in the evolution of the system while maximizing resolution. Experimental decoherence, which arises from magnetic field noise and small magnetic field gradients present in our apparatus, was an additional constraint that becomes significant around 1 ms. 
 
 In order to map the full spin and momentum dependent band structure of $\hat{H}_{\mathrm{SOC}}$, we measured the time dependent occupation probabilities at a fixed Raman coupling strength and different values of Raman detuning $\delta$, for the same initial state $\ket{m_F=0, q_x=0}$. This detuning corresponded to the Doppler shift experienced by atoms moving relative to a light source with quasimomentum $q_x/k_{\mathrm{L}}=\hbar\delta/(4E_{\mathrm{L}}$. We controlled the frequency and the detuning of the Raman beams using two acousto-optic modulators (AOMs), one of which is driven by up to three phase coherent frequencies. For each of the three coupling cases that we measured, we applied the Raman beams at detuning values within the interval $\pm 12 E_{\mathrm{L}}$ which corresponds to quasimomentum values $\pm 3k_{\mathrm{L}}$.
 
@@ -180,7 +178,7 @@ where we have used  $x'=(x+y)/\sqrt{2}$ and   $y'=(x-y)/\sqrt{2}$ to rotate the 
 Our trap had a small $3.4$\,Hz asymmetry and therefore there is some coupling of the motion along $\ex$ and $\ey$ which becomes more significant at larger values of effective mass. The sampling times for the measurements were small compared to the trap asymmetry and therefore we can locally approximate the motion of the atoms by simple harmonic function with a frequency along $\ex$ given by equation~\ref{Eq:meff}.
 
 Figure~\ref{fig:Figure4} shows the dipole oscillations along the $\mathbf{e}_{x}$ and $\mathbf{e}_{y}$ directions for the three different coupling regimes we explored, as well as the bare state motion. The resulting mass ratios for the three coupling regimes are $m/m^{*}=$  (i) $1.04(8)$, (ii) $0.71(7)$, and (iii) $0.62(4)$.
-\begin{figure*}[ht]
+\begin{figure*}[!ht]
 	\begin{center}
 		\includegraphics{Figures/Chapter5/Fig4.pdf}
 		\caption
@@ -188,25 +186,26 @@ Figure~\ref{fig:Figure4} shows the dipole oscillations along the $\mathbf{e}_{x}
 		\label{fig:Figure4}}
 	\end{center}
 \end{figure*}
-
+%
 \section{Measured dispersion}
-
-We mapped the band structure of SOC atoms for three different coupling regimes. Figure~\ref{fig:Figure5}(a) shows representative traces of the measured occupation probabilities for short evolution times along with fits to the unitary evolution given by $\hat{H}_{\mathrm{SOC}}$ with $\delta$, $\Omega_0$, and $\Omega$ as free parameters. The fit parameters agree well with independent microwave and Raman power calibrations. In the lower two panels, where the Raman coupling strength was periodically modulated, the occupation probabilities oscillate with more than three frequencies since the full description of the system was given by a Floquet quasi-energy spectrum. Figure~\ref{fig:Figure5}(b),(c) shows the occupation probabilities for the parameter regime (iii) for longer evolution times along with the PSD of the occupation probability of each spin state. 
-
 \begin{figure*}[htb]
 	\begin{center}
 		\includegraphics{Figures/Chapter5/Fig5.pdf}
 		\caption
-		{{\bf a)}
+		{{\bf a.}
 		Occupation probability for the three states in the measurement basis $\ket{m_f=-1, q=q_x+2\kl}$ (blue), $\ket{m_f=0,q=q_x}$ (black), and $\ket{m_f=+1,q=q_x-2\kl}$(red),  following unitary evolution under $\hat{H}_{\mathrm{SOC}}$ for times up to 100 $\mu s$ at different spin-orbit coupling regimes: (i) $\Omega_0=9.9 E_{\mathrm{L}}$, $\Omega=04$,  $\delta=5.8 E_{\mathrm{L}}$, (ii) $\Omega_0=0$, $\Omega=8.6\,E_{\mathrm{L}}$,  $\delta=-0.7\,E_{\mathrm{L}}$, $\delta\omega=\epsilon+12\,E_{\mathrm{L}}$, and (iii) $\Omega_0=1.5\,E_{\mathrm{L}}$, $\Omega=8.4\, E_{\mathrm{L}}$,  $\delta=-4.7\,E_{\mathrm{L}}$, $\delta\omega=\epsilon+17\,E_{\mathrm{L}}$.
-		{\bf b)} Occupation probability for long pulsing up to 800 $\mu$s for parameters as in (iii). 
-		{\bf c)} Power spectral density of the occupation probability. We subtract the mean value of each probability before taking the Fourier transform to remove peaks at $f=0$. The peaks in the PSD then correspond to the relative eigenenergies of $\hat{H}_{SOC}$.
+		{\bf b.} Occupation probability for long pulsing up to 800 $\mu$s for parameters as in (iii). 
+		{\bf c.} Power spectral density of the occupation probability. We subtract the mean value of each probability before taking the Fourier transform to remove peaks at $f=0$. The peaks in the PSD then correspond to the relative eigenenergies of $\hat{H}_{SOC}$.
 		}
 		\label{fig:Figure5}
 	\end{center}
 \end{figure*}
+%
+We mapped the band structure of SOC atoms for three different coupling regimes. Figure~\ref{fig:Figure5}a shows representative traces of the measured occupation probabilities for short evolution times along with fits to the unitary evolution given by $\hat{H}_{\mathrm{SOC}}$ with $\delta$, $\Omega_0$, and $\Omega$ as free parameters. The fit parameters agree well with independent microwave and Raman power calibrations. In the lower two panels, where the Raman coupling strength was periodically modulated, the occupation probabilities oscillate with more than three frequencies since the full description of the system was given by a Floquet quasi-energy spectrum. Figure~\ref{fig:Figure5}b,c shows the occupation probabilities for the parameter regime (iii) for longer evolution times along with the PSD of the occupation probability of each spin state. 
 
-\begin{figure}[ht]
+
+
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics{Figures/Chapter5/Fig6a.pdf}
 		\caption
@@ -215,15 +214,15 @@ We mapped the band structure of SOC atoms for three different coupling regimes. 
 			{ (Left)} $\Omega_0=9.9 E_{\mathrm{L}}$, $\Omega=0$,
 			{ (Center)} $\Omega_0=0$, $\Omega=8.6 E_{\mathrm{L}}$,  $\delta\omega=\epsilon+12 E_{\mathrm{L}}$, and
 			{ (Right)} $\Omega_0=4.9 E_{\mathrm{L}}$, $\Omega=8.4 E_{\mathrm{L}}$,  $\delta\omega=\epsilon+17 E_{\mathrm{L}}$. Each panel is normalized to peak amplitude to highlight small amplitude features in the PSD of the periodically driven SOC, and the highest value on the frequency axis corresponds to the FFT bandwidth..
-			{\bf b)} Spin-dependent SOC dispersion for three different coupling regimes. We combine the PSD of the occupation probability of the states $\ket{m_F=\pm 1, q_x=\mp 2k_{\mathrm{L}}}$, and shift each frequency by an amount proportional to the squared quasimomentum and the effective mass. The dashed lines are the calculated Floquet energies for the Hamiltonian using our calibration parameters. 
+			{\bf b.} Spin-dependent SOC dispersion for three different coupling regimes. We combine the PSD of the occupation probability of the states $\ket{m_F=\pm 1, q_x=\mp 2k_{\mathrm{L}}}$, and shift each frequency by an amount proportional to the squared quasimomentum and the effective mass. The dashed lines are the calculated Floquet energies for the Hamiltonian using our calibration parameters. 
 		}
 		\label{fig:Figure6a}
 	\end{center}
 \end{figure}
 
-We used a non-uniform fast Fourier transform algorithm (NUFFT) on a square window to obtain the power spectral density of the occupation probabilities since our data points were not always evenly spaced because of imperfect imaging shots. The heights of the peaks in the PSD are related to the magnitude of the overlap integrals between the initial state and the Raman dressed states. Figure~\ref{fig:Figure5}(c) shows the raw PSD of the time evolution of the system under $\hat{H}_{\mathrm{SOC}}$ for a given Raman coupling strength and detuning. We put together all the PSDs for the three coupling regimes in the spectra shown on the top three panels in figure~\ref{fig:Figure6a}. Each column corresponds to a different coupling regime and the colors represent the different spin states of the measurement basis. The spectra show that some overlap integrals vanish near $\delta=0$, which is manifested as missing peaks in the PSD. The periodic structure of the Floquet quasi-energy spectrum gives rise to peaks at constant frequencies of $\delta\omega$ and $2\delta\omega$ independently of the Raman detuning, and a structure that is symmetric about the frequencies $2\pi f_1=\delta\omega/2$ and $2\pi f_2=\delta\omega$. If you are interested in seeing another nice experiment where the Floquet quasienergy spectrum becomes important due to breaking of the RWA see~\cite{deng_observation_2015}.
+We used a non-uniform fast Fourier transform algorithm (NUFFT) on a square window to obtain the power spectral density of the occupation probabilities since our data points were not always evenly spaced because of imperfect imaging shots. The heights of the peaks in the PSD are related to the magnitude of the overlap integrals between the initial state and the Raman dressed states. Figure~\ref{fig:Figure5}c shows the raw PSD of the time evolution of the system under $\hat{H}_{\mathrm{SOC}}$ for a given Raman coupling strength and detuning. We put together all the PSDs for the three coupling regimes in the spectra shown on the top three panels in figure~\ref{fig:Figure6a}. Each column corresponds to a different coupling regime and the colors represent the different spin states of the measurement basis. The spectra show that some overlap integrals vanish near $\delta=0$, which is manifested as missing peaks in the PSD. The periodic structure of the Floquet quasi-energy spectrum gives rise to peaks at constant frequencies of $\delta\omega$ and $2\delta\omega$ independently of the Raman detuning, and a structure that is symmetric about the frequencies $2\pi f_1=\delta\omega/2$ and $2\pi f_2=\delta\omega$. If you are interested in seeing another nice experiment where the Floquet quasienergy spectrum becomes important due to breaking of the RWA see~\cite{deng_observation_2015}.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics{Figures/Chapter5/Fig6b.pdf}
 		\caption
@@ -236,20 +235,20 @@ We used a non-uniform fast Fourier transform algorithm (NUFFT) on a square windo
 
 We obtained the characteristic dispersion of a SOC system after adding a quadratic term to the PSD, proportional to the measured effective mass,  and after rescaling the detuning into recoil momentum units. We combined the PSD of the time evolution of the three $\ket{m_F}$ states to look at the spin dependence of the spectra. Figure \ref{fig:Figure6b} shows the measured dispersion relations as well as the Floquet quasi-energies calculated for the Hamiltonian parameters obtained from our calibrations. The spectral lines that can be resolved with our technique depend on the overlap integrals of the initial state with the target Hamiltonian eigenstates. Additional energies can be measured by repeating the experiment with different initial states. The spectral lines we were able to resolve are in good agreement with the calculated energies of the Hamiltonian. 
 
-\begin{figure*}[ht]
+\begin{figure*}[!ht]
 	\begin{center}
 		\includegraphics{Figures/Chapter5/Fig7.pdf}
 		\caption
-		{  {\bf (a)} Floquet quasi-energy spectrum of a SOC Hamiltonian with periodic coupling strength. The red line represents the eigenstate that has the largest overlap with the initial $\ket{m_F=0}$ state. The arrows indicate the energies of the states that have non-zero overlap with the initial state and can be measured with Fourier transform spectroscopy.
-		{\bf (b)} PSD of the occupation probability and numerically calculated energy differences between the levels indicated by the arrows on panel (a).
-		{\bf (c)} PSD shifted by a quadratic term $-\hbar^2 q^2_x/2m^*$. The red box indicates the region of interest where we can recover the SOC spectrum.
-		{\bf (d)} We invert the frequency axis and shift it by $\delta\omega$.   
+		{  {\bf a} Floquet quasi-energy spectrum of a SOC Hamiltonian with periodic coupling strength. The red line represents the eigenstate that has the largest overlap with the initial $\ket{m_F=0}$ state. The arrows indicate the energies of the states that have non-zero overlap with the initial state and can be measured with Fourier transform spectroscopy.
+		{\bf b} PSD of the occupation probability and numerically calculated energy differences between the levels indicated by the arrows on panel a.
+		{\bf c} PSD shifted by a quadratic term $-\hbar^2 q^2_x/2m^*$. The red box indicates the region of interest where we can recover the SOC spectrum.
+		{\bf d} We invert the frequency axis and shift it by $\delta\omega$.   
 		}
 		\label{fig:Figure7}
 	\end{center}
 \end{figure*}
 
-Finally, because it is not so trivial to visualize what we did to recover the dispersion for the periodically driven SOC cases, Figure \ref{fig:Figure7} illustrates in detail the steps that were taken. The red line in panel a) represents a level within a Floquet manifold that has the largest overlap integral with the initial $\ket{m_F=0, q=0}$ state. The peaks in the PSD correspond to energy differences between the marked level and the levels in neighboring Floquet manifolds pointed by the colored arrows. We show the theoretically computed energy differences on top of the measured PSD in panel b). The lowest frequency dominant peaks of the PSD correspond to energy differences with the adjacent lower Floquet manifold. To properly recover the SOC dispersion we need to shift the PSD by a negative quadratic term $-\hbar^2q_x^2/2m^{*}$ as we show on panel c). We finally invert the frequency axis and shift it by $\delta\omega$. Including the effective mass to reconstruct the spectrum of the time-independent SOC case, amounts to shifting the PSD by a positive quadratic term.
+Finally, because it is not so trivial to visualize what we did to recover the dispersion for the periodically driven SOC cases, Figure \ref{fig:Figure7} illustrates in detail the steps that were taken. The red line in panel a represents a level within a Floquet manifold that has the largest overlap integral with the initial $\ket{m_F=0, q=0}$ state. The peaks in the PSD correspond to energy differences between the marked level and the levels in neighboring Floquet manifolds pointed by the colored arrows. We show the theoretically computed energy differences on top of the measured PSD in panel b. The lowest frequency dominant peaks of the PSD correspond to energy differences with the adjacent lower Floquet manifold. To properly recover the SOC dispersion we need to shift the PSD by a negative quadratic term $-\hbar^2q_x^2/2m^{*}$ as we show on panel c. We finally invert the frequency axis and shift it by $\delta\omega$. Including the effective mass to reconstruct the spectrum of the time-independent SOC case, amounts to shifting the PSD by a positive quadratic term.
 
 \section*{Conclusion}
 
