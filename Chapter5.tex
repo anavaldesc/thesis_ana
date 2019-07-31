@@ -70,14 +70,12 @@ E_1 & 0 & 0  \\
 %
 where we measure the occupation probability as a function of time for each of the $\{\ket{\psi_1}, \ket{\psi_2},\ket{\psi_3}\}$ states. The three eigenenergies $E'_i=hf_i$ that result from diagonalizing $\hat{H}'$are displayed in figure~\ref{fig:Figure1}a. The three energy differences $hf_{jj'}$ between the levels determine the oscillation frequencies of the occupation probabilities, as can be seen in figure~\ref{fig:Figure1}b. Finally, a plot of the power spectral densities (PSD) in figure~\ref{fig:Figure1}c shows three peaks at frequencies corresponding to the three relative energies of $\hat{H}'$. 
 %
-\section{Measuring the dispersion of spin-orbit coupled BECs}
+\section{System}
 \label{sec:fs-exp}
 %
-\subsection{Experimental procedure}
 
 % We applied the Fourier transform spectroscopy technique to measure the dispersion relation of BECs with SOC \note{I've probably introduced this concept already in a previous chapter}. 
-We followed the procedure described in Sec.~\ref{sec:making-becs} to produce $\Rb87$ BECs containing about $4\times 10^4$ atoms in the $5^2S_{1/2}$ electronic ground state, and in the $\ket{f=1,m_f=-1}$ hyperfine state. The BEC was confined in a crossed optical dipole trap formed by two $1064\nm$ beams propagating along $\ex+\ey$ and $\ey-\ex$, which gave trapping frequencies   $(\omega_x,\omega_y,\omega_z)/2\pi=(42(3),34(2),133(3))\Hz$. We broke the degeneracy of the three $m_F$ magnetic sub-levels by applying a $1.9893(3)\,$mT bias field along $\mathbf{e}_z$ that produces a $\omega_Z / 2\pi  = 14.000(2) \MHz$ Zeeman splitting, and a quadratic Zeeman shift $\epsilon$ that shifts the energy of $\ket{f=1,m_F=0}$ by $-h\times 28.45\, \kHz$. All of our experiments were performed with the system initialized in the $\ket{f=1,m_F=0}$ which we adiabatically prepared using ARP as described in~\ref{sec:arp}. Finally, we monitored and stabilized the magnetic field using partial transfer absorption imaging as described in~\ref{sec:ptai} by applying a pair of $\unit[250]{\mu s}$ microwave pulses, each of them detuned by $\pm \unit[2]{kHz}$ from the $\ket{f=1, m_F=0}\leftrightarrow\ket{f=2, mf=1}$ transition and then imaging the transfered population without any repumping light.  
-
+All of our experiments started with BECs containing about $4\times 10^4$ atoms in the $\ket{f=1,m_f=-1}$ hyperfine state. The experiments described in Section~\ref{sec:application_of_fs} were performed in an optical dipole trap with frequencies $(\omega_x,\omega_y,\omega_z)/2\pi=(42(3),34(2),133(3))\Hz$. We later modified the trapping frequencies in the $xy$ plane to try to make them more symmetric for the experiments described in Section~\ref{sec:effective_mass}. We broke the degeneracy of the three $m_F$ magnetic sub-levels by applying a $1.9893(3)\,$mT bias field along $\mathbf{e}_z$ that produced a $\omega_Z / 2\pi  = 14.000(2) \MHz$ Zeeman splitting, and a quadratic Zeeman shift $\epsilon$ that shifted the energy of $\ket{f=1,m_F=0}$ by $-h\times 28.45\, \kHz$. We transfered atoms into the $\ket{f=1,m_F=0}$ state using ARP and then we monitored and stabilized the magnetic field using partial transfer absorption imaging as described in~\ref{sec:ptai} by applying a pair of $\unit[250]{\mu s}$ microwave pulses, each of them detuned by $\pm \unit[2]{kHz}$ from the $\ket{f=1, m_F=0}\leftrightarrow\ket{f=2, mf=1}$.
 
 \begin{figure*}[!ht]
 	\begin{center}
@@ -102,13 +100,12 @@ Our system was well described by the Hamiltonian including atom-light interactio
  \end{split}
  \end{align}
  %
-where $q$ is the quasimomentum, $\hat{F}_{x,y,z}$ are the spin-1 angular momentum matrices,  $\alpha=\hbar^2k_{\mathrm{L}}/m$ is the SOC strength, and $\Omega_{\mathrm{R}}$ is the Raman coupling strength, proportional to the Raman laser intensity. The Raman field coupled  $\ket{m_F=0,\, q=q_x}$ to $\ket{m_F=\pm1,\, q=q_x\mp 2k_{\mathrm{L}}}$, generating a spin change of $\Delta m_F=\pm1$ and imparting a $\mp 2k_{\mathrm{L}}$ momentum. The eigenstates of $\hat{H}_{\mathrm{SOC}}$ are linear combinations of these states and $\ket{m_F=0,\,q=q_x}$, and the set $\{\ket{m_F,q}\}$ constituted the measurement basis for Fourier transform spectroscopy.
+where $q$ is the quasimomentum, $\hat{F}_{x,y,z}$ are the spin-1 angular momentum matrices,  $\alpha=\hbar^2k_{\mathrm{L}}/m$ is the SOC strength, and $\Omega_{\mathrm{R}}$ is the Raman coupling strength, proportional to the Raman laser intensity. The Raman field coupled $\ket{m_F=0,\, q=q_x}$ to $\ket{m_F=\pm1,\, q=q_x\mp 2k_{\mathrm{L}}}$, generating a spin change of $\Delta m_F=\pm1$ and imparting a $\mp 2k_{\mathrm{L}}$ momentum. The eigenstates of $\hat{H}_{\mathrm{SOC}}$ are linear combinations of these states and $\ket{m_F=0,\,q=q_x}$, and the set $\{\ket{m_F,q}\}$ constituted the measurement basis for Fourier transform spectroscopy.
 
 Figure \ref{fig:Figure2}c shows a typical band structure of our spin-1 SOC system as a function of quasimomentum for a large and negative quadratic Zeeman shift $-\epsilon>4E_{\mathrm{L}}$. In this parameter regime the ground state band has a nearly harmonic dispersion with an effective mass $m^{*} = \hbar^2[d^2E(k_x)/d^2x]^{-1}$, only slightly different from that of a free atom. 
 
-
 \subsection{Tunable SOC}
-We engineered a highly tunable dispersion relation in which we can independently control the size of the gap at $q_x=0$ as well as the SOC strength $\alpha$ by adding frequency sidebands to one of the Raman beams. The state of the system can change from $\ket{m_F=-1,\,q=q_x+2k_{\rm{L}}}$ to  $\ket{m_F=1,\,q=q_x-2k_{\mathrm{L}}}$ by absorbing a red detuned photon first followed by a blue detuned photon and vice versa, in a similar way to the M\o lmer-S\o rensen entangling gate in trapped ion systems \cite{sorensen_entanglement_2000}. When we set the angular frequencies of the sidebands to $\omega=\omega_{\mathrm{A}}+\omega_Z \pm \delta\omega$, the Hamiltonian (equation~\ref{Eq:SOCone}) acquired a time-dependent coupling $\Omega_{\mathrm{R}}(t)=\Omega_0 + \Omega\cos(\delta\omega t)$. This periodically driven system is well described by Floquet theory \cite{floquet_sur_1883} which was introduced in Chapter ???. Figure~\ref{fig:Floquet} shows the spectrum of Floquet quasi-energies for a system described by~\ref{Eq:SOCone} where $\Omega_{\rm R}$ oscillates with angular frequency $\delta\omega$. 
+We engineered a highly tunable dispersion relation in which we can independently control the size of the gap at $q_x=0$ as well as the SOC strength $\alpha$ by adding frequency sidebands to one of the Raman beams. The state of the system can change from $\ket{m_F=-1,\,q=q_x+2k_{\rm{L}}}$ to  $\ket{m_F=1,\,q=q_x-2k_{\mathrm{L}}}$ by absorbing a red detuned photon first followed by a blue detuned photon and vice versa, in a similar way to the M\o lmer-S\o rensen entangling gate in trapped ion systems \cite{sorensen_entanglement_2000}. When we set the angular frequencies of the sidebands to $\omega=\omega_{\mathrm{A}}+\omega_Z \pm \delta\omega$, the Hamiltonian (Equation~\ref{Eq:SOCone}) acquired a time-dependent coupling $\Omega_{\mathrm{R}}(t)=\Omega_0 + \Omega\cos(\delta\omega t)$. This periodically driven system is well described by Floquet theory \cite{floquet_sur_1883} which was introduced in Chapter ???. Figure~\ref{fig:Floquet} shows the spectrum of Floquet quasi-energies for a system described by~\ref{Eq:SOCone} where $\Omega_{\rm R}$ oscillates with angular frequency $\delta\omega$. 
 %
 \begin{figure*}[htb]
 	\begin{center}
@@ -130,10 +127,10 @@ We defined an effective, time-independent Hamiltonian $\hat{H}_{Fl}$ that descri
 so that $i\hbar\hat{U}^{\dag}\partial_t\hat{U}=\hbar\Omega_{\rm R}(t)\fx$. The transformed Hamiltonian $\hat{H}'(t)$ has terms proportional to $\sin(\Omega/\delta\omega\sin(\delta\omega t))$, $\sin^2(\Omega/\delta\omega\sin(\delta\omega t))$, $\cos(\Omega/\delta\omega\sin(\delta\omega t))$ and $\cos^2(\Omega/\delta\omega\sin(\delta\omega t))$ which we simplified using the Jacobi-Anger expansion for large values of $\theta$
 \begin{align*}
 &\cos(z\sin\theta)= J_0(z) + 2\sum_{n=1}^{\infty}J_{2n}(z)\cos(2n\theta) \approx J_0(z) \\
-&\sin(z\sin\theta)= 2\sum_{n=0}^{\infty}J_{2n+1}(z)\sin((2n+1)\theta) \approx 0,
+&\sin(z\sin\theta)= 2\sum_{n=0}^{\infty}J_{2n+1}(z)\sin((2n+1)\theta) \approx 0.
 \end{align*} 
 
-This approximation is valid for $\hbar\delta\omega > \vert\epsilon\vert+12E_{\rm{L}}$ and $\vert q_x\vert \leq 2\kl$ so that quasi-energy manifolds are well separated as in figure~\ref{fig:Floquet}a. The Floquet Hamiltonian retained the form of equation~\ref{Eq:SOCone} with renormalized coefficients and an additional coupling term:
+This approximation is valid for $\hbar\delta\omega > \vert\epsilon\vert+12E_{\rm{L}}$ and $\vert q_x\vert \leq 2\kl$ so that quasi-energy manifolds are well separated as in figure~\ref{fig:Floquet}a. The Floquet Hamiltonian retained the form of Equation~\ref{Eq:SOCone} with renormalized coefficients and an additional coupling term:
 
 \begin{align}
 \begin{split}
@@ -145,9 +142,10 @@ This approximation is valid for $\hbar\delta\omega > \vert\epsilon\vert+12E_{\rm
 where $\tilde{\alpha}= J_0(\Omega/\delta\omega)\alpha$, $\tilde{\Omega}=1/4(\epsilon+4E_{\mathrm{L}}) [J_0(2\Omega/\delta\omega)-1]$, $\tilde{\delta}=J_0(\Omega/\delta\omega)\delta$, and $\tilde{\epsilon}= 1/4(4E_{\mathrm{L}}-\epsilon) -
 1/4(4E_{\mathrm{L}} + 3 \epsilon) J_0( 2\Omega/\delta\omega)$.  $J_0$ is the the zero order Bessel function of the first kind, and $\hat{F}_{xz}$ is the $\hat{\lambda}_4$ Gell-Mann matrix that directly couples $\ket{m_f=-1, q=q_x+2k_{\mathrm{L}}}$ and $\ket{m_f=+1, q=q_x-2k_{\mathrm{L}}}$ states. The experimentally tunable parameters $\delta\omega$, $\Omega$ and $\Omega_0$ can be used to tune the SOC dispersion.
 
-\subsection{Application of Fourier spectroscopy}
+\section{Application of Fourier spectroscopy}
+\label{sec:application_of_fs}
 
-We used Fourier transform spectroscopy to measure the spectrum of the SOC Hamiltonian (equation~\ref{Eq:SOCeff}) for three coupling regimes: (i) $\Omega_0\neq0$ and $\Omega=0$, (ii)  $\Omega_0=0$ and $\Omega\neq0$ and (iii) $\Omega_0\neq0$ and $\Omega\neq0$. We turned on the Raman laser non-adiabatically, in approximately $1	\,\mu\mathrm{s}$. We let the system evolve subject to $\hat{H}_{\mathrm{SOC}}$ for up to $900\, \mathrm{\mu s}$, and  then turned off the laser while releasing the atoms from the optical dipole trap. As usual, we resolved the spin and momentum distribution using Stern-Gerlach and a $\unit[21]{\ms}$ TOF which allowed us to measure the fraction of atoms in each state of the measurement basis $\{\ket{m_F, q}\}$. The density of sampling points and the maximum evolution time were chosen so that the bandwidth of the Fourier transform was comparable to, or larger than, the highest frequency in the evolution of the system while maximizing resolution. Experimental decoherence, which arises from magnetic field noise and small magnetic field gradients present in our apparatus, was an additional constraint that becomes significant around 1 ms. 
+We used Fourier transform spectroscopy to measure the spectrum of the SOC Hamiltonian (Equation~\ref{Eq:SOCeff}) for three coupling regimes: (i) $\Omega_0\neq0$ and $\Omega=0$, (ii)  $\Omega_0=0$ and $\Omega\neq0$ and (iii) $\Omega_0\neq0$ and $\Omega\neq0$. We turned on the Raman laser non-adiabatically, in approximately $1	\,\mu\mathrm{s}$. We let the system evolve subject to $\hat{H}_{\mathrm{SOC}}$ for up to $900\, \mathrm{\mu s}$, and  then turned off the laser while releasing the atoms from the optical dipole trap. As usual, we resolved the spin and momentum distribution using Stern-Gerlach and a $\unit[21]{\ms}$ TOF which allowed us to measure the fraction of atoms in each state of the measurement basis $\{\ket{m_F, q}\}$. The density of sampling points and the maximum evolution time were chosen so that the bandwidth of the Fourier transform was comparable to, or larger than, the highest frequency in the evolution of the system while maximizing resolution. Experimental decoherence, which arises from magnetic field noise and small magnetic field gradients present in our apparatus, was an additional constraint that becomes significant around 1 ms. 
 
 In order to map the full spin and momentum dependent band structure of $\hat{H}_{\mathrm{SOC}}$, we measured the time dependent occupation probabilities at a fixed Raman coupling strength and different values of Raman detuning $\delta$, for the same initial state $\ket{m_F=0, q_x=0}$. This detuning corresponded to the Doppler shift experienced by atoms moving relative to a light source with quasimomentum $q_x/k_{\mathrm{L}}=\hbar\delta/(4E_{\mathrm{L}}$. We controlled the frequency and the detuning of the Raman beams using two acousto-optic modulators (AOMs), one of which is driven by up to three phase coherent frequencies. For each of the three coupling cases that we measured, we applied the Raman beams at detuning values within the interval $\pm 12 E_{\mathrm{L}}$ which corresponds to quasimomentum values $\pm 3k_{\mathrm{L}}$.
 
@@ -155,7 +153,8 @@ This approach of changing detuning rather than using atoms with non-zero quasimo
 
 % For $\hat{H}_{\mathrm{SOC}}$, momentum and detuning are equivalent up to a numerical factor, $\delta/E_{\mathrm{L}}=4q_x/k_{\mathrm{L}}$, since the detuning term $\delta\hat{F}_z$ and the momentum term $\alpha\hat{q}_x\hat{F}_z$ have the same effect in the relative energies. This relation follows from the Doppler shift of the light frequency experienced by atoms moving relative to a light source: a stationary BEC in the laboratory reference frame dressed by a detuned laser field is equivalent to a moving BEC and a resonant laser field.
 
-\subsection{Effective mass}
+\section{Effective mass}
+\label{sec:effective_mass}
 
 Fourier transform spectroscopy only gives access to the relative energies of a Hamiltonian. If we want to recover the absolute energies we need to have an additional energy reference. For this particular set of experiments we had a ground state with a nearly quadratic dispersion and we could measure its effective mass which allowed us to obtain such reference. 
 
@@ -175,7 +174,7 @@ where we have used  $x'=(x+y)/\sqrt{2}$ and   $y'=(x-y)/\sqrt{2}$ to rotate the 
 \label{Eq:meff}
 \end{equation}
 
-Our trap had a small $3.4$\,Hz asymmetry and therefore there is some coupling of the motion along $\ex$ and $\ey$ which becomes more significant at larger values of effective mass. The sampling times for the measurements were small compared to the trap asymmetry and therefore we can locally approximate the motion of the atoms by simple harmonic function with a frequency along $\ex$ given by equation~\ref{Eq:meff}.
+Our trap had a small $3.4$\,Hz asymmetry and therefore there is some coupling of the motion along $\ex$ and $\ey$ which becomes more significant at larger values of effective mass. The sampling times for the measurements were small compared to the trap asymmetry and therefore we can locally approximate the motion of the atoms by simple harmonic function with a frequency along $\ex$ given by Equation~\ref{Eq:meff}.
 
 Figure~\ref{fig:Figure4} shows the dipole oscillations along the $\mathbf{e}_{x}$ and $\mathbf{e}_{y}$ directions for the three different coupling regimes we explored, as well as the bare state motion. The resulting mass ratios for the three coupling regimes are $m/m^{*}=$  (i) $1.04(8)$, (ii) $0.71(7)$, and (iii) $0.62(4)$.
 \begin{figure*}[!ht]
