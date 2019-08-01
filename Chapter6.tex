@@ -103,28 +103,22 @@ As $\Omega \gg \epsilon$ the $\ket z$ and $\ket y$ states decouple and the syste
     \label{fig:s12}
 \end{figure*}
 
-
-
-
-
-
-
-
-
-
 \section{Experiment}
 
-We implemented CCD to BECs with $N\approx\num{5e4}$ atoms. For all of the experiments described in this chapter the dipole trap had trapping frequencies of $(f_x,\, f_y,\, f_z) = (42(3),\, 34(2),\, 133(3))$\,Hz. The $B_0 \approx \SI{3.27}{mT}$ bias field lifted the ground state degeneracy, giving an $\omega_0/2\pi = \SI{22.9}{MHz}$ Larmor frequency, with a quadratic shift $\epsilon/2\pi=\SI{76.4}{kHz}$. We determined that the ambient magnetic field fluctuations were dominated  by contributions from line noise giving an rms uncertainty $\delta\Delta/2\pi = g_F \mu_{\rm B}\delta B/h=\SI{0.67(3)}{kHz}$.
+We implemented CCD to BECs with $N\approx\num{5e4}$ atoms. For all of the experiments described in this chapter the dipole trap had trapping frequencies of $(f_x,\, f_y,\, f_z) = (42(3),\, 34(2),\, 133(3))$\,Hz. We applied a $B_0 \approx \SI{3.27}{mT}$ bias field that lifted the ground state degeneracy, giving an $\omega_0/2\pi = \SI{22.9}{MHz}$ Larmor frequency, with a quadratic shift $\epsilon/2\pi=\SI{76.4}{kHz}$. We determined that the ambient magnetic field fluctuations were dominated  by contributions from line noise giving an rms uncertainty $\delta\Delta/2\pi = g_F \mu_{\rm B}\delta B/h=\SI{0.67(3)}{kHz}$.
 
-The state preparation consisted of two stages of ARP. On the first stage we followed the usual protocol described in~\ref{sec:arp} to prepare the BEC in any of the $\ket{m_F = 0,-1,1}$ states. On the second stage of ARP we adiabatically transformed the $\ket{m_F}$ states into the $\xyz$ states. We started with the bias field far from resonance ($\Delta(t=0)/2\pi \approx -\SI{450}{kHz}$) and with all coupling fields off. Then we ramped on $\Omega$ in a two-step process. We first ramped from $\Omega=0$ to approximately half its final value in \SI{10}{ms}.
-By increasing the magnetic field $B_0$, we then ramped $\Delta$ to zero in \SI{12}{ms} using a non-linear ramp adiabatic with respect to the relevant energy gaps.
-After allowing $B_0$ to stabilize for \SI{30}{ms}, we ramped the RF dressing field to its final value $\Omega$ in \SI{10}{ms}, yielding the dynamically decoupled $\ket{y, x, z}$ states.
+The state preparation consisted of two stages of ARP. On the first stage we followed the usual protocol described in~\ref{sec:arp} to prepare the BEC in any of the $\ket{m_F = 0,-1,1}$ states. On the second stage we adiabatically transformed the $\ket{m_F}$ states into the $\xyz$ states. We started with the bias field far from resonance ($\Delta(t=0)/2\pi \approx -\SI{450}{kHz}$) and with all coupling fields off. Then we ramped on $\Omega$ in a two-step process. We first ramped from $\Omega=0$ to an intermediate value $\Omega_{\rm mid}$, approximately half its final value in \SI{1}{ms}. We then ramped $\Delta$ to zero in \SI{3}{ms} by increasing the magnetic field $B_0$. After allowing $B_0$ to stabilize for \SI{30}{ms}, we ramped the RF dressing field to its final value $\Omega$ in \SI{1}{ms}, yielding the dynamically decoupled $\ket{y, x, z}$ states. It was important that the wait for the field to stabilize was performed at a lower $\Omega_{\rm mid}$ as we found several times that the capacitors on the impedance matching network of the antenna used to generate the RF field would burn if we kept the power on for too long. After performing any experiment with the $\xyz$ states we measured their populations by adiabatically deloading them back into the $\ket{m_F}$ basis. We first ramped $B_0$ so that $\Delta$ approached its initial detuned value in \SI{2}{ms}, and then ramped off the dressing RF field in \SI{1}{ms}. A typical experimental sequence for $\Delta$ and $\Omega$ can be visualized in As usual, we obtained the spin-resolved momentum distribution using standard time-of-flight (TOF) imaging techniques, with a  Stern-Gerlach field to spatially separate the spin components during TOF. The right panel of \reffig{fig:1}b shows such a TOF image for decomposition of $\ket z$ into the $m_F$ states in a typical TOF image. For the TOF image shown as well as for the measurement of the dressed state decomposition shown in Figure~\ref{fig:s1} we suddenly (not-adiabatically) turned the RF coupling off.
+\begin{figure*}[ht]
+    \centering
+    \includegraphics[]{Figures/Chapter6/loading_xyz_traces}
+    \caption[Experimental CCD protocol]{Detuning and RF coupling strengths ramps (not to scale) performed to adiabatically prepare the $\xyz$ states starting in the $\ket{m_F}$ states and vice versa.}
+    \label{fig:ccd_protocol}
+\end{figure*}
 
-We measured the population in the $\xyz$ states, we adiabatically deloaded them back into the $m_F$ basis by ramping $B_0$ so that $\Delta$ approached its initial detuned value in \SI{2}{ms}, and then ramped off the dressing RF field in \SI{1}{ms}.
-We obtained the spin-resolved momentum distribution using standard time-of-flight (TOF) imaging techniques, with a  Stern-Gerlach field to spatially separate the spin components during TOF.
-The right panel of \reffig{fig:1}a shows such a TOF image for decomposition of $\ket z$ into the $m_F$ states in a typical TOF image.
 
-We confirmed our control and measurement techniques spectroscopically measuring the energy differences between the $\xyz$ states with our prove field.
+We confirmed our control and measurement techniques spectroscopically measuring the energy differences between the $\xyz$ states with our probe field.
+
+
 Figure~\ref{fig:1}b shows the dependence of the $\omega_{xy}/2\pi$, $\omega_{yz}/2\pi$, and $\omega_{zx}/2\pi$ on detuning for $\Omega/2\pi=\SI{194.5(1)}{kHz}$ derived from spectra such as in the side panel with coupling strength $\Omega_p/2\pi \approx \SI{1}{kHz}$ and $\Delta/2\pi \approx \SI{9}{kHz}$.
 
 The dashed curves based on \refeq{eq:h} clearly depart from our measurements for the $zx$ transition.
