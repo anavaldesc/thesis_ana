@@ -1,0 +1,4 @@
+Generic notes:
+
+-Where do I write about gradient cancellation? Seems like an important thing to keep.
+-The subtle difference between dephasing and decoherence. 
