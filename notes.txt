@@ -1,4 +1,15 @@
 Generic notes:
 
 -Where do I write about gradient cancellation? Seems like an important thing to keep.
+-Maybe for stuff above and other things like ptai and measuring magnification dedicate one chapter?
 -The subtle difference between dephasing and decoherence. 
+
+High power RF important dates
+-2016/11/14: Files 549+30 and 576+30 Rabi flop for antenna calibration
+-2015/08/13: Bloch-Siegert
+-2016/10/11: 526-565 Ramsey fringe vs detuning
+-2016/10/14: 403 + 90 Ramsey fringe vs time
+-2016/09/28: 405 + 40 Another Ramsey fringe
+-2016/11/23: 603 + 60 Decaying Rabi flop
+-2016/11/29: 735 + 60 Another decaying Rabi floppo
+
