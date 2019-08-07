@@ -3,6 +3,7 @@ Generic notes:
 -Where do I write about gradient cancellation? Seems like an important thing to keep.
 -Maybe for stuff above and other things like ptai and measuring magnification dedicate one chapter?
 -The subtle difference between dephasing and decoherence. 
+-Thesis chapter: is it ok if I loose some of the punchline in favor of pedagogy?
 
 High power RF important dates
 -2016/11/14: Files 549+30 and 576+30 Rabi flop for antenna calibration
@@ -13,3 +14,9 @@ High power RF important dates
 -2016/11/23: 603 + 60 Decaying Rabi flop
 -2016/11/29: 735 + 60 Another decaying Rabi floppo
 
+
+Stuff for Topology Chapter (Ch 7?):
+
+-Light-induced gauge fields for ultracold atoms: has some stuff on the interpretation of the Chern number as the number of times a vector covers the Bloch sphere. 
+-https://www.math.purdue.edu/~ebkaufma/RMP.pdf good for understanding fiber bundles in the context of Chern stuff
+-http://www-personal.umich.edu/~sunkai/teaching/Fall_2012/chapter3_part3.pdf useful to understand Dirac strings and generic topology stuff. 
