@@ -21,36 +21,51 @@ Our advance combines a key insight obtained in the context of atmospheric waves,
 
 This Chapter is divided into two section. First I will give a general overview of topological order in Physics and its application to band theory of solids. In the second section I will describe a series of experiments that we performed to engineer and characterize the topology of a Rashba spin-orbit coupled quantum gas. This section is divided into two parts: first we describe the engineering of the Rashba Hamiltonian using a trio of Raman coupled CDD states (Chapter~\ref{ch:clock_states}) and validate our engineering using Fourier transform spectroscopy (Chapter~\ref{ch:Fourier_spectroscopy}). Finally we describe a quantum state tomography procedure to measure the full quantum state of our system, and directly obtain the Chern number for both a topologically trivial, where it is zero, and non-trivial configurations, where it takes half integer values. 
 
-
-
-
-
-(1) in the first we demonstrate our approach for reliably creating our 2D SOC, and use time-domain spectroscopy to directly measure the resulting spectrum: essentially validating our quantum engineering.  (2) In our second section we employ quantum state tomography to measure the full quantum state of our system, and directly obtain the Chern index, both in a topological trivial configuration, where it is zero, and in a topological configuration where it is one-half.
-The ubiquitous nature of topology in an ever widening array physical systems makes our work of interest to a wide audience, where topology is both of fundamental and practical importance.  Our present work clearly shows new non-integer values for topological invariants, but leaves open the “bulk-boundary” connection, which links quantized transport to interfaces between systems with different topological invariants.
+\note{Modify words} Our present work clearly shows new non-integer values for topological invariants, but leaves open the “bulk-boundary” connection, which links quantized transport to interfaces between systems with different topological invariants.
 
 
 \label{ch:Rashba}
 
-\section{Overview of topological band theory}
+\section{Overview of topology} 
+Condensed matter classifies phases of matter. Phases can sometimes be described in terms of symmetries that are spontaneously broken. Recently a new kind of order has been found that there are distinct phases of matter that do not  
 
-\subsection{Abstract stuff}
+\subsection{Topology?}
 
-\textit{Fiber bundles} A manifold is a topological space which looks locally like $R^n$ , but not necessarily so globally. A fibre bundle is, so to speak, a topological space which looks locally like a direct
-product of two topological spaces. 
+Topology is a branch of mathematics that studies the properties of geometric objects that are conserved under continuous deformation. Two objects that can be continuously deformed into each other are said to be homeomorphic and can be classified by the same integer-valued topological invariant\note{Look up a good reference for topology in math}. One easy way of illustrating this is to think about closed two-dimensional surfaces in three dimensions. A donut can be continuously deformed into a coffee mug but if we want to deform it into a pretzel we need to poke more holes in it. The donut and the mug must share the same topological invariant, which is different from that of the pretzel. More formally, these solids are classified by the Euler characteristic which is related to the integral of of the Gaussian curvature $K$ over the whole surface by the Gauss-Bonnet theorem:
+%
+\begin{equation}
+	\chi = \frac{1}{2\pi}\int_S K dA.
+\end{equation}
+%
+We can find a normal vector at any point of the surface which which is orthogonal to the surface. We can then define a plane containing the normal vector and its intersection with the surface defines a curve. The curvature of this curve is called the normal curvature $\kappa$. The minimum and maximum of these are called the principal curvatures and are used to define the Gaussian curvature at any point of a surface $K=\kappa_{min}\kappa_{max}$. For closed surfaces $\chi=2(1-g)$ where the genus $g$ represents the number of holes or handles in the surface. 
 
-\subsection{A brief history of topology in condensed matter}
-Topological phase transitions vs. regular phase transitions?
-The 2016 Nobel prize in physics was awarded to David J. Thoules, F. Duncan M. Haldane and J. Michael Kosterlitz for theoretical discoveries of topological phase transitions and topological phases of matter. Kosterlitz and Thoules first used topology to describe phase transition on 2D materials (1973, cite Long Range Order and Metastability in Two Dimensional Solids and Superfluids). A decade later Thoules, Kohomoto, Nightingale, and den Nijs explain used the topology arguments to explain the Quantum Hall effect (Quantized Hall Conductance in a Two-Dimensional Periodic Potential). In their paper they showed that the quantization of the Hall conductivity
+
+\subsection{Topological order in condensed matter}
+
+
+
+% The importance of topology 
+% The effects of topology in condensed matter in Bloch bands was first observed by Von Klitzing~\cite{klitzing_new_1980} when he measured quantized conductivity for 
+
+
+
+Topological band theory classifies topologically distinct Hamiltonians $\hat{H}(\k)$
+
+to David J. Thoules, F. Duncan M. Haldane and J. Michael Kosterlitz for theoretical discoveries of topological phase transitions and topological phases of matter. Kosterlitz and Thoules first used topology to describe phase transition on 2D materials~\cite{kosterlitz_long_1972}. A decade later Thoules, Kohomoto, Nightingale, and den Nijs explain used the topology arguments to explain the Quantum Hall effect~\cite{thouless_quantized_1982}. In their paper they showed that the quantization of the Hall conductivity
 %
 \begin{equation}
 	\sigma_{xy} = Ne^2/h
 	\label{eq:hall_conductivity}
 \end{equation}
 %
-is determined by the underlying topology of the band structure (how much can the Hamiltonian be deformed without closing an energy gap). N is equal to the Chern number. 
+is determined by the underlying topology of the band structure. Just like the genus classifies 2D solids that can be continuously deformed without opening or closing holes, the `TKNN' invariant classifies band structures that can be deformed into one another without closing an energy gap. The mathematical physicist Bary Simon recognized this invariant as the `first Chern class invariant from $U(1)$ fiber bundles'~\cite{simon_holonomy_1983} (see~\cite{geometry_topology_physics} for example if you want to learn more about this subject). The other very valuable contribution was that he made the connection between the Chern number and the the Berry's geometrical phase~\cite{berry_michael_victor_quantal_1984} which allows us to make a physical interpretation of this otherwise abstract seeming invariant. In the following sections I will describe important concepts in 
 
 \subsection{Berry's phase and curvature, Chern numbers, etc.}
-Do it like in the paper. Start with topology and geometry and move to BZ and Chern numbers. 
+
+\subsubsection{Aharonov-Bohm phase as an example of a Berry's phase}
+Consider a Hamiltonian that depends on a set of parameters $\mathbf R$ $\hat{H}(\mathbf{R}$ ~\cite{berry_michael_victor_quantal_1984}
+
+\subsection{Chern number and Berry's curvature}
 
 \subsubsection{Example: topology of a 2D electron gas}
 A generic Hamiltonian for a 2D electron gas is 
@@ -82,6 +97,8 @@ where the vector $\mathbf{\Omega}(\mathbf r)=(\Omega_x(\r), \Omega_y(\r), \Omega
 	\ket{\psi_n(\r)}=\sum_{i}a_{i,n}(\k)\ket{i,\Omega(\r)}
 	\label{eq:generic_wavefunction}	
 \end{equation}
+
+\subsection{A note on gauge invariance and Dirac strings }
 
 \section{Unconventional topology with a Rashba spin-orbit coupled quantum gas}
 
@@ -254,3 +271,11 @@ For the Rashba dressed states preparation we started with RF dressed states with
 
 The phases of the fitted populations at the output of the interferometer correspond to $\Delta\phi_{n,i,j,l}=\phi_{n,i}(\q) - \phi_{n,j}(\q)+\phi_{l,i,j}^{p}(\q)$. The last term in the expression has $\q$-independent term that depends on the final state and a $\q$-dependent term that has no dependence on the final state, i.e.,  $\phi_{l,i,j}^{p}(\q)=\phi^{p_0}_l+\phi^{p_1}_{i,j}(\q)$. When combining the phases from different initial states we removed their final state dependence by shifting $\Delta\phi_{n,i,j,l}$ by a constant number such that they maximally overlap, effectively making $\phi^{p_0}_l$ the same for all states. Finally, we averaged all the phase differences obtained from the fits, weighted by the inverse of the uncertainties obtained from the fitting procedure. For the topological branch data we excluded the regions away from $\q=0$ where the Dirac point was moved from the average. Finally we chose a gauge such that $\phi_1(\q)=0$ and used this to convert phase dif
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Graveyard
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \textit{Fiber bundles} A manifold is a topological space which looks locally like $R^n$ , but not necessarily so globally. A fibre bundle is, so to speak, a topological space which looks locally like a direct
+% product of two topological spaces. 
