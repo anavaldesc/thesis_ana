@@ -64,7 +64,24 @@ explain used the topology arguments to explain the Quantum Hall effect~\cite{tho
 
 In the seminal paper by Thoules, Kohomoto, Nightingale, and den Nijs~\cite{thouless_quantized_1982} it was shown that the quantization of the Hall conductivity is determined by the underlying topology of the band structure. Just like the Euler characteristic defined in Equation~\ref{eq:euler_characteristic} classifies 2D solids that can be continuously deformed without opening or closing holes, there is a topological invariant that classifies band structures that can be deformed into one another without closing an energy gap. This invariant, initially known as the `TKNN invariant', was later recognized by the mathematical physicist Bary Simon as the `first Chern class invariant from $U(1)$ fiber bundles'~\cite{simon_holonomy_1983}\footnote{See~\cite{geometry_topology_physics} for example if you want to learn more about this subject.} and the TKNN invariant became what is known today as the Chern number or Chern invariant. Another very valuable contribution from Simon's work was that he made the connection between the Chern number and the the Berry's geometrical phase~\cite{berry_michael_victor_quantal_1984} which allows us to make a physical interpretation of this otherwise abstract seeming invariant. In the following sections I will describe important concepts in topological band theory. 
 
-\subsection{Geometric phases}
+\subsection{Berry phase, Berry curvature and Chern number}
+
+The concept of Berry phase is used to describe the phase acquired by a quantum state as it goes through an adiabatic cycle. It plays a key role in topological band theory and can help to provide a physical interpretation of the Chern number. 
+
+Consider a Hamiltonian $\hat H$ that depends on a set of parameters $\k=(k_1, k_2, ...)$. If the system parameters are slowly changed in time, the change in the system can be described by a path in parameter space $\hat H(\k(t))$. The state $\ket{\psi(t)}$ evolves according to the time dependent Sch\"odinger equation and at any given time $t$ there is a basis that satisfies
+%
+\begin{equation}
+	\hat H(\k)\ket{n(\k)}=E_n(\k)\ket{n(\k)}
+\end{equation}
+%
+for $\k=\k(t)$. Suppose the system is initially in state $\ket{n(\k(t=0))}$, if the parameters are changed slowly such that the adiabatic theorem is valid then at time $t$ the state of the system can be written as
+%
+\begin{equation}
+	\ket{\psi(t)}=\exp\Big\{-\frac{i}{\hbar}\int_0^tdt'E_n(\k(t'))\Big\}\exp(i\gamma_n(t))\ket{n(\k(t))},
+\end{equation}
+%
+where the first term corresponds to a dynamical phase factor, given by 
+
 
 In order to understand the concept of Chern number it is helpful to take a step back and review geometric phases\footnote{Thanks Barry Simon!}. 
 
@@ -78,6 +95,20 @@ Consider a Hamiltonian that depends on a set of parameters $\mathbf R$ $\hat{H}(
 \subsubsection{Other ways to make sense of the Chern number}
 Topological band theory classifies topologically distinct Hamiltonians $\hat{H}(\k)$
 
+bulk-edge correspondence 
+which we will refer to as the bulk-boundary correspondence, which relates the boundary topological invariants to the difference in the bulk topological invariants. This interplay between topology and gapless modes is a ubiquitous phenomenon in physics, and has appeared in many contexts
+
+
+
+
+%
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter7/topology_analogies.pdf}
+\caption{Understanding topology}
+\label{fig:topology_analogies}
+\end{center}
+\end{figure*}
 \subsection{Example: topology of a 2D electron gas}
 A generic Hamiltonian for a 2D electron gas is 
 %
