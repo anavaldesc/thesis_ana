@@ -29,7 +29,7 @@ This Chapter is divided into two section. First I will give a general overview o
 
 Topology is a branch of mathematics that studies the properties of geometric objects that are conserved under continuous deformation. Two objects that can be continuously deformed into each other are said to be homeomorphic and can be classified by the same integer-valued topological invariant\note{Look up a good reference for topology in math}. One easy way of illustrating the concept of topology this is to think about closed two-dimensional surfaces in three dimensions. This example will also be helpful to provide some intuition when we define topological invariants for band structures in the following sections. 
 
-A donut can be continuously deformed into a coffee mug but if we want to deform it into a pretzel we need to poke more holes in it. The donut and the mug must share the same topological invariant, which is different from that of the pretzel. More formally, these solids are classified by the Euler characteristic which is related to the integral of of the Gaussian curvature by the Gauss-Bonnet theorem. The Gaussian curvature can be interpreted in the following way: we can find a normal vector at any point of the surface which which is orthogonal to a plane tangent to the surface. We can then define a family of planes containing the normal vector and their intersection with the surface defines a family of curves. The curvature of these curves is called the normal curvature $\kappa$. The minimum and maximum of these are called the principal curvatures and are used to define the Gaussian curvature at any point of a surface $K=\kappa_{min}\kappa_{max}$. 
+A donut can be continuously deformed into a coffee mug but if we want to deform it into a pretzel we need to poke more holes in it. The donut and the mug must share the same topological invariant, which is different from that of the pretzel. More formally, these solids are classified by the Euler characteristic which relates the topology of a solid with its Gaussian curvature. The Gaussian curvature can be interpreted in the following way: at any point in a surface we can find a normal vector which which is orthogonal to the tangent plane of the surface. We can then define a family of planes containing the normal vector and their intersection with the surface defines a family of curves. The curvature of a given curve is called the normal curvature $\kappa$. When we consider all the normal curvatures, the minimum and maximum of these are called the principal curvatures and are used to define the Gaussian curvature at any point of a surface $K=\kappa_{min}\kappa_{max}$. 
 
 The Gauss-Bonnet theorem states that
 %
@@ -38,7 +38,9 @@ The Gauss-Bonnet theorem states that
 	\label{eq:euler_characteristic}
 \end{equation}
 %
-and for closed surfaces the Euler characteristic is related to the genus (number of holes or handles) by $\chi=2(1-g)$. In the following sections I will introduce topological invariants in the context of condensed matter physics, which even though might seem more abstract,  their interpretation can be closely related to the concepts just defined.
+and for closed surfaces the Euler characteristic is related to the genus (number of holes or handles) by $\chi=2(1-g)$. 
+
+In the following sections I will introduce topological invariants in the context of condensed matter physics, which even though might seem more abstract, their interpretation can be closely related to the concepts just defined.
 
 \subsection{Topological order in condensed matter}
 
@@ -78,17 +80,66 @@ for $\k=\k(t)$. Suppose the system is initially in state $\ket{n(\k(t=0))}$, if 
 %
 \begin{equation}
 	\ket{\psi(t)}=\exp\Big\{-\frac{i}{\hbar}\int_0^tdt'E_n(\k(t'))\Big\}\exp(i\gamma_n(t))\ket{n(\k(t))},
+	\label{eq:berry_wf}
 \end{equation}
 %
-where the first term corresponds to a dynamical phase factor, given by 
+where the first term corresponds to a dynamical phase factor, is a geometric phase, also known as Berry's phase. By imposing that $\ket{\psi(t)}$ satisfies the time-dependent Schr\"odinger equation one finds that 
+%
+\begin{equation}
+	\gamma_n(t)=i\bra{n(\k(t))}\nabla_{\k}\ket{n(\k(t))}\cdot\dot{\k}(t),
+\end{equation}
+%
+where the term
+%
+\begin{equation}
+	\mathbf{A}_n(\k)=i\bra{n(\k}\nabla_{\k}\ket{n(\k)}
+	\label{eq:berry_connection}
+\end{equation}
+%
+ is usually referred to as the Berry connection or the Berry vector potential. It is important to notice that $\mathbf{A}$ is gauge dependent, meaning that if we make a gauge transformation such that $\ket{n(\k)}\rightarrow\e^{i\xi(\k)}\ket{n(\k)}$ then the Berry connection is also transformed as $\mathbf{A}_n(\k)\rightarrow\mathbf{A}_n(\k)-\nabla_{\k}\xi(\k)$. 
 
+For a closed path in parameter space the Berry phase is 
+%
+\begin{equation}
+	\gamma_n(\mathcal{C})=\oint_{\mathcal{C}} \mathbf{A}_n(\k)\cdot d\k,
+	\label{eq:berry_phase}
+\end{equation}
+%
+and here it is important to note that $\gamma_n$ only depends on the geometry of the path and is independent of how it was traversed in time, and unlike the Berry connection, it is gauge independent quantity. 
 
-In order to understand the concept of Chern number it is helpful to take a step back and review geometric phases\footnote{Thanks Barry Simon!}. 
-
-
+The existence of this phase was a bit surprising when 
 
 \subsubsection{Aharonov-Bohm phase as an example of a Berry's phase}
-Consider a Hamiltonian that depends on a set of parameters $\mathbf R$ $\hat{H}(\mathbf{R}$ ~\cite{berry_michael_victor_quantal_1984}
+
+The Aharonov-Bohm phase~\cite{aharonov_significance_1959} was initially conceived as way of showing that in quantum mechanics magnetic vector potentials, typically conceived only as mathematical objects, can have a physical effect on the wave function. They considered a coherent electron beam split into two paths around a solenoid that produces a magnetic field $\mathbf{B}$ as shown in Figure~\ref{fig:aharonov_bohm}. Outside the solenoid the magnetic field $\mathbf{B}=0$, but there can be a non-zero magnetic vector potential such that $\mathbf{B}=\nabla\times\mathbf{A}$. The two beams are later recombined. Even though the electron's trajectories are not modified, when looking at the interference pattern one finds that the two paths acquired different phases, and their difference is remarkably equal to magnetic flux across the area enclosed by the electrons path $\Delta\varphi = 2\pi \Phi_B/\Phi_0$, where $\Phi_0=h/e$ is the flux quantum. 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter7/aharonov_bohm.pdf}
+\caption[The Aharonov-Bohm experiment]{The Aharonov-Bohm experiment. A coherent electron beam is split into two paths surrounding a solenoid which produces a non-zero magnetic field $\mathbf{B}$ inside the gray region and $\mathbf{B}=0$ outside. The two beams are later recombined and an interference pastern reveals a phase difference $\Delta\varphi = 2\pi \Phi_B/\Phi_0$ equal to the magnetic flux enclosed by the electron's path}
+\label{fig:aharonov_bohm}
+\end{center}
+\end{figure*}
+
+This Aharonov-Bohm phase can be interpreted as an example of a Berry phase in real space. For a charged particle in the presence of a vector potential the momentum dependence of the free-particle Hamiltonian is modified $\mathbf{p}\rightarrow\mathbf{p}-q\mathbf{A}$ so that the wave function will depend on the magnetic vector potential as well. Using Equations~\ref{eq:berry_connection} and~\ref{eq:berry_phase} it can be shown that the geometric phase associated to a closed path around the solenoid is exactly equal to the Aharonov-Bohm phase: 
+
+%
+\begin{align}
+	\gamma_n(\mathcal{C})=&\frac{e}{\hbar}\oint_{\mathcal{C}}\mathbf{A}(\mathbf{r})\cdot d\mathbf{r} \nonumber \\
+	=& \frac{e}{\hbar}\int_{\mathcal{S}}\nabla\times\mathbf{A}\cdot d\mathbf{S} \nonumber \\
+	=& \frac{e\Phi_B}{\hbar},
+	\label{eq:aharonov_bohm_phase}
+\end{align}
+% \begin{equation}
+% 	\gamma_n(\mathcal{C})=\frac{q}{\hbar}\oint_{\mathcal{C}}\mathbf{A}(\mathbf{r})\cdot d\mathbf{r}=\frac{q\Phi_B}{\hbar},
+% 	\label{eq:aharonov_bohm_phase}
+% \end{equation}
+%
+
+
+
+
+
 
 \subsection{Chern number and Berry's curvature}
 
