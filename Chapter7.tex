@@ -27,91 +27,92 @@ This Chapter is divided into two section. First I will give a general overview o
 
 \section{Overview of topology} 
 
-Topology is a branch of mathematics that studies the properties of geometric objects that are conserved under continuous deformation. Two objects that can be continuously deformed into each other are said to be homeomorphic and can be classified by the same integer-valued topological invariant\note{Look up a good reference for topology in math}. One easy way of illustrating the concept of topology this is to think about closed two-dimensional surfaces in three dimensions. This example will also be helpful to provide some intuition when we define topological invariants for band structures in the following sections. 
+Topology is a branch of mathematics that studies continuity. The most familiar example might be that of objects being continuously deformed into one another. For example, a donut can be continuously deformed into a coffee mug but if we want to deform it into a pretzel we need to poke more holes in it. This gives us some intuition that the donut and the mug must share the same topology, which is different from that of the pretzel. Topology also studies more abstract objects but I will limit the discussion to closed two-dimensional surfaces in three dimensions. This example will also be helpful to provide some intuition when we define topological invariants for band structures in the following sections.  
 
-A donut can be continuously deformed into a coffee mug but if we want to deform it into a pretzel we need to poke more holes in it. The donut and the mug must share the same topological invariant, which is different from that of the pretzel. More formally, these solids are classified by the Euler characteristic which relates the topology of a solid with its Gaussian curvature. The Gaussian curvature can be interpreted in the following way: at any point in a surface we can find a normal vector which which is orthogonal to the tangent plane of the surface. We can then define a family of planes containing the normal vector and their intersection with the surface defines a family of curves. The curvature of a given curve is called the normal curvature $\kappa$. When we consider all the normal curvatures, the minimum and maximum of these are called the principal curvatures and are used to define the Gaussian curvature at any point of a surface $K=\kappa_{min}\kappa_{max}$. 
+The topology of 2D surfaces can be classified by the Euler characteristic, and it is related to the local Gaussian curvature of the surface by the Gauss-Bonet theorem. The Gaussian curvature can be interpreted in the following way: at any point in a surface we can find a normal vector which which is orthogonal to the tangent plane of the surface. We can then define a family of planes containing the normal vector and their intersection with the surface defines a family of curves. The curvature of a given curve is called the normal curvature $\kappa$. When we consider all the normal curvatures, the minimum and maximum of these are called the principal curvatures and are used to define the Gaussian curvature at any point of a surface $K=\kappa_{min}\kappa_{max}$~\cite{differential_topology_and_geometry} 
 
-The Gauss-Bonnet theorem states that
+The Gauss-Bonnet theorem states that the integral of the local Gaussian curvature over the whole surface is equal to the integer valued Euler characteristic
 %
 \begin{equation}
 	\chi = \frac{1}{2\pi}\int_S K dA,
 	\label{eq:euler_characteristic}
 \end{equation}
 %
-and for closed surfaces the Euler characteristic is related to the genus (number of holes or handles) by $\chi=2(1-g)$. 
+which is related to the genus (number of holes or handles) by $\chi=2(1-g)$. The Gauss-Bonnet theorem is a very powerful result as it relates the local properties of a surface,the Gaussian curvature, with a global topological invariant, the Euler characteristic. 
 
-In the following sections I will introduce topological invariants in the context of condensed matter physics, which even though might seem more abstract, their interpretation can be closely related to the concepts just defined.
+In the following sections I will introduce topological invariants in the context of condensed matter physics, which even though might seem a bit more abstract, their interpretation can be closely related to the concepts just defined in this section.
 
 \subsection{Topological order in condensed matter}
 
 Just like topology classifies properties of geometric objects, one important task of condensed matter physics has been to classify phases of matter. Many of these phases, for example magnetic or conducting phases, can be described in terms of order parameters related to spontaneously broken symmetries~\cite{landau_theory_1936}. However, in the past few decades and increasing number of systems have been found where it is only possible to understand their phases and properties in terms of the underlying topology of their quantum states. This new paradigm of physics has been so important that in 2016 the Nobel prize in physics was awarded to David J. Thoules, F. Duncan M. Haldane and J. Michael Kosterlitz for the theoretical discoveries of topological phase transitions and topological phases of matter 
 
-The effect of topology in condensed matter systems was first observed when measuring the quantized Hall resistance~\cite{klitzing_new_1980} of 2D materials under a strong perpendicular magnetic field. Under these circumstances, electrons undergo quantized cyclotron orbits which leads to quantized Landau levels. When this Landau levels are filled.\note{insert simple and short but correct explanation of qhe here} these edge states are easily seen as semiclassically as
-counterpropagating “skipping orbits” that precess around the
-boundary of the system in the opposite sense to that of the
-Landau orbits, when a particle in a Landau orbit intersects
-the boundary, and bounces off it.
-% The importance of topology 
-% The effects of topology in condensed matter in Bloch bands was first observed by Von Klitzing~\cite{klitzing_new_1980} when he measured quantized conductivity for 
-% to David J. Thoules, F. Duncan M. Haldane and J. Michael Kosterlitz for theoretical discoveries of topological phase transitions and topological phases of matter. Kosterlitz and Thoules first used topology to describe phase transition on 2D materials~\cite{kosterlitz_long_1972}. 
+The effect of topology in condensed matter systems was first observed when von Klitzing and colleagues~\cite{klitzing_new_1980} measured quantized Hall resistance in two-dimensional electron gases subjected to a strong perpendicular magnetic field. The effect can be understood semi-classically by thinking of the electrons quantized cyclotron orbits that give rise to Landau levels. If the Landau levels are filled then there is an energy gap separating two consecutive levels and the material acts as an insulator but if an electric field is applied the orbits drift and the electrons will be `skipping orbits' in the edge, giving rise to what is known as edge states. 
 
+In a seminal paper Thoules, Kohomoto, Nightingale, and den Nijs~\cite{thouless_quantized_1982} explained that the quantization of the Hall conductivity is determined by the underlying topology of the band structure. Just like the Euler characteristic defined in Equation~\ref{eq:euler_characteristic} classifies 2D solids that can be continuously deformed without opening or closing holes, there is a topological invariant that classifies band structures that can be deformed into one another without opening or closing an energy gap. This invariant, initially known as the `TKNN invariant', was later recognized by the mathematical physicist Bary Simon as the `first Chern class invariant from $U(1)$ fiber bundles'~\cite{simon_holonomy_1983}\footnote{See~\cite{geometry_topology_physics} for example if you want to learn more about this subject.} and the TKNN invariant became what is known today as the Chern number or Chern invariant. Another very valuable contribution from Simon's work was that he made the connection between the Chern number and the the Berry's geometrical phase~\cite{berry_michael_victor_quantal_1984} which will be defined in the following sections and will allow us to make a physical interpretation of this otherwise abstract seeming topological invariant. 
 
-explain used the topology arguments to explain the Quantum Hall effect~\cite{thouless_quantized_1982}. In their paper they showed that the quantization of the Hall conductivity
+\subsection{Berry phase and Berry curvature}
+
+A Berry or geometric phase is used to describe the phase acquired by a quantum state as it goes through a closed trajectory in parameter space. It plays a key role in topological band theory and can help to provide a physical interpretation of the Chern number. 
+
+Consider a Hamiltonian $\hat H$ that depends on a set of parameters $\r=(r_1, r_2, ...)$. If the system parameters are slowly changed in time, the change in the system can be described by a path in parameter space $\r(t)$. The state $\ket{\psi(t)}$ evolves according to the time dependent Sch\"odinger equation and at any given time $t$ there is a basis that satisfies
 %
 \begin{equation}
-	\sigma_{xy} = Ne^2/h
-	\label{eq:hall_conductivity}
-\end{equation}
-
-
-In the seminal paper by Thoules, Kohomoto, Nightingale, and den Nijs~\cite{thouless_quantized_1982} it was shown that the quantization of the Hall conductivity is determined by the underlying topology of the band structure. Just like the Euler characteristic defined in Equation~\ref{eq:euler_characteristic} classifies 2D solids that can be continuously deformed without opening or closing holes, there is a topological invariant that classifies band structures that can be deformed into one another without closing an energy gap. This invariant, initially known as the `TKNN invariant', was later recognized by the mathematical physicist Bary Simon as the `first Chern class invariant from $U(1)$ fiber bundles'~\cite{simon_holonomy_1983}\footnote{See~\cite{geometry_topology_physics} for example if you want to learn more about this subject.} and the TKNN invariant became what is known today as the Chern number or Chern invariant. Another very valuable contribution from Simon's work was that he made the connection between the Chern number and the the Berry's geometrical phase~\cite{berry_michael_victor_quantal_1984} which allows us to make a physical interpretation of this otherwise abstract seeming invariant. In the following sections I will describe important concepts in topological band theory. 
-
-\subsection{Berry phase, Berry curvature and Chern number}
-
-The concept of Berry phase is used to describe the phase acquired by a quantum state as it goes through an adiabatic cycle. It plays a key role in topological band theory and can help to provide a physical interpretation of the Chern number. 
-
-Consider a Hamiltonian $\hat H$ that depends on a set of parameters $\k=(k_1, k_2, ...)$. If the system parameters are slowly changed in time, the change in the system can be described by a path in parameter space $\hat H(\k(t))$. The state $\ket{\psi(t)}$ evolves according to the time dependent Sch\"odinger equation and at any given time $t$ there is a basis that satisfies
-%
-\begin{equation}
-	\hat H(\k)\ket{n(\k)}=E_n(\k)\ket{n(\k)}
+	\hat H(\r)\ket{n(\r)}=E_n(\r)\ket{n(\r)}
+	\label{eq:hamiltonian_eigenvectors}
 \end{equation}
 %
-for $\k=\k(t)$. Suppose the system is initially in state $\ket{n(\k(t=0))}$, if the parameters are changed slowly such that the adiabatic theorem is valid then at time $t$ the state of the system can be written as
+for $\r=\r(t)$. Suppose the system is initially in state $\ket{n(\r(t=0))}$, if the parameters are changed slowly such that the adiabatic theorem is valid then at time $t$ the state of the system can be written as
 %
 \begin{equation}
-	\ket{\psi(t)}=\exp\Big\{-\frac{i}{\hbar}\int_0^tdt'E_n(\k(t'))\Big\}\exp(i\gamma_n(t))\ket{n(\k(t))},
+	\ket{\psi(t)}=\exp\Big\{-\frac{i}{\hbar}\int_0^tdt'E_n(\r(t'))\Big\}\exp(i\gamma_n(t))\ket{n(\r(t))},
 	\label{eq:berry_wf}
 \end{equation}
 %
-where the first term corresponds to a dynamical phase factor, is a geometric phase, also known as Berry's phase. By imposing that $\ket{\psi(t)}$ satisfies the time-dependent Schr\"odinger equation one finds that 
+where the first term corresponds to a dynamical phase factor, and the second term is a geometric phase. A classical analogy to this geometric phase is that acquired by By imposing that $\ket{\psi(t)}$ satisfies the time-dependent Schr\"odinger equation one finds that 
 %
 \begin{equation}
-	\gamma_n(t)=i\bra{n(\k(t))}\nabla_{\k}\ket{n(\k(t))}\cdot\dot{\k}(t),
+	\gamma_n(t)=i\braket{n(\r)}{\nabla_{\r}n(\r)}\cdot\dot{\r}(t),
 \end{equation}
 %
 where the term
 %
 \begin{equation}
-	\mathbf{A}_n(\k)=i\bra{n(\k}\nabla_{\k}\ket{n(\k)}
+	\mathbf{A}_n(\r)=i\braket{n(\r)}{\nabla_{\r}n(\r)}
 	\label{eq:berry_connection}
 \end{equation}
 %
- is usually referred to as the Berry connection or the Berry vector potential. It is important to notice that $\mathbf{A}$ is gauge dependent, meaning that if we make a gauge transformation such that $\ket{n(\k)}\rightarrow\e^{i\xi(\k)}\ket{n(\k)}$ then the Berry connection is also transformed as $\mathbf{A}_n(\k)\rightarrow\mathbf{A}_n(\k)-\nabla_{\k}\xi(\k)$. 
-
-For a closed path in parameter space the Berry phase is 
+ is usually referred to as the Berry connection\footnote{This is reminiscent of the connection defined in differential geometry that is used to describe things like parallel transport.} or the Berry vector potential for reasons that will become apparent. Because eigenvectors can only be defined up to a global phase, $\mathbf{A}$ is a gauge dependent quantity. If we make a gauge transformation such that $\ket{n(\k)}\rightarrow\e^{i\xi(\k)}\ket{n(\k)}$ then the Berry connection is also transformed as $\mathbf{A}_n(\k)\rightarrow\mathbf{A}_n(\k)-\nabla_{\k}\xi(\k)$. However if we integrate the Berry connection on a closed loop
 %
 \begin{equation}
-	\gamma_n(\mathcal{C})=\oint_{\mathcal{C}} \mathbf{A}_n(\k)\cdot d\k,
+	\gamma_n(\mathcal{C})=\oint_{\mathcal{C}} \mathbf{A}_n(\r)\cdot d\mathbf{l},
 	\label{eq:berry_phase}
 \end{equation}
 %
+we obtain the Berry phase which is gauge independent (modulo $2\pi$).
 and here it is important to note that $\gamma_n$ only depends on the geometry of the path and is independent of how it was traversed in time, and unlike the Berry connection, it is gauge independent quantity. 
 
-The existence of this phase was a bit surprising when 
+An alternative way to compute Berry's phase uses Stoke's theorem from vector calculus
+%
+\begin{equation}
+	\oint_{\mathcal{C}} \mathbf{A}_n\cdot d\mathbf{l}=\int_{\mathcal{S}}\nabla\times\mathbf{A}_n\cdot d\mathbf{S},
+	\label{eq:berry_connection}
+\end{equation}
+%
+where the vector field $\mathbf{\Omega}_n=\nabla\times\mathbf{A}_n$ is known as the Berry connection. 
+
+Using the some vector calculus identities the Berry connection can be rewritten as
+
+\begin{align}
+	\mathbf{\Omega}_n=&i[\nabla_{\r}\bra{n}]\times[\nabla_{\r}\ket{n}]\nonumber \\ 
+	=& \sum_{j\neq n} i[\bra{n}\nabla_{\r}\ket{j}]\times[\bra{j}\nabla_{\r}\ket{n}] \nonumber \\
+	=& i\sum_{j\neq n}\frac{\bra{n}\nabla_{\r}\hat{H}\ket{j}\times\bra{j}\nabla_{\r}\hat{H}\ket{n}}{(E_j-E_n)^2},
+\end{align}
+%
+where $\bra{n}\nabla_{\r}\ket{j}$ was replaced with $\bra{n}\nabla_{\r}\hat{H}\ket{j}/(E_j-E_n)$ by differentiating Equation~\ref{eq:hamiltonian_eigenvectors}. This expression shows that $\mathbf{\Omega_n}$ is a gauge independent quantity as it does not depend on the derivatives of a particular gauge choice for $\ket{n}$ but rather on $\nabla_{\r}\hat{H}$ which is gauge independent. Also we can see that $\mathbf{\Omega}_n$ becomes singular when there are degeneracies present in the Hamiltonian, so the Berry phase can also be related to the number of singularities in $\mathbf{\Omega}_n$ enclosed by the adiabatic path. Finally, even though the system may remain in state $\ket{n}$ during the adiabatic evolution, this expression for the Berry curvature makes it explicit that other eigenstates of the Hamiltonian have an influence in the Berry phase acquired. 
 
 \subsubsection{Aharonov-Bohm phase as an example of a Berry's phase}
 
-The Aharonov-Bohm phase~\cite{aharonov_significance_1959} was initially conceived as way of showing that in quantum mechanics magnetic vector potentials, typically conceived only as mathematical objects, can have a physical effect on the wave function. They considered a coherent electron beam split into two paths around a solenoid that produces a magnetic field $\mathbf{B}$ as shown in Figure~\ref{fig:aharonov_bohm}. Outside the solenoid the magnetic field $\mathbf{B}=0$, but there can be a non-zero magnetic vector potential such that $\mathbf{B}=\nabla\times\mathbf{A}$. The two beams are later recombined. Even though the electron's trajectories are not modified, when looking at the interference pattern one finds that the two paths acquired different phases, and their difference is remarkably equal to magnetic flux across the area enclosed by the electrons path $\Delta\varphi = 2\pi \Phi_B/\Phi_0$, where $\Phi_0=h/e$ is the flux quantum. 
+A familiar example of geometric phases is the Aharonov-Bohm phase~\cite{aharonov_significance_1959} gained by an electrons making closed trajectories around a solenoid. This phase was initially conceived as way of showing that in quantum mechanics magnetic vector potentials, typically conceived only as mathematical objects, can have a physical effect on the wave function. They considered a coherent electron beam split into two paths around a solenoid that produces a magnetic field $\mathbf{B}$ as shown in Figure~\ref{fig:aharonov_bohm}. Outside the solenoid the magnetic field $\mathbf{B}=0$, but there can be a non-zero magnetic vector potential such that $\mathbf{B}=\nabla\times\mathbf{A}$. The two beams are later recombined. Even though the electron's trajectories are not modified, when looking at the interference pattern one finds that the two paths acquired different phases, and their difference is remarkably equal to magnetic flux across the area enclosed by the electrons path $\Delta\varphi = 2\pi \Phi_B/\Phi_0$, where $\Phi_0=h/e$ is the flux quantum. 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -121,8 +122,7 @@ The Aharonov-Bohm phase~\cite{aharonov_significance_1959} was initially conceive
 \end{center}
 \end{figure*}
 
-This Aharonov-Bohm phase can be interpreted as an example of a Berry phase in real space. For a charged particle in the presence of a vector potential the momentum dependence of the free-particle Hamiltonian is modified $\mathbf{p}\rightarrow\mathbf{p}-q\mathbf{A}$ so that the wave function will depend on the magnetic vector potential as well. Using Equations~\ref{eq:berry_connection} and~\ref{eq:berry_phase} it can be shown that the geometric phase associated to a closed path around the solenoid is exactly equal to the Aharonov-Bohm phase: 
-
+This Aharonov-Bohm phase can be interpreted as an example of a Berry phase in real space. For a charged particle in the presence of a vector potential the momentum dependence of the free-particle Hamiltonian is modified $\mathbf{p}\rightarrow\mathbf{p}-q\mathbf{A}$ so that the wave function will depend on the magnetic vector potential as well. Using Equations~\ref{eq:berry_connection} and~\ref{eq:berry_phase} it can be shown that the Berry phase associated to a closed path around the solenoid is exactly equal to the Aharonov-Bohm phase: 
 %
 \begin{align}
 	\gamma_n(\mathcal{C})=&\frac{e}{\hbar}\oint_{\mathcal{C}}\mathbf{A}(\mathbf{r})\cdot d\mathbf{r} \nonumber \\
@@ -130,27 +130,25 @@ This Aharonov-Bohm phase can be interpreted as an example of a Berry phase in re
 	=& \frac{e\Phi_B}{\hbar},
 	\label{eq:aharonov_bohm_phase}
 \end{align}
-% \begin{equation}
-% 	\gamma_n(\mathcal{C})=\frac{q}{\hbar}\oint_{\mathcal{C}}\mathbf{A}(\mathbf{r})\cdot d\mathbf{r}=\frac{q\Phi_B}{\hbar},
-% 	\label{eq:aharonov_bohm_phase}
-% \end{equation}
-%
 
-
-
-
-
+For this particular example, the Berry connection is exactly equal to the magnetic vector potential and the Berry curvature is the magnetic field. This gives us a very physical intuition for interpreting the Berry phase in terms of the `magnetic flux' from abstract sources of `magnetic fields' in parameter space.  
 
 \subsection{Chern number and Berry's curvature}
+
+The Chern number is used to describe the topology of Bloch bands, where the relevant parameter space is defined by the crystal momentum or quasimomentum in the Brillouin zone (BZ). 
+
+
+Therefore we can see that the Chern number can be interpreted as the flux across the BZ from Dirac monopoles in momentum space. There have been experiments~\cite{roushan_observation_2014,sugawa_second_2018} that realize and measure topologically non-trivial systems in more abstract parameter spaces.  
+
+Degeneracies as sources of Berry curvature field. There must therefore be Dirac strings as well...
+
+\subsection{Guauges and Dirac strings}
 
 \subsubsection{Other ways to make sense of the Chern number}
 Topological band theory classifies topologically distinct Hamiltonians $\hat{H}(\k)$
 
-bulk-edge correspondence 
+
 which we will refer to as the bulk-boundary correspondence, which relates the boundary topological invariants to the difference in the bulk topological invariants. This interplay between topology and gapless modes is a ubiquitous phenomenon in physics, and has appeared in many contexts
-
-
-
 
 %
 \begin{figure*}[htb]
