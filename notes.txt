@@ -22,4 +22,6 @@ Stuff for Topology Chapter (Ch 7?):
 -Light-induced gauge fields for ultracold atoms: has some stuff on the interpretation of the Chern number as the number of times a vector covers the Bloch sphere. 
 -https://www.math.purdue.edu/~ebkaufma/RMP.pdf good for understanding fiber bundles in the context of Chern stuff
 -http://www-personal.umich.edu/~sunkai/teaching/Fall_2012/chapter3_part3.pdf useful to understand Dirac strings and generic topology stuff. 
--http://cem.osu.edu/files/2017/03/Kane-Marcel-Franz-book.pdf this one is gold!
+-http://cem.osu.edu/files/2017/03/Kane-Marcel-Franz-book.pdf this one is gold (good explanations of basic concepts of topology)
+-https://iopscience.iop.org/article/10.1088/1367-2630/16/8/083022/pdf explains winding number mapping torus into bloch spbere
+-http://www.theory.caltech.edu/~preskill/pubs/preskill-1984-monopoles.pdf intro to Dirac strings

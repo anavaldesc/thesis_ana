@@ -108,7 +108,7 @@ Using the some vector calculus identities the Berry connection can be rewritten 
 	=& i\sum_{j\neq n}\frac{\bra{n}\nabla_{\r}\hat{H}\ket{j}\times\bra{j}\nabla_{\r}\hat{H}\ket{n}}{(E_j-E_n)^2},
 \end{align}
 %
-where $\bra{n}\nabla_{\r}\ket{j}$ was replaced with $\bra{n}\nabla_{\r}\hat{H}\ket{j}/(E_j-E_n)$ by differentiating Equation~\ref{eq:hamiltonian_eigenvectors}. This expression shows that $\mathbf{\Omega_n}$ is a gauge independent quantity as it does not depend on the derivatives of a particular gauge choice for $\ket{n}$ but rather on $\nabla_{\r}\hat{H}$ which is gauge independent. Also we can see that $\mathbf{\Omega}_n$ becomes singular when there are degeneracies present in the Hamiltonian, so the Berry phase can also be related to the number of singularities in $\mathbf{\Omega}_n$ enclosed by the adiabatic path. Finally, even though the system may remain in state $\ket{n}$ during the adiabatic evolution, this expression for the Berry curvature makes it explicit that other eigenstates of the Hamiltonian have an influence in the Berry phase acquired. 
+where $\bra{n}\nabla_{\r}\ket{j}$ was replaced with $\bra{n}\nabla_{\r}\hat{H}\ket{j}/(E_j-E_n)$ by differentiating Equation~\ref{eq:hamiltonian_eigenvectors}. This expression shows that $\mathbf{\Omega_n}$ is a gauge independent quantity as it does not depend on the derivatives of a particular gauge choice for $\ket{n}$ but rather on $\nabla_{\r}\hat{H}$ which is gauge independent. Also we can see that $\mathbf{\Omega}_n$ becomes singular when there are degeneracies present in the Hamiltonian. Degeneracies act as `sources' for the Berry connection and the Berry phase can be related to the number of singularities in $\mathbf{\Omega}_n$ enclosed by the adiabatic path. Finally, even though the system may remain in state $\ket{n}$ during the adiabatic evolution, this expression for the Berry curvature makes it explicit that other eigenstates of the Hamiltonian have an influence in the Berry phase acquired. 
 
 \subsubsection{Aharonov-Bohm phase as an example of a Berry's phase}
 
@@ -135,61 +135,110 @@ For this particular example, the Berry connection is exactly equal to the magnet
 
 \subsection{Chern number and Berry's curvature}
 
-The Chern number is used to describe the topology of Bloch bands, where the relevant parameter space is defined by the crystal momentum or quasimomentum in the Brillouin zone (BZ). 
-
-
-Therefore we can see that the Chern number can be interpreted as the flux across the BZ from Dirac monopoles in momentum space. There have been experiments~\cite{roushan_observation_2014,sugawa_second_2018} that realize and measure topologically non-trivial systems in more abstract parameter spaces.  
-
-Degeneracies as sources of Berry curvature field. There must therefore be Dirac strings as well...
-
-\subsection{Guauges and Dirac strings}
-
-\subsubsection{Other ways to make sense of the Chern number}
-Topological band theory classifies topologically distinct Hamiltonians $\hat{H}(\k)$
-
-
-which we will refer to as the bulk-boundary correspondence, which relates the boundary topological invariants to the difference in the bulk topological invariants. This interplay between topology and gapless modes is a ubiquitous phenomenon in physics, and has appeared in many contexts
-
+The Chern number is used to describe the topology of Bloch bands, where the relevant parameter space is defined by the crystal momentum in the Brillouin zone (BZ), and because of the periodic boundary conditions has a geometry equivalent to that of a torus. The Chern number of the $n$th band is defined as
 %
-\begin{figure*}[htb]
+\begin{equation}
+	C_n=\frac{1}{2\pi}\int_{BZ}\mathbf{\Omega}_n d\k,
+	\label{eq:chern_number}
+\end{equation}
+%
+and is closely related to the definition of Berry phase from Equation~\ref{eq:berry_connection}. For our previous example of a quantum hall system, the integer in the quantized conductance is exactly equal to the Chern number. 
+
+Just like two-dimensional surfaces are classified by the integral of their Gaussian curvature, the topology of Bloch bands and of quantum systems in general is determined by the integral of the Berry curvature. In a similar way, the integral connects local properties of a quantum system, the Berry connection, with a global topological invariant, the Chern number. One subtle difference is that the Euler characteristic is only determined by the surface (and its intrinsic Gaussian curvature) while the Chern number is defined both by a surface (the BZ) and an additional local curvature (the Berry curvature). This difference will be important later on when we describe the experiments performed to study a system with Rashba spin-orbit coupling and an unconventional topology. Using our intuition from the Aharonov-Bohm phase, the Chern number can also be interpreted as the total flux from a `Berry field' whose source in the BZ and whose sources are `monopoles' given by degeneracies in the Hamiltonian. 
+
+Even though the Chern invariant was initially conceived to study the topology of systems in momentum space, there have been experiments that studied the topology of quantum systems in other abstract parameter spaces, see for example ~\cite{roushan_observation_2014} and \cite{sugawa_second_2018}.
+
+To finalize our introduction to Topology, Figure~\ref{fig:topology_analogies} summarizes all the concepts that have been introduced so far and is a reminder that topological invariants are global properties defined in terms of integrals of local properties and that we can use our intuition from electromagnetic theory to interpret Chern numbers. \note{Should I also talk about bulk-edge correspondence for completeness?}
+
+ \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter7/topology_analogies.pdf}
-\caption{Understanding topology}
+\caption[Different topological invariants]{The Euler characteristic and the Chern number are topological invariants defined by integrals of local curvatures. The Aharonov-Bohm phase gives us physical intuition to interpret the Chern number as the flux from a `Berry field'.}
 \label{fig:topology_analogies}
 \end{center}
 \end{figure*}
-\subsection{Example: topology of a 2D electron gas}
-A generic Hamiltonian for a 2D electron gas is 
+
+\subsection{Example: two-level model}
+
+Many of the concepts introduced in the previous section can be readily applied and understood using a two-level model
 %
 \begin{equation}
 	\hat{H}(\mathbf{k})= \mathbf{h}(\mathbf{k})\cdot\vec{\sigma}
 	\label{eq:2D_Hamiltonian}
 \end{equation}
 %
-where $\vec{\sigma}=(\sigma_x, \sigma_y, \sigma_z)$ are the Pauli matrices and $\mathbf{h}(\mathbf{k})$
+where $\vec{\sigma}=(\sigma_x, \sigma_y, \sigma_z)$ are the Pauli matrices and $\mathbf{h}(\mathbf{k})=(h_x(\k),h_y(\k), h_z(\k))$. This model has been used to describe a number of physical systems like graphene~\cite{haldane_model_1988} and spin-orbit coupled systems~\cite{bychkov_oscillatory_1984,dresselhaus_spin-orbit_1955}. 
 
-
-Dirac points occur in band structures when there is inversion ($\mathcal{P}$) and time reversal ($\mathcal{T}$) symmetry.  $\mathcal{P}$ symmetry takes and therefore $h_z(\mathbf{k})=0$ and for small crystal momentum $\mathbf{q}$ the Hamiltonian\ref{eq:2D_Hamiltonian} resembles that of a massles Dirac fermion $\hat H(\mathbf k)=\hbar v_F\mathbf q\cdot \vec \sigma$, where $v_F$ is a velocity. The $\mathcal{T}$ symmetry can be broken for example by applying a magnetic field, in which case the degeneracy at the Dirac point is broken and \ref{eq:2D_Hamiltonian} becomes a massive Dirac Hamiltonian. 
-
-Something about quantum spin Hall effect and spin orbit coupling?
-
-\subsection{A physical interpretation of the Chern number}
-
-Consider a generic system that is described by the Hamiltonian
-
-\begin{equation}
-	\hat H =\left(\frac{\hbar^2\mathbf{k}^2}{2m}+\hat{V}({\mathbf{r}})\right)\hat{\mathbb{1}} + \mathbf{\Omega}(\mathbf{r})\cdot\hat{\mathbf{F}}
-	\label{eq:generic_topologic_Hamiltonian} 
-\end{equation}
-%
-where the vector $\mathbf{\Omega}(\mathbf r)=(\Omega_x(\r), \Omega_y(\r), \Omega_z(\r))$ describes a momentum dependent `magnetic field' or coupling between internal states and $\hat{\mathbf{F}}=(\fx, \fy, \fz)$. The eigenstates of~\ref{eq:generic_topologic_Hamiltonian} take the form
+For this two-level system the Chern number can be written as
 %
 \begin{equation}
-	\ket{\psi_n(\r)}=\sum_{i}a_{i,n}(\k)\ket{i,\Omega(\r)}
-	\label{eq:generic_wavefunction}	
+	C=\frac{1}{4\pi}\int(\partial_{k_x}\hat{h}\times\partial_{k_y}\hat{h})\cdot\hat{h} \, d\k
 \end{equation}
+%
+which counts the number is equal to the number of times that the vector $\hat{h}(\k)=\mathbf{h}(\k)/\vert \mathbf{h}(\k)$ wraps around the Bloch sphere~\cite{kaufmann_notes_2016}, a quantity that is known as the winding number. %For a small and constant value of $h_z$, $\hat{h}$ only wraps around the top or lower half of the Bloch sphere, depending on the sign of $h_z$.
 
-\subsection{A note on gauge invariance and Dirac strings }
+If $h_z=0$ there are Dirac points\footnote{This can happen if there is inversion ($\mathcal{P}$) and time reversal ($\mathcal{T}$) symmetry} where $\vert\mathbf{h}\vert=0$ and near these ponits Equation~\ref{eq:2D_Hamiltonian} locally resembles the Hamiltonian of a massless Dirac fermion. Near the Dirac points the Berry connection can be written as
+%
+\begin{equation}
+	\mathbf{\Omega}=\frac{1}{2}\frac{\mathbf{h}}{h^3}
+\end{equation}
+%
+which can be recognized as the field of a Dirac monopole~\cite{dirac_paul_adrien_maurice_quantised_1931} with charge equal to $1/2$.
+
+\note{I am confused again... why is the Chern number not a quarter?}
+
+Also keep in mind Krammers theorem: for every energy eigenstate of a time-reversal symmetric system with half-integer total spin, there is at least one more eigenstate with the same energy. In other words, every energy level is at least doubly degenerate if it has half-integer spin.
+% For this case the vector $\hat{h}(\k)$ is confined to the equator and does not wrap around the Bloch sphere. For small $h_z\neq0$ $\hat{h}(\k)$ covers  
+
+% If there is inversion ($\mathcal{P}$) and time reversal ($\mathcal{T}$) symmetry $h_z(\k)=0$ and there are points where the Hamiltonian in Equation~\ref{eq:2D_Hamiltonian} becomes singular. For example, in graphene this occurs in two points. In the vicinity of these points $\q=\k-\k_0$, Equation~\ref{eq:2D_Hamiltonian} resembles the Hamiltonian of a massles Dirac fermion $\hat H(\mathbf k)=\hbar v_F\mathbf q\cdot \vec \sigma$, where $v_F$ is a velocity. 
+ 
+% The $\mathcal{T}$ symmetry can be broken for example by applying a magnetic field, in which case the degeneracy at the Dirac point is broken and \ref{eq:2D_Hamiltonian} becomes a massive Dirac Hamiltonian. 
+
+
+     
+
+
+
+
+
+
+
+%  For simplicity lets consider $\mathbf{h}(\k)=h(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$. The Hamiltonian has eigenvalues $\pm h$ and the eigenstates are
+% %
+% \begin{align}
+% 	\ket{+}=&(\sin\theta/2e^{-i\phi}, -\cos\theta/2 )  \nonumber \\
+% 	\ket{-}=&(\cos\theta/2e^{-i\phi}, \sin\theta/2) 
+% \end{align}
+%
+
+% \subsection{A physical interpretation of the Chern number}
+
+% Consider a generic system that is described by the Hamiltonian
+
+% \begin{equation}
+% 	\hat H =\left(\frac{\hbar^2\mathbf{k}^2}{2m}+\hat{V}({\mathbf{r}})\right)\hat{\mathbb{1}} + \mathbf{\Omega}(\mathbf{r})\cdot\hat{\mathbf{F}}
+% 	\label{eq:generic_topologic_Hamiltonian} 
+% \end{equation}
+% %
+% where the vector $\mathbf{\Omega}(\mathbf r)=(\Omega_x(\r), \Omega_y(\r), \Omega_z(\r))$ describes a momentum dependent `magnetic field' or coupling between internal states and $\hat{\mathbf{F}}=(\fx, \fy, \fz)$. The eigenstates of~\ref{eq:generic_topologic_Hamiltonian} take the form
+% %
+% \begin{equation}
+% 	\ket{\psi_n(\r)}=\sum_{i}a_{i,n}(\k)\ket{i,\Omega(\r)}
+% 	\label{eq:generic_wavefunction}	
+% \end{equation}
+
+
+\subsection{Guauges and Dirac strings}
+
+If magnetic monopoles exist then electric charge must be quantized
+In electromagnetic theory 
+
+A consequence of the Berry connection being singular 
+
+This vector potential has one problem. It is singular at the north pole (z = r). In fact, one can prove that no matter which gauge one uses, there will always be a singularity point.
+
+Degeneracies as sources of Berry curvature field. There must therefore be Dirac strings as well...
+
 
 \section{Unconventional topology with a Rashba spin-orbit coupled quantum gas}
 
