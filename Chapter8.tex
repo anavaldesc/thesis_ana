@@ -3,10 +3,202 @@
 
 \renewcommand{\thechapter}{8}
 
-\chapter{Realization of a fractional period adiabatic superlattice}
-\label{ch:raman_lattice}
+\chapter{Unconventional topology with a Rashba SOC quantum gas}
+\label{ch:Rashba}
 
-This was an intermediate step to engineer topological matter with a lattice. 
+Engineering non-abelian gauge fields 
+talk a bit about the background. Why rashba is interesting and why did we choose to to this with Rashba. 
+This work started as Rashba but our attention was quickly shifted towards topology. We did this because we wanted to something that 
+
+\note{This probably doesn't go here} The topology of Bloch bands defines integers that serve to both classify crystalline materials and precisely specify properties, such as conductivity, that are independent of small changes to lattice parameters\cite{hasan_colloquium:_2010}. Topologically non-trivial materials first found application in metrology with the definition of the von Klitzing constant as a standard of resistance, which is now applied in the realization of the kilogram\cite{newell_codata_2018}. Today, topological systems have found applications in the engineering of low loss optical waveguides\cite{ozawa_topological_2019} and present a promising path to quantum computation\cite{nayak_non-abelian_2008}. Ultracold atomic systems are an emerging platform for engineering topological lattices, from the Harper-Hofsdater model\cite{miyake_realizing_2013,aidelsburger_realization_2013}, the Haldane model\cite{jotzu_experimental_2014}, to the Rice-Mele model\cite{lu_geometrical_2016,lohse_thouless_2016} as well as assembling spin-orbit coupled lattices without analogues in existing materials\cite{wu_realization_2016,sun_highly_2018}.
 
 
+In the work presented in this Chapter we break from the conventional mold. We engineered Rashba\cite{bychkov_oscillatory_1984} spin-orbit coupling for a cold atomic gas giving non-trivial topology, but without an underlying crystalline structure. In contrast to crystalline materials, where topological indices take on integer values, our continuum system reveals an unconventional half-integer Chern number, potentially implying new forms of topological transport.
+
+Ultracold atomic systems are an emerging platform for engineering topological lattices, from the Harper-Hofsdater model\cite{miyake_realizing_2013,aidelsburger_realization_2013}, the Haldane model\cite{jotzu_experimental_2014}, to the Rice-Mele model\cite{lu_geometrical_2016,lohse_thouless_2016} as well as assembling spin-orbit coupled lattices without analogues in existing materials\cite{wu_realization_2016,sun_highly_2018}. 
+
+ In the second section I will describe a series of experiments that we performed to engineer and characterize the topology of a Rashba spin-orbit coupled quantum gas. First I describe the engineering of the Rashba Hamiltonian using a trio of Raman coupled CDD states (Chapter~\ref{ch:clock_states}) and validate our engineering using Fourier transform spectroscopy (Chapter~\ref{ch:Fourier_spectroscopy}). Finally I describe a quantum state tomography procedure to measure the quantum states of our system, and directly obtain the Chern number for both a topologically trivial, where it is zero, and non-trivial configurations, where it takes half integer values. 
+
+
+A central tenet in topological matter is the existence of integer valued `invariants' that are independent of small changes to parameters. For an arbitrary closed 2-manifold $\mathcal{M}$ and a suitable choice of vector field (i.e., a two-form) $\mathbf{\Omega}$ the surface integral
+%
+\begin{equation}
+	\frac{1}{2\pi}\int_{\mathcal{M}}\mathbf \Omega\cdot d\mathbf S
+	\label{Eq:topology}
+\end{equation}
+%
+serves to define both the Euler characteristic and the Chern number \cite{ozawa_topological_2019,cooper_topological_2019}. When $\mathbf{\Omega}$ is equal to the local Gaussian curvature of $\mathcal{M}$, Eq.~\ref{Eq:topology} yields the Euler characteristic, an invariant related to the number of handles, or genus, of $\mathcal{M}$. In contrast, when $\mathcal{M}$ is a torus describing a two-dimensional Brillouin zone (BZ) and $\mathbf{\Omega}$ is the Berry curvature that characterizes the underlying quantum states, Eq.~\ref{Eq:topology} instead gives the Chern number. Both the Euler characteristic and the Chern number are integer valued, but the Euler characteristic depends only on the manifold $\mathcal{M}$ and its intrinsic curvature, whilst the Chern number depends both on a manifold (the BZ) and an additional vector field defined on $\mathcal{M}$ (the Berry curvature). 
+
+\note{Up to here probably gets shuffled with the intro section}
+
+Experimental realizations of topological materials have focused on engineering different Berry curvatures in lattice systems, where $\mathcal{M}$ is always a torus. Here we show that by eliminating the lattice potential and thereby changing  $\mathcal{M}$ from ${\mathbb T}^2$ to ${\mathbb R}^2$, i.e. from a torus to a Cartesian plane, it is possible to create topological branches of the dispersion relation with half-integer Chern number. In our experiments we created both topological and non-topological dispersion branches by introducing Rashba-like spin-orbit coupling (SOC)\cite{campbell_realistic_2011, huang_experimental_2016, meng_experimental_2016} to a cold quantum gas. 
+
+\subsection{Engineering the Rashba Hamiltonian}
+
+ We engineered Rashba SOC by resonantly coupling three internal atomic states using two-photon Raman transitions\cite{campbell_rashba_2016} as depicted in Fig.~\ref{fig:Schematic}. As shown in Fig.~\ref{fig:Schematic}a, the engineered system consisted of an effective spin-1/2 subspace described by a Rashba-type SOC Hamiltonian $\hat{H}_{\rm SOC}=2\alpha/m(\q \times \mathbf{e}_1) \cdot \hat{\boldsymbol{\sigma}}$, with added tunable higher-order terms describing quadratic and cubic Dresselhaus-like SOC\cite{campbell_realistic_2011}, along with a topologically trivial high-energy branch. Here $\alpha$ is the spin-orbit coupling strength and $\hat{\boldsymbol{\sigma}}=(\hat{\sigma}_x,\hat{\sigma}_y,\hat{\sigma}_z)$ is the vector of Pauli operators. Our engineered Rashba system had a single Dirac cone near $\q=0$, where the two lower dispersion branches become degenerate and the Berry curvature becomes singular. Each of these branches extend to infinite momentum, making the supporting manifold a plane rather than a torus. We characterized this system using both spectroscopy and quantum state tomography. This allowed us to measure the dispersion branches and directly observe the single Dirac point linking the lowest two branches as well as to reconstruct the Berry connection to derive the associated Chern numbers.
+ % We studied this system with two experiments: first we spectroscopically measured these dispersion branches and containing a single Dirac point linking the lowest two branches; and second we used quantum state tomography to reconstruct the Berry curvature and any associated Chern numbers. 
+
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Brief descrpiption of Rashba SOC: theory and implementation
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter7/fig1.pdf}
+\caption{{\bfseries a} Our engineered dispersion consisted of a two-level Rashba subspace (red and blue) with a single Dirac point linking the lowest two branches and a topologically trivial higher branch (gray). {\bfseries b} We generated $xyz$ states by combining a bias magnetic field along $\mathbf{e}_3$ with an RF magnetic field oscillating along $\mathbf{e}_1$. These states were coupled by three cross-polarized Raman laser beams propagating along $\mathbf{e}_1$, $\mathbf{e}_2-\mathbf{e}_1$ and $-\mathbf{e}_1-\mathbf{e}_2$. {\bfseries c} Each pair of Raman lasers was in two-photon resonance with a single transition between the $xyz$ states which we coupled strengths $(\Omega_{zx}, \Omega_{xy}, \Omega_{yz})/2\pi=\unit[(12.6(5), 8.7(8), 10(1))]{kHz}$.}
+\label{fig:Schematic}
+\end{center}
+\end{figure*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Brief details on experimental implementation
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection{Experimental procedure}
+
+All of our experiments started with about $10^6$ $\Rb87$ atoms in the ground state $F=1$ hyperfine manifold, just above the transition temperature for Bose-Einstein condensation.  A bias field $B_0\mathbf{e}_3$ gave a $\omega_0/2\pi=\unit[23.9]{MHz}$ Larmor frequency along with a quadratic shift of $\epsilon/2\pi=\unit[83.24]{kHz}$. An RF magnetic field oscillating at the Larmor frequency with strength $\Omega_{\rm RF}=1.41(2)\epsilon$\footnote{When $\Omega_{\rm RF}=\sqrt{2}\epsilon$ the $xyz$ transitions are $\omega_{zx}=2\omega_{xy}$ and $\omega_{zy}=3\omega_{xy}$ and our system can be described using Floquet theory (see Methods).}implemented continuous dynamical decoupling (CDD)\cite{fonseca-romero_coherence_2005}.  This generated a set of magnetic field insensitive states\cite{trypogeorgos_synthetic_2018, anderson_continuously_2018} that we denote by $\ket{x}$, $\ket{y}$ and $\ket{z}$ as they are closely related to the $XYZ$ states of quantum chemistry\cite{cooper_reaching_2013} rather than the conventional $m_F$ angular momentum states. We Raman-coupled atoms prepared in any of the $xyz$ states using the three cross-polarized `Raman' laser beams shown in Fig.~\ref{fig:Schematic}b, tuned to the `magic zero' wavelength $\lambda_L = \unit[790]{nm}$, where the scalar light shift vanishes. We arranged the Raman lasers into the tripod configuration shown in Fig.~\ref{fig:Schematic}c, bringing each pair into two-photon resonance with a single transition with strengths $(\Omega_{zx}, \Omega_{xy}, \Omega_{yz})/2\pi=\unit[(12.6(5), 8.7(8), 10(1))]{kHz}$ (see Methods). This coupling scheme simultaneously overcomes three limitations of earlier experiments\cite{huang_experimental_2016,meng_experimental_2016}: (1) working in the same hyperfine manifold eliminates spin-relaxation collisions; (2) unlike $m_F$ states, the $xyz$ states can be tripod-coupled with lasers far detuned relative to the excited state hyperfine splitting greatly reducing spontaneous emission\cite{cooper_reaching_2013}; and (3) CDD renders the $xyz$ states nearly immune to magnetic field noise.
+
+Each pair of Raman lasers coupled states $\ket{i, \k}\rightarrow \ket{j, \k+\k_{i,j}}$ where $\ket{i}$ and $\ket{j}$ denote the initial and final $xyz$ states, $\k$ is the initial momentum and $\k_{i,j}=\k_i-\k_j$ is the two-photon Raman recoil momentum. Dressed states with quasimomentum $\q$ are comprised of three bare states $\ket{j,\k}$ with momentum $\k=\q-\k_j$. The eigenstates of our Rashba SOC Hamiltonian take the form
+\begin{equation}
+	\ket{\Psi_n(\q)}=\sum_{j\in xyz}\sqrt{a_{n,j}(\q)}e^{i\phi_{n,j}(\q)}\ket{j,\k=\q-\k_{j}},	
+	\label{Eq:Raman_wavefunction}
+\end{equation}
+where the quasimomentum $\q$ is a good quantum number and the amplitudes are parametrized by $a_{n,j}(\q)$ and $\phi_{n,j}(\q)$. We leveraged the wide momentum distribution of a non-condensed ensemble ($T\approx\unit[180]{nK}$ and $T/T_c\approx 1.1$) to sample a wide range of momentum states simultaneously. By starting separately in each of the $xyz$ states we sampled the range of quasimomentum states shown in Fig.~\ref{fig:fourier_spectroscopy}a, where the momentum distributions of an initial state $\ket{j,\k}$ is shifted from $\q=0$ by the corresponding Raman wave vector $\k_{j}$. 
+
+Our measurement protocol consisted of abruptly removing the confining potential and the Raman lasers, initiating a $\unit[21]{ms}$ time-of-flight (TOF). During this TOF we adiabatically transformed each of the $xyz$ states back to a corresponding $\ket{m_F}$ state and spatially separated them using a `Stern-Gerlach' gradient. Finally we used resonant absorption imaging to measure the resulting density distributions, yielding the spin-resolved momentum distribution.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Results I: Fourier spectroscopy
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Fourier spectroscopy of the Rashba dispersion}
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter7/fig2.pdf}
+\caption{{\bfseries a} The initial thermally occupied $xyz$ states $\ket{j,\k}$ lead to the displayed quasimomentum distribution. The black dots represent $\k=0$ for each of the $xyz$ states which is mapped to non-zero $\q$, the red dot represents $\q=0$ and the blue star indicates the quasimomentum $(q_1, q_2)=\unit[(-0.55,-0.18)]{k_{\rm L}}$. We used non-condensed atoms with a broad momentum distribution ($T\approx\unit[180]{nK}$ and $T/T_c\approx 1.1$) and performed our experiments starting separately in each of the $xyz$ states, sampling a large range of quasimomentum states. {\bfseries b} Fourier spectroscopy protocol. We applied the Raman lasers for a variable time $t_{\mathrm{p}}$: a Rabi-type atomic interferometer analogous to a three-port beam splitter. {\bfseries c} Probabilities as a function of quasimomentum for a fixed Raman pulse time $t_{\rm p}=\unit[420]{\mu s}$ {\bfseries d} Dynamics of the final populations of the $xyz$ states with quasimomentum $(q_1, q_2)=\unit[(-0.55,-0.18)]{k_{\rm L}}$ (red star in panels {\bfseries a} and {\bfseries c}) after initializing the system in the $\ket{z}$ state. }
+\label{fig:fourier_spectroscopy}
+\end{center}
+\end{figure*}
+
+We directly measured the 2D dispersion relation using Fourier transform spectroscopy\cite{valdes-curiel_fourier_2017}. In this technique we considered the evolution of an initial state $\ket{i,\mathbf{k}}$ suddenly subjected to the Raman coupling lasers. This atomic Rabi-type interferometer is analogous to the three-port beam-splitter depicted in Fig.~\ref{fig:fourier_spectroscopy}b. During a pulse time $t_{\mathrm{p}}$ we followed the dynamics of the populations in the $xyz$ states which evolved with oscillatory components proportional to $\sum_{j\neq n} a_{n,j}(\q)\cos([E_n(\q)-E_{j}(\q)]t_{\mathrm{p}}\,/\hbar)$, with frequencies determined by the eigenenergy differences $E_n-E_j$. Figure~\ref{fig:fourier_spectroscopy}c shows the momentum dependent populations for a fixed pulse time $t_{\mathrm{p}}$ and Fig.~\ref{fig:fourier_spectroscopy}d shows representative final populations as a function of $t_{\mathrm{p}}$ for a fixed quasimomentum state. We Fourier transformed the populations with respect to $t_p$ and for a given quasimomentum state to produce spectral distributions as a function of quasimomentum $\q$. The spectral maps in Fig.~\ref{fig:fourier_spectroscopy_bands}b depict planes of constant $q_1$ in this three-dimensional distribution, whose extrema are the energy differences $E_n-E_j$ in the engineered dispersion (Fig.~\ref{fig:fourier_spectroscopy}a). Together these show the presence of a single Dirac point in the Rashba subspace, evidenced by the gap closing near $\q=0$ and the photon-like lower branch. The dashed curves correspond to the energy differences computed for our system using the dispersions shown in Fig.~\ref{fig:fourier_spectroscopy_bands}a, and are in clear agreement with our experiment. %This measurement directly confirms the expected set of energies, including the existence of a two-state subspace approximately described by the Rashba Hamiltonian. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Results II: Measurement of Chern number
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\subsection{Quantum state tomography with Ramsey interferometer}
+
+However, the energies shed no light on the topology of the different branches of the dispersion, which instead requires knowledge of the eigenstates. The Berry curvature present in Eq.~\ref{Eq:topology} can be derived from the Berry's connection $\mathbf{A}_n(\q)=i\bra{\Psi_n(\q)}\mathbf{\nabla}_q\ket{\Psi_n(\q)}$ which behaves much like a vector potential in classical electromagnetism. The Berry curvature $\mathbf{\Omega}_n(\q)=\mathbf{\nabla}_q\times\mathbf{A}(\q)$ is the associated magnetic field and the flux through any surface is the line integral of $\mathbf{A(\q)}$ along its boundary, after neglecting the contributions of Dirac strings which we will discuss later. The Berry connection derived from Eq.~\ref{Eq:Raman_wavefunction}
+%
+\begin{equation}
+ \mathbf A_n(\q)= -\!\!\!\!\!\!\sum_{j \in\{x, y, z\}}  a_{n,j}(\q)  \nabla_q \phi_{n,j}(\q)
+\label{Eq:Berry_connection1}
+\end{equation}
+%
+depends on both the phase and amplitude of the wave function. We obtained $a_{n,j}(\q)$ and $\phi_{n,j}(\q)$ using a three-arm time-domain Ramsey interferometer, implementing a variant of quantum state tomography\cite{flaschner_experimental_2016,godfrin_generalized_2018}. The use of a multi-path interferometer allowed us to transduce information about phases into state populations, which we readily obtained from absorption images. 
+%
+\begin{figure}[H]
+\begin{center}
+\includegraphics[]{Figures/Chapter7/fig3.pdf}
+\caption{{\bfseries a} Predicted dispersion relation as a function of $q_2$ for fixed $q_1=-0.09 \,k_{\rm L}$ (left) and $0.65\,k_{\rm L}$ (right), computed for the experiment parameters. The energy differences between the branches enclosing the vertical arrows appear as peaks in the spectral maps below. {\bfseries b} Power spectral density (PSD) for the same parameters as above which we obtained by Fourier transforming the populations in the $xyz$ states with respect to $t_{\mathrm{p}}$. The dashed lines correspond to the energy differences computed using the dispersion curves on the top panel.}
+\label{fig:fourier_spectroscopy_bands}
+\end{center}
+\end{figure}
+%
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter7/fig4.pdf}
+\caption{{\bfseries a} Experimental protocol for three-arm Ramsey interferometer (not to scale). (Top) We started with atoms in state $\ket{z,y,\q_i=\k+\mathbf{k}_j}$ and with detuning $\delta_y=\pm \unit[5]{E_{\rm L}}$ and $\delta_z=\pm\unit[5]{E_{\rm L}}$. We ramped the Raman lasers on in $750 \us$ and then ramped the detuning to nominally zero. We let the system evolve in the dark for times between $5 \,\us$ and $400\,\us$, followed by a $\unit[25]{us}$ Raman pulse. (Bottom) The implemented experimental protocol was equivalent to a three-arm interferometer that split an initial state into three final states with amplitudes related to the initial wave function phases. {\bfseries b} Probabilities as a function of quasimomentum for the three output ports of the interferometer at $t_{\rm free}=\unit[160]{\mu s}$ {\bfseries c} Probabilities as a function of free evolution time $t_{\mathrm{free}}$ for an input state with quasimomentum $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$ indicated by the blue star on {\bfseries b} and in the topological ground branch ($n=1$)}
+\label{fig:Ramsey_ramps}
+\end{center}
+\end{figure*}
+
+Figure~\ref{fig:Ramsey_ramps}a shows our experimental protocol. We adiabatically mapped an initial $\ket{j, \k}$ state into a corresponding eigenstate $\ket{n,\q=\k+\k_j}$, either in the topologically trivial highest dispersion branch ($n=3$) or in the topological ground branch ($n=1$) by dynamically tailoring both the Raman coupling strength and detuning (see Methods). We suddenly turned off the Raman coupling, thereby allowing the three bare state components of the Rashba eigenstates to undergo free evolution for a time $t_{\mathrm{free}}$, constituting the three arms of our time-domain interferometer. Finally we applied a three-port beam splitter using a brief Raman `recombination' pulse to interfere the three arms. At the end of this procedure, the population in a final state $\ket{l, \q}$ is
+\begin{equation}
+P_l(\q,t)=\sum_{i\neq j} a_{n,i}a_{n,j}\cos(\omega_{i,j}(\q) t+\phi_{n,i}(\q) - \phi_{n,j}(\q)+\phi_{l,i,j}^{p}(\q)),
+\label{Eq:Ramsey_evolution}
+\end{equation}
+which directly reads out the phase differences, independent of the output port $l$. Here $\phi_{l,i,j}^{p}(\q)$ is a smoothly varying phase imprinted by the recombination pulse and is independent of $\q$ in the limit of short, strong pulses. The angular frequencies $\omega_{i,j}(\q)=\hbar \q \cdot \k_{i,j}/m + \delta_{i,j}$ result from the known free particle kinetic energy and detuning $\delta_{i,j}$ from the tripod resonance condition. Figure~\ref{fig:Ramsey_ramps}b shows the momentum-dependent populations in each output port at fixed $t_{\rm free}=\unit[160]{\mu s}$ and Fig.~\ref{fig:Ramsey_ramps}c shows the populations as a function of $t_{\mathrm{free}}$ for a representative quasimomentum state $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$. We obtained the relative phases from Eq.~\ref{Eq:Ramsey_evolution} by fitting the measured populations to the sum of three cosines with the known free particle frequencies but unknown amplitudes and phases. 
+
+Figure~\ref{fig:Ramsey_phases}a shows typical phase-maps for both the non-topological and topological branches. In the non-topological phase-maps the momentum dependence of the recombination pulse $\phi_{l,i,j}^{p}(\q)$ causes a smooth variation of the phases along the Raman recoil axes that does not affect the evaluation topological index of our system. To recover the phases $\phi_{n,j}$ of the full spinor wave function from the fits, we made the gauge choice described in the Methods.
+
+
+We recovered the phases $\phi_{n,j}$ of the full spinor wave function from the relative phases obtained from the fits by choosing a particular gauge (see Methods). We then used the values of $a_{n,i}$ obtained from measuring the populations in the $xyz$ states at $t_{\mathrm{free}}=0$ in combination with the phases of the wave function to compute the Berry connection\cite{fukui_chern_2005}. Figure~\ref{fig:Ramsey_phases}b shows the three phase differences as a function of polar angle for a loop of radius $q\approx 0.77\,k_{\rm L}$ for both the topological and non-topological branches. In addition to the smooth variations induced by the recombination which are present in both columns, the phases of the topological branch have two $\pi$ valued jumps that lead to non-zero Berry phases when the Berry connection is integrated along a closed loop in momentum space. Fig.~\ref{fig:Ramsey_phases}c shows the integrated Berry phase as a function of loop radius. The largest value of $t_{\mathrm{free}}$ in the experiment limits how well we can resolve the phases of low frequencies $\omega_{ij}(\q)$ near $q=0$ as well as when two different frequencies $\omega_{ij}(\q)$ and $\omega_{i'j'}(\q)$ are close to each other, as can be seen in the high noise present in the phase-maps near $q=0$ as well as in lines where the fit frequencies become nearly degenerate. This limitation is reflected in the large variation in the Berry phase depicted in the shaded region of Fig.~\ref{fig:Ramsey_phases}c near $q=0$. For loops with $q>0.4\,k_{\rm L}$ we obtain an integrated Berry phase that suggests an asymptotic Chern number of $\Phi_{\rm B}/2\pi=0.01(1)$ for the non-topological branch and $\Phi_{\rm B}/2\pi=0.5(5)$ for the topological branch. However, Berry's phase measurements including ours includes the (potential) contribution of any Dirac strings traversing the integration area. In our system, these are possible at the Dirac point $^*$, and each contributes $\pm2\pi$ to $\Phi_{\rm B}$. Even with this $2\pi$ ambiguity we are able to associated a half-integer Chern number with the topological branch, which is possible only for a topological dispersion branch in the continuum. 
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter7/fig5.pdf}
+\caption{Topological invariants from quantum state tomography, for the non-topological branch ($n = 3$, left) and the topological branch ($n = 1$, right). {\bfseries a} Phase differences as a function of quasimomentum from the the $z\rightarrow x$ transition {\bfseries b} Phase differences as a function of polar angle for a loop radius $\unit[0.77]{\kl}$ from the $z\rightarrow x$ (top), $x\rightarrow y$ (middle) and $y\rightarrow z$ (bottom) transitions. The phases associated to the topological branch are characterized by two $\pi$ valued discontinuities. Each row of phases was shifted by a constant value so that the three rows of phases share the same vertical axis. All phases shown here were binned and averaged using the fit uncertainties as weights. {\bfseries c} Inferred Chern number as a function of loop radius. For loops with $q>0.4\,k_{\rm L}$ we obtained an integrated Berry phase and asymptotic Chern number of $\Phi_{\rm B}/2\pi=0.01(1)$ for the non-topological branch and $\Phi_{\rm B}/2\pi=0.5(5)$ for the topological branch.}
+\label{fig:Ramsey_phases}
+\end{center}
+\end{figure}
+
+
+In conventional lattices --- for example graphene, or the topological Haldane model --- it is well established that Dirac points each contribute a Berry's phase of $\Phi_{\rm B} /2\pi =\pm 1/2$\cite{duca_aharonov-bohm_2015}, but crystalline materials conspire for these to appear in pairs\cite{nielsen_adler-bell-jackiw_1983}, always delivering integer Chern numbers. In contrast, our continuum system contains a single Dirac point, resulting in a non-integer Chern number. This leads to intriguing questions about edge states at interfaces with non-integer Chern numbers with non-integer Chern number differences. Initial studies in the context of electromagnetic waveguides\cite{silveirinha_chern_2015 } and atmospheric waves\cite{delplace_topological_2017} have applied Chern invariants and the bulk-edge correspondence to continuous media. 
+
+While the true Rashba Hamiltonian features a ring of degenerate eigenstates, our implementation including the quadratic and cubic Dresselhaus-like SOC lifts this macroscopic degeneracy giving three nearly degenerate minima\cite{campbell_realistic_2011}. Already these three minima could allow the study of rich ground state physics in many body systems of bosons, for example the formation of fragmented BECs\cite{stanescu_spin-orbit_2008} when the system does not condense into a single-particle state. Furthermore, the use of additional spin states or larger Raman couplings can partially restore this degeneracy allowing the possible realization of fractional Hall like states\cite{sedrakyan_statistical_2015}. 
+
+\note{Modify words} Our present work clearly shows new non-integer values for topological invariants, but leaves open the “bulk-boundary” connection, which links quantized transport to interfaces between systems with different topological invariants.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Methods
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{System preparation}
+Our experiments began with $N\approx 1\times 10^6$  $\Rb87$ atoms in a crossed optical dipole trap\cite{lin_rapid_2009}, with frequencies $(f_1,f_2,f_3) \approx \unit[(70, 85, 254)]{Hz}$. We initially prepared the atoms in the $\ket{F=1, m_F=-1}$ state of the $5S_{1/2}$ electronic ground state. We then transfered the atoms either to $m_F=0$ or $m_F=+1$ by applying an RF field with approximately $\unit[20]{kHz}$ coupling strength and ramping a bias magnetic along $\mathbf{e}_3$ from $\unit[36]{\mu T}$ lower value to $B_i=\unit[3.39(9)]{mT}$ in $\unit[50]{ms}$. We prepared the $xyz$ states by starting in each of the $m_F$ states in a bias field $\unit[72]{\mu T}$ lower than $B_0$ and then ramping on the RF dressing field to $\Omega_{\rm RF}/2\pi=\unit[117(2)]{kHz}$ in $\unit[1]{ms}$ and then ramped the bias field to its final value $B_0=\unit[3.40(9)]{mT}$ in $\unit[3]{ms}$. We finally waited for $\unit[40]{ms}$ for the fields to stabilize prior to applying any Raman coupling. 
+
+
+\subsection{Raman coupling the $xyz$ states}
+
+The energies of the $xyz$ states are $\omega_x=0$ and $\omega_{z,y}=-(\epsilon\pm\sqrt{4\Omega_{\rm RF}^2+\epsilon^2})/2$. We set the frequencies of the Raman lasers to $\omega_x=\omega_L+\omega_0+\omega_{xy}$, $\omega_y=\omega_L+\omega_0$ and $\omega_z=\omega_L-\omega_{zx}$,  where $\omega_L=2\pi c/\lambda_L$ and $(\omega_{zx}, \omega_{xy}, \omega_{zy})/2\pi = \unit[(166.47, 83.24, 249.71)]{kHz}$ are the transition frequencies between pairs of dressed states are integer multiples of $\epsilon$ for our coupling strength $\Omega = \sqrt{2}\epsilon$.
+
+The Raman coupled states are well described by the combined kinetic and light-matter Hamiltonian 
+\begin{equation}
+	\hat H(\q) =\sum_{i\in\{xyz\}}\bigg(\frac{\hbar^2(\q-\k_i)^2}{2m}+\hbar\delta_i\bigg)\ket{i}\bra{i}+\sum_{i\neq j}\hbar\Omega_{ij}\ket{j}\bra{i},
+	\label{Eq:Rashba_atoms}
+\end{equation}
+where $\k_i$ are the Raman wave vectors, $\delta_i$ is a detuning from Raman resonance and $\Omega_{ij}$ is the Raman coupling strength between a pair of RF dressed states. 
+
+Our implementation of Rashba SOC has the advantages of reduced losses from spin-relaxation collisions and increased stability against environmental fluctuations due to the clock-like nature of the $xyz$ sates. The measured spontaneous emission limited lifetime of our system is $\unit[320(17)]{ms}$. However it is reduced to $\unit[40(2)]{ms}$ when the Raman couplings are resonant, which we attribute to technical noise in the relative phase between the RF dressing field and the Raman laser fields, which has caused considerable consternation in ongoing experiments. 
+
+
+\subsection{Floquet effects}
+We operated in a regime where the transition energies between the $xyz$ states were integer multiples of $\omega_{xy}$: $\omega_{zx}=2\omega_{xy}$ and $\omega_{zy}=3\omega_{xy}$, and therefore we can use Floquet theory for a complete description of our system\cite{goldman_periodically_2014}. The Hamiltonian in Eq.~\ref{Eq:Rashba_atoms} is therefore an effective Hamiltonian that describes the stroboscopic dynamics of the full Floquet Hamiltonian. We observed that the effective Raman coupling strengths for the driven three level system differed from our calibrations which were performed by only driving one pair of states because of the presence of nearby quasi-energy manifolds. This effect would be mitigated for larger values of $\omega_{xy}$ as the spacing between quasi-energy manifolds is increased. 
+
+\subsection{Combining spectral maps from different states}
+
+In the Fourier spectroscopy experiments, we initialized the system in any of the three $xyz$ states. We individually computed the Fourier transforms with respect to $t_{\rm p}$ for a total of nine distributions of $\ket{j,\q}$ states (accounting for each of the three $xyz$ states that were split each into 3 states). We computed the spectral maps displayed in Fig.~\ref{fig:fourier_spectroscopy}b by averaging the PSD of each distribution, where each $\q$ state was weighted by the mean population in $t_{\rm p}$.
+
+%
+\subsection{State preparation for Ramsey interferometer}
+
+For the Rashba dressed states preparation we started with RF dressed states with a different coupling strength $\Omega_{\rm RF}/\pi 2\pm \unit[20]{kHz}$. This change shifted the energies of the $\ket{z}$ and $\ket{y}$ states by about $\pm \unit[18.8]{kHz}$. The change in the $xyz$ state eigenenergies corresponded to non-zero $\delta_z$ and $\delta_y$ in Eq.~\ref{Eq:Rashba_atoms}. We chose the detuning such that the initial state had a large overlap with either the $n=1$ or the $n=3$ eigenstates of Eq.~\ref{Eq:Rashba_atoms}. We ramped the Raman on in $\unit[750]{\mu s}$ and then ramped $\Omega_{\rm RF}$ to its final value in $\unit[1]{ms}$, effectively ramping $\delta_z$ and $\delta_y$ close to zero. This detuning ramp had the additional effect of moving the location Dirac point through the atoms, thereby creating a trajectory where the state preparation was not adiabatic. This trajectory depended on the sign of the detuning ramp and therefore we used different initial states and detuning ramps for the ground state preparation and we excluded the Dirac point trajectories when combining the data. Near the final location of the Dirac point the state preparation can not be adiabatic regardless of the initial state or detuning used for the ground state preparation.  Finally, because of our state preparation method we could only prepare dressed states in either the $n=1$ or $n=3$ by initializing the system in the $\ket{y}$ or $\ket{z}$ states. When we prepared the system in $\ket{x}$ the final dressed state corresponded to the $n=2$ branch.
+
+
+\subsection{Combining phases from different states}
+
+The phases of the fitted populations at the output of the interferometer correspond to $\Delta\phi_{n,i,j,l}=\phi_{n,i}(\q) - \phi_{n,j}(\q)+\phi_{l,i,j}^{p}(\q)$. The last term in the expression has $\q$-independent term that depends on the final state and a $\q$-dependent term that has no dependence on the final state, i.e.,  $\phi_{l,i,j}^{p}(\q)=\phi^{p_0}_l+\phi^{p_1}_{i,j}(\q)$. When combining the phases from different initial states we removed their final state dependence by shifting $\Delta\phi_{n,i,j,l}$ by a constant number such that they maximally overlap, effectively making $\phi^{p_0}_l$ the same for all states. Finally, we averaged all the phase differences obtained from the fits, weighted by the inverse of the uncertainties obtained from the fitting procedure. For the topological branch data we excluded the regions away from $\q=0$ where the Dirac point was moved from the average. Finally we chose a gauge such that $\phi_1(\q)=0$ and used this to convert phase dif
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Graveyard
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \textit{Fiber bundles} A manifold is a topological space which looks locally like $R^n$ , but not necessarily so globally. A fibre bundle is, so to speak, a topological space which looks locally like a direct
+% product of two topological spaces. 
 
