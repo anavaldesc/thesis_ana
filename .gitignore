@@ -242,4 +242,4 @@ TSWLatexianTemp*
 *.spl
 
 # other stuff
-Figures/
+/Figures/*
