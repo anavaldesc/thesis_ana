@@ -19,6 +19,40 @@ Ultracold atomic systems are an emerging platform for engineering topological la
 
 \section{Rashba SOC}
 
+% In earlier sections we discussed the spin-orbit coupling interaction between spin and angular momentum that gives rise to the atomic level structure. In condensed matter systems, there is another kind of spin-orbit coupling that links the spin of the electrons with the linear or crystal momentum. In 2D materials, SOC can be represented as a sum of Rashba~\cite{bychkov_oscillatory_1984} and Dresselhaus~\cite{dresselhaus_spin-orbit_1955} SOC. 
+
+Rashba SOC~\cite{bychkov_oscillatory_1984} appears in condensed matter systems where electrons are confined in a 2D plane and with an intrinsic out-of-plane electric. If the electron's momentum is given by $\hbar\k=\hbar(k_x\ex+k_y\ey)$ and the electric field is $\mathbf{E}=E\ez$, in the electron's moving frame there will be a momentum dependent magnetic field $\mathbf{B}_{\rm SOC}=-\hbar\k/m\times\mathbf{E}/c^s=\hbar E/mc^2(-k_y, k_x, 0)$. The interaction between the electron's spin with this field through the magnetic Zeeman interaction $-\mathbf{\mu}\cdot{\mathbf{B}_{\rm SOC}}$ gives rise to the SOC term
+%
+\begin{equation}
+	\hat{H}_{\rm SOC})=\frac{2\alpha}{m}(k_y\hat{\sigma}_x-k_x\hat{\sigma}_y)
+	\label{eq:Rashba_ham}
+\end{equation}
+%
+where $\alpha=g\mu_BE/c^2$ with $g$ the electrons gyromagnetic ratio, $\mu_B$ is the Bohr magneton and $\hat{\sigma}_i$ are the Pauli matrices. 
+
+The Rashba dispersion relation is characterized by having a Dirac point located at $\k=0$ (see Chapter~\ref{sec:2_level_topology}) and a degenerate ground state that is described by the ring $k_x^2+k_y^2=\alpha^2$. 
+
+Another interesting fact of the Rashba Hamiltonian is that it corresponds to a non-abelian gauge potential. The combined Rashba and free particle Hamiltonians can be written as $\hat{H}=(\hbar\k-\hat{\mathbf{A}})^2/2m$ where $\mathbf{\hat{A}}=\alpha(\hat{\sigma}_y\ex-\hat{\sigma}_x\ey$ can be interpreted as a matrix valued vector potential whose elements do not commute. This term is also related to the Berry connection discussed in Chapter~\ref{sec:Berry phase and curvature}. 
+
+\subsection{Rashba SOC for neutral atoms}
+
+Proposals for engineering Rashba type SOC in neutral atoms consist in using lasers to link internal states of the atom with its linear momentum.
+In order to achieve non-trivial gauge potentials it is necessary to couple $N\geq3$ levels (see~\cite{goldman_light-induced_2014}).
+Proposals for creating SO coupling with neutral atoms use
+lasers to link states of different momentum and spin. Because
+these lasers impinge from discrete directions, the system lacks
+the continuous rotational symmetry of the pure Rashba Hamiltonian anticipated in earlier works
+
+Perturbative treatment recovers rotational symmetry. 
+
+As shown by Wilczek and Zee, non-Abelian gauge fields
+can arise in the adiabatic dynamics of quantum systems
+with multiple degenerate eigenstates [19]. One of the
+interesting properties of non-Abelian gauge potentials is
+the possibility of magnetic monopoles
+
+\section{Topology and Rashba}
+
 A central tenet in topological matter is the existence of integer valued `invariants' that are independent of small changes to parameters. For an arbitrary closed 2-manifold $\mathcal{M}$ and a suitable choice of vector field (i.e., a two-form) $\mathbf{\Omega}$ the surface integral
 %
 \begin{equation}

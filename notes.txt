@@ -25,3 +25,12 @@ Stuff for Topology Chapter (Ch 7?):
 -http://cem.osu.edu/files/2017/03/Kane-Marcel-Franz-book.pdf this one is gold (good explanations of basic concepts of topology)
 -https://iopscience.iop.org/article/10.1088/1367-2630/16/8/083022/pdf explains winding number mapping torus into bloch spbere
 -http://www.theory.caltech.edu/~preskill/pubs/preskill-1984-monopoles.pdf intro to Dirac strings
+
+Stuff for Rashba:
+
+Need to understand and write about:
+-Collisional decays from F=2
+-Why matrix elements are no good in F=1 without clock states
+-Dark state interpretation of things. This one might be good:
+https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.95.010404
+-Why do we never bother about tensor light shifts?!
