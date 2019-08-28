@@ -24,7 +24,7 @@ Ultracold atomic systems are an emerging platform for engineering topological la
 Rashba SOC~\cite{bychkov_oscillatory_1984} appears in condensed matter systems where electrons are confined in a 2D plane and with an intrinsic out-of-plane electric. If the electron's momentum is given by $\hbar\k=\hbar(k_x\ex+k_y\ey)$ and the electric field is $\mathbf{E}=E\ez$, in the electron's moving frame there will be a momentum dependent magnetic field $\mathbf{B}_{\rm SOC}=-\hbar\k/m\times\mathbf{E}/c^s=\hbar E/mc^2(-k_y, k_x, 0)$. The interaction between the electron's spin with this field through the magnetic Zeeman interaction $-\mathbf{\mu}\cdot{\mathbf{B}_{\rm SOC}}$ gives rise to the SOC term
 %
 \begin{equation}
-	\hat{H}_{\rm SOC})=\frac{2\alpha}{m}(k_y\hat{\sigma}_x-k_x\hat{\sigma}_y)
+	\hat{H}_{\rm SOC}=\frac{2\alpha}{m}(k_y\hat{\sigma}_x-k_x\hat{\sigma}_y)
 	\label{eq:Rashba_ham}
 \end{equation}
 %
@@ -36,12 +36,47 @@ Another interesting fact of the Rashba Hamiltonian is that it corresponds to a n
 
 \subsection{Rashba SOC for neutral atoms}
 
-Proposals for engineering Rashba type SOC in neutral atoms consist in using lasers to link internal states of the atom with its linear momentum.
-In order to achieve non-trivial gauge potentials it is necessary to couple $N\geq3$ levels (see~\cite{goldman_light-induced_2014}).
-Proposals for creating SO coupling with neutral atoms use
-lasers to link states of different momentum and spin. Because
-these lasers impinge from discrete directions, the system lacks
-the continuous rotational symmetry of the pure Rashba Hamiltonian anticipated in earlier works
+Proposals for engineering Rashba type SOC in neutral atoms consist in using lasers to link internal states of an atom with its linear momentum.
+In order to achieve non-trivial gauge potentials it is necessary to couple $N\geq3$ levels (see~\cite{goldman_light-induced_2014}). We follow the proposal by~\cite{campbell_realistic_2011} which considers a `ring coupling' as shown in Figure~\ref{fig:rashba_ring_coupling} for the case of $N=3$. The states $\ket{j}$ represent ground or metastable atomic internal states and they are linked to each other with complex valued matrix elements $\frac{\Omega_j}{2}e^{i\k_{j}\cdot\x}$, where $\k_{j}$ is the momentum transfer associated with the $\ket{j}\rightarrow\ket{j+1}$ transition and $\Omega_i=e^{i\phi_i}\vert\Omega\vert$ represents the coupling strength. We require that $\sum\k_i=0$ so that no momentum is transfered when a closed loop $\ket{1}\rightarrow\ket{2}\dots \rightarrow\ket{N}\rightarrow\ket{1}$ is completed. The $\k_i$ momenta vectors can then be written as $\k_j=\mathbf{K}_{j+1}-\mathbf{K}_j$.
+
+We can further make a gauge transformation such that we can replace the phases $\phi_i$ associated to each coupling with $\bar{\phi}=\sum_i\phi_i/N$.
+
+The Hamiltonian describing this coupling along with the kinetic term is 
+%
+\begin{equation}
+	H_{j, j'}=\frac{\hbar^2 k^2}{2m}\delta_{j,j'} + \frac{\Omega}{2}(e^{i(\bar{\phi}+\k_j\cdot\x)}\delta_{j, j'+ 1} + {\rm h.c.}),
+\end{equation}
+%
+and after applying the unitary transformation $U_{j, j'}=\exp[i\mathbf{K}_i\cdot\x]\delta_{j,j'}$\footnote{This transformation is equivalent to applying a state dependent momentum boost $\k\rightarrow \k +\k_j $} it gets transformed to 
+%
+\begin{equation}
+	H_{j,j'}=\frac{\hbar^2}{2m}\vert \q +\mathbf{K}_j\vert^2\delta_{j,j'}  
+	\label{eq:rashba_tight_binding}
+\end{equation}
+%
+where we have replaced the momentum $\k$ by the quasimomentum $\q$. The off diagonal terms of Equation~\ref{eq:rashba_tight_binding} can be related to a 1D periodic tight-binding Hamiltonian with hopping elements $\Omega/2$ where the internal states $\ket{j}$ represent lattice sites and completing one loop corresponds to gaining a `flux' of $N\bar{\phi}$. In the limit of $q/\Omega\rightarrow 0$ the Hamiltonian can by a basis conjugate to the index $j$
+%
+\begin{equation}
+	\ket{l}=\frac{1}{\sqrt{N}}\sum_{j=1}^N e^{i2\pi jl/N}\ket{j}
+\end{equation}
+%
+where the index $n$ is analogous to the crystal momentum index for a Fourier transformed Hamiltonian. For $\mathbf{K}_j=-k\sin(2\pi j/N)\ex+\cos(2\pi j /N)\ey$, corresponding to the vertices of an N sided regular polygon the Hamiltonian becomes
+%
+\begin{equation}
+	H_{l,l'} = (q^2+1 +E_l)\delta_{l,l'} + [(iq_x+q_y)\delta_{l-1,l}+{\rm h.c}]
+\end{equation}
+
+
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/Rashba_ring_coupling.pdf}
+\caption[The Aharonov-Bohm experiment]{The Aharonov-Bohm experiment. A coherent electron beam is split into two paths surrounding a solenoid which produces a non-zero magnetic field $\mathbf{B}$ inside the gray region and $\mathbf{B}=0$ outside. The two beams are later recombined and an interference pastern reveals a phase difference $\Delta\varphi = 2\pi \Phi_B/\Phi_0$ equal to the magnetic flux enclosed by the electron's path.}
+\label{fig:rashba_ring_coupling}
+\end{center}
+\end{figure*}
+
+
 
 Perturbative treatment recovers rotational symmetry. 
 
