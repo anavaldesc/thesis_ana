@@ -34,57 +34,79 @@ The Rashba dispersion relation is characterized by having a Dirac point located 
 
 Another interesting fact of the Rashba Hamiltonian is that it corresponds to a non-abelian gauge potential. The combined Rashba and free particle Hamiltonians can be written as $\hat{H}=(\hbar\k-\hat{\mathbf{A}})^2/2m$ where $\mathbf{\hat{A}}=\alpha(\hat{\sigma}_y\ex-\hat{\sigma}_x\ey$ can be interpreted as a matrix valued vector potential whose elements do not commute. This term is also related to the Berry connection discussed in Chapter~\ref{sec:Berry phase and curvature}. 
 
-\subsection{Rashba SOC for neutral atoms}
+\section{Rashba SOC for neutral atoms}
 
 Proposals for engineering Rashba type SOC in neutral atoms consist in using lasers to link internal states of an atom with its linear momentum.
-In order to achieve non-trivial gauge potentials it is necessary to couple $N\geq3$ levels (see~\cite{goldman_light-induced_2014}). We follow the proposal by~\cite{campbell_realistic_2011} which considers a `ring coupling' as shown in Figure~\ref{fig:rashba_ring_coupling} for the case of $N=3$. The states $\ket{j}$ represent ground or metastable atomic internal states and they are linked to each other with complex valued matrix elements $\frac{\Omega_j}{2}e^{i\k_{j}\cdot\x}$, where $\k_{j}$ is the momentum transfer associated with the $\ket{j}\rightarrow\ket{j+1}$ transition and $\Omega_i=e^{i\phi_i}\vert\Omega\vert$ represents the coupling strength. We require that $\sum\k_i=0$ so that no momentum is transfered when a closed loop $\ket{1}\rightarrow\ket{2}\dots \rightarrow\ket{N}\rightarrow\ket{1}$ is completed. The $\k_i$ momenta vectors can then be written as $\k_j=\mathbf{K}_{j+1}-\mathbf{K}_j$.
+In order to achieve non-trivial gauge potentials it is necessary to couple $N\geq3$ levels (see~\cite{goldman_light-induced_2014}). We follow the proposal by~\cite{campbell_realistic_2011} which considers a `ring coupling' as shown in Figure~\ref{fig:rashba_ring_coupling} for the case of $N=3$. The states $\ket{j}$ represent ground or metastable atomic internal states and they are linked to each other with complex valued matrix elements $\frac{\Omega_j}{2}e^{i\k_{j}\cdot\x}$, where $\k_{j}$ is a momentum transfer associated with the $\ket{j}\rightarrow\ket{j+1}$ transition and $\Omega_i=e^{i\phi_i}\vert\Omega\vert$ represents the coupling strength. We require that $\sum\k_i=0$ so that no momentum is transfered when a closed loop $\ket{1}\rightarrow\ket{2}\dots \rightarrow\ket{N}\rightarrow\ket{1}$ is completed. The $\k_i$ momenta vectors can then be written as $\k_j=\mathbf{K}_{j+1}-\mathbf{K}_j$, and we make $\mathbf{K}_j=\kl\sin(2\pi j/N)\ex+\kl\cos(2\pi j /N)\ey$, corresponding to the vertices of an N sided regular polygon. We can further make a gauge transformation such that we can replace the phases $\phi_i$ associated to each coupling with $\bar{\phi}=\sum_i\phi_i/N$.
 
-We can further make a gauge transformation such that we can replace the phases $\phi_i$ associated to each coupling with $\bar{\phi}=\sum_i\phi_i/N$.
-
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/Rashba_ring_coupling.pdf}
+\caption[The Rashba ring coupling]{The Rashba ring coupling. To generate Rashba SOC in a system of cold atoms it is necessary to cyclically couple $N\geq3$ internal states such that the transition $\ket{j}\rightarrow\ket{j+}1$ has a momentum transfer $\k_j$ and $\sum_j\k_j=0$ such that there is no momentum transfer for a closed loop $\ket{1}\rightarrow\ket{2}\dots\ket{N}\rightarrow\ket{1}$. The ring coupling combined with the free particle Hamiltonian give rise to a 2-level subspace that can be described to first order by the Rashba Hamiltonian}
+%
+\label{fig:rashba_ring_coupling}
+\end{center}
+\end{figure*}
+%
 The Hamiltonian describing this coupling along with the kinetic term is 
 %
 \begin{equation}
 	H_{j, j'}=\frac{\hbar^2 k^2}{2m}\delta_{j,j'} + \frac{\Omega}{2}(e^{i(\bar{\phi}+\k_j\cdot\x)}\delta_{j, j'+ 1} + {\rm h.c.}),
 \end{equation}
 %
-and after applying the unitary transformation $U_{j, j'}=\exp[i\mathbf{K}_i\cdot\x]\delta_{j,j'}$\footnote{This transformation is equivalent to applying a state dependent momentum boost $\k\rightarrow \k +\k_j $} it gets transformed to 
+and after applying the unitary transformation $U_{j, j'}=\exp[i\mathbf{K}_i\cdot\x]\delta_{j,j'}$\footnote{This transformation is equivalent to applying a state dependent momentum boost $\k\rightarrow \k +\mathbf{K}_j $} it gets transformed to 
 %
 \begin{equation}
-	H_{j,j'}=\frac{\hbar^2}{2m}\vert \q +\mathbf{K}_j\vert^2\delta_{j,j'}  
+	H_{j,j'}=\frac{\hbar^2}{2m}\vert \q +\mathbf{K}_j\vert^2\delta_{j,j'} + \frac{\Omega}{2}(e^{i\bar{\phi}}\delta_{j, j'+ 1} + {\rm h.c.}),
 	\label{eq:rashba_tight_binding}
 \end{equation}
 %
-where we have replaced the momentum $\k$ by the quasimomentum $\q$. The off diagonal terms of Equation~\ref{eq:rashba_tight_binding} can be related to a 1D periodic tight-binding Hamiltonian with hopping elements $\Omega/2$ where the internal states $\ket{j}$ represent lattice sites and completing one loop corresponds to gaining a `flux' of $N\bar{\phi}$. In the limit of $q/\Omega\rightarrow 0$ the Hamiltonian can by a basis conjugate to the index $j$
+where we have replaced the momentum $\k$ by the quasimomentum $\q$. The off diagonal terms of Equation~\ref{eq:rashba_tight_binding} can be related to a 1D periodic tight-binding Hamiltonian with hopping elements $\Omega/2$ where the internal states $\ket{j}$ represent lattice sites and completing one loop corresponds to gaining a `flux' of $N\bar{\phi}$. It is helpful to write the Hamiltonian in a basis that is conjugate to the index $j$
 %
 \begin{equation}
 	\ket{l}=\frac{1}{\sqrt{N}}\sum_{j=1}^N e^{i2\pi jl/N}\ket{j}
 \end{equation}
 %
-where the index $n$ is analogous to the crystal momentum index for a Fourier transformed Hamiltonian. For $\mathbf{K}_j=-k\sin(2\pi j/N)\ex+\cos(2\pi j /N)\ey$, corresponding to the vertices of an N sided regular polygon the Hamiltonian becomes
+where the index $l$ is analogous to the crystal momentum index for a Bloch Hamiltonian. Under this basis the Hamiltonian starts looking very much Rashba-like
 %
 \begin{equation}
-	H_{l,l'} = (q^2+1 +E_l)\delta_{l,l'} + [(iq_x+q_y)\delta_{l-1,l}+{\rm h.c}]
+	H_{l,l'} = \left[\frac{\hbar^2}{2m}(q^2+ k_L^2)+E_l\right]\delta_{l,l'} + \frac{\hbar^2\kl}{m}\left[(iq_x+q_y)\delta_{l-1,l'}+{\rm h.c}\right],
+	\label{eq:ring_coupling_ft}
 \end{equation}
-
-
+%
+where $E_L=2\hbar\Omega\cos(2\pi l/3+\bar{\phi})$ correspond to the eigenenergies when $q=0$. The phase $\bar{\phi}$ can be tuned such that a pair of states with consecutive $l$ index become degenerate, indicating the presence of a Dirac point at $q=0$. Figure~\ref{fig:ring_coupling_energies} shows the energies $E_l$ for $N=3$ and $\bar{\phi}=0$.
 
 \begin{figure*}[htb]
 \begin{center}
-\includegraphics[]{Figures/Chapter8/Rashba_ring_coupling.pdf}
-\caption[The Aharonov-Bohm experiment]{The Aharonov-Bohm experiment. A coherent electron beam is split into two paths surrounding a solenoid which produces a non-zero magnetic field $\mathbf{B}$ inside the gray region and $\mathbf{B}=0$ outside. The two beams are later recombined and an interference pastern reveals a phase difference $\Delta\varphi = 2\pi \Phi_B/\Phi_0$ equal to the magnetic flux enclosed by the electron's path.}
-\label{fig:rashba_ring_coupling}
+\includegraphics[]{Figures/Chapter8/ring_coupling_energies.pdf}
+\caption[Rashba ring coupling eigenenergies]{Eigenenergies of Equation~\ref{eq:ring_coupling_ft} for $q=0$ for $N=3$ and $\bar{\phi}=0$. For this particular choice of phase, the energies of the $l=1$ and $l=2$ states become degenerate}
+\label{fig:ring_coupling_energies}
 \end{center}
 \end{figure*}
 
+We then consider the degenerate states corresponding to $l=1$ and $l=2$ as pseudospins. To zeroth order they are described by the Hamiltonian
+%
+\begin{equation}
+	\hat{H}^{(0)} = \frac{\hbar^2q^2}{2m} + \frac{\hbar^2\kl}{m}(\hat{\sigma_x}q_y-\hat{\sigma}_yq_x), 
+\end{equation}
+ %
+ which is equal to the Rashba plus free particle Hamiltonian with spin orbit coupling strength given by $\alpha=\hbar^2k_L/2$. The zeroth-order Hamiltonian has continuous rotational symmetry while we the proposed ring coupling only has only discrete rotational symmetry. The symmetry of the Hamiltonian is recovered when higher order corrections of the Hamiltonian are included. The complete expressions for the higher order terms for $N=3$ and $N=4$ can be found in~\cite{campbell_realistic_2011}, and they are reminiscent of quadratic and cubic Dresselhaus SOC~\cite{stanescu_spin_2007}. The largest leading order term is inversely proportional to $\Omega^2$ so that this ring-coupling scheme results in a more `Rashba-like' Hamiltonian as one goes to higher coupling strengths.
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/rashba_alien.pdf}
+\caption[Rashba ring coupling eigenenergies]{Eigenenergies of Equation~\ref{eq:ring_coupling_ft} for $q=0$ for $N=3$ and $\bar{\phi}=0$. For this particular choice of phase, the energies of the $l=1$ and $l=2$ states become degenerate}
+\label{fig:rashba_alien}
+\end{center}
+\end{figure*}
+
+\note{TODO: Write that fourier exchanges stuff with diagonal and non diagonal stuff, write that the Dirac point is still very robust even if you change the hamiltonian}
+
+\subsection{Experimental implementation}
+
+In order to implement the ring coupling to engineer Rashba SOC we mainly need 2 ingredients: a basis of states that can be cyclically coupled and a way of coupling them that imparts momentum. For our experiments we followed the proposal from~\cite{campbell_rashba_2016} which consists of using synthetic clock states from Chapter~\ref{ch:clock_states} and couple them with a combination of Raman laser beams. One natural question that could arise here is why use the $\xyz$ states at all
 
 
-Perturbative treatment recovers rotational symmetry. 
-
-As shown by Wilczek and Zee, non-Abelian gauge fields
-can arise in the adiabatic dynamics of quantum systems
-with multiple degenerate eigenstates [19]. One of the
-interesting properties of non-Abelian gauge potentials is
-the possibility of magnetic monopoles
 
 \section{Topology and Rashba}
 
