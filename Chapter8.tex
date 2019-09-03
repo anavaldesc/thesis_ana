@@ -21,23 +21,24 @@ Ultracold atomic systems are an emerging platform for engineering topological la
 
 % In earlier sections we discussed the spin-orbit coupling interaction between spin and angular momentum that gives rise to the atomic level structure. In condensed matter systems, there is another kind of spin-orbit coupling that links the spin of the electrons with the linear or crystal momentum. In 2D materials, SOC can be represented as a sum of Rashba~\cite{bychkov_oscillatory_1984} and Dresselhaus~\cite{dresselhaus_spin-orbit_1955} SOC. 
 
-Rashba SOC~\cite{bychkov_oscillatory_1984} appears in condensed matter systems where electrons are confined in a 2D plane and with an intrinsic out-of-plane electric. If the electron's momentum is given by $\hbar\k=\hbar(k_x\ex+k_y\ey)$ and the electric field is $\mathbf{E}=E\ez$, in the electron's moving frame there will be a momentum dependent magnetic field $\mathbf{B}_{\rm SOC}=-\hbar\k/m\times\mathbf{E}/c^s=\hbar E/mc^2(-k_y, k_x, 0)$. The interaction between the electron's spin with this field through the magnetic Zeeman interaction $-\mathbf{\mu}\cdot{\mathbf{B}_{\rm SOC}}$ gives rise to the SOC term
+Rashba SOC~\cite{bychkov_oscillatory_1984} appears in condensed matter systems where electrons are confined in a 2D plane and experience an intrinsic out-of-plane electric. If the electron's momentum is given by $\hbar\k=\hbar(k_x\ex+k_y\ey)$ and the electric field is $\mathbf{E}=E\ez$, in the electron's moving frame there will be a momentum dependent magnetic field $\mathbf{B}_{\rm SOC}=-\hbar\k/m\times\mathbf{E}/c^s=\hbar E/mc^2(-k_y, k_x, 0)$. The interaction between the electron's spin with this field through the magnetic Zeeman interaction $-\mathbf{\mu}\cdot{\mathbf{B}_{\rm SOC}}$ gives rise to the SOC term
 %
 \begin{equation}
 	\hat{H}_{\rm SOC}=\frac{2\alpha}{m}(k_y\hat{\sigma}_x-k_x\hat{\sigma}_y)
 	\label{eq:Rashba_ham}
 \end{equation}
 %
-where $\alpha=g\mu_BE/c^2$ with $g$ the electrons gyromagnetic ratio, $\mu_B$ is the Bohr magneton and $\hat{\sigma}_i$ are the Pauli matrices. 
+where $\alpha=g\mu_BE/c^2$, $g$ is the electrons gyromagnetic ratio, $\mu_B$ is the Bohr magneton and $\hat{\sigma}_i$ are the Pauli matrices. 
 
-The Rashba dispersion relation is characterized by having a Dirac point located at $\k=0$ (see Chapter~\ref{sec:2_level_topology}) and a degenerate ground state that is described by the ring $k_x^2+k_y^2=\alpha^2$. 
+The Rashba dispersion relation is characterized by having a Dirac point located at $\k=0$ (see Chapter~\ref{sec:2_level_topology}) and a degenerate ground state that is described by the ring $k_x^2+k_y^2=\alpha^2$. \note{TODO: Make figure}
 
-Another interesting fact of the Rashba Hamiltonian is that it corresponds to a non-abelian gauge potential. The combined Rashba and free particle Hamiltonians can be written as $\hat{H}=(\hbar\k-\hat{\mathbf{A}})^2/2m$ where $\mathbf{\hat{A}}=\alpha(\hat{\sigma}_y\ex-\hat{\sigma}_x\ey$ can be interpreted as a matrix valued vector potential whose elements do not commute. This term is also related to the Berry connection discussed in Chapter~\ref{sec:Berry phase and curvature}. 
+The Rashba Hamiltonian when combined with the free particle Hamiltonian can be interpreted as a non-abelian gauge potential. This comes from the fact that the Hamiltonian can can be written as $\hat{H}=(\hbar\k-\hat{\mathbf{A}})^2/2m$ where $\mathbf{\hat{A}}=\alpha(\hat{\sigma}_y\ex-\hat{\sigma}_x\ey)$ can be interpreted as a matrix valued vector potential or non-abelian gauge potential whose elements do not commute. This term is closely related to the Berry connection discussed in Chapter~\ref{sec:Berry phase and curvature}. 
+
 
 \section{Rashba SOC for neutral atoms}
 
 Proposals for engineering Rashba type SOC in neutral atoms consist in using lasers to link internal states of an atom with its linear momentum.
-In order to achieve non-trivial gauge potentials it is necessary to couple $N\geq3$ levels (see~\cite{goldman_light-induced_2014}). We follow the proposal by~\cite{campbell_realistic_2011} which considers a `ring coupling' as shown in Figure~\ref{fig:rashba_ring_coupling} for the case of $N=3$. The states $\ket{j}$ represent internal atomic states and they are linked to each other with complex valued matrix elements $\frac{\Omega_j}{2}e^{i\k_{j}\cdot\x}$, where $\k_{j}$ is a momentum transfer associated with the $\ket{j}\rightarrow\ket{j+1}$ transition and $\Omega_i=e^{i\phi_i}\vert\Omega\vert$ represents the coupling strength. We require that $\sum\k_i=0$ so that no momentum is transfered when a closed loop $\ket{1}\rightarrow\ket{2}\dots \rightarrow\ket{N}\rightarrow\ket{1}$ is completed. The $\k_i$ momenta vectors can then be written as $\k_j=\mathbf{K}_{j+1}-\mathbf{K}_j$, and we make $\mathbf{K}_j=\kl\sin(2\pi j/N)\ex+\kl\cos(2\pi j /N)\ey$, corresponding to the vertices of an N sided regular polygon. We can further make a gauge transformation such that we can replace the phases $\phi_i$ associated to each coupling with $\bar{\phi}=\sum_i\phi_i/N$.
+In order to achieve non-trivial gauge potentials it is necessary to couple $N\geq3$ levels (see~\cite{goldman_light-induced_2014}). We follow the proposal by~\cite{campbell_realistic_2011} which considers a `ring coupling' which is shown in Figure~\ref{fig:rashba_ring_coupling} for the case of $N=3$. The states $\ket{j}$ represent internal atomic states and they are linked to each other with complex valued matrix elements $\frac{\Omega_j}{2}e^{i\k_{j}\cdot\x}$, where $\k_{j}$ is a momentum transfer associated with the $\ket{j}\rightarrow\ket{j+1}$ transition and $\Omega_i=e^{i\phi_i}\vert\Omega\vert$ represents the coupling strength. We require that $\sum\k_i=0$ so that no momentum is transfered when a closed loop $\ket{1}\rightarrow\ket{2}\dots \rightarrow\ket{N}\rightarrow\ket{1}$ is completed. For this case the $\k_i$ momenta vectors can be written as $\k_j=\mathbf{K}_{j+1}-\mathbf{K}_j$, and we make $\mathbf{K}_j=\kl\sin(2\pi j/N)\ex+\kl\cos(2\pi j /N)\ey$, corresponding to the vertices of an N sided regular polygon. We can further make a gauge transformation such that we can replace the phases $\phi_i$ associated to each coupling with $\bar{\phi}=\sum_i\phi_i/N$.
 
 \begin{figure*}[htb]
 \begin{center}
@@ -67,7 +68,7 @@ where we have replaced the momentum $\k$ by the quasimomentum $\q$. The off diag
 	\ket{l}=\frac{1}{\sqrt{N}}\sum_{j=1}^N e^{i2\pi jl/N}\ket{j}
 \end{equation}
 %
-where the index $l$ is analogous to the crystal momentum index for a Bloch Hamiltonian. Under this basis the Hamiltonian starts looking very much Rashba-like
+where the index $l$ is analogous to the crystal momentum index for a Bloch Hamiltonian. In this new basis, terms with oscillatory components (e.g. $\vert \q + \mathbf{K}_j\vert$) in the diagonals are displaced to the off-diagonal and oscillatory terms in the off diagonal are displaced to the diagonal. Under this basis the Hamiltonian starts looking very much Rashba-like
 %
 \begin{equation}
 	H_{l,l'} = \left[\frac{\hbar^2}{2m}(q^2+ k_L^2)+E_l\right]\delta_{l,l'} + \frac{\hbar^2\kl}{m}\left[(iq_x+q_y)\delta_{l-1,l'}+{\rm h.c}\right],
@@ -84,23 +85,32 @@ where $E_L=2\hbar\Omega\cos(2\pi l/3+\bar{\phi})$ correspond to the eigenenergie
 \end{center}
 \end{figure*}
 
-We then consider the degenerate states corresponding to $l=1$ and $l=2$ as pseudospins. To zeroth order they are described by the Hamiltonian
+We consider the degenerate states corresponding to two consecutive $\ket{l}$ states as pseudospins which are described to zeroth order by the Rashba plus free particle Hamiltonian
 %
 \begin{equation}
 	\hat{H}^{(0)} = \frac{\hbar^2q^2}{2m} + \frac{\hbar^2\kl}{m}(\hat{\sigma_x}q_y-\hat{\sigma}_yq_x), 
 \end{equation}
  %
- which is equal to the Rashba plus free particle Hamiltonian with spin orbit coupling strength given by $\alpha=\hbar^2k_L/2$. The zeroth-order Hamiltonian has continuous rotational symmetry while we the proposed ring coupling only has only discrete rotational symmetry. The symmetry of the Hamiltonian is recovered when higher order corrections of the Hamiltonian are included. The complete expressions for the higher order terms for $N=3$ and $N=4$ can be found in~\cite{campbell_realistic_2011}, and they are reminiscent of quadratic and cubic Dresselhaus SOC~\cite{stanescu_spin_2007}. The largest leading order term is inversely proportional to $\Omega^2$ so that this ring-coupling scheme results in a more `Rashba-like' Hamiltonian as one goes to higher coupling strengths.
+with spin orbit coupling strength given by $\alpha=\hbar^2k_L/2$. The zeroth-order Hamiltonian has continuous rotational symmetry while we the proposed ring coupling only has only discrete rotational symmetry. The symmetry of the Hamiltonian is recovered when higher order corrections of the Hamiltonian are included. The complete expressions for the higher order terms for $N=3$ and $N=4$ can be found in~\cite{campbell_realistic_2011}, and they are reminiscent of quadratic and cubic Dresselhaus SOC~\cite{stanescu_spin_2007}. The largest leading order term is inversely proportional to $\Omega^2$ so that this ring-coupling scheme results in a more `Rashba-like' Hamiltonian as one goes to higher coupling strengths. Figure~\ref{fig:rashba_alien} shows level curves of the ground state eigenenergies of Equation~\ref{eq:ring_coupling_ft} for $N=3$ and $\bar{\phi}=0$ for increasing $\Omega$. At low $\Omega$ the dispersion has discrete rotational symmetry and is characterized by three local minima. As $\Omega$ is increased the local minima start merging into each other and in the large $\Omega$ limit we recover the characteristic Rashba ring-like dispersion.   
 
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter8/rashba_alien.pdf}
-\caption[Rashba ring coupling eigenenergies]{Eigenenergies of Equation~\ref{eq:ring_coupling_ft} for $q=0$ for $N=3$ and $\bar{\phi}=0$. For this particular choice of phase, the energies of the $l=1$ and $l=2$ states become degenerate}
+\caption[Rashba ring coupling ground state dispersion]{Ground state dispersion relation of Equation~\ref{eq:ring_coupling_ft} for $N=3$ and $\bar{\phi}=0$ for $\Omega=\unit[1.75]{\El}$ (left), $\Omega=\unit[3.5]{\El}$ (middle) and $\Omega=\unit[175]{\El}$ (right). Higher order corrections to $\hat{H}^{(0)}$ decay as $1/\Omega^2$ and in the large $\Omega$ limit we recover the Rashba ring dispersion.}
 \label{fig:rashba_alien}
 \end{center}
 \end{figure*}
 
-\note{TODO: Write that fourier exchanges stuff with diagonal and non diagonal stuff, write that the Dirac point is still very robust even if you change the hamiltonian}
+So far we have only considered the case where all the coupling strengths and the vectors $\k_j$ are symmetric. In the lab it might be hard due to constraints imposed by the capabilities of an experimental apparatus. As one departs from the ideal ring-coupling, we find that the resulting dispersion can looses its discrete rotational symmetry. While this perturbations can have a significant impact on the dispersion, the Dirac point is remarkably robust and as long as $\bar{\phi}$ is such that there are at least two degenerate states in the ideal ring coupling case the Dirac point will remain gapless although it might move from $\q=0$. The exact location of the Dirac point as a function of $\Omega_i$ and $\q$ for an imperfect ring-coupling scheme is derived in \cite{huang_experimental_2016}. Figure~\ref{fig:rashba_perturbed} shows some examples of how the ground state dispersion is modified when the vectors $\mathbf{K}_j$ that don't lie in the vertices of a regular polygon and when the amplitude of $\Omega$ is state dependent. 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/rashba_perturbed.pdf}
+\caption[Perturbed Rashba dispersion]{(left) Ground state dispersion relation of Equation~\ref{eq:ring_coupling_ft} for $N=3$ and $\bar{\phi}=0$ for $\Omega=\unit[1.75]{\El}$ but $\mathbf{K}_j$ that don't correspond to to the vertices of an isosceles triangle rather than an equilateral triangle. Ground state dispersion for symmetric $\mathbf{K}_j$ but state dependent $\Omega=$. In both cases the discrete rotational symmetry is lost but the gapless Dirac point remains.}
+\label{fig:rashba_perturbed}
+\end{center}
+\end{figure*}
+
 
 \subsection{Experimental implementation}
 
