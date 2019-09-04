@@ -12,6 +12,19 @@ This work started as Rashba but our attention was quickly shifted towards topolo
 
 \note{This probably doesn't go here} The topology of Bloch bands defines integers that serve to both classify crystalline materials and precisely specify properties, such as conductivity, that are independent of small changes to lattice parameters\cite{hasan_colloquium:_2010}. Topologically non-trivial materials first found application in metrology with the definition of the von Klitzing constant as a standard of resistance, which is now applied in the realization of the kilogram\cite{newell_codata_2018}. Today, topological systems have found applications in the engineering of low loss optical waveguides\cite{ozawa_topological_2019} and present a promising path to quantum computation\cite{nayak_non-abelian_2008}. Ultracold atomic systems are an emerging platform for engineering topological lattices, from the Harper-Hofsdater model\cite{miyake_realizing_2013,aidelsburger_realization_2013}, the Haldane model\cite{jotzu_experimental_2014}, to the Rice-Mele model\cite{lu_geometrical_2016,lohse_thouless_2016} as well as assembling spin-orbit coupled lattices without analogues in existing materials\cite{wu_realization_2016,sun_highly_2018}.
 
+A central tenet in topological matter is the existence of integer valued `invariants' that are independent of small changes to parameters. For an arbitrary closed 2-manifold $\mathcal{M}$ and a suitable choice of vector field (i.e., a two-form) $\mathbf{\Omega}$ the surface integral
+%
+\begin{equation}
+	\frac{1}{2\pi}\int_{\mathcal{M}}\mathbf \Omega\cdot d\mathbf S
+	\label{Eq:topology}
+\end{equation}
+%
+serves to define both the Euler characteristic and the Chern number \cite{ozawa_topological_2019,cooper_topological_2019}. When $\mathbf{\Omega}$ is equal to the local Gaussian curvature of $\mathcal{M}$, Eq.~\ref{Eq:topology} yields the Euler characteristic, an invariant related to the number of handles, or genus, of $\mathcal{M}$. In contrast, when $\mathcal{M}$ is a torus describing a two-dimensional Brillouin zone (BZ) and $\mathbf{\Omega}$ is the Berry curvature that characterizes the underlying quantum states, Eq.~\ref{Eq:topology} instead gives the Chern number. Both the Euler characteristic and the Chern number are integer valued, but the Euler characteristic depends only on the manifold $\mathcal{M}$ and its intrinsic curvature, whilst the Chern number depends both on a manifold (the BZ) and an additional vector field defined on $\mathcal{M}$ (the Berry curvature). 
+
+\note{Up to here probably gets shuffled with the intro section}
+
+Experimental realizations of topological materials have focused on engineering different Berry curvatures in lattice systems, where $\mathcal{M}$ is always a torus. Here we show that by eliminating the lattice potential and thereby changing  $\mathcal{M}$ from ${\mathbb T}^2$ to ${\mathbb R}^2$, i.e. from a torus to a Cartesian plane, it is possible to create topological branches of the dispersion relation with half-integer Chern number. In our experiments we created both topological and non-topological dispersion branches by introducing Rashba-like spin-orbit coupling (SOC)\cite{campbell_realistic_2011, huang_experimental_2016, meng_experimental_2016} to a cold quantum gas. 
+
 
 Ultracold atomic systems are an emerging platform for engineering topological lattices, from the Harper-Hofsdater model\cite{miyake_realizing_2013,aidelsburger_realization_2013}, the Haldane model\cite{jotzu_experimental_2014}, to the Rice-Mele model\cite{lu_geometrical_2016,lohse_thouless_2016} as well as assembling spin-orbit coupled lattices without analogues in existing materials\cite{wu_realization_2016,sun_highly_2018}. 
 
@@ -21,7 +34,7 @@ Ultracold atomic systems are an emerging platform for engineering topological la
 
 % In earlier sections we discussed the spin-orbit coupling interaction between spin and angular momentum that gives rise to the atomic level structure. In condensed matter systems, there is another kind of spin-orbit coupling that links the spin of the electrons with the linear or crystal momentum. In 2D materials, SOC can be represented as a sum of Rashba~\cite{bychkov_oscillatory_1984} and Dresselhaus~\cite{dresselhaus_spin-orbit_1955} SOC. 
 
-Rashba SOC~\cite{bychkov_oscillatory_1984} appears in condensed matter systems where electrons are confined in a 2D plane and experience an intrinsic out-of-plane electric. If the electron's momentum is given by $\hbar\k=\hbar(k_x\ex+k_y\ey)$ and the electric field is $\mathbf{E}=E\ez$, in the electron's moving frame there will be a momentum dependent magnetic field $\mathbf{B}_{\rm SOC}=-\hbar\k/m\times\mathbf{E}/c^s=\hbar E/mc^2(-k_y, k_x, 0)$. The interaction between the electron's spin with this field through the magnetic Zeeman interaction $-\mathbf{\mu}\cdot{\mathbf{B}_{\rm SOC}}$ gives rise to the SOC term
+Rashba SOC~\cite{bychkov_oscillatory_1984} appears in condensed matter systems where electrons are confined in a 2D plane and experience an intrinsic out-of-plane electric field. If the electron's momentum is given by $\hbar\k=\hbar(k_x\ex+k_y\ey)$ and the electric field is $\mathbf{E}=E\ez$, in the electron's moving frame there will be a momentum dependent magnetic field $\mathbf{B}_{\rm SOC}=-\hbar\k/m\times\mathbf{E}/c^2=\hbar E/mc^2(-k_y, k_x, 0)$. The interaction between the electron's spin with this field through the magnetic Zeeman interaction $-\mathbf{\mu}\cdot{\mathbf{B}_{\rm SOC}}$ gives rise to the SOC Hamiltonian
 %
 \begin{equation}
 	\hat{H}_{\rm SOC}=\frac{2\alpha}{m}(k_y\hat{\sigma}_x-k_x\hat{\sigma}_y)
@@ -112,35 +125,12 @@ So far we have only considered the case where all the coupling strengths and the
 \end{figure*}
 
 
-\subsection{Experimental implementation}
 
-In order to implement the ring coupling to engineer Rashba SOC we mainly need 2 ingredients: a basis of states that can be cyclically coupled and a way of coupling them that imparts momentum. For our experiments we followed the proposal from~\cite{campbell_rashba_2016} which consists of using synthetic clock states from Chapter~\ref{ch:clock_states} and couple them with a combination of Raman laser beams. One natural question that could arise here is why use the $\xyz$ states at all
+\section{Experimental implementation of Rashba SOC}
 
-
-
-\section{Topology and Rashba}
-
-A central tenet in topological matter is the existence of integer valued `invariants' that are independent of small changes to parameters. For an arbitrary closed 2-manifold $\mathcal{M}$ and a suitable choice of vector field (i.e., a two-form) $\mathbf{\Omega}$ the surface integral
-%
-\begin{equation}
-	\frac{1}{2\pi}\int_{\mathcal{M}}\mathbf \Omega\cdot d\mathbf S
-	\label{Eq:topology}
-\end{equation}
-%
-serves to define both the Euler characteristic and the Chern number \cite{ozawa_topological_2019,cooper_topological_2019}. When $\mathbf{\Omega}$ is equal to the local Gaussian curvature of $\mathcal{M}$, Eq.~\ref{Eq:topology} yields the Euler characteristic, an invariant related to the number of handles, or genus, of $\mathcal{M}$. In contrast, when $\mathcal{M}$ is a torus describing a two-dimensional Brillouin zone (BZ) and $\mathbf{\Omega}$ is the Berry curvature that characterizes the underlying quantum states, Eq.~\ref{Eq:topology} instead gives the Chern number. Both the Euler characteristic and the Chern number are integer valued, but the Euler characteristic depends only on the manifold $\mathcal{M}$ and its intrinsic curvature, whilst the Chern number depends both on a manifold (the BZ) and an additional vector field defined on $\mathcal{M}$ (the Berry curvature). 
-
-\note{Up to here probably gets shuffled with the intro section}
-
-Experimental realizations of topological materials have focused on engineering different Berry curvatures in lattice systems, where $\mathcal{M}$ is always a torus. Here we show that by eliminating the lattice potential and thereby changing  $\mathcal{M}$ from ${\mathbb T}^2$ to ${\mathbb R}^2$, i.e. from a torus to a Cartesian plane, it is possible to create topological branches of the dispersion relation with half-integer Chern number. In our experiments we created both topological and non-topological dispersion branches by introducing Rashba-like spin-orbit coupling (SOC)\cite{campbell_realistic_2011, huang_experimental_2016, meng_experimental_2016} to a cold quantum gas. 
-
-\subsection{Engineering the Rashba Hamiltonian}
-
- We engineered Rashba SOC by resonantly coupling three internal atomic states using two-photon Raman transitions\cite{campbell_rashba_2016} as depicted in Fig.~\ref{fig:Schematic}. As shown in Fig.~\ref{fig:Schematic}a, the engineered system consisted of an effective spin-1/2 subspace described by a Rashba-type SOC Hamiltonian $\hat{H}_{\rm SOC}=2\alpha/m(\q \times \mathbf{e}_1) \cdot \hat{\boldsymbol{\sigma}}$, with added tunable higher-order terms describing quadratic and cubic Dresselhaus-like SOC\cite{campbell_realistic_2011}, along with a topologically trivial high-energy branch. Here $\alpha$ is the spin-orbit coupling strength and $\hat{\boldsymbol{\sigma}}=(\hat{\sigma}_x,\hat{\sigma}_y,\hat{\sigma}_z)$ is the vector of Pauli operators. Our engineered Rashba system had a single Dirac cone near $\q=0$, where the two lower dispersion branches become degenerate and the Berry curvature becomes singular. Each of these branches extend to infinite momentum, making the supporting manifold a plane rather than a torus. We characterized this system using both spectroscopy and quantum state tomography. This allowed us to measure the dispersion branches and directly observe the single Dirac point linking the lowest two branches as well as to reconstruct the Berry connection to derive the associated Chern numbers.
- % We studied this system with two experiments: first we spectroscopically measured these dispersion branches and containing a single Dirac point linking the lowest two branches; and second we used quantum state tomography to reconstruct the Berry curvature and any associated Chern numbers. 
+ We implemented the ring-coupling scheme and thereby engineered Rashba SOC by resonantly coupling three internal atomic states using two-photon Raman transitions\cite{campbell_rashba_2016} as depicted in Fig.~\ref{fig:Schematic}. As shown in Fig.~\ref{fig:Schematic}a, the engineered system consisted of an effective spin-1/2 Rashba subspace, along with a topologically trivial high-energy branch. Our engineered Rashba system had a single Dirac cone near $\q=0$, where the two lower dispersion branches become degenerate and the Berry curvature becomes singular. Each of these branches extend to infinite momentum, making the supporting manifold a plane rather than a torus. We characterized this system using both spectroscopy and quantum state tomography. This allowed us to measure the dispersion branches and directly observe the single Dirac point linking the lowest two branches as well as to reconstruct the Berry connection to derive the associated Chern numbers. \note{TODO:maybe the stuff of plane and torus doesn't go here}
 
 
-
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Brief descrpiption of Rashba SOC: theory and implementation
@@ -161,20 +151,52 @@ Experimental realizations of topological materials have focused on engineering d
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+All of our experiments started with about with $N\approx 1\times 10^6$$\Rb87$ atoms in a crossed optical dipole trap\cite{lin_rapid_2009}, with frequencies $(f_1,f_2,f_3) \approx \unit[(70, 85, 254)]{Hz}$, just above the transition temperature for Bose-Einstein condensation. We initially prepared the atoms in the $\ket{F=1, m_F=-1}$ state of the $5S_{1/2}$ electronic ground state and transfered atoms to the $m_F=0$ and $m_F=+1$ states as needed using ARP. A bias field $B_0\mathbf{e}_3$ gave a $\omega_0/2\pi=\unit[23.9]{MHz}$ Larmor frequency along with a quadratic shift of $\epsilon/2\pi=\unit[83.24]{kHz}$. The experiments were performed using the $\xyz$ states described in Chapter~\ref{ch:clock_states}. We implemented CDD using an RF magnetic field oscillating at the Larmor frequency with strength $\Omega_{\rm RF}=1.41(2)\epsilon$\footnote{When $\Omega_{\rm RF}=\sqrt{2}\epsilon$ the $xyz$ transitions are $\omega_{zx}=2\omega_{xy}$ and $\omega_{zy}=3\omega_{xy}$ and our system can be described using Floquet theory (see Methods).}. We adiabatically prepared the $\xyz$ states starting from the $m_F$ states following the procedure described in Chapter~\ref{sec:xyz_state_preparation}. 
+
+\subsection{Raman coupling the $xyz$ states}
+
+We Raman-coupled atoms prepared in any of the $xyz$ states using the three cross-polarized Raman laser beams shown in Fig.~\ref{fig:Schematic}b, tuned to the `magic zero' wavelength $\lambda_L = \unit[790]{nm}$. We arranged the Raman lasers into the tripod configuration shown in Fig.~\ref{fig:Schematic}c, bringing each pair into two-photon resonance with a single transition with strengths $(\Omega_{zx}, \Omega_{xy}, \Omega_{yz})/2\pi=\unit[(12.6(5), 8.7(8), 10(1))]{kHz}$. 
+
+The energies of the $xyz$ states are $\omega_x=0$ and $\omega_{z,y}=-(\epsilon\pm\sqrt{4\Omega_{\rm RF}^2+\epsilon^2})/2$. We set the frequencies of the Raman lasers to $\omega_x=\omega_L+\omega_0+\omega_{xy}$, $\omega_y=\omega_L+\omega_0$ and $\omega_z=\omega_L-\omega_{zx}$,  where $\omega_L=2\pi c/\lambda_L$ and $(\omega_{zx}, \omega_{xy}, \omega_{zy})/2\pi = \unit[(166.47, 83.24, 249.71)]{kHz}$ are the transition frequencies between pairs of dressed states are integer multiples of $\epsilon$ for our coupling strength $\Omega = \sqrt{2}\epsilon$. 
 
 
-\subsection{Experimental procedure}
 
-All of our experiments started with about $10^6$ $\Rb87$ atoms in the ground state $F=1$ hyperfine manifold, just above the transition temperature for Bose-Einstein condensation.  A bias field $B_0\mathbf{e}_3$ gave a $\omega_0/2\pi=\unit[23.9]{MHz}$ Larmor frequency along with a quadratic shift of $\epsilon/2\pi=\unit[83.24]{kHz}$. An RF magnetic field oscillating at the Larmor frequency with strength $\Omega_{\rm RF}=1.41(2)\epsilon$\footnote{When $\Omega_{\rm RF}=\sqrt{2}\epsilon$ the $xyz$ transitions are $\omega_{zx}=2\omega_{xy}$ and $\omega_{zy}=3\omega_{xy}$ and our system can be described using Floquet theory (see Methods).}implemented continuous dynamical decoupling (CDD)\cite{fonseca-romero_coherence_2005}.  This generated a set of magnetic field insensitive states\cite{trypogeorgos_synthetic_2018, anderson_continuously_2018} that we denote by $\ket{x}$, $\ket{y}$ and $\ket{z}$ as they are closely related to the $XYZ$ states of quantum chemistry\cite{cooper_reaching_2013} rather than the conventional $m_F$ angular momentum states. We Raman-coupled atoms prepared in any of the $xyz$ states using the three cross-polarized `Raman' laser beams shown in Fig.~\ref{fig:Schematic}b, tuned to the `magic zero' wavelength $\lambda_L = \unit[790]{nm}$, where the scalar light shift vanishes. We arranged the Raman lasers into the tripod configuration shown in Fig.~\ref{fig:Schematic}c, bringing each pair into two-photon resonance with a single transition with strengths $(\Omega_{zx}, \Omega_{xy}, \Omega_{yz})/2\pi=\unit[(12.6(5), 8.7(8), 10(1))]{kHz}$ (see Methods). This coupling scheme simultaneously overcomes three limitations of earlier experiments\cite{huang_experimental_2016,meng_experimental_2016}: (1) working in the same hyperfine manifold eliminates spin-relaxation collisions; (2) unlike $m_F$ states, the $xyz$ states can be tripod-coupled with lasers far detuned relative to the excited state hyperfine splitting greatly reducing spontaneous emission\cite{cooper_reaching_2013}; and (3) CDD renders the $xyz$ states nearly immune to magnetic field noise.
+
+The Raman coupled states are well described by the combined kinetic and light-matter Hamiltonian
+\begin{equation}
+	\hat H(\q) =\sum_{i\in\{xyz\}}\bigg(\frac{\hbar^2(\q-\k_i)^2}{2m}+\hbar\delta_i\bigg)\ket{i}\bra{i}+\sum_{i\neq j}\hbar\Omega_{ij}\ket{j}\bra{i},
+	\label{Eq:Rashba_atoms}
+\end{equation}
+where $\k_i$ are the Raman wave vectors, $\delta_i$ is a detuning from Raman resonance and $\Omega_{ij}$ is the Raman coupling strength between a pair of RF dressed states. 
+
+Our implementation of Rashba SOC has the advantages of reduced losses from spin-relaxation collisions and increased stability against environmental fluctuations due to the clock-like nature of the $xyz$ sates. The measured spontaneous emission limited lifetime of our system is $\unit[320(17)]{ms}$. However it is reduced to $\unit[40(2)]{ms}$ when the Raman couplings are resonant, which we attribute to technical noise in the relative phase between the RF dressing field and the Raman laser fields, which has caused considerable consternation in ongoing experiments. 
+
+This coupling scheme simultaneously overcomes three limitations of earlier experiments\cite{huang_experimental_2016,meng_experimental_2016}: (1) working in the same hyperfine manifold eliminates spin-relaxation collisions; (2) unlike $m_F$ states, the $xyz$ states can be tripod-coupled with lasers far detuned relative to the excited state hyperfine splitting greatly reducing spontaneous emission\cite{cooper_reaching_2013}; and (3) CDD renders the $xyz$ states nearly immune to magnetic field noise.
+
+\subsubsection{Floquet effects}
+We operated in a regime where the transition energies between the $xyz$ states were integer multiples of $\omega_{xy}$: $\omega_{zx}=2\omega_{xy}$ and $\omega_{zy}=3\omega_{xy}$, and therefore we can use Floquet theory for a complete description of our system\cite{goldman_periodically_2014}. The Hamiltonian in Eq.~\ref{Eq:Rashba_atoms} is therefore an effective Hamiltonian that describes the stroboscopic dynamics of the full Floquet Hamiltonian. We observed that the effective Raman coupling strengths for the driven three level system differed from our calibrations which were performed by only driving one pair of states because of the presence of nearby quasi-energy manifolds. This effect could be mitigated for larger values of $\omega_{xy}$ as the spacing between quasi-energy manifolds is increased. 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/floquet_effects_legend.pdf}
+\caption[Effect of neighboring Floquet manifolds on Rashba dispersion]{Solid lines: Dispersion relation from the effective Floquet Hamiltonian from Equation~\ref{Eq:Rashba_atoms} as a function of $q_x$ for $\Omega_{i,j}=\unit[1.5]{\El}$ and $\delta_i=0$. Dashed lines: Dispersion relation computed for the full Floquet Hamiltonian. We considered $\omega_{zx}=2\omega_{xy}$ and $\omega_{zy}=3\omega_{xy}$ in both cases so the separation between Floquet manifolds is $\omega_{xy}$. In the left panel $\omega_{xy}=\unit[83.24]{kHz}$ as in our experiments and in the right panel $\omega_{xy}=\unit[416.2]{kHz}$. A}
+\label{fig:floquet_effects}
+\end{center}
+\end{figure*}
+
+\subsection{Detection and maping momentum into quasimomentum}
 
 Each pair of Raman lasers coupled states $\ket{i, \k}\rightarrow \ket{j, \k+\k_{i,j}}$ where $\ket{i}$ and $\ket{j}$ denote the initial and final $xyz$ states, $\k$ is the initial momentum and $\k_{i,j}=\k_i-\k_j$ is the two-photon Raman recoil momentum. Dressed states with quasimomentum $\q$ are comprised of three bare states $\ket{j,\k}$ with momentum $\k=\q-\k_j$. The eigenstates of our Rashba SOC Hamiltonian take the form
 \begin{equation}
 	\ket{\Psi_n(\q)}=\sum_{j\in xyz}\sqrt{a_{n,j}(\q)}e^{i\phi_{n,j}(\q)}\ket{j,\k=\q-\k_{j}},	
-	\label{Eq:Raman_wavefunction}
+	\label{Eq:Raman_wavefunction}.
 \end{equation}
 where the quasimomentum $\q$ is a good quantum number and the amplitudes are parametrized by $a_{n,j}(\q)$ and $\phi_{n,j}(\q)$. We leveraged the wide momentum distribution of a non-condensed ensemble ($T\approx\unit[180]{nK}$ and $T/T_c\approx 1.1$) to sample a wide range of momentum states simultaneously. By starting separately in each of the $xyz$ states we sampled the range of quasimomentum states shown in Fig.~\ref{fig:fourier_spectroscopy}a, where the momentum distributions of an initial state $\ket{j,\k}$ is shifted from $\q=0$ by the corresponding Raman wave vector $\k_{j}$. 
 
 Our measurement protocol consisted of abruptly removing the confining potential and the Raman lasers, initiating a $\unit[21]{ms}$ time-of-flight (TOF). During this TOF we adiabatically transformed each of the $xyz$ states back to a corresponding $\ket{m_F}$ state and spatially separated them using a `Stern-Gerlach' gradient. Finally we used resonant absorption imaging to measure the resulting density distributions, yielding the spin-resolved momentum distribution.
+
+\subsubsection{Correcting shears from gradients}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -182,7 +204,7 @@ Our measurement protocol consisted of abruptly removing the confining potential 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Fourier spectroscopy of the Rashba dispersion}
+\section{Fourier spectroscopy of the Rashba dispersion}
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter7/fig2.pdf}
@@ -258,26 +280,9 @@ While the true Rashba Hamiltonian features a ring of degenerate eigenstates, our
 %Methods
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{System preparation}
-Our experiments began with $N\approx 1\times 10^6$  $\Rb87$ atoms in a crossed optical dipole trap\cite{lin_rapid_2009}, with frequencies $(f_1,f_2,f_3) \approx \unit[(70, 85, 254)]{Hz}$. We initially prepared the atoms in the $\ket{F=1, m_F=-1}$ state of the $5S_{1/2}$ electronic ground state. We then transfered the atoms either to $m_F=0$ or $m_F=+1$ by applying an RF field with approximately $\unit[20]{kHz}$ coupling strength and ramping a bias magnetic along $\mathbf{e}_3$ from $\unit[36]{\mu T}$ lower value to $B_i=\unit[3.39(9)]{mT}$ in $\unit[50]{ms}$. We prepared the $xyz$ states by starting in each of the $m_F$ states in a bias field $\unit[72]{\mu T}$ lower than $B_0$ and then ramping on the RF dressing field to $\Omega_{\rm RF}/2\pi=\unit[117(2)]{kHz}$ in $\unit[1]{ms}$ and then ramped the bias field to its final value $B_0=\unit[3.40(9)]{mT}$ in $\unit[3]{ms}$. We finally waited for $\unit[40]{ms}$ for the fields to stabilize prior to applying any Raman coupling. 
 
 
-\subsection{Raman coupling the $xyz$ states}
 
-The energies of the $xyz$ states are $\omega_x=0$ and $\omega_{z,y}=-(\epsilon\pm\sqrt{4\Omega_{\rm RF}^2+\epsilon^2})/2$. We set the frequencies of the Raman lasers to $\omega_x=\omega_L+\omega_0+\omega_{xy}$, $\omega_y=\omega_L+\omega_0$ and $\omega_z=\omega_L-\omega_{zx}$,  where $\omega_L=2\pi c/\lambda_L$ and $(\omega_{zx}, \omega_{xy}, \omega_{zy})/2\pi = \unit[(166.47, 83.24, 249.71)]{kHz}$ are the transition frequencies between pairs of dressed states are integer multiples of $\epsilon$ for our coupling strength $\Omega = \sqrt{2}\epsilon$.
-
-The Raman coupled states are well described by the combined kinetic and light-matter Hamiltonian 
-\begin{equation}
-	\hat H(\q) =\sum_{i\in\{xyz\}}\bigg(\frac{\hbar^2(\q-\k_i)^2}{2m}+\hbar\delta_i\bigg)\ket{i}\bra{i}+\sum_{i\neq j}\hbar\Omega_{ij}\ket{j}\bra{i},
-	\label{Eq:Rashba_atoms}
-\end{equation}
-where $\k_i$ are the Raman wave vectors, $\delta_i$ is a detuning from Raman resonance and $\Omega_{ij}$ is the Raman coupling strength between a pair of RF dressed states. 
-
-Our implementation of Rashba SOC has the advantages of reduced losses from spin-relaxation collisions and increased stability against environmental fluctuations due to the clock-like nature of the $xyz$ sates. The measured spontaneous emission limited lifetime of our system is $\unit[320(17)]{ms}$. However it is reduced to $\unit[40(2)]{ms}$ when the Raman couplings are resonant, which we attribute to technical noise in the relative phase between the RF dressing field and the Raman laser fields, which has caused considerable consternation in ongoing experiments. 
-
-
-\subsection{Floquet effects}
-We operated in a regime where the transition energies between the $xyz$ states were integer multiples of $\omega_{xy}$: $\omega_{zx}=2\omega_{xy}$ and $\omega_{zy}=3\omega_{xy}$, and therefore we can use Floquet theory for a complete description of our system\cite{goldman_periodically_2014}. The Hamiltonian in Eq.~\ref{Eq:Rashba_atoms} is therefore an effective Hamiltonian that describes the stroboscopic dynamics of the full Floquet Hamiltonian. We observed that the effective Raman coupling strengths for the driven three level system differed from our calibrations which were performed by only driving one pair of states because of the presence of nearby quasi-energy manifolds. This effect would be mitigated for larger values of $\omega_{xy}$ as the spacing between quasi-energy manifolds is increased. 
 
 \subsection{Combining spectral maps from different states}
 
