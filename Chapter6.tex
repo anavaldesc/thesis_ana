@@ -94,35 +94,38 @@ where  we have defined $\tilde\Omega=\sqrt{4\Omega^2+\epsilon^2}$. The energy di
 
 \subsection{Transition matrix elements}
 
-Unlike the $\ket{m_F}$ basis, an oscillatory magnetic field can drive transitions between all pairs of the $\xyz$ states with non-zero transition matrix elements. The transition matrix elements between the $\xyz$ show a dependence on both $\Omega$ and $\Delta$ (see \reffig{fig:s12}). For $\Omega \ll \epsilon$ the matrix elements correspond to those of the $\ket{m_F}$ basis and $\langle x \vert \hat F_+ \vert y \rangle = 0$ as expected by angular momentum selection rules. When $\Omega$ and $\epsilon$ are comparable in magnitude al transition matrix elements are nonzero and the states can be coupled cyclically.
+Unlike the $\ket{m_F}$ basis, an oscillatory magnetic field with the right polarization can drive transitions between all pairs of the $\xyz$ states with non-zero transition matrix elements. The transition matrix elements between the $\xyz$ have a dependence on both $\Omega$ and $\Delta$. For the $\Delta=0$ case they can be read from the representation of the spin-1 matrices in the $\xyz$ basis
 
-\note{TODO: write matrix elements in dressed basis}
-
-\begin{equation}
-\fx \rightarrow \begin{pmatrix}
- \frac{2 \Omega }{\sqrt{4 \Omega ^2+\epsilon ^2}} & 0 & -\frac{\epsilon }{\sqrt{4 \Omega ^2+\epsilon ^2}} \\
- 0 & 0 & 0 \\
- -\frac{\epsilon }{\sqrt{4 \Omega ^2+\epsilon ^2}} & 0 & -\frac{2 \Omega }{\sqrt{4 \Omega ^2+\epsilon ^2}} \\
-\end{pmatrix}
-\end{equation}
-
-\begin{equation}
-\fy \rightarrow \begin{pmatrix}
- 0 & -\frac{i (\alpha -\epsilon )}{\Omega  \sqrt{\frac{(\epsilon -\alpha )^2}{\Omega ^2}+4}} & 0 \\
- \frac{i (\alpha -\epsilon )}{\Omega  \sqrt{\frac{(\epsilon -\alpha )^2}{\Omega ^2}+4}} & 0 & -\frac{i (\alpha +\epsilon )}{\Omega 
-   \sqrt{\frac{(\alpha +\epsilon )^2}{\Omega ^2}+4}} \\
- 0 & \frac{i (\alpha +\epsilon )}{\Omega  \sqrt{\frac{(\alpha +\epsilon )^2}{\Omega ^2}+4}} & 0 \\
-\end{pmatrix}
-\end{equation}
-
-\begin{equation}
-\fz \rightarrow \begin{pmatrix}
- 0 & -\frac{\sqrt{\frac{\epsilon }{\sqrt{4 \Omega ^2+\epsilon ^2}}+1}}{\sqrt{2}} & 0 \\
- -\frac{\sqrt{\frac{\epsilon }{\sqrt{4 \Omega ^2+\epsilon ^2}}+1}}{\sqrt{2}} & 0 & -\frac{2}{\sqrt{\frac{\left(\sqrt{4 \Omega ^2+\epsilon ^2}+\epsilon
+\begin{align}
+\fx &\rightarrow \begin{pmatrix}
+ \frac{2 \Omega }{\tilde{\Omega}} & 0 & -\frac{\epsilon }{\tilde{\Omega}} \nonumber \\
+ 0 & 0 & 0 \nonumber\\
+ -\frac{\epsilon }{\tilde{\Omega}} & 0 & -\frac{2 \Omega }{\tilde{\Omega}} \nonumber\\
+\end{pmatrix} \nonumber \\ \nonumber\\
+%
+\fy &\rightarrow \begin{pmatrix}
+ 0 & -\frac{i (\tilde{\Omega} -\epsilon )}{\Omega  \sqrt{\frac{(\epsilon -\tilde{\Omega} )^2}{\Omega ^2}+4}} & 0 \nonumber\\
+ \frac{i (\tilde{\Omega} -\epsilon )}{\Omega  \sqrt{\frac{(\epsilon -\tilde{\Omega} )^2}{\Omega ^2}+4}} & 0 & -\frac{i (\tilde{\Omega} +\epsilon )}{\Omega 
+   \sqrt{\frac{(\tilde{\Omega} +\epsilon )^2}{\Omega ^2}+4}} \nonumber\\
+ 0 & \frac{i (\tilde{\Omega} +\epsilon )}{\Omega  \sqrt{\frac{(\tilde{\Omega} +\epsilon )^2}{\Omega ^2}+4}} & 0 \\
+\end{pmatrix}  \nonumber\\ \nonumber\\
+%
+\fz &\rightarrow \begin{pmatrix}
+ 0 & -\frac{\sqrt{\frac{\epsilon }{\tilde{\Omega}}+1}}{\sqrt{2}} & 0 \\
+ -\frac{\sqrt{\frac{\epsilon }{\tilde{\Omega}}+1}}{\sqrt{2}} & 0 & -\frac{2}{\sqrt{\frac{\left(\tilde{\Omega}+\epsilon
    \right)^2}{\Omega ^2}+4}} \\
- 0 & -\frac{2}{\sqrt{\frac{\left(\sqrt{4 \Omega ^2+\epsilon ^2}+\epsilon \right)^2}{\Omega ^2}+4}} & 0 \\
-\end{pmatrix}
-\end{equation}
+ 0 & -\frac{2}{\sqrt{\frac{\left(\tilde{\Omega}+\epsilon \right)^2}{\Omega ^2}+4}} & 0 \\
+\end{pmatrix},
+\label{eq:matrix_elements}
+\end{align}
+%
+where the states have been ordered by decreasing energy ($\ket{y}$, $\ket{x}$, $\ket{z}$). We can therefore see that a term in a Hamiltonian that is proportional to $\fx$ can only drive transitions between $\ket{z}$ and $\ket{y}$ and that coupling terms proportional to $\fy$ and $\fz$ can drive both drive transitions between $\ket{z}$ and $\ket{x}$ or $\ket{x}$ and $\ket{y}$ with different strengths. It can be seen from Equation~\ref{eq:matrix_elements} that when $\Omega$ and $\epsilon$ are comparable in magnitude there exists at least one non-zero transition matrix element for each pair of dressed states and they can all be coupled cyclically.
+
+%  are nonzero and the states can be coupled cyclically.
+
+% For $\Omega \ll \epsilon$ the matrix elements correspond to those of the $\ket{m_F}$ basis and $\langle x \vert \hat F_+ \vert y \rangle = 0$ as expected by angular momentum selection rules. When $\Omega$ and $\epsilon$ are comparable in magnitude al transition matrix elements are nonzero and the states can be coupled cyclically.
+
+% \note{TODO: write matrix elements in dressed basis}
 % As $\Omega \gg \epsilon$ the $\ket z$ and $\ket y$ states decouple and the system resembles an `undressed basis' following similar selection rules. \note{I'm not entirely sure how this were computed, I should redo this plots}
 
 % \begin{figure*}[ht]
@@ -172,7 +175,7 @@ We confirmed our control and measurement techniques spectroscopically by measuri
     \label{eq:h}
 \end{align}
 %
-In this rotating frame the probe field initially polarized along $\ey$ has components along $\ex$ and $\ey$, resulting in at least one non-zero transition matrix element for all transitions between pairs of dressed states. If the probing field was polarized along $\ez$ we would not be able to drive the $zy$ transition as can be seen from the matrix elements in ... \note{TODO: reference matrix elements once they appear.} 
+In this rotating frame the probe field initially polarized along $\ey$ has components along $\ex$ and $\ey$, resulting in at least one non-zero transition matrix element for all transitions between pairs of dressed states. If the probing field was polarized along $\ez$ we would not be able to drive the $zy$ transition as can be seen from the matrix elements in Equation~\ref{eq:matrix_elements}.
 
 To probe the dependence on detuning of the $\xyz$ state energies, we pulsed $\Omega_p$ on for a constant time and scanned $\omega_p$ for different values of $\Delta$. Figure~\ref{fig:1}b shows the spectroscopically resolved values of $\omega_{xy}/2\pi$, $\omega_{yz}/2\pi$, and $\omega_{zx}/2\pi$ for $\Omega/2\pi=\SI{194.5(1)}{kHz}$ and the side panel shows a sample spectra measured with coupling strength $\Omega_p/2\pi \approx \SI{1}{kHz}$ and $\Delta/2\pi \approx \SI{9}{kHz}$. The dashed curves were computed by diagonalizing \refeq{eq:h0}, and they clearly depart from our measurements for the $zx$ transition.
 This departure results from neglecting the weak dependence of the quadratic shift $\epsilon$ on bias field $B_0$.  In near-perfect agreement with experiment, the solid curves from the full Breit-Rabi expression account for this dependency.
