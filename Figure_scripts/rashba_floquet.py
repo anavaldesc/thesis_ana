@@ -157,7 +157,9 @@ def Rashba_floquet(kx, ky, n_manifolds, omega_fl, Omega_zx, Omega_xy, Omega_zy):
     mat_zy = np.kron(block_matrix(n_bands, 3), f_zy)
     mat_xy = np.kron(block_matrix(n_bands, 1), f_xy)
     
-    H_floquet = floquet_diag + mat_zx + mat_xy + mat_zy
+    mat_zx_off = np.kron(block_matrix(n_bands, 3), f_zx)
+    
+    H_floquet = floquet_diag + mat_zx + mat_xy + mat_zy #+ mat_zx_off
     
     return H_floquet
 
@@ -220,3 +222,25 @@ plt.ylim([0,1])
 ax.set_yticklabels([])
 plt.tight_layout()
 plt.savefig('floquet_effects.pdf')
+
+#%%
+
+om_fl_vec = np.linspace(40/3.678, 5*83.24/3.67, 20)
+diff = []
+for om_fl in om_fl_vec:
+    
+    e_floquet_large = []
+
+    kwargs = {'kx':q, 'ky':0, 'n_manifolds':6, 'Omega_zx':Om, 'Omega_xy':Om, 
+              'Omega_zy':Om, 'omega_fl':om_fl}
+
+    for i in range(16, 19):
+        ee = floquet_eigenarray(i, **kwargs)
+        e_floquet_large.append(ee)
+
+    e_floquet_large = np.array(e_floquet_large)
+    e_floquet_large -= e_floquet_large.min()
+    
+    diff.append(np.abs(e_floquet_large-e_three).sum())
+    
+plt.plot(om_fl_vec*3.678, diff, 'o')

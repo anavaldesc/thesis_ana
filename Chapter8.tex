@@ -159,10 +159,14 @@ We Raman-coupled atoms prepared in any of the $xyz$ states using the three cross
 
 The energies of the $xyz$ states are $\omega_x=0$ and $\omega_{z,y}=-(\epsilon\pm\sqrt{4\Omega_{\rm RF}^2+\epsilon^2})/2$. We set the frequencies of the Raman lasers to $\omega_x=\omega_L+\omega_0+\omega_{xy}$, $\omega_y=\omega_L+\omega_0$ and $\omega_z=\omega_L-\omega_{zx}$,  where $\omega_L=2\pi c/\lambda_L$ and $(\omega_{zx}, \omega_{xy}, \omega_{zy})/2\pi = \unit[(166.47, 83.24, 249.71)]{kHz}$ are the transition frequencies between pairs of dressed states are integer multiples of $\epsilon$ for our coupling strength $\Omega = \sqrt{2}\epsilon$. 
 
-
-
-
 The Raman coupled states are well described by the combined kinetic and light-matter Hamiltonian
+%
+\begin{equation}
+	\hat H(\k) =\sum_{j\in\{xyz\}}\bigg(\frac{\hbar^2k^2}{2m}+\hbar \omega_i\bigg)\ket{j}\bra{j}+\sum_{j'\neq j}\hbar\Omega_{j,j'}e^{i(\k_{j,j'}\cdot\x-i\omega_{j,j'}t)}\ket{j}\bra{j'},
+	% \label{Eq:Rashba_atoms}
+\end{equation}
+%
+and after applying the unitary transformation $\hat{U}_{j,j'}=\exp(-i\k_j\cdot\x-\omega_j t)\delta_{j,j'}\ket{j}\bra{j'}$
 \begin{equation}
 	\hat H(\q) =\sum_{i\in\{xyz\}}\bigg(\frac{\hbar^2(\q-\k_i)^2}{2m}+\hbar\delta_i\bigg)\ket{i}\bra{i}+\sum_{i\neq j}\hbar\Omega_{ij}\ket{j}\bra{i},
 	\label{Eq:Rashba_atoms}
@@ -173,16 +177,18 @@ Our implementation of Rashba SOC has the advantages of reduced losses from spin-
 
 This coupling scheme simultaneously overcomes three limitations of earlier experiments\cite{huang_experimental_2016,meng_experimental_2016}: (1) working in the same hyperfine manifold eliminates spin-relaxation collisions; (2) unlike $m_F$ states, the $xyz$ states can be tripod-coupled with lasers far detuned relative to the excited state hyperfine splitting greatly reducing spontaneous emission\cite{cooper_reaching_2013}; and (3) CDD renders the $xyz$ states nearly immune to magnetic field noise.
 
-\subsubsection{Floquet effects}
+\subsubsection{Floquet and off resonant coupling effects}
+
 We operated in a regime where the transition energies between the $xyz$ states were integer multiples of $\omega_{xy}$: $\omega_{zx}=2\omega_{xy}$ and $\omega_{zy}=3\omega_{xy}$, and therefore we can use Floquet theory for a complete description of our system\cite{goldman_periodically_2014}. The Hamiltonian in Eq.~\ref{Eq:Rashba_atoms} is therefore an effective Hamiltonian that describes the stroboscopic dynamics of the full Floquet Hamiltonian. We observed that the effective Raman coupling strengths for the driven three level system differed from our calibrations which were performed by only driving one pair of states because of the presence of nearby quasi-energy manifolds. This effect could be mitigated for larger values of $\omega_{xy}$ as the spacing between quasi-energy manifolds is increased. 
 
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter8/floquet_effects_legend.pdf}
-\caption[Effect of neighboring Floquet manifolds on Rashba dispersion]{Solid lines: Dispersion relation from the effective Floquet Hamiltonian from Equation~\ref{Eq:Rashba_atoms} as a function of $q_x$ for $\Omega_{i,j}=\unit[1.5]{\El}$ and $\delta_i=0$. Dashed lines: Dispersion relation computed for the full Floquet Hamiltonian. We considered $\omega_{zx}=2\omega_{xy}$ and $\omega_{zy}=3\omega_{xy}$ in both cases so the separation between Floquet manifolds is $\omega_{xy}$. In the left panel $\omega_{xy}=\unit[83.24]{kHz}$ as in our experiments and in the right panel $\omega_{xy}=\unit[416.2]{kHz}$. A}
+\caption[Effect of neighboring Floquet manifolds on Rashba dispersion]{Solid lines: Dispersion relation from the effective Floquet Hamiltonian from Equation~\ref{Eq:Rashba_atoms} as a function of $q_x$ for $\Omega_{i,j}=\unit[1.5]{\El}$ and $\delta_i=0$. Dashed lines: Dispersion relation computed for the full Floquet Hamiltonian. We considered $\omega_{zx}=2\omega_{xy}$ and $\omega_{zy}=3\omega_{xy}$ in both cases so the separation between Floquet manifolds is $\omega_{xy}$. In the left panel $\omega_{xy}=\unit[83.24]{kHz}$ as in our experiments and in the right panel $\omega_{xy}=\unit[416.2]{kHz}$. As the spacing between Floquet manifolds becomes larger, the dispersion from the effective and full Hamiltonians become closer.}
 \label{fig:floquet_effects}
 \end{center}
 \end{figure*}
+
 
 \subsection{Detection and maping momentum into quasimomentum}
 
