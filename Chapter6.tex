@@ -97,6 +97,32 @@ where  we have defined $\tilde\Omega=\sqrt{4\Omega^2+\epsilon^2}$. The energy di
 Unlike the $\ket{m_F}$ basis, an oscillatory magnetic field can drive transitions between all pairs of the $\xyz$ states with non-zero transition matrix elements. The transition matrix elements between the $\xyz$ show a dependence on both $\Omega$ and $\Delta$ (see \reffig{fig:s12}). For $\Omega \ll \epsilon$ the matrix elements correspond to those of the $\ket{m_F}$ basis and $\langle x \vert \hat F_+ \vert y \rangle = 0$ as expected by angular momentum selection rules. When $\Omega$ and $\epsilon$ are comparable in magnitude al transition matrix elements are nonzero and the states can be coupled cyclically.
 
 \note{TODO: write matrix elements in dressed basis}
+
+\begin{equation}
+\fx \rightarrow \begin{pmatrix}
+ \frac{2 \Omega }{\sqrt{4 \Omega ^2+\epsilon ^2}} & 0 & -\frac{\epsilon }{\sqrt{4 \Omega ^2+\epsilon ^2}} \\
+ 0 & 0 & 0 \\
+ -\frac{\epsilon }{\sqrt{4 \Omega ^2+\epsilon ^2}} & 0 & -\frac{2 \Omega }{\sqrt{4 \Omega ^2+\epsilon ^2}} \\
+\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+\fy \rightarrow \begin{pmatrix}
+ 0 & -\frac{i (\alpha -\epsilon )}{\Omega  \sqrt{\frac{(\epsilon -\alpha )^2}{\Omega ^2}+4}} & 0 \\
+ \frac{i (\alpha -\epsilon )}{\Omega  \sqrt{\frac{(\epsilon -\alpha )^2}{\Omega ^2}+4}} & 0 & -\frac{i (\alpha +\epsilon )}{\Omega 
+   \sqrt{\frac{(\alpha +\epsilon )^2}{\Omega ^2}+4}} \\
+ 0 & \frac{i (\alpha +\epsilon )}{\Omega  \sqrt{\frac{(\alpha +\epsilon )^2}{\Omega ^2}+4}} & 0 \\
+\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+\fz \rightarrow \begin{pmatrix}
+ 0 & -\frac{\sqrt{\frac{\epsilon }{\sqrt{4 \Omega ^2+\epsilon ^2}}+1}}{\sqrt{2}} & 0 \\
+ -\frac{\sqrt{\frac{\epsilon }{\sqrt{4 \Omega ^2+\epsilon ^2}}+1}}{\sqrt{2}} & 0 & -\frac{2}{\sqrt{\frac{\left(\sqrt{4 \Omega ^2+\epsilon ^2}+\epsilon
+   \right)^2}{\Omega ^2}+4}} \\
+ 0 & -\frac{2}{\sqrt{\frac{\left(\sqrt{4 \Omega ^2+\epsilon ^2}+\epsilon \right)^2}{\Omega ^2}+4}} & 0 \\
+\end{pmatrix}
+\end{equation}
 % As $\Omega \gg \epsilon$ the $\ket z$ and $\ket y$ states decouple and the system resembles an `undressed basis' following similar selection rules. \note{I'm not entirely sure how this were computed, I should redo this plots}
 
 % \begin{figure*}[ht]
