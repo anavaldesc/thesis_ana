@@ -34,3 +34,5 @@ Need to understand and write about:
 -Dark state interpretation of things. This one might be good:
 https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.95.010404
 -Why do we never bother about tensor light shifts?!
+-Why does hyperfine splitting enable state dependent `vector' light shift?
+-Should read/talk about spin-relaxation collisions. Don't understand. 
