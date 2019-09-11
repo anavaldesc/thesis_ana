@@ -66,39 +66,27 @@ All of our experiments started with about with $N\approx 1\times 10^6$$\Rb87$ at
 
 \subsection{Raman coupling the $\xyz$ states}
 
-We Raman-coupled atoms prepared in any of the $\xyz$ states using the three cross-polarized Raman laser beams shown in Figure~\ref{fig:Schematic}b, tuned to the `magic zero' wavelength $\lambda_L = \unit[790]{nm}$. We arranged the Raman lasers into the tripod configuration shown in Figure~\ref{fig:Schematic}c, bringing each pair into two-photon resonance with a single transition with strengths $(\Omega_{zx}, \Omega_{xy}, \Omega_{yz})/2\pi=\unit[(12.6(5), 8.7(8), 10(1))]{kHz}$. 
+We Raman-coupled atoms prepared in any of the $\xyz$ states using the three cross-polarized Raman laser beams shown in Figure~\ref{fig:Schematic}b, tuned to the `magic zero' wavelength $\lambda_L = \unit[790]{nm}$. We arranged the Raman lasers into the tripod configuration shown in Figure~\ref{fig:Schematic}c, bringing each pair into two-photon resonance with a single transition with strengths $(\Omega_{zx}, \Omega_{xy}, \Omega_{yz})/2\pi=\unit[(12.6(5), 8.7(8), 10(1))]{kHz}$. The geometry of our experimental implementation differs from~\cite{campbell_rashba_2016} where all Raman lasers are perpendicular. We had to go away from this configuration because we were interested in having all of the Raman recoil vectors lying on the imaging plane so we could image all the Raman induced $\k$ dependent dynamics. As a result of this the dispersion relation no longer has discrete rotational symmetry, however the Dirac point is very robust against changes in Hamiltonian parameters. 
 
 The energies of the $\xyz$ states are $\omega_x=0$ and $\omega_{z,y}=-(\epsilon\pm\sqrt{4\Omega_{\rm RF}^2+\epsilon^2})/2$. We set the frequencies of the Raman lasers to $\omega_x=\omega_L+\omega_0+\omega_{xy}$, $\omega_y=\omega_L+\omega_0$ and $\omega_z=\omega_L-\omega_{zx}$,  where $\omega_L=2\pi c/\lambda_L$ and $(\omega_{zx}, \omega_{xy}, \omega_{zy})/2\pi = \unit[(166.47, 83.24, 249.71)]{kHz}$ are the transition frequencies between pairs of dressed states and are integer multiples of $\epsilon$ for our coupling strength $\Omega = \sqrt{2}\epsilon$. 
 
-The Raman coupled states are well described by the combined kinetic and light-matter Hamiltonian
+The Raman coupled states can be described by the combined kinetic and light-matter Hamiltonian
 %
 \begin{equation}
-	\hat H(\k) =\sum_{j\in\{xyz\}}\bigg(\frac{\hbar^2k^2}{2m}+\hbar \omega_i\bigg)\ket{j}\bra{j}+\sum_{j'\neq j}\hbar\Omega_{j,j'}e^{i(\k_{j,j'}\cdot\x-i\omega_{j,j'}t)}\ket{j}\bra{j'},
+	\hat H_{\rm R}(\k) =\sum_{j\in\{xyz\}}\bigg(\frac{\hbar^2k^2}{2m}+\hbar \omega_i\bigg)\ket{j}\bra{j}+\sum_{j'\neq j}\hbar\Omega_{j,j'}e^{i(\k_{j,j'}\cdot\x-i\omega_{j,j'}t)}\ket{j}\bra{j'},
 	% \label{Eq:Rashba_atoms}
 \end{equation}
 %
-where $\k_{j,j'}$ is the recoil momentum from an $\ket{j}\rightarrow\ket{j'}$ transition and $\Omega_{ij}$ is the Raman coupling strength between a pair of RF dressed states. The Hamiltonian above only includes the matrix elements associated to resonant couplings. We then apply the unitary transformation $\hat{U}_{j,j'}=\exp(-i\k_j\cdot\x-\omega_j t)\delta_{j,j'}\ket{j}\bra{j'}$ so that the Hamiltonian takes the familiar form of the ring coupling scheme
+where $\k_{j,j'}$ is the recoil momentum from an $\ket{j}\rightarrow\ket{j'}$ transition and $\Omega_{ij}$ is the Raman coupling strength between a pair of RF dressed states. The Hamiltonian above only includes the matrix elements associated to resonant couplings. We apply the unitary transformation $\hat{U}_{j,j'}=\exp(-i\k_j\cdot\x-\omega_j t)\delta_{j,j'}\ket{j}\bra{j'}$ so that the Hamiltonian takes the familiar form of the ring coupling scheme
 \begin{equation}
-	\hat H(\q) =\sum_{j\in\{xyz\}}\bigg(\frac{\hbar^2(\q-\k_j)^2}{2m}+\hbar\delta_j\bigg)\ket{j}\bra{j}+\sum_{j\neq j'}\hbar\Omega_{jj'}\ket{j}\bra{j'},
+	\hat H_{\rm R}=\sum_{j\in\{xyz\}}\bigg(\frac{\hbar^2(\q-\k_j)^2}{2m}+\hbar\delta_j\bigg)\ket{j}\bra{j}+\sum_{j\neq j'}\hbar\Omega_{jj'}\ket{j}\bra{j'},
 	\label{Eq:Rashba_atoms}
 \end{equation}
 %
-where $\k_j$ are the Raman wave vectors and $\delta_j$ is the detuning from Raman resonance.
+where $\k_j$ are the Raman wave vectors and $\delta_j$ is the detuning from Raman resonance. 
 
 This coupling scheme simultaneously overcomes three limitations of earlier experiments\cite{huang_experimental_2016,meng_experimental_2016} that performed the ring coupling using a combination of states in the $F=1$ and $F=2$ hyperfine manifolds of $^40$K : (1) working in the same hyperfine manifold eliminates spin-relaxation collisions; (2) unlike $m_F$ states, the $\xyz$ states can be tripod-coupled with lasers far detuned relative to the excited state hyperfine splitting greatly reducing spontaneous emission\cite{cooper_reaching_2013}; and (3) CDD renders the $\xyz$ states nearly immune to magnetic field noise.
-\note{TODO: understand what is the deal with spin-relaxation collisions}
-
-\subsubsection{Lifetime}
-
-The measured spontaneous emission limited lifetime of our system is $\unit[320(17)]{ms}$. However it is reduced to $\unit[40(2)]{ms}$ when the Raman couplings are resonant, which we attribute to technical noise in the relative phase between the RF dressing field and the Raman laser fields, which has caused considerable consternation in ongoing experiments. However annoying this reduced lifetime is, all the experiments reported here were short compared to the lifetime and this was not an issue. Figure~\ref{fig:raman_lifetime} shows the integrated OD from TOF images of thermal atoms where the Raman was turned on in $\unit[1]{ms}$ and held on for up to $\unit[50]{\mu s}$. 
-
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter8/raman_lifetime.pdf}
-\caption[Lifetime of Raman dressed states]{Lifetime of Raman dressed states. We Raman dressed atoms in the $\ket{m_f}$ and $\xyz$ states. The orange markers correspond to atoms initially prepared in $\ket{m_f=-1}$ (no high power RF involved) and the blue markers correspond to atoms $\xyz$ (three averaged traces). The lifetime of doubly dressed states is significantly reduced as compared to the lifetime of the Raman dressed $\ket{m_f}$ states, indicating that of resonant scattering of photons is not our only loss mechanism.}
-\label{fig:raman_lifetime}
-\end{center}
-\end{figure*}
+\note{TODO: understand what is the deal with spin-relaxation collisions, also what is the deal with coupling far detuned stuff}
 
 \subsubsection{Floquet and off resonant coupling effects}
 
@@ -112,35 +100,54 @@ We operated in a regime where the transition energies between the $\xyz$ states 
 \end{center}
 \end{figure*}
 
+\subsubsection{Lifetime}
+
+The measured spontaneous emission limited lifetime of our system is $\unit[320(17)]{ms}$. However it is reduced to $\unit[40(2)]{ms}$ when the we Raman couple the $\xyz$ states, which we attribute to technical noise in the relative phase between the RF dressing field and the Raman laser fields, which has caused considerable consternation in ongoing experiments. However annoying this reduced lifetime is, all the experiments reported here were short compared to this timescale. Figure~\ref{fig:raman_lifetime} shows measurements of the lifetimes of Raman dressed atoms in both $\ket{m_f}$ and $\xyz$ states. We obtained the lifetime by fitting decaying exponentials to the integrated OD from TOF images of thermal atoms where the Raman was turned on in $\unit[1]{ms}$ and held on for up to $\unit[50]{\mu s}$\footnote{How long we could hold on the Raman was limited by the RF antenna heating up.}. 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/raman_lifetime.pdf}
+\caption[Lifetime of Raman dressed states]{Lifetime of Raman dressed states. We Raman dressed atoms in the $\ket{m_f}$ and $\xyz$ states. The orange markers correspond to atoms initially prepared in $\ket{m_f=-1}$ (no high power RF involved) and the blue markers correspond to atoms $\xyz$ (three averaged traces). The lifetime of doubly dressed states is significantly reduced as compared to the lifetime of the Raman dressed $\ket{m_f}$ states, indicating that of resonant scattering of photons is not our only loss mechanism.}
+\label{fig:raman_lifetime}
+\end{center}
+\end{figure*}
+
 \subsection{Measuring quasimomentum distributions}
 Each pair of Raman lasers coupled states $\ket{i, \k}\rightarrow \ket{j, \k+\k_{i,j}}$ where $\ket{i}$ and $\ket{j}$ denote the initial and final $\xyz$ states, $\k$ is the initial momentum and $\k_{i,j}=\k_i-\k_j$ is the two-photon Raman recoil momentum. Dressed states with quasimomentum $\q$ are comprised of three bare states $\ket{j,\k}$ with momentum $\k=\q-\k_j$. The eigenstates of our Rashba SOC Hamiltonian take the form
 \begin{equation}
 	\ket{\Psi_n(\q)}=\sum_{j\in xyz}\sqrt{a_{n,j}(\q)}e^{i\phi_{n,j}(\q)}\ket{j,\k=\q-\k_{j}},	
-	\label{Eq:Raman_wavefunction}.
+	\label{Eq:Raman_wavefunction}
 \end{equation}
-where the quasimomentum $\q$ is a good quantum number and the amplitudes are parametrized by $a_{n,j}(\q)$ and $\phi_{n,j}(\q)$. We leveraged the wide momentum distribution of a non-condensed ensemble ($T\approx\unit[180]{nK}$ and $T/T_c\approx 1.1$) to sample a wide range of momentum states simultaneously. By starting separately in each of the $\xyz$ states we sampled the range of quasimomentum states shown in Figure~\ref{fig:fourier_spectroscopy}a, where the momentum distributions of an initial state $\ket{j,\k}$ is shifted from $\q=0$ by the corresponding Raman wave vector $\k_{j}$. 
+where the quasimomentum $\q$ is a good quantum number and the amplitudes are parametrized by $a_{n,j}(\q)$ and $\phi_{n,j}(\q)$. We leveraged the wide momentum distribution of a non-condensed ensemble ($T\approx\unit[180]{nK}$ and $T/T_c\approx 1.1$) to sample a wide range of momentum states simultaneously. By starting separately in each of the $\xyz$ states we sampled the range of quasimomentum states shown in Figure~\ref{fig:quasimomentum_map}b, where the momentum distributions of an initial state $\ket{j,\k}$ is shifted from $\q=0$ by the corresponding Raman wave vector $\k_{j}$. 
+%
+\begin{figure*}[t]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/quasimomentum_map.pdf}
+\caption[Mapping momentum into quasimomentum]{Mapping momentum into quasimomentum: {\bf a} We used non-condensed atoms with a broad momentum distribution ($T\approx\unit[180]{nK}$ and $T/T_c\approx 1.1$). {\bf b} Atoms in $\ket{j,\k}$ are mapped to Raman dressed states with quasimomentum $\q=\k+\k_j$. The black dots in the bottom panel represent the location of $\k=0$ for each of the $\xyz$ states and the red dot corresponds to $\q=0$. We performed our experiments starting separately in each of the $\xyz$ states, which allowed us to sample a larger range of quasimomentum states.}
+\label{fig:quasimomentum_map}
+\end{center}
+\end{figure*}
 
 Our measurement protocol consisted of abruptly removing the confining potential and the Raman lasers, initiating a $\unit[21]{ms}$ TOF. During this TOF we adiabatically transformed each of the $\xyz$ states back to a corresponding $\ket{m_F}$ state following the same procedure described in Chapter~\ref{sec:xyz_state_preparation} and spatially separated them using a Stern-Gerlach gradient. Finally we used resonant absorption imaging to measure the resulting density distributions.
 
-The FWHM of the cloud after TOF is $\unit[700]{\mu m}$ which is much larger than the size of the in-situ cloud $\sim\unit[50]{\mu m}$ and therefore the spatial density distribution of the TOF images represents momentum distribution of the atoms.  For the $\unit[7.4]{\mu m}$ pixel size of our camera and the $3.283$ magnification of our imaging system, the momentum resolution of our images was $\unit[0.018]{\kl}$ and the momentum distributions after TOF had a FWHM of $\sim\unit[2.2]{\kl}$. 
+The FWHM of the cloud after TOF is about $\unit[700]{\mu m}$ which is much larger than the size of the in-situ cloud $\sim\unit[50]{\mu m}$ and therefore the spatial density distribution of the TOF images represents momentum distribution of the atoms.  For the $\unit[7.4]{\mu m}$ pixel size of our camera and the $3.283$ magnification of our imaging system, the momentum resolution of our images was $\unit[0.018]{\kl}$ and the momentum distributions after TOF had a FWHM of $\sim\unit[2.2]{\kl}$. 
 
 \subsubsection{Correcting shears from gradients}
+\begin{figure*}[t]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/sg_shear.pdf}
+\caption{We measured the standard deviation of the momentum distribution along the axis perpendicular to the SG for 10 shots on each $m_f$ state. From the slope of the linear fit we obtain a shearing parameter $\alpha\approx\pm0.067$ for $m_f=\pm 1$.}
+\label{fig:sg_shear}
+\end{center}
+\end{figure*}
 
 The SG field had a non-zero curvature which caused a compression (or expansion) of the $m_f=-1\ (+1)$ cloud in the direction perpendicular to the SG direction. The projections of a given momentum state $\k$ along the SG axis and perpendicular to it were transformed as $k_{\parallel}\rightarrow k_{\parallel}$ and $k_{\perp}\rightarrow (1+\alpha)k_{\perp}$, where $\alpha=0$ for $m_f=0$ and $\mathrm{sign}(\alpha)=\pm 1$ for $m_f=\pm 1$. Since all our measurements were momentum dependent we had to take special care to quantify and correct this effect on the TOF images. 
 
 We used two different methods to quantify these shears. First we prepared thermal atoms in all three of the $m_f$ states and fit 2D Gaussians rotated by the angle of the SG displacement; $63.8$ degrees for our images. Figure~\ref{fig:sg_shear} shows the standard deviation extracted from the Gaussian fits along the axis perpendicular to the SG deviation as a function of $m_f$ state. We performed a liner fit of $\sigma$ and found that the $m_f=\pm$ states are expanded/contracted by about $\pm 6.7\%$. 
 
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter8/sg_shear.pdf}
-\caption{Averaged for 10 shots. $\alpha\approx0.067$}
-\label{fig:sg_shear}
-\end{center}
-\end{figure*}
-
 Alternatively we performed the Ramsey interferometer described in Section~\ref{sec:Ramsey} but coupling only 2 states, either $\ket{z}\leftrightarrow\ket{x}$ or $\ket{x}\leftrightarrow\ket{y}$ (mapped to $\ket{-1}\leftrightarrow\ket{0}$ and $\ket{0}\leftrightarrow\ket{+1}$ after TOF). We looked at the oscillation frequencies on each pixel and fit them to Equation~\ref{eq:ramsey_freq} for fixed value of the recoil momentum $\k_{i,j}$ and with a free shear parameter that modifies $\q$. Using this method we extracted a shearing of the order of $7\%$, in good agreement with the Gaussian fitting method.
 
-The transformed momentum coordinates were described by a function $g(\k)=\k^{\mathrm{(shear)}}$ and our observed data $(y_i^{(\mathrm{shear})},\k^{(\mathrm{shear})})$ was the OD in the sheared coordinate system at the $i$th pixel of the CCD sensor. The OD in the unsheared coordinate system can be estimated by
+The transformed momentum coordinates were described by a function $g(\k)=\k^{\mathrm{(shear)}}$ and our observed data $(y_i^{(\mathrm{shear})},\k^{(\mathrm{shear})})$ was the OD in the sheared coordinate system at the $i$th pixel of the CCD sensor. The OD in the unsheared coordinate were estimated using 
 %
 \begin{equation}
 	y_j = \frac{\sum_i\exp[-(g(\k_j)-\k_i^{\mathrm{(shear)}})^2/2\sigma^2]y_i^{\mathrm{(shear)}}}{\sum_i\exp[-(g(\k_j)-\k_i^{\mathrm{(shear)}})^2/2\sigma^2]},
@@ -156,10 +163,11 @@ where we used $\sigma$ as the spacing between points in the unsheared coordinate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Fourier spectroscopy of the Rashba dispersion}
+
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[width=\textwidth]{Figures/Chapter8/fig2.pdf}
-\caption{{\bfseries a} The initial thermally occupied $\xyz$ states $\ket{j,\k}$ lead to the displayed quasimomentum distribution. The black dots represent $\k=0$ for each of the $\xyz$ states which is mapped to non-zero $\q$, the red dot represents $\q=0$ and the blue star indicates the quasimomentum $(q_1, q_2)=\unit[(-0.55,-0.18)]{k_{\rm L}}$. We used non-condensed atoms with a broad momentum distribution ($T\approx\unit[180]{nK}$ and $T/T_c\approx 1.1$) and performed our experiments starting separately in each of the $\xyz$ states, sampling a large range of quasimomentum states. {\bfseries b} Fourier spectroscopy protocol. We applied the Raman lasers for a variable time $t_{\mathrm{p}}$: a Rabi-type atomic interferometer analogous to a three-port beam splitter. {\bfseries c} Probabilities as a function of quasimomentum for a fixed Raman pulse time $t_{\rm p}=\unit[420]{\mu s}$ {\bfseries d} Dynamics of the final populations of the $\xyz$ states with quasimomentum $(q_1, q_2)=\unit[(-0.55,-0.18)]{k_{\rm L}}$ (red star in panels {\bfseries a} and {\bfseries c}) after initializing the system in the $\ket{z}$ state. }
+\caption{{\bfseries a} Fourier spectroscopy protocol. We applied the Raman lasers for a variable time $t_{\mathrm{p}}$: a Rabi-type atomic interferometer analogous to a three-port beam splitter. {\bfseries b} Probabilities as a function of quasimomentum for a fixed Raman pulse time $t_{\rm p}=\unit[420]{\mu s}$ {\bfseries c} Dynamics of the final populations of the $\xyz$ states with quasimomentum $(q_1, q_2)=\unit[(-0.55,-0.18)]{k_{\rm L}}$ (blue star in panels {\bfseries b}) after initializing the system in the $\ket{z}$ state. }
 \label{fig:fourier_spectroscopy}
 \end{center}
 \end{figure*}
@@ -167,7 +175,7 @@ where we used $\sigma$ as the spacing between points in the unsheared coordinate
 We directly measured the 2D dispersion relation using Fourier transform spectroscopy\cite{valdes-curiel_fourier_2017} (see Chapter~\ref{ch:Fourier_spectroscopy}). In this technique we considered the evolution of an initial state $\ket{i,\mathbf{k}}$ suddenly subjected to the Raman coupling lasers. This atomic Rabi-type interferometer is analogous to the three-port beam-splitter depicted in Figure~\ref{fig:fourier_spectroscopy}b. During a pulse time $t_{\mathrm{p}}$ we followed the dynamics of the populations in the $\xyz$ states which evolved with oscillatory components proportional to $\sum_{j\neq n} a_{n,j}(\q)\cos([E_n(\q)-E_{j}(\q)]t_{\mathrm{p}}\,/\hbar)$, with frequencies determined by the eigenenergy differences $E_n-E_j$. Figure~\ref{fig:fourier_spectroscopy}c shows the momentum dependent populations for a fixed pulse time $t_{\mathrm{p}}$ and Figure~\ref{fig:fourier_spectroscopy}d shows representative final populations as a function of $t_{\mathrm{p}}$ for a fixed quasimomentum state. We Fourier transformed the populations with respect to $t_p$ and for a given quasimomentum state for a total of 9 state, all of them with the same $\q$ accounting for each of the three initial $\xyz$ states that was then split into 3 states. Figure~\ref{fig:fourier_grid} shows the PSD computed for each of the 9 states for planes of constant $q_1$. The amplitude of the oscillatory components depends on the overlap integral between the initial state and the Raman dressed states as was discussed in Chapter~\ref{ch:Fourier_spectroscopy} so sampling all these states gave us access to a wider range of measurable frequencies. The spectral maps in Figure~\ref{fig:fourier_spectroscopy_bands}b were produced by averaging the PSDs from the 9 different states using $\bar{n}$, the mean population in $t_{\rm p}$, as a weight:
 %
 \begin{equation}
-	\mathrm{PSD}^{(\rm{mean})}(\q) = \frac{\sum_{i,j}\mathrm{PSD}(\q)\bar{n}_{i,j}(\q)}{\sum_{i,j}\bar{n}_i,j(\q)},
+	\mathrm{PSD}^{(\rm{mean})}(\q) = \frac{\sum_{i,j}\mathrm{PSD}_{i,j}(\q)\bar{n}_{i,j}(\q)}{\sum_{i,j}\bar{n}_i,j(\q)},
 \end{equation}
 %
 where the indices $i,j$ represent the different states of the grid shown in Figure~\ref{fig:fourier_grid}. The extrema in the spectral maps are the energy differences $E_n-E_j$ in the engineered dispersion (Figure~\ref{fig:fourier_spectroscopy}a). The combined maps show the presence of a single Dirac point in the Rashba subspace, evidenced by the gap closing near $\q=0$ and the photon-like lower branch. The dashed curves correspond to the energy differences computed for our system using the dispersions shown in Figure~\ref{fig:fourier_spectroscopy_bands}a, and are in clear agreement with our experiment. %This measurement directly confirms the expected set of energies, including the existence of a two-state subspace approximately described by the Rashba Hamiltonian. 
@@ -194,45 +202,75 @@ where the indices $i,j$ represent the different states of the grid shown in Figu
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\subsection{Quantum state tomography with Ramsey interferometer}
+\section{Quantum state tomography with Ramsey interferometer}
 \label{sec:Ramsey}
 
-The Fourier spectroscopy measurement confirmed our quantum engineering of the Rashba Hamiltonian. However, the energies shed no light on the topology of the different branches of the dispersion, which instead requires knowledge of the eigenstates. The Berry curvature present in Equation~\ref{Eq:topology} can be derived from the Berry's connection $\mathbf{A}_n(\q)=i\bra{\Psi_n(\q)}\mathbf{\nabla}_q\ket{\Psi_n(\q)}$, and using the expression for the Raman dressed eigenstates from Equation~\ref{Eq:Raman_wavefunction} we obtain
-
-% which behaves much like a vector potential in classical electromagnetism. The Berry curvature $\mathbf{\Omega}_n(\q)=\mathbf{\nabla}_q\times\mathbf{A}(\q)$ is the associated magnetic field and the flux through any surface is the line integral of $\mathbf{A(\q)}$ along its boundary, after neglecting the contributions of Dirac strings which we will discuss later. T
+The Fourier spectroscopy measurement confirmed our quantum engineering of the Rashba Hamiltonian. However, the energies shed no light on the topology of the different branches of the dispersion, which instead requires knowledge of the eigenstates. The Berry curvature present in Equation~\ref{Eq:topology} can be derived from the Berry's connection $\mathbf{A}_n(\q)=i\bra{\Psi_n(\q)}\mathbf{\nabla}_q\ket{\Psi_n(\q)}$, which as discussed in Chapter~\ref{ch:Topology} behaves much like a vector potential in classical electromagnetism. The Berry curvature $\mathbf{\Omega}_n(\q)=\mathbf{\nabla}_q\times\mathbf{A}(\q)$ is the associated magnetic field and the flux through any surface is the line integral of $\mathbf{A(\q)}$ along its boundary, after neglecting the contributions of Dirac strings which we will discuss later. Using the expression for the Raman dressed eigenstates from Equation~\ref{Eq:Raman_wavefunction} we obtain
 %
 \begin{equation}
  \mathbf A_n(\q)= -\!\!\!\!\!\!\sum_{j \in\{x, y, z\}}  a_{n,j}(\q)  \nabla_q \phi_{n,j}(\q),
 \label{Eq:Berry_connection1}
 \end{equation}
 %
-which depends on both the phase and amplitude of the wave function. We obtained $a_{n,j}(\q)$ and $\phi_{n,j}(\q)$ using a three-arm time-domain Ramsey interferometer, implementing a variant of quantum state tomography\cite{flaschner_experimental_2016,godfrin_generalized_2018}. The use of a multi-path interferometer allowed us to transduce information about phases into state populations, which we readily obtained from absorption images. 
-
+which depends on both the phase and amplitude of the wave function.  We obtained $a_{n,j}(\q)$ and $\phi_{n,j}(\q)$ using a three-arm time-domain Ramsey interferometer, implementing a variant of quantum state tomography\cite{flaschner_experimental_2016,godfrin_generalized_2018}. The use of a multi-path interferometer allowed us to transduce information about phases into state populations, which we readily obtained from absorption images. 
 %
 \begin{figure*}[htb]
 \begin{center}
-\includegraphics[]{Figures/Chapter8/fig4.pdf}
-\caption{{\bfseries a} Experimental protocol for three-arm Ramsey interferometer (not to scale). (Top) We started with atoms in state $\ket{z,y,\q_i=\k+\mathbf{k}_j}$ and with detuning $\delta_y=\pm \unit[5]{E_{\rm L}}$ and $\delta_z=\pm\unit[5]{E_{\rm L}}$. We ramped the Raman lasers on in $750 \us$ and then ramped the detuning to nominally zero. We let the system evolve in the dark for times between $5 \,\us$ and $400\,\us$, followed by a $\unit[25]{us}$ Raman pulse. (Bottom) The implemented experimental protocol was equivalent to a three-arm interferometer that split an initial state into three final states with amplitudes related to the initial wave function phases. {\bfseries b} Probabilities as a function of quasimomentum for the three output ports of the interferometer at $t_{\rm free}=\unit[160]{\mu s}$ {\bfseries c} Probabilities as a function of free evolution time $t_{\mathrm{free}}$ for an input state with quasimomentum $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$ indicated by the blue star on {\bfseries b} and in the topological ground branch ($n=1$)}
+\includegraphics[]{Figures/Chapter8/fig4a.pdf}
+\caption{Experimental protocol for three-arm Ramsey interferometer (not to scale). (Top) We started with atoms in state $\ket{z,y,\q_i=\k+\mathbf{k}_j}$ and with detuning $\delta_y=\pm \unit[5]{E_{\rm L}}$ and $\delta_z=\pm\unit[5]{E_{\rm L}}$. We ramped the Raman lasers on in $750 \us$ and then ramped the detuning to nominally zero. We let the system evolve in the dark for times between $5 \,\us$ and $400\,\us$, followed by a $\unit[25]{us}$ Raman pulse. (Bottom) The implemented experimental protocol was equivalent to a three-arm interferometer that split an initial state into three final states with amplitudes related to the initial wave function phases.}
 \label{fig:Ramsey_ramps}
 \end{center}
 \end{figure*}
 
-Figure~\ref{fig:Ramsey_ramps}a shows our experimental protocol. We adiabatically mapped an initial $\ket{j, \k}$ state into a corresponding eigenstate $\ket{n,\q=\k+\k_j}$, either in the topologically trivial highest dispersion branch ($n=3$) or in the topological ground branch ($n=1$) by dynamically tailoring both the Raman coupling strength and detuning (see Methods). We suddenly turned off the Raman coupling, thereby allowing the three bare state components of the Rashba eigenstates to undergo free evolution for a time $t_{\mathrm{free}}$, constituting the three arms of our time-domain interferometer. Finally we applied a three-port beam splitter using a brief Raman `recombination' pulse to interfere the three arms. At the end of this procedure, the population in a final state $\ket{l, \q}$ is
+Figure~\ref{fig:Ramsey_ramps} shows our experimental protocol which I will describe in detail in more detail in the following section. We adiabatically mapped an initial $\ket{j, \k}$ state into a corresponding eigenstate $\ket{n,\q=\k+\k_j}$, either in the topologically trivial highest dispersion branch ($n=3$) or in the topological ground branch ($n=1$) by dynamically tailoring both the Raman coupling strength and detuning. We suddenly turned off the Raman coupling, thereby allowing the three bare state components of the Rashba eigenstates to undergo free evolution for a time $t_{\mathrm{free}}$, constituting the three arms of our time-domain interferometer. Finally we applied a three-port beam splitter using a brief Raman `recombination' pulse to interfere the three arms. 
+
+\subsection{Wave function evolution in Ramsey interferometer}
+
+{\bf Rashba dressed state preparation:} We started with $\xyz$ states at different coupling strength $\Omega_{\rm RF}/\pi 2\pm \unit[20]{kHz}$, such that the energies of the $\ket{z}$ and $\ket{y}$ states were shifted by about $\pm \unit[18.8]{kHz}$. We used the same Raman frequencies as described earlier and therefore the change in the $\xyz$ state eigenenergies corresponded to non-zero $\delta_z$ and $\delta_y$ in Equation~\ref{Eq:Rashba_atoms}. We chose the detuning such that the initial state had a large overlap with either the $n=1$ or the $n=3$ eigenstates of Equation~\ref{Eq:Rashba_atoms} and when we ramped on the Raman coupling in $\unit[750]{\mu s}$ the $\ket{z}$ and $\ket{y}$ states were adiabatically mapped into the $n=1$ or $n=3$ eigenstates. We then ramped $\Omega_{\rm RF}$ to its final value in $\unit[1]{ms}$, effectively ramping $\delta_z$ and $\delta_y$ close to zero. This detuning ramp had the additional effect of moving the location Dirac point through the atoms, thereby creating a trajectory where the state preparation was not adiabatic. This trajectory depended on the sign of the detuning ramp and combining data from different initial states allowed us to exclude the Dirac point trajectories. Near the final location of the Dirac point the state preparation can not be adiabatic regardless of the initial state or detuning used for the ground state preparation. Finally, because our only experimental knob for dynamically changing the detuning was $\Omega_{\rm{RF}}$ we could not control $\delta_x$ so when we initialized the system in $\ket{x}$ the the final dressed state always corresponded to the $n=2$ branch.
+
+{\bf Free evolution:} At the end of the loading procedure the state of the system was described by the eigenstates in Equation~\ref{Eq:Raman_wavefunction}. We suddenly turned off the Raman coupling, thereby projecting the Raman dressed states back into the $\xyz$ basis. Each of the $\xyz$ state represents a different branch of the interferometer and they acquire phases that are proportional to $t_{\rm{free}}$
+%
 \begin{equation}
-P_l(\q,t)=\sum_{i\neq j} a_{n,i}a_{n,j}\cos(\omega_{i,j}(\q) t+\phi_{n,i}(\q) - \phi_{n,j}(\q)+\phi_{l,i,j}^{p}(\q)),
+	\ket{\Psi_n(\q)}\rightarrow \sum_{j\in xyz}\sqrt{a_{n,j}(\q)}e^{i\phi_{n,j}(\q)}e^{-iE_j(\q)t_{\rm{free}}/\hbar}\ket{j,\k=\q-\k_{j}},
+\end{equation}
+%
+where $E_j(\q)=\hbar^2\q^2/2m$ is the free particle energy.
+
+{\bf Recombination pulse:} We applied a $\unit[25]{us}$ Raman pulse that acted as a second beam splitter in our interferometer sequence. The wave function after the pulse is
+%
+\begin{equation}
+	\ket{\Psi(\q)}= \sum_{j,j'\in xyz}\sqrt{a_{n,j}(\q)}e^{i(\phi_{n,j}(\q)-E_j(\q)t_{\rm{free}}/\hbar)} U_{j,j'}(\q)\ket{j,\k=\q-\k_{j}},
+\end{equation}
+%
+where $U_{j,j'}(\q)=\vert U_{j,j'}(\q)\vert \exp(i\phi_{j,j'}^{\rm{(pulse})}(\q))$ is the matrix element of the unitary transformation $\exp(i\hat H_{\rm R}(\q) t_{\rm{pulse}})$ associated to the Raman pulse. At the end of this procedure, the population in a final state $\ket{l, \q}$ is
+\begin{equation}
+P_l(\q,t)=\sum_{i\neq j} \vert U_{l,i}\vert \vert U_{j,l}\vert \sqrt{a_{n,i} a_{n,j}}\cos(\omega_{i,j}(\q) t+\phi_{n,i}(\q) - \phi_{n,j}(\q)+\phi_{l,i,j}^{(\rm{pulse})}(\q)),
 \label{Eq:Ramsey_evolution}
 \end{equation}
-which directly reads out the phase differences, independent of the output port $l$. Here $\phi_{l,i,j}^{p}(\q)$ is a smoothly varying phase imprinted by the recombination pulse and is independent of $\q$ in the limit of short, strong pulses. The angular frequencies
+which directly reads out the phase differences, independent of the output port $l$. Here $\phi_{l,i,j}^{(\rm{pulse})}=\phi_{j,l}^{\rm{(pulse})}-\phi_{l,i}^{\rm{(pulse})}$ is a smoothly varying phase imprinted by the recombination pulse and is independent of $\q$ in the limit of short, strong pulses. The angular frequencies
 %
 \begin{equation}
 	\omega_{i,j}(\q)=\hbar \q \cdot \k_{i,j}/m + \delta_{i,j}
 	\label{eq:ramsey_freq}
 \end{equation}
 %
-result from the known free particle kinetic energy and detuning $\delta_{i,j}$ from the tripod resonance condition. Figure~\ref{fig:Ramsey_ramps}b shows the momentum-dependent populations in each output port at fixed $t_{\rm free}=\unit[160]{\mu s}$ and Figure~\ref{fig:Ramsey_ramps}c shows the populations as a function of $t_{\mathrm{free}}$ for a representative quasimomentum state $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$. We obtained the relative phases from Equation~\ref{Eq:Ramsey_evolution} by fitting the measured populations to the sum of three cosines with the known free particle frequencies but unknown amplitudes and phases. 
+result from the known free particle kinetic energy, the recoil momenta and detuning $\delta_{i,j}$ from the tripod resonance condition. Figure~\ref{fig:Ramsey_ramps}b shows the momentum-dependent populations in each output port at fixed $t_{\rm free}=\unit[160]{\mu s}$ and Figure~\ref{fig:Ramsey_ramps}c shows the populations as a function of $t_{\mathrm{free}}$ for a representative quasimomentum state $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$.  
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/fig4bc.pdf}
+\caption{{\bfseries a} Probabilities as a function of quasimomentum for the three output ports of the interferometer at $t_{\rm free}=\unit[160]{\mu s}$ {\bfseries b} Probabilities as a function of free evolution time $t_{\mathrm{free}}$ for an input state with quasimomentum $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$ indicated by the blue star on {\bfseries a} and in the topological ground branch ($n=1$)}
+\label{fig:Ramsey_fringes}
+\end{center}
+\end{figure*}
+
+\subsection{Combining phases}
+
+We obtained the relative phases from Equation~\ref{Eq:Ramsey_evolution} by fitting the measured populations to the sum of three cosines with the known free particle frequencies but unknown amplitudes and phases.
+
+Talk about gauges. ff
 
 Figure~\ref{fig:Ramsey_phases}a shows typical phase-maps for both the non-topological and topological branches. In the non-topological phase-maps the momentum dependence of the recombination pulse $\phi_{l,i,j}^{p}(\q)$ causes a smooth variation of the phases along the Raman recoil axes that does not affect the evaluation topological index of our system. To recover the phases $\phi_{n,j}$ of the full spinor wave function from the fits, we made the gauge choice described in the Methods.
-
 
 We recovered the phases $\phi_{n,j}$ of the full spinor wave function from the relative phases obtained from the fits by choosing a particular gauge (see Methods). We then used the values of $a_{n,i}$ obtained from measuring the populations in the $\xyz$ states at $t_{\mathrm{free}}=0$ in combination with the phases of the wave function to compute the Berry connection\cite{fukui_chern_2005}. Figure~\ref{fig:Ramsey_phases}b shows the three phase differences as a function of polar angle for a loop of radius $q\approx 0.77\,k_{\rm L}$ for both the topological and non-topological branches. In addition to the smooth variations induced by the recombination which are present in both columns, the phases of the topological branch have two $\pi$ valued jumps that lead to non-zero Berry phases when the Berry connection is integrated along a closed loop in momentum space. Figure~\ref{fig:Ramsey_phases}c shows the integrated Berry phase as a function of loop radius. The largest value of $t_{\mathrm{free}}$ in the experiment limits how well we can resolve the phases of low frequencies $\omega_{ij}(\q)$ near $q=0$ as well as when two different frequencies $\omega_{ij}(\q)$ and $\omega_{i'j'}(\q)$ are close to each other, as can be seen in the high noise present in the phase-maps near $q=0$ as well as in lines where the fit frequencies become nearly degenerate. This limitation is reflected in the large variation in the Berry phase depicted in the shaded region of Figure~\ref{fig:Ramsey_phases}c near $q=0$. For loops with $q>0.4\,k_{\rm L}$ we obtain an integrated Berry phase that suggests an asymptotic Chern number of $\Phi_{\rm B}/2\pi=0.01(1)$ for the non-topological branch and $\Phi_{\rm B}/2\pi=0.5(5)$ for the topological branch. However, Berry's phase measurements including ours includes the (potential) contribution of any Dirac strings traversing the integration area. In our system, these are possible at the Dirac point $^*$, and each contributes $\pm2\pi$ to $\Phi_{\rm B}$. Even with this $2\pi$ ambiguity we are able to associated a half-integer Chern number with the topological branch, which is possible only for a topological dispersion branch in the continuum. 
 \begin{figure}[htb]
@@ -259,9 +297,7 @@ While the true Rashba Hamiltonian features a ring of degenerate eigenstates, our
 
 
 %
-\subsection{State preparation for Ramsey interferometer}
 
-For the Rashba dressed states preparation we started with RF dressed states with a different coupling strength $\Omega_{\rm RF}/\pi 2\pm \unit[20]{kHz}$. This change shifted the energies of the $\ket{z}$ and $\ket{y}$ states by about $\pm \unit[18.8]{kHz}$. The change in the $\xyz$ state eigenenergies corresponded to non-zero $\delta_z$ and $\delta_y$ in Equation~\ref{Eq:Rashba_atoms}. We chose the detuning such that the initial state had a large overlap with either the $n=1$ or the $n=3$ eigenstates of Equation~\ref{Eq:Rashba_atoms}. We ramped the Raman on in $\unit[750]{\mu s}$ and then ramped $\Omega_{\rm RF}$ to its final value in $\unit[1]{ms}$, effectively ramping $\delta_z$ and $\delta_y$ close to zero. This detuning ramp had the additional effect of moving the location Dirac point through the atoms, thereby creating a trajectory where the state preparation was not adiabatic. This trajectory depended on the sign of the detuning ramp and therefore we used different initial states and detuning ramps for the ground state preparation and we excluded the Dirac point trajectories when combining the data. Near the final location of the Dirac point the state preparation can not be adiabatic regardless of the initial state or detuning used for the ground state preparation.  Finally, because of our state preparation method we could only prepare dressed states in either the $n=1$ or $n=3$ by initializing the system in the $\ket{y}$ or $\ket{z}$ states. When we prepared the system in $\ket{x}$ the final dressed state corresponded to the $n=2$ branch.
 
 
 \subsection{Combining phases from different states}
