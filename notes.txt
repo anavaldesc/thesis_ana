@@ -33,6 +33,7 @@ Need to understand and write about:
 -Why matrix elements are no good in F=1 without clock states
 -Dark state interpretation of things. This one might be good:
 https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.95.010404
--Why do we never bother about tensor light shifts?!
--Why does hyperfine splitting enable state dependent `vector' light shift?
+-Why do we never bother about tensor light shifts?! Because it is smaaallll
+-Why does hyperfine splitting enable state dependent `vector' light shift? 
 -Should read/talk about spin-relaxation collisions. Don't understand. 
+-If detuning is small the +-1 angular momentum transfer condition is relaxed but spontaneous emission increases. 
