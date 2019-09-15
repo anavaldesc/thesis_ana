@@ -110,7 +110,7 @@ with spin orbit coupling strength given by $\alpha=\hbar^2k_L/2$. The zeroth-ord
 
 \section{Experimental implementation of Rashba SOC}
 
- We implemented the ring-coupling scheme and thereby engineered Rashba SOC by resonantly coupling three internal atomic states using two-photon Raman transitions\cite{campbell_rashba_2016} as depicted in Figure~\ref{fig:Schematic}. As shown in Figure~\ref{fig:Schematic}a, the engineered system consisted of an effective spin-1/2 Rashba subspace, along with a topologically trivial high-energy branch. Our engineered Rashba system had a single Dirac cone near $\q=0$, where the two lower dispersion branches become degenerate and the Berry curvature becomes singular. Each of these branches extend to infinite momentum, making the supporting manifold a plane rather than a torus. We characterized this system using both spectroscopy and quantum state tomography. This allowed us to measure the dispersion branches and directly observe the single Dirac point linking the lowest two branches as well as to reconstruct the Berry connection to derive the associated Chern numbers. \note{TODO:maybe the stuff of plane and torus doesn't go here}
+ We implemented the ring-coupling scheme and thereby engineered Rashba SOC by resonantly coupling three internal atomic states using two-photon Raman transitions\cite{campbell_rashba_2016} as depicted in Figure~\ref{fig:Schematic}. As shown in Figure~\ref{fig:Schematic}a, the engineered system consisted of an effective spin-1/2 Rashba subspace, along with a topologically trivial high-energy branch. Our engineered Rashba system had a single Dirac cone near $\q=0$, where the two lower dispersion branches become degenerate and the Berry curvature becomes singular. Each of these branches extend to infinite momentum, making the supporting manifold a plane rather than a torus. We characterized this system using both spectroscopy and quantum state tomography. This allowed us to measure the dispersion branches and directly observe the single Dirac point linking the lowest two branches as well as to reconstruct the Berry connection to derive the associated Chern numbers. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,7 +157,7 @@ where $\k_{j,j'}$ is the recoil momentum from an $\ket{j}\rightarrow\ket{j'}$ tr
 where $\k_j$ are the Raman wave vectors and $\delta_j$ is the detuning from Raman resonance. 
 
 This coupling scheme simultaneously overcomes three limitations of earlier experiments\cite{huang_experimental_2016,meng_experimental_2016} that performed the ring coupling using a combination of states in the $F=1$ and $F=2$ hyperfine manifolds of $^40$K : (1) working in the same hyperfine manifold eliminates spin-relaxation collisions~\cite{tojo_spin-dependent_2009}; (2) unlike $m_F$ states, the $\xyz$ states can be tripod-coupled with lasers far detuned relative to the excited state hyperfine splitting greatly reducing spontaneous emission\cite{cooper_reaching_2013}; and (3) CDD renders the $\xyz$ states nearly immune to magnetic field noise.
-\note{TODO: understand what is the deal with spin-relaxation collisions, also what is the deal with coupling far detuned stuff}
+\note{TOTHINK: understand what is the deal with spin-relaxation collisions, also what is the deal with coupling far detuned stuff}
 
 \subsubsection{Floquet and off resonant coupling effects}
 
@@ -225,7 +225,7 @@ The transformed momentum coordinates were described by a function $g(\k)=\k^{\ma
 %
 where we used $\sigma$ as the spacing between points in the unsheared coordinate sytem. Prior to any data analysis we applied this transformation to all of our images, where we used different values of $\alpha$ that define $g(\k)$ for each of the $m_f$ states.
 
-\note{TODO: Need to understand origin of this...}
+\note{TOTHINK: Need to understand origin of this...}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Results I: Fourier spectroscopy
@@ -252,7 +252,7 @@ where the indices $i,j$ represent the different states of the grid shown in Figu
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter8/fourier_grid.pdf}
-\caption{Something}
+\caption{Something 	\note{TODO:write caption}}
 \label{fig:fourier_grid}
 \end{center}
 \end{figure*}
@@ -296,7 +296,15 @@ Figure~\ref{fig:Ramsey_ramps} shows our experimental protocol which I will descr
 
 \subsection{Wave function evolution in Ramsey interferometer}
 
-{\bf Rashba dressed state preparation:} We started with $\xyz$ states at different coupling strength $\Omega_{\rm RF}/\pi 2\pm \unit[20]{kHz}$, such that the energies of the $\ket{z}$ and $\ket{y}$ states were shifted by about $\pm \unit[18.8]{kHz}$. We used the same Raman frequencies as described earlier and therefore the change in the $\xyz$ state eigenenergies corresponded to non-zero $\delta_z$ and $\delta_y$ in Equation~\ref{Eq:Rashba_atoms}. We chose the detuning such that the initial state had a large overlap with either the $n=1$ or the $n=3$ eigenstates of Equation~\ref{Eq:Rashba_atoms}. We then ramped on the Raman coupling in $\unit[750]{\mu s}$, adiabatically mapping the $\ket{z}$ and $\ket{y}$ states into the $n=1$ or $n=3$ eigenstates. Because our only experimental knob for dynamically changing the detuning was $\Omega_{\rm{RF}}$ we could not control $\delta_x$ so when we initialized the system in $\ket{x}$ the the final dressed state always corresponded to the $n=2$ branch. After turning on the Raman we ramped $\Omega_{\rm RF}$ to its final value in $\unit[1]{ms}$, effectively ramping $\delta_z$ and $\delta_y$ close to zero. This detuning ramp had the additional effect of moving the location Dirac point through the atoms, thereby creating a trajectory where the state preparation was not adiabatic. This trajectory depended on the sign of the detuning ramp and combining data from different initial states allowed us to exclude the Dirac point trajectories. Near the final location of the Dirac point the state preparation can not be adiabatic regardless of the initial state or detuning used for the ground state preparation. At the end of this stage, the state of the system was described by the eigenstates in Equation~\ref{Eq:Raman_wavefunction}.
+{\bf Rashba dressed state preparation:} We started with $\xyz$ states at different coupling strength $\Omega_{\rm RF}/\pi 2\pm \unit[20]{kHz}$, such that the energies of the $\ket{z}$ and $\ket{y}$ states were shifted by about $\pm \unit[18.8]{kHz}$. We used the same Raman frequencies as described earlier and therefore the change in the $\xyz$ state eigenenergies corresponded to non-zero $\delta_z$ and $\delta_y$ in Equation~\ref{Eq:Rashba_atoms}. We chose the detuning such that the initial state had a large overlap with either the $n=1$ or the $n=3$ eigenstates of Equation~\ref{Eq:Rashba_atoms}. We then ramped on the Raman coupling in $\unit[750]{\mu s}$, adiabatically mapping the $\ket{z}$ and $\ket{y}$ states into the $n=1$ or $n=3$ eigenstates. Because our only experimental knob for dynamically changing the detuning was $\Omega_{\rm{RF}}$ we could not control $\delta_x$ so when we initialized the system in $\ket{x}$ the the final dressed state always corresponded to the $n=2$ branch. After turning on the Raman we ramped $\Omega_{\rm RF}$ to its final value in $\unit[1]{ms}$, effectively ramping $\delta_z$ and $\delta_y$ close to zero. This detuning ramp had the additional effect of moving the location Dirac point through the atoms, thereby creating a trajectory where the state preparation was not adiabatic. This trajectory depended on the sign of the detuning ramp and combining data from different initial states allowed us to exclude the Dirac point trajectories. Near the final location of the Dirac point the state preparation can not be adiabatic regardless of the initial state or detuning used for the ground state preparation. Figure~\ref{fig:dragging_Dirac_point}a shows and example a TOF image of atoms initially prepared in the $\ket{y}$ state with the $delta_y$ such that the state is mapped to the $n=1$ eigenstate, the Dirac point is initially located near the lower left edge of the cloud. We ramped $\delta_{i}$ such that the Dirac point was dragged across the whole cloud leaving lines where non-adiabatic transitions occurred as can be seen in Figure~\ref{fig:dragging_Dirac_point}b. The location of the Dirac point as a function of $\delta_{i}$ can also be directly computed by numerically diagonalizing the SOC Hamiltonian from Equation~\ref{Eq:Rashba_atoms}. At the end of this stage, the state of the system was described by the eigenstates in Equation~\ref{Eq:Raman_wavefunction}.
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/Dirac_point_trajectory.pdf}
+\caption[Dragging the Dirac point through the atoms]{{\bf a} We prepared atoms in the $\ket{y}$ state such that they are adiabatically mapped to the ground dispersion branch. {\bf b} We ramped $\delta_i$ so that the Dirac point was dragged through the cloud.}
+\label{fig:dragging_Dirac_point}
+\end{center}
+\end{figure*}
 
 {\bf Free evolution:} We suddenly turned off the Raman coupling, thereby projecting the Raman dressed states back into the $\xyz$ basis. Each of the $\xyz$ state represents a different branch of the interferometer and they acquire phases that are proportional to $t_{\rm{free}}$
 %
@@ -334,41 +342,27 @@ result from the known free particle kinetic energy, the recoil momenta and detun
 \end{center}
 \end{figure*}
 
-We obtained the relative phases $\Delta\phi_{n,i,j,l}=\phi_{n,i}(\q) - \phi_{n,j}(\q)+\phi_{l,i,j}^{\rm{(pulse)}}(\q)$ from Equation~\ref{Eq:Ramsey_evolution} by fitting the measured populations to the sum of three cosines with the known free particle frequencies but unknown amplitudes and phases. 
+We obtained the relative phases $\Delta\phi_{n,i,j,l}(\q)=\phi_{n,i}(\q) - \phi_{n,j}(\q)+\phi_{l,i,j}^{\rm{(pulse)}}(\q)$ from Equation~\ref{Eq:Ramsey_evolution} by fitting the measured populations to the sum of three cosines with the known free particle frequencies but unknown amplitudes and phases. 
 
-\subsection{Recombimation pulse effects}
-The last term $\Delta\phi_{n,i,j,l}$ arises from the recombination pulse in the interferometer. It corresponds to a smooth $\q$-dependent variation along the Raman recoil axis $\k_{i,j}$ with an additional $\q$-independent offset that depends on the state index $l$. The presence of this extra term does change the measured topological index (see Appendix~\ref{app:Ramsey_phases}).
+\subsection{Combining phases from different measurements}
 
-When combining the phases all measurements got rid of the $l$ dependent offset by shifting $\Delta\phi_{n,i,j,l}$ by a constant number such that there was a maximal overlap for all phases. This shift was constant in $\q$ and had no effect on the topological index. 
+We combined the phases $\Delta\phi_{n,i,j,l}(\q)$ obtained from fits to six different states (two initial states split into 3 states). Prior to combining all our data we had to take the phase the from the recombination pulse $\phi_{l,i,j}^{\rm{(pulse)}}(\q)$ into account. This phase corresponds to a smooth $\q$-dependent variation along the Raman recoil axis $\k_{i,j}$ with an additional $\q$-independent offset that depends on the state index $l$. The presence of this extra term does change the measured topological index (see Appendix~\ref{app:Ramsey_phases}). We got rid of the state dependent offset by shifting $\Delta\phi_{n,i,j,l}$ by a constant number such that all the individual phase measurements were maximally overlapped. This shift was constant in $\q$ and therefore had no effect on the topological index. 
 
-\subsection{Combining phases from all states}
+Similar to the Fourier spectroscopy measurements, we performed a weighted average of the fitted relative phases
+%
+\begin{equation}
+	\Delta\phi_{n,i,j}(\q)=\frac{\sum_{l}\Delta\phi_{n,i,j,l}(\q)w_{i,j,l}(\q)}{\sum_{l}w_{i,j,l}(\q)},
+\end{equation}
+%
+where the weights are a combination of uncertainties in the fits and the trajectory of the Dirac point during the loading procedure for the case of the topological branch. Figure \note{TODO:make mask figure} shows an example of two weight arrays corresponding to the two different trajectories of the Dirac point. 
 
-The largest value of $t_{\mathrm{free}}$ in the experiment limits how well we can resolve the phases of low frequencies $\omega_{ij}(\q)$ near $q=0$ as well as when two different frequencies $\omega_{ij}(\q)$ and $\omega_{i'j'}(\q)$ are close to each other, as can be seen in the high noise present in the phase-maps near $q=0$ as well as in lines where the fit frequencies become nearly degenerate. This limitation is reflected in the large variation in the Berry phase depicted in the shaded region of Figure~\ref{fig:Ramsey_phases}c near $q=0$.
-
-Finally, we averaged all the phase differences obtained from the fits, weighted by the inverse of the uncertainties obtained from the fitting procedure. For the topological branch data we excluded the regions away from $\q=0$ where the Dirac point was moved from the average. Finally we chose a gauge such that $\phi_1(\q)=0$ and used this to convert phase dif
-
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter8/topological_eigenvecs.pdf}
-\caption{{\bfseries a} Probabilities as a function of quasimomentum for the three output ports of the interferometer at $t_{\rm free}=\unit[160]{\mu s}$ {\bfseries b} Probabilities as a function of free evolution time $t_{\mathrm{free}}$ for an input state with quasimomentum $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$ indicated by the blue star on {\bfseries a} and in the topological ground branch ($n=1$)}
-\label{fig:topological_eigenvecs}
-\end{center}
-\end{figure*}
-
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter8/nontopological_eigenvecs.pdf}
-\caption{{\bfseries a} Probabilities as a function of quasimomentum for the three output ports of the interferometer at $t_{\rm free}=\unit[160]{\mu s}$ {\bfseries b} Probabilities as a function of free evolution time $t_{\mathrm{free}}$ for an input state with quasimomentum $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$ indicated by the blue star on {\bfseries a} and in the topological ground branch ($n=1$)}
-\label{fig:nontopological_eigenvecs}
-\end{center}
-\end{figure*}
-
+The `spokes' in the weight arrays correspond to high uncertainty regions. This uncertainty comes of our inability to resolve the phases of low frequencies $\omega_{ij}(\q)$  as well as when two different frequencies $\omega_{ij}(\q)$ and $\omega_{i'j'}(\q)$ are close to each other which is limited by the largest value of $t_{\mathrm{free}}$ in the experiment.
 
 \subsection{Measuring the topological index}
 
-Figure~\ref{fig:Ramsey_phases}a shows typical phase-maps for both the non-topological and topological branches. In the non-topological phase-maps the momentum dependence of the recombination pulse $\phi_{l,i,j}^{p}(\q)$ causes a smooth variation of the phases along the Raman recoil axes that does not affect the evaluation topological index of our system. To recover the phases $\phi_{n,j}$ of the full spinor wave function from the fits, we made the gauge choice described in the Methods.
+% Figure~\ref{fig:Ramsey_phases}a shows typical phase-maps for both the non-topological and topological branches. In the non-topological phase-maps the momentum dependence of the recombination pulse $\phi_{l,i,j}^{p}(\q)$ causes a smooth variation of the phases along the Raman recoil axes that does not affect the evaluation topological index of our system. To recover the phases $\phi_{n,j}$ of the full spinor wave function from the fits, we made the gauge choice described in the Methods.
 
-We recovered the phases $\phi_{n,j}$ of the full spinor wave function from the relative phases obtained from the fits by choosing a particular gauge such that $\phi_{n,0}=0$. We then used the values of $a_{n,i}$ obtained from measuring the populations in the $\xyz$ states at $t_{\mathrm{free}}=0$ in combination with the phases of the wave function to compute the Berry connection\cite{fukui_chern_2005}. Figure~\ref{fig:Ramsey_phases}b shows the three phase differences as a function of polar angle for a loop of radius $q\approx 0.77\,k_{\rm L}$ for both the topological and non-topological branches. In addition to the smooth variations induced by the recombination which are present in both columns, the phases of the topological branch have two $\pi$ valued jumps that lead to non-zero Berry phases when the Berry connection is integrated along a closed loop in momentum space. Figure~\ref{fig:Ramsey_phases}c shows the integrated Berry phase as a function of loop radius. For loops with $q>0.4\,k_{\rm L}$ we obtain an integrated Berry phase that suggests an asymptotic Chern number of $\Phi_{\rm B}/2\pi=0.01(1)$ for the non-topological branch and $\Phi_{\rm B}/2\pi=0.5(5)$ for the topological branch. However, Berry's phase measurements including ours includes the (potential) contribution of any Dirac strings traversing the integration area. In our system, these are possible at the Dirac point $^*$, and each contributes $\pm2\pi$ to $\Phi_{\rm B}$ as was discussed in Chapter~\ref{sec:Dirac_string}. Even with this $2\pi$ ambiguity we are able to associated a half-integer Chern number with the topological branch, which is possible only for a topological dispersion branch in the continuum. 
+We recovered the phases $\phi_{n,j}$ of the full spinor wave function from the relative phases $\Delta\phi_{n,i,j}(\q)$ by choosing a particular gauge such that $\phi_{n,0}=0$. We then used the values of $a_{n,i}$ obtained from measuring the populations in the $\xyz$ states at $t_{\mathrm{free}}=0$ in combination with the phases of the wave function to compute the Berry connection\cite{fukui_chern_2005}. Figure~\ref{fig:Ramsey_phases}b shows the three phase differences as a function of polar angle for a loop of radius $q\approx 0.77\,k_{\rm L}$ for both the topological and non-topological branches. In addition to the smooth variations induced by the recombination which are present in both columns, the phases of the topological branch have two $\pi$ valued jumps that lead to non-zero Berry phases when the Berry connection is integrated along a closed loop in momentum space. Figure~\ref{fig:Ramsey_phases}c shows the integrated Berry phase as a function of loop radius. As mentioned earlier the largest value of $t_{\rm{free}}$ limits how well we can resolve the phases of small frequencies and this is reflected in the large variation in the Berry phase depicted in the shaded region of Figure~\ref{fig:Ramsey_phases}c near $q=0$. For loops with $q>0.4\,k_{\rm L}$ we obtain an integrated Berry phase that suggests an asymptotic Chern number of $\Phi_{\rm B}/2\pi=0.01(1)$ for the non-topological branch and $\Phi_{\rm B}/2\pi=0.5(5)$ for the topological branch. However, Berry's phase measurements including ours includes the (potential) contribution of any Dirac strings traversing the integration area. In our system, these are possible at the Dirac point $^*$, and each contributes $\pm2\pi$ to $\Phi_{\rm B}$ as was discussed in Chapter~\ref{sec:Dirac_string}. Even with this $2\pi$ ambiguity we are able to associated a half-integer Chern number with the topological branch, which is possible only for a topological dispersion branch in the continuum. 
 \begin{figure}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter8/fig5.pdf}
@@ -383,22 +377,14 @@ In conventional lattices --- for example graphene, or the topological Haldane mo
 
 While the true Rashba Hamiltonian features a ring of degenerate eigenstates, our implementation including the quadratic and cubic Dresselhaus-like SOC lifts this macroscopic degeneracy giving three nearly degenerate minima\cite{campbell_realistic_2011}. Already these three minima could allow the study of rich ground state physics in many body systems of bosons, for example the formation of fragmented BECs\cite{stanescu_spin-orbit_2008} when the system does not condense into a single-particle state. Furthermore, the use of additional spin states or larger Raman couplings can partially restore this degeneracy allowing the possible realization of fractional Hall like states\cite{sedrakyan_statistical_2015}. 
 
-% \note{Modify words} Our present work clearly shows new non-integer values for topological invariants, but leaves open the “bulk-boundary” connection, which links quantized transport to interfaces between systems with different topological invariants.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%Methods
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %Graveyard
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \note{Modify words} Our present work clearly shows new non-integer values for topological invariants, but leaves open the “bulk-boundary” connection, which links quantized transport to interfaces between systems with different topological invariants.
+
 % \textit{Fiber bundles} A manifold is a topological space which looks locally like $R^n$ , but not necessarily so globally. A fibre bundle is, so to speak, a topological space which looks locally like a direct
 % product of two topological spaces. 
 
