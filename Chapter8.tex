@@ -27,7 +27,15 @@ Rashba SOC~\cite{bychkov_oscillatory_1984} appears in condensed matter systems w
 %
 where $\alpha=g\mu_BE/c^2$, $g$ is the electrons gyromagnetic ratio, $\mu_B$ is the Bohr magneton and $\hat{\sigma}_i$ are the Pauli matrices. 
 
-The Rashba dispersion relation is characterized by having a Dirac point located at $\k=0$ (see Chapter~\ref{sec:2_level_topology}) and a degenerate ground state that is described by the ring $k_x^2+k_y^2=\alpha^2$. \note{TODO: Make figure} If we combine Equation~\ref{eq:Rashba_ham} with the free particle Hamiltonian the Hamiltonian can can be written as $\hat{H}=(\hbar\k-\hat{\mathbf{A}})^2/2m$ where $\mathbf{\hat{A}}=\alpha(\hat{\sigma}_y\ex-\hat{\sigma}_x\ey)$ can be interpreted as a (matrix valued) non-abelian gauge potential whose elements do not commute. This term is closely related to the Berry connection discussed in Chapter~\ref{sec:Berry phase and curvature}. This in combination with the presence of the Dirac point hints to us that a system with Rashba SOC has non-trivial topology. 
+A can be seen in Figure~\ref{fig:cm_rashba}, the Rashba dispersion relation is characterized by having a Dirac point located at $\k=0$ (see Chapter~\ref{sec:2_level_topology}) and a degenerate ground state that is described by the ring $k_x^2+k_y^2=\alpha^2$. If we combine Equation~\ref{eq:Rashba_ham} with the free particle Hamiltonian the Hamiltonian can can be written as $\hat{H}=(\hbar\k-\hat{\mathbf{A}})^2/2m$ where $\mathbf{\hat{A}}=\alpha(\hat{\sigma}_y\ex-\hat{\sigma}_x\ey)$ can be interpreted as a (matrix valued) non-abelian gauge potential whose elements do not commute. This term is closely related to the Berry connection discussed in Chapter~\ref{sec:Berry phase and curvature}. This in combination with the presence of the Dirac point hints to us that a system with Rashba SOC has non-trivial topology. 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/cm_rashba.pdf}
+\caption[Rashba dispersion relation]{The Rashba dispersion relation has a Dirac point located at $\k=0$ and }
+\label{fig:cm_rashba}
+\end{center}
+\end{figure*}
 
 SOC is also a necessary ingredient for realizing $\mathds{Z}_2$ topological insulators and the quantum spin-Hall effect. Furthermore, the degeneracy of the ground state single particle eigenstates could open the possibility of studying strongly correlated phases in the presence of interactions for systems of both fermions and bosons~\cite{stanescu_spin-orbit_2008,sedrakyan_composite_2012,hu_probing_2011}. SOC systems offer the possibility of studying a wide range of interesting physics and naturally using ultracold atomic systems to engineer SOC, and in particular Rashba type SOC, has been a longstanding goal~\cite{galitski_spin-orbit_2013}. 
 
@@ -252,7 +260,7 @@ where the indices $i,j$ represent the different states of the grid shown in Figu
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter8/fourier_grid.pdf}
-\caption{Something 	\note{TODO:write caption}}
+\caption{PSD of all the analyzed states as a function of $q_2$ for fixed $q_1=0.18\,\kl$. The different overlaps between the initial state, the Raman dressed states and the measured final state result in peaks with different amplitudes.}
 \label{fig:fourier_grid}
 \end{center}
 \end{figure*}
@@ -352,9 +360,17 @@ Similar to the Fourier spectroscopy measurements, we performed a weighted averag
 %
 \begin{equation}
 	\Delta\phi_{n,i,j}(\q)=\frac{\sum_{l}\Delta\phi_{n,i,j,l}(\q)w_{i,j,l}(\q)}{\sum_{l}w_{i,j,l}(\q)},
+	\label{eq:weighted_phases}
 \end{equation}
 %
-where the weights are a combination of uncertainties in the fits and the trajectory of the Dirac point during the loading procedure for the case of the topological branch. Figure \note{TODO:make mask figure} shows an example of two weight arrays corresponding to the two different trajectories of the Dirac point. 
+where the weights are a combination of uncertainties in the fits and the trajectory of the Dirac point during the loading procedure for the case of the topological branch. Figure~\ref{fig:uncertainty_mask}shows an example of two different weight arrays used to combine the phase difference associated to the $z\rightarrow x$ transition $i,j=z,x$ for the topological branch $n=1$ ($\Delta_{1,z,x}$): 
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter8/uncertainty_mask.pdf}
+\caption[Weight arrays used for combination of interferometer phases]{Two sample weight arrays $w_{i,j,l}(\q)$ for $i,j=z,x$ and atoms prepared in the topological disperion branch. We obtained the weights using the uncertainties from the fits and the trajectory of the Dirac point during the state preparation. We combined the weights and the phase fits from the time dependance $\Delta_{n,i,j,l}$ using Equation~\ref{eq:weighted_phases} to obtain the phase maps displayed in Figure \note{TODO: make figure of all phase maps?}}
+\label{fig:uncertainty_mask}
+\end{center}
+\end{figure*}
 
 The `spokes' in the weight arrays correspond to high uncertainty regions. This uncertainty comes of our inability to resolve the phases of low frequencies $\omega_{ij}(\q)$  as well as when two different frequencies $\omega_{ij}(\q)$ and $\omega_{i'j'}(\q)$ are close to each other which is limited by the largest value of $t_{\mathrm{free}}$ in the experiment.
 
