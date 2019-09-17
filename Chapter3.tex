@@ -5,43 +5,98 @@
 
 \renewcommand{\thechapter}{3}
 
+\chapter{Coherent manipulation and detection of ultra-cold atoms}
+\label{ch:Ch3}
 
-\chapter{The Rubidium Lithium apparatus}
+All of the experiments described in this thesis were performed using ultracold clouds of $\Rb87$. Both the cooling and trapping of atoms as well as the engineering of potentials and detection of atoms rely on the interaction of atoms with electromagnetic fields as well as with static and oscillating magnetic fields. 
 
-\section{Laser systems}
-\subsection{Master and cooling laser systems}
-\subsection{1064nm laser system}
-\subsection{Raman laser system}
-\subsubsection{Tapered amplifier laser system}
-\subsubsection{Ti:Saphire and 532 nm laser system}
+In this Chapter I will describe the techniques and interactions that make our experiments possible. I will start by describing the electronic structure of $\Rb87$. I will review the effects of the atomic interactions with magnetic and electric fields. First I will talk about the foundations of atom-light interactions that make possible both laser cooling and trapping and Raman induced transitions. I will then talk about the interactions of atoms with magnetic fields which allows us to shift the energies of different atomic states and . Finally I will discuss the absorption imaging technique that we use to detect atoms after all our experiments are performed. 
 
-\section{Imaging systems}
-\subsection{The xy imaging system}
-\subsection{The zx imaging system}
-\subsection{Measuring magnification and focus?}
+\section{Electronic structure of $^{87}$Rb}
+\label{sec:electronic_structure}
 
-\section{Water cooling}
+Rb is an Alkali metal (also Li, which exists in our vacuum chamber but was never used). Alkali metals correspond to the first group (leftmost column) of the periodic table and are characterized by having a single valence electron, which makes the description of their internal structure much simpler than that of other elements. We can describe the state of an electron in an atom by its angular momentum $\mathbf{\hat{L}}$ and its spin $\mathbf{\hat S}$. Because of Pauli's exclusion principle there can not be two electrons with the same quantum numbers and in multi-electron atoms they tend to fill `shells' of different angular momentum values, historically labeled by the letters $S,\ P,\ D,\ F,\ ...$\footnote{This terms were used to describe the lines in the emission spectra when they were first discovered. $S$ stands for sharp, $P$ for principal $D$ for diffuse and $F$ for further noted} (corresponding to $L=1,\ 2,\ 3,\ 4,\ ...$). In particular Rb has 4 filled shells and one electron in the $5S$ 
+shell, where the number $5$ corresponds to the principal quantum number $n$. Figure \note{TODO: make figure of atomic energy levels} shows the energy levels of the ground state $5S$ and its closest $5P$ orbital. %In the absence of interactions, the $m_l$ sublevels within an orbital are degenerate.
 
-\section{Magnetic field control}
-\subsection{Bias coils}
-\subsection{Gradient cancelation coils}
+The atomic level structure is modified by relativistic effects. In particular the relativistic treatment of the electron's motion gives rise to an interaction between the electron's intrinsic magnetic moment (the spin) $\mathbf{\hat S}$ and the orbital angular momentum $\mathbf{\hat L}$. This spin-orbit coupling interaction $\hat H_{\rm {fs}} \propto \mathbf{L}\cdot\mathbf{S}$ causes the fine structure splitting of the electronic orbitals into levels with different total electronic angular momentum $\mathbf{J}=\mathbf{\hat L}\cdot\mathbf{\hat S}$. Figure~\ref{fig:fs_hfs}b show the $5^2S_{1/2}$, $5^2P_{1/2}$ and $5^2P{3/2}$ electronic configurations that arise from this splitting, where the subscript indicates the value of $J$. For $S$ ($L=0$) orbitals $J=1/2$ is the only possible value and the levels are not split. For the $P$ orbital ($L=1$) $J$ and a single electron with $S=1/2$, $J$ can be $1/2$ or $3/2$ and the $P$ orbital splits into two levels. The $5S_{1/2}\rightarrow 5P_{1/2}$ is known as the D1 line and has wavelength $\lambda=\unit[794.979]{nm}$ and $5S_{1/2}\rightarrow 5P_{3/2}$ transition is known as the D2 line and has $\lambda=\unit[790.241]{nm}$ \cite{Steck}. 
 
-\section{RF electronics}
-\subsection{RF evaporation antenna}
-\subsection{High power RF antenna}
-\label{sec:high_power_rf_antenna}
-The antenna loop is Digikey part number $732-5646-ND$
+The atomic level structure gets further modified by the magnetic interaction of the electronic magnetic flux density with the nuclear spin $\mathbf{I}$. This is another kind of spin-orbit interaction that gives rise to the hyperfine splitting of the atomic levels which can be described by the Hamiltonian $\hat H_{\rm{hfs}} = A_{\rm{hfs}}\mathbf{I}\cdot\mathbf{J}$. A complete derivation of $\hat H_{\rm{hfs}}$ can be found in~\cite{schwartz_theory_1955}. The hyperfine levels correspond to different values of the total angular momentum $\hat F=\hat J+\hat I$. For $\Rb87$ $I=3/2$~\cite{Steck} which results in the level structure shown in Figure~\ref{fig:fs_hfs}c 
 
-\section{Microwave electronics}
+% For $S$ electrons the hyperfine splitting can be described by the Hamiltonian $\hat H_{\rm{hfs}} = A_{\rm{hfs}}\mathbf{I}\cdot\mathbf{J}$\footnote{Notice how both the fine and hyperfine structure arise from a spin-orbit coupling interaction, we will discuss a very different type of spin-orbit coupling in future chapter.}. Figure~\ref{fig:fs_hfs}c shows the fine structure getting further split into states of total angular momentum $\mathbf{F}=\mathbf{J}+\mathbf{I}$. $\Rb87$ has a nuclear spin $I=3/2$ and therefore its ground state hyperfine configuration has $F=1$ and $F=2$. Here
+% ~\cite{Steck} 
 
-We
+\section{Atom-light interaction}
+\label{sec:atom-lignt_interaction}
+
+In this section I will discuss the interaction between atoms and electromagnetic radiation (light). After laying the foundations I will discuss the applications to optical dipole traps and Raman transitions. I will not cover laser cooling which has been covered extensively in the literature~\cite{metcalf_deceleration_1999,phillips_nobel_1998} and PhD theses from previous lab members~\cite{CampbellThesis,PriceThesis}. 
+
+In the presence of an electric field $\mathbf E$ an atom can become polarized and therefore its energy levels get modified by the Stark effect~\cite{stark_beobachtungen_1914}. If the electric field is spatially uniform with respect to the atom's size we consider the electric field as a classical object and its effect on the atom can be described by the the Hamiltonian~\cite{SteckTextbook,Foot,metcalf_deceleration_1999}  
+%
+\begin{equation}
+\hat{H} = -\mathbf{\hat d}\cdot\mathbf{E},
+\label{eq:dipole_ham}	
+\end{equation}
+%
+where $\mathbf{\hat d}=-e\sum_j r_j$ is the atomic dipole operator, $e$ is the electron charge and $\hat r_j$ are the position operators of the atom's electrons relative to the center of mas of the atom. This approximation, known as the dipole approximation, and is valid for electromagnetic radiation when the wavelength is much larger than the size of an atom $\lambda\gg r_{\rm{atom}}$~\cite{SteckTextbook}. %Here I will only consider the case of oscillating electric fields $\mathbf{E}=E_0\cos(\omega t)\boldsymbol{\epsilon}$ (i.e. plane waves of electromagnetic radiation) which are relevant to our experiments. 
+
+Can break interaction into scalar, vector and tensor part. Interaction can also be resonant or off-resonant.
+
+\note{Why do you only get second order perturbation theory effects? I think it has something to do with unperturbed atomic states being eigenstates of the parity operator}
+
+% \subsection{Scalar light shift: Dipole traps and optical lattices}
+
+% \subsection{Vector light shift: Raman coupling}
+
+\subsection{Off-resonant interactions and Stark shifts}
+
+\subsection{Light induced spin-orbit coupling}
+
+The geometry and wavelength of the Raman fields determine the natural units of the system: the single photon recoil momentum $k_{\mathrm{L}}=\sqrt{2}\pi/\lambda_{\mathrm{R}}$ and its associated recoil energy $E_{\mathrm{L}}=\hbar^2k_{\mathrm{L}}^2/2m$, as well as the direction of the recoil momentum $\mathbf{k}_{\mathrm{L}}=k_{\mathrm{L}}\ex$. The Raman wavelength was $\lambda_{\mathrm{R}}=790.032\,\nm$, as usual, so that the scalar light shift is zero. 
+
+\section{Rashba SOC in condensed matter}
+
+% In earlier sections we discussed the spin-orbit coupling interaction between spin and angular momentum that gives rise to the atomic level structure. In condensed matter systems, there is another kind of spin-orbit coupling that links the spin of the electrons with the linear or crystal momentum. In 2D materials, SOC can be represented as a sum of Rashba~\cite{bychkov_oscillatory_1984} and Dresselhaus~\cite{dresselhaus_spin-orbit_1955} SOC. 
 
 
-\section{Computer control and data acquisition}
-Cite labscript. 
-\section{Experimental sequence to make BECs}
-\label{sec:making-becs}
+\note{Something about what we use this transitions for and how we usually ignore all other levels. (???)}
 
+\note{TODO: what about matrix elements between -1 and +1?. Move to intro chapter}
+
+
+\section{Magnetic interaction}
+\subsection{Static magnetic fields}
+Also talk about the Paschen–Back effect occurs in a strong external magnetic field. The spin and orbital angular momen- tum precess independently about the magnetic field.
+
+Uniform fields: Zeeman splitting, Breit-Rabi formula
+Gradients: Quadrupole potentials and Stern-Gerlach
+
+\subsection{Oscillatory magnetic fields}
+\label{seq:rf_coupling}
+RF coupling and microwave coupling
+
+\subsection{Selection rules}
+
+\section{Applications}
+\subsection{Quantum coherent dynamics?}
+\subsection{Adiabatic rapid pasage}
+\label{sec:arp}
+\subsection{The Rabi cycle}
+\subsection{Ramsey interferometry}
+
+
+
+
+
+
+
+\section{Absorption imaging}
+\subsection{Time of flight imaging}
+\subsection{Partial transfer absorption imaging: magnetic field stabilization}
+\label{sec:ptai}
+We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
+\section{Floquet}
+\label{sec:Floquet_theory}
+How to treat systems when RWA is not valid and how to create new effective (stroboscopic) Hamiltonians.
 
 
 
