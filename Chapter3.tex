@@ -28,28 +28,63 @@ The atomic level structure gets further modified by the magnetic interaction of 
 \section{Atom-light interaction}
 \label{sec:atom-lignt_interaction}
 
-In this section I will discuss the interaction between atoms and electromagnetic radiation (light). After laying the foundations I will discuss the applications to optical dipole traps and Raman transitions. I will not cover laser cooling which has been covered extensively in the literature~\cite{metcalf_deceleration_1999,phillips_nobel_1998} and PhD theses from previous lab members~\cite{CampbellThesis,PriceThesis}. 
+In this section I will discuss the interaction between atoms and electromagnetic radiation (light). After laying the foundations I will discuss the applications using off-resonant light such as optical dipole traps and Raman transitions. I will not cover laser cooling which has been covered extensively in the literature~\cite{metcalf_deceleration_1999,phillips_nobel_1998} and PhD theses from previous lab members~\cite{CampbellThesis,PriceThesis}. 
 
-In the presence of an electric field $\mathbf E$ an atom can become polarized and therefore its energy levels get modified by the Stark effect~\cite{stark_beobachtungen_1914}. If the electric field is spatially uniform with respect to the atom's size we consider the electric field as a classical object and its effect on the atom can be described by the the Hamiltonian~\cite{SteckTextbook,Foot,metcalf_deceleration_1999}  
+In the presence of an electric field $\mathbf E$ an atom can become polarized and therefore its energy levels get modified by the Stark effect~\cite{stark_beobachtungen_1914}. If the electric field is spatially uniform with respect to the atom's size we consider the electric field as a classical object and its effect on the atom can be described by the the Hamiltonian~\cite{Cohen-Tanoudji}  
 %
 \begin{equation}
-\hat{H} = -\mathbf{\hat d}\cdot\mathbf{E},
+\hat{H}_{\rm{dip}} = -\mathbf{\hat d}\cdot\mathbf{E},
 \label{eq:dipole_ham}	
 \end{equation}
 %
-where $\mathbf{\hat d}=-e\sum_j r_j$ is the atomic dipole operator, $e$ is the electron charge and $\hat r_j$ are the position operators of the atom's electrons relative to the center of mas of the atom. This approximation, known as the dipole approximation, and is valid for electromagnetic radiation when the wavelength is much larger than the size of an atom $\lambda\gg r_{\rm{atom}}$~\cite{SteckTextbook}. %Here I will only consider the case of oscillating electric fields $\mathbf{E}=E_0\cos(\omega t)\boldsymbol{\epsilon}$ (i.e. plane waves of electromagnetic radiation) which are relevant to our experiments. 
+where $\mathbf{\hat d}=-e\sum_j r_j$ is the atomic dipole operator, $e$ is the electron charge and $\hat r_j$ are the position operators of the atom's electrons relative to the center of mas of the atom. This approximation, known as the dipole approximation, and is valid for electromagnetic radiation when the wavelength is much larger than the size of an atom $\lambda\gg r_{\rm{atom}}$~\cite{SteckTextbook}. 
+
+The dipole Hamiltonian can be written in terms of a tensor polarizability
+%
+\begin{equation}
+	\hat{H}_{\rm{dip}}=\alpha_\mu\nu
+\end{equation}
+
+Lets now consider the example of an atom in the presence of an oscillating electric field with amplitude $E_0$ and polarization $\epsilon$ $\mathbf{E}=E_0\cos(\omega t)\boldsymbol{\epsilon}$. We will use time-dependent perturbation theory to calculate the resulting energy shifts. 
+
+The eigenstate of the perturbed Hamiltonian are linear combinations of the unperturbed eigenstates $\ket{n}$  
+%
+\begin{equation}
+	\ket{\psi}=\sum_n a_n(t)e^{-iE_n t/\hbar}\ket{n},
+\end{equation}
+%
+using the time-dependent Schr\"odinger equation we can find equations for the coefficients $a_n(t)$
+%
+\begin{equation}
+	i\hbar \partial_ta_n(t)=\sum_k\bra{n}\hat{H}_{\rm{dip}}\ket{k}a_k(t)e^{i\omega_{n,k}t}
+\end{equation}
+%
+where $\omega_{nk}=(E_n-E_k)/\hbar$. If we consider the perturbation being turned on at $t=0$ and if $\omega\neq\omega_{nk}$ the first order coefficient is
+%
+\begin{equation}
+	a_n^{(1)}=-\frac{\bra{n}d_iE_0\ket{m}}{2\hbar}
+\end{equation}
+%Here I will only consider the case of oscillating electric fields $\mathbf{E}=E_0\cos(\omega t)\boldsymbol{\epsilon}$ (i.e. plane waves of electromagnetic radiation) which are relevant to our experiments. 
+
+write tensor polarizability, write it into irreducible components. Mention that tensor component is very small and ignored. 
+
+Scalar polarizability: real part is light shift, complex part is scattering. Apply rwa and get the classic expressions for trapping potential and scattering. Make plot of polarizabily for RB87 Sub subsection: dipole traps
+
+Tensor polarizability
+
+
 
 Can break interaction into scalar, vector and tensor part. Interaction can also be resonant or off-resonant.
 
 \note{Why do you only get second order perturbation theory effects? I think it has something to do with unperturbed atomic states being eigenstates of the parity operator}
 
-% \subsection{Scalar light shift: Dipole traps and optical lattices}
 
-% \subsection{Vector light shift: Raman coupling}
 
-\subsection{Off-resonant interactions and Stark shifts}
 
-\subsection{Light induced spin-orbit coupling}
+
+\subsection{Scalar light shift: dipole trapping}
+
+\subsection{Vector light shift: Raman coupling}
 
 The geometry and wavelength of the Raman fields determine the natural units of the system: the single photon recoil momentum $k_{\mathrm{L}}=\sqrt{2}\pi/\lambda_{\mathrm{R}}$ and its associated recoil energy $E_{\mathrm{L}}=\hbar^2k_{\mathrm{L}}^2/2m$, as well as the direction of the recoil momentum $\mathbf{k}_{\mathrm{L}}=k_{\mathrm{L}}\ex$. The Raman wavelength was $\lambda_{\mathrm{R}}=790.032\,\nm$, as usual, so that the scalar light shift is zero. 
 
@@ -74,7 +109,7 @@ Gradients: Quadrupole potentials and Stern-Gerlach
 \label{seq:rf_coupling}
 RF coupling and microwave coupling
 
-\subsection{Selection rules}
+
 
 \section{Applications}
 \subsection{Quantum coherent dynamics?}
@@ -85,7 +120,7 @@ RF coupling and microwave coupling
 
 
 
-
+\section{Floquet theory}
 
 
 
