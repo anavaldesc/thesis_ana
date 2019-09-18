@@ -22,9 +22,6 @@ The atomic level structure is modified by relativistic effects. In particular th
 
 The atomic level structure gets further modified by the magnetic interaction of the electronic magnetic flux density with the nuclear spin $\mathbf{I}$. This is another kind of spin-orbit interaction that gives rise to the hyperfine splitting of the atomic levels which can be described by the Hamiltonian $\hat H_{\rm{hfs}} = A_{\rm{hfs}}\mathbf{I}\cdot\mathbf{J}$. A complete derivation of $\hat H_{\rm{hfs}}$ can be found in~\cite{schwartz_theory_1955}. The hyperfine levels correspond to different values of the total angular momentum $\hat F=\hat J+\hat I$. For $\Rb87$ $I=3/2$~\cite{Steck} which results in the level structure shown in Figure~\ref{fig:fs_hfs}c 
 
-% For $S$ electrons the hyperfine splitting can be described by the Hamiltonian $\hat H_{\rm{hfs}} = A_{\rm{hfs}}\mathbf{I}\cdot\mathbf{J}$\footnote{Notice how both the fine and hyperfine structure arise from a spin-orbit coupling interaction, we will discuss a very different type of spin-orbit coupling in future chapter.}. Figure~\ref{fig:fs_hfs}c shows the fine structure getting further split into states of total angular momentum $\mathbf{F}=\mathbf{J}+\mathbf{I}$. $\Rb87$ has a nuclear spin $I=3/2$ and therefore its ground state hyperfine configuration has $F=1$ and $F=2$. Here
-% ~\cite{Steck} 
-
 \section{Atom-light interaction}
 \label{sec:atom-lignt_interaction}
 
@@ -39,31 +36,70 @@ In the presence of an electric field $\mathbf E$ an atom can become polarized an
 %
 where $\mathbf{\hat d}=-e\sum_j r_j$ is the atomic dipole operator, $e$ is the electron charge and $\hat r_j$ are the position operators of the atom's electrons relative to the center of mas of the atom. This approximation, known as the dipole approximation, and is valid for electromagnetic radiation when the wavelength is much larger than the size of an atom $\lambda\gg r_{\rm{atom}}$~\cite{SteckTextbook}. 
 
-The dipole Hamiltonian can be written in terms of a tensor polarizability
+For a coherent electromagnetic field $\mathbf{E}(\omega,t)$ with angular frequency $\omega$, the dipole Hamiltonian can be written in terms of a dynamic polarizability
 %
 \begin{equation}
-	\hat{H}_{\rm{dip}}=\alpha_\mu\nu
+	\hat{H}_{\rm{dip}}=-\alpha_{\mu\nu}(\omega)E_{\mu}^{(+)}E_{\nu}^{(-)}
+\end{equation}
+%
+where $\mathbf{E}^{(\pm)}$ are the possitive/negative frequency components of the field. $\alpha_{\mu\nu}(\omega)$ can be found by looking at the (time averaged) shift in the energy of the a given state state using second order time-dependent perturbation theory~\cite{SteckTextbook,deutsch_quantum_2010}. For the ground state $\ket{g}$ the polarizability takes the form
+%
+\begin{equation}
+	\alpha_{\mu\nu}(\omega)=\sum_j\frac{2\omega_{jg}\bra{g}d_\mu\ket{e_j}\bra{e_j}d_\nu\ket{e_j}}{\hbar(\omega_{jg}^2-\omega^2)},
+\end{equation}
+%
+where $\ket{e_j}$ represent the excited states and $\omega_{jg}=(E_j-E_g)/\hbar$. The polarizability is a rank-2 tensor and can be written in terms of it's irreducible tensor operators\footnote{A collection of operators that transforms under
+rotations like the spherical harmonics $Y_{kq}(\theta, \phi)$} (see~\cite{SteckTextbook} for a complete derivation). In the limit of small magnetic fields so that $F$ and $m_F$ are good quantum numbers describing the state of the atom $\ket{n, F, m_F}$ the dipole Hamiltonian in this representation takes a convenient form
+%
+\begin{align}
+	\hat{H}_{\rm{dip}}= &\alpha^{(0)}(\omega)(\mathbf{E}^{(-)}\cdot\mathbf{E}^{(+)}) 
+	+\alpha^{(1)}(\mathbf{E}^{(-)}\times\mathbf{E}^{(+)})\cdot\mathbf{\hat{F}}  \nonumber \\ 
+	&+ \alpha^{(2)}E_i^{(-)}E_j^{(+)}	\left(\frac{1}{2}(F_iF_j+F_jF_i)-\frac{1}{3}\mathbf{\hat F}^2\delta_{i,j}\right)\Big],
+\end{align}
+%
+where $\alpha^{(0)}$, $\alpha^{(1)}$ and $\alpha^{(2)}$ are the scalar, vector and tensor polarizabilities respectively and $\hat{\mathbf{F}}$ is the total angular momentum operator. For all our experiments $\alpha^{(2)}$ is very small so I will limit the discussion to the effect of the first two terms. The scalar term is responsible for the dipole force that allow us to trap atoms using off-resonant light and the vector component is necessary for engineering spin-orbit coupling through Raman transitions and other spin-dependent potentials. 
+
+\subsection{Scalar polarizability}
+
+The scalar polarizability takes the form
+%
+\begin{equation}
+	\alpha^{(0)}=\sum_j\frac{2\omega_{jg}\bra{g}\mathbf{d}\cdot\hat{\epsilon}\ket{e_j}\vert^2}{\hbar(\omega_{jg}^2-\omega^2)},
+\end{equation}
+%
+where $\hat{\epsilon}$ represents the polarization vector of the light. The matrix element can be expressed in terms of the Clebsch-Gordan coefficients and the reduced matrix element using the Wigner-Eckart theorem. For the ground state of an Alkali atom ($J=1/2$) the expression above gets simplified to
+%
+\begin{equation}
+	\alpha^{(0)}\approx\sum_{J'}\frac{2\omega_{JJ'}\vert\langle J=1/2 \| \mathbf{d}\|J'\rangle\vert^2}{3\hbar(\omega_{JJ'}^2-\omega^2)}.
 \end{equation}
 
-Lets now consider the example of an atom in the presence of an oscillating electric field with amplitude $E_0$ and polarization $\epsilon$ $\mathbf{E}=E_0\cos(\omega t)\boldsymbol{\epsilon}$. We will use time-dependent perturbation theory to calculate the resulting energy shifts. 
+The dipole matrix elements needed to compute the polarizability are related to the transition scattering rate via Fermi's golden rule~\cite{Sakurai,SteckTextbook}
+\begin{equation}
+	\Gamma_{JJ'}=\frac{\omega_{JJ'}^2}{3\pi\epsilon_0\hbar c^3}\frac{2J+1}{2J'+1}\vert\langle J \| \mathbf{d}\|J'\rangle\vert^2,
+\end{equation}
+%
+and combining this with the expression for the intensity of the electric field $I(\r)=2\epsilon_0c\vert \mathbf{E}(\r)\vert^2$ we find that the energy of the ground state manifold is shifted by
+\begin{equation}
+	U(\omega,\r)=-\frac{\pi c^2 I(\r)}{2}\left[ \frac{2\Gamma_{\rm{D1}}}{\omega_{\rm{D1}}^2}\left(\frac{1}{\omega+\omega_{\rm{D1}}}-\frac{1}{\omega-\omega_{\rm{D1}}}\right)+\frac{2\Gamma_{\rm{D2}}}{\omega_{\rm{D2}}^2}\left(\frac{1}{\omega+\omega_{\rm{D2}}}-\frac{1}{\omega-\omega_{\rm{D2}}}\right)\right],
+\end{equation}
+%
+where only the contribution of the closest transitions from the D1 and D2 lines are included. Here $U(\r)$ is related to the real part of the polarizability which is in fact a complex valued number. So far I have only considered the real part by assuming the excited states have an infinitely long lifetime. However, in reality the atom can spontaneously emit photons and decay. This exponential decay can be accounted for by adding an imaginary contribution to the energies $\omega_D\rightarrow\omega_D+i\Gamma_D\omega^3/\omega_D^3$ of the D1 and D2 transitions~\cite{grimm_optical_2000}. The scattering rate is related to the imaginary part of the polarizability and is given by
+%
+\begin{equation}
+	\Gamma(\omega,\r)=\frac{\pi c^2I(\r)}{2\hbar}\left[ \frac{2\Gamma_{\rm{D1}}\omega^3}{\omega_{\rm{D1}}^6}\left(\frac{1}{\omega+\omega_{\rm{D1}}}-\frac{1}{\omega-\omega_{\rm{D1}}}\right)^2+\frac{2\Gamma_{\rm{D2}}\omega^3}{\omega_{\rm{D2}}^6}\left(\frac{1}{\omega+\omega_{\rm{D2}}}-\frac{1}{\omega-\omega_{\rm{D2}}}\right)^2\right]
+\end{equation}
 
-The eigenstate of the perturbed Hamiltonian are linear combinations of the unperturbed eigenstates $\ket{n}$  
-%
-\begin{equation}
-	\ket{\psi}=\sum_n a_n(t)e^{-iE_n t/\hbar}\ket{n},
-\end{equation}
-%
-using the time-dependent Schr\"odinger equation we can find equations for the coefficients $a_n(t)$
-%
-\begin{equation}
-	i\hbar \partial_ta_n(t)=\sum_k\bra{n}\hat{H}_{\rm{dip}}\ket{k}a_k(t)e^{i\omega_{n,k}t}
-\end{equation}
-%
-where $\omega_{nk}=(E_n-E_k)/\hbar$. If we consider the perturbation being turned on at $t=0$ and if $\omega\neq\omega_{nk}$ the first order coefficient is
-%
-\begin{equation}
-	a_n^{(1)}=-\frac{\bra{n}d_iE_0\ket{m}}{2\hbar}
-\end{equation}
+The energy shift $U(\omega,\r)$ is a conservative term and is related to dipole trapping while the scattering term $\Gamma(\omega,\r)$ is dissipative and is important for laser cooling. In the context of engineering potentials for ultracold atoms with off-resonant light, the scattering is translated into heating because every time an atom emits a photon with angular frequency $\omega_L$ it gets a recoil momentum $\hbar\k_L$.  
+
+\subsubsection{Optical trapping}
+One important application of the scalar light-shift is to create optical traps for our clouds of ultracold atoms. If we use optical fields with non-uniform spatial intensity we can generate traps (and anti-traps) because the atoms will experience a force $F_{\rm{dip}}=-\nabla U(\r)$. Generally for the optical frequencies we use in the lab $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$ so the rotating wave approximation is valid and we can neglect the terms proportional to $1/(\omega+\omega_{\rm D}$ so the sign of the detuning 
+
+or a Gaussian beam with intensity
+
+
+
+% the scalar polarizability takes the form 
+% The matrix element in Equation~\ref{eq:scalar_pol} can be expressed using the Wigner-Eckart theorem~\cite{Sakurai} in terms of the Clebsch-Gordan coefficients and the reduced matrix elements. 
 %Here I will only consider the case of oscillating electric fields $\mathbf{E}=E_0\cos(\omega t)\boldsymbol{\epsilon}$ (i.e. plane waves of electromagnetic radiation) which are relevant to our experiments. 
 
 write tensor polarizability, write it into irreducible components. Mention that tensor component is very small and ignored. 
@@ -78,11 +114,6 @@ Can break interaction into scalar, vector and tensor part. Interaction can also 
 
 \note{Why do you only get second order perturbation theory effects? I think it has something to do with unperturbed atomic states being eigenstates of the parity operator}
 
-
-
-
-
-\subsection{Scalar light shift: dipole trapping}
 
 \subsection{Vector light shift: Raman coupling}
 
@@ -133,12 +164,51 @@ We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfe
 \label{sec:Floquet_theory}
 How to treat systems when RWA is not valid and how to create new effective (stroboscopic) Hamiltonians.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Graveyard
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The eigenstate of the perturbed Hamiltonian are linear combinations of the unperturbed eigenstates $\ket{n}$  
+% %
+% \begin{equation}
+% 	\ket{\psi}=\sum_n a_n(t)e^{-iE_n t/\hbar}\ket{n},
+% \end{equation}
+% %
+% using the time-dependent Schr\"odinger equation we can find equations for the coefficients $a_n(t)$
+% %
+% \begin{equation}
+% 	i\hbar \partial_ta_n(t)=\sum_k\bra{n}\hat{H}_{\rm{dip}}\ket{k}a_k(t)e^{i\omega_{n,k}t}
+% \end{equation}
+% %
+% where $\omega_{nk}=(E_n-E_k)/\hbar$. If we consider the perturbation being turned on at $t=0$ and if $\omega\neq\omega_{nk}$ the first order coefficient is
+% %
+% \begin{equation}
+% 	a_n^{(1)}=-\frac{\bra{n}d_iE_0\ket{m}}{2\hbar}
+% \end{equation}
+
+% For $S$ electrons the hyperfine splitting can be described by the Hamiltonian $\hat H_{\rm{hfs}} = A_{\rm{hfs}}\mathbf{I}\cdot\mathbf{J}$\footnote{Notice how both the fine and hyperfine structure arise from a spin-orbit coupling interaction, we will discuss a very different type of spin-orbit coupling in future chapter.}. Figure~\ref{fig:fs_hfs}c shows the fine structure getting further split into states of total angular momentum $\mathbf{F}=\mathbf{J}+\mathbf{I}$. $\Rb87$ has a nuclear spin $I=3/2$ and therefore its ground state hyperfine configuration has $F=1$ and $F=2$. Here
+% ~\cite{Steck} 
+
+% Lets now consider the example of an atom in the presence of an oscillating electric field with amplitude $E_0$ and polarization $\epsilon$ $\mathbf{E}=E_0\cos(\omega t)\boldsymbol{\epsilon}$. We will use time-dependent perturbation theory to calculate the resulting energy shifts. 
 
 
+% So far I have considered that the excited state has an infinitely long lifetime and does not decay. However, in reality the atom can spontaneously emit photons and decay. The lifetime of the excited state is given by $1/\Gamma_{e_j}$. The exponential decay of the excited state corresponds to adding a imaginary contribution to the energy $E_{e_j}\rightarrow E_{e_j}-i\hbar\Gamma_{e_j}/2$ which makes the polarizability a complex valued number. 
 
+% The decay rate of a transition is related to the square of the dipole matrix element via Fermi's golden rule~\cite{Sakurai}
 
+% \begin{equation}
+% 	\Gamma_{J_gJ_e}=\frac{\omega_0^2}{3\pi\epsilon_0\hbar c^3}\frac{2J_g+1}{2J_e+1}\vert\langle g \| \mathbf{d}\|e\rangle\vert^2
+% \end{equation}
 
+% where $\vert\langle g \| \mathbf{d}\|e\rangle\vert^2$ is a reduced matrix element
+% I will now look at the scalar polarizability term for Alkali atoms. For the case of far-detuned light such that the hyperfine $F$ levels are not well resolved the scalar polarizability can be calculated using the fine structure $J$ states. For an atom in an initial state $J$
 
-
-
+% use scattering rate to find reduced matrix element write final expresion. skip the j, go back to generic notation
+% %
+% \begin{equation}
+%  	\alpha^{(0)}\approx\sum_{J'}\frac{\vert\langle J \| \mathbf{d}\|J'\rangle \vert^2}{3\hbar}\left(\frac{1}{\omega+\omega_{JJ'}}-\frac{1}{\omega-\omega_{JJ'}}\right)
+%  \end{equation} 
+% If we consider Alkali atoms in the ground state hyperfine manifold in the presence of far detuned light such that the hyperfine levels are not well resolved we need to calculate the matrix elements using the $J$ states
 
