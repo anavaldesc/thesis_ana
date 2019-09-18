@@ -83,6 +83,7 @@ and combining this with the expression for the intensity of the electric field $
 	U(\omega,\r)=-\frac{\pi c^2 I(\r)}{2}\left[ \frac{2\Gamma_{\rm{D1}}}{\omega_{\rm{D1}}^2}\left(\frac{1}{\omega+\omega_{\rm{D1}}}-\frac{1}{\omega-\omega_{\rm{D1}}}\right)+\frac{2\Gamma_{\rm{D2}}}{\omega_{\rm{D2}}^2}\left(\frac{1}{\omega+\omega_{\rm{D2}}}-\frac{1}{\omega-\omega_{\rm{D2}}}\right)\right],
 \end{equation}
 %
+\note{TODO:add the fudge factors that give more weight to one of the transitions (both here and in Gamma)}
 where only the contribution of the closest transitions from the D1 and D2 lines are included. Here $U(\r)$ is related to the real part of the polarizability which is in fact a complex valued number. So far I have only considered the real part by assuming the excited states have an infinitely long lifetime. However, in reality the atom can spontaneously emit photons and decay. This exponential decay can be accounted for by adding an imaginary contribution to the energies $\omega_D\rightarrow\omega_D+i\Gamma_D\omega^3/\omega_D^3$ of the D1 and D2 transitions~\cite{grimm_optical_2000}. The scattering rate is related to the imaginary part of the polarizability and is given by
 %
 \begin{equation}
@@ -92,34 +93,19 @@ where only the contribution of the closest transitions from the D1 and D2 lines 
 The energy shift $U(\omega,\r)$ is a conservative term and is related to dipole trapping while the scattering term $\Gamma(\omega,\r)$ is dissipative and is important for laser cooling. In the context of engineering potentials for ultracold atoms with off-resonant light, the scattering is translated into heating because every time an atom emits a photon with angular frequency $\omega_L$ it gets a recoil momentum $\hbar\k_L$.  
 
 \subsubsection{Optical trapping}
-One important application of the scalar light-shift is to create optical traps for our clouds of ultracold atoms. If we use optical fields with non-uniform spatial intensity we can generate traps (and anti-traps) because the atoms will experience a force $F_{\rm{dip}}=-\nabla U(\r)$. Generally for the optical frequencies we use in the lab $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$ so the rotating wave approximation is valid and we can neglect the terms proportional to $1/(\omega+\omega_{\rm D}$ so the sign of the detuning 
+One important application of the scalar light-shift is to create optical traps for our clouds of ultracold atoms. If we use optical fields with non-uniform spatial intensity we can generate traps (and anti-traps) because the atoms will experience a force $F_{\rm{dip}}=-\nabla U(\r)$. Generally for the optical frequencies we use in the lab $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$ so the rotating wave approximation is valid and we can neglect the terms proportional to $1/(\omega+\omega_{\rm D}$. 
 
 or a Gaussian beam with intensity
 
 
 
-% the scalar polarizability takes the form 
-% The matrix element in Equation~\ref{eq:scalar_pol} can be expressed using the Wigner-Eckart theorem~\cite{Sakurai} in terms of the Clebsch-Gordan coefficients and the reduced matrix elements. 
-%Here I will only consider the case of oscillating electric fields $\mathbf{E}=E_0\cos(\omega t)\boldsymbol{\epsilon}$ (i.e. plane waves of electromagnetic radiation) which are relevant to our experiments. 
-
-write tensor polarizability, write it into irreducible components. Mention that tensor component is very small and ignored. 
-
-Scalar polarizability: real part is light shift, complex part is scattering. Apply rwa and get the classic expressions for trapping potential and scattering. Make plot of polarizabily for RB87 Sub subsection: dipole traps
-
-Tensor polarizability
-
-
-
-Can break interaction into scalar, vector and tensor part. Interaction can also be resonant or off-resonant.
-
-\note{Why do you only get second order perturbation theory effects? I think it has something to do with unperturbed atomic states being eigenstates of the parity operator}
-
-
-\subsection{Vector light shift: Raman coupling}
+\subsection{Vector polarizability}
 
 The geometry and wavelength of the Raman fields determine the natural units of the system: the single photon recoil momentum $k_{\mathrm{L}}=\sqrt{2}\pi/\lambda_{\mathrm{R}}$ and its associated recoil energy $E_{\mathrm{L}}=\hbar^2k_{\mathrm{L}}^2/2m$, as well as the direction of the recoil momentum $\mathbf{k}_{\mathrm{L}}=k_{\mathrm{L}}\ex$. The Raman wavelength was $\lambda_{\mathrm{R}}=790.032\,\nm$, as usual, so that the scalar light shift is zero. 
 
-\section{Rashba SOC in condensed matter}
+\subsubsection{Raman induced transitions and spin-orbit coupling}
+
+\note{TODO: make plots of gamma, us and uv. Use data from atoms as an example?}
 
 % In earlier sections we discussed the spin-orbit coupling interaction between spin and angular momentum that gives rise to the atomic level structure. In condensed matter systems, there is another kind of spin-orbit coupling that links the spin of the electrons with the linear or crystal momentum. In 2D materials, SOC can be represented as a sum of Rashba~\cite{bychkov_oscillatory_1984} and Dresselhaus~\cite{dresselhaus_spin-orbit_1955} SOC. 
 
@@ -127,6 +113,7 @@ The geometry and wavelength of the Raman fields determine the natural units of t
 \note{Something about what we use this transitions for and how we usually ignore all other levels. (???)}
 
 \note{TODO: what about matrix elements between -1 and +1?. Move to intro chapter}
+
 
 
 \section{Magnetic interaction}
@@ -212,3 +199,19 @@ How to treat systems when RWA is not valid and how to create new effective (stro
 %  \end{equation} 
 % If we consider Alkali atoms in the ground state hyperfine manifold in the presence of far detuned light such that the hyperfine levels are not well resolved we need to calculate the matrix elements using the $J$ states
 
+
+% the scalar polarizability takes the form 
+% The matrix element in Equation~\ref{eq:scalar_pol} can be expressed using the Wigner-Eckart theorem~\cite{Sakurai} in terms of the Clebsch-Gordan coefficients and the reduced matrix elements. 
+%Here I will only consider the case of oscillating electric fields $\mathbf{E}=E_0\cos(\omega t)\boldsymbol{\epsilon}$ (i.e. plane waves of electromagnetic radiation) which are relevant to our experiments. 
+
+% write tensor polarizability, write it into irreducible components. Mention that tensor component is very small and ignored. 
+
+% Scalar polarizability: real part is light shift, complex part is scattering. Apply rwa and get the classic expressions for trapping potential and scattering. Make plot of polarizabily for RB87 Sub subsection: dipole traps
+
+% Tensor polarizability
+
+
+
+% Can break interaction into scalar, vector and tensor part. Interaction can also be resonant or off-resonant.
+
+% \note{Why do you only get second order perturbation theory effects? I think it has something to do with unperturbed atomic states being eigenstates of the parity operator}
