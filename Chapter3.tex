@@ -22,10 +22,28 @@ The atomic level structure is modified by relativistic effects. In particular th
 
 The atomic level structure gets further modified by the magnetic interaction of the electronic magnetic flux density with the nuclear spin $\mathbf{I}$. This is another kind of spin-orbit interaction that gives rise to the hyperfine splitting of the atomic levels which can be described by the Hamiltonian $\hat H_{\rm{hfs}} = A_{\rm{hfs}}\mathbf{I}\cdot\mathbf{J}$. A complete derivation of $\hat H_{\rm{hfs}}$ can be found in~\cite{schwartz_theory_1955}. The hyperfine levels correspond to different values of the total angular momentum $\hat F=\hat J+\hat I$. For $\Rb87$ $I=3/2$~\cite{Steck} which results in the level structure shown in Figure~\ref{fig:fs_hfs}c 
 
-\section{Atom-light interaction}
+\section{Interaction between atoms and magnetic fields}
+
+Atoms have have an intrinsic magnetic moment that is given by the sum of nuclear and electronic moments
+%
+\begin{equation}
+	\boldsymbol{\hat \mu}=-g_J\mu_B \mathbf{\hat J}+g_I\mu_N\mathbf{\hat I}=\mu_B g_F \mathbf{\hat F}
+\end{equation}
+%
+where $\mu_B$ is the Bohr magneton, $\mu_N$\footnote{$\mu_N\ll\mu_B$ and the nuclear contribution is usually neglected.} is the nuclear magneton and $g_J$, $g_I$ and $g_F$ are the Land\'e $g$-factors corresponding to the electronic, nuclear and total angular momentum\footnote{g_I is small compared to . In the presence of an external magnetic field $\mathbf B$, the internal levels of an atom get modified due to the Zeeman~\cite{Zeeman_effect} interaction
+%
+\begin{equation}
+	\hat{H}_{\rm{Zeeman}}=-\boldsymbol{\hat \mu}\cdot\mathbf{B}
+\end{equation}
+%
+which has the effect of lifting the degeneracy of the different $m_F$ states. We take advantage of this effect for making (state-dependent) magnetic traps for the atoms by using magnetic field gradients and for the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy},~\ref{ch:clock_states} and \ref{ch:Rashba} the shifts in the $m_F$ energies allowed us to treat each state as a pseudospin that we then coherently manipulated using the techniques described in Section~\ref{sec:quantum_coherent_dynamics}.
+
+The total energy shifts are calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. For a small applied magnetic the energy split is linear with the magnitude of the field $\Delta E_{\rm{Zeeman}}=g_F\mu_B m_FB$
+
+\section{Interaction between atoms and electric fields}
 \label{sec:atom-lignt_interaction}
 
-In this section I will discuss the interaction between atoms and electromagnetic radiation (light). After laying the foundations I will discuss the applications using off-resonant light such as optical dipole traps and Raman transitions. I will not cover laser cooling which has been covered extensively in the literature~\cite{metcalf_deceleration_1999,phillips_nobel_1998} and PhD theses from previous lab members~\cite{CampbellThesis,PriceThesis}. 
+In this section I will discuss the interaction between atoms and electromagnetic radiation (light). After laying the foundations I will discuss applications using off-resonant light such as optical dipole traps and Raman transitions. I will not cover laser cooling which has been covered extensively in the literature~\cite{metcalf_deceleration_1999,phillips_nobel_1998} and PhD theses from previous lab members~\cite{CampbellThesis,PriceThesis}. 
 
 In the presence of an electric field $\mathbf E$ an atom can become polarized and therefore its energy levels get modified by the Stark effect~\cite{stark_beobachtungen_1914}. If the electric field is spatially uniform with respect to the atom's size we consider the electric field as a classical object and its effect on the atom can be described by the the Hamiltonian~\cite{Cohen-Tanoudji}  
 %
@@ -126,6 +144,7 @@ where $\sigma_i=\omega_i^{-1}\sqrt{k_BT/m}$. Using the equipartition theorem we 
 	T=\frac{m}{k_B}\sigma_i^2\omega_i^2
 \end{equation}
 
+\note{TODO: figure of dipole traps}
 
 \subsection{Vector polarizability}
 
@@ -155,13 +174,15 @@ Gradients: Quadrupole potentials and Stern-Gerlach
 \label{seq:rf_coupling}
 RF coupling and microwave coupling
 
+\section{Quantum coherent dynamics}
+\label{sec:quantum_coherent_dynamics}
 
-
-\section{Applications}
-\subsection{Quantum coherent dynamics?}
+\subsection{The Rabi cycle}
+\subsection{Ramsey interferometer}
+\note{TODO:include Ramsey fringes from synthetic clock states}
 \subsection{Adiabatic rapid pasage}
 \label{sec:arp}
-\subsection{The Rabi cycle}
+
 \subsection{Ramsey interferometry}
 
 
