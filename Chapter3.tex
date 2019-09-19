@@ -34,7 +34,7 @@ In the presence of an electric field $\mathbf E$ an atom can become polarized an
 \label{eq:dipole_ham}	
 \end{equation}
 %
-where $\mathbf{\hat d}=-e\sum_j r_j$ is the atomic dipole operator, $e$ is the electron charge and $\hat r_j$ are the position operators of the atom's electrons relative to the center of mas of the atom. This approximation, known as the dipole approximation, and is valid for electromagnetic radiation when the wavelength is much larger than the size of an atom $\lambda\gg r_{\rm{atom}}$~\cite{SteckTextbook}. 
+where $\mathbf{\hat d}=-e\sum_j r_j$ is the atomic dipole operator, $e$ is the electron charge and $\hat r_j$ are the position operators of the atom's electrons relative to the center of mas of the atom. This approximation, known as the dipole approximation, is valid for electromagnetic radiation when the wavelength is much larger than the size of an atom $\lambda\gg r_{\rm{atom}}$~\cite{SteckTextbook}. 
 
 For a coherent electromagnetic field $\mathbf{E}(\omega,t)$ with angular frequency $\omega$, the dipole Hamiltonian can be written in terms of a dynamic polarizability
 %
@@ -48,7 +48,7 @@ where $\mathbf{E}^{(\pm)}$ are the possitive/negative frequency components of th
 	\alpha_{\mu\nu}(\omega)=\sum_j\frac{2\omega_{jg}\bra{g}d_\mu\ket{e_j}\bra{e_j}d_\nu\ket{e_j}}{\hbar(\omega_{jg}^2-\omega^2)},
 \end{equation}
 %
-where $\ket{e_j}$ represent the excited states and $\omega_{jg}=(E_j-E_g)/\hbar$. The polarizability is a rank-2 tensor and can be written in terms of it's irreducible tensor operators\footnote{A collection of operators that transforms under
+where $\ket{e_j}$ represent the excited states and $\omega_{jg}=(E_j-E_g)/\hbar$. The dipole operator is a rank-1 tensor and can be represented by 3 irreducible tensor operators\footnote{A rank $k$ tensor can be represented by $2k+1$ irreducible tensor operators, which are collection of operators that transforms under
 rotations like the spherical harmonics $Y_{kq}(\theta, \phi)$} (see~\cite{SteckTextbook} for a complete derivation). In the limit of small magnetic fields so that $F$ and $m_F$ are good quantum numbers describing the state of the atom $\ket{n, F, m_F}$ the dipole Hamiltonian in this representation takes a convenient form
 %
 \begin{align}
@@ -67,7 +67,7 @@ The scalar polarizability takes the form
 	\alpha^{(0)}=\sum_j\frac{2\omega_{jg}\bra{g}\mathbf{d}\cdot\hat{\epsilon}\ket{e_j}\vert^2}{\hbar(\omega_{jg}^2-\omega^2)},
 \end{equation}
 %
-where $\hat{\epsilon}$ represents the polarization vector of the light. The matrix element can be expressed in terms of the Clebsch-Gordan coefficients and the reduced matrix element using the Wigner-Eckart theorem. For the ground state of an Alkali atom ($J=1/2$) the expression above gets simplified to
+where $\hat{\epsilon}$ represents the polarization vector of the light. The matrix element can be expressed in terms of the Clebsch-Gordan coefficients and the reduced matrix element using the Wigner-Eckart theorem~\cite{Sakurai}. For the ground state of an Alkali atom ($J=1/2$) the expression above gets simplified to
 %
 \begin{equation}
 	\alpha^{(0)}\approx\sum_{J'}\frac{2\omega_{JJ'}\vert\langle J=1/2 \| \mathbf{d}\|J'\rangle\vert^2}{3\hbar(\omega_{JJ'}^2-\omega^2)}.
@@ -84,7 +84,7 @@ and combining this with the expression for the intensity of the electric field $
 \end{equation}
 %
 \note{TODO:add the fudge factors that give more weight to one of the transitions (both here and in Gamma)}
-where only the contribution of the closest transitions from the D1 and D2 lines are included. Here $U(\r)$ is related to the real part of the polarizability which is in fact a complex valued number. So far I have only considered the real part by assuming the excited states have an infinitely long lifetime. However, in reality the atom can spontaneously emit photons and decay. This exponential decay can be accounted for by adding an imaginary contribution to the energies $\omega_D\rightarrow\omega_D+i\Gamma_D\omega^3/\omega_D^3$ of the D1 and D2 transitions~\cite{grimm_optical_2000}. The scattering rate is related to the imaginary part of the polarizability and is given by
+where only the the most significant contribution from the closest transitions  (the D1 and D2 lines) are included. Here $U(\r)$ is related to the real part of the polarizability which is in fact a complex valued number. So far I have only considered the real part by assuming the excited states have an infinitely long lifetime. However, in reality the atom can spontaneously emit photons and decay. This exponential decay can be accounted for by adding an imaginary contribution to the energies $\omega_D\rightarrow\omega_D+i\Gamma_D\omega^3/\omega_D^3$ of the D1 and D2 transitions~\cite{grimm_optical_2000}. The scattering rate is related to the imaginary part of the polarizability and is given by
 %
 \begin{equation}
 	\Gamma(\omega,\r)=\frac{\pi c^2I(\r)}{2\hbar}\left[ \frac{2\Gamma_{\rm{D1}}\omega^3}{\omega_{\rm{D1}}^6}\left(\frac{1}{\omega+\omega_{\rm{D1}}}-\frac{1}{\omega-\omega_{\rm{D1}}}\right)^2+\frac{2\Gamma_{\rm{D2}}\omega^3}{\omega_{\rm{D2}}^6}\left(\frac{1}{\omega+\omega_{\rm{D2}}}-\frac{1}{\omega-\omega_{\rm{D2}}}\right)^2\right]
@@ -92,11 +92,39 @@ where only the contribution of the closest transitions from the D1 and D2 lines 
 
 The energy shift $U(\omega,\r)$ is a conservative term and is related to dipole trapping while the scattering term $\Gamma(\omega,\r)$ is dissipative and is important for laser cooling. In the context of engineering potentials for ultracold atoms with off-resonant light, the scattering is translated into heating because every time an atom emits a photon with angular frequency $\omega_L$ it gets a recoil momentum $\hbar\k_L$.  
 
+If the frequency $\omega$ satisfies the relation $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$ we can neglect the terms proportional to $1/(\omega+\omega_{\rm D})$, an approximation typically known as the rotating wave approximation (RWA). If the RWA is valid then the frequency dependence of both the energy shifts and the scattering rates will be given by the detuning from the D1 and D2 transitions. 
+
 \subsubsection{Optical trapping}
-One important application of the scalar light-shift is to create optical traps for our clouds of ultracold atoms. If we use optical fields with non-uniform spatial intensity we can generate traps (and anti-traps) because the atoms will experience a force $F_{\rm{dip}}=-\nabla U(\r)$. Generally for the optical frequencies we use in the lab $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$ so the rotating wave approximation is valid and we can neglect the terms proportional to $1/(\omega+\omega_{\rm D}$. 
+One important application of the scalar light-shift is to create optical traps for our clouds of ultracold atoms. The use optical fields with non-uniform spatial intensity can generate traps (and anti-traps) for the atoms which experience a force proportional to the intensity gradient $F_{\rm{dip}}=-\nabla U(\r)$.  \note{TODO: make nice figure of dipole trap}. The production of BECs in our lab relies on the use of focused Gaussian laser beams. The intensity profile of a focused Gaussian beam propagating along $\ez$ is given by 
+%
+\begin{equation}
+ 	I(x,y,z) = \frac{2P}{\pi\omega^2(z)}e^{-\frac{x^2+y^2}{\omega^2(z)}}
+ \end{equation} 
+ %
+ where $P$ is the total power of the beam and the $1/e^2$ radius is given by $w(z)=w_0\sqrt{1+z^2/z_R^2}$ where the minimum radius $w_0$ is known as the waist and $z_R=\pi\omega_0^2/\lambda$ is the Rayleleigh range. If the extent of an atomic cloud is small compared to the size of the beam we can perform a Taylor expansion around $\r=0$ to obtain the trapping potential
+ %
+ \begin{equation}
+ 	U(\r) = -U_0\left(1-2\frac{x^2+y^2}{\omega_0^2}-\frac{z^2}{Z_R^2}\right).
+ \end{equation}
+%
+The oscillation frequencies of the trap along the radial direction are $\omega_r=(4U_0/m\omega_0^2)^{1/2}$ and along the axial direction $\omega_z=(2U_0/mz_R)^{1/2}$. The beam waist is usually much smaller than the Rayleigh range and therefore the trap is much stronger along the axial direction. To get around this we use a `crossed dipole trap' which is formed by a combination of two cross-polarized\footnote{The beams are cross-polarized to avoid interference between them} focused Gaussian beams propagating along perpendicular axes, ensuring that we get good confinement of atoms along all spatial directions. 
 
-or a Gaussian beam with intensity
-
+For a given trapping potential $U(\r)$, the density distribution of a thermal ensamble is
+\begin{equation}
+	n(\r) = n_0 e^{-\frac{U(\r)}{k_BT}}.
+\end{equation}
+%
+The temperature $T$ can be derived from the density distribution. For a 3D harmonic trap
+%
+\begin{equation}
+	n(\r)=n_0e^{-(\frac{x^2}{2\sigma_x^2}+\frac{y^2}{2\sigma_y^2}+\frac{z^2}{2\sigma_z^2})},
+\end{equation}
+%
+where $\sigma_i=\omega_i^{-1}\sqrt{k_BT/m}$. Using the equipartition theorem we find that the spatial extension of the cloud and the temperature are related by 
+%
+\begin{equation}
+	T=\frac{m}{k_B}\sigma_i^2\omega_i^2
+\end{equation}
 
 
 \subsection{Vector polarizability}
