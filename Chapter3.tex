@@ -27,10 +27,10 @@ The atomic level structure gets further modified by the magnetic interaction of 
 Atoms have have an intrinsic magnetic moment that is given by the sum of nuclear and electronic moments
 %
 \begin{equation}
-	\boldsymbol{\hat \mu}=-g_J\mu_B \mathbf{\hat J}+g_I\mu_N\mathbf{\hat I}=\mu_B g_F \mathbf{\hat F}
+	\boldsymbol{\hat \mu}=-\frac{g_J\mu_B}{\hbar} \mathbf{\hat J}+\frac{g_I\mu_N}{\hbar}\mathbf{\hat I}=\frac{\mu_B g_F}{\hbar} \mathbf{\hat F}
 \end{equation}
 %
-where $\mu_B$ is the Bohr magneton, $\mu_N$\footnote{$\mu_N\ll\mu_B$ and the nuclear contribution is usually neglected.} is the nuclear magneton and $g_J$, $g_I$ and $g_F$ are the Land\'e $g$-factors corresponding to the electronic, nuclear and total angular momentum\footnote{g_I is small compared to . In the presence of an external magnetic field $\mathbf B$, the internal levels of an atom get modified due to the Zeeman~\cite{Zeeman_effect} interaction
+where $\mu_B$ is the Bohr magneton, $\mu_N$ \footnote{$\mu_N\ll\mu_B$ and therefore $\boldsymbol{\hat \mu}\approx-\mu_Bg_J/\hbar\mathbf{\hat J}$} is the nuclear magneton and $g_J$, $g_I$ and $g_F$ are the Land\'e $g$-factors corresponding to the electronic, nuclear and total angular momentum. In the presence of an external magnetic field $\mathbf B$, the internal levels of an atom get modified due to the Zeeman~\cite{Zeeman_effect} interaction
 %
 \begin{equation}
 	\hat{H}_{\rm{Zeeman}}=-\boldsymbol{\hat \mu}\cdot\mathbf{B}
@@ -38,10 +38,19 @@ where $\mu_B$ is the Bohr magneton, $\mu_N$\footnote{$\mu_N\ll\mu_B$ and the nuc
 %
 which has the effect of lifting the degeneracy of the different $m_F$ states. We take advantage of this effect for making (state-dependent) magnetic traps for the atoms by using magnetic field gradients and for the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy},~\ref{ch:clock_states} and \ref{ch:Rashba} the shifts in the $m_F$ energies allowed us to treat each state as a pseudospin that we then coherently manipulated using the techniques described in Section~\ref{sec:quantum_coherent_dynamics}.
 
-The total energy shifts are calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. For a small applied magnetic the energy split is linear with the magnitude of the field $\Delta E_{\rm{Zeeman}}=g_F\mu_B m_FB$
+The total energy shifts are calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. For a small magnetic field the Zeeman term can be treated as a perturbation and the energy split is linear with the magnitude of the field $\Delta E_{\rm{Zeeman}}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' large magnetic fields the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$)energies where the magnetic field and as a result the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
+
+For the particular case of $J=1/2$ (like the ground state of Alkalis) the Zeeman energies can be found analytically using the Breit-Rabi formula~\cite{breit_measurement_1931}
+%
+\begin{equation}
+	E_{m_F}=-\frac{1}{2(2I+1)}+\frac{\mu_Bg_Im_FB}{\Delta E_{\rm{hf}}}+\frac{1}{2}\sqrt{1+\frac{4m_F}{2I+1}x+x^2},
+	\label{eq:Breit_rabi}
+\end{equation}
+%
+where $\Delta E_{\rm{hf}}=A_{\rm{hf}}(J+1/2)$ and $x=(g_J-g_I)\mu_B B_z/\Delta E_{\rm{hf}}$. Figure \note{TODO:make figure} shows the energies of the $m_F$ levels for the $F=1$ and $F=2$ manifolds of $\Rb87$.
 
 \section{Interaction between atoms and electric fields}
-\label{sec:atom-lignt_interaction}
+\label{sec:atom-lignt_interactio n}
 
 In this section I will discuss the interaction between atoms and electromagnetic radiation (light). After laying the foundations I will discuss applications using off-resonant light such as optical dipole traps and Raman transitions. I will not cover laser cooling which has been covered extensively in the literature~\cite{metcalf_deceleration_1999,phillips_nobel_1998} and PhD theses from previous lab members~\cite{CampbellThesis,PriceThesis}. 
 
