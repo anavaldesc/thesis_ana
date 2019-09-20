@@ -23,6 +23,7 @@ The atomic level structure is modified by relativistic effects. In particular th
 The atomic level structure gets further modified by the magnetic interaction of the electronic magnetic flux density with the nuclear spin $\mathbf{I}$. This is another kind of spin-orbit interaction that gives rise to the hyperfine splitting of the atomic levels which can be described by the Hamiltonian $\hat H_{\rm{hfs}} = A_{\rm{hfs}}\mathbf{I}\cdot\mathbf{J}$. A complete derivation of $\hat H_{\rm{hfs}}$ can be found in~\cite{schwartz_theory_1955}. The hyperfine levels correspond to different values of the total angular momentum $\hat F=\hat J+\hat I$. For $\Rb87$ $I=3/2$~\cite{Steck} which results in the level structure shown in Figure~\ref{fig:fs_hfs}c 
 
 \section{Interaction between atoms and magnetic fields}
+\label{sec:zeeman_effect}
 
 Atoms have have an intrinsic magnetic moment that is given by the sum of nuclear and electronic moments
 %
@@ -34,6 +35,7 @@ where $\mu_B$ is the Bohr magneton, $\mu_N$ \footnote{$\mu_N\ll\mu_B$ and theref
 %
 \begin{equation}
 	\hat{H}_{\rm{Zeeman}}=-\boldsymbol{\hat \mu}\cdot\mathbf{B}
+	\label{eq:zeeman_hamiltonian}
 \end{equation}
 %
 which has the effect of lifting the degeneracy of the different $m_F$ states. We take advantage of this effect for making (state-dependent) magnetic traps for the atoms by using magnetic field gradients and for the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy},~\ref{ch:clock_states} and \ref{ch:Rashba} the shifts in the $m_F$ energies allowed us to treat each state as a pseudospin that we then coherently manipulated using the techniques described in Section~\ref{sec:quantum_coherent_dynamics}.
@@ -82,11 +84,13 @@ rotations like the spherical harmonics $Y_{kq}(\theta, \phi)$} (see~\cite{SteckT
 	\hat{H}_{\rm{dip}}= &\alpha^{(0)}(\omega)(\mathbf{E}^{(-)}\cdot\mathbf{E}^{(+)}) 
 	+\alpha^{(1)}(\mathbf{E}^{(-)}\times\mathbf{E}^{(+)})\cdot\mathbf{\hat{F}}  \nonumber \\ 
 	&+ \alpha^{(2)}E_i^{(-)}E_j^{(+)}	\left(\frac{1}{2}(F_iF_j+F_jF_i)-\frac{1}{3}\mathbf{\hat F}^2\delta_{i,j}\right)\Big],
+	\label{eq:light_matter_coupling}
 \end{align}
 %
 where $\alpha^{(0)}$, $\alpha^{(1)}$ and $\alpha^{(2)}$ are the scalar, vector and tensor polarizabilities respectively and $\hat{\mathbf{F}}$ is the total angular momentum operator. For all our experiments $\alpha^{(2)}$ is very small so I will limit the discussion to the effect of the first two terms. The scalar term is responsible for the dipole force that allow us to trap atoms using off-resonant light and the vector component is necessary for engineering spin-orbit coupling through Raman transitions and other spin-dependent potentials. 
 
 \subsection{Scalar polarizability}
+\label{sec:scalar_light_shift}
 
 The scalar polarizability takes the form
 %
@@ -115,6 +119,7 @@ where only the the most significant contribution from the closest transitions  (
 %
 \begin{equation}
 	\Gamma(\omega,\r)=\frac{\pi c^2I(\r)}{2\hbar}\left[ \frac{2\Gamma_{\rm{D1}}\omega^3}{\omega_{\rm{D1}}^6}\left(\frac{1}{\omega+\omega_{\rm{D1}}}-\frac{1}{\omega-\omega_{\rm{D1}}}\right)^2+\frac{2\Gamma_{\rm{D2}}\omega^3}{\omega_{\rm{D2}}^6}\left(\frac{1}{\omega+\omega_{\rm{D2}}}-\frac{1}{\omega-\omega_{\rm{D2}}}\right)^2\right]
+	\label{eq:scattering}
 \end{equation}
 
 The energy shift $U(\omega,\r)$ is a conservative term and is related to dipole trapping while the scattering term $\Gamma(\omega,\r)$ is dissipative and is important for laser cooling. In the context of engineering potentials for ultracold atoms with off-resonant light, the scattering is translated into heating because every time an atom emits a photon with angular frequency $\omega_L$ it gets a recoil momentum $\hbar\k_L$.  
@@ -155,10 +160,50 @@ where $\sigma_i=\omega_i^{-1}\sqrt{k_BT/m}$. Using the equipartition theorem we 
 
 \note{TODO: figure of dipole traps}
 
-\subsection{Vector polarizability}
+\note{TODO: talk about magic wavelength}
+
+\subsection{Effective magnetic fields from vector polarizability}
+\label{sec:}
+
+Recall the Zeeman Hamiltonian introduced in Section~\ref{sec:zeeman_effect}. The term proportional to the vector polarizability in Equation~\ref{eq:light_matter_coupling} looks very similar to Equation~\ref{eq:zeeman_hamiltonian} for an effective magnetic field
+%
+\begin{equation}
+	\mathbf{B}_{\rm{eff}}=-\frac{i\hbar}{\mu_Bg_J}\alpha^{(1)}(\mathbf{E}^*\times\mathbf{E}).
+\end{equation}
+
+For Alkali atoms the vector poarizability takes the form
+%
+\begin{equation}
+	\alpha^{(1)}= \frac{2\alpha^{(0)}\Delta_{\rm{fs}}}{3(\tilde{E}-\hbar\omega)}
+\end{equation}
+%
+where $\Delta_{\rm{fs}}=3A_{\rm{fs}}/2$ and $\tilde{E}=(2E_{\rm{D_1}}-E_{\rm{D2}})$. For the magnetic field magnitudes and light intensities that we typically operate at the vector light shift is small compared to the Zeeman splitting and therefore it can be treated as a perturbation to the hyperfine Hamiltonian
+%
+\begin{equation}
+ 	\hat{H}_{\rm{eff}}=\frac{\mu_Bg_F}{\hbar}\mathbf{B}_{\rm{eff}}\cdot\mathbf{\hat F}
+ \end{equation} 
+
+\subsection{Raman coupling}
+
+The vector light shift enables the realization of various spin dependent potentials in the lab. In the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy} and \ref{ch:Rashba} I used combinations of cross polarized laser beams such that for the total electric field $\mathbf{E}^*\times\mathbf{E}\neq0$ to induce Raman tranisitions. A Raman transition is a two-photon process between two ground states that uses an intermediate state that is off-resonantly coupled as is shown in Figure~\ref{fig:Raman_coupling}a. Typically the intermediate state is far detuned and is adiabatically eliminated so the system is effectively treated as a two level system, 
+
+In our case we couple the $m_F$ levels of the $F=1$ manifold using light that is off-resonant with any of the $5P$ transitions. We typically used lasers with angular frequencies close to the magic wavelength $\lambda_{\mathrm{R}}=790.032\,\nm$ described in Section~\ref{sec:scalar_light_shift} such that the scalar light shift vanished. Because the Raman laser beams were considerably detuned from the D1 and D2 lines we do not take into account coupling into any of the $5P$ levels\footnote{Some atoms are inevitably excited of course, leading to heating from spontaneous emission (Equation~\ref{eq:scattering})}
+
+
+I consider atoms in the $F=1$ manifold in the presence of a magnetic field along $\ez$ such that there is a non-negligible quadratic Zeeman shift. Two laser beams counter propagating along $\ex$ and with polarizations along $\ey$ and $\ez$ give rise to an effective magnetic field along $\ex$. 
+
+which can be generalized to more levels and different geoemtries 
 
 The geometry and wavelength of the Raman fields determine the natural units of the system: the single photon recoil momentum $k_{\mathrm{L}}=\sqrt{2}\pi/\lambda_{\mathrm{R}}$ and its associated recoil energy $E_{\mathrm{L}}=\hbar^2k_{\mathrm{L}}^2/2m$, as well as the direction of the recoil momentum $\mathbf{k}_{\mathrm{L}}=k_{\mathrm{L}}\ex$. The Raman wavelength was $\lambda_{\mathrm{R}}=790.032\,\nm$, as usual, so that the scalar light shift is zero. 
 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/Raman_coupling.pdf}
+\caption[Raman coupling with two-photon transitions]{The Rashba dispersion relation has a Dirac point located at $\k=0$ and }
+\label{fig:Raman_coupling}
+\end{center}
+\end{figure*}
 \subsubsection{Raman induced transitions and spin-orbit coupling}
 
 \note{TODO: make plots of gamma, us and uv. Use data from atoms as an example?}
