@@ -41,3 +41,6 @@ https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.95.010404
 Atomic physics stuff:
 -Dan's chapter titled "Spin-orbit coupling ultracold atoms, the basics" has an explanation of selection rules and Raman
 -Helpful stuff on Wigner-Eckart and matrix elements: https://www.physics.umd.edu/grt/taj/623e/tops2017.pdf 
+
+-Raman pulses at different wavelengths: data taken on 10/10/2017
+791.09 nm --> seq 76

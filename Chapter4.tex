@@ -6,17 +6,19 @@
 \renewcommand{\thechapter}{4}
 
 
-\chapter{The Rubidium Lithium apparatus}
+\chapter{Making BECs in the Rubidium Lithium apparatus}
 
-Things worth talking about:
+Technical things worth talking about:
 
 -fiber splitter
--dipole trap and fiber couoploing with mode expanders
+-dipole trap and fiber couopling with mode expanders
 -use of non-pm fibers with paddles
 -water cooling system (including interlock of the Zeeman slower?)
 -High power RF antenna stuff
 -Oven shutter
 -Microwaves and stub tunning
+-Mako camera
+
 
 
 \section{Laser systems}
@@ -45,9 +47,6 @@ The antenna loop is Digikey part number $732-5646-ND$
 
 \section{Microwave electronics}
 
-We
-
-
 \section{Computer control and data acquisition}
 Cite labscript. 
 \section{Experimental sequence to make BECs}
@@ -55,3 +54,21 @@ Cite labscript.
 
 
 
+\section{Quantum coherent dynamics}
+\label{sec:quantum_coherent_dynamics}
+
+\subsection{The Rabi cycle}
+\label{seq:rf_coupling}
+RF coupling and microwave coupling
+\subsection{Ramsey interferometer}
+\note{TODO:include Ramsey fringes from synthetic clock states}
+\subsection{Adiabatic rapid pasage}
+\label{sec:arp}
+
+\subsection{Ramsey interferometry}
+\subsection{Partial transfer absorption imaging: magnetic field stabilization}
+\label{sec:ptai}
+We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
+\section{Floquet}
+\label{sec:Floquet_theory}
+How to treat systems when RWA is not valid and how to create new effective (stroboscopic) Hamiltonians.
