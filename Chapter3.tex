@@ -252,7 +252,7 @@ The Raman Hamiltonian from Equation~\ref{eq:basic_Raman} can be massaged a bit m
  	\hat{H}_{\rm{SOC}} = \frac{\hbar^2}{2m}\left(\hat q_x-2\kl\fz\right)^2+\frac{\Omega}{2}\fx + \delta\fz + \hbar\epsilon\left(\mathds{1}-\frac{\fz^2}{\hbar^2}\right),
  \end{equation} 
 %
-where $\delta=E_-1-\Delta\omega$. We can go from an $F=1$ 3 system to an effective spin-$1/2$ system if we set $\Delta\omega=E_{-1}-E_0$ and consider a sizable quadratic Zeeman shift $\epsilon$, the $m_F=1$ state can be adiabatically eliminated. 
+where $\delta=E_-1-\Delta\omega$. We can go from an $F=1$ 3 system to an effective spin-$1/2$ system if we set $\Delta\omega=E_{-1}-E_0$ and consider a sizable quadratic Zeeman shift $\epsilon$, the $m_F=1$ state can be adiabatically eliminated~\cite{lin_spin-orbit-coupled_2011} and the Hamiltonian becomes
 %
 \begin{equation}
 	\hat{H}_{SOC}=\frac{\hbar^2}{2m}(q_x-\kl\hat{\sigma}_y)^2+\frac{\hbar}{2}\Omega\hat{\sigma}_z + \frac{\hbar}{2}\delta\hat{\sigma}_y
@@ -266,14 +266,96 @@ where $\sigma_{x,y,z}$ are the Pauli matrices. The Hamiltonian above corresponds
 
 % In earlier sections we discussed the spin-orbit coupling interaction between spin and angular momentum that gives rise to the atomic level structure. In condensed matter systems, there is another kind of spin-orbit coupling that links the spin of the electrons with the linear or crystal momentum. In 2D materials, SOC can be represented as a sum of Rashba~\cite{bychkov_oscillatory_1984} and Dresselhaus~\cite{dresselhaus_spin-orbit_1955} SOC. 
 
+\section{Coherent manipulation}
+
+In this section I describe quantum coherent processes that are driven using the magnetic and electric dipole interactions described in previous sections. We rely on this techniques both for state preparation and characterization of our system. In all of the cases I consider a system described by the Hamiltonian 
+%
+\begin{equation}
+	\hat{H}=\hat{H}_0+\hat{H}_I(t)
+\end{equation}
+%
+where $\hat H_0$ describes unperturbed atomic levels and $\hat H_I(t)$ is a time dependent interaction from either an electromagnetic wave or an oscillating magnetic field. For simplicity I consider only a two-level system with 
+%
+\begin{equation}
+	\hat{H}_0=\hbar\begin{pmatrix}
+\omega_g & 0  \\
+0 & \omega_e   \\
+\end{pmatrix}
+\end{equation}
+%
+where $\hbar\omega_i$ are the energies of the unperturbed states, and the eigenstates of $\hat{H}_0$ are labeled by $\ket{g,e}$. Some of this techniques are generalized to three levels in Chapter~\ref{ch:Rashba}. 
+
+\subsection{Rabi oscillations}
+
+First I consider an interaction term that oscillates with frequency $\omega$ close to the transition energy $\omega_{ge}=\omega_g-\omega_e$ 
+%
+\begin{equation}
+	\hat{H}_0=\hbar\begin{pmatrix}
+0 & \Omega\cos(\omega t)  \\
+\Omega^*\cos(\omega t) & 0   \\
+\end{pmatrix}
+\end{equation}
+%
+the coupling strength $\Omega$ here could be related to a dipole transition matrix element $\Omega\propto\bra{g}\mathbf{d}\cdot\mathbf{E}\ket{e}$\footnote{For our system intensities $\Gamma\gg\Omega$ and we don't observe Rab oscillations from (single photon) electric dipole transitions.} or a Zeman interaction $\Omega\propto g_F\mu_B B$. The state of the system at any given time is given by
+%
+\begin{equation}
+  \ket{\Psi}=c_g(t)e^{-i\omega_gt}\ket{g} + c_e(t)e^{-i\omega_e t}\ket{e},
+  \label{eq:simple_Rabi}	
+\end{equation}
+%
+and substituting this expression into the time dependent Schr\"odinger equation we find that
+%
+\begin{align}
+	\dot{c}_g(t)=&\frac{\Omega}{2}\left(e^{i(\omega-\omega_{ge})t}+e^{-i(\omega+\omega_{ge}) t}\right)c_e \nonumber \\
+	\dot{c}_e(t)=&\frac{\Omega^*}{2}\left(e^{i(\omega-\omega_{ge})t}+e^{-i(\omega+\omega_{ge}) t}\right)c_g.
+\end{align}
+%
+We can apply a RWA because the term $\omega+\omega_{ge}$ is very fast compared to $\omega-\omega_{ge}=\delta$. The resulting coupled differential equations can be solved in a standard wat by differentiating $\dot c_e$ one more time and substituting $\dot c_g$. If we assume that at $t=0$ the system is prepared in $\ket{g}$ the population in $\ket{e}$ describes what is known as a Rabi oscillation~\cite{rabi_space_1937}
+%
+\begin{equation}
+	\vert c_e(t)\vert^2=\frac{\Omega^2}{\Omega^2+\delta^2}\sin^2\left(\frac{\sqrt{\Omega^2+\delta^2}}{2}t\right)	
+\end{equation}
+%
+where $\delta=\omega-\omega_{ge}$ is a detuning and $\tilde{\Omega}=\sqrt{\Omega^2+\delta^2}$ is known as the generalized Rabi frequency. 
+
+The RWA Hamiltonian time-independent and is given by
+%
+\begin{equation}
+\hat{H}_0=\hbar\begin{pmatrix}
+-\delta/2 & \Omega/2  \\
+\Omega^*/2 & \delta/2   \\
+\end{pmatrix},
+\end{equation}
+%
+and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. It is important here to notice that the difference between the eigenenergies is exactly equal to the oscillation frequency of the populations in $\ket{g,e}$, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure \note{Make figure}a shows Rabi oscillations between the $m_F=-1$ and $m_F=0$ states and Figure xxx b shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve can serve as a way to find the transition frequency. 
+
+\subsection{Ramsey interferometer}
+
+Now I consider a Ramsey interferometer~\cite{ramsey_molecular_1950}. The interaction Hamiltonian is the same as in the previous section but rather than being on continuously it is pulsed on for a time $\tau=\pi/2\Omega$, then the system is let to evolve only under $\hat{H}_0$ for a variable time $t_{\rm{dark}}$ and finally a second $\pi/2$ pulse is applied. Figure~\ref{fig:simple_Ramsey} illustrates this protocol: the $\pi/2$ pulses can be thought of as $\pi/2$ rotations along $\ex$ the first pulse transfers $\ket{g}\rightarrow(\ket{g}+\ket{e})/\sqrt{2}$ then the system precesses on the equator of the Bloch sphere by an angle $\delta t_{\rm{dark}}$ and finally the second pulse rotates the state again. If we assume that $\delta=0$ during the pulses the probability of measuring the excited state is related to the phase accumulated during the dark time
+\begin{equation}
+	\vert c_{e}(2\tau + t_{\rm{dark}})\vert^2=\cos^2\left(\frac{\delta t_{\rm{dark}}}{2}\right),
+\end{equation}
+%
+the expression becomes a bit more complex if $\delta!=0$ during the pulses. Figure \note{TODO: make Ramsey fringe figure} shows blah.     
+
+
+For the case of Rabi oscillations, the detuning adds in quadrature with $\Omega$ and therefore if $\Omega$ is large the contributions of $\delta$ to the generalized Rabi frequency can be small. In contrast for Ramsey fringes, regardless of the magnitude of $\Omega$ the oscillation frequency is always proportional to $\delta$. This will be important in Chapter~\ref{ch:clock_states} and additionally in Chapter~\ref{ch:Rashba} I rely on a variation of the Ramsey interferometer to perform quantum state tomography. 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/Ramsey.pdf}
+\caption[A Ramsey interferometer]{A Ramsey interferometer: Two $\pi/2$ pulses are separated by a time $t_{\rm{dark}}$. The phase accumulated in the interferometer is equal to the detuning multiplied by the dark time.}
+\label{fig:simple_Ramsey}
+\end{center}
+\end{figure*}
+
+\subsection{Floquet theory}
+I have used the RWA multiple times in this Chapter. This approximation is valid most of the time but if we want to give a complete description of a periodic system, either because of the RWA breaking or for the case of a more complicated Hamiltonian (e.g. one with multiple driving frequencies) Floquet theory can be helpful. 
 
 
 
-\section{Floquet theory}
 
-
-
-\section{Absorption imaging}
+\section{Detection: Absorption imaging}
 \subsection{Time of flight imaging}
 Mention Stern Gerlach here
 \subsection{Calibrating $I_{\rm{sat}}$}
