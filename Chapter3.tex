@@ -28,7 +28,7 @@ shell, where the number $5$ corresponds to the principal quantum number $n$. Fig
 
 The atomic level structure is modified by relativistic effects. In particular the relativistic treatment of the electron's motion gives rise to an interaction between the electron's intrinsic magnetic moment (the spin) $\mathbf{\hat S}$ and the orbital angular momentum $\mathbf{\hat L}$. This spin-orbit coupling interaction $\hat H_{\rm {fs}} = A_{\rm{fs}} \mathbf{L}\cdot\mathbf{S}$ causes the fine structure splitting of the electronic orbitals into levels with different total electronic angular momentum $\mathbf{J}=\mathbf{\hat L}\cdot\mathbf{\hat S}$. Figure~\ref{fig:Rb_structure}b show the $5^2S_{1/2}$, $5^2P_{1/2}$ and $5^2P{3/2}$ electronic configurations that arise from this splitting, where the subscript indicates the value of $J$. For $S$ ($L=0$) orbitals $J=1/2$ is the only possible value and the levels are not split. For the $P$ orbital ($L=1$) $J$ and a single electron with $S=1/2$, $J$ can be $1/2$ or $3/2$ and the $P$ orbital splits into two levels. The $5^2S_{1/2}\rightarrow 5^2P_{1/2}$ is known as the D1 line and has wavelength $\lambda=\unit[794.979]{nm}$ and $5S_{1/2}\rightarrow 5P_{3/2}$ transition is known as the D2 line and has $\lambda=\unit[790.241]{nm}$ \cite{Steck}. 
 
-The atomic level structure gets further modified by the magnetic interaction of the electronic magnetic flux density with the nuclear spin $\mathbf{I}$. This is another kind of spin-orbit interaction that gives rise to the hyperfine splitting of the atomic levels which can be described by the Hamiltonian $\hat H_{\rm{hfs}} = A_{\rm{hfs}}\mathbf{I}\cdot\mathbf{J}$. A complete derivation of $\hat H_{\rm{hfs}}$ can be found in~\cite{schwartz_theory_1955}. The hyperfine levels correspond to different values of the total angular momentum $\hat F=\hat J+\hat I$. For $\Rb87$ $I=3/2$~\cite{Steck} which results in the level structure shown in Figure~\ref{fig:Rb_structure}x. 
+The atomic level structure gets further modified by the magnetic interaction of the electronic magnetic flux density with the nuclear spin $\mathbf{I}$. This is another kind of spin-orbit interaction that gives rise to the hyperfine splitting of the atomic levels which can be described by the Hamiltonian $\hat H_{\rm{hfs}} = A_{\rm{hfs}}\mathbf{I}\cdot\mathbf{J}$. A complete derivation of $\hat H_{\rm{hfs}}$ can be found in~\cite{schwartz_theory_1955}. The hyperfine levels correspond to different values of the total angular momentum $\hat F=\hat J+\hat I$. For $\Rb87$ $I=3/2$~\cite{Steck} which results in the level structure shown in Figure~\ref{fig:Rb_structure}c. 
 
 \section{Interaction between atoms and magnetic fields}
 \label{sec:zeeman_effect}
@@ -51,12 +51,12 @@ which has the effect of lifting the degeneracy of the different $m_F$ states. We
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/anotated_zeeman_spltting.pdf}
-\caption[$\Rb87$ level structure]{$\Rb87$ level structure (not to scale). {\bf a.} Ground and first excited state electronic configuration of $\Rb87$ given by the $\{n,\mathbf{L}\}$ quantum numbers. {\bf b.} The interaction between the orbital angular momentum and the spin of the electron leads to the fine splitting of orbitals with $L>0$. The splitting of the $5^2P$ line gives rise to the D1 and D2 lines. {\bf c.} The interaction between the total angular momentum and the nuclear spin causes the fine structure levels to split further into states characterized by the quantum number $F$.}
+\caption[Zeeman splitting of the $5^2S_{1/2}$ manifold of $\Rb87$]{Zeeman splitting of the $5^2S_{1/2}$ manifold of $\Rb87$. At small magneric fields $F$ and $m_F$ are good quantum numbers describing the system and at large magnetic fields (Pachen-Back regime) the states are described by the $J$ and $m_J$. Our experiments operate in the regime marked by the small gray box ($B<\unit[35]{G}$).}
 \label{fig:Zeeman_splitting}
 \end{center}
 \end{figure*}
 
-The total energy shifts are calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. For a small magnetic field the Zeeman term can be treated as a perturbation and the energy split is linear with the magnitude of the field $\Delta E_{\rm{Zeeman}}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' large magnetic fields the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$)energies where the magnetic field and as a result the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
+The total energy shifts are calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. For a small magnetic field the Zeeman term can be treated as a perturbation and the energy split is linear with the magnitude of the field $\Delta E_{\rm{Zeeman}}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' at large magnetic fields\footnote{A couple orders of magnitude larger than the fields we operate at.} the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$)energies where the magnetic field and as a result the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
 
 For the particular case of $J=1/2$ (like the ground state of Alkalis) the Zeeman energies can be found analytically using the Breit-Rabi formula~\cite{breit_measurement_1931}
 %
@@ -65,7 +65,7 @@ For the particular case of $J=1/2$ (like the ground state of Alkalis) the Zeeman
 	\label{eq:Breit_rabi}
 \end{equation}
 %
-where $\Delta E_{\rm{hf}}=A_{\rm{hf}}(J+1/2)$ and $x=(g_J-g_I)\mu_B B_z/\Delta E_{\rm{hf}}$. Figure \note{TODO:make figure} shows the energies of the $m_F$ levels for the $F=1$ and $F=2$ manifolds of $\Rb87$.
+where $\Delta E_{\rm{hf}}=A_{\rm{hf}}(J+1/2)$ and $x=(g_J-g_I)\mu_B B_z/\Delta E_{\rm{hf}}$. Figure~\ref{fig:Zeeman_splitting} shows the energies of the $m_F$ levels for the $F=1$ and $F=2$ manifolds of $\Rb87$.
 
 \section{Interaction between atoms and electric fields}
 \label{sec:atom-lignt_interactio n}
@@ -142,7 +142,7 @@ The energy shift $U(\omega,\r)$ is a conservative term and is related to dipole 
 If the frequency $\omega$ satisfies the relation $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$ we can neglect the terms proportional to $1/(\omega+\omega_{\rm D})$, an approximation typically known as the rotating wave approximation (RWA). If the RWA is valid then the frequency dependence of both the energy shifts and the scattering rates will be given by the detuning from the D1 and D2 transitions. 
 
 \subsubsection{Optical trapping}
-One important application of the scalar light-shift is to create optical traps for our clouds of ultracold atoms. The use optical fields with non-uniform spatial intensity can generate traps (and anti-traps) for the atoms which experience a force proportional to the intensity gradient $F_{\rm{dip}}=-\nabla U(\r)$.  \note{TODO: make nice figure of dipole trap?}. The production of BECs in our lab relies on the use of focused Gaussian laser beams with $\lambda=\unit[1064]{nm}$.  The intensity profile of a focused Gaussian beam propagating along $\ez$ is given by 
+One important application of the scalar light-shift is to create optical traps for clouds of ultracold atoms. An optical field with non-uniform spatial intensity generates traps (and anti-traps) for the atoms which experience a force proportional to the intensity gradient $F_{\rm{dip}}=-\nabla U(\r)$. The attractive or repulsive nature of the trap depends on the sign of $U(\r)$ which is determined by the sign of the detuning (blue-detuned traps are repulsive and red-detuned traps are attractive)\note{TODO: make nice figure of dipole trap?}. The production of BECs in our lab relies on the use of focused Gaussian laser beams with $\lambda=\unit[1064]{nm}$.  The intensity profile of a focused Gaussian beam propagating along $\ez$ is given by 
 %
 \begin{equation}
  	I(x,y,z) = \frac{2P}{\pi\omega^2(z)}e^{-\frac{x^2+y^2}{\omega^2(z)}}
@@ -155,27 +155,6 @@ One important application of the scalar light-shift is to create optical traps f
  \end{equation}
 %
 The oscillation frequencies of the trap along the radial direction are $\omega_r=(4U_0/m\omega_0^2)^{1/2}$ and along the axial direction $\omega_z=(2U_0/mz_R)^{1/2}$. The beam waist is usually much smaller than the Rayleigh range ($\omega_0\sim \unit[50-150]{nm}$ for my experiments) and therefore the trap is much stronger along the axial direction. To get around this we use a `crossed dipole trap' which is formed by a combination of two cross-polarized\footnote{The beams are cross-polarized to avoid interference between them} focused Gaussian beams propagating along perpendicular axes, ensuring that we get good confinement of atoms along all spatial directions. 
-
-For a given trapping potential $U(\r)$, the density distribution of a thermal ensamble is
-\begin{equation}
-	n(\r) = n_0 e^{-\frac{U(\r)}{k_BT}}.
-\end{equation}
-%
-The temperature $T$ can be derived from the density distribution. For a 3D harmonic trap
-%
-\begin{equation}
-	n(\r)=n_0e^{-(\frac{x^2}{2\sigma_x^2}+\frac{y^2}{2\sigma_y^2}+\frac{z^2}{2\sigma_z^2})},
-\end{equation}
-%
-where $\sigma_i=\omega_i^{-1}\sqrt{k_BT/m}$. Using the equipartition theorem we find that the spatial extension of the cloud and the temperature are related by 
-%
-\begin{equation}
-	T=\frac{m}{k_B}\sigma_i^2\omega_i^2
-\end{equation}
-
-\note{TODO: figure of dipole traps}
-
-\note{TODO: talk about magic wavelength}
 
 \subsection{Effective magnetic fields from vector polarizability}
 \label{sec:}
@@ -200,12 +179,12 @@ where $\Delta_{\rm{fs}}=3A_{\rm{fs}}/2$ and $\tilde{E}=(2E_{\rm{D_1}}+E_{\rm{D2}
 
 \subsection{Raman coupling}
 
-The vector light shift enables the realization of various spin dependent potentials in the lab. In the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy} and \ref{ch:Rashba} I used combinations of cross polarized laser beams such that for the total electric field $\mathbf{E}^*\times\mathbf{E}\neq0$ to induce Raman tranisitions. A Raman transition is a two-photon process between two ground states that uses an intermediate state that is off-resonantly coupled as is shown in Figure~\ref{fig:Raman_coupling}a. Because the intermediate state is far detuned it can be adiabatically eliminated~\cite{han_raman_2013} so the system is effectively treated as a two level system. In our experiments we typically couple the $m_F$ levels of the $F=1$ manifold after applying a bias magnetic field such that $\epsilon$ is non-negligible. I describe the most simple case which considers coupling only two levels, in the later Chapters of the thesis this scheme is extended to couple multiple levels. 
+The vector light shift enables the realization of various spin dependent potentials in the lab. In the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy} and \ref{ch:Rashba} I used combinations of cross polarized laser beams such that the total electric field $\mathbf{E}^*\times\mathbf{E}\neq0$. We used these pairs of beams to induce two-photon Raman transitions. A Raman transition is a two-photon process between two ground states that uses an intermediate state that is off-resonantly coupled as is shown in Figure~\ref{fig:Raman_coupling}a. Because the intermediate state is far detuned it can be adiabatically eliminated~\cite{han_raman_2013} so the system is effectively treated as a two level system. In our experiments we typically couple the $m_F$ levels of the $F=1$ manifold after applying a bias magnetic field such that $\epsilon$ is non-negligible. %I describe the most simple case which considers coupling only two levels, in the later Chapters of the thesis this scheme is extended to couple multiple levels. 
 
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/Raman_coupling.pdf}
-\caption[Raman coupling with two-photon transitions]{\note{TODO:write caption}}
+\caption[Raman coupling with two-photon transitions]{{\bf a.} A Raman transition is a two photon process that couples two ground state through and intermediate far detuned state. {\bf b.} We induce Raman transitions using a pair of cross-polarized laser beams whose and we set the difference in their angular frequencies close to the Zeeman splitting between two consecutive $m_F$ states. }
 \label{fig:Raman_coupling}
 \end{center}
 \end{figure*}
@@ -222,7 +201,13 @@ and consequently
 	\mathbf{E}^*\times\mathbf{E} = 2i E_a E_b\cos(2\kl x-\Delta\omega t)\ex,
 \end{equation}
 %
-where $\Delta\omega=\omega_a-\omega_b$. The geometry and wavelength of the Raman fields determine the natural units of the system: the single photon recoil momentum $k_{\mathrm{L}}=2\pi/\lambda_{\mathrm{R}}$ and its associated recoil energy $E_{\mathrm{L}}=\hbar^2k_{\mathrm{L}}^2/2m$, as well as the direction of the recoil momentum $\mathbf{k}_{\mathrm{L}}=k_{\mathrm{L}}\ex$. For most experiments we tune to the magic wavelength $\lambda_{\mathrm{R}}=790.032\,\nm$, so that the scalar light shift is zero and the scattering rate is minimized. We occasionally tuned away from this wavelength, for example when we were starving for laser power and wanted to increase our Raman coupling strength; Figure~\ref{fig:Raman_vs_lambda} shows the dependence of the Raman coupling strength and the lifetime on wavelength. 
+where $\Delta\omega=\omega_a-\omega_b$. The Raman Hamiltonian is given by
+%
+\begin{equation}
+	\hat{H}_{R}=\Omega\cos(2\kl x-\Delta\omega t)\fx
+\end{equation}
+%
+where $\Omega=\alpha^{(1)}g_F E_a E_b/g_J\propto \sqrt{I_a I_b}$ is the Raman coupling strength. The geometry and wavelength of the Raman fields determine the natural units of the system: the single photon recoil momentum $k_{\mathrm{L}}=2\pi/\lambda_{\mathrm{R}}$ and its associated recoil energy $E_{\mathrm{L}}=\hbar^2k_{\mathrm{L}}^2/2m$, as well as the direction of the recoil momentum $\mathbf{k}_{\mathrm{L}}=k_{\mathrm{L}}\ex$. For most experiments we tune to what is known as the `magic wavelength' or tune-out wavelength~\cite{arora_tune-out_2011} $\lambda_{\mathrm{R}}=790.032\,\nm$, at which the ground-state scalar polarizability vanishes (see Figure~\ref{fig:Raman_vs_lambda}). We occasionally had to tune away from the magic wavelenth, for example when we were starving for laser power and wanted to increase our Raman coupling strength; Figure~\ref{fig:Raman_vs_lambda} shows the dependence of the Raman coupling strength on wavelength and ~\ref{fig:Raman_vs_lambda} shows the decay in atom number as a function of time for different wavelengths. 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -232,20 +217,14 @@ where $\Delta\omega=\omega_a-\omega_b$. The geometry and wavelength of the Raman
 \end{center}
 \end{figure*}
 
-The Raman Hamiltonian is given by
-%
-\begin{equation}
-	\hat{H}_{R}=\Omega\cos(2\kl x-\Delta\omega t)\fx
-\end{equation}
-%
-where $\Omega=\alpha^{(1)}g_F E_a E_b/g_J\propto \sqrt{I_a I_b}$ is the Raman coupling strength. In a frame rotating with angular frequency $\Delta\omega$ corresponding to applying the unitary transformation $\hat{U}(t)=\exp(-i\Delta\omega t\fz)$ and neglecting the fast terms rotating at frequency $2\Delta\omega$ (applying a RWA) the transformed Hamiltonian is
+In a frame rotating with angular frequency $\Delta\omega$ corresponding to applying the unitary transformation $\hat{U}(t)=\exp(-i\Delta\omega t\fz)$ and neglecting the fast terms rotating at frequency $2\Delta\omega$ (applying a RWA) the transformed Hamiltonian is
 %
 \begin{equation}
 	\hat{U}^{\dagger}\hat{H}_R\hat{U} - i\hbar\hat{U}^{\dagger}\partial_t\hat{U}=\Delta\omega \fz+\frac{\Omega}{2}\cos(2\kl x)\fx-\frac{\Omega}{2}\sin(2\kl x)\fy,
 	\label{eq:basic_Raman}
 \end{equation}
 %
-which describes a helically precessing magnetic field with period $\lambda_{\rm R}/2$ which is illustrated in Figure~\ref{fig:B_eff}.
+which describes a helically precessing magnetic field with period $\lambda_{\rm R}/2$ which is illustrated in Figure~\ref{fig:B_eff}. \note{Maybe get ride of this figure and use stuff from spin-1 paper directly.}
 
 \begin{figure*}[htb]
 \begin{center}
@@ -255,12 +234,13 @@ which describes a helically precessing magnetic field with period $\lambda_{\rm 
 \end{center}
 \end{figure*}
 
+
 \note{TODO: the two-level stuff maybe doesn't really make much sense anymore}
 
 
 \subsection{Spin-orbit coupling}
 
-The Raman Hamiltonian from Equation~\ref{eq:basic_Raman} can be massaged a bit more to make it look like a spin-orbit coupled\footnote{Not to be confused with the spin-orbit coupling giving rise to the fine and hyperfine structure mentioned earlier, perhaps a better name could be spin-momentum coupling} Hamiltonian that is familiar to condensed matter physicists. If we apply a spin-dependent momentum boost which is described by the unitary operator $\hat{U}(\kl)=\exp(i2\kl x \fz)$ the full Hamiltonian including the Raman coupling and the free 
+The Raman Hamiltonian from Equation~\ref{eq:basic_Raman} can be massaged a bit more to make it look like a spin-orbit coupling (SOC)\footnote{Not to be confused with the spin-orbit coupling giving rise to the fine and hyperfine structure mentioned earlier, perhaps a better name could be spin-momentum coupling} Hamiltonian that is familiar to condensed matter physicists. If we apply a spin-dependent momentum boost which is described by the unitary operator $\hat{U}(\kl)=\exp(i2\kl x \fz)$ the full Hamiltonian including the Raman coupling and the free 
 %
 \begin{equation}
  	\hat{H}_{\rm{SOC}} = \frac{\hbar^2}{2m}\left(\hat q_x-2\kl\fz\right)^2+\frac{\Omega}{2}\fx + \delta\fz + \hbar\epsilon\left(\mathds{1}-\frac{\fz^2}{\hbar^2}\right),
@@ -421,7 +401,7 @@ where $I_{\rm{sat}}=\pi hc\Gamma/3\lambda_0^3$ is the saturation intensity, and 
 \end{equation}
 %
 
-In our experiments we set the probe frequency to be resonant with the $\ket{F=2, m_F=2}\rightarrow\ket{F'=3, m_{F'}=3}$ cycling transition and use circularly polarized light $\sigma_+$. For this transition the peak optical cross section (at $\omega=\omega_0$) is $\sigma_0=2.9\times \unit[10^{-9}]{cm}$ and $I_{\rm{sat}}=\unit[1.622]{mW}$~\cite{Steck}. 
+Our experiments are typically performed in the $F=1$ manifold. Prior to imaging we apply repump light (resonant with the $F=1\rightarrow F'=2$ transition) that transfers atoms into the $\ket{F=2, m_F=2}$ state. We then set the probe frequency to be resonant with the $\ket{F=2, m_F=2}\rightarrow\ket{F'=3, m_{F'}=3}$ cycling transition and use circularly polarized light $\sigma_+$. For this transition the peak optical cross section (at $\omega=\omega_0$) is $\sigma_0=2.9\times \unit[10^{-9}]{cm}$ and $I_{\rm{sat}}=\unit[1.622]{mW}$~\cite{Steck}. 
 
 It is hard reliably measure atomic clouds at low intensity  when the OD is of the order of 3 or 4 (such as our BECs) and a significant fraction of the imaging light is absorbed. Due to the limited dynamic range of CCD cameras the measured OD saturates, resulting for example in imaging `flat-top' BECs rather than the usual Thomas-Fermi distribution as shown in Figure \note{TODO: make figure of high intensity abs imaging}. To get around this issue we typically image with using intensities $I>I_{\rm{sat}}$. In order to correctly compute OD including saturation effects we need a conversion of $I_{\rm{sat}}$ from mW/cm$^2$ to counts per pixel on the CCD camera. We follow the procedure in~\cite{reinaudi_strong_2007} to do this calibrations. \note{TODO: if there is time I will add my own calibration data.}. 
 
@@ -497,3 +477,5 @@ It is hard reliably measure atomic clouds at low intensity  when the OD is of th
 % \note{TODO: what about matrix elements between -1 and +1?. Move to intro chapter}
 
 % A typical calibration of $I_{\rm{sat}}$ in counts per pixel consists in making a dilute cloud of atoms (for example a thermal cloud) and imaging it for a different range of probe intensities. In Figure \note{TODO: make i_sat plot} I'm plotting the uncorrected OD for a small portion in the center of a thermal cloud as a function of $I$. At small intensities the OD is constant but as $I$ becomes comparable to $I_{\rm{sat}}$ it starts decreasing. 
+
+% This wavelength lies in between the D1 and D2 and it corresponds to when the red-detuned contribution to the polarizability from the D2 line is equal to the blue detuned contribution from the D1 line as is illustrated in Figure \note{TODO: make figure of scalar polarizability}.
