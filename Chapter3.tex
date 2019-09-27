@@ -224,19 +224,7 @@ In a frame rotating with angular frequency $\Delta\omega$ corresponding to apply
 	\label{eq:basic_Raman}
 \end{equation}
 %
-which describes a helically precessing magnetic field with period $\lambda_{\rm R}/2$ which is illustrated in Figure~\ref{fig:B_eff}. \note{Maybe get ride of this figure and use stuff from spin-1 paper directly.}
-
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter3/B_eff.pdf}
-\caption[Effective magnetic field from two cross polarized Raman laser beams]{The effective Raman Hamiltonian can be visualized as an interaction with an effective helically precessing magnetic field.}
-\label{fig:B_eff}
-\end{center}
-\end{figure*}
-
-
-\note{TODO: the two-level stuff maybe doesn't really make much sense anymore}
-
+which describes a helically precessing magnetic field with period $\lambda_{\rm R}/2$.
 
 \subsection{Spin-orbit coupling}
 
@@ -290,7 +278,7 @@ First I consider an interaction term that oscillates with frequency $\omega$ clo
 \end{pmatrix}
 \end{equation}
 %
-the coupling strength $\Omega$ here could be related to a dipole transition matrix element $\Omega\propto\bra{g}\mathbf{d}\cdot\mathbf{E}\ket{e}$\footnote{For our system intensities $\Gamma\gg\Omega$ and we don't observe Rab oscillations from (single photon) electric dipole transitions.} or a Zeman interaction $\Omega\propto g_F\mu_B B$. The state of the system at any given time is given by
+the coupling strength $\Omega$ here could be related to a dipole transition matrix element $\Omega\propto\bra{g}\mathbf{d}\cdot\mathbf{E}\ket{e}$\footnote{For our system intensities $\Gamma\gg\Omega$ and we don't observe Rab oscillations from (single photon) electric dipole transitions.} or a time varying magnetic field $\Omega\propto g_F\mu_B B$. The state of the system at any given time is given by
 %
 \begin{equation}
   \ket{\Psi}=c_g(t)e^{-i\omega_gt}\ket{g} + c_e(t)e^{-i\omega_e t}\ket{e},
@@ -321,18 +309,9 @@ The RWA Hamiltonian time-independent and is given by
 \end{pmatrix},
 \end{equation}
 %
-and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. It is important here to notice that the difference between the eigenenergies is exactly equal to the oscillation frequency of the populations in $\ket{g,e}$, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure \note{Make figure}a shows Rabi oscillations between the $m_F=-1$ and $m_F=0$ states and Figure xxx b shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve can serve as a way to find the transition frequency (see Chapter~\ref{ch:clock_states}. 
+and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. It is important here to notice that the difference between the eigenenergies is exactly equal to the oscillation frequency of the populations in $\ket{g,e}$, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure \note{Make figure}a shows Rabi oscillations between the $m_F=-1$ and $m_F=0$ states. Two calibrate the coupling strength for an effective two-level system  and Figure xxx b shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve can serve as a way to find the transition frequency (see Chapter~\ref{ch:clock_states}. 
 
 \subsection{Ramsey interferometer}
-
-Now I consider a Ramsey interferometer~\cite{ramsey_molecular_1950}. The interaction Hamiltonian is the same as in the previous section but rather than being on continuously it is pulsed on for a time $\tau=\pi/2\Omega$, then the system is let to evolve only under $\hat{H}_0$ for a variable time $t_{\rm{dark}}$ and finally a second $\pi/2$ pulse is applied. Figure~\ref{fig:simple_Ramsey} illustrates this protocol: the $\pi/2$ pulses can be thought of as $\pi/2$ rotations along $\ex$ the first pulse transfers $\ket{g}\rightarrow(\ket{g}+\ket{e})/\sqrt{2}$ then the system precesses on the equator of the Bloch sphere by an angle $\delta t_{\rm{dark}}$ and finally the second pulse rotates the state again. The probability of measuring the excited state is related to the phase accumulated during the dark time is given by
-\begin{equation}
-	\vert c_{e}(2\tau + t_{\rm{dark}})\vert^2=\left\vert \frac{\Omega \tau}{2}\right\vert\left[ \frac{\sin(\delta\tau/2)}{\delta\tau/2} \right]^2 \cos^2\left(\frac{\delta t_{\rm{dark}}}{2}\right),
-\end{equation}
-%
-Figure \note{TODO: make Ramsey fringe figure} shows blah.     
-
-For the case of Rabi oscillations, the detuning adds in quadrature with $\Omega$ and when it is large the contributions of $\delta$ to the generalized Rabi frequency can be small. In contrast for Ramsey fringes, regardless of the magnitude of $\Omega$ the oscillation frequency is always proportional to $\delta$. This will be important in Chapter~\ref{ch:clock_states} and additionally in Chapter~\ref{ch:Rashba} I rely on a variation of the Ramsey interferometer to perform quantum state tomography. 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -341,6 +320,23 @@ For the case of Rabi oscillations, the detuning adds in quadrature with $\Omega$
 \label{fig:simple_Ramsey}
 \end{center}
 \end{figure*}
+
+Now I consider a Ramsey interferometer~\cite{ramsey_molecular_1950}. The interaction Hamiltonian is the same as in the previous section but rather than being on continuously it is pulsed on for a time $\tau=\pi/2\Omega$ (a $\pi/2$ pulse), then the system is let to evolve only under $\hat{H}_0$ for a variable time $t_{\rm{dark}}$ and finally a second $\pi/2$ pulse is applied. Figure~\ref{fig:simple_Ramsey} illustrates this protocol: the $\pi/2$ pulses can be thought of as $\pi/2$ rotations along $\ex$ the first pulse transfers $\ket{g}\rightarrow(\ket{g}+\ket{e})/\sqrt{2}$ then the system precesses on the equator of the Bloch sphere by an angle $\delta t_{\rm{dark}}$ and finally the second pulse rotates the state again. The probability of measuring the excited state is related to the phase accumulated during the dark time is given by
+\begin{equation}
+	\vert c_{e}(2\tau + t_{\rm{dark}})\vert^2=\left\vert \frac{\Omega \tau}{2}\right\vert\left[ \frac{\sin(\delta\tau/2)}{\delta\tau/2} \right]^2 \cos^2\left(\frac{\delta t_{\rm{dark}}}{2}\right). 
+\end{equation}
+%   
+For the case of Rabi oscillations, the detuning adds in quadrature with $\Omega$ and when it is large the contributions of $\delta$ to the generalized Rabi frequency can be small. In contrast for Ramsey fringes, regardless of the magnitude of $\Omega$ the oscillation frequency is always proportional to $\delta$. This will be important in Chapter~\ref{ch:clock_states} and additionally in Chapter~\ref{ch:Rashba} I rely on a variation of the Ramsey interferometer to perform quantum state tomography. Figure~\ref{fig:Ramsey_fringe} shows an example of a Ramsey fringe as a function of detuning $\delta$ that we measured using two states coupled with $\Omega=\unit[1]{kHz}$. 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/Ramsey_fringe.pdf}
+\caption[A Ramsey interference fringe]{A Ramsey interference fringe. We coupled two levels using an RF field with $\Omega=\unit[1]{kHz}$. We applied two $\tau=\unit[25]{\mu s}$ pulses separated by a $\unit[50]{\mu s}$ wait and varied the detuning by changing the bias magnetic field.}
+\label{fig:Ramsey_fringe}
+\end{center}
+\end{figure*}
+
+\subsection{Adiabatic rapid passage}
 
 \subsection{Floquet theory}
 I have used the RWA multiple times in this Chapter. This approximation is valid most of the time but if we want to give a complete description of a periodic system, either because of the RWA breaking or for the case of a more complicated Hamiltonian (e.g. one with multiple driving frequencies) Floquet theory can be helpful. 
@@ -351,6 +347,14 @@ I have used the RWA multiple times in this Chapter. This approximation is valid 
 \section{Detection: Resonant absorption imaging}
 
 Ultracold atom experiments rely on optical imaging as the main method to probe an characterize the system. In our lab we use resonant absorption imaging which uses a resonant probing laser that is shone at the atomic cloud and then imaged into a charged-coupled device (CCD) camera. From the absorption of the light we can then infer properties about the atoms such as number of atoms, temperature, integrated column density and momentum distribution (if we allow the clouds to expand). 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/abs_imaging_1.pdf}
+\caption[Resonant absorption imaging and the Beer-Lambert law]{{\bf a.} A laser beam traveling along $\ez$ through a medium with density $n(x,y,z$. The intensity decays exponentially with the integrated column density and the scattering cross section $\sigma{\omega}$. {\bf b.} The scattering cross section has a Lorentzian line shape with a full width half maximum equal to $\Gamma$. {\note: TODO add real data if I have time.}}
+\label{fig:abs_imaging_1}
+\end{center}
+\end{figure*}
 
 Consider a laser beam with intensity $I(x,y,z)$ and angular frequency $\omega$ propagating along $\ez$ through a cloud of atoms with density $n(x,y,z)$ as is shown in Figure \note{TODO:make abs imaging figure}. We define a (frequency dependent) scattering cross section $\sigma(\omega)$ which characterized the probability of an atom absorbing a probe photon and is given by the Lorentzian function
 %
@@ -374,17 +378,23 @@ As the beam travels through the cloud it will be absorbed and its intensity is r
 	I(x,y,z)=I(x,y,0)e^{-\int_0^z n(x,y,z')\sigma(\omega)dz'},
 \end{equation}
 
-where $\int_0^z n(x,y,z')\sigma(\omega)dz'$ is the optical depth (OD) of the medium. If we measure the OD of the cloud it is then straightforward to obtain the integrated column density $n(x,y)$. This result is known as the Beer-Lambert law works well when using low intensity beams. 
+where $\rm{OD}=\int_0^z n(x,y,z')\sigma(\omega)dz'$ is the optical depth (OD) of the medium. If we measure the OD of the cloud it is then straightforward to obtain the integrated column density $n(x,y)$. This result is known as the Beer-Lambert law works well when using low intensity beams. 
 
 In the experiment we measure the optical depth of a cloud by imaging the probe into a CCD camera under two different conditions:  first in the presence of atoms to measure the attenuated intensity $I_f=I(x,y,z)$ and then without any atoms to get a measure of the initial intensity $I_i=I(x,y,0)$. The optical depth can then be computed as
-
 %
 \begin{equation}
 	OD=\ln \left(\frac{I_f}{I_i}\right).
 \end{equation}
 %
-Figure \note{TODO: make figure of abs imaging} show the different images used to compute the OD. In practice we take a third image of the background intensity $I_{\rm {bg}}$ and subtract it from the other two images.  
+Figure~\ref{fig:abs_imaging_2} show the different images used to compute the OD. In practice we take a third image of the background intensity $I_{\rm {bg}}$ and subtract it from the other two images.  
 
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/abs_imaging_2.pdf}
+\caption[Resonant absorption imaging and the Beer-Lambert law]{Something}
+\label{fig:abs_imaging_2}
+\end{center}
+\end{figure*}
 \subsection{High intensity absorption imaging}
 
 The method described earlier works well if we assume that the intensity of the probing laser is low such that the atoms mostly stay in the ground state. However at high intensities a significant fraction of the atoms can become excited and effects such as stimulated emission of light have to be taken into account. As a result of this the scattering cross section gets an additional dependence on intensity (see~\cite{Foot} for a complete derivation)
@@ -396,14 +406,15 @@ The method described earlier works well if we assume that the intensity of the p
 where $I_{\rm{sat}}=\pi hc\Gamma/3\lambda_0^3$ is the saturation intensity, and when $I=I_sat$ the population in the ground and excited state are equal. Integrating Equation~\ref{eq:Beer_law} using the modified expression for $\sigma(\omega, I)$ gives
 %
 \begin{equation}
-	n(x,y)\sigma(\omega)=-\ln(I_f/I_i) + \frac{I_i-I_f}{I_{\rm{sat}}}.
+	n(x,y)\sigma(\omega)=-\alpha^{\star}\ln(I_f/I_i) + \frac{I_i-I_f}{I_{\rm{sat}}},
 	\label{eq:corrected_beer_law}
 \end{equation}
 %
+where I have also added an additional dimensionless parameter $\alpha^{\star}$ which can account for imperfections in the imaging process (see~\cite{reinaudi_strong_2007}).
 
 Our experiments are typically performed in the $F=1$ manifold. Prior to imaging we apply repump light (resonant with the $F=1\rightarrow F'=2$ transition) that transfers atoms into the $\ket{F=2, m_F=2}$ state. We then set the probe frequency to be resonant with the $\ket{F=2, m_F=2}\rightarrow\ket{F'=3, m_{F'}=3}$ cycling transition and use circularly polarized light $\sigma_+$. For this transition the peak optical cross section (at $\omega=\omega_0$) is $\sigma_0=2.9\times \unit[10^{-9}]{cm}$ and $I_{\rm{sat}}=\unit[1.622]{mW}$~\cite{Steck}. 
 
-It is hard reliably measure atomic clouds at low intensity  when the OD is of the order of 3 or 4 (such as our BECs) and a significant fraction of the imaging light is absorbed. Due to the limited dynamic range of CCD cameras the measured OD saturates, resulting for example in imaging `flat-top' BECs rather than the usual Thomas-Fermi distribution as shown in Figure \note{TODO: make figure of high intensity abs imaging}. To get around this issue we typically image with using intensities $I>I_{\rm{sat}}$. In order to correctly compute OD including saturation effects we need a conversion of $I_{\rm{sat}}$ from mW/cm$^2$ to counts per pixel on the CCD camera. We follow the procedure in~\cite{reinaudi_strong_2007} to do this calibrations. \note{TODO: if there is time I will add my own calibration data.}. 
+It is hard reliably measure atomic clouds at low intensity  when the OD is of the order of 3 or 4 (such as our BECs) and a significant fraction of the imaging light is absorbed. Due to the limited dynamic range of CCD cameras the measured OD saturates, resulting for example in imaging `flat-top' BECs rather than the usual Thomas-Fermi distribution as shown in Figure \note{TODO: make figure of high intensity abs imaging}. To get around this issue we typically image with using intensities $I>I_{\rm{sat}}$. In order to correctly compute OD including saturation effects we need a conversion of $I_{\rm{sat}}$ from mW/cm$^2$ to counts per pixel on the CCD camera. We follow the procedure in~\cite{reinaudi_strong_2007} find the values of $\alpha^{\star}$ and $I_{\rm{sat}}$ in counts per pixel. To learn about other effects such as the recoil momentum from the imaging light that could affect absorption images see~\cite{genkina_feshbach_2015}. %\note{TODO: if there is time I might add my own calibration data.}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -479,3 +490,16 @@ It is hard reliably measure atomic clouds at low intensity  when the OD is of th
 % A typical calibration of $I_{\rm{sat}}$ in counts per pixel consists in making a dilute cloud of atoms (for example a thermal cloud) and imaging it for a different range of probe intensities. In Figure \note{TODO: make i_sat plot} I'm plotting the uncorrected OD for a small portion in the center of a thermal cloud as a function of $I$. At small intensities the OD is constant but as $I$ becomes comparable to $I_{\rm{sat}}$ it starts decreasing. 
 
 % This wavelength lies in between the D1 and D2 and it corresponds to when the red-detuned contribution to the polarizability from the D2 line is equal to the blue detuned contribution from the D1 line as is illustrated in Figure \note{TODO: make figure of scalar polarizability}.
+
+% which is illustrated in Figure~\ref{fig:B_eff}. \note{Maybe get ride of this figure and use stuff from spin-1 paper directly.}
+
+% \begin{figure*}[htb]
+% \begin{center}
+% \includegraphics[]{Figures/Chapter3/B_eff.pdf}
+% \caption[Effective magnetic field from two cross polarized Raman laser beams]{The effective Raman Hamiltonian can be visualized as an interaction with an effective helically precessing magnetic field.}
+% \label{fig:B_eff}
+% \end{center}
+% \end{figure*}
+
+
+% \note{TODO: the two-level stuff maybe doesn't really make much sense anymore}

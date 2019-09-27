@@ -46,7 +46,7 @@ def sigma(delta, Gamma):
 Gamma = 1.0
 deltas = np.linspace(-5, 5, 500)
 
-fig = plt.figure(figsize=(2.5, 1.7))
+fig = plt.figure(figsize=(2.5, 2))
 gs = GridSpec(1,1)
 ax = plt.subplot(gs[0])
 plt.plot(deltas, sigma(deltas, Gamma), color='darkred')
