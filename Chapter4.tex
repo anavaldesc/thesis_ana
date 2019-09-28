@@ -13,7 +13,9 @@ All the experiments presented in this thesis were performed at the Rubidium-Lith
 As of the time this thesis is being written, the apparatus is scheduled to be shut down and the construction of a new dual-species apparatus for $\Rb87$ and K$^{39}$ is underway. I will not describe in detail the technical details of the RbLi apparatus which have been extensively discussed in the theses of former lab members~\cite{CampbellThesis,PriceThesis}. Instead I will focus on describing elements of the experiment that either worked exceptionally well or exceptionally poorly, some sort of `to-do' and `not-todo' list. Additionally in Appendix~\ref{app:Basement_lab} I will describe technical aspects of the construction of the new apparatus where I was involved. 
 
 
-\section{The RbLi vacuum system}
+\section{The RbLi apparatus}
+
+\subsection{Vacuum system}
 
 The RbLi vacuum system has a dual species oven designed for both Rb and Li. Both Rb and Li atoms are heated up. The Rb oven was kept at $\unit[120]{C}$ while the Li oven at $\unit[160]{C}$, below the temperature required to make an atomic beam. The heated atoms traveled to the main oven chamber that is pictured in Figure~\ref{fig:RbLi}b containing a cold-cup and an oven shutter. The cold-cup is a cylindrical shaped copper piece that is attached to the cold end of a thermo-electric cooler (TEC) via a copper rod. We kept the cold-cup temperature at $-\unit[30]{C}$ in order to capture excess Rb atoms in the chamber and prevent damaging the ion pumps.
 On January 2018 we noticed that an excessive buildup of Rb atoms in the cold cup was blocking the atomic beam. To remedy this issue we closed the gate valve between the oven and the Zeeman slower to make sure the UHV portion stayed clean. We then reversed the polarity of the TEC that provides the cooling of the cold cup and we heated the TEC just enough to see the Rb atoms melt and clear path of the atomic beam. Finally we cooled the TEC back to $\unit[-30]{C}$ and waited a full day before opening back the gate valve. 
@@ -21,7 +23,7 @@ On January 2018 we noticed that an excessive buildup of Rb atoms in the cold cup
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter4/RbLi.pdf}
-\caption[$\Rb87$ level structure]{$\Rb87$ level structure (not to scale). {\bf a.} Ground and first excited state electronic configuration of $\Rb87$ given by the $\{n,\mathbf{L}\}$ quantum numbers. {\bf b.} The interaction between the orbital angular momentum and the spin of the electron leads to the fine splitting of orbitals with $L>0$. The splitting of the $5^2P$ line gives rise to the D1 and D2 lines. {\bf c.} The interaction between the total angular momentum and the nuclear spin causes the fine structure levels to split further into states characterized by the quantum number $F$.}
+\caption[The RbLi vacuum system]{$\Rb87$ level structure (not to scale). {\bf a.} Ground and first excited state electronic configuration of $\Rb87$ given by the $\{n,\mathbf{L}\}$ quantum numbers. {\bf b.} The interaction between the orbital angular momentum and the spin of the electron leads to the fine splitting of orbitals with $L>0$. The splitting of the $5^2P$ line gives rise to the D1 and D2 lines. {\bf c.} The interaction between the total angular momentum and the nuclear spin causes the fine structure levels to split further into states characterized by the quantum number $F$.}
 \label{fig:RbLi}
 \end{center}
 \end{figure*}
@@ -31,6 +33,38 @@ The oven shutter allowed us to block or enable the atomic beam. We used a home m
 From the oven chamber the atomic beam travels down a Zeeman slower~\cite{phillips_laser_1982 } (see Figure~\ref{fig:RbLi}) where atoms were laser cooled. The Zeeman slower additionally acts as a differential pumping stage between the oven side and the ultra-high vacuum (UHV) side. The UHV side has a glass cell (Figure~\ref{fig:RbLi}a,c) where the atoms are trapped and further cooling is performed to achieve Bose-Einstein condensation. 
 
 \subsection{Magnetic field control}
+
+\subsubsection{Water cooling of coils}
+The quadrupole coils as well as the Zeeman slower coils were operated at high current and required water cooling. Our lab space was shared with a Rubidium-Ytterbium ultracold mixtures apparatus~\cite{HeroldThesis} and amongst the things we shared was the water cooling system. The schematic in Figure~\ref{fig:water_cooling} illustrates the layout of the water cooling system and one of its failure modes. A $\unit[20]{kW}$ \noted{Coherent LaserPure20} heat exchanger provides chilled water to both experiments. The output of the heat exchanger is split into two lines which provide cooling for both apparatus. A \noted{Berkeley MGPS7D} booster pump provides the high pressure necessary for our coils which had a relatively large impedance. The water returning to the heat exchanger was filtered with a low-impedance cellulose cartridge (\noted{McMaster 7191K11}). One big failure mode of this design consisted in turning on one of the booster pumps before the heat exchanger which caused water to flow from one experiment to the other, bringing a collection of nasty things that escaped the filters into the coils. Our system constantly suffered of clogged filters, clogged coils and a broken booster pump in one occasion. Shared water cooling loops amongst multiple labs is my first `not-to-do' element in the list. 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter4/water_cooling.pdf}
+\caption[Water cooling manifold schematic]{\note{TODO: write caption for plumbing figure.}}
+\label{fig:water_cooling}
+\end{center}
+\end{figure*}
+
+\subsection{Laser systems}
+
+\subsection{Master, cooling and repump lasers}
+
+We used a total of three lasers to perform laser cooling of atoms: a cooling laser that addresses the $F=2\rightarrow F'=3$ transition, a repump laser that takes atoms that have decayed into the $F=1$ state back to $F=2$ and a master laser that provides a frequency reference for both lasers. 
+
+The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb. Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode laser as our master laser and a home made saturation spectroscopy setup using a Rb glass cell (see~\cite{CampbellThesis,PriceThesis}). The frequency of this laser turned out to be extremely unstable and was replaced by a \noted{Vescent photonics DBR Laser Moduee System} which is uses a distributed Bragg reflector laser diode with no external cavity and is therefore very mechanically stable. The frequency of the laser is stabilized and controlled using the \noted{D2-210} spectroscopy module and \noted{D2-125} laser servo. The master laser system is now considerably simplified as can be seen in Figure~\ref{fig:master_laser}
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter4/master_laser.pdf}
+\caption[Water cooling manifold schematic]{\note{TODO: write caption for plumbing figure.}}
+\label{fig:master_laser}
+\end{center}
+\end{figure*}
+
+\subsection{Dipole laser}
+
+\subsection{Raman laser}
+Here talk about fiber paddles
 
 
 Technical things worth talking about:
@@ -44,7 +78,7 @@ Technical things worth talking about:
 -Microwaves and stub tunning
 -Mako camera
 -Labscript
-
+-Flipper mirrors
 
 
 \section{Laser systems}
