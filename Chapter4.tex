@@ -17,8 +17,7 @@ As of the time this thesis is being written, the apparatus is scheduled to be sh
 
 \subsection{Vacuum system}
 
-The RbLi vacuum system has a dual species oven designed for both Rb and Li. Both Rb and Li atoms are heated up. The Rb oven was kept at $\unit[120]{C}$ while the Li oven at $\unit[160]{C}$, below the temperature required to make an atomic beam. The heated atoms traveled to the main oven chamber that is pictured in Figure~\ref{fig:RbLi}b containing a cold-cup and an oven shutter. The cold-cup is a cylindrical shaped copper piece that is attached to the cold end of a thermo-electric cooler (TEC) via a copper rod. We kept the cold-cup temperature at $-\unit[30]{C}$ in order to capture excess Rb atoms in the chamber and prevent damaging the ion pumps.
-On January 2018 we noticed that an excessive buildup of Rb atoms in the cold cup was blocking the atomic beam. To remedy this issue we closed the gate valve between the oven and the Zeeman slower to make sure the UHV portion stayed clean. We then reversed the polarity of the TEC that provides the cooling of the cold cup and we heated the TEC just enough to see the Rb atoms melt and clear path of the atomic beam. Finally we cooled the TEC back to $\unit[-30]{C}$ and waited a full day before opening back the gate valve. 
+The RbLi vacuum system has a dual species oven designed for both Rb and Li. Both Rb and Li atoms are heated up. The Rb oven was kept at $\unit[120]{C}$ while the Li oven at $\unit[160]{C}$, below the temperature required to make an atomic beam. The heated atoms travel to the main oven chamber that is pictured in Figure~\ref{fig:RbLi}b containing a cold-cup and an oven shutter. The cold-cup is a cylindrical shaped copper piece that is attached to the cold end of a thermo-electric cooler (TEC) via a copper rod. We keep the cold-cup temperature at $-\unit[30]{C}$ in order to capture excess Rb atoms in the chamber and prevent damaging the ion pumps. On January 2018 we noticed that an excessive buildup of Rb atoms in the cold cup was blocking the atomic beam. To remedy this issue we closed the gate valve between the oven and the Zeeman slower to make sure the UHV portion stayed clean. We then reversed the polarity of the TEC that we heated the cold cup just enough to see the Rb atoms melt and clear the path of the atomic beam. Finally we cooled the TEC back to $\unit[-30]{C}$ and waited a full day before opening back the gate valve. We have been able to successfully operate the experiment without any vacuum related problems after this procedure was performed. 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -28,14 +27,18 @@ On January 2018 we noticed that an excessive buildup of Rb atoms in the cold cup
 \end{center}
 \end{figure*}
 
-The oven shutter allowed us to block or enable the atomic beam. We used a home made device, made from a repurposed hard drive disk shutter with a metalic flag attached to its end. The shutter was electrically connected to en electric feedthrough with vacuum-compatible Kapton sealed wires. We never experienced any troubles with our shutter, unlike one other apparatus~\cite{BrownThesis} within the JQI which used a \noted{Uniblitz} commercial shutter that failed and had to be replaced. The home made vacuum shutter is the first element in the `to-do' list.  
+The oven shutter allows us to block or enable the atomic beam. We use a homemade device, made from a re-purposed hard drive disk shutter with a metallic flag attached to its end. The shutter is electrically connected to en electric feedthrough with vacuum-compatible Kapton sealed wires. We never experienced any trouble with our shutter, unlike one other apparatus~\cite{BrownThesis} within the JQI which used a \noted{Uniblitz} commercial shutter that failed and had to be replaced. %The home made vacuum shutter is the first element in the `to-do' list.  
 
 From the oven chamber the atomic beam travels down a Zeeman slower~\cite{phillips_laser_1982 } (see Figure~\ref{fig:RbLi}) where atoms were laser cooled. The Zeeman slower additionally acts as a differential pumping stage between the oven side and the ultra-high vacuum (UHV) side. The UHV side has a glass cell (Figure~\ref{fig:RbLi}a,c) where the atoms are trapped and further cooling is performed to achieve Bose-Einstein condensation. 
 
 \subsection{Magnetic field control}
 
+The use of controllable magnetic fields in the apparatus is essential for the both for the cooling and trapping of atoms as well as to control the energy splitting of magnetic sublevels within a hyperfine manifold. The Zeeman slower and quadrupole coils (used for the MOT and magnetic trapping) are operated at relatively high currents. The coils are connected in series with MOSFET banks, each one sharing the same gate voltage that is controlled by a PI servo. The Zeeman slower always operates at a fixed current but the current in the quadrupole coils is dynamically changed throughout the experimental sequence and a fast response is desirable. In 2013 we replaced the quadrupole MOSFET bank with a new unit that contains 20 \noted{IXFN 520N075T2} transistors rated for $\unit[75]{V}$ and $\unit[480]{A}$ that are shown in Figure xxx. The use of more transistors reduces the power dissipation of each individual transistor which allows us to operate the power supply at a higher voltage of $\unit[15]{V}$ that helps counteract the inductive kickback of the coils. With the new transistor bank the turn on time of the coils was reduced from $\unit[100]{ms}$ to $\unit[50]{ms}$ leading to improved magnetic trapping and better Stern-Gerlach pulses for imaging. 
+
+We additionally have bias coils that generated uniform magnetic fields along $\ex$, $\ey$, and $\ez$. The coils are driven using \noted{Kepco BOP} $\unit[\pm20]{A}$ power supplies. The Kepcos have been a standard equipment in our group's labs but they are not cheap, their output has a lot of $\unit[60]{Hz}$ noise, and tend to fail in various annoying ways (burnt transistors, broken switches,...). Our group is currently working on designing a homemade bipolar power supply based on a combination of N-type and P-type MOSFETS and opamps \note{TODO: ask Mingshu}. 
+
 \subsubsection{Water cooling of coils}
-The quadrupole coils as well as the Zeeman slower coils were operated at high current and required water cooling. Our lab space was shared with a Rubidium-Ytterbium ultracold mixtures apparatus~\cite{HeroldThesis} and amongst the things we shared was the water cooling system. The schematic in Figure~\ref{fig:water_cooling} illustrates the layout of the water cooling system and one of its failure modes. A $\unit[20]{kW}$ \noted{Coherent LaserPure20} heat exchanger provides chilled water to both experiments. The output of the heat exchanger is split into two lines which provide cooling for both apparatus. A \noted{Berkeley MGPS7D} booster pump provides the high pressure necessary for our coils which had a relatively large impedance. The water returning to the heat exchanger was filtered with a low-impedance cellulose cartridge (\noted{McMaster 7191K11}). One big failure mode of this design consisted in turning on one of the booster pumps before the heat exchanger which caused water to flow from one experiment to the other, bringing a collection of nasty things that escaped the filters into the coils. Our system constantly suffered of clogged filters, clogged coils and a broken booster pump in one occasion. Shared water cooling loops amongst multiple labs is my first `not-to-do' element in the list. 
+The quadrupole coils as well as the Zeeman slower coils require water cooling. Our lab space is shared with a Rubidium-Ytterbium ultracold mixtures apparatus~\cite{HeroldThesis} and amongst the things we shared is the water cooling system. The schematic in Figure~\ref{fig:water_cooling} illustrates the layout of the water cooling system and one of its failure modes. A $\unit[20]{kW}$ \noted{Coherent LaserPure20} heat exchanger provides chilled water to both experiments. The output of the heat exchanger is split into two lines which provide cooling for both apparatus. A \noted{Berkeley MGPS7D} booster pump provides the high pressure necessary for our coils which had a relatively large impedance. The water returning to the heat exchanger is filtered with a low-impedance cellulose cartridge (\noted{McMaster 7191K11}). One big failure mode of this design consisted in turning on one of the booster pumps before the heat exchanger which caused water to flow from one experiment to the other, bringing a collection of nasty things that escaped the filters into the coils. Our system constantly suffered of clogged filters, clogged coils and a broken booster pump in one occasion. Shared water cooling loops amongst multiple labs is my first `not-to-do' element in the list. 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -47,11 +50,11 @@ The quadrupole coils as well as the Zeeman slower coils were operated at high cu
 
 \subsection{Laser systems}
 
-\subsection{Master, cooling and repump lasers}
+\subsubsection{Master, cooling and repump lasers}
 
 We used a total of three lasers to perform laser cooling of atoms: a cooling laser that addresses the $F=2\rightarrow F'=3$ transition, a repump laser that takes atoms that have decayed into the $F=1$ state back to $F=2$ and a master laser that provides a frequency reference for both lasers. 
 
-The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb. Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode laser as our master laser and a home made saturation spectroscopy setup using a Rb glass cell (see~\cite{CampbellThesis,PriceThesis}). The frequency of this laser turned out to be extremely unstable and was replaced by a \noted{Vescent photonics DBR Laser Moduee System} which is uses a distributed Bragg reflector laser diode with no external cavity and is therefore very mechanically stable. The frequency of the laser is stabilized and controlled using the \noted{D2-210} spectroscopy module and \noted{D2-125} laser servo. The master laser system is now considerably simplified as can be seen in Figure~\ref{fig:master_laser}
+The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb. Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode laser as our master laser and a home made saturation spectroscopy setup using a Rb glass cell (see~\cite{CampbellThesis,PriceThesis}). The frequency of this laser turned out to be extremely unstable and was replaced by a \noted{Vescent photonics DBR Laser Moduee System} which uses a distributed Bragg reflector laser diode with no external cavity and is therefore very mechanically stable. The frequency of the laser is stabilized and controlled using the \noted{D2-210} spectroscopy module and \noted{D2-125} laser servo. The master laser system is considerably simplified as can be seen in Figure~\ref{fig:master_laser}.
 
 \begin{figure*}[htb]
 \begin{center}
@@ -61,74 +64,74 @@ The frequency of master laser is locked using saturation absorption spectroscopy
 \end{center}
 \end{figure*}
 
-\subsection{Dipole laser}
+The cooling laser system consists of a \noted{Toptica DL Pro}. A small fraction of the light is used in the beatnote lock and and for imaging probe beams, the remaining fraction is amplified using a \noted{Toptica BoosTA} tapered amplifier system. The output of this TA system has been very stable over the years and there has not been a considerable decay in power over more than 6 years. However, this TA system can be a bit temperamental and shuts itself off. We have developed a turn-on procedure that increases the current in $\unit[100]{mA}$ steps every $\unit[10]{s}$. Turning it on at full current in a single step is a known cause of TA suicide, other causes are still unknown despite our best efforts to figure it out.
 
-\subsection{Raman laser}
-Here talk about fiber paddles
+The repump laser system is the same model \noted{Toptica DL Pro} as the cooling laser. However, it is not nearly as stable. In particular, it takes a lot of time to stabilize after turn-on and it tends to mode hop or to have a multi-mode output. 
 
+\subsubsection{Dipole laser}
+We use a $\unit[30]{W}$ \noted{IPG Photonics} $\unit[1064]{nm}$ laser to generate dipole traps for the atoms. The laser system is not fiber coupled and is setup in the same optical table as the vacuum system;  we are not able to change the laser without destroying the alignment of the beam with the atoms. In the original design of the laser system high-power photonic crystal fibers were included but they did not have built in mode expanders which resulted in the tip of the fiber inevitably getting burnt after some time of use. This will be remedied in the new apparatus which will have a fiber coupled dipole trap using high-power optical fibers with mode expanders from \noted{Coastal Connections}. \note{TODO: ask Junheng for part number.}
 
-Technical things worth talking about:
+\subsubsection{Raman laser}
 
--fiber splitter
--dipole trap and fiber couopling with mode expanders
--use of non-pm fibers with paddles
--water cooling system (including interlock of the Zeeman slower?)
--High power RF antenna stuff
--Oven shutter
--Microwaves and stub tunning
--Mako camera
--Labscript
--Flipper mirrors
+\subsubsection{A note on PM optical fibers}
+
+Here talk about fiber paddles and fiber splitter
 
 
-\section{Laser systems}
-\subsection{Master and cooling laser systems}
-\subsection{1064nm laser system}
-\subsection{Raman laser system}
-\subsubsection{Tapered amplifier laser system}
-\subsubsection{Ti:Saphire and 532 nm laser system}
 
-\section{Imaging systems}
-\subsection{The xy imaging system}
-\subsection{The zx imaging system}
-\subsection{Measuring magnification and focus?}
+\subsection{XY imaging system}
+-Mako camera is awesome
 
-\section{Water cooling}
 
-\section{Magnetic field control}
-\subsection{Bias coils}
-\subsection{Gradient cancelation coils}
 
-\section{RF electronics}
-\subsection{RF evaporation antenna}
+
+
 \subsection{High power RF antenna}
 \label{sec:high_power_rf_antenna}
 The antenna loop is Digikey part number $732-5646-ND$
 
-\section{Microwave electronics}
 
-\section{Computer control and data acquisition}
-Cite labscript. 
+\subsection{Computer control and data acquisition}
+Labscript is awesome. 
+
+
 \section{Experimental sequence to make BECs}
 \label{sec:making-becs}
 
+\subsection{MOT}
+-Flipper mirrors suck
+-Polarimeter and PD for MOT diagnostics
 
 
-\section{Quantum coherent dynamics}
-\label{sec:quantum_coherent_dynamics}
-
-\subsection{The Rabi cycle}
-\label{seq:rf_coupling}
-RF coupling and microwave coupling
-\subsection{Ramsey interferometer}
-\note{TODO:include Ramsey fringes from synthetic clock states}
-\subsection{Adiabatic rapid pasage}
+\subsection{Adiabatic rapid passage}
 \label{sec:arp}
+-Trigger to the 60Hz line is essential. 
 
-\subsection{Ramsey interferometry}
-\subsection{Partial transfer absorption imaging: magnetic field stabilization}
+\subsection{Magnetic field stabilization with microwaves and partial transfer absorption imaging}
 \label{sec:ptai}
 We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
-\section{Floquet}
-\label{sec:Floquet_theory}
-How to treat systems when RWA is not valid and how to create new effective (stroboscopic) Hamiltonians.
+
+\section{Recap}
+
+Our current postdoc once said `I love every single thing about RbLi.' 
+
+Make a table with `do', `dont' and `quastionable'
+
+do:
+overkill transistor banks
+home made in vacuum shutters
+fiber paddles
+polarizers to clean mot beams
+mica capacitors for high power RF impedance matching
+labscript
+Mako camera
+
+dont:
+free space dipole laser
+shared water cooling
+flipper mirrors
+too many NI usb devices on the same computer
+
+questionable:
+kepco
+BoosTA
