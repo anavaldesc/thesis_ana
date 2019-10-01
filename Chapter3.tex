@@ -56,7 +56,7 @@ which has the effect of lifting the degeneracy of the different $m_F$ states. We
 \end{center}
 \end{figure*}
 
-The total energy shifts are calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. For a small magnetic field the Zeeman term can be treated as a perturbation and the energy split is linear with the magnitude of the field $\Delta E_{\rm{Zeeman}}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' at large magnetic fields\footnote{A couple orders of magnitude larger than the fields we operate at.} the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$)energies where the magnetic field and as a result the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
+\note{TODO: write expression for $g_F$}The total energy shifts are calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. For a small magnetic field the Zeeman term can be treated as a perturbation and the energy split is linear with the magnitude of the field $\Delta E_{\rm{Zeeman}}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' at large magnetic fields\footnote{A couple orders of magnitude larger than the fields we operate at.} the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$)energies where the magnetic field and as a result the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
 
 For the particular case of $J=1/2$ (like the ground state of Alkalis) the Zeeman energies can be found analytically using the Breit-Rabi formula~\cite{breit_measurement_1931}
 %
@@ -87,7 +87,7 @@ For a coherent electromagnetic field $\mathbf{E}(\omega,t)$ with angular frequen
 	\hat{H}_{\rm{dip}}=-\alpha_{\mu\nu}(\omega)E_{\mu}^{(+)}E_{\nu}^{(-)}
 \end{equation}
 %
-where $\mathbf{E}^{(\pm)}$ are the possitive/negative frequency components of the field. $\alpha_{\mu\nu}(\omega)$ can be found by looking at the (time averaged) shift in the energy of the a given state state using second order time-dependent perturbation theory~\cite{SteckTextbook,deutsch_quantum_2010}. For the ground state $\ket{g}$ the polarizability takes the form
+where $\mathbf{E}^{(\pm)}$ are the possitive/negative frequency components of the field. $\alpha_{\mu\nu}(\omega)$ can be found by looking at the (time averaged) shift in the energy of the a given state state using second order time-dependent perturbation theory~\cite{SteckTextbook,deutsch_quantum_2010}. For the ground state $\ket{g}$ the polarizability takes the form 
 %
 \begin{equation}
 	\alpha_{\mu\nu}(\omega)=\sum_j\frac{2\omega_{jg}\bra{g}d_\mu\ket{e_j}\bra{e_j}d_\nu\ket{e_j}}{\hbar(\omega_{jg}^2-\omega^2)},
@@ -114,7 +114,7 @@ The scalar polarizability takes the form
 	\alpha^{(0)}=\sum_j\frac{2\omega_{jg}\bra{g}\mathbf{d}\cdot\hat{\epsilon}\ket{e_j}\vert^2}{\hbar(\omega_{jg}^2-\omega^2)},
 \end{equation}
 %
-where $\hat{\epsilon}$ represents the polarization vector of the light. The matrix element can be expressed in terms of the Clebsch-Gordan coefficients and the reduced matrix element using the Wigner-Eckart theorem~\cite{Sakurai}. For the ground state of an Alkali atom ($J=1/2$) the expression above gets simplified to
+where $\hat{\epsilon}$ represents the polarization vector of the light. The matrix element can be expressed in terms of the Clebsch-Gordan coefficients and the reduced matrix element using the Wigner-Eckart theorem~\cite{Sakurai}. For the ground state of an Alkali atom ($J=1/2$) and if the detuning is large compared to the hyperfine splitting the expression above gets simplified to
 %
 \begin{equation}
 	\alpha^{(0)}\approx\sum_{J'}\frac{2\omega_{JJ'}\vert\langle J=1/2 \| \mathbf{d}\|J'\rangle\vert^2}{3\hbar(\omega_{JJ'}^2-\omega^2)}.
