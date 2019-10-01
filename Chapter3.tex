@@ -175,7 +175,7 @@ One important application of the scalar light-shift is to create optical traps f
 The oscillation frequencies of the trap along the radial direction are $\omega_r=(4U_0/m\omega_0^2)^{1/2}$ and along the axial direction $\omega_z=(2U_0/mz_R)^{1/2}$. The beam waist is usually much smaller than the Rayleigh range ($\omega_0\sim \unit[50-150]{nm}$ for my experiments) and therefore the trap is much stronger along the axial direction. To get around this we use a `crossed dipole trap' which is formed by a combination of two cross-polarized\footnote{The beams are cross-polarized to avoid interference between them} focused Gaussian beams propagating along perpendicular axes, ensuring that we get good confinement of atoms along all spatial directions. 
 
 \subsection{Effective magnetic fields from vector polarizability}
-\label{sec:}
+\label{sec:vector_polarizability}
 
 Recall the Zeeman Hamiltonian introduced in Section~\ref{sec:zeeman_effect}. The term proportional to the vector polarizability in Equation~\ref{eq:light_matter_coupling} looks very similar to Equation~\ref{eq:zeeman_hamiltonian} for an effective magnetic field
 %
@@ -475,11 +475,16 @@ where $\hat{\mathds{1}}$ is the identity matrix. The expression can be recast in
   \hat{H}_-1  & \hat{H}_0+\hbar\omega & \hat{H}_1 & \hat{H}_2 & \cdots \\
   \hat{H}_-2  & \hat{H}_{-1} & \hat{H}_0 & \hat{H}_1  & \cdots\\
   \cdots  & \hat{H}_{-2} & \hat{H}_{-1} & \hat{H}_0-\hbar\omega & \hat{H}_1\\
-  \cdots  & \cdots & \hat{H}_{-2} & \hat{H}_{-1} & \hat{H}_0-2\hbar\omega \\
+  \cdots  & \cdots & \hat{H}_{-2} & \hat{H}_{-1} & \hat{H}_0-2\hbar\omega \\.
 \end{pmatrix}
 \end{equation}
 
+The quasienergies $\epsilon$ can be computed by truncating and then diagonalizing the matrix. I will give an example based on \cite{campbell_magnetic_2016} that will helpful to get more intuition. For that experiment we were driving Raman transitions with multiple frequencies as is shown in Figure
 
+Figure \note{TODO:make Floquet figure} shows the Floquet quasienergies computed for a SOC system with two driving frequencies a
+
+
+We defined an effective, time-independent Hamiltonian $\hat{H}_{Fl}$ that described the evolution of the system sampled stroboscopically at an integer number of driving periods, with the time evolution operator $\hat{U}(t_0,t_0+T)=e^{-iT\hat{H}_{Fl}}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %Graveyard

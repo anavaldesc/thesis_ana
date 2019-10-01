@@ -14,7 +14,7 @@ The RbLi apparatus is scheduled to be shut down and the construction of a new du
 
 \section{Basics of the RbLi apparatus}
 
-In this section I briefly describe the setup of and basic capabilities of the RbLi apparatus. Figure~\ref{fig:RbLi} shows the main optical table where atoms are cooled to degeneracy. The production of BECs starts in an oven where Rb atoms are heated to $\unit[120]{^{\circ}C}$ to produce an atomic beam. The atoms travel down a Zeeman slower~\cite{phillips_laser_1982} where they are laser cooled. The slowed down atoms are then captured in a magneto-optical trap (MOT) in a glass cell, where the remaining cooling and all our experiments are performed. 
+In this section I briefly describe the setup of and basic capabilities of the RbLi apparatus. Figure~\ref{fig:RbLi} shows the main optical table where atoms are cooled to degeneracy. The production of BECs starts in an oven where Rb atoms are heated to $\unit[120]{^{\circ}C}$ to produce an atomic beam. The atoms then travel down a Zeeman slower~\cite{phillips_laser_1982} where they are laser cooled. The slowed down atoms are then captured in a magneto-optical trap (MOT) in a glass cell, where the remaining cooling and all our experiments are performed. 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -26,27 +26,20 @@ In this section I briefly describe the setup of and basic capabilities of the Rb
 
 \subsection{Laser systems}
 
-We use a total of three lasers to perform laser cooling of atoms: a cooling laser that addresses the $F=2\rightarrow F'=3$ transition, a repump laser that takes atoms that have decayed into the $F=1$ state back to $F=2$ and a master laser that provides a frequency reference for both lasers. The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb.
+We use a total of three lasers to perform laser cooling and imaging of atoms: a cooling laser that addresses the $F=2\rightarrow F'=3$ transition, a repump laser that takes atoms that have decayed into the $F=1$ state back to $F=2$ and a master laser that provides a frequency reference for both lasers. The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb.
 
-We have to imaging systems. The first one is used primarily for diagnostics and it images the $yz$ plane of the atoms from the $+\ex$ side of the glass cell. The second system looks at the $xy$ plane from bellow the glass cell. 
+We can detect atoms using two different imaging systems. The first one is used primarily for diagnostics and it images the $yz$ plane of the atoms from the $+\ex$ side of the glass cell. The second system looks at the $xy$ plane from bellow the glass cell and is the main system used for data acquisition. 
 
-\note{TODO:make basic sketch of lasers}
-
-I discuss the Raman laser setup in Section~\ref{sec:Raman_laser}.
+\note{TODO:make basic sketch of lasers, small changes to mot and imaging path should be reflected}
 
 \section{Magnetic field control}
 
-We use multiple coils to generate magnetic fields at the atoms. \note{TODO:make figure of coils}
+The precise control of magnetic fields is essential during the multiple stages in our experimental sequence. We use multiple coils in our experiment as is illustrated in Figure \note{TODO: make magnetic field figure} One pair of anti-Helmholtz coils generates a strong quadrupole magnetic field along $\ez$ that is used in the making of the MOT and for magnetic trapping. Three pairs of Helmholtz coils in the vicinity of the glass cell generate bias magnetic fields along $\ex$, $\ey$ and $\ez$.  Once BECs are produced we typically use bias fields along $\ez$ to change the Zeeman energy of the different $m_F$ states. An additional set of coils arranged in a `clover leaf' pattern generates small gradients along $\ez$, $\ex+\ey$ and $\ez-\ey$ which allow us to cancel stray magnetic gradients at the location of the atoms.  
 
-One pair of anti-Helmholtz coils generates a strong quadrupole magnetic field along $\ez$ that is used in the making of the MOT and for magnetic trapping. Three pairs of Helmholtz coils in the vicinity of the glass cell generate bias magnetic fields along $\ex$, $\ey$ and $\ez$. The precise control of bias magnetic fields is essential during the multiple stages in our experimental sequence. Once BECs are produced we typically use bias fields along $\ez$ to change the Zeeman energy of the different $m_F$ states. An additional set of coils arranged in a `clover leaf' pattern generates small gradients along $\ez$, $\ex+\ey$ and $\ez-\ey$ which allow us to cancel stray magnetic gradients at the location of the atoms.  
-
-The experiment has the capability of producing oscillatory magnetic fields. A set of coils on a printed circuit board produce linearly polarized RF magnetic fields either in the $\ey$ or $\ez$ direction that are used for RF induced evaporation and to drive transitions between $m_F$ states. 
-
-
-
+The experiment also has the capability of producing oscillatory magnetic fields. A set of coils on a printed circuit board (PCB) produce linearly polarized radio-frequency (RF) magnetic fields either in the $\ey$ or $\ez$ direction that are used for RF induced evaporation and to drive transitions between $m_F$ states. The setup for producing high-power RF fields will be described in more detail in Section~\ref{sec:high_power_rf_antenna}.
 
 \section{New master laser}
-Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode laser as our master laser and a home made saturation spectroscopy setup using a Rb glass cell (see~\cite{CampbellThesis,PriceThesis}). The frequency of this laser was not very stable and the laser would constantly get out of lock. We replaced this laser with a \noted{Vescent photonics DBR Laser Moduee System} which uses a distributed Bragg reflector laser diode with no external cavity and is therefore very mechanically stable. The frequency of the laser is stabilized and controlled using the \noted{D2-210} spectroscopy module and \noted{D2-125} laser servo. The master laser system is considerably simplified as can be seen in Figure~\ref{fig:master_laser}.
+Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode laser as our master laser and a home made saturation spectroscopy setup using a Rb glass cell (see~\cite{CampbellThesis,PriceThesis}). The frequency of this laser was not very stable and the laser would constantly get out of lock. We replaced the old master laser with a \noted{Vescent photonics DBR Laser Moduee System} which uses a distributed Bragg reflector laser diode with no external cavity and is therefore very mechanically stable. The frequency of the laser is stabilized and controlled using the \noted{D2-210} spectroscopy module and \noted{D2-125} laser servo. The master laser system is considerably simplified as can be seen in Figure~\ref{fig:master_laser}.
 
 \begin{figure*}[htb]
 \begin{center}
@@ -56,22 +49,62 @@ Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode 
 \end{center}
 \end{figure*}
 
-\section{Small changes in MOT and imaging}
-
-New Focus 8892-K motorized flipper mounts
--Flipper mirrors suck
--Polarimeter and PD for MOT diagnostics
-
 
 \section{New Raman laser system}
 \label{sec:Raman_laser}
 
+The RbLi apparatus has a laser with wavelength close to $\unit[790]{nm}$ that is used to generate Raman induced transitions and spin-dependent potentials (see Section~\ref{sec:vector_polarizability}). The original Raman laser system consisted of a \noted{Toptica DL Pro} laser seeding a tapered amplifier mounted on a homemade copper holder. This laser system was replaced by an M squared Ti:Saphire laser (\noted{SolsTiS-400-SRX-F}) that is pumped by a $\unit[532]{nm}$ \noted{IPG GLR30} laser. We typically operate the pump laser at $\unit[14.5]{W}$, a fraction of this light is redirected into the path of a 1D optical lattice and the remaining power is used to pump the Ti:Sahpire laser. We switched to using a Ti:Saph laser because of its wide range of tunable wavelengths in the near infrared ($\unit[725-875]{nm}$) and its high power output. Figure~\ref{fig:tisaph_power} shows the typical dependence of the Ti:Saph output power as a function of pump power. 
 
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter4/master_laser.pdf}
+\caption[Ti:Saphire laser output as a function of pump power]{Ti:Saphire laser output as a function of pump power. This data was taken when the laser was being setup for the first time. The alignment of the laser cavity was optimized to produce maximum power at $\unit[15]{W}$ pump power.}
+\label{fig:tisaph_power}
+\end{center}
+\end{figure*}
 
+The output of the laser is split into 3 different Raman beams. The frequency and power of each beam is independently controlled using \noted{IntraAction ATM-801A2} acousto-optic modulators(AOMs) centered at $\unit[80]{MHz}$. We drive the AOMs using homemade drivers made from the \noted{Minicircuits} components listed in Table~\ref{table:rf_driver} and \noted{Novatech Model 409B} direct digital synthesizer (DDS) to generate an RF signal at the desired frequency. The components are arranged as is shown in Figure~\ref{fig:RF_driver}: we control the amplitude of the RF signal using a mixer connected to a DC and the switch can turn off the signal in less than $\unit[1]{\mu s}$ using a TTL signal.
+
+\begin{table}[h]
+\caption[List of AOM driver components]{List of AOM driver components}
+\begin{center}
+\begin{tabular}{c c}
+\hline
+Part number & Description \\
+\hline \hline
+ZHL-1-2W & 2\,W amplifier \\
+ ZAD-3+ & Mixer\\
+ ZYSWA-2-50DR & Digital switch 
+\end{tabular}
+\end{center}
+\label{table:rf_driver}
+\end{table}
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter4/RF_driver.pdf}
+\caption[RF driving electronics]{RF driving electronics. We use this setup to drive the AOMs controlling the Raman beams. A similar setup is used to drive a coil used to generate high-power RF fields at the atoms (Section~\ref{sec:high_power_rf_antenna}}
+\label{fig:RF_driver}
+\end{center}
+\end{figure*}
 
 \subsection{High power RF electronics}
 \label{sec:high_power_rf_antenna}
-The antenna loop is Digikey part number $732-5646-ND$
+
+The experiments described in Chapters~\ref{ch:clock_states} and~\ref{ch:Rashba} required the use of high power RF magnetic fields to achieve coupling strengths at the atoms $\Omega\sim \unit[100-200]{kHz}$. To do so we built a resonant circuit. 
+After multiple attempts to build a resonant coil either on a PCB (similar to the coil used for RF induced evaporation, see~\cite{CampbellThesis,PriceThesis}) or winding some wires with the right dimensions we found that the product that worked best for our needs was a wireless power
+charging receiver coil (\noted{W\"urth Elektronik} Digikey part numher \noted{732-5646-ND}) shown in the bottom panel of Figure~\ref{sec:high_power_rf_antenna}a. The coil has a self resonant frequency at $\unit[22]{MHz}$ and a Q-Factor of 45. It has an inner diameter of $\unit[1.62]{cm}$ and an outer diameter of $\unit[2.8]{cm}$, just the right side for us to face it right next to the glass cell and minimally perturbing  the laser beams in its vicinity (it only slightly clips one MOT beam).
+
+
+at $\unit[22]{MHz}$ from  $732-5646-ND$
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter4/high_power_rf.pdf}
+\caption[Water cooling manifold schematic]{\note{TODO: write caption for hprf figure}}
+\label{fig:high_power_rf}
+\end{center}
+\end{figure*}
 
 \subsection{$6.8$ GHz microwave electronics}
 
