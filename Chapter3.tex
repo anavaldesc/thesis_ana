@@ -56,7 +56,7 @@ which has the effect of lifting the degeneracy of the different $m_F$ states. We
 \end{center}
 \end{figure*}
 
-\note{TODO: write expression for $g_F$}The total energy shifts are calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. For a small magnetic field the Zeeman term can be treated as a perturbation and the energy split is linear with the magnitude of the field $\Delta E_{\rm{Zeeman}}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' at large magnetic fields\footnote{A couple orders of magnitude larger than the fields we operate at.} the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$)energies where the magnetic field and as a result the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
+\note{TODO: write expression for $g_F$}The total energy shifts are calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. For a small magnetic field the Zeeman term can be treated as a perturbation and the energy split is linear with the magnitude of the field $E_{m_F}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' at large magnetic fields\footnote{A couple orders of magnitude larger than the fields we operate at.} the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$)energies where the magnetic field and as a result the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
 
 For the particular case of $J=1/2$ (like the ground state of Alkalis) the Zeeman energies can be found analytically using the Breit-Rabi formula~\cite{breit_measurement_1931}
 %
@@ -67,10 +67,28 @@ For the particular case of $J=1/2$ (like the ground state of Alkalis) the Zeeman
 %
 where $\Delta E_{\rm{hf}}=A_{\rm{hf}}(J+1/2)$ and $x=(g_J-g_I)\mu_B B_z/\Delta E_{\rm{hf}}$. Figure~\ref{fig:Zeeman_splitting} shows the energies of the $m_F$ levels for the $F=1$ and $F=2$ manifolds of $\Rb87$.
 
+\subsection{Magnetic trapping}
+The sign of the Zeeman energy for different $m_F$ state can be used to create state dependent traps for atoms if we use a non-uniform magnetic field. In the lab we implement magnetic traps using quadrupole magnetic fields produced by a pair of anti-Helmholtz coils. The magnetic field near the center of the coils can be written as
+%
+\begin{equation}
+	\mathbf{B}=B'(x\ex+y\ey-2z\ez) + \mathbf{B}_0
+\end{equation}
+%
+where $\mathbf{B}_0$ is a constant magnetic field, for simplicity I will assume that $\mathbf{B}_0=B_0\ez$. The Zeeman Hamiltonian gives a trapping potential
+%
+\begin{align}
+	U(\mathbf{r})&=g_F\mu_B m_F B'\sqrt{x^2+y^2-4\left(z+\frac{B_0}{B'}\right)^2} \nonumber \\
+	& \approx g_F\mu_B m_F B'\left(r-2\left\vert z-\frac{B_0}{B}\right\vert\right)
+\end{align}
+%
+where the approximation on the second line is valid for small displacements from the trap center. 
+
+The sign of the magnetic moment determines which states can be trapped. For $\Rb87$ the $\ket{F=1, m_F=-1}$, $\ket{F=2, m_F=2,1}$ are magnetically trappable. 
+
 \section{Interaction between atoms and electric fields}
 \label{sec:atom-lignt_interactio n}
 
-In this section I will discuss the interaction between atoms and electromagnetic radiation (light). After laying the foundations I will discuss applications using off-resonant light such as optical dipole traps and Raman transitions. I will not cover laser cooling which has been covered extensively in the literature~\cite{metcalf_deceleration_1999,phillips_nobel_1998} and PhD theses from previous lab members~\cite{CampbellThesis,PriceThesis}. 
+In this section I will discuss the interaction between atoms and electromagnetic radiation (light). After laying the foundations I will discuss applications using off-resonant light such as optical dipole traps and Raman transitions. I will not cover laser cooling which has been covered extensively in the literature~\cite{metcalf_deceleration_1999,phillips_nobel_1998} and PhD theses from previous group members~\cite{CampbellThesis,PriceThesis}. 
 
 In the presence of an electric field $\mathbf E$ an atom can become polarized and therefore its energy levels get modified by the Stark effect~\cite{stark_beobachtungen_1914}. If the electric field is spatially uniform with respect to the atom's size we consider the electric field as a classical object and its effect on the atom can be described by the the Hamiltonian~\cite{Cohen-Tanoudji}  
 %
@@ -348,13 +366,13 @@ where $\hbar\omega_i$ are the energies of the unperturbed states, and the eigens
 First I consider an interaction term that oscillates with frequency $\omega$ close to the transition energy $\omega_{ge}=\omega_g-\omega_e$ 
 %
 \begin{equation}
-	\hat{H}_0=\hbar\begin{pmatrix}
+	\hat{H}_I=\hbar\begin{pmatrix}
 0 & \Omega\cos(\omega t)  \\
 \Omega^*\cos(\omega t) & 0   \\
 \end{pmatrix}
 \end{equation}
 %
-the coupling strength $\Omega$ here could be related to a dipole transition matrix element $\Omega\propto\bra{g}\mathbf{d}\cdot\mathbf{E}\ket{e}$\footnote{For our system intensities $\Gamma\gg\Omega$ and we don't observe Rab oscillations from (single photon) electric dipole transitions.} or a time varying magnetic field $\Omega\propto g_F\mu_B B$. The state of the system at any given time is given by
+the coupling strength $\Omega$ here could be related to an electric dipole transition $\Omega\propto\bra{g}\mathbf{d}\cdot\mathbf{E}\ket{e}$\footnote{For our system intensities $\Gamma\gg\Omega$ and we don't observe Rab oscillations from (single photon) electric dipole transitions.} or magnetic dipole $\Omega\propto \bra{g}\boldsymbol{\mu}\cdot\mathbf{B}\ket{e}$ transition matrix element. The state of the system at any given time is given by
 %
 \begin{equation}
   \ket{\Psi}=c_g(t)e^{-i\omega_gt}\ket{g} + c_e(t)e^{-i\omega_e t}\ket{e},
@@ -368,7 +386,7 @@ and substituting this expression into the time dependent Schr\"odinger equation 
 	\dot{c}_e(t)=&\frac{\Omega^*}{2}\left(e^{i(\omega-\omega_{ge})t}+e^{-i(\omega+\omega_{ge}) t}\right)c_g.
 \end{align}
 %
-We can apply a RWA because the term $\omega+\omega_{ge}$ is very fast compared to $\omega-\omega_{ge}=\delta$. The resulting coupled differential equations can be solved in a standard wat by differentiating $\dot c_e$ one more time and substituting $\dot c_g$. If we assume that at $t=0$ the system is prepared in $\ket{g}$ the population in $\ket{e}$ describes what is known as a Rabi oscillation~\cite{rabi_space_1937}
+We can apply a RWA because the term $\omega+\omega_{ge}$ is large compared to $\omega-\omega_{ge}=\delta$. The resulting coupled differential equations can be solved in a standard way by differentiating $\dot c_e$ one more time and substituting $\dot c_g$. If we assume that at $t=0$ the system is prepared in $\ket{g}$ the population in $\ket{e}$ describes what is known as a Rabi oscillation~\cite{rabi_space_1937}
 %
 \begin{equation}
 	\vert c_e(t)\vert^2=\frac{\Omega^2}{\Omega^2+\delta^2}\sin^2\left(\frac{\sqrt{\Omega^2+\delta^2}}{2}t\right)	
@@ -376,7 +394,7 @@ We can apply a RWA because the term $\omega+\omega_{ge}$ is very fast compared t
 %
 where $\delta=\omega-\omega_{ge}$ is a detuning and $\tilde{\Omega}=\sqrt{\Omega^2+\delta^2}$ is known as the generalized Rabi frequency. 
 
-The RWA Hamiltonian time-independent and is given by
+The Hamiltonian after applying the RWA is
 %
 \begin{equation}
 \hat{H}_0=\hbar\begin{pmatrix}
@@ -385,7 +403,7 @@ The RWA Hamiltonian time-independent and is given by
 \end{pmatrix},
 \end{equation}
 %
-and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. It is important here to notice that the difference between the eigenenergies is exactly equal to the oscillation frequency of the populations in $\ket{g,e}$, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure \note{Make figure}a shows Rabi oscillations between the $m_F=-1$ and $m_F=0$ states. Two calibrate the coupling strength for an effective two-level system  and Figure xxx b shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve can serve as a way to find the transition frequency (see Chapter~\ref{ch:clock_states}). 
+and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. Notice that the difference between the eigenenergies $E_+-E_-$is exactly equal to the oscillation frequency of the populations in $\ket{g,e}$, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure \note{Make figure}a shows Rabi oscillations between the $m_F=-1$ and $m_F=0$ states. Two calibrate the coupling strength for an effective two-level system  and Figure xxx b shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve is as a way to find the transition frequency (see Chapter~\ref{ch:clock_states}). 
 
 \subsection{Ramsey interferometer}
 
@@ -397,7 +415,7 @@ and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. It is impor
 \end{center}
 \end{figure*}
 
-Now I consider a Ramsey interferometer~\cite{ramsey_molecular_1950}. The interaction Hamiltonian is the same as in the previous section but rather than being on continuously it is pulsed on for a time $\tau=\pi/2\Omega$ (a $\pi/2$ pulse), then the system is let to evolve only under $\hat{H}_0$ for a variable time $t_{\rm{dark}}$ and finally a second $\pi/2$ pulse is applied. Figure~\ref{fig:simple_Ramsey} illustrates this protocol: the $\pi/2$ pulses can be thought of as $\pi/2$ rotations along $\ex$ the first pulse transfers $\ket{g}\rightarrow(\ket{g}+\ket{e})/\sqrt{2}$ then the system precesses on the equator of the Bloch sphere by an angle $\delta t_{\rm{dark}}$ and finally the second pulse rotates the state again. The probability of measuring the excited state is related to the phase accumulated during the dark time is given by
+Now I consider a Ramsey interferometer~\cite{ramsey_molecular_1950},  a setup that is relevant to Chapters~\ref{ch:clock_states} and~\ref{ch:clock_states}. The interaction Hamiltonian is the same as in the previous section but rather than being on continuously it is pulsed on for a time $\tau=\pi/2\Omega$ (a $\pi/2$ pulse), then the system is let to evolve only under $\hat{H}_0$ for a variable time $t_{\rm{dark}}$ and finally a second $\pi/2$ pulse is applied. Figure~\ref{fig:simple_Ramsey} illustrates this protocol: the $\pi/2$ pulses can be thought of as $\pi/2$ rotations along $\ex$ the first pulse transfers $\ket{g}\rightarrow(\ket{g}+\ket{e})/\sqrt{2}$ then the system precesses on the equator of the Bloch sphere by an angle $\delta t_{\rm{dark}}$ and finally the second pulse rotates the state again. The probability of measuring the excited state is related to the phase accumulated during the dark time is given by
 \begin{equation}
 	\vert c_{e}(2\tau + t_{\rm{dark}})\vert^2=\left\vert \frac{\Omega \tau}{2}\right\vert\left[ \frac{\sin(\delta\tau/2)}{\delta\tau/2} \right]^2 \cos^2\left(\frac{\delta t_{\rm{dark}}}{2}\right). 
 \end{equation}
@@ -412,11 +430,54 @@ For the case of Rabi oscillations, the detuning adds in quadrature with $\Omega$
 \end{center}
 \end{figure*}
 
+\subsection{Adiabatic rapid passage}
+\label{sec:arp}
+
 \subsection{Floquet theory}
 \label{sec:Floquet_theory}
-I have used the RWA multiple times in this Chapter. This approximation is valid most of the time but if we want to give a complete description of a periodic system, either because of the RWA breaking or for the case of a more complicated Hamiltonian (e.g. one with multiple driving frequencies) Floquet theory can be helpful. 
+I have used the RWA multiple times in this Chapter. This approximation is valid most of the time for our experiments, however, if we want to give a complete description of a time periodic system Floquet theory can be helpful. I will give a brief overview of Floquet theory using a matrix approach that is useful for numerical computations. 
 
+Consider a time periodic Hamiltonian $\hat{H}(t)=\hat{H}(t+T)$. We can write in terms of its Fourier components
+%
+\begin{equation}
+	\hat{H}(t)=\sum_{j=-\infty}^{\infty}\exp[ij\omega t]\hat{H}_j,
+\end{equation}
+%
+where $\omega=2\pi/T$ and because $\hat{H}$ is Hermitian the operators must satisfy $\hat{H}_j=\hat{H}^{\dagger}_{-j}$. The eigenstates of the Hamiltonian can be written in a terms of quasi periodic functions\footnote{Very much like Bloch wave functions}
+%
+\begin{equation}
+\ket{\psi_{\epsilon}(t)}=\exp(-i\epsilon t/\hbar)\sum_{k=-\infty}^{\infty}\exp[-ik\omega t]\ket{\psi_{\epsilon,k}}	
+\end{equation}
+%
+where the term $\epsilon$ is known as the quasi-energy. Inserting this expression into the time-dependent Schr\"odinger equation gives
+%
+\begin{equation}
+	\sum_k(\epsilon+\hbar\omega k)\exp[-k\omega t]\ket{\psi_{\epsilon,k}}	=\sum_{j,j'}\exp[i(j-j')\omega t]\hat{H}_{j'}\ket{\psi_{\epsilon,j}}.
+\end{equation}
+Because the complex exponentials form an orthonorormal basis in order for the equality to be true we must have $j'-j=-k$ which gives
+%
+\begin{equation}
+	\epsilon\ket{\psi_{\epsilon,k}}=\sum_j\left(\hat{H}_{j-l}-\hbar\omega k\delta_{j,k}\times\hat{\mathds{1}}\right),
+\end{equation}
+%
+where $\hat{\mathds{1}}$ is the identity matrix. The expression can be recast into a matrix form
 
+\begin{equation}
+\epsilon\begin{pmatrix}
+\cdots  \\
+  \ket{\psi_{\epsilon,-1}}\\
+  \ket{\psi_{\epsilon,0}}\\
+  \ket{\psi_{\epsilon,1}}\\
+  \cdots
+\end{pmatrix}=
+\begin{pmatrix}
+ \hat{H}_0+2\hbar\omega  & \hat{H}_1 & \hat{H}_2 & \cdots & \cdots \\
+  \hat{H}_-1  & \hat{H}_0+\hbar\omega & \hat{H}_1 & \hat{H}_2 & \cdots \\
+  \hat{H}_-2  & \hat{H}_{-1} & \hat{H}_0 & \hat{H}_1  & \cdots\\
+  \cdots  & \hat{H}_{-2} & \hat{H}_{-1} & \hat{H}_0-\hbar\omega & \hat{H}_1\\
+  \cdots  & \cdots & \hat{H}_{-2} & \hat{H}_{-1} & \hat{H}_0-2\hbar\omega \\
+\end{pmatrix}
+\end{equation}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
