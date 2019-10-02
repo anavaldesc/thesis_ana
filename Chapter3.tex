@@ -36,17 +36,23 @@ The atomic level structure gets further modified by the magnetic interaction of 
 Atoms have have an intrinsic magnetic moment that is given by the sum of nuclear and electronic moments
 %
 \begin{equation}
-	\boldsymbol{\hat \mu}=-\frac{g_J\mu_B}{\hbar} \mathbf{\hat J}+\frac{g_I\mu_N}{\hbar}\mathbf{\hat I}=\frac{\mu_B g_F}{\hbar} \mathbf{\hat F}
+	\boldsymbol{\hat \mu}=-\frac{\mu_B}{\hbar}(g_S\mathbf{\hat{S}}+g_L\mathbf{\hat L}+g_I\mathbf{\hat I})=\frac{\mu_B g_F}{\hbar} \mathbf{\hat F}
 \end{equation}
 %
-where $\mu_B$ is the Bohr magneton, $\mu_N$ \footnote{$\mu_N\ll\mu_B$ and therefore $\boldsymbol{\hat \mu}\approx-\mu_Bg_J/\hbar\mathbf{\hat J}$} is the nuclear magneton and $g_J$, $g_I$ and $g_F$ are the Land\'e $g$-factors corresponding to the electronic, nuclear and total angular momentum. In the presence of an external magnetic field $\mathbf B$, the internal levels of an atom get modified due to the Zeeman~\cite{Zeeman_effect} interaction
+where $\mu_B$ is the Bohr magneton and $g_S$, $g_L$ and $g_I$ are the Land\'e `$g$-factors' corresponding to the spin, orbital and nuclear angular momentum. In the presence of an external magnetic field $\mathbf B$, the internal levels of an atom get modified due to the Zeeman~\cite{Zeeman_effect} interaction
 %
 \begin{equation}
-	\hat{H}_{\rm{Zeeman}}=-\boldsymbol{\hat \mu}\cdot\mathbf{B}
+	\hat{H}_{\rm{Zeeman}}=-\boldsymbol{\hat \mu}\cdot\mathbf{B}.
 	\label{eq:zeeman_hamiltonian}
 \end{equation}
 %
-which has the effect of lifting the degeneracy of the different $m_F$ states. We take advantage of this effect for making (state-dependent) magnetic traps for the atoms by using magnetic field gradients and for the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy},~\ref{ch:clock_states} and \ref{ch:Rashba} the shifts in the $m_F$ energies allowed us to treat each state as a pseudospin that we then coherently manipulated using the techniques described in Section~\ref{sec:quantum_coherent_dynamics}.
+If the energy shift due to the Zeeman interaction is small compared to the hyperfine splitting we can write
+%
+\begin{equation}
+	\hat{H}_{\rm{Zeeman}}=\frac{\mu_B g_F}{\hbar}\mathbf{\hat F}.
+\end{equation}
+%
+The total energy shifts can be calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. Figure~\ref{fig:Zeeman_splitting} shows the energies of the $m_F$ levels in the $F=1$ and $F=2$ manifolds of $\Rb87$ as a function of magnetic field. If the magnetic field is small then the Zeeman term can be treated as a perturbation to the atomic Hamiltonian and the energy split is linear with the magnitude of the field $E_{m_F}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' at large magnetic fields\footnote{A couple orders of magnitude larger than the fields we operate at.} the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$, the gray box in Figureº~\ref{fig:Zeeman_splitting}) where the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
 
 \begin{figure*}[htb]
 \begin{center}
@@ -55,8 +61,6 @@ which has the effect of lifting the degeneracy of the different $m_F$ states. We
 \label{fig:Zeeman_splitting}
 \end{center}
 \end{figure*}
-
-\note{TODO: write expression for $g_F$}The total energy shifts are calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. For a small magnetic field the Zeeman term can be treated as a perturbation and the energy split is linear with the magnitude of the field $E_{m_F}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' at large magnetic fields\footnote{A couple orders of magnitude larger than the fields we operate at.} the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$)energies where the magnetic field and as a result the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
 
 For the particular case of $J=1/2$ (like the ground state of Alkalis) the Zeeman energies can be found analytically using the Breit-Rabi formula~\cite{breit_measurement_1931}
 %
@@ -68,7 +72,7 @@ For the particular case of $J=1/2$ (like the ground state of Alkalis) the Zeeman
 where $\Delta E_{\rm{hf}}=A_{\rm{hf}}(J+1/2)$ and $x=(g_J-g_I)\mu_B B_z/\Delta E_{\rm{hf}}$. Figure~\ref{fig:Zeeman_splitting} shows the energies of the $m_F$ levels for the $F=1$ and $F=2$ manifolds of $\Rb87$.
 
 \subsection{Magnetic trapping}
-The sign of the Zeeman energy for different $m_F$ state can be used to create state dependent traps for atoms if we use a non-uniform magnetic field. In the lab we implement magnetic traps using quadrupole magnetic fields produced by a pair of anti-Helmholtz coils. The magnetic field near the center of the coils can be written as
+The sign of the Zeeman energy for different $m_F$ state can be used to create state dependent traps for atoms. In the lab we implement magnetic traps using quadrupole magnetic fields produced by a pair of anti-Helmholtz coils. The magnetic field near the center of the coils can be written as
 %
 \begin{equation}
 	\mathbf{B}=B'(x\ex+y\ey-2z\ez) + \mathbf{B}_0
@@ -111,17 +115,16 @@ where $\mathbf{E}^{(\pm)}$ are the possitive/negative frequency components of th
 	\alpha_{\mu\nu}(\omega)=\sum_j\frac{2\omega_{jg}\bra{g}d_\mu\ket{e_j}\bra{e_j}d_\nu\ket{e_j}}{\hbar(\omega_{jg}^2-\omega^2)},
 \end{equation}
 %
-where $\ket{e_j}$ represent the excited states and $\omega_{jg}=(E_j-E_g)/\hbar$. The dipole operator is a rank-1 tensor and can be represented by 3 irreducible tensor operators\footnote{A rank $k$ tensor can be represented by $2k+1$ irreducible tensor operators, which are collection of operators that transforms under
-rotations like the spherical harmonics $Y_{kq}(\theta, \phi)$} (see~\cite{SteckTextbook} for a complete derivation). In the limit of small magnetic fields so that $F$ and $m_F$ are good quantum numbers describing the state of the atom $\ket{n, F, m_F}$ the dipole Hamiltonian in this representation takes a convenient form
+where $\ket{e_j}$ represent the excited states and $\omega_{jg}=(E_j-E_g)/\hbar$. The dipole operator is a rank-2 tensor and can be represented by 3 irreducible tensor operators (see~\cite{SteckTextbook} for a complete derivation). In the limit of small magnetic fields so that $F$ and $m_F$ are good quantum numbers describing the state of the atom $\ket{n, F, m_F}$ the dipole Hamiltonian in this representation takes a convenient form
 %
 \begin{align}
-	\hat{H}_{\rm{dip}}= &\alpha^{(0)}(\omega)(\mathbf{E}^{(-)}\cdot\mathbf{E}^{(+)}) 
-	+\alpha^{(1)}(\mathbf{E}^{(-)}\times\mathbf{E}^{(+)})\cdot\mathbf{\hat{F}}  \nonumber \\ 
+	\hat{H}_{\rm{dip}}= &\alpha^{(0)}(\mathbf{E}^{(-)}\cdot\mathbf{E}^{(+)}) 
+	+i\alpha^{(1)}(\mathbf{E}^{(-)}\times\mathbf{E}^{(+)})\cdot\mathbf{\hat{F}}  \nonumber \\ 
 	&+ \alpha^{(2)}E_i^{(-)}E_j^{(+)}	\left(\frac{1}{2}(F_iF_j+F_jF_i)-\frac{1}{3}\mathbf{\hat F}^2\delta_{i,j}\right)\Big],
 	\label{eq:light_matter_coupling}
 \end{align}
 %
-where $\alpha^{(0)}$, $\alpha^{(1)}$ and $\alpha^{(2)}$ are the scalar, vector and tensor polarizabilities respectively and $\hat{\mathbf{F}}$ is the total angular momentum operator. For all our experiments $\alpha^{(2)}$ is very small so I will limit the discussion to the effect of the first two terms. The scalar term is responsible for the dipole force that allow us to trap atoms using off-resonant light and the vector component is necessary for engineering spin-orbit coupling through Raman transitions and other spin-dependent potentials. 
+where $\alpha^{(0)}$, $\alpha^{(1)}$ and $\alpha^{(2)}$ are the scalar, vector and tensor polarizabilities respectively and $\hat{\mathbf{F}}$ is the total angular momentum operator. For all our experiments $\alpha^{(2)}$ is very small so I will limit the discussion to the effect of the first two terms. The scalar term is responsible for the dipole force that allow us to trap atoms using off-resonant light and the vector component is necessary for engineering spin-orbit coupling and other spin-dependent potentials through two-photon processes. 
 
 \subsection{Scalar polarizability}
 \label{sec:scalar_light_shift}
@@ -148,16 +151,14 @@ and combining this with the expression for the intensity of the electric field $
 	U(\omega,\r)=-\frac{\pi c^2 I(\r)}{2}\left[ \frac{\Gamma_{\rm{D1}}}{\omega_{\rm{D1}}^3}\left(\frac{1}{\omega+\omega_{\rm{D1}}}-\frac{1}{\omega-\omega_{\rm{D1}}}\right)+\frac{2\Gamma_{\rm{D2}}}{\omega_{\rm{D2}}^3}\left(\frac{1}{\omega+\omega_{\rm{D2}}}-\frac{1}{\omega-\omega_{\rm{D2}}}\right)\right],
 \end{equation}
 %
-where only the the most significant contribution from the closest transitions  (the D1 and D2 lines) are included. Here $U(\r)$ is related to the real part of the polarizability which is in fact a complex valued number. So far I have only considered the real part by assuming the excited states have an infinitely long lifetime. However, in reality the atom can spontaneously emit photons and decay. This exponential decay can be accounted for by adding an imaginary contribution to the energies $\omega_D\rightarrow\omega_D+i\Gamma_D\omega^3/\omega_D^3$ of the D1 and D2 transitions~\cite{grimm_optical_2000}. The scattering rate is related to the imaginary part of the polarizability and is given by
+where only the the most significant contribution from the closest transitions  (the D1 and D2 lines) are included. Here $U(\r)$ is related to the real part of the polarizability which is in fact a complex valued number. So far I have only considered a real valued polarizability by assuming the excited states have an infinitely long lifetime. However, in reality the atom can spontaneously emit photons and decay. This exponential decay can be accounted for by adding an imaginary contribution to the energies $\omega_D\rightarrow\omega_D+i\Gamma_D\omega^3/\omega_D^3$ of the D1 and D2 transitions~\cite{grimm_optical_2000}. The scattering rate is related to the imaginary part of the polarizability and is given by
 %
 \begin{equation}
 	\Gamma(\omega,\r)=\frac{\pi c^2I(\r)}{2\hbar}\left[ \frac{\Gamma_{\rm{D1}}\omega^3}{\omega_{\rm{D1}}^6}\left(\frac{1}{\omega+\omega_{\rm{D1}}}-\frac{1}{\omega-\omega_{\rm{D1}}}\right)^2+\frac{2\Gamma_{\rm{D2}}\omega^3}{\omega_{\rm{D2}}^6}\left(\frac{1}{\omega+\omega_{\rm{D2}}}-\frac{1}{\omega-\omega_{\rm{D2}}}\right)^2\right]
 	\label{eq:scattering}
 \end{equation}
 
-The energy shift $U(\omega,\r)$ is a conservative term and is related to dipole trapping while the scattering term $\Gamma(\omega,\r)$ is dissipative and is important for laser cooling. In the context of engineering potentials for ultracold atoms with off-resonant light, the scattering is translated into heating because every time an atom emits a photon with angular frequency $\omega_L$ it gets a recoil momentum $\hbar\k_L$.  
-
-If the frequency $\omega$ satisfies the relation $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$ we can neglect the terms proportional to $1/(\omega+\omega_{\rm D})$, an approximation typically known as the rotating wave approximation (RWA). If the RWA is valid then the frequency dependence of both the energy shifts and the scattering rates will be given by the detuning from the D1 and D2 transitions. 
+The energy shift $U(\omega,\r)$ is a conservative term and is related to dipole trapping while the scattering term $\Gamma(\omega,\r)$ is dissipative and is important for laser cooling. In the context of engineering potentials for ultracold atoms with off-resonant light, the scattering is translated into heating because every time an atom emits a photon with angular frequency $\omega_L$ it gets a recoil momentum $\hbar\k_L$. If the frequency $\omega$ satisfies the relation $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$, as is often the case, we can neglect the terms proportional to $1/(\omega+\omega_{\rm D})$, an approximation typically known as the rotating wave approximation (RWA). If the RWA is valid then the frequency dependence of both the energy shifts and the scattering rates will be given by the detuning from the D1 and D2 transitions. 
 
 \subsubsection{Optical trapping}
 One important application of the scalar light-shift is to create optical traps for clouds of ultracold atoms. An optical field with non-uniform spatial intensity generates traps (and anti-traps) for the atoms which experience a force proportional to the intensity gradient $F_{\rm{dip}}=-\nabla U(\r)$. The attractive or repulsive nature of the trap depends on the sign of $U(\r)$ which is determined by the sign of the detuning (blue-detuned traps are repulsive and red-detuned traps are attractive)\note{TODO: make nice figure of dipole trap?}. The production of BECs in our lab relies on the use of focused Gaussian laser beams with $\lambda=\unit[1064]{nm}$.  The intensity profile of a focused Gaussian beam propagating along $\ez$ is given by 
@@ -174,14 +175,8 @@ One important application of the scalar light-shift is to create optical traps f
 %
 The oscillation frequencies of the trap along the radial direction are $\omega_r=(4U_0/m\omega_0^2)^{1/2}$ and along the axial direction $\omega_z=(2U_0/mz_R)^{1/2}$. The beam waist is usually much smaller than the Rayleigh range ($\omega_0\sim \unit[50-150]{nm}$ for my experiments) and therefore the trap is much stronger along the axial direction. To get around this we use a `crossed dipole trap' which is formed by a combination of two cross-polarized\footnote{The beams are cross-polarized to avoid interference between them} focused Gaussian beams propagating along perpendicular axes, ensuring that we get good confinement of atoms along all spatial directions. 
 
-\subsection{Effective magnetic fields from vector polarizability}
+\subsection{Vector polarizability and effective magnetic fields}
 \label{sec:vector_polarizability}
-
-Recall the Zeeman Hamiltonian introduced in Section~\ref{sec:zeeman_effect}. The term proportional to the vector polarizability in Equation~\ref{eq:light_matter_coupling} looks very similar to Equation~\ref{eq:zeeman_hamiltonian} for an effective magnetic field
-%
-\begin{equation}
-	\mathbf{B}_{\rm{eff}}=-\frac{i\hbar}{\mu_Bg_J}\alpha^{(1)}(\mathbf{E}^*\times\mathbf{E}).
-\end{equation}
 
 For Alkali atoms the vector poarizability takes the form
 %
@@ -189,7 +184,13 @@ For Alkali atoms the vector poarizability takes the form
 	\alpha^{(1)}= \frac{2\alpha^{(0)}\Delta_{\rm{fs}}}{3(\tilde{E}-\hbar\omega)}
 \end{equation}
 %
-where $\Delta_{\rm{fs}}=3A_{\rm{fs}}/2$ and $\tilde{E}=(2E_{\rm{D_1}}+E_{\rm{D2}})$. For the magnetic field magnitudes and light intensities that we typically operate at the vector light shift is small compared to the Zeeman splitting and therefore it can be treated as a perturbation to the hyperfine Hamiltonian
+where $\Delta_{\rm{fs}}=3A_{\rm{fs}}/2$ and $\tilde{E}=(2E_{\rm{D_1}}+E_{\rm{D2}})$. If we recall the Zeeman Hamiltonian introduced in Section~\ref{sec:zeeman_effect}, the term proportional to the vector polarizability in Equation~\ref{eq:light_matter_coupling} looks very similar to Equation~\ref{eq:zeeman_hamiltonian} for an effective magnetic field
+%
+\begin{equation}
+	\mathbf{B}_{\rm{eff}}=-\frac{i\hbar}{\mu_Bg_J}\alpha^{(1)}(\mathbf{E}^*\times\mathbf{E}).
+\end{equation}
+%
+For the light intensities that we typically operate at the vector light shift is small and can be treated as a perturbation. The Hamiltonian resulting from this effective magnetic field can therefore be written as
 %
 \begin{equation}
  	\hat{H}_{\rm{eff}}=\frac{\mu_Bg_F}{\hbar}\mathbf{B}_{\rm{eff}}\cdot\mathbf{\hat F}
@@ -197,7 +198,7 @@ where $\Delta_{\rm{fs}}=3A_{\rm{fs}}/2$ and $\tilde{E}=(2E_{\rm{D_1}}+E_{\rm{D2}
 
 \subsection{Raman coupling}
 
-The vector light shift enables the realization of various spin dependent potentials in the lab. In the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy} and \ref{ch:Rashba} I used combinations of cross polarized laser beams such that the total electric field $\mathbf{E}^*\times\mathbf{E}\neq0$. We used these pairs of beams to induce two-photon Raman transitions. A Raman transition is a two-photon process between two ground states that uses an intermediate state that is off-resonantly coupled as is shown in Figure~\ref{fig:Raman_coupling}a. Because the intermediate state is far detuned it can be adiabatically eliminated~\cite{han_raman_2013} so the system is effectively treated as a two level system. In our experiments we typically couple the $m_F$ levels of the $F=1$ manifold after applying a bias magnetic field such that $\epsilon$ is non-negligible. %I describe the most simple case which considers coupling only two levels, in the later Chapters of the thesis this scheme is extended to couple multiple levels. 
+The vector light shift enables the realization of various spin dependent potentials in the lab. In the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy} and \ref{ch:Rashba} I used combinations of cross polarized laser beams such that the total electric field $\mathbf{E}^*\times\mathbf{E}\neq0$ and we induced two-photon Raman transitions. A Raman transition is a two-photon process between two ground states that uses an intermediate state that is off-resonantly coupled as is shown in Figure~\ref{fig:Raman_coupling}a. Due to the large detuning, the population transfered into the intermediate state is negligible and the state can be adiabatically eliminated~\cite{han_raman_2013} so the system can be effectively treated as a two level system. In our experiments we typically couple the $m_F$ levels of the $F=1$ manifold after applying a bias magnetic field such that $\epsilon$ is non-negligible. %I describe the most simple case which considers coupling only two levels, in the later Chapters of the thesis this scheme is extended to couple multiple levels. 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -336,13 +337,14 @@ It is hard reliably measure atomic clouds at low intensity  when the OD is of th
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/flat_top_BEC.pdf}
-\caption[High intensity absorption image]{{\bf a.} A BEC imaged at low intensity shows a `flat-top' density profile. {\bf b.} In order to recover the Thomas-Fermi profile it is necessary to image high density BECs with intensities larger than $I_{\rm{sat}}.$}
+\caption[High intensity absorption image]{{\bf a.} A BEC imaged at low intensity shows a `flat-top' density profile. {\bf b.} In order to recover the Thomas-Fermi profile it is necessary to image high density BECs with intensities larger than $I_{\rm{sat}}.$ \note{TODO: I should try to find better images, this ones don't look great...}}
 \label{fig:flat_top_BEC}
 \end{center}
 \end{figure*}
 
 
 \section{Coherent manipulation}
+\label{sec:quantum_coherent_dynamics}
 
 In this section I describe quantum coherent processes that are driven using the magnetic and electric dipole interactions described in previous sections. We rely on this techniques both for state preparation and characterization of our system. In all of the cases I consider a system described by the Hamiltonian 
 %

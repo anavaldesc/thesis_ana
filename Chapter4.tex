@@ -53,7 +53,7 @@ Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode 
 \section{New Raman laser system}
 \label{sec:Raman_laser}
 
-The RbLi apparatus has a laser with wavelength close to $\unit[790]{nm}$ that is used to generate Raman induced transitions and spin-dependent potentials (see Section~\ref{sec:vector_polarizability}). The original Raman laser system consisted of a \noted{Toptica DL Pro} laser seeding a tapered amplifier mounted on a homemade copper holder. This laser system was replaced by an M squared Ti:Saphire laser (\noted{SolsTiS-400-SRX-F}) that is pumped by a $\unit[532]{nm}$ \noted{IPG GLR30} laser. We typically operate the pump laser at $\unit[14.5]{W}$, a fraction of this light is redirected into the path of a 1D optical lattice and the remaining power is used to pump the Ti:Sahpire laser. We switched to using a Ti:Saph laser because of its wide range of tunable wavelengths in the near infrared ($\unit[725-875]{nm}$) and its high power output. Figure~\ref{fig:tisaph_power} shows the typical dependence of the Ti:Saph output power as a function of pump power. 
+The RbLi apparatus has a laser system with wavelength close to $\unit[790]{nm}$ that is used to generate Raman induced transitions and spin-dependent potentials (see Section~\ref{sec:vector_polarizability}). The original Raman laser system consisted of a \noted{Toptica DL Pro} laser seeding a tapered amplifier mounted on a homemade copper holder. This laser system was replaced by an M squared Ti:Saphire laser (\noted{SolsTiS-400-SRX-F}) that is pumped by a $\unit[532]{nm}$ \noted{IPG GLR30} laser. We typically operate the pump laser at $\unit[14.5]{W}$, a fraction of this light is redirected into the path of a 1D optical lattice and the remaining power is used to pump the Ti:Sahpire laser. We switched to using a Ti:Saph laser because of its wide range of tunable wavelengths in the near infrared ($\unit[725-875]{nm}$) and its high power output. Figure~\ref{fig:tisaph_power} shows the typical dependence of the Ti:Saph output power as a function of pump power. 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -93,10 +93,7 @@ ZHL-1-2W & 2\,W amplifier \\
 
 The experiments described in Chapters~\ref{ch:clock_states} and~\ref{ch:Rashba} required the use of high power RF magnetic fields to achieve coupling strengths at the atoms $\Omega\sim \unit[100-200]{kHz}$. To do so we built a resonant circuit. 
 After multiple attempts to build a resonant coil either on a PCB (similar to the coil used for RF induced evaporation, see~\cite{CampbellThesis,PriceThesis}) or winding some wires with the right dimensions we found that the product that worked best for our needs was a wireless power
-charging receiver coil (\noted{W\"urth Elektronik} Digikey part numher \noted{732-5646-ND}) shown in the bottom panel of Figure~\ref{sec:high_power_rf_antenna}a. The coil has a self resonant frequency at $\unit[22]{MHz}$ and a Q-Factor of 45. It has an inner diameter of $\unit[1.62]{cm}$ and an outer diameter of $\unit[2.8]{cm}$, just the right side for us to face it right next to the glass cell and minimally perturbing  the laser beams in its vicinity (it only slightly clips one MOT beam).
-
-
-at $\unit[22]{MHz}$ from  $732-5646-ND$
+charging receiver coil (\noted{W\"urth Elektronik} Digikey part number \noted{732-5646-ND}) shown in the bottom panel of Figure~\ref{sec:high_power_rf_antenna}a. The coil has a self resonant frequency at $\unit[22]{MHz}$ and a Q-Factor of 45. It has an inner diameter of $\unit[1.62]{cm}$ and an outer diameter of $\unit[2.8]{cm}$, just the right side for us to place it snugly next to the glass cell (on the $-\ex$ side) with minimal perturbations to the laser beams in its vicinity (it only slightly clips one MOT beam).
 
 \begin{figure*}[htb]
 \begin{center}
@@ -105,6 +102,10 @@ at $\unit[22]{MHz}$ from  $732-5646-ND$
 \label{fig:high_power_rf}
 \end{center}
 \end{figure*}
+
+The loop is mounted on a PCB as is shown in Figure~\ref{fig:high_power_rf}. The board has two 
+
+has a small loop used as a pickup antenna that we attach to a detector xxx and is used for power monitoring.
 
 \subsection{$6.8$ GHz microwave electronics}
 
