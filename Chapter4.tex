@@ -12,9 +12,9 @@ All the experiments presented in this thesis were performed at the Rubidium-Lith
 
 The RbLi apparatus is scheduled to be shut down and the construction of a new dual-species apparatus for $\Rb87$ and K$^{39}$ is underway. The RbLi apparatus has been thoroughly described in \cite{CampbellThesis,PriceThesis}. Here I only give a brief overview of the apparatus. Additionally I discuss new elements that have been added to the setup and changes that have been implemented and were not reported in previous thesis.  
 
-\section{Basics of the RbLi apparatus}
+\section{Overview of the RbLi apparatus}
 
-In this section I briefly describe the setup of and basic capabilities of the RbLi apparatus. Figure~\ref{fig:RbLi} shows the main optical table where atoms are cooled to degeneracy. The production of BECs starts in an oven where Rb atoms are heated to $\unit[120]{^{\circ}C}$ to produce an atomic beam. The atoms then travel down a Zeeman slower~\cite{phillips_laser_1982} where they are laser cooled. The slowed down atoms are then captured in a magneto-optical trap (MOT) in a glass cell, where the remaining cooling and all our experiments are performed. 
+In this section I briefly describe the setup of and basic capabilities of the RbLi apparatus. Figure~\ref{fig:RbLi} shows the main optical table where atoms are cooled to degeneracy. The production of BECs starts in an oven where Rb atoms are heated to $\unit[120]{^{\circ}C}$ to produce an atomic beam. The atoms then travel down a Zeeman slower~\cite{phillips_laser_1982} where they are laser cooled. The slowed down atoms are then captured in a magneto-optical trap (MOT) in a glass cell, where the remaining cooling and all our experiments are performed. We can detect atoms using two different imaging systems. The first one is used primarily for diagnostics and it images the $yz$ plane of the atoms from the $+\ex$ side of the glass cell. The second system looks at the $xy$ plane from bellow the glass cell and is the main system used for data acquisition. Figure \note{TODO:make simplified diagram of RbLi figure } shows a simplified diagram with a side view and a bird's-eye view of the apparatus with the laser cooling and trapping lasers and the imaging systems.
 
 \begin{figure*}[htb]
 \begin{center}
@@ -28,9 +28,15 @@ In this section I briefly describe the setup of and basic capabilities of the Rb
 
 We use a total of three lasers to perform laser cooling and imaging of atoms: a cooling laser that addresses the $F=2\rightarrow F'=3$ transition, a repump laser that takes atoms that have decayed into the $F=1$ state back to $F=2$ and a master laser that provides a frequency reference for both lasers. The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb.
 
-We can detect atoms using two different imaging systems. The first one is used primarily for diagnostics and it images the $yz$ plane of the atoms from the $+\ex$ side of the glass cell. The second system looks at the $xy$ plane from bellow the glass cell and is the main system used for data acquisition. 
+We have two additional lasers that are used to generate potentials for the atoms. The first one is a $\unit[30]{W}$ $\unit[1064]{nm}$ \noted{IPG Photonics} laser that we use to make a cross dipole trap for the atoms. The two dipole beams come from the zeroth and first order of an acusto optic modulator (AOM) and the beams propagate along the $\ex+\ey$ and $\ex-\ey$ direction. The other laser system is a Ti:Saphire laser used to generate Raman transitions and will be described in more detail in Section~\ref{sec:Raman_laser}.
+
+
+
+
 
 \note{TODO:make basic sketch of lasers, small changes to mot and imaging path should be reflected}
+
+\note{TODO: sketch of frequencies of each laser?}
 
 \section{Magnetic field control}
 
@@ -38,7 +44,30 @@ The precise control of magnetic fields is essential during the multiple stages i
 
 The experiment also has the capability of producing oscillatory magnetic fields. A set of coils on a printed circuit board (PCB) produce linearly polarized radio-frequency (RF) magnetic fields either in the $\ey$ or $\ez$ direction that are used for RF induced evaporation and to drive transitions between $m_F$ states. The setup for producing high-power RF fields will be described in more detail in Section~\ref{sec:high_power_rf_antenna}.
 
-\section{New master laser}
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter4/bias_coils.pdf}
+\caption[Magnetic coil geometry in the RbLi apparatus]{Magnetic coil geometry in the RbLi apparatus.{\bf a.} We use three pairs of Helmholtz coils to produce bias fields along $\ex$, $\ey$ and $\ez$. {\bf b.} We have a pair of coils that produce strong quadrupole magnetic fields for the MOT and magnetic trapping. Additionally we have a pair of `clover-leaf' coils to control the gradients along $\ez$.}
+
+\label{fig:RbLi}
+\end{center}
+\end{figure*}
+\section{Experimental sequence to make BECs}
+\label{sec:making-becs}
+
+\subsection{MOT}
+
+
+-Trigger to the 60Hz line is essential. 
+
+
+\subsection{Magnetic field stabilization with microwave assisted partial transfer absorption imaging}
+\label{sec:ptai}
+We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
+
+\section{Upgrades to the RbLi Machine}
+
+\subsection{Master laser system}
 Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode laser as our master laser and a home made saturation spectroscopy setup using a Rb glass cell (see~\cite{CampbellThesis,PriceThesis}). The frequency of this laser was not very stable and the laser would constantly get out of lock. We replaced the old master laser with a \noted{Vescent photonics DBR Laser Moduee System} which uses a distributed Bragg reflector laser diode with no external cavity and is therefore very mechanically stable. The frequency of the laser is stabilized and controlled using the \noted{D2-210} spectroscopy module and \noted{D2-125} laser servo. The master laser system is considerably simplified as can be seen in Figure~\ref{fig:master_laser}.
 
 \begin{figure*}[htb]
@@ -50,20 +79,20 @@ Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode 
 \end{figure*}
 
 
-\section{New Raman laser system}
+\subsection{Raman laser system}
 \label{sec:Raman_laser}
 
 The RbLi apparatus has a laser system with wavelength close to $\unit[790]{nm}$ that is used to generate Raman induced transitions and spin-dependent potentials (see Section~\ref{sec:vector_polarizability}). The original Raman laser system consisted of a \noted{Toptica DL Pro} laser seeding a tapered amplifier mounted on a homemade copper holder. This laser system was replaced by an M squared Ti:Saphire laser (\noted{SolsTiS-400-SRX-F}) that is pumped by a $\unit[532]{nm}$ \noted{IPG GLR30} laser. We typically operate the pump laser at $\unit[14.5]{W}$, a fraction of this light is redirected into the path of a 1D optical lattice and the remaining power is used to pump the Ti:Sahpire laser. We switched to using a Ti:Saph laser because of its wide range of tunable wavelengths in the near infrared ($\unit[725-875]{nm}$) and its high power output. Figure~\ref{fig:tisaph_power} shows the typical dependence of the Ti:Saph output power as a function of pump power. 
 
 \begin{figure*}[htb]
 \begin{center}
-\includegraphics[]{Figures/Chapter4/master_laser.pdf}
-\caption[Ti:Saphire laser output as a function of pump power]{Ti:Saphire laser output as a function of pump power. This data was taken when the laser was being setup for the first time. The alignment of the laser cavity was optimized to produce maximum power at $\unit[15]{W}$ pump power.}
+\includegraphics[]{Figures/Chapter4/tisaph_power.pdf}
+\caption[Ti:Saphire laser output as a function of pump power]{Ti:Saphire laser output as a function of pump power. This data was taken when the laser was being setup for the first time. The alignment of the laser cavity was optimized to produce maximum power at $\unit[15]{W}$ pump power. The output power is proportional to the pump power $P_{\rm{out}}\approx 0.364 P_{\rm{pump}}$. }
 \label{fig:tisaph_power}
 \end{center}
 \end{figure*}
 
-The output of the laser is split into 3 different Raman beams. The frequency and power of each beam is independently controlled using \noted{IntraAction ATM-801A2} acousto-optic modulators(AOMs) centered at $\unit[80]{MHz}$. We drive the AOMs using homemade drivers made from the \noted{Minicircuits} components listed in Table~\ref{table:rf_driver} and \noted{Novatech Model 409B} direct digital synthesizer (DDS) to generate an RF signal at the desired frequency. The components are arranged as is shown in Figure~\ref{fig:RF_driver}: we control the amplitude of the RF signal using a mixer connected to a DC and the switch can turn off the signal in less than $\unit[1]{\mu s}$ using a TTL signal.
+The output of the laser is split into 3 different Raman beams. The frequency and power of each beam is independently controlled using \noted{IntraAction ATM-801A2} AOMs centered at $\unit[80]{MHz}$. We drive the AOMs using homemade drivers made from the \noted{Minicircuits} components listed in Table~\ref{table:rf_driver} and \noted{Novatech Model 409B} direct digital synthesizer (DDS) to generate an RF signal at the desired frequency. The components are arranged as is shown in Figure~\ref{fig:RF_driver}: we control the amplitude of the RF signal using a mixer connected to a DC and the switch can turn off the signal in less than $\unit[1]{\mu s}$ using a TTL signal.
 
 \begin{table}[h]
 \caption[List of AOM driver components]{List of AOM driver components}
@@ -88,7 +117,7 @@ ZHL-1-2W & 2\,W amplifier \\
 \end{center}
 \end{figure*}
 
-\subsection{High power RF electronics}
+\subsection{High power RF system}
 \label{sec:high_power_rf_antenna}
 
 The experiments described in Chapters~\ref{ch:clock_states} and~\ref{ch:Rashba} required the use of high power RF magnetic fields to achieve coupling strengths at the atoms $\Omega\sim \unit[100-200]{kHz}$. To do so we built a resonant circuit. 
@@ -144,7 +173,7 @@ Maury microwave 1819C & Stub tuner \\
 \label{table:microwave_electronics}
 \end{table}
 %
-We use the SRS generator serves a source a fixed frequency and amplitude source that we operate at a frequency close to $\unit[6.834]{GHz}$. We control the frequency of the signal by mixing a programmable $\sim \unit[100]{MHz}$ signal from a \noted{Novatech} into a double balanced mixer; the RF signal can be turned on or off using a TTL switch. The amplitude is controlled by commanding $\unit[0-6]{V}$ signal from the control computer into an attenuator. The signal is amplified by $\unit[+43]{dB}$ using an amplifier mounted on a water cooled plate. The microwave signal is broadcast to the atoms using a horn antenna. The impedance of the transmission line is tuned with the a stub tuner such that reflections are minimized. We additionally use a circulator that prevents any reflected power to go back into the amplifier. We use couplers at different locations to monitor the performance of the system.  
+The SRS generator serves as a source of a fixed frequency and amplitude signal. We control the frequency by mixing a programmable $\sim \unit[100]{MHz}$ signal from a \noted{Novatech} into a double balanced mixer; the RF signal can be turned on or off using a TTL switch. The amplitude is controlled by commanding $\unit[0-6]{V}$ signal from the control computer into an attenuator. The signal is amplified by $\unit[+43]{dB}$ using an amplifier mounted on a water cooled plate. The microwave signal is broadcast to the atoms using a horn antenna. The impedance of the transmission line is tuned with the a stub tuner such that reflections are minimized. We additionally use a circulator that prevents any reflected power to go back into the amplifier. We use couplers at different locations to monitor the performance of the system.  
 
 \section{Computer control and data acquisition}
 
@@ -161,16 +190,5 @@ The other upgrade worth mentioning is replacing our old \noted{Flea3} CCD camera
 % \label{fig:labscript}
 % \end{center}
 % \end{figure*}
-\section{Experimental sequence to make BECs}
-\label{sec:making-becs}
 
-\subsection{MOT}
-
-
--Trigger to the 60Hz line is essential. 
-
-
-\subsection{Magnetic field stabilization with microwave assisted partial transfer absorption imaging}
-\label{sec:ptai}
-We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
 
