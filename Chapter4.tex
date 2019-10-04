@@ -103,38 +103,74 @@ charging receiver coil (\noted{W\"urth Elektronik} Digikey part number \noted{73
 \end{center}
 \end{figure*}
 
-The loop is mounted on a PCB as is shown in Figure~\ref{fig:high_power_rf}. The board has two 
+The loop is mounted on a PCB as is shown in Figure~\ref{fig:high_power_rf}. The board has two connections. The top one in Figure~\ref{fig:high_power_rf} has a small loop used as a pickup antenna that we attach to a detector \noted{Minicircuits ZX47-40-S+} to monitor the power of the antenna. The bottom lines have pads that can be used to make an impedance matching network. 
 
-has a small loop used as a pickup antenna that we attach to a detector xxx and is used for power monitoring.
+We used a vector network analyzer (VNA) to help us perform the impedance matching. The VNA sends a small amplitude frequency into the circuit and measures the amplitude and phase of the reflected power from which the impedance can be inferred. Figure~\ref{fig:impedance_matching}a shows the reflected power as a function of frequency for a test circuit and Figure~\ref{fig:impedance_matching}b shows the complex valued impedance as a function of frequency displayed on a Smith chart. The Smith chart is a helpful way to visualize the impedance of a circuit: the black circles correspond to constant resistance, with the right most point corresponding to an open circuit (infinite resistance) and the largest circle corresponding to a short circuit (zero resistance).  The arcs correspond to constant reactance; the horizontal axis corresponds to zero reactance ($\mathrm{Im}(Z)=0$), the top arcs correspond to $\mathrm{Im}(Z)>0$ and the lower arcs to $\mathrm{Im}(Z)<0$. The circuit is impedance matched when $Z=\unit[50]{Ohm}$, the standard value of RF transmission lines. We tested different components on the pads until we found a peak in reduced transmission at the desired frequency. For the particular resonant loop that we chose we found that a $\unit[10]{pF}$ capacitor soldered on the third pad and a $0\Omega$ resistor on the first pad was all we needed to get a resonant circuit near our frequency of interest $\sim\unit[23]{MHz}$. It is also important to note that it was important that the circuit was installed in its final location in the experiment when performing this tests as the other parts in the vicinity of the antenna can shift the resonant frequency. %For the particular resonant loop that we chose we found that a $\unit[10]{pF}$ capacitor soldered on the third pad and a $0\Omega$ resistor on the first pad was all we needed to get a resonant circuit near our frequency of interest $\sim\unit[23]{MHz}$. 
 
-\subsection{$6.8$ GHz microwave electronics}
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter4/impedance_matching.pdf}
+\caption[Impedance matching of high power RF antenna]{Impedance matching of high power RF antenna. {\bf a.} Reflected power as a function of frequency. {\bf b.} Impedance as a function of frequency, visualized on a Smith chart. }
+\label{fig:impedance_matching}
+\end{center}
+\end{figure*}
+
+The driving electronics are very similar to the AOM drivers described in Section~\ref{sec:Raman_laser}. The only difference is we use a $\unit[30]{W}$ amplifier (\noted{Minicircuits LZY-22+}) instead of the smaller amplifiers needed to drive the AOMs.
+
+\subsection{$6.8$ GHz microwave system}
+
+Our apparatus now has a $\unit[6.8]{GHz}$ microwave system that allows us to transfer atoms between the $F=1$ and $F=2$ ground hyperfine manifolds of $\Rb87$. We mostly use this system to stabilize the bias magnetic field along $\ez$ at the atoms using microwave assisted partial transfer absorption imaging (PTAI) (see~\ref{sec:ptai}). A list of components used to in the setup is presented in Table~\ref{table:microwave_electronics} and a diagram of the connections is displayed in Figure xxx.
+
+ \begin{table}[h]
+\caption[$6.8$ GHz microwave system components]{$6.8$ GHz microwave system components}
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Part number & Description \\
+\hline \hline
+SRS SG384 & Signal generator \\
+Narda 4014C-30 & Directional coupler\\
+Marki IRW0618  & Mixer \\
+Minicircuits VBFZ-6260-S+ & Bandpass filter $\unit[6-8]{GHz}$ \\
+Herley D1956 & Voltage controlled attenuator \\
+MSI MSH-5727901  & $\unit[46]{dB}$ gain amplifier \\
+Narda 4014C-30 & Circulator \\
+Minicircuits ZX47-40-S+ & Power detector \\
+Maury microwave 1819C & Stub tuner \\
+ ZYSWA-2-50DR & Digital switch \\
+\hline \hline
+\end{tabular}
+\end{center}
+\label{table:microwave_electronics}
+\end{table}
+%
+We use the SRS generator serves a source a fixed frequency and amplitude source that we operate at a frequency close to $\unit[6.834]{GHz}$. We control the frequency of the signal by mixing a programmable $\sim \unit[100]{MHz}$ signal from a \noted{Novatech} into a double balanced mixer; the RF signal can be turned on or off using a TTL switch. The amplitude is controlled by commanding $\unit[0-6]{V}$ signal from the control computer into an attenuator. The signal is amplified by $\unit[+43]{dB}$ using an amplifier mounted on a water cooled plate. The microwave signal is broadcast to the atoms using a horn antenna. The impedance of the transmission line is tuned with the a stub tuner such that reflections are minimized. We additionally use a circulator that prevents any reflected power to go back into the amplifier. We use couplers at different locations to monitor the performance of the system.  
 
 \section{Computer control and data acquisition}
-Our lab has transitioned from using a \noted{LabVIEW} based control system to a Python based control system \noted{the labscriopt suite}. The new control software allows us to use scripted programming 
 
-\noted{labscript} has 
+There have been two main changes in our computer control and data acquisition system. We have transitioned from using a \noted{LabVIEW} based control system to a Python based control system \noted{The labscript suite}~\cite{starkey_scripted_2013}. In the previous control software the lab devices were programmed using a graphic interface. \noted{Labscript} instead uses a hybrid approach in which the experimental sequences are based text scripts. The use of scripted programming makes our experiments very modular and additionally it is now very easy to do multi-dimensional parameter scans, both things that were not straightforward to do in the past. Each experimental shot is saved in a Hierarchical Data Format version 5 file (HDF5). The file includes images from cameras, oscilloscope traces and analog inputs as well as copy of the script used in the experiment and the values of the parameters used. This has been a great upgrade as we no longer rely on the person running an experimental sequence pushing the `save' button and fully documenting the experiment in question\footnote{As I have been digging into old data, I greatly wish we had this feature sooner}. 
 
+The other upgrade worth mentioning is replacing our old \noted{Flea3} CCD camera with a \noted{Mako G-030} camera from \noted{Allied Vision}. With this new camera the time between two consecutive shots can be as small as $\unit[96]{\mu s}$ (used to be $\sim\unit[15]{ms}$ with the Flea3 camera), greatly reducing the effect of mechanical vibrations in the experiment that produce fringes in the absorption images. The addition of this camera was essential to get a better signal to noise ratio in the experiments reported in Chapter~\ref{ch:Rashba}. Figure \note{TODO: make before and after Mako figure} shows and absorption image of thermal atoms taken with the old flea 3 and the...
 
-his allowed us to use scripted programming on our devices
-[161]. With labscript, a fuller exploration of the parameter spaces was feasible
-and close-loop optimization of experimental parameters could be done online while
-running the experiment.
+%Figure~\ref{fig:labscript} shows an experimental sequence where a BEC is made using the steps described in Section~\ref{sec:making-becs} and an absorption image is taken at the end. We typically separate th
 
-\subsection{New xy camera}
--Mako camera is awesome
-
-
+% \begin{figure*}[htb]
+% \begin{center}
+% \includegraphics[]{Figures/Chapter4/labscript.pdf}
+% \caption[Impedance matching of high power RF antenna]{Impedance matching of high power RF antenna}
+% \label{fig:labscript}
+% \end{center}
+% \end{figure*}
 \section{Experimental sequence to make BECs}
 \label{sec:making-becs}
 
 \subsection{MOT}
 
 
-
-
 -Trigger to the 60Hz line is essential. 
 
-\subsection{Magnetic field stabilization with microwaves and partial transfer absorption imaging}
+
+\subsection{Magnetic field stabilization with microwave assisted partial transfer absorption imaging}
 \label{sec:ptai}
 We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
 
