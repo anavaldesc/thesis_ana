@@ -14,7 +14,9 @@ The RbLi apparatus is scheduled to be shut down and the construction of a new du
 
 \section{Overview of the RbLi apparatus}
 
-In this section I briefly describe the setup of and basic capabilities of the RbLi apparatus. Figure~\ref{fig:RbLi} shows the main optical table where atoms are cooled to degeneracy. The production of BECs starts in an oven where Rb atoms are heated to $\unit[120]{^{\circ}C}$ to produce an atomic beam. The atoms then travel down a Zeeman slower~\cite{phillips_laser_1982} where they are laser cooled. The slowed down atoms are then captured in a magneto-optical trap (MOT) in a glass cell, where the remaining cooling and all our experiments are performed. We can detect atoms using two different imaging systems. The first one is used primarily for diagnostics and it images the $yz$ plane of the atoms from the $+\ex$ side of the glass cell. The second system looks at the $xy$ plane from bellow the glass cell and is the main system used for data acquisition. Figure \note{TODO:make simplified diagram of RbLi figure } shows a simplified diagram with a side view and a bird's-eye view of the apparatus with the laser cooling and trapping lasers and the imaging systems.
+In this section I briefly describe the setup of and basic capabilities of the RbLi apparatus. Figure~\ref{fig:RbLi} shows the main optical table where atoms are cooled to degeneracy. The vacuum system can be divided into three regions: an oven Region where Rb and Li atoms are heated up, a Zeeman slower that acts as a differential pumping stage and an ultra-high vacuum region with a glass cell where all the experiments are performed.
+
+ We can detect atoms using two different imaging systems. The first one is used primarily for diagnostics and it images the $yz$ plane of the atoms from the $+\ex$ side of the glass cell. The second system looks at the $xy$ plane from bellow the glass cell and is the main system used for data acquisition. Figure \note{TODO:make simplified diagram of RbLi figure } shows a simplified diagram with a side view and a bird's-eye view of the apparatus with the laser cooling and trapping lasers and the imaging systems.
 
 \begin{figure*}[htb]
 \begin{center}
@@ -26,10 +28,16 @@ In this section I briefly describe the setup of and basic capabilities of the Rb
 
 \subsection{Laser systems}
 
-We use a total of three lasers to perform laser cooling and imaging of atoms: a cooling laser that addresses the $F=2\rightarrow F'=3$ transition, a repump laser that takes atoms that have decayed into the $F=1$ state back to $F=2$ and a master laser that provides a frequency reference for both lasers. The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb.
+\begin{figure*}[!h]
+\begin{center}
+\includegraphics[]{Figures/Chapter4/laser_frequencies.pdf}
+\caption[Laser cooling frequencies]{{\bf a.}Cooling and repump frequencies relative to the master laser lock. {\bf b.} Cooling and repump frequencies relative to the $\Rb87$ D2 line transitions.}
+\label{fig:laser_frequencies}
+\end{center}
+\end{figure*}
+We use a total of three lasers to perform laser cooling and imaging of atoms: a cooling laser that addresses the $F=2\rightarrow F'=3$ transition, a repump laser that takes atoms that have decayed into the $F=1$ state back to $F=2$ and a master laser that provides a frequency reference for both lasers. The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb. 
 
 We have two additional lasers that are used to generate potentials for the atoms. The first one is a $\unit[30]{W}$ $\unit[1064]{nm}$ \noted{IPG Photonics} laser that we use to make a cross dipole trap for the atoms. The two dipole beams come from the zeroth and first order of an acusto optic modulator (AOM) and the beams propagate along the $\ex+\ey$ and $\ex-\ey$ direction. The other laser system is a Ti:Saphire laser used to generate Raman transitions and will be described in more detail in Section~\ref{sec:Raman_laser}.
-
 
 
 
@@ -55,7 +63,7 @@ The experiment also has the capability of producing oscillatory magnetic fields.
 \section{Experimental sequence to make BECs}
 \label{sec:making-becs}
 
-\subsection{MOT}
+The production of BECs starts in an oven where Rb atoms are heated to $\unit[120]{^{\circ}C}$ to produce an atomic beam. The atoms then travel down a Zeeman slower~\cite{phillips_laser_1982} where they are laser cooled. The slowed down atoms are then captured in a magneto-optical trap (MOT) in a glass cell, where the remaining cooling and all our experiments are performed.
 
 
 -Trigger to the 60Hz line is essential. 
@@ -70,6 +78,8 @@ We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfe
 \subsection{Master laser system}
 Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode laser as our master laser and a home made saturation spectroscopy setup using a Rb glass cell (see~\cite{CampbellThesis,PriceThesis}). The frequency of this laser was not very stable and the laser would constantly get out of lock. We replaced the old master laser with a \noted{Vescent photonics DBR Laser Moduee System} which uses a distributed Bragg reflector laser diode with no external cavity and is therefore very mechanically stable. The frequency of the laser is stabilized and controlled using the \noted{D2-210} spectroscopy module and \noted{D2-125} laser servo. The master laser system is considerably simplified as can be seen in Figure~\ref{fig:master_laser}.
 
+MOT cooling power = 114.8
+repump = 84.58
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter4/master_laser.pdf}
