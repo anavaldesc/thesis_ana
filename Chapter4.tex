@@ -16,7 +16,7 @@ The RbLi apparatus is scheduled to be shut down and the construction of a new du
 
 In this section I briefly describe the setup of and basic capabilities of the RbLi apparatus. Figure~\ref{fig:RbLi} shows the main optical table where atoms are cooled to degeneracy. The vacuum system can be divided into three regions: an oven Region where Rb and Li atoms are heated up, a Zeeman slower that acts as a differential pumping stage and an ultra-high vacuum region with a glass cell where all the experiments are performed.
 
- We can detect atoms using two different imaging systems. The first one is used primarily for diagnostics and it images the $yz$ plane of the atoms from the $+\ex$ side of the glass cell. The second system looks at the $xy$ plane from bellow the glass cell and is the main system used for data acquisition. Figure \note{TODO:make simplified diagram of RbLi figure } shows a simplified diagram with a side view and a bird's-eye view of the apparatus with the laser cooling and trapping lasers and the imaging systems.
+ We can detect atoms using two different imaging systems. The first one is used primarily for diagnostics and it images the $yz$ plane of the atoms from the $+\ex$ side of the glass cell. The second system looks at the $xy$ plane from bellow the glass cell and is the main system used for data acquisition (see Figure~\ref{fig:RbLi_diagram}). 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -31,24 +31,26 @@ In this section I briefly describe the setup of and basic capabilities of the Rb
 \begin{figure*}[!h]
 \begin{center}
 \includegraphics[]{Figures/Chapter4/laser_frequencies.pdf}
-\caption[Laser cooling frequencies]{{\bf a.}Cooling and repump frequencies relative to the master laser lock. {\bf b.} Cooling and repump frequencies relative to the $\Rb87$ D2 line transitions.}
+\caption[Laser cooling frequencies]{{\bf a.}Cooling and repump frequencies relative to the master laser lock. {\bf b.} Cooling and repump frequencies relative to the $\Rb87$ D2 line transitions. \note{TODO:check AOM frequencies for repumper}}
 \label{fig:laser_frequencies}
 \end{center}
 \end{figure*}
 We use a total of three lasers to perform laser cooling and imaging of atoms: a cooling laser that addresses the $F=2\rightarrow F'=3$ transition, a repump laser that takes atoms that have decayed into the $F=1$ state back to $F=2$ and a master laser that provides a frequency reference for both lasers. The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb. 
 
-We have two additional lasers that are used to generate potentials for the atoms. The first one is a $\unit[30]{W}$ $\unit[1064]{nm}$ \noted{IPG Photonics} laser that we use to make a cross dipole trap for the atoms. The two dipole beams come from the zeroth and first order of an acusto optic modulator (AOM) and the beams propagate along the $\ex+\ey$ and $\ex-\ey$ direction. The other laser system is a Ti:Saphire laser used to generate Raman transitions and will be described in more detail in Section~\ref{sec:Raman_laser}.
+We have two additional lasers that are used to generate potentials for the atoms. The first one is a $\unit[30]{W}$ $\unit[1064]{nm}$ \noted{IPG Photonics} laser that we use to make a cross dipole trap for the atoms. The two dipole beams come from the zeroth and first order of an acusto optic modulator (AOM) and the beams propagate along the $\ex+\ey$ and $\ex-\ey$ direction. The other laser system is a Ti:Saphire laser used to generate Raman transitions and will be described in more detail in Section~\ref{sec:Raman_laser}. Figure~\ref{fig:RbLi_diagram} shows a simplified diagram with a bird's-eye view and a side view of the apparatus that show all the lasers that are used for cooling, trapping, Raman coupling and imaging.
 
 
-
-
-\note{TODO:make basic sketch of lasers, small changes to mot and imaging path should be reflected}
-
-\note{TODO: sketch of frequencies of each laser?}
+\begin{figure*}[!h]
+\begin{center}
+\includegraphics[]{Figures/Chapter4/RbLi_diagram.pdf}
+\caption[Laser cooling frequencies]{{\bf a.}Cooling and repump frequencies relative to the master laser lock. {\bf b.} Cooling and repump frequencies relative to the $\Rb87$ D2 line transitions.}
+\label{fig:RbLi_diagram}
+\end{center}
+\end{figure*}
 
 \section{Magnetic field control}
 
-The precise control of magnetic fields is essential during the multiple stages in our experimental sequence. We use multiple coils in our experiment as is illustrated in Figure \note{TODO: make magnetic field figure} One pair of anti-Helmholtz coils generates a strong quadrupole magnetic field along $\ez$ that is used in the making of the MOT and for magnetic trapping. Three pairs of Helmholtz coils in the vicinity of the glass cell generate bias magnetic fields along $\ex$, $\ey$ and $\ez$.  Once BECs are produced we typically use bias fields along $\ez$ to change the Zeeman energy of the different $m_F$ states. An additional set of coils arranged in a `clover leaf' pattern generates small gradients along $\ez$, $\ex+\ey$ and $\ez-\ey$ which allow us to cancel stray magnetic gradients at the location of the atoms.  
+The precise control of magnetic fields is essential during the multiple stages in our experimental sequence. We use multiple coils in our experiment as is illustrated in Figure~\ref{fig:bias_coils}.   Three pairs of Helmholtz coils in the vicinity of the glass cell generate bias magnetic fields along $\ex$, $\ey$ and $\ez$.  Once BECs are produced we typically use bias fields along $\ez$ to change the Zeeman energy of the different $m_F$ states. One pair of anti-Helmholtz coils generates a strong quadrupole magnetic field along $\ez$ that is used in the MOT, for magnetic trapping and for Stern-Gerlach in time of flight. An additional set of coils arranged in a `clover leaf' pattern generates small gradients along $\ez$, $\ex+\ey$ and $\ez-\ey$ which allow us to cancel stray magnetic gradients at the location of the atoms.  
 
 The experiment also has the capability of producing oscillatory magnetic fields. A set of coils on a printed circuit board (PCB) produce linearly polarized radio-frequency (RF) magnetic fields either in the $\ey$ or $\ez$ direction that are used for RF induced evaporation and to drive transitions between $m_F$ states. The setup for producing high-power RF fields will be described in more detail in Section~\ref{sec:high_power_rf_antenna}.
 
@@ -56,10 +58,10 @@ The experiment also has the capability of producing oscillatory magnetic fields.
 \begin{center}
 \includegraphics[]{Figures/Chapter4/bias_coils.pdf}
 \caption[Magnetic coil geometry in the RbLi apparatus]{Magnetic coil geometry in the RbLi apparatus.{\bf a.} We use three pairs of Helmholtz coils to produce bias fields along $\ex$, $\ey$ and $\ez$. {\bf b.} We have a pair of coils that produce strong quadrupole magnetic fields for the MOT and magnetic trapping. Additionally we have a pair of `clover-leaf' coils to control the gradients along $\ez$.}
-
-\label{fig:RbLi}
+\label{fig:bias_coils}
 \end{center}
 \end{figure*}
+
 \section{Experimental sequence to make BECs}
 \label{sec:making-becs}
 
@@ -71,19 +73,26 @@ The production of BECs starts in an oven where Rb atoms are heated to $\unit[120
 
 \subsection{Magnetic field stabilization with microwave assisted partial transfer absorption imaging}
 \label{sec:ptai}
+
+Our experiments are very sensitive to changes in the environmental magnetic field. In the past we used flux gate sensors (\noted{Stefan-Mayer} model \noted{FL1-100 f}) in the apparatus to feedback and stabilize the magnetic field (see~\cite{PriceThesis}. This sensors are a useful tool, however due to space constrains we were not able to measure the fields close to the atoms and additionally the range of magnetic fields that they operate at is small (only $\unit[1]{G}$, we typically operate at $>\unit[10]{G}$). We built a $\unit[6.8]{GHz}$ microwave system so that we could use the atoms themselves as sensors of magnetic field.
+
+The method relies in transferring a small fraction of atoms into the $F=2$ manifold where they can be imaged without the use of repump light and therefore minimally disturbing the remaining atoms in $F=1$. Recall from Equation~\ref{eq:Rabi_oscillations} that the population transferred by  
+
 We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
+
+See Chapter~\ref{ch:clock_states} for an alternative solution to deal with magnetic field noise. 
 
 \section{Upgrades to the RbLi Machine}
 
 \subsection{Master laser system}
-Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode laser as our master laser and a home made saturation spectroscopy setup using a Rb glass cell (see~\cite{CampbellThesis,PriceThesis}). The frequency of this laser was not very stable and the laser would constantly get out of lock. We replaced the old master laser with a \noted{Vescent photonics DBR Laser Moduee System} which uses a distributed Bragg reflector laser diode with no external cavity and is therefore very mechanically stable. The frequency of the laser is stabilized and controlled using the \noted{D2-210} spectroscopy module and \noted{D2-125} laser servo. The master laser system is considerably simplified as can be seen in Figure~\ref{fig:master_laser}.
+Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode laser as our master laser and a home made saturation spectroscopy setup using a Rb glass cell (see~\cite{CampbellThesis,PriceThesis}). The frequency of this laser was not very stable and the laser would constantly get out of lock. We replaced the old master laser with a \noted{Vescent photonics DBR Laser Module System} which uses a distributed Bragg reflector laser diode with no external cavity and is therefore very mechanically stable. The frequency of the laser is stabilized and controlled using the \noted{D2-210} spectroscopy module and \noted{D2-125} laser servo. The master laser system is considerably simplified as can be seen in Figure~\ref{fig:master_laser}.
 
 MOT cooling power = 114.8
 repump = 84.58
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter4/master_laser.pdf}
-\caption[Water cooling manifold schematic]{\note{TODO: write caption for plumbing figure.}}
+\caption[Master laser system]{Master laser system. We replaced the old Vortex II laser with a Vescent photonics DBR Laser Module System that is considerably more stable.}
 \label{fig:master_laser}
 \end{center}
 \end{figure*}
@@ -127,6 +136,8 @@ ZHL-1-2W & 2\,W amplifier \\
 \end{center}
 \end{figure*}
 
+\note{TODO: make diagram of Raman laser, talk about padles}
+
 \subsection{High power RF system}
 \label{sec:high_power_rf_antenna}
 
@@ -137,7 +148,7 @@ charging receiver coil (\noted{W\"urth Elektronik} Digikey part number \noted{73
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter4/high_power_rf.pdf}
-\caption[Water cooling manifold schematic]{\note{TODO: write caption for hprf figure}}
+\caption[High power RF system]{We use a commercial resonator with an impedance matching network to produce high power RF fields. {\bf a.} Diagram of the impedance matching network. {\bf b.} A picture of the resonator mounted on a PCB. We place this device as close to the atoms as possible next to the glass cell.}
 \label{fig:high_power_rf}
 \end{center}
 \end{figure*}
