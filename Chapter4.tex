@@ -65,9 +65,19 @@ The experiment also has the capability of producing oscillatory magnetic fields.
 \section{Experimental sequence to make BECs}
 \label{sec:making-becs}
 
-The production of BECs starts in an oven where Rb atoms are heated to $\unit[120]{^{\circ}C}$ to produce an atomic beam. The atoms then travel down a Zeeman slower~\cite{phillips_laser_1982} where they are laser cooled. The slowed down atoms are then captured in a magneto-optical trap (MOT) in a glass cell, where the remaining cooling and all our experiments are performed.
+In this section I list the steps in our experimental sequence that produces $\Rb87$ BECs.
 
+The production of BECs starts in an oven where Rb atoms are heated to $\unit[120]{^{\circ}C}$ to produce an atomic beam. The atoms then travel down a Zeeman slower~\cite{phillips_laser_1982} where they are laser cooled. The slowed down atoms are then captured in a magneto-optical trap (MOT) in a glass cell. For the MOT we apply a $\unit[5.5]{A}$ current to the quadrupole coils corresponding to a $\unit[15.62]{G/cm}$ gradient. The cooling light is detuned $-\unit[14]{MHz}~-2\Gamma$ from the $F=2\rightarrow F'=3$ cycling transition and the repump light is set to the \note{TODO: figure out what is the deal with repump freqs}. We typically load the MOT for times between $\unit[1-5]{s}$. In preparation for the molasses stage we do a $\unit[30]{ms}$ decompression stage where we ramp down the gradient to $\unit[10]{G/cm}$ and reduce the repump power. The slower currents and light are turned off before this stage.
 
+The next step is to perform polarization gradient cooling in optical molasses where the polarization gradient from interfering counter propagating lasers further cools the atoms~\cite{}. For this we completely switch off the quadrupole coils and adjust the bias fields in all three directions so that they are zero at the atoms. During this stage the repump power is kept low and the detuning of the cooling light is ramped from \note{TODO: figure out cooling freqs} for $\unit[10]{ms}$. We then completely turn off the MOT repump light to allow atoms to decay into the $F=1$ manifold and use some slower repump light to optically pump atoms into the $\ket{F=1,m_f=-1}$ magnetically trappable state for a total of $\unit[1.5]{ms}$.
+
+Once the atoms are succesfully pumped into $\ket{F=1, m_f=-1}$ we capture them in a magnetic trap with a gradient of $\unit[62]{G/cm}$ and compress them by increasing the current in the coils until we reach a gradient of $\unit[160]{G/cm}$ in $\unit[300]{ms}$. In the magnetic trap we perform RF induced evaporation by turning on an RF field polarized along $\ey$ with frequency of $\unit[24]{MHz}$, which transfers the hotter atoms at the edges of the trap into the $m_f=0$ state which is not magnetically trappable. 
+
+{\bf Magnetic trapping and RF induced evaporation}
+
+{\bf Loading of dipole trap and evaporation}
+
+{\bf Time of flight and imaging}
 -Trigger to the 60Hz line is essential. 
 
 
@@ -76,11 +86,15 @@ The production of BECs starts in an oven where Rb atoms are heated to $\unit[120
 
 Our experiments are very sensitive to changes in the environmental magnetic field. In the past we used flux gate sensors (\noted{Stefan-Mayer} model \noted{FL1-100 f}) in the apparatus to feedback and stabilize the magnetic field (see~\cite{PriceThesis}. This sensors are a useful tool, however due to space constrains we were not able to measure the fields close to the atoms and additionally the range of magnetic fields that they operate at is small (only $\unit[1]{G}$, we typically operate at $>\unit[10]{G}$). We built a $\unit[6.8]{GHz}$ microwave system so that we could use the atoms themselves as sensors of magnetic field.
 
-The method relies in transferring a small fraction of atoms into the $F=2$ manifold where they can be imaged without the use of repump light and therefore minimally disturbing the remaining atoms in $F=1$. Recall from Equation~\ref{eq:Rabi_oscillations} that the population transferred by  
+The method relies in transferring a small fraction of atoms into the $F=2$ manifold where they can be imaged without the use of repump light and therefore minimally disturbing the remaining atoms in $F=1$. We apply two microwave pulses for a total time $\tau$ and coupling strength $\Omega_0\ll 1/\tau$, each detuned by $\delta=\pm1/(2t_{\rm{pulse}}$ from the target resonance frequency. We image the transferred atoms following each pulse using absorption imaging and from the measured densities we calculate the imbalance
+%
+\begin{equation}
+ 	n_{\rm{imb}}=\frac{n(\delta_+)-n(\delta_-)}{n(\delta_+)+n(\delta_-)}
+ \end{equation} 
+%
+which gives us a signal that is both insensitive to fluctuations in the number of atoms and linearly sensitive to changes in magnetic field\footnote{A single pulse on resonance is quadratically sensitive to detuning (see Equation~\ref{eq:Rabi_oscillations})}. We use this error signal both to monitor the magnetic field before performing experiments and cancel longterm drifts in the field. In most cases, we chose the states $\ket{F=1, m_f=-1}$ and $\ket{F=2, mf=-2}$ as their relative energies are the most sensitive to changes in magnetic field. Figure \note{TODO: make ptai microwave lock} illustrates the p
 
-We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
-
-See Chapter~\ref{ch:clock_states} for an alternative solution to deal with magnetic field noise. 
+In~\cite{seroka_repeated_2019} we studied partial transfer absorption imaging as minimally destructive technique for imaging ultracold atoms. See Chapter~\ref{ch:clock_states} for an alternative solution to deal with magnetic field noise. 
 
 \section{Upgrades to the RbLi Machine}
 
@@ -212,4 +226,6 @@ The other upgrade worth mentioning is replacing our old \noted{Flea3} CCD camera
 % \end{center}
 % \end{figure*}
 
+
+% We then apply a pair of $250\,\mu\mathrm{s}$ microwave  pulses that each transfer a small fraction of atoms into the $5^2{\rm S}_{1/2}$ $f=2$ manifold that we use to monitor and stabilize the bias field \cite{leblanc_direct_2013}. The microwave pulses are detuned by $\pm 2\, \kHz$ from the $\ket{f=1,m_F=0}\leftrightarrow\ket{f=2,m_F=1}$ transition and spaced in time by $33\, \mathrm{ms}$ (two periods of $60\, \mathrm{Hz}$). We imaged the transferred atoms following each pulse using absorption imaging\footnote{We did not apply repump light during this imaging, so the untransferred atoms in the $f=1$ manifold were largely undisturbed by the imaging process.}, and count the total number of atoms $n_1$ and $n_2$ transferred by each pulse. The imbalance in these atom numbers $(n_1-n_2)/(n_1+n_2)$ leads to a $4\kHz$ wide error signal that we use both to monitor the magnetic field before each spectroscopy measurement and cancel longterm drifts in the field. 
 

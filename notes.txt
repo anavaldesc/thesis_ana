@@ -44,3 +44,11 @@ Atomic physics stuff:
 
 -Raman pulses at different wavelengths: data taken on 10/10/2017
 791.09 nm --> seq 76
+
+Mischellaneos data:
+- 03/15/18 seq 59: scan probe frequency for uwave lock
+- 03/15/18 seq 92 uwave lock for 200us pulses between 
+
+
+
+
