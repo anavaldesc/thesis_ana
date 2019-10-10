@@ -12,7 +12,10 @@ All the experiments presented in this thesis were performed at the Rubidium-Lith
 
 The RbLi apparatus is scheduled to be shut down and the construction of a new dual-species apparatus for $\Rb87$ and K$^{39}$ is underway. The RbLi apparatus has been thoroughly described in \cite{CampbellThesis,PriceThesis}. Here I only give a brief overview of the apparatus. Additionally I discuss new elements that have been added to the setup and changes that have been implemented and were not reported in previous thesis.  
 
+This Chapter is divided into three sections. In Section~\ref{sec:RbLi_overview} I give a brief overview of the RbLi apparatus and describe its basic capabilities. In Section~\ref{sec:making-becs} I describe the experimental sequence used to produce BECs. Finally in Section~\ref{sec:RbLi_upgrades} I describe changes and to the RbLi apparatus that have not been reported on previous theses. 
+
 \section{Overview of the RbLi apparatus}
+\label{sec:RbLi_overview}
 
 In this section I briefly describe the setup of and basic capabilities of the RbLi apparatus. Figure~\ref{fig:RbLi} shows the main optical table where atoms are cooled to degeneracy. The vacuum system can be divided into three regions: an oven Region where Rb and Li atoms are heated up, a Zeeman slower that acts as a differential pumping stage and an ultra-high vacuum region with a glass cell where all the experiments are performed.
 
@@ -48,7 +51,7 @@ We have two additional lasers that are used to generate potentials for the atoms
 \end{center}
 \end{figure*}
 
-\section{Magnetic field control}
+\subsection{Magnetic field control}
 
 The precise control of magnetic fields is essential during the multiple stages in our experimental sequence. We use multiple coils in our experiment as is illustrated in Figure~\ref{fig:bias_coils}.   Three pairs of Helmholtz coils in the vicinity of the glass cell generate bias magnetic fields along $\ex$, $\ey$ and $\ez$.  Once BECs are produced we typically use bias fields along $\ez$ to change the Zeeman energy of the different $m_F$ states. One pair of anti-Helmholtz coils generates a strong quadrupole magnetic field along $\ez$ that is used in the MOT, for magnetic trapping and for Stern-Gerlach in time of flight. An additional set of coils arranged in a `clover leaf' pattern generates small gradients along $\ez$, $\ex+\ey$ and $\ez-\ey$ which allow us to cancel stray magnetic gradients at the location of the atoms.  
 
@@ -71,15 +74,13 @@ The production of BECs starts in an oven where Rb atoms are heated to $\unit[120
 
 The next step is to perform polarization gradient cooling in optical molasses where the polarization gradient from interfering counter propagating lasers further cools the atoms~\cite{}. For this we completely switch off the quadrupole coils and adjust the bias fields in all three directions so that they are zero at the atoms. During this stage the repump power is kept low and the detuning of the cooling light is ramped from \note{TODO: figure out cooling freqs} for $\unit[10]{ms}$. We then completely turn off the MOT repump light to allow atoms to decay into the $F=1$ manifold and use some slower repump light to optically pump atoms into the $\ket{F=1,m_f=-1}$ magnetically trappable state for a total of $\unit[1.5]{ms}$.
 
-Once the atoms are succesfully pumped into $\ket{F=1, m_f=-1}$ we capture them in a magnetic trap with a gradient of $\unit[62]{G/cm}$ and compress them by increasing the current in the coils until we reach a gradient of $\unit[160]{G/cm}$ in $\unit[300]{ms}$. In the magnetic trap we perform RF induced evaporation by turning on an RF field polarized along $\ey$ with frequency of $\unit[24]{MHz}$, which transfers the hotter atoms at the edges of the trap into the $m_f=0$ state which is not magnetically trappable. 
+Once the atoms are succesfully pumped into $\ket{F=1, m_f=-1}$ we capture them in a magnetic trap with a gradient of $\unit[62]{G/cm}$ and compress them by increasing the current in the coils until we reach a gradient of $\unit[160]{G/cm}$ in $\unit[300]{ms}$. In the magnetic trap we perform RF induced evaporation by turning on an RF field polarized along $\ey$ with frequency of $\unit[24]{MHz}$, which transfers the hotter atoms at the edges of the trap into the $m_f=0$ state which is not magnetically trappable. We then perform an exponential ramp from the initial frequency to a final frequency of $\unit[4.5]{MHz}$ in $\unit[1]{s}$. 
 
-{\bf Magnetic trapping and RF induced evaporation}
+We then proceed to transfer the atoms from the magnetic trap into a dipole trap. We start by turning on only the `tight' arm of the dipole trap at full power (about $\unit[11]{W}$) and slowly decompressing the quadrupole trap to $\unit[45]{G/cm}$ in $\unit[1.5]{s}$. We then turn on the second `cross' dipole beam in $\unit[1]{s}$; splitting the power so that there the power split between the tight and cross beams is about $70-30\%$. As the cross dipole beam is being turned on we ramp the quadrupole field further down to $\unit[14]{G}[cm]$, slightly above the value necessary for the trap to suspend atoms against gravity. We simultaneously shift the bias field along $\ez$ to align the center of the quadrupole trap to the dipole trap. 
 
-{\bf Loading of dipole trap and evaporation}
+We evaporate the atoms in the dipole trap in two stages. First we exponentially ramp down the power to about $20\%$ of its initial power in $\unit[1.5]{s}$ (time constant $=\unit[0.5]{s}$). Before the final evaporation stage we completely turn off the quadrupole trap in $\unit[1]{s}$. Finally, we perform a second exponential ramp where the power is dropped to about $30\%$ of the intermediate power in $\unit[2]{s}$ (time constant $=\unit[1]{s}$. The slow ramps ensure that there is enough time for the atoms to thermalize as they evaporate.   During the second evaporation stage the atoms reach the critical temperature for Bose-Einstein condensation and we are able to produce BECs with about $4\times10^4$ atoms in the $\ket{F=1, m_f=-1}$ state. 
 
-{\bf Time of flight and imaging}
--Trigger to the 60Hz line is essential. 
-
+At this point we are ready to perform experiments using BECs. Typically we use an ARP sequence as described in Section~\ref{sec:arp} to set a bias magnetic field $B_0\ez$ so that the Zeeman splitting between the $m_f=-1$ and $m_f=0$ states is equal to a well calibrated frequency $\omega_0$ as well as to transfer atoms into different $m_f$ states. We start with atoms in $m_F=-1$ and at a bias field $B_i\approx B_0-\unit[380]{G}$. We ramp an $\Omega=\unit[20]{kHz}$ RF field and frequency $\sim B_0*0.7$ in $\unit[50]{ms}$ and then linearly ramp the bias field to its final value in $\unit[50]{ms}$. The bias fields that we work at are typically large enough that $m_f=+1$ does not appear during this ARP process unless we change the RF frequency to a smaller value or ramp the bias field to a larger value. In order to keep the bias fields as stable as possible we also synchronize the timing of our experiments to the $\unit[60]{Hz}$ line; this step is performed in different stages of the experiment but perhaps were we have noted it has the biggest impact is right before ARP. For additional magnetic field control and stabilization we use a technique using microwave assisted partial transfer absorption imaging described in the following section. 
 
 \subsection{Magnetic field stabilization with microwave assisted partial transfer absorption imaging}
 \label{sec:ptai}
@@ -97,6 +98,7 @@ which gives us a signal that is both insensitive to fluctuations in the number o
 In~\cite{seroka_repeated_2019} we studied partial transfer absorption imaging as minimally destructive technique for imaging ultracold atoms. See Chapter~\ref{ch:clock_states} for an alternative solution to deal with magnetic field noise. 
 
 \section{Upgrades to the RbLi Machine}
+\label{sec:RbLi_upgrades}
 
 \subsection{Master laser system}
 Previously we used a \noted{New Focus Vortex II TLB-6900} extended cavity diode laser as our master laser and a home made saturation spectroscopy setup using a Rb glass cell (see~\cite{CampbellThesis,PriceThesis}). The frequency of this laser was not very stable and the laser would constantly get out of lock. We replaced the old master laser with a \noted{Vescent photonics DBR Laser Module System} which uses a distributed Bragg reflector laser diode with no external cavity and is therefore very mechanically stable. The frequency of the laser is stabilized and controlled using the \noted{D2-210} spectroscopy module and \noted{D2-125} laser servo. The master laser system is considerably simplified as can be seen in Figure~\ref{fig:master_laser}.
@@ -125,7 +127,7 @@ The RbLi apparatus has a laser system with wavelength close to $\unit[790]{nm}$ 
 \end{center}
 \end{figure*}
 
-The output of the laser is split into 3 different Raman beams. The frequency and power of each beam is independently controlled using \noted{IntraAction ATM-801A2} AOMs centered at $\unit[80]{MHz}$. We drive the AOMs using homemade drivers made from the \noted{Minicircuits} components listed in Table~\ref{table:rf_driver} and \noted{Novatech Model 409B} direct digital synthesizer (DDS) to generate an RF signal at the desired frequency. The components are arranged as is shown in Figure~\ref{fig:RF_driver}: we control the amplitude of the RF signal using a mixer connected to a DC and the switch can turn off the signal in less than $\unit[1]{\mu s}$ using a TTL signal.
+The output of the laser is split into 3 different Raman beams. The frequency and power of each beam is independently controlled using \noted{IntraAction ATM-801A2} AOMs centered at $\unit[80]{MHz}$. We drive the AOMs using homemade drivers made from the \noted{Minicircuits} components listed in Table~\ref{table:rf_driver} and \noted{Novatech Model 409B} direct digital synthesizer (DDS) to generate an RF signal at the desired frequency. The components are arranged as is shown in Figure~\ref{fig:RF_driver}: we control the amplitude of the RF signal using a mixer connected to a DC and the switch can turn off the signal in less than $\unit[1]{\mu s}$ using a TTL signal. We fiber couple the light using single mode optical fibers (non-polarization maintaining) with FC/APC type connectors at the input  (laser side) and FC/PC at the output (experiment side). We made this choice so to implement a phase lock that would cancel phase noise added by the fibers. The idea behind this method is that a small fraction of the fiber coupled light is reflected at the flat cut edge of the optical fiber and coupled back where it can be heterodyne probed with the input light, our implementation described in Section 3.6.3 of~\cite{BeckerThesis}. We control the polarization of the light using polarization controlling paddles (\noted{Thorlabs FPC030} and \noted{Thorlabs FPC560}) which produce a controllable amount of stress in the fibers that changes their birefringence, a method that we have found to be much more stable than using polarization-maintaining fibers even when the polarization of the light is properly aligned to the fiber slow/fast axis. None of the experiments presented in this thesis used the phase lock but the experiments described in Chapter~\ref{ch:Rashba} were performed using the new Raman laser system. Figure \note{TODO: make diagram of Raman laser} shows a diagram of the Raman optics as well as the $\unit[532]{nm}$ optical lattice optics which are shared on the same breadboard. 
 
 \begin{table}[h]
 \caption[List of AOM driver components]{List of AOM driver components}
@@ -149,8 +151,6 @@ ZHL-1-2W & 2\,W amplifier \\
 \label{fig:RF_driver}
 \end{center}
 \end{figure*}
-
-\note{TODO: make diagram of Raman laser, talk about padles}
 
 \subsection{High power RF system}
 \label{sec:high_power_rf_antenna}
