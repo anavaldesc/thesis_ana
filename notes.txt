@@ -37,6 +37,10 @@ https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.95.010404
 -Why does hyperfine splitting enable state dependent `vector' light shift? 
 -Should read/talk about spin-relaxation collisions. Don't understand. 
 -If detuning is small the +-1 angular momentum transfer condition is relaxed but spontaneous emission increases. 
+-The unpaired Dirac cone is reminiscent of
+the chiral band structure of the Haldane model with broken
+parity and time-reversal symmetries[39], or surface states of
+three-dimensional topological insulators
 
 Atomic physics stuff:
 -Dan's chapter titled "Spin-orbit coupling ultracold atoms, the basics" has an explanation of selection rules and Raman
@@ -48,7 +52,6 @@ Atomic physics stuff:
 Mischellaneos data:
 - 03/15/18 seq 59: scan probe frequency for uwave lock
 - 03/15/18 seq 92 uwave lock for 200us pulses between 
-
 
 
 
