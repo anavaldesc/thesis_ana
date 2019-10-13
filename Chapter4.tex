@@ -19,8 +19,6 @@ This Chapter is divided into three sections. In Section~\ref{sec:RbLi_overview} 
 
 In this section I briefly describe the setup of and basic capabilities of the RbLi apparatus. Figure~\ref{fig:RbLi} shows the main optical table where atoms are cooled to degeneracy. The vacuum system can be divided into three regions: an oven Region where Rb and Li atoms are heated up, a Zeeman slower that acts as a differential pumping stage and an ultra-high vacuum region with a glass cell where all the experiments are performed.
 
- We can detect atoms using two different imaging systems. The first one is used primarily for diagnostics and it images the $yz$ plane of the atoms from the $+\ex$ side of the glass cell. The second system looks at the $xy$ plane from bellow the glass cell and is the main system used for data acquisition (see Figure~\ref{fig:RbLi_diagram}). 
-
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter4/RbLi_basic.pdf}
@@ -29,19 +27,21 @@ In this section I briefly describe the setup of and basic capabilities of the Rb
 \end{center}
 \end{figure*}
 
+ We can detect atoms using two different imaging systems. The first one is used primarily for diagnostics and it images the $yz$ plane of the atoms from the $+\ex$ side of the glass cell. The second system looks at the $xy$ plane from bellow the glass cell and is the main system used for data acquisition (see Figure~\ref{fig:RbLi_diagram}). 
+
 \subsection{Laser systems}
 
-\begin{figure*}[!h]
+We use a total of three lasers to perform laser cooling and imaging of atoms: a cooling laser that addresses the $F=2\rightarrow F'=3$ transition, a repump laser that takes atoms that have decayed into the $F=1$ state back to $F=2$ and a master laser that provides a frequency reference for both lasers. The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb. 
+
+We have two additional lasers that are used to generate potentials for the atoms. The first one is a $\unit[30]{W}$ $\unit[1064]{nm}$ \noted{IPG Photonics} laser that we use to make a cross dipole trap for the atoms. The two dipole beams come from the zeroth and first order of an acusto optic modulator (AOM) and the beams propagate along the $\ex+\ey$ and $\ex-\ey$ direction. The other laser system is a Ti:Saphire laser used to generate Raman transitions and will be described in more detail in Section~\ref{sec:Raman_laser}. Figure~\ref{fig:RbLi_diagram} shows a simplified diagram with a bird's-eye view and a side view of the apparatus that show all the lasers that are used for cooling, trapping, Raman coupling and imaging.
+
+\begin{figure*}[!t]
 \begin{center}
 \includegraphics[]{Figures/Chapter4/laser_frequencies.pdf}
 \caption[Laser cooling frequencies]{{\bf a.}Cooling and repump frequencies relative to the master laser lock. {\bf b.} Cooling and repump frequencies relative to the $\Rb87$ D2 line transitions. \note{TODO:check AOM frequencies for repumper}}
 \label{fig:laser_frequencies}
 \end{center}
 \end{figure*}
-We use a total of three lasers to perform laser cooling and imaging of atoms: a cooling laser that addresses the $F=2\rightarrow F'=3$ transition, a repump laser that takes atoms that have decayed into the $F=1$ state back to $F=2$ and a master laser that provides a frequency reference for both lasers. The frequency of master laser is locked using saturation absorption spectroscopy to the $F=3\rightarrow F'=3$ and $F=3\rightarrow F'=4$ crossover of the D2 line of $^{85}$Rb. 
-
-We have two additional lasers that are used to generate potentials for the atoms. The first one is a $\unit[30]{W}$ $\unit[1064]{nm}$ \noted{IPG Photonics} laser that we use to make a cross dipole trap for the atoms. The two dipole beams come from the zeroth and first order of an acusto optic modulator (AOM) and the beams propagate along the $\ex+\ey$ and $\ex-\ey$ direction. The other laser system is a Ti:Saphire laser used to generate Raman transitions and will be described in more detail in Section~\ref{sec:Raman_laser}. Figure~\ref{fig:RbLi_diagram} shows a simplified diagram with a bird's-eye view and a side view of the apparatus that show all the lasers that are used for cooling, trapping, Raman coupling and imaging.
-
 
 \begin{figure*}[!h]
 \begin{center}
