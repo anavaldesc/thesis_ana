@@ -82,11 +82,12 @@ The sign of the Zeeman energy for different $m_F$ state can be used to create st
 where $\mathbf{B}_0$ is a constant magnetic field, for simplicity I will assume that $\mathbf{B}_0=B_0\ez$. The Zeeman Hamiltonian gives a trapping potential
 %
 \begin{align}
-	U(\mathbf{r})&=g_F\mu_B m_F B'\sqrt{x^2+y^2-4\left(z+\frac{B_0}{B'}\right)^2} \nonumber \\
-	& \approx g_F\mu_B m_F B'\left(r-2\left\vert z-\frac{B_0}{B}\right\vert\right)
+	U(\mathbf{r})&=g_F\mu_B m_F B'\sqrt{x^2+y^2+4\left(z-\frac{B_0}{2B'}\right)^2} \nonumber \\
+	& \approx g_F\mu_B m_F B'\left(\rho+2\left\vert z-\frac{B_0}{2B'}\right\vert\right)
+	\label{eq:quadrupole_trap}
 \end{align}
 %
-where the approximation on the second line is valid for small displacements from the trap center. 
+where $\rho^2=x^2+y^2$ and the approximation on the second line is valid for small displacements from the trap center. 
 
 The sign of the magnetic moment determines which states can be trapped. For $\Rb87$ the $\ket{F=1, m_F=-1}$, $\ket{F=2, m_F=2,1}$ are magnetically trappable. 
 
@@ -162,7 +163,7 @@ where only the the most significant contribution from the closest transitions  (
 The energy shift $U(\omega,\r)$ is a conservative term and is related to dipole trapping while the scattering term $\Gamma(\omega,\r)$ is dissipative and is important for laser cooling. In the context of engineering potentials for ultracold atoms with off-resonant light, the scattering is translated into heating because every time an atom emits a photon with angular frequency $\omega_L$ it gets a recoil momentum $\hbar\k_L$. If the frequency $\omega$ satisfies the relation $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$, as is often the case, we can neglect the terms proportional to $1/(\omega+\omega_{\rm D})$, an approximation typically known as the rotating wave approximation (RWA). If the RWA is valid then the frequency dependence of both the energy shifts and the scattering rates will be given by the detuning from the D1 and D2 transitions. 
 
 \subsubsection{Optical trapping}
-One important application of the scalar light-shift is to create optical traps for clouds of ultracold atoms. An optical field with non-uniform spatial intensity generates traps (and anti-traps) for the atoms which experience a force proportional to the intensity gradient $F_{\rm{dip}}=-\nabla U(\r)$. The attractive or repulsive nature of the trap depends on the sign of $U(\r)$ which is determined by the sign of the detuning (blue-detuned traps are repulsive and red-detuned traps are attractive)\note{TODO: make nice figure of dipole trap?}. The production of BECs in our lab relies on the use of focused Gaussian laser beams with $\lambda=\unit[1064]{nm}$.  The intensity profile of a focused Gaussian beam propagating along $\ez$ is given by 
+One important application of the scalar light-shift is to create optical traps for clouds of ultracold atoms. An optical field with non-uniform spatial intensity generates traps (and anti-traps) for the atoms which experience a force proportional to the intensity gradient $F_{\rm{dip}}=-\nabla U(\r)$. The attractive or repulsive nature of the trap depends on the sign of $U(\r)$ which is determined by the sign of the detuning (blue-detuned traps are repulsive and red-detuned traps are attractive)\note{TODO: make nice figure of dipole trap if I have time}. The production of BECs in our lab relies on the use of focused Gaussian laser beams with $\lambda=\unit[1064]{nm}$.  The intensity profile of a focused Gaussian beam propagating along $\ez$ is given by 
 %
 \begin{equation}
  	I(x,y,z) = \frac{2P}{\pi\omega^2(z)}e^{-\frac{x^2+y^2}{\omega^2(z)}}
@@ -231,7 +232,7 @@ where $\Omega=\alpha^{(1)}g_F E_a E_b/g_J\propto \sqrt{I_a I_b}$ is the Raman co
 
 \begin{figure*}[htb]
 \begin{center}
-\includegraphics[]{Figures/Chapter3/Raman_vs_lambda.pdf}
+\includegraphics[]{Figures/Chapter3/electric_polarizability.pdf}
 \caption[Raman coupling strength and scattering rate as a function of wavelength]{Raman coupling strength and $1/e$ lifetime as a function of wavelength for a pair of Raman beams with waist $w_0\sim \unit[150]{\mu m}$ and powers of $~\unit[50, 10]{\mu W}$.}
 \label{fig:Raman_vs_lambda}
 \end{center}
@@ -271,7 +272,7 @@ Ultracold atom experiments rely on optical imaging as the main method to probe a
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/abs_imaging_1.pdf}
-\caption[Resonant absorption imaging and the Beer-Lambert law]{{\bf a.} A laser beam traveling along $\ez$ through a medium with density $n(x,y,z$. The intensity decays exponentially with the integrated column density and the scattering cross section $\sigma{\omega}$. {\bf b.} The scattering cross section has a Lorentzian line shape with a full width half maximum equal to $\Gamma$. \note{TODO: add real data if I have time.}}
+\caption[The Beer-Lambert law]{{\bf a.} A laser beam traveling along $\ez$ through a medium with density $n(x,y,z$. The intensity decays exponentially with the integrated column density and the scattering cross section $\sigma{\omega}$. {\bf b.} The scattering cross section has a Lorentzian line shape with a full width half maximum equal to $\Gamma$. \note{TODO: add real data if I have time.}}
 \label{fig:abs_imaging_1}
 \end{center}
 \end{figure*}
@@ -310,7 +311,7 @@ Figure~\ref{fig:abs_imaging_2} show the different images used to compute the OD.
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/abs_imaging_2.pdf}
-\caption[Resonant absorption imaging and the Beer-Lambert law]{Something}
+\caption[Resonant absorption imaging]{Resonant absorption imaging. An atomic sample is illuminated with a resonant probe whose intensity is later recorded on a CCD camera. Two additional images of the unabsorbed probe intensity and the background intensity are captured in order to reconstruct the optical density of the atoms.}
 \label{fig:abs_imaging_2}
 \end{center}
 \end{figure*}
@@ -415,25 +416,17 @@ and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. Notice that
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/Ramsey.pdf}
-\caption[A Ramsey interferometer]{A Ramsey interferometer: Two $\pi/2$ pulses are separated by a time $t_{\rm{dark}}$. The phase accumulated in the interferometer is equal to the detuning multiplied by the dark time.}
+\caption[A Ramsey interferometer]{{\bf a.} A Ramsey interferometer: Two $\pi/2$ pulses are separated by a time $t_{\rm{dark}}$. The phase accumulated in the interferometer is equal to the detuning multiplied by the dark time. {\bf b.} A Ramsey interference fringe obtained from coupling two levels using an RF field with $\Omega=\unit[1]{kHz}$. We applied a pair of $\tau=\unit[25]{\mu s}$ pulses separated by a $\unit[50]{\mu s}$ wait and varied the detuning by changing the bias magnetic field.}
 \label{fig:simple_Ramsey}
 \end{center}
 \end{figure*}
 
-Now I consider a Ramsey interferometer~\cite{ramsey_molecular_1950},  a setup that is relevant to Chapters~\ref{ch:clock_states} and~\ref{ch:clock_states}. The interaction Hamiltonian is the same as in the previous section but rather than being on continuously it is pulsed on for a time $\tau=\pi/2\Omega$ (a $\pi/2$ pulse), then the system is let to evolve only under $\hat{H}_0$ for a variable time $t_{\rm{dark}}$ and finally a second $\pi/2$ pulse is applied. Figure~\ref{fig:simple_Ramsey} illustrates this protocol: the $\pi/2$ pulses can be thought of as $\pi/2$ rotations along $\ex$ the first pulse transfers $\ket{g}\rightarrow(\ket{g}+\ket{e})/\sqrt{2}$ then the system precesses on the equator of the Bloch sphere by an angle $\delta t_{\rm{dark}}$ and finally the second pulse rotates the state again. The probability of measuring the excited state is related to the phase accumulated during the dark time is given by
+Now I consider a Ramsey interferometer~\cite{ramsey_molecular_1950},  a setup that is relevant to Chapters~\ref{ch:clock_states} and~\ref{ch:clock_states}. The interaction Hamiltonian is the same as in the previous section but rather than being on continuously it is pulsed on for a time $\tau=\pi/2\Omega$ (a $\pi/2$ pulse), then the system is let to evolve only under $\hat{H}_0$ for a variable time $t_{\rm{dark}}$ and finally a second $\pi/2$ pulse is applied. Figure~\ref{fig:simple_Ramsey}a illustrates this protocol: the $\pi/2$ pulses can be thought of as $\pi/2$ rotations along $\ex$ the first pulse transfers $\ket{g}\rightarrow(\ket{g}+\ket{e})/\sqrt{2}$ then the system precesses on the equator of the Bloch sphere by an angle $\delta t_{\rm{dark}}$ and finally the second pulse rotates the state again. The probability of measuring the excited state is related to the phase accumulated during the dark time is given by
 \begin{equation}
 	\vert c_{e}(2\tau + t_{\rm{dark}})\vert^2=\left\vert \frac{\Omega \tau}{2}\right\vert\left[ \frac{\sin(\delta\tau/2)}{\delta\tau/2} \right]^2 \cos^2\left(\frac{\delta t_{\rm{dark}}}{2}\right). 
 \end{equation}
 %   
-For the case of Rabi oscillations, the detuning adds in quadrature with $\Omega$ and when it is large the contributions of $\delta$ to the generalized Rabi frequency can be small. In contrast for Ramsey fringes, regardless of the magnitude of $\Omega$ the oscillation frequency is always proportional to $\delta$. This will be important in Chapter~\ref{ch:clock_states} and additionally in Chapter~\ref{ch:Rashba} I rely on a variation of the Ramsey interferometer to perform quantum state tomography. Figure~\ref{fig:Ramsey_fringe} shows an example of a Ramsey fringe as a function of detuning $\delta$ that we measured using two states coupled with $\Omega=\unit[1]{kHz}$. 
-
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter3/Ramsey_fringe.pdf}
-\caption[A Ramsey interference fringe]{A Ramsey interference fringe. We coupled two levels using an RF field with $\Omega=\unit[1]{kHz}$. We applied two $\tau=\unit[25]{\mu s}$ pulses separated by a $\unit[50]{\mu s}$ wait and varied the detuning by changing the bias magnetic field.}
-\label{fig:Ramsey_fringe}
-\end{center}
-\end{figure*}
+For the case of Rabi oscillations, the detuning adds in quadrature with $\Omega$ and when it is large the contributions of $\delta$ to the generalized Rabi frequency can be small. In contrast for Ramsey fringes, regardless of the magnitude of $\Omega$ the oscillation frequency is always proportional to $\delta$. This will be important in Chapter~\ref{ch:clock_states} and additionally in Chapter~\ref{ch:Rashba} I rely on a variation of the Ramsey interferometer to perform quantum state tomography. Figure~\ref{fig:simple_Ramsey}b shows an example of a Ramsey fringe as a function of detuning $\delta$ that we measured using two states coupled with $\Omega=\unit[1]{kHz}$. 
 
 \subsection{Adiabatic rapid passage}
 \label{sec:arp}

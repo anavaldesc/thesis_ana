@@ -22,11 +22,12 @@ from matplotlib.gridspec import GridSpec
 import lmfit
 import scipy
 from matplotlib import rcParams
+from scipy.constants import hbar
 
 #%%
 #from scipy.optimize import least_squares
 
-fontsize = 8
+fontsize = 9
 rcParams['axes.labelsize'] = fontsize
 rcParams['xtick.labelsize'] = fontsize
 rcParams['ytick.labelsize'] = fontsize
@@ -67,23 +68,23 @@ Gamma_D1 = 36.10e6  # 1/s
 def alpha(wavelength):
     c = 2.99792458 * 1e8
     epsilon_0 = 8.854187817e-12
-    omega = 2 * np.pi * c / wavelength * 1e-9
-    omega_2  = 2 * np.pi * c / 780.24*1e-9
-    omega_1 = 2 * np.pi * c / 794.98*1e-9
-    alpha = 1 * 2 / omega_2**3 * (1 / (omega - omega_2) + 0. / (omega + omega_2))
-    alpha +=  1 /omega_1**3 * (1/(omega - omega_1)+0./(omega + omega_1))
-    alpha *= np.pi * c**2/2 * (Gamma_D1 + Gamma_D2)/2
+    omega = 2 * np.pi * c / (wavelength * 1e-9)
+    omega_2  = 2 * np.pi * c / (780.24*1e-9)
+    omega_1 = 2 * np.pi * c / (794.98*1e-9)
+    alpha = Gamma_D2 * 2 / omega_2**3 * (1 / (omega - omega_2) + 0. / (omega + omega_2))
+    alpha +=  Gamma_D1 /omega_1**3 * (1/(omega - omega_1)+ 0./(omega + omega_1))
+    alpha *= np.pi * c**2/2 
     
     return alpha
 
 def alpha_v(wavelength):
     
     c = 2.99792458 * 1e8
-    omega_2  = 2 * np.pi * c / 780.24*1e-9
-    omega_1 = 2 * np.pi * c / 794.98*1e-9
+    omega_2  = 2 * np.pi * c / (780.24*1e-9)
+    omega_1 = 2 * np.pi * c / (794.98*1e-9)
     omega_0 = (2 * omega_1 + omega_2) / 3
-    omega = 2 * np.pi * c / wavelength * 1e-9
-    alpha_v = alpha(wavelength) / (omega - omega_0)
+    omega = 2 * np.pi * c / (wavelength * 1e-9)
+    alpha_v = alpha(wavelength) / (omega_0 - omega)
     
     return alpha_v
 
@@ -91,23 +92,50 @@ def alpha_v(wavelength):
 def scattering(wavelength):
     
     c = 2.99792458 * 1e8
-    omega = 2 * np.pi * c / wavelength * 1e-9
-    omega_2  = 2 * np.pi * c / 780.24*1e-9
-    omega_1 = 2 * np.pi * c / 794.98*1e-9
-    scattering = 2 / (omega - omega_2)**2 * omega **3 / omega_2**6 
-    scattering +=  1 / (omega - omega_1)**2 * omega **3 / omega_2**6 
-    scattering *= np.pi * c**2 / 2
+    omega = 2 * np.pi * c / (wavelength * 1e-9)
+    omega_2  = 2 * np.pi * c / (780.24*1e-9)
+    omega_1 = 2 * np.pi * c / (794.98*1e-9)
+    scattering = 2 * Gamma_D2**2 / (omega - omega_2)**2 * omega **3 / omega_2**6 
+    scattering +=  Gamma_D1**2 / (omega - omega_1)**2 * omega **3 / omega_2**6 
+    scattering *= np.pi * c**2 / (2 * hbar)
     
-    return scattering
+    return scattering 
 
+def u_s(wavelength):
+    c = 2.99792458 * 1e8
+    omega_2  = 2 * np.pi * c / (780.24*1e-9)
+    omega_1 = 2 * np.pi * c / (794.76569*1e-9)
+    omega = 2 * np.pi * c / (wavelength * 1e-9)
+    d = 3.584e-29 # C/m
+    
+    u_s = -d ** 2 / 36 * (2/ (omega_2-omega)+1/(omega_1-omega))/hbar
+    
+    return u_s
+
+def u_v(wavelength):
+    c = 2.99792458 * 1e8
+    omega_2  = 2 * np.pi * c / (780.24*1e-9)
+    omega_1 = 2 * np.pi * c / (794.76569*1e-9)
+    omega = 2 * np.pi * c / (wavelength * 1e-9)
+    omega_mean = (omega_2 + 2*omega_1)/3
+    A_fs = np.abs(omega_2-omega_1)
+    Delta_fs = 3 * A_fs / 2
+    u_v = 2 * u_s(wavelength) * Delta_fs / (omega_mean - omega)/hbar
+    
+    return u_v
+    
 #%%
 
 
+I = 2*0.6e-3/(np.pi * (150e-6)**2)
+c = 2.99792458 * 1e8
+epsilon_0 = 8.854187817e-12
+E_squared = I / (2 * epsilon_0 * c)
 
-wavelengths = np.linspace(778, 797, 1e3)
+wavelengths = np.linspace(778, 796, int(1e3))
 alphas = alpha(wavelengths)
-alphas_v = alpha_v(wavelengths)
-scatter_rates = scattering(wavelengths)
+alphas_v = alpha_v(wavelengths) /hbar
+alphas_v = u_v(wavelengths) * E_squared
 
 
 lambdas = np.array([791.09, 792.04, 789, 786, 782, 781 ]) 
@@ -117,85 +145,58 @@ Omegas_raw =[6.28, 9.2, 4.4, 5.19, 17.3, 36.25]
 tau = np.array([8.99e5, 7.45e5, 1.67e6, 1.63e6, 5498, 808])*1e-6
 
 
-fig = plt.figure(figsize=(5.5,2.25))
+fig = plt.figure(figsize=(5.9,4.))
 #    
-gs = GridSpec(1, 2)   
-ax = plt.subplot(gs[0])
+gs = GridSpec(2, 2)   
+ax = plt.subplot(gs[0,0])
 
-plt.semilogy(wavelengths, np.abs(alphas_v)*1e-41*1.45/3.678)
-plt.semilogy(lambdas, Omegas_norm/3.278, 'o', mec='k', ms=7, mfc='lightgray')
+plt.semilogy(wavelengths, np.abs(alphas_v)/3.678e3)
+plt.semilogy(lambdas, Omegas_norm/3.278, 'o', mec='k', mfc='lightgray')
 plt.xlabel('Wavelength [nm]')
 plt.ylabel('Raman coupling strength $[E_{\mathrm{L}}]$')
-#plt.ylim([1, 10**2])
-#ax2 = ax.twinx()
-#ax2.semilogy(wavelengths, np.abs(alphas)*1e-4*1.45/3.678, 'k')
 
 
 alpha_min = np.abs(alphas_v[np.argmin(np.abs(alphas))])
 
 plt.xlim([wavelengths.min(), wavelengths.max()])
 
-ax = plt.subplot(gs[1])
+wavelengths = np.linspace(784, 792, int(1e3))
+scatter_rates = scattering(wavelengths) * I
+ax = plt.subplot(gs[1,1])
 
-plt.semilogy(wavelengths, 1/(scatter_rates*1e-35*0.75))
-plt.semilogy(lambdas, tau, 'o', mec='k', ms=7, mfc='lightgray')
+plt.plot(wavelengths, (scatter_rates))
+min_idx = np.argmin(scatter_rates)
+plt.plot(wavelengths[min_idx], scatter_rates[min_idx], 'o',
+         mec='k', mfc='lightgray')
+plt.hlines(scatter_rates[min_idx], wavelengths.min(), wavelengths.max(), 
+           linestyle='--')
+#plt.semilogy(lambdas, 1/tau, 'o', mec='k', ms=7, mfc='lightgray')
 
 plt.xlabel('Wavelength [nm]')
-plt.ylabel('$1/e$ lifetime [s]')
+plt.ylabel('Scattering rate [1/s]')
 plt.xlim([wavelengths.min(), wavelengths.max()])
 #plt.ylim([-100, 10**4])
-plt.tight_layout()
 #plt.savefig('Raman_vs_lambda.pdf')
 
-#%%
-
-from scipy.constants import hbar
-fig = plt.figure(figsize=(5.5,2.25))
-#    
-gs = GridSpec(1, 1)   
-ax = plt.subplot(gs[0])
-
-wavelengths = np.linspace(775, 800, int(1e3))
-alphas = alpha(wavelengths)
-plt.plot(wavelengths, (alphas)*1e-40)
-y_lim = 0.1
+#     
+ax = plt.subplot(gs[1,0])
+alphas = alpha(wavelengths)/hbar 
+alphas = u_s(wavelengths)/hbar * E_squared 
+plt.plot(wavelengths, (alphas))
+#y_lim = 0.1
 plt.hlines(0,wavelengths.min(), wavelengths.max(), linestyle='--' )
-plt.ylim([-y_lim, y_lim])
+#plt.ylim([-y_lim, y_lim])
+min_idx = np.argmin(np.abs(alphas))
+plt.plot(wavelengths[min_idx], alphas[min_idx], 'o', mec='k', mfc='lightgray')
 
-#plt.ylim([-10, 10**5])
-#plt.hlines(alpha_min, wavelengths.min(), wavelengths.max(),
-#           linestyle='--')
-#plt.hlines(5 * alpha_min, wavelengths.min(), wavelengths.max(),
-#           linestyle='-.')
-#plt.axis('Tight')
 
-#min_idx = np.argmin(np.abs(alphas))
-
-#plt.vlines(532, 0, 10**11,
-#           linestyle='--')
-#plt.vlines(1064, 0, 10**11,
-#           linestyle='--')
 plt.xlim([wavelengths.min(), wavelengths.max()])
 plt.xlabel('Wavelength [nm]')
+plt.ylabel('$\Delta E/\hbar$ [Hz]')
 
-#ax = plt.subplot(gs[1])
-#wavelengths = np.linspace(775, 800, int(1e6))
-#alphas = alpha(wavelengths)
-#plt.semilogy(wavelengths, np.abs(alphas))
-#
-##plt.ylim([-10, 10**5])
-##plt.hlines(alpha_min, wavelengths.min(), wavelengths.max(),
-##           linestyle='--')
-##plt.hlines(5 * alpha_min, wavelengths.min(), wavelengths.max(),
-##           linestyle='-.')
-##plt.axis('Tight')
-#
-#min_idx = np.argmin(np.abs(alphas))
-#
-#plt.vlines(wavelengths[min_idx], 0, 10**11,
-#           linestyle='--')
-#plt.xlim([wavelengths.min(), wavelengths.max()])
-#plt.xlabel('Wavelength [nm]')
-##plt.hlines(5 * alpha_min, wavelengths.min(), wavelengths.max(),
-##           linestyle='-.')
-##plt.axis('Tight')
+ax = plt.subplot(gs[0,1])
+#plt.plot(wavelengths, (alphas))
+plt.text(0.2,0.5,'exponential decay data')
+
+plt.tight_layout()
+plt.savefig('electric_polarizability.pdf')

@@ -52,6 +52,6 @@ Atomic physics stuff:
 Mischellaneos data:
 - 03/15/18 seq 59: scan probe frequency for uwave lock
 - 03/15/18 seq 92 uwave lock for 200us pulses between 
-
+-05/25/2017 seq 45: nice Rabi spectroscopy of zx resonance
 
 
