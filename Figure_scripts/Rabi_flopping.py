@@ -143,7 +143,7 @@ def rabi_flop(pars, t,data=None):
 
 #%%
 
-fig = plt.figure(figsize=(5.9,2.))
+fig = plt.figure(figsize=(5.9,2.2))
 #    
 gs = GridSpec(1, 2)   
 ax = plt.subplot(gs[0,0])
@@ -176,7 +176,7 @@ plt.ylabel(r'$\vert c_e\vert ^2$')
 plt.xlim([-30, 30])
 plt.ylim([0,1])
 ax.set_yticks([0, 0.5, 1])
-
+plt.text(-30, 1.05, '$\mathbf{a.}$')
 #%%
 ax = plt.subplot(gs[0,1])
 # rabi flop
@@ -201,5 +201,8 @@ plt.plot(t_resampled, rabi_osc, 'k')
 plt.plot(df[scanned_parameter], p1, 'o', mec='k', ms=6, mfc='#ff7f0e')
 ax.set_yticks([0, 0.5, 1])
 ax.set_yticklabels([])
+plt.ylim([0,1])
 plt.xlabel('Pulse time [$\mu$s]')
+plt.text(0, 1.05, '$\mathbf{b.}$')
+plt.tight_layout()
 plt.savefig('rabi_cycle.pdf')
