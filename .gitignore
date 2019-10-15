@@ -244,3 +244,4 @@ TSWLatexianTemp*
 # other stuff
 # /Figures/*
 *.ai
+*.h5

@@ -10,19 +10,16 @@ import sys
 sys.path.append(u'/Users/banano/Documents/UMD/Research/chern/Analysis2018')
 import numpy as np
 import matplotlib.pyplot as plt
-import numpy as np
-#from importlib import reload
-import matplotlib.pyplot as plt
 import tqdm
-#import utils
-#reload(utils)
-#from utils import data_processing, make_rois_array, image_filtering, puck, reconstruct_probes
 from matplotlib.gridspec import GridSpec
-#import Ramsey_analysis_functions as raf
 import lmfit
 import scipy
 from matplotlib import rcParams
 from scipy.constants import hbar
+import pandas as pd
+import os
+import h5py
+from fnmatch import fnmatch
 
 #%%
 #from scipy.optimize import least_squares
@@ -59,6 +56,108 @@ rcParams['ytick.major.size'] = 3      # major tick size in points
 rcParams['ytick.minor.size'] = 2      # minor tick size in points
 rcParams['ytick.major.width'] = 0.75       # major tick width in points
 rcParams['ytick.minor.width'] = 0.75      # minor tick width in points
+
+
+def matchfiles(dir):
+    for root, dirs, files in os.walk(dir):
+        for file in files:
+            if fnmatch(file, '*.h5'):
+                yield root, file
+        break  # break after listing top level dir
+
+
+def getfolder(date, sequence):
+    date = pd.to_datetime(str(date))
+    folder = 'data/' + date.strftime('%Y/%m/%d') + '/{:04d}'.format(sequence)
+    return folder
+
+def simple_data_processing(date, sequence, 
+                           scanned_parameter='Raman_pulse_time'):
+    
+
+    """
+    Takes a camera, data and sequence number and returns a dataframe with 
+    information such as run number, integrated od, scanned variable, microwave
+    lock paremeters and an array with 
+    """
+
+    folder = getfolder(date, sequence)
+    print('Your current working directory is %s' %os.getcwd())
+    
+        
+    print('Looking for files in %s' %folder)
+    scanned_parameters = []
+    run_number = []
+    n_runs = []
+    sequence_id = []
+    sequence_index = []
+    int_od = []
+    roi_0 = []
+    roi_1 = []
+    roi_2 = []
+     
+    i = 0
+    j=0
+    for r, file in matchfiles(folder):
+        i += 1;
+    print('Found %s files in folder'%i)
+      
+    if i> 0:
+        
+        print('Preparing data...') 
+        for r, file in tqdm.tqdm(matchfiles(folder)):
+            j+=1
+            with h5py.File(os.path.join(r, file), 'r') as h5_file:
+                                    
+                try:
+#                        print(j)
+
+                    rois_od_attrs = h5_file['results/rois_od'].attrs
+                    roi_0.append(rois_od_attrs['roi_0'])
+                    roi_1.append(rois_od_attrs['roi_1'])
+                    roi_2.append(rois_od_attrs['roi_2'])
+                    int_od.append(rois_od_attrs['opt_depth'])
+#                        print(len(roi_1))
+#                        print(len(scanned_parameters))
+                    attrs = h5_file['globals'].attrs
+                    scanned_parameters.append(attrs[scanned_parameter])  
+                    attrs = h5_file.attrs
+  
+                
+                except:
+#                        print('Something went wrong...')
+#                        print(j)
+                    scanned_parameters.append(np.nan)  
+                    roi_0.append(np.nan)
+                    roi_1.append(np.nan)
+                    roi_2.append(np.nan)
+                    print(scanned_parameters)
+                    int_od.append(np.nan)
+                
+    df = pd.DataFrame()
+    df[scanned_parameter] = scanned_parameters
+#        print(df)
+    df['roi_0'] = roi_0
+#        print(df)
+    df['roi_1'] = roi_1
+    df['roi_2'] = roi_2
+    df['int_od'] = int_od
+    df = df.sort_values(by=scanned_parameter)
+    
+           
+    return df
+
+def exp_decay(pars,t,data=None):
+    
+    params = pars.valuesdict()
+    y = params['off'] + params['amp']*np.exp(-t/params['tau'])
+    
+    
+    if data is None:
+        return y
+    
+    else:
+        return y - data
 
 #%%
 Gamma_D2 = 38.11e6 # 1/s
@@ -134,7 +233,7 @@ E_squared = I / (2 * epsilon_0 * c)
 
 wavelengths = np.linspace(778, 796, int(1e3))
 alphas = alpha(wavelengths)
-alphas_v = alpha_v(wavelengths) /hbar
+alphas_v = alpha_v(wavelengths)
 alphas_v = u_v(wavelengths) * E_squared
 
 
@@ -160,7 +259,7 @@ alpha_min = np.abs(alphas_v[np.argmin(np.abs(alphas))])
 
 plt.xlim([wavelengths.min(), wavelengths.max()])
 
-wavelengths = np.linspace(784, 792, int(1e3))
+wavelengths = np.linspace(783, 793, int(1e3))
 scatter_rates = scattering(wavelengths) * I
 ax = plt.subplot(gs[1,1])
 
@@ -181,7 +280,7 @@ plt.xlim([wavelengths.min(), wavelengths.max()])
 #     
 ax = plt.subplot(gs[1,0])
 alphas = alpha(wavelengths)/hbar 
-alphas = u_s(wavelengths)/hbar * E_squared 
+alphas = u_s(wavelengths)/hbar * E_squared /(2*np.pi)
 plt.plot(wavelengths, (alphas))
 #y_lim = 0.1
 plt.hlines(0,wavelengths.min(), wavelengths.max(), linestyle='--' )
@@ -192,11 +291,61 @@ plt.plot(wavelengths[min_idx], alphas[min_idx], 'o', mec='k', mfc='lightgray')
 
 plt.xlim([wavelengths.min(), wavelengths.max()])
 plt.xlabel('Wavelength [nm]')
-plt.ylabel('$\Delta E/\hbar$ [Hz]')
+plt.ylabel('$\Delta E/h$ [Hz]')
+plt.text(-0.7,8e3, '$\mathbf{a.}$')
 
 ax = plt.subplot(gs[0,1])
-#plt.plot(wavelengths, (alphas))
-plt.text(0.2,0.5,'exponential decay data')
 
+# 786 nm
+date = 20171010
+sequence = 88
+df = simple_data_processing(date, sequence)
+
+t = df['Raman_pulse_time'].values
+int_od = df['roi_0'].values
+params = lmfit.Parameters()
+params.add('off', value=100, min=0)
+params.add('amp', value=6e3)
+params.add('tau', value=1e6, min=0)
+t_max = t.max()
+minner = lmfit.Minimizer(exp_decay, params, 
+                         fcn_args=(t, int_od), nan_policy='omit')
+                    
+result = minner.minimize('leastsq')
+t_resampled = np.linspace(t.min(), t.max(), 200)
+exp = exp_decay(result.params,t_resampled)
+plt.plot(t_resampled*1e-6,exp)
+
+plt.plot(df['Raman_pulse_time']*1e-6, df['roi_0'], 'v', mec='k', mfc='lightgray',
+         label='$\lambda=786$ nm')
+
+#%%
+#792 nm
+date = 20171010
+sequence = 81
+df = simple_data_processing(date, sequence)
+
+t = df['Raman_pulse_time'].values
+int_od = df['roi_0'].values
+params = lmfit.Parameters()
+params.add('off', value=100, min=0)
+params.add('amp', value=6e3)
+params.add('tau', value=1e6, min=0)
+#    
+minner = lmfit.Minimizer(exp_decay, params, 
+                         fcn_args=(t, int_od), nan_policy='omit')
+                    
+result = minner.minimize('leastsq')
+t_resampled = np.linspace(t.min(), t_max, 200)
+exp = exp_decay(result.params,t_resampled)
+plt.plot(t_resampled*1e-6,exp, color='#1f77b4')
+
+
+plt.plot(df['Raman_pulse_time']*1e-6, df['roi_0'], 'o', mec='k', mfc='lightgray',
+         label='$\lambda=792$ nm')
+plt.legend()
+plt.text(-0.7,8e3, '$\mathbf{b.}$')
+plt.xlabel('Raman pulse time [s]')
+plt.ylabel('number of atoms [arb. u.]')
 plt.tight_layout()
 plt.savefig('electric_polarizability.pdf')
