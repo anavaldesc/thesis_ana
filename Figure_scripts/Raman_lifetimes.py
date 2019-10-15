@@ -324,7 +324,7 @@ date = 20171010
 sequence = 81
 df = simple_data_processing(date, sequence)
 
-delta = df['Raman_pulse_time'].values
+t = df['Raman_pulse_time'].values
 int_od = df['roi_0'].values
 params = lmfit.Parameters()
 params.add('off', value=100, min=0)
@@ -344,6 +344,7 @@ plt.plot(df['Raman_pulse_time']*1e-6, df['roi_0'], 'o', mec='k', mfc='lightgray'
          label='$\lambda=792$ nm')
 plt.legend()
 plt.xlabel('Raman pulse time [s]')
+plt.xlim([0, t_max*1e-6])
 plt.ylabel('number of atoms [arb. u.]')
 plt.tight_layout()
 plt.savefig('electric_polarizability.pdf')

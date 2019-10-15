@@ -270,7 +270,7 @@ Ultracold atom experiments rely on optical imaging as the main method to probe a
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/abs_imaging_1.pdf}
-\caption[The Beer-Lambert law]{{\bf a.} A laser beam traveling along $\ez$ through a medium with density $n(x,y,z$. The intensity decays exponentially with the integrated column density and the scattering cross section $\sigma{\omega}$. {\bf b.} The scattering cross section has a Lorentzian line shape with a full width half maximum equal to $\Gamma$. \note{TODO: add real data if I have time.}}
+\caption[The Beer-Lambert law]{{\bf a.} A laser beam traveling along $\ez$ through a medium with density $n(x,y,z$. The intensity decays exponentially with the integrated column density and the scattering cross section $\sigma{\omega}$. {\bf b.} The scattering cross section has a Lorentzian line shape with a full width half maximum equal to $\Gamma$. \note{TODO: add real data on panel b if I have time.}}
 \label{fig:abs_imaging_1}
 \end{center}
 \end{figure*}
@@ -395,8 +395,8 @@ We can apply a RWA because the term $\omega+\omega_{ge}$ is large compared to $\
 	\label{eq:Rabi_oscillations}	
 \end{equation}
 %
-where $\delta=\omega-\omega_{ge}$ is a detuning and $\tilde{\Omega}=\sqrt{\Omega^2+\delta^2}$ is known as the generalized Rabi frequency. Figure~\ref{fig:rabi_cycle} shows an example of a Rabi oscillation between the $m_f=-1$ and $m_f=0$ states driven with an RF field oscillating with frequency close to the Zeeman splitting between the states.  
-
+where $\delta=\omega-\omega_{ge}$ is a detuning and $\tilde{\Omega}=\sqrt{\Omega^2+\delta^2}$ is known as the generalized Rabi frequency. 
+%
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/rabi_cycle.pdf}
@@ -404,7 +404,7 @@ where $\delta=\omega-\omega_{ge}$ is a detuning and $\tilde{\Omega}=\sqrt{\Omega
 \label{fig:rabi_cycle}
 \end{center}
 \end{figure*}
-
+%
 The Hamiltonian after applying the RWA is
 %
 \begin{equation}
@@ -414,8 +414,7 @@ The Hamiltonian after applying the RWA is
 \end{pmatrix},
 \end{equation}
 %
-and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. Notice that the difference between the eigenenergies $E_+-E_-$is exactly equal to the oscillation frequency of the populations in $\ket{g,e}$, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure \note{Make figure}a shows Rabi oscillations between the $m_F=-1$ and $m_F=0$ states. Two calibrate the coupling strength for an effective two-level system  and Figure xxx b shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve is as a way to find the transition frequency (see Chapter~\ref{ch:clock_states}). 
-
+and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. Notice that the difference between the eigenenergies $E_+-E_-$is exactly equal to the oscillation frequency of the populations in $\ket{g,e}$, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure~\ref{fig:rabi_cycle}a shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve is as a way to find the transition frequency (see Chapter~\ref{ch:clock_states}). Figure~\ref{fig:rabi_cycle}b shows Rabi oscillations between the $m_F=-1$ and $m_F=0$ states; we typically look at the frequency of these oscillations to calibrate the coupling strength of an effective two-level system.
 
 \subsection{Ramsey interferometer}
 \label{sec:Ramsey_interferometer}
