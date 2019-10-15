@@ -261,7 +261,7 @@ plt.xlim([wavelengths.min(), wavelengths.max()])
 
 wavelengths = np.linspace(783, 793, int(1e3))
 scatter_rates = scattering(wavelengths) * I
-ax = plt.subplot(gs[1,1])
+ax = plt.subplot(gs[1,0])
 
 plt.plot(wavelengths, (scatter_rates))
 min_idx = np.argmin(scatter_rates)
@@ -278,7 +278,7 @@ plt.xlim([wavelengths.min(), wavelengths.max()])
 #plt.savefig('Raman_vs_lambda.pdf')
 
 #     
-ax = plt.subplot(gs[1,0])
+ax = plt.subplot(gs[0,1])
 alphas = alpha(wavelengths)/hbar 
 alphas = u_s(wavelengths)/hbar * E_squared /(2*np.pi)
 plt.plot(wavelengths, (alphas))
@@ -292,9 +292,8 @@ plt.plot(wavelengths[min_idx], alphas[min_idx], 'o', mec='k', mfc='lightgray')
 plt.xlim([wavelengths.min(), wavelengths.max()])
 plt.xlabel('Wavelength [nm]')
 plt.ylabel('$\Delta E/h$ [Hz]')
-plt.text(-0.7,8e3, '$\mathbf{a.}$')
 
-ax = plt.subplot(gs[0,1])
+ax = plt.subplot(gs[1,1])
 
 # 786 nm
 date = 20171010
@@ -325,7 +324,7 @@ date = 20171010
 sequence = 81
 df = simple_data_processing(date, sequence)
 
-t = df['Raman_pulse_time'].values
+delta = df['Raman_pulse_time'].values
 int_od = df['roi_0'].values
 params = lmfit.Parameters()
 params.add('off', value=100, min=0)
@@ -344,7 +343,6 @@ plt.plot(t_resampled*1e-6,exp, color='#1f77b4')
 plt.plot(df['Raman_pulse_time']*1e-6, df['roi_0'], 'o', mec='k', mfc='lightgray',
          label='$\lambda=792$ nm')
 plt.legend()
-plt.text(-0.7,8e3, '$\mathbf{b.}$')
 plt.xlabel('Raman pulse time [s]')
 plt.ylabel('number of atoms [arb. u.]')
 plt.tight_layout()
