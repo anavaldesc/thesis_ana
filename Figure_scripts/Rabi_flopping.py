@@ -80,12 +80,7 @@ def simple_data_processing(date, sequence,
                             scanned_parameters.append(attrs[scanned_parameter][0])
                         else:
                             scanned_parameters.append(attrs[scanned_parameter])
-                            
-                        
-                       
-                        
-                        
-  
+
                     
                     except:
 #                        print('Something went wrong...')

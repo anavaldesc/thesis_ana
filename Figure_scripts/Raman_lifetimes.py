@@ -32,8 +32,8 @@ rcParams['legend.fontsize'] = fontsize
 
 rcParams['pdf.fonttype'] = 42 # True type fonts
 #rcParams['font.family'] = 'sans-serif'
-rcParams['font.family'] = 'serif'
-rcParams['font.serif'] = ['Computer Modern Roman']
+#rcParams['font.family'] = 'serif'
+#rcParams['font.serif'] = ['Computer Modern Roman']
 rcParams['text.usetex'] = True
 rcParams['text.latex.preamble'] = [ r'\usepackage{amsmath}']
 #rcParams['text.latex.preamble'] = [
