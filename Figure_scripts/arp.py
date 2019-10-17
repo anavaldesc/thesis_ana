@@ -216,37 +216,46 @@ result = minner.minimize('leastsq')
 delta_resampled = np.linspace(delta.min(), delta.max(), 200)
 step= arp(result.params, delta_resampled)
 plt.plot(delta_resampled, step, 'k')
-plt.plot(delta, p1, 'o', mec='k', ms=6, mfc='lightgray')
+plt.plot(delta_resampled, 1-step, 'k')
+plt.plot(delta, p1, 'o', mec='k', ms=6, mfc='red')
+plt.plot(delta, 1-p1, 'o', mec='k', ms=6, mfc='blue')
 ax.set_yticks([0, 0.5, 1])
 plt.xlim([delta.min(), delta.max()])
 plt.xlabel('$\delta$ [kHz]')
-plt.ylabel(r'$\vert c_e\vert^2$')
+plt.ylabel('Population')
 
 ax = plt.subplot(gs[0,0])
 delta_resampled = np.linspace(delta.min(), delta.max(), 200)
 
-Omega = 8
+Omega = 10
 energies = []
+e0 = []
 magnetisation = []
 populations = []
 params = {'Omega': Omega}
+params0 = {'Omega': 0.0}
 for d in delta_resampled:
     params['delta'] = d
+    params0['delta'] = d
     h = H_rf(**params)
     en, ev = eigh(h)
+    en0, ev0 = eigh(H_rf(**params0))
+    e0.append(en0)
     pops = ev*ev.conj()
 
     populations.append(pops)
     energies.append(en)
 
 energies = np.array(energies)
+e0 = np.array(e0)
 #mag = np.array(magnetisation).real
 mag = np.linspace(0, 10, 300)
 pops = np.array(populations)
 
 for i in range(2):
 #    plt.scatter(ks, energies[:, i], c=mag[:, i], s=20)
-    plt.scatter(delta_resampled, energies[:, i], c=pops[:,i,0], s=0.5, cmap='seismic')
+    plt.plot(delta_resampled, e0[:,i], 'k--')
+    plt.scatter(delta_resampled, energies[:, i], c=pops[:,i,0], s=0.5, cmap='bwr')
 plt.xlabel('$\delta$ [kHz]')
 plt.ylabel('Energy [kHz/$h$]')
 plt.xlim([delta.min(), delta.max()])

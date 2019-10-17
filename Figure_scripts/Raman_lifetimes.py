@@ -247,7 +247,7 @@ tau = np.array([8.99e5, 7.45e5, 1.67e6, 1.63e6, 5498, 808])*1e-6
 fig = plt.figure(figsize=(5.9,4.))
 #    
 gs = GridSpec(2, 2)   
-ax = plt.subplot(gs[0,0])
+ax = plt.subplot(gs[0,1])
 
 plt.semilogy(wavelengths, np.abs(alphas_v)/3.678e3)
 plt.semilogy(lambdas, Omegas_norm/3.278, 'o', mec='k', mfc='lightgray')
@@ -278,7 +278,7 @@ plt.xlim([wavelengths.min(), wavelengths.max()])
 #plt.savefig('Raman_vs_lambda.pdf')
 
 #     
-ax = plt.subplot(gs[0,1])
+ax = plt.subplot(gs[0,0])
 alphas = alpha(wavelengths)/hbar 
 alphas = u_s(wavelengths)/hbar * E_squared /(2*np.pi)
 plt.plot(wavelengths, (alphas))
@@ -317,7 +317,7 @@ plt.plot(t_resampled*1e-6,exp)
 
 plt.plot(df['Raman_pulse_time']*1e-6, df['roi_0'], 'v', mec='k', mfc='lightgray',
          label='$\lambda=786$ nm')
-
+print(result.params)
 #%%
 #792 nm
 date = 20171010
@@ -335,6 +335,7 @@ minner = lmfit.Minimizer(exp_decay, params,
                          fcn_args=(t, int_od), nan_policy='omit')
                     
 result = minner.minimize('leastsq')
+print(result.params)
 t_resampled = np.linspace(t.min(), t_max, 200)
 exp = exp_decay(result.params,t_resampled)
 plt.plot(t_resampled*1e-6,exp, color='#1f77b4')
@@ -343,7 +344,7 @@ plt.plot(t_resampled*1e-6,exp, color='#1f77b4')
 plt.plot(df['Raman_pulse_time']*1e-6, df['roi_0'], 'o', mec='k', mfc='lightgray',
          label='$\lambda=792$ nm')
 plt.legend()
-plt.xlabel('Raman pulse time [s]')
+plt.xlabel('Hold time [s]')
 plt.xlim([0, t_max*1e-6])
 plt.ylabel('number of atoms [arb. u.]')
 plt.tight_layout()

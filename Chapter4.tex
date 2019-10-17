@@ -78,9 +78,35 @@ Once the atoms are succesfully pumped into $\ket{F=1, m_f=-1}$ we capture them i
 
 We then proceed to transfer the atoms from the magnetic trap into a dipole trap. We start by turning on only the `tight' arm of the dipole trap at full power (about $\unit[11]{W}$) and slowly decompressing the quadrupole trap to $\unit[45]{G/cm}$ in $\unit[1.5]{s}$. We then turn on the second `cross' dipole beam in $\unit[1]{s}$; splitting the power so that there the power split between the tight and cross beams is about $70-30\%$. As the cross dipole beam is being turned on we ramp the quadrupole field further down to $\unit[14]{G}[cm]$, slightly above the value necessary for the trap to suspend atoms against gravity. We simultaneously shift the bias field along $\ez$ to align the center of the quadrupole trap to the dipole trap. 
 
-We evaporate the atoms in the dipole trap in two stages. First we exponentially ramp down the power to about $20\%$ of its initial power in $\unit[1.5]{s}$ (time constant $=\unit[0.5]{s}$). Before the final evaporation stage we completely turn off the quadrupole trap in $\unit[1]{s}$. Finally, we perform a second exponential ramp where the power is dropped to about $30\%$ of the intermediate power in $\unit[2]{s}$ (time constant $=\unit[1]{s}$. The slow ramps ensure that there is enough time for the atoms to thermalize as they evaporate.   During the second evaporation stage the atoms reach the critical temperature for Bose-Einstein condensation and we are able to produce BECs with about $4\times10^4$ atoms in the $\ket{F=1, m_f=-1}$ state. 
+We evaporate the atoms in the dipole trap in two stages. First we exponentially ramp down the power to about $20\%$ of its initial power in $\unit[1.5]{s}$ (time constant $=\unit[0.5]{s}$). Before the final evaporation stage we completely turn off the quadrupole trap in $\unit[1]{s}$. Finally, we perform a second exponential ramp where the power is dropped to about $30\%$ of the intermediate power in $\unit[2]{s}$ (time constant $=\unit[1]{s}$. The slow ramps ensure that there is enough time for the atoms to thermalize as they evaporate.   During the second evaporation stage the atoms reach the critical temperature for Bose-Einstein condensation and we are able to produce BECs with about $4\times10^4$ atoms in the $\ket{F=1, m_f=-1}$ state.
+At this point we can prepare different $m_f$ states and set the Zeeman splitting between levels using the techniques described in the following sections. 
 
-At this point we are ready to perform experiments using BECs. Typically we use an ARP sequence as described in Section~\ref{sec:arp} to set a bias magnetic field $B_0\ez$ so that the Zeeman splitting between the $m_f=-1$ and $m_f=0$ states is equal to a well calibrated frequency $\omega_0$ as well as to transfer atoms into different $m_f$ states. We start with atoms in $m_F=-1$ and at a bias field $B_i\approx B_0-\unit[380]{G}$. We ramp an $\Omega=\unit[20]{kHz}$ RF field and frequency $\sim B_0*0.7$ in $\unit[50]{ms}$ and then linearly ramp the bias field to its final value in $\unit[50]{ms}$. The bias fields that we work at are typically large enough that $m_f=+1$ does not appear during this ARP process unless we change the RF frequency to a smaller value or ramp the bias field to a larger value. In order to keep the bias fields as stable as possible we also synchronize the timing of our experiments to the $\unit[60]{Hz}$ line; this step is performed in different stages of the experiment but perhaps were we have noted it has the biggest impact is right before ARP. For additional magnetic field control and stabilization we use a technique using microwave assisted partial transfer absorption imaging described in the following section. 
+\subsection{Adiabatic rapid passage}
+\label{sec:arp}
+
+We prepare different $m_f$ states within the $F=1$ manifold using an adiabatic rapid\footnote{Rapid with respect to the spontaneous emission rate of the excited state being coupled.} passage protocol (ARP) which is based on the Landau-Zener model~\cite{zener_non-adiabatic_1932}. The technique relies on preparing dressed states; eigenstates of the atomic Hamiltonian with an oscillatory field magnetic field (typically RF or microwaves for us). To perform ARP with RF we set the frequency of the field $\omega_{\rm{RF}}$ so that it matches the Zeeman splitting between the $m_f=-1$ and $m_f=0$ for a target bias field $B_0\ez$.
+
+We start with atoms in $m_F=-1$ and at a bias field $B_i\approx B_0-\unit[380]{mG}$ ($\delta\approx\unit[30]{kHz}$). We ramp an $\Omega=\unit[20]{kHz}$ RF field and frequency $\sim B_0*0.7$ in $\unit[50]{ms}$, effectively preparing atoms in the ground dressed state shown in Figure~\ref{sec:arp}a. We then sweep the detuning by linearly changing the bias field. As the detuning is changed, the state decomposition of the ground state is modified and as long as the rate of change in detuning is small compared to $\Omega_{\rm{RF}}^2$ (the gap in Figure~\ref{sec:arp}a) the system will adiabatically follow. Finally the RF field is abruptly turned off, projecting the RF eigenstates into the $m_f$ states. In Figure~\ref{sec:arp} we set $\omega_{\rm{RF}}=\unit[23]{MHz}$ and when the Zeeman splitting between $m_F=-1$ and $m_F=0$ is equal to $\omega_{\rm{RF}}$ we observe an equal superposition of both states and if the detuning is swept beyond resonance we can reliably prepare the $m_f=0$ state. In general it is necessary to look at the eigenstates of the three-level RF Hamiltonian
+%
+\begin{equation}
+\hat{H}_{\rm{RF}}=\begin{pmatrix}
+-\delta & \Omega_{\rm{RF}}/2 & 0  \\
+\Omega_{\rm{RF}}/2 & -\epsilon & \Omega_{\rm{RF}}/2  \\
+0 & \Omega_{\rm{RF}}/2 & \delta  
+\end{pmatrix},
+\end{equation}
+%
+but for large quadratic Zeeman shifts as is usually the case in our experiments we can only look at an effective two-level system.
+
+In order to keep the bias fields as stable as possible we also synchronize the timing of our experiments to the $\unit[60]{Hz}$ line; this step is performed in different stages of the experiment but perhaps were we have noted it has the biggest impact is right before ARP. For additional magnetic field control and stabilization we use a technique using microwave assisted partial transfer absorption imaging described in the following section. 
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/arp_anotated.pdf}
+\caption[Adiabatic rapid passage]{{\bf a.} Eigenenergies and eigenstate decomposition of an RF dressed Hamiltonian (Equation~\ref{eq:h_rwa}) with $\Omega=10$as a function of detuning. The eigenstates are linear combinations of $m_f=-1$ and $m_f=0$ (red and blue respectively). {\bf b.} Population in the $m_f$ sates for different values of detuning}
+\label{fig:arp}
+\end{center}
+\end{figure*}
 
 \subsection{Magnetic field stabilization with microwave assisted partial transfer absorption imaging}
 \label{sec:ptai}
