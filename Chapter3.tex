@@ -208,7 +208,7 @@ For the intensities that we typically operate at, the vector light shift is smal
  	\hat{H}_{\rm{eff}}=\frac{\mu_Bg_F}{\hbar}\mathbf{B}_{\rm{eff}}\cdot\mathbf{\hat F}
  \end{equation} 
 
-\subsection{Raman coupling}
+\subsubsection{Raman coupling}
 
 The vector light shift enables the realization of various spin dependent potentials in the lab. In the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy} and \ref{ch:Rashba} I used combinations of cross polarized laser beams such that the total electric field $\mathbf{E}^*\times\mathbf{E}\neq0$ and we induced two-photon Raman transitions. A Raman transition is a two-photon process between two ground states that uses an intermediate state that is off-resonantly coupled as is shown in Figure~\ref{fig:Raman_coupling}a. Due to the large detuning, the population transfered into the intermediate state is negligible and the state can be adiabatically eliminated~\cite{han_raman_2013}. In our experiments we typically couple the $m_F$ levels of the $F=1$ manifold after applying a bias magnetic field such that $\epsilon$ is non-negligible. %I describe the most simple case which considers coupling only two levels, in the later Chapters of the thesis this scheme is extended to couple multiple levels. 
 
@@ -257,7 +257,7 @@ In a frame rotating with angular frequency $\omega_{a,b}$ corresponding to apply
 %
 which describes a helically precessing magnetic field with period $\lambda_{\rm R}/2$.
 
-\subsection{Spin-orbit coupling}
+\subsubsection{Spin-orbit coupling}
 
 The Raman Hamiltonian from Equation~\ref{eq:basic_Raman} can be massaged a bit more to make it look like a spin-orbit coupled (SOC)\footnote{Not to be confused with the spin-orbit coupling giving rise to the fine and hyperfine structure mentioned earlier, perhaps a better name could be spin-momentum coupling} Hamiltonian that is familiar to condensed matter physicists. If we apply a spin-dependent momentum boost which is described by the unitary operator $\hat{U}(\kl)=\exp(i2\kl x \fz)$ the full Hamiltonian including the Raman coupling and the free particle energies is transformed to
 %
@@ -282,7 +282,7 @@ In this section I describe quantum coherent processes that are driven using the 
 	\hat{H}=\hat{H}_0+\hat{H}_I(t)
 \end{equation}
 %
-where $\hat H_0$ describes unperturbed atomic levels and $\hat H_I(t)$ is a time dependent interaction from either an electromagnetic wave or an oscillating magnetic field. For simplicity I consider only a two-level system with 
+where $\hat H_0$ describes unperturbed atomic levels and $\hat H_I(t)$ is a time dependent interaction. For simplicity I consider only a two-level system 
 %
 \begin{equation}
 	\hat{H}_0=\hbar\begin{pmatrix}
@@ -291,7 +291,7 @@ where $\hat H_0$ describes unperturbed atomic levels and $\hat H_I(t)$ is a time
 \end{pmatrix}
 \end{equation}
 %
-where $\hbar\omega_i$ are the energies of the unperturbed states, and the eigenstates of $\hat{H}_0$ are labeled by $\ket{g,e}$. Some of this techniques are generalized to three levels in Chapter~\ref{ch:Rashba}. 
+where with $\ket{g}$ and $\ket{e}$ are the unperturbed ground and excited states with energy $\hbar\omega_i$ are the energies of the unperturbed states. %Some of this techniques are generalized to three levels in Chapter~\ref{ch:Rashba}. 
 
 \subsection{Rabi oscillations}
 
@@ -318,7 +318,7 @@ and substituting this expression into the time dependent Schr\"odinger equation 
 	\dot{c}_e(t)=&\frac{\Omega^*}{2}\left(e^{i(\omega-\omega_{ge})t}+e^{-i(\omega+\omega_{ge}) t}\right)c_g.
 \end{align}
 %
-We can apply a RWA because the term $\omega+\omega_{ge}$ is large compared to $\omega-\omega_{ge}=\delta$. The resulting coupled differential equations can be solved in a standard way by differentiating $\dot c_e$ one more time and substituting $\dot c_g$. If we assume that at $t=0$ the system is prepared in $\ket{g}$ the population in $\ket{e}$ describes what is known as a Rabi oscillation~\cite{rabi_space_1937}
+We can apply a RWA if the term $\omega+\omega_{ge}$ is large compared to $\omega-\omega_{ge}$. The resulting coupled differential equations can be solved in a standard way by differentiating $\dot c_e$ one more time and substituting $\dot c_g$. If we assume that at $t=0$ the system is prepared in $\ket{g}$ the population in $\ket{e}$ describes what is known as a Rabi oscillation~\cite{rabi_space_1937}
 %
 \begin{equation}
 	\vert c_e(t)\vert^2=\frac{\Omega^2}{\Omega^2+\delta^2}\sin^2\left(\frac{\sqrt{\Omega^2+\delta^2}}{2}t\right)
@@ -335,7 +335,7 @@ where $\delta=\omega-\omega_{ge}$ is a detuning and $\tilde{\Omega}=\sqrt{\Omega
 \end{center}
 \end{figure*}
 %
-The Hamiltonian after applying the RWA is
+The Hamiltonian after applying the RWA can be written as
 %
 \begin{equation}
 \hat{H}_0=\hbar\begin{pmatrix}
@@ -345,10 +345,17 @@ The Hamiltonian after applying the RWA is
 \end{pmatrix},
 \end{equation}
 %
-and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. Notice that the difference between the eigenenergies $E_+-E_-$is exactly equal to the oscillation frequency of the populations in $\ket{g,e}$, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure~\ref{fig:rabi_cycle}a shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve is as a way to find the transition frequency (see Chapter~\ref{ch:clock_states}). Figure~\ref{fig:rabi_cycle}b shows Rabi oscillations between the $m_F=-1$ and $m_F=0$ states; we typically look at the frequency of these oscillations to calibrate the coupling strength of an effective two-level system.
+and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. Notice that the difference between the eigenenergies $E_+-E_-$is exactly equal to the frequency at which the populations in $\ket{g,e}$ oscillate, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure~\ref{fig:rabi_cycle}a shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve is as a way to find the transition frequency (we use this method in Chapter~\ref{ch:clock_states}). Figure~\ref{fig:rabi_cycle}b shows the population transfered into $m_F=0$ from $m_F=-1$ as a function of time; we typically look at the frequency of these Rabi oscillations to calibrate the coupling strength of an effective two-level system.
 
 \subsection{Ramsey interferometer}
 \label{sec:Ramsey_interferometer}
+
+Now I consider a Ramsey interferometer~\cite{ramsey_molecular_1950},  a setup that is relevant to Chapters~\ref{ch:clock_states} and~\ref{ch:Rashba}. The interaction Hamiltonian is the same as in the previous section but rather than being on continuously it is pulsed on for a time $\tau=\pi/2\Omega$ (a $\pi/2$ pulse), then the system is let to evolve only under $\hat{H}_0$ for a variable time $t_{\rm{dark}}$ and finally a second $\pi/2$ pulse is applied. Figure~\ref{fig:simple_Ramsey}a illustrates this protocol: the $\pi/2$ pulses can be thought of as $\pi/2$ rotations on the Bloch sphere along $\ex$ transforming the initial state $\ket{g}\rightarrow(\ket{g}+\ket{e})/\sqrt{2}$. During the dark time the system precesses on the equator of the Bloch sphere by an angle $\delta t_{\rm{dark}}$ and finally the second pulse rotates the state along the $\ex$ axis again. The probability of measuring the excited state is related to the phase accumulated during the dark time is given by
+\begin{equation}
+	\vert c_{e}(2\tau + t_{\rm{dark}})\vert^2=\left\vert \frac{\Omega \tau}{2}\right\vert\left[ \frac{\sin(\delta\tau/2)}{\delta\tau/2} \right]^2 \cos^2\left(\frac{\delta t_{\rm{dark}}}{2}\right),
+\end{equation}
+%   
+where the oscillation frequency is only determined by the detuning. In contrast, for a Rabi oscillation the detuning adds in quadrature with $\Omega$, which suppresses the effect of the detuning when it is large as $\tilde{\Omega}\approx\Omega+\delta^2/2\Omega$. This will be important in Chapter~\ref{ch:clock_states} and additionally in Chapter~\ref{ch:Rashba} I rely on a variation of the Ramsey interferometer to perform quantum state tomography. Figure~\ref{fig:simple_Ramsey}b shows an example of a Ramsey fringe as a function of detuning $\delta$ that we measured using two states coupled with $\Omega=\unit[1]{kHz}$. 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -358,16 +365,9 @@ and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. Notice that
 \end{center}
 \end{figure*}
 
-Now I consider a Ramsey interferometer~\cite{ramsey_molecular_1950},  a setup that is relevant to Chapters~\ref{ch:clock_states} and~\ref{ch:Rashba}. The interaction Hamiltonian is the same as in the previous section but rather than being on continuously it is pulsed on for a time $\tau=\pi/2\Omega$ (a $\pi/2$ pulse), then the system is let to evolve only under $\hat{H}_0$ for a variable time $t_{\rm{dark}}$ and finally a second $\pi/2$ pulse is applied. Figure~\ref{fig:simple_Ramsey}a illustrates this protocol: the $\pi/2$ pulses can be thought of as $\pi/2$ rotations along $\ex$ the first pulse transfers $\ket{g}\rightarrow(\ket{g}+\ket{e})/\sqrt{2}$ then the system precesses on the equator of the Bloch sphere by an angle $\delta t_{\rm{dark}}$ and finally the second pulse rotates the state again. The probability of measuring the excited state is related to the phase accumulated during the dark time is given by
-\begin{equation}
-	\vert c_{e}(2\tau + t_{\rm{dark}})\vert^2=\left\vert \frac{\Omega \tau}{2}\right\vert\left[ \frac{\sin(\delta\tau/2)}{\delta\tau/2} \right]^2 \cos^2\left(\frac{\delta t_{\rm{dark}}}{2}\right). 
-\end{equation}
-%   
-For the case of Rabi oscillations, the detuning adds in quadrature with $\Omega$ and when it is large the contributions of $\delta$ to the generalized Rabi frequency can be small. In contrast for Ramsey fringes, regardless of the magnitude of $\Omega$ the oscillation frequency is always proportional to $\delta$. This will be important in Chapter~\ref{ch:clock_states} and additionally in Chapter~\ref{ch:Rashba} I rely on a variation of the Ramsey interferometer to perform quantum state tomography. Figure~\ref{fig:simple_Ramsey}b shows an example of a Ramsey fringe as a function of detuning $\delta$ that we measured using two states coupled with $\Omega=\unit[1]{kHz}$. 
-
 \subsection{Floquet theory}
 \label{sec:Floquet_theory}
-The RWA has been used multiple times throughout this Chapter so that driven systems can effectively be viewed as time independent. This approximation is valid most of the time for our experiments, however, if we want to give a complete description of a time periodic system Floquet theory can be helpful. I will give a brief overview of Floquet theory using a matrix approach that is useful for numerical computations. 
+The RWA has been used multiple times throughout this Chapter so that the Hamiltonian describing a driven systems can effectively be viewed as time independent. This approximation is valid most of the time for our experiments, however, if we want to give a complete description of a time periodic system Floquet theory can be helpful. I will give a brief overview of Floquet theory using a matrix approach that is particularly useful for numerical computations. 
 
 Consider a time periodic Hamiltonian $\hat{H}(t)=\hat{H}(t+T)$. We can write in terms of its Fourier components
 %
@@ -411,18 +411,18 @@ where $\hat{\mathds{1}}$ is the identity matrix. The expression can be recast in
 \end{pmatrix}
 \end{equation}
 
-The quasienergies $\epsilon$ can be computed by truncating and then diagonalizing the matrix, and they are grouped into repeating manifolds separated in energy by $\hbar\omega$. The quasienergies within a manifold can be interpreted as the eigenenergies of an effective time-independent Hamiltonian $\hat{H}_{Fl}$ that describes the evolution of the system sampled stroboscopically at an integer number of driving periods. %, with the time evolution operator $\hat{U}(t_0,t_0+T)=e^{-iT\hat{H}_{Fl}}$. 
+The quasienergies $\epsilon$ can be computed by truncating and then diagonalizing the matrix, and they are grouped into repeating manifolds separated in energy by $\hbar\omega$. The quasienergies within a manifold can be interpreted as the eigenenergies of an effective time-independent Hamiltonian $\hat{H}_{Fl}$ that describes the evolution of the system sampled stroboscopically at an integer number of driving periods, with the time evolution operator $\hat{U}(t_0,t_0+T)=e^{-iT\hat{H}_{Fl}}$. 
 
-Floquet theory played an important role in the engineering of different dispersion relations for atoms in Chapters~\ref{ch:Fourier_spectroscopy} and \ref{ch:Rashba}. I will give an example based on \cite{campbell_magnetic_2016}, where we considered a pair of Raman beams driving transitions between the $m_f$ states with two different frequencies $\omega_{-1,0}$ and $\omega_{0,+1}$ set to the $m_f=-1\rightarrow m_f=0$ and $m_f=0\rightarrow m_f=1$ transitions. By performing independent RWAs with respect to each of these transitions we found that the system could be described by a magnetic Hamiltonian
+Floquet theory played an important role in the engineering of different dispersion relations for atoms in Chapters~\ref{ch:Fourier_spectroscopy} and \ref{ch:Rashba}. I will give an example based on \cite{campbell_magnetic_2016}, where we considered a pair of Raman beams driving transitions between the $m_F$ states with two different frequencies $\omega_{-1,0}$ and $\omega_{0,+1}$ set to the $m_F=-1\rightarrow m_F=0$ and $m_F=0\rightarrow m_F=1$ transitions. By performing independent RWAs with respect to each of these transitions we found that the system could be described by a magnetic Hamiltonian
 %
 \begin{equation}
  \hat{H}=\frac{\hbar k^2}{2m}+\boldsymbol{\Omega}(x)\cdot\hat{\mathbf F} + \Omega_2 \hat F_{zz}^{(2)} 	
  \label{eq:spin_one_soc}
  \end{equation}  
 %
-with $\boldsymbol{\Omega}_1(x)/\Omega_1=\cos(2\kr x)\ex-\sin(2\kr x)\ey$,  $\hat F_{zz}^{(2)}\hbar=\fz^2/\hbar^2-2/3$ is an element of the quadrupole tensor and $\Omega_2=(\omega_{-1,0}-\omega_{0,1})/2$ can be interpreted as an effective quadratic Zeeman shift. The competing contributions between kinetic and magnetic ordering energies gave rise to different magnetic phases, determined by global of minima in the ground state dispersion relation as can be seen in Figure~\ref{fig:spin_one_soc}a. The experimental parameters $\Omega_1$ and $\Omega_2$ spanned a two-dimensional phase diagram shown in Figure~\ref{eq:spin_one_soc}b that we experimentally mapped. The eigenenergies of Equation~\ref{fig:spin_one_soc} are plotted in Figure~\ref{fig:spin_one_soc}a. However in order to get a good agreement between the experiment and the phase diagram we had use the full Floquet Hamiltonian which results in having modified parameters in Equation~\ref{eq:spin_one_soc} $\Omega_2^{(\rm{eff})}= \Omega_2 + \mathcal{O}(\Omega_1^2/\epsilon)$ (red dotted line in Figure~\ref{fig:spin_one_soc}b). Figure~\ref{fig:spin_one_soc}d shows three manifolds of Floquet quasienergies for this system. 
+with $\boldsymbol{\Omega}_1(x)/\Omega_1=\cos(2\kr x)\ex-\sin(2\kr x)\ey$,  $\hat F_{zz}^{(2)}\hbar=\fz^2/\hbar^2-2/3$ is an element of the quadrupole tensor and $\Omega_2=(\omega_{-1,0}-\omega_{0,1})/2$ can be interpreted as an effective quadratic Zeeman shift. The competing contributions between kinetic and magnetic ordering energies gave rise to different magnetic phases. Figure~\ref{fig:spin_one_soc}a. shows the ground branch of the dispersion relation for small $\Omega_1<4\El$ (top) and large $\Omega_1>4\El$ (bottom). As the value of $\Omega_2$ is decreased the magnetization in the system changes as the location of the global minima in the dispersion changes. The experimental parameters $\Omega_1$ and $\Omega_2$ spanned a two-dimensional phase diagram shown in Figure~\ref{eq:spin_one_soc}b that we experimentally mapped. The eigenenergies of Equation~\ref{fig:spin_one_soc} are plotted in Figure~\ref{fig:spin_one_soc}c. However in order to get a good agreement between the experiment and the phase diagram we had use the full Floquet Hamiltonian which results in having modified parameters in Equation~\ref{eq:spin_one_soc} $\Omega_2^{(\rm{eff})}= \Omega_2 + \mathcal{O}(\Omega_1^2/\epsilon)$ (red dotted line in Figure~\ref{fig:spin_one_soc}b). Figure~\ref{fig:spin_one_soc}d shows three manifolds of Floquet quasienergies for this system, illustrating their periodic nature.
 
-\begin{figure*}[htb]
+\begin{figure*}[!htb]
 \begin{center}
 \includegraphics[width=\textwidth]{Figures/Chapter3/spin_one_floquet.pdf}
 \caption[Magnetic phases of a spin-1 SOC system]{Magnetic phases of a spin-1 SOC system. {\bf a.} Ground state energies of a spin-1 SOC system for $\Omega_1=\unit[1.5]\El$ (top) and  $\Omega_2=\unit[1.5]\El$(bottom). By changing $\Omega_2$ we moved the location of the central minima. {\bf b.} Phase diagram of a spin-1 SOC system. They green line corresponds to a line of phase transitions where the system goes from magnetized to unmagnetized. {\bf c.} Dispersion relation computed for $\Omega_1=\unit[2]\El$, $\Omega_2=0$. {\bf d.} Floquet qasienergy dispersion relation for the same parameters. The magnitude of $\Omega_1$ effectively modifies $\Omega_2$ in the RWA Hamiltonian.}
@@ -430,18 +430,9 @@ with $\boldsymbol{\Omega}_1(x)/\Omega_1=\cos(2\kr x)\ex-\sin(2\kr x)\ey$,  $\hat
 \end{center}
 \end{figure*}
 
-
 \section{Detection: Resonant absorption imaging}
 
 Ultracold atom experiments rely on optical imaging as the main method to probe an characterize the system. In our lab we use resonant absorption imaging which uses a resonant probing laser that is shone at the atomic cloud and then imaged into a charged-coupled device (CCD) camera. From the absorption of the light we can then infer properties about the atoms such as number of atoms, temperature, integrated column density and momentum distribution if we allow the clouds to expand. 
-
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter3/abs_imaging_1.pdf}
-\caption[The Beer-Lambert law]{{\bf a.} A laser beam traveling along $\ez$ through a medium with density $n(x,y,z$. The intensity decays exponentially with the integrated column density and the scattering cross section $\sigma{\omega}$. {\bf b.} The scattering cross section has a Lorentzian line shape with a full width half maximum equal to $\Gamma$. \note{TODO: add real data on panel b if I have time.}}
-\label{fig:abs_imaging_1}
-\end{center}
-\end{figure*}
 
 Consider a laser beam with intensity $I(x,y,z)$ and angular frequency $\omega$ propagating along $\ez$ through a cloud of atoms with density $n(x,y,z)$ as is shown in Figure~\ref{fig:abs_imaging_1}a. We define a (frequency dependent) scattering cross section $\sigma(\omega)$ which characterized the probability of an atom absorbing a probe photon and is given by the Lorentzian function
 %
@@ -457,8 +448,15 @@ plotted in Figure~\ref{fig:abs_imaging_1}b, where $\Gamma$ is the scattering rat
 	\label{eq:Beer_law}
 \end{equation}
 %
+\begin{figure*}[tb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/abs_imaging_1.pdf}
+\caption[The Beer-Lambert law]{{\bf a.} A laser beam traveling along $\ez$ through a medium with density $n(x,y,z$. The intensity decays exponentially with the integrated column density and the scattering cross section $\sigma{\omega}$. {\bf b.} The scattering cross section has a Lorentzian line shape with a full width half maximum equal to $\Gamma$. \note{TODO: add real data on panel b if I have time.}}
+\label{fig:abs_imaging_1}
+\end{center}
+\end{figure*}
 
- In the limit of small intensities we can integrate this expression over the thickness of the cloud and find that the intensity decays exponentially with the density and the scattering cross section
+In the limit of small intensities we can integrate this expression over the thickness of the cloud and find that the intensity decays exponentially with the density and the scattering cross section
 %
 \begin{equation}
 	I(x,y,z)=I(x,y,0)e^{-\int_0^z n(x,y,z')\sigma(\omega)dz'},
@@ -498,10 +496,6 @@ where $I_{\rm{sat}}=\pi hc\Gamma/3\lambda_0^3$ is the saturation intensity, and 
 %
 where I have also added an additional dimensionless parameter $\alpha^{\star}$ which can account for imperfections in the imaging process (see~\cite{reinaudi_strong_2007}).
 
-Our experiments are typically performed in the $F=1$ manifold. Prior to imaging we apply repump light (resonant with the $F=1\rightarrow F'=2$ transition) and then the atoms decay into the $\ket{F=2, m_F=2}$ state. We then set the probe frequency to be resonant with the $\ket{F=2, m_F=2}\rightarrow\ket{F'=3, m_{F'}=3}$ cycling transition and use circularly polarized light $\sigma_+$. For this transition the peak optical cross section (at $\omega=\omega_0$) is $\sigma_0=2.9\times \unit[10^{-9}]{cm}$ and $I_{\rm{sat}}=\unit[1.622]{mW}$~\cite{Steck}. 
-
-It is hard reliably measure atomic clouds at low intensity  when the OD is of the order of 3 or 4 (such as our BECs) and a significant fraction of the imaging light is absorbed. Due to the limited dynamic range of CCD cameras the measured OD saturates, resulting for example in imaging `flat-top' BECs rather than the usual Thomas-Fermi distribution as shown in Figure~\ref{fig:flat_top_BEC}. To get around this issue we typically image with using intensities $I>I_{\rm{sat}}$. In order to correctly compute the column density including saturation effects we need a conversion of $I_{\rm{sat}}$ from mW/cm$^2$ to counts per pixel on the CCD camera. We follow the procedure described in~\cite{reinaudi_strong_2007} find the values of $\alpha^{\star}$ and $I_{\rm{sat}}$ in counts per pixel. To learn about other effects such as the recoil momentum from the imaging light that could affect absorption images see~\cite{genkina_feshbach_2015}. %\note{TODO: if there is time I might add my own calibration data.}. 
-
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/flat_top_BEC.pdf}
@@ -509,6 +503,10 @@ It is hard reliably measure atomic clouds at low intensity  when the OD is of th
 \label{fig:flat_top_BEC}
 \end{center}
 \end{figure*}
+
+It is hard reliably measure atomic clouds at low intensity  when the OD is of the order of 3 or 4 (such as our BECs) and a significant fraction of the imaging light is absorbed. Due to the limited dynamic range of CCD cameras the measured OD saturates, resulting for example in imaging `flat-top' BECs rather than the usual Thomas-Fermi distribution as shown in Figure~\ref{fig:flat_top_BEC}. To get around this issue we typically image with using intensities $I>I_{\rm{sat}}$. In order to correctly compute the column density including saturation effects we need a conversion of $I_{\rm{sat}}$ from mW/cm$^2$ to counts per pixel on the CCD camera. We follow the procedure described in~\cite{reinaudi_strong_2007} find the values of $\alpha^{\star}$ and $I_{\rm{sat}}$ in counts per pixel. To learn about other effects such as the recoil momentum from the imaging light that could affect absorption images see~\cite{genkina_feshbach_2015}. %\note{TODO: if there is time I might add my own calibration data.}. 
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
