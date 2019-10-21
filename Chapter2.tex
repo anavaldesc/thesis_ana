@@ -13,7 +13,53 @@ In this Chapter I describe the basic properties of Bose-Einstein condensation in
 
 \section{The Bose-Einstein distribution}
 
+At low temperatures and in thermodynamic equilibrium, the mean occupation number of non-interacting identical bosons occupying the state with energy $E$ is given by the Bose distribution
+%
+\begin{equation}
+	n(E_j)=\frac{1}{e^{(E_j-\mu)/k_BT}-1}
+	\label{eq:Bose_distribution}	
+\end{equation}
+%
+where $T$ is the temperature, $\mu$ is the chemical potential (the energy cost of adding or removing a particle) and $k_B$ is the Boltzmann constant. The chemical potential is constrained to take only positive values in order for Equation~\ref{eq:Bose_distribution} to take positive values and it is a function of the total number of particles $N$ and $T$.
+
+Bose-Einstein condensation as a result of the Bose statistics. When 
+
+
+
+In the limit of large temperatures the Bose distribution can be approximated by the Maxwell-Boltzmann distribution
+%
+\begin{equation}
+	n(E_j)\approx e^{-(E_j-\mu)/kT}
+\end{equation}
+%
+which applies to classical, distinguishable particles. 
+
+Condensation occurs when the chemical potential is equal to the energy of the ground state
+
+A naive approach: $\lambda_T=\left(\frac{2\pi\hbar^2}{mk_BT}\right)^{1/2}$ comparable to the mean interparticle spacinc which is of order $n^{-1/3}$ (in Alkalis $10^{13}$ to $10^{15}$ cm$^{-3}$)
+
+For closely spaced energy levels (compared to $k_B T$) the total number of particles is given by the integral
+%
+\begin{equation}
+	N=\int_0^\infty n(E) g(E) dE
+\end{equation}
+%
+where $g(E)$ is the density of states, and $g(E)dE$ corresponds to the number of available states with energy between $E$ and $E+dE$. For a free particle in three dimensions the density of states is
+%
+\begin{equation}
+	g(E)=\frac{V m^{3/2}}{\sqrt{2}\pi^2\hbar^2}E^{1/2}
+\end{equation}
+%
+and for harmonic potential
+%
+\begin{equation}
+	g(E)=\frac{E^2}{2\hbar^2\omega_x\omega_y\omega_z}
+\end{equation}
+
+
 \section{BEC transition and critical temperature}
+
+Macroscopic occupation of the ground state
 \section{BEC in a harmonic potential}
 \section{BEC with interactions}
 \subsection{GPE equation}
@@ -21,6 +67,7 @@ In this Chapter I describe the basic properties of Bose-Einstein condensation in
 Why the BEC has the shape of an inverted parabola. 
 \subsection{Expansion of atomic cloud in 3D harmonic potential}
 How one can infer atomic densities and temperature (from thermal atoms) from time of flight images.
+\section{Density profiles}
 
 
 For a given trapping potential $U(\r)$, the density distribution of a thermal ensamble is
@@ -39,6 +86,8 @@ where $\sigma_i=\omega_i^{-1}\sqrt{k_BT/m}$. Using the equipartition theorem we 
 \begin{equation}
 	T=\frac{m}{k_B}\sigma_i^2\omega_i^2
 \end{equation}
+
+\note{TODO: what is my chemical potential?}
 %Probably I don't want to talk about any of this stuff...
 % \section{Laser cooling and trapping techniques}
 
