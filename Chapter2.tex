@@ -123,8 +123,25 @@ Condensates in harmonic traps have some striking features that will be further e
 
 Even though atomic BECs are made from very dilute gases, the system is far from being an ideal gas and interactions need to be taken into account for a complete treatment of the system. 
 
-Hartree-Fock approximation means write the many body wave function as a single component
+The collisional properties of particles at low energies, such as cold atoms in a condensate, are dominated by $s$-wave scattering which can be described in terms of a single parameter the scattering length $a$ that determines both the scattering cross section $\sigma=4\pi a^2$ and the . 
+
+The magnitude of the scattering length is determined by the interatomic interaction potentials. For Alkali atoms at large distances, the two-body interactions are dominated by an attractive Van der walls interaction $U(r)=-C_6/r^6$ that arises from dipole-dipole interactions. At smaller distances the attractive potential is replaced by a strong repulsive electron-exchange interaction~\cite{gribakin_calculation_1993}. The $s$-wave scattering length can be linked to an effective pseudo-potential $U_{\rm{eff}}(\r-\r')$ such that
+%
+\begin{equation}
+	a=\frac{m}{4\pi\hbar^2}\int U(\r-\r')d \r
+\end{equation}
+%
+which determines
+%
+\begin{equation}
+	U_{\rm{eff}}(\r-\r')=\frac{4\pi\hbar^2a}{m}\delta(\r-\r').
+\end{equation}
+%
+This is a nice approximation as it allows us to model the scattering between atoms as a hard sphere scattering process instead of considering the more complicated inter-atomic potentials. The sign of the scattering length determines the attractive or repulsive nature of the interactions and it  plays an important role in the experimental production of BECs as it determines the rate at which atoms thermalize during evaporative cooling.  For  $\Rb87$ at zero magnetic field $a=\unit[5.29]{nm}\sim 100 a_0$ where $a_0=\unit[5.29\times10^{-11}]{m}$ is the Bohr radius while for the more abundant isotope $^85$Rb $a=-\unit[23.44]{nm}$ which means that a BEC with density beyond a critical value can collapse~\cite{gerton_direct_2000}
+
 \subsection{GPE equation}
+
+Hartree-Fock approximation means write the many body wave function as a single component
 
 The natural starting point for studying the behavior of
 these systems is the theory of weakly interacting bosons
