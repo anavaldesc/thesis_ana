@@ -96,7 +96,8 @@ where I used the expression for the total number of particles at $T_c$ from Equa
 I consider the particular case of particles confined in a three dimensional harmonic potential
 %
 \begin{equation}
-U(\x)=\frac{m}{2}\left(\omega_x^2x^2+\omega_y^2y^2+\omega_z^2z^2\right)
+V(\r)=\frac{m}{2}\left(\omega_x^2x^2+\omega_y^2y^2+\omega_z^2z^2\right)
+\label{eq:ho}
 \end{equation}
 %
 as it is the most relevant to our experiments that are performed in harmonic traps. The density of states is given by 
@@ -125,69 +126,184 @@ Even though atomic BECs are made from very dilute gases, the system is far from 
 
 The collisional properties of particles at low energies, such as cold atoms in a condensate, are dominated by $s$-wave scattering which can be described in terms of a single parameter the scattering length $a$ that determines both the scattering cross section $\sigma=4\pi a^2$ and the . 
 
-The magnitude of the scattering length is determined by the interatomic interaction potentials. For Alkali atoms at large distances, the two-body interactions are dominated by an attractive Van der walls interaction $U(r)=-C_6/r^6$ that arises from dipole-dipole interactions. At smaller distances the attractive potential is replaced by a strong repulsive electron-exchange interaction~\cite{gribakin_calculation_1993}. The $s$-wave scattering length can be linked to an effective pseudo-potential $U_{\rm{eff}}(\r-\r')$ such that
+The magnitude of the scattering length is determined by the interatomic interaction potentials. For Alkali atoms at large distances, the two-body interactions are dominated by an attractive Van der walls interaction $U(r)=-C_6/r^6$ that arises from dipole-dipole interactions. At smaller distances the attractive potential is replaced by a strong repulsive electron-exchange interaction. This minimal model captures the most important properties of the inter-atomic potential and can be solved analytically~\cite{gribakin_calculation_1993}. 
+
+If the range of the interaction is much shorter than the mean inter-atomic distance the interaction can be approximated by an effective pseudo-potential $U_{\rm{eff}}(\r-\r')$ such that
 %
 \begin{equation}
-	a=\frac{m}{4\pi\hbar^2}\int U(\r-\r')d \r
+	a=\frac{m}{4\pi\hbar^2}\int U_{\rm{eff}}(\r-\r')d \r
 \end{equation}
 %
 which determines
 %
 \begin{equation}
-	U_{\rm{eff}}(\r-\r')=\frac{4\pi\hbar^2a}{m}\delta(\r-\r').
+	U_{\rm{eff}}(\r-\r')=\frac{4\pi\hbar^2a}{m}\delta(\r-\r')=g\delta(\r-\r').
 \end{equation}
 %
-This is a nice approximation as it allows us to model the scattering between atoms as a hard sphere scattering process instead of considering the more complicated inter-atomic potentials. The sign of the scattering length determines the attractive or repulsive nature of the interactions and it  plays an important role in the experimental production of BECs as it determines the rate at which atoms thermalize during evaporative cooling.  For  $\Rb87$ at zero magnetic field $a=\unit[5.29]{nm}\sim 100 a_0$ where $a_0=\unit[5.29\times10^{-11}]{m}$ is the Bohr radius while for the more abundant isotope $^85$Rb $a=-\unit[23.44]{nm}$ which means that a BEC with density beyond a critical value can collapse~\cite{gerton_direct_2000}
+This is a nice approximation as it allows us to model the scattering between atoms as a hard sphere scattering process instead of considering the more complicated inter-atomic potentials. The sign of the scattering length determines the attractive or repulsive nature of the interactions and it  plays an important role in the experimental production of BECs as it determines the rate at which atoms thermalize during evaporative cooling.  For  $\Rb87$ at zero magnetic field $a=103 a_0$ where $a_0=\unit[5.29\times10^{-11}]{m}$ is the Bohr radius while for the more abundant isotope $^85$Rb $a=-\unit[23.44]{nm}$ which means that a BEC with density beyond a critical value can collapse~\cite{gerton_direct_2000}. \note{TODO: try to find references for the values of scattering lengths}
 
-\subsection{GPE equation}
+\subsection{Gross-Pitaevskii equation}
 
-Hartree-Fock approximation means write the many body wave function as a single component
+The effective Hamiltonian describing $N$ identical bosons with contact interactions can be written as
+%
+\begin{equation}
+	\hat{H}=\sum_{i=1}^N\left[\frac{\mathbf{p}_i^2}{2m}+V(\r_i)\right]+g\sum_{i<j}\delta(\r_i-\r_j),
+	\label{eq:many_body_h}
+\end{equation}
+%
+where $V(\r)$ is an external potential and $\mathbf{p}_i=-i\hbar\nabla_i$. We now consider a normalized eigenstate of the Hamiltonian $\Psi(\r_1, \r_2, ..., \r_N)$. We can simplify this state by taking a mean field approach. If we assume that the system has undergone condensation so that the majority of the particles share the same single particle ground state $\psi_0(\r)$ the wavefunction can be approximated by a symmetrized product
+%
+\begin{equation}
+	\Psi(\r_1, \r_2, ..., \r_N)=\prod_{i=1}^N\phi(\r_i),
+	\label{eq:mean_field_psi}
+\end{equation}
+%
+where $\psi_0$ is normalized to unity. The energy of the state from Equation~\ref{eq:mean_field_psi} is given by the expectation value
+%
+\begin{align}
+	E&=\int\Psi^*\hat{H}\Psi \,d\r \nonumber \\
+	&=N\int\left[-\frac{\hbar^2}{2m}\vert \nabla\phi(\r)\vert^2+V(\r)\vert\phi(\r)\vert^2+\frac{(N-1)}{2}g\vert \phi(\r)\vert^4\right]d\r,
+	\label{eq:mean_field_E}
+\end{align}
+%
+where $N(N-1)/2\approx N^2/2$ is counting the number of terms in the interaction energy. Now we introduce the wave function of the condensate $\psi(\r)=N^{1/2}\phi(\r)$, which when inserted in Equation~\ref{eq:mean_field_E} makes the $N$ factors disappear. The optimal form of $\psi$ should minimize the energy subject to the normalization condition $N=\int\vert\psi(\r)\vert^2\,d\r$. This can be done by introducing a Lagrange multiplier $\mu$
+%
+\begin{align}
+	\frac{\delta}{\delta \psi^*(\r)}\left(E-\mu\int\vert\psi\vert^2\,d\r \right) 
+	&= \left[-\frac{\hbar^2}{2m}\nabla^2+V(\r)+g\vert\psi(\r)\vert^2-\mu\right]\psi(\r)
+	=0
+\end{align}
+%
+and we thus find that the condensate wave function obeys a non-linear Schr\"odinger equation known as the Gross-Pitaevskii (GP) equation
+\footnote{The GP equation is very minimally relevant to my experiment but it still feels good knowing where it comes from.}.  
+%
+\begin{equation}
+	\left[-\frac{\hbar^2}{2m}\nabla^2+V(\r)+g\vert\psi(\r)\vert^2\right]\psi(\r)=\mu\psi(\r)
+\end{equation}
+%
+where $\mu$ plays the role of the chemical potential. The dynamics of the condensate will similarly be described by the time-dependent GP equation
+%
+\begin{equation}
+	i\hbar\frac{\partial}{\partial t}\psi(\r,t)=\left[-\frac{\hbar^2}{2m}+V(\r)+g\vert\psi(\r,t)\vert^2\right]\psi(\r,t)
+\end{equation}
 
-The natural starting point for studying the behavior of
-these systems is the theory of weakly interacting bosons
-which, for inhomogeneous systems, takes the form of
-the Gross-Pitaevskii theory. This is a mean-field approach for the order parameter associated with the condensate. It provides closed and relatively simple equations for describing the relevant phenomena associated
-with BEC. In particular, it reproduces typical properties
-exhibited by superfluid systems, like the propagation of
-collective excitations and the interference effects originating from the phase of the order parameter. The
-theory is well suited to describing most of the effects of
-two-body interactions in these dilute gases at zero temperature and can be naturally generalized to also explore thermal effects.
+The GP equation describing the relevant phenomena associated
+with BECs, for example the propagation of collective excitations and the expansion of the condensate when released from a trap. The crucial assumption when deriving these equations was the mean field approximation which should be valid for dilute BECs in which the condensate fraction is close to unity. The excitations of the system (deviations from the mean field) can be treated using Bogoliubov theory for weakly interacting bosons\cite{Pethick}. 
+
 \subsection{Thomas-Fermi approximation}
-\section{Density and momentum distributions}
-Why the BEC has the shape of an inverted parabola. 
-\subsection{Expansion of atomic cloud in 3D harmonic potential}
-How one can infer atomic densities and temperature (from thermal atoms) from time of flight images.
-\section{Density profiles}
 
-
-For a given trapping potential $U(\r)$, the density distribution of a thermal ensamble is
-\begin{equation}
-	n(\r) = n_0 e^{-\frac{U(\r)}{k_BT}}.
-\end{equation}
-%
-The temperature $T$ can be derived from the density distribution. For a 3D harmonic trap
+For systems with large $N$, the interaction term in the GP equation is very large compared to the kinetic energy\footnote{It can be shown that the ratio of kinetic energy to interactions scales like $N^{-4/5}$}. As the kinetic energy becomes less important we enter the Thomas-Fermi (TF) regime where the energy of the system is given only by the external potential and the mean field energy and the GP equation is considerably simplified 
 %
 \begin{equation}
-	n(\r)=n_0e^{-(\frac{x^2}{2\sigma_x^2}+\frac{y^2}{2\sigma_y^2}+\frac{z^2}{2\sigma_z^2})},
+	\left[V(\r)+g\vert\psi(\r)\vert\psi(\r)\vert^2\right]\psi(\r)=\mu\psi(\r).
 \end{equation}
 %
-where $\sigma_i=\omega_i^{-1}\sqrt{k_BT/m}$. Using the equipartition theorem we find that the spatial extension of the cloud and the temperature are related by 
+
+In the TF regime the density distribution of the condensate $n(\r)=\vert\psi(\r)\vert^2$ reflects the shape of the external potential
 %
 \begin{equation}
-	T=\frac{m}{k_B}\sigma_i^2\omega_i^2
+	n(\r)=g^{-1}[\mu-V(\r)],
 \end{equation}
+%
+when $\mu-V(\r)>0$ and is otherwise zero. For a harmonic confining potential (Equation~\ref{eq:ho}) as is typical in our experiments we find that the length scale that characterizes the size of the condensate is the Thomas-Fermi radius
+%
+\begin{equation}
+	R_j=\sqrt{\frac{2\mu}{m\omega_j^2}}, \ \ \ j=x,y,z.
+\end{equation}
+%
+The density of the condensate is described by an inverted parabola
+%
+\begin{equation}
+	n(\r)=\frac{\mu}{g}\left(1-\frac{x^2}{R_x^2}-\frac{y^2}{R_y^2}-\frac{z^2}{R_z^2}\right).
+	\label{eq:n_tf}
+\end{equation}
+ %
+ 
+By integrating over Equation~\ref{eq:n_tf} we find that
+ %
+ \begin{equation}
+ 	N=\frac{8\pi}{15}\frac{\mu}{g}R_xR_yR_z,
+ \end{equation}
+ %
+ which is a useful quantity for determining the number of atoms in the condensate based on density profiles. In practice our images are taken after the atoms are released from the trap and the density profile is modified due to interactions. This will be discussed in more detail in the next following section. 
 
-\note{TODO: what is my chemical potential?}
-%Probably I don't want to talk about any of this stuff...
-% \section{Laser cooling and trapping techniques}
+\section{Density distributions}
 
-% \subsection{Zeeman slower}
-% \subsection{Magneto-optical trap}
-% \subsection{Optical molasses and sub dopler cooling}
-% \subsection{RF induced evaporation}
-% \subsection{Dipole trap}
-% \subsection{Evaporation in the dipole trap}
+Most ultracold atoms experiments are probed by directly imaging the atoms (e.g. with absorption imaging, Section~\ref{sec:absorption imaging}). If the atoms are imaged in-situ we gain access to their spatial density profiles. If the atoms are released from the trap and allowed to expand in time of flight (TOF) we can measure their momentum distribution. In this section I summarize the signatures in the density distributions of BECs and thermal atoms confined in a harmonic potential both in-situ and after TOF. 
+
+For a thermal gas in a harmonic potential at temperatures higher than the level spacing $k_BT>\hbar\omega_{x,y,z}$ the density is given by~\cite{ketterle_w._making_1999}
+%
+\begin{equation}
+	n_{\rm{th}}(\r)=\frac{1}{\lambda_{\rm{th}}^3}g_{3/2}(z(\r))
+\end{equation}
+%
+where $z(\r)=\exp(\mu-V(\r)/\k_BT$, $V(\r)$ is given by Equation~\ref{eq:ho}, $\mu$ is the chemical potential and $g_j(z)=\sum_iz^i/i^j$ is the Bose function. The Bose function introduces effects of quantum statistics and compared to a distribution of distinguishable particles, the peak density of a Bose gas is increased by $g_{3/2}(z)/z$, a phenomenon known as Bose-enhancement.
+
+The distribution after TOF can be calculated considering that the trapped atoms fly ballistically from their position in the trap. An atom starting initially at the point $\r_0$ moves to the point $\r$ after a time $t$ if its momentum is given by $\mathbf{p}=m(\r-\r0)/t$, and it can be shown that
+%
+\begin{align}
+	n_{\rm{tof}}&=\frac{1}{\lambda_{\rm{th}}}\prod_{i=1}^3g_{3/2}\left(\exp\left[\mu-\frac{m}{2}\sum_{i=1}^3x_i^2\left(\frac{\omega_i^2}{1+\omega_i^2t^2}\right)\right]\right) \nonumber \\
+	&\approx \frac{1}{\lambda_{\rm{th}}}g_{3/2}\left(\exp\left[(\mu-\frac{mr^2}{2t^2})/k_BT\right]\right)
+\end{align}
+%
+where the approximation in the second line is valid for $t\gg \omega_i^{-1}$. The temperature of the atoms can be estimated by looking at the wings of the density distribution after TOF. Even with the case of Bose enhancement, the density of the wings still decays exponentially as $\exp(-x_i^2/\sigma_i^2)$ and the temperature of the cloud can be determined using
+%
+\begin{align}
+	k_BT&=\frac{m}{2}\left(\frac{\omega_i^2}{1+\omega_i^2t^2}\sigma_i^2\right) \nonumber \\
+	&\approx \frac{m}{2}\left(\frac{\sigma_i}{t}\right)^2
+\end{align}
+
+For the case of a BEC at zero temperature (no thermal fraction) the in-situ density distribution is described by the Thomas-Fermi distribution 
+%
+\begin{align}
+	n(\r)&=n_0\left(1-\frac{x^2}{R_x^2}-\frac{y^2}{R_y^2}-\frac{z^2}{R_z^2}\right) \nonumber \\  
+	&= \frac{15N}{8\pi R_xR_yR_z}\left(1-\frac{x^2}{R_x^2}-\frac{y^2}{R_y^2}-\frac{z^2}{R_z^2}\right) .
+\end{align}
+
+Even though the BEC is in the motional ground state, it will expand during TOF as a consequence of interactions. The expansion can be determined using the time dependent GP equation. A detail account of the procedure can be found in \cite{castin_bose-einstein_1996}, the procedure relies on using the ansatz that the TF radii expand as
+%
+\begin{equation}
+	R_i(t)=\lambda_i(t)R_i(t=0),
+	\label{eq:castin_dum_radius}
+\end{equation}
+%
+where I assumed that the condensate is in the trap at $t=0$ which implies that $\lambda_i(0)=1$. If the trap is suddenly turned off at $t>0$ from inserting the TF wave function with radii given by Equation~\ref{eq:castin_dum_radius} into the time-dependent GP equation we find a series differential equations
+%
+\begin{equation}
+	\frac{d^2\lambda_i}{dt^2}=\frac{\omega_i^2}{\lambda_i\lambda_x\lambda_y\lambda_z}
+\end{equation}
+%
+which can be used to determine the density profile of the BEC in TOF. Alternatively if the density profile of the BEC is known from an image, these relations can used to back-propagate what the original TF radii of the confined condensate was. 
+
+For partially condensed clouds the density profiles will be given by a combination of the thermal density profiles and the Thomas-Fermi density profile. 
 
 
 
+
+% were when the condensate
+% was confined.
+% or by measuring the
+% TOF radii via absorption imaging, back-propagate what the original radii were when the condensate
+% was confined.
+% %
+% \begin{align}
+% 	n(\r)&=n_0e^{-(\frac{x^2}{2\sigma_x^2}+\frac{y^2}{2\sigma_y^2}+\frac{z^2}{2\sigma_z^2})}\nonumber \\
+% 	&= \frac{15N}{8\pi R_xR_yR_z},
+% \end{align}
+% %
+% where $\sigma_i=\omega_i^{-1}\sqrt{k_BT/m}$. Using the equipartition theorem we find that the spatial extension of the cloud and the temperature are related by 
+% %
+% \begin{equation}
+% 	T=\frac{m}{k_B}\sigma_i^2\omega_i^2
+% \end{equation}
+
+% \note{TODO: what is my chemical potential?}
+
+
+% For a given trapping potential $U(\r)$, the density distribution of a thermal ensamble is
+% \begin{equation}
+% 	n(\r) = n_0 e^{-\frac{U(\r)}{k_BT}}.
+% \end{equation}
+% %
+% The temperature $T$ can be derived from the density distribution. For a 3D harmonic trap
 
