@@ -115,26 +115,50 @@ In the presence of an electric field $\mathbf E$ an atom can become polarized an
 %
 where $\mathbf{\hat d}=-e\sum_j r_j$ is the atomic dipole operator, $e$ is the electron charge and $\hat r_j$ are the position operators of the atom's electrons relative to the center of mas of the atom. This approximation, known as the dipole approximation, is valid for electromagnetic radiation when the wavelength is much larger than the size of an atom $\lambda\gg r_{\rm{atom}}$~\cite{SteckTextbook}. 
 
-For a coherent electromagnetic field $\mathbf{E}(\omega,t)$ with angular frequency $\omega$, the dipole Hamiltonian can be written in terms of a dynamic polarizability
-%
-\begin{equation}
-	\hat{H}_{\rm{dip}}=-\alpha_{\mu\nu}(\omega)E_{\mu}^{(+)}E_{\nu}^{(-)}
-\end{equation}
-%
-where $\mathbf{E}^{(\pm)}$ are the possitive/negative frequency components of the field. $\alpha_{\mu\nu}(\omega)$ can be found by looking at the (time averaged) shift in the energy of a given state state using second order time-dependent perturbation theory~\cite{SteckTextbook,deutsch_quantum_2010}. For the ground state $\ket{g}$ the polarizability takes the form 
-%
-\begin{equation}
-	\alpha_{\mu\nu}(\omega)=\sum_j\frac{2\omega_{jg}\bra{g}d_\mu\ket{e_j}\bra{e_j}d_\nu\ket{e_j}}{\hbar(\omega_{jg}^2-\omega^2)},
-\end{equation}
-%
-where $\ket{e_j}$ represent the excited states and $\omega_{jg}=(E_j-E_g)/\hbar$. The dipole operator is a rank-2 tensor and can be represented by 3 irreducible tensor operators (see~\cite{SteckTextbook} for a complete derivation). In the limit of small magnetic fields so that $F$ and $m_F$ are good quantum numbers describing the state of the atom $\ket{n, F, m_F}$ the dipole Hamiltonian in this representation takes a convenient form
+First I consider the simplified case a two-level system interacting with a coherent electromagnetic field $\mathbf{E}=\mathbf{E}^{(+)}e^{-i\omega t}+\mathbf{E}^{(-)}e^{i\omega t}$, where $\mathbf{E}^{(\pm)}=\hat{\epsilon}E^{(\pm)}$ are the possitive/negative frequency components of the field, $\hat{\epsilon}$ the polarization, and $\omega$ is the angular frequency. Using second order perturbation theory it can be shown that Stark shift of the ground state is
 %
 \begin{align}
-	\hat{H}_{\rm{dip}}= &\alpha^{(0)}(\mathbf{E}^{(-)}\cdot\mathbf{E}^{(+)}) 
+ 	\Delta E_g&=-\frac{2\omega_{eg}\vert\bra{g}\hat{\epsilon}\cdot\mathbf{d}\ket{e}\vert^2\vert E^{(+)}\vert^2}{\hbar(\omega_{eg}^2-\omega^2)}\nonumber \\
+ 	&= -\frac{1}{2}\alpha(\omega) E^2
+ \end{align} 
+%
+where $\omega_{eg}=(E_e-E_g)/\hbar$ is the angular frequency associated to the energy splitting of the two states and  $\alpha(\omega)$ is a dynamic polarizability. Things are a bit more complicated with real atoms though, and we need to take into account all the atomic levels. Furthermore, there are degeneracies associated to the different angular momentum states so we have to be more careful with the orientation of the atom and the field. To take these effects into account one can introduce a generalization of the polarizability~\cite{SteckTextbook,deutsch_quantum_2010} which takes the form
+%
+\begin{align}
+	\alpha_{\mu\nu}(\omega)&=\sum_j\frac{2\omega_{jg}\bra{g}d_\mu\ket{e_j}\bra{e_j}d_\nu\ket{g_j}}{\hbar(\omega_{jg}^2-\omega^2)}\nonumber \\
+	&= \sum_{F',\ m_{F'}}\frac{2\omega_{F'F}\bra{F,m_F}d_\mu\ket{F', m_{F'}}\bra{F', m_{F'}}d_\nu\ket{F,m_F}}{\hbar(\omega_{F'F}^2-\omega^2)}.
+\end{align}
+%
+Here  $\ket{e_j}$ represent the excited states and $\omega_{jg}=(E_j-E_g)/\hbar$ and the expression in the second line corresponds the polarizability for the hyperfine levels of an atom in the ground state $\ket{F, m_F}$. We can therefore write an effective Hamiltonian for the Stark shift as 
+%
+\begin{align}
+	\hat{H}_{\rm{Stark}}&=-\alpha_{\mu\nu}(\omega)E_{\mu}^{(+)}E_{\nu}^{(-)}.
+\end{align}
+%
+
+The polarizability is a rank-2 tensor operator and can be represented by 3 irreducible tensor operators (see~\cite{SteckTextbook} for a complete derivation). In the limit of small magnetic fields so that $F$ and $m_F$ are good quantum numbers describing the state of the atom $\ket{n, F, m_F}$ the dipole Hamiltonian in this representation takes a convenient form
+%
+\begin{align}
+	\hat{H}_{\rm{Stark}}= &\alpha^{(0)}(\mathbf{E}^{(-)}\cdot\mathbf{E}^{(+)}) 
 	+i\alpha^{(1)}(\mathbf{E}^{(-)}\times\mathbf{E}^{(+)})\cdot\mathbf{\hat{F}}  \nonumber \\ 
 	&+ \alpha^{(2)}E_i^{(-)}E_j^{(+)}	\left(\frac{1}{2}(F_iF_j+F_jF_i)-\frac{1}{3}\mathbf{\hat F}^2\delta_{i,j}\right)\Big],
 	\label{eq:light_matter_coupling}
 \end{align}
+
+% where $\mathbf{E}^{(\pm)}$ are the possitive/negative frequency components of the field. $\alpha_{\mu\nu}(\omega)$ can be found by looking at the (time averaged) shift in the energy of a given state state using second order time-dependent perturbation theory~\cite{SteckTextbook,deutsch_quantum_2010}. For the ground state $\ket{g}$ the polarizability takes the form 
+% %
+% \begin{equation}
+% 	\alpha_{\mu\nu}(\omega)=\sum_j\frac{2\omega_{jg}\bra{g}d_\mu\ket{e_j}\bra{e_j}d_\nu\ket{e_j}}{\hbar(\omega_{jg}^2-\omega^2)},
+% \end{equation}
+% %
+% where $\ket{e_j}$ represent the excited states and $\omega_{jg}=(E_j-E_g)/\hbar$. The dipole operator is a rank-2 tensor and can be represented by 3 irreducible tensor operators (see~\cite{SteckTextbook} for a complete derivation). In the limit of small magnetic fields so that $F$ and $m_F$ are good quantum numbers describing the state of the atom $\ket{n, F, m_F}$ the dipole Hamiltonian in this representation takes a convenient form
+%
+% \begin{align}
+% 	\hat{H}_{\rm{dip}}= &\alpha^{(0)}(\mathbf{E}^{(-)}\cdot\mathbf{E}^{(+)}) 
+% 	+i\alpha^{(1)}(\mathbf{E}^{(-)}\times\mathbf{E}^{(+)})\cdot\mathbf{\hat{F}}  \nonumber \\ 
+% 	&+ \alpha^{(2)}E_i^{(-)}E_j^{(+)}	\left(\frac{1}{2}(F_iF_j+F_jF_i)-\frac{1}{3}\mathbf{\hat F}^2\delta_{i,j}\right)\Big],
+% 	\label{eq:light_matter_coupling}
+% \end{align}
 %
 where $\alpha^{(0)}$, $\alpha^{(1)}$ and $\alpha^{(2)}$ are the scalar, vector and tensor polarizabilities respectively and $\hat{\mathbf{F}}$ is the total angular momentum operator. For all our experiments $\alpha^{(2)}$ is very small so I will limit the discussion to the effect of the first two terms. The scalar term is responsible for the dipole force that allow us to trap atoms using off-resonant light and the vector component is necessary for engineering spin-orbit coupling and other spin-dependent potentials through two-photon processes. 
 
@@ -144,10 +168,10 @@ where $\alpha^{(0)}$, $\alpha^{(1)}$ and $\alpha^{(2)}$ are the scalar, vector a
 The scalar polarizability takes the form
 %
 \begin{equation}
-	\alpha^{(0)}=\sum_j\frac{2\omega_{jg}\bra{g}\mathbf{d}\cdot\hat{\epsilon}\ket{e_j}\vert^2}{\hbar(\omega_{jg}^2-\omega^2)},
+	\alpha^{(0)}=\sum_j\frac{2\omega_{jg}\vert\bra{g}\mathbf{d}\cdot\hat{\epsilon}\ket{e_j}\vert^2}{\hbar(\omega_{jg}^2-\omega^2)},
 \end{equation}
 %
-where $\hat{\epsilon}$ represents the polarization vector of the light. The matrix element can be expressed in terms of the Clebsch-Gordan coefficients and the reduced matrix element using the Wigner-Eckart theorem~\cite{Sakurai}. For the ground state of an Alkali atom ($J=1/2$) and if the detuning is large compared to the hyperfine splitting the expression above gets simplified to
+where the matrix element can be expressed in terms of the Clebsch-Gordan coefficients and the reduced matrix element using the Wigner-Eckart theorem~\cite{Sakurai}. For the ground state of an Alkali atom ($J=1/2$) and if the detuning is large compared to the hyperfine splitting the expression above gets simplified to
 %
 \begin{equation}
 	\alpha^{(0)}\approx\sum_{J'}\frac{2\omega_{JJ'}\vert\langle J=1/2 \| \mathbf{d}\|J'\rangle\vert^2}{3\hbar(\omega_{JJ'}^2-\omega^2)}.
