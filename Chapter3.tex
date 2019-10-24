@@ -214,13 +214,18 @@ The oscillation frequencies of the trap along the radial direction are $\omega_r
 \subsection{Vector polarizability and effective magnetic fields}
 \label{sec:vector_polarizability}
 
-For Alkali atoms the vector poarizability takes the form~\cite{SteckTextbook,goldman_light-induced_2014}
+In general the expressions for the vector polarizability are quite complicated and depend both on reduced matrix elements and Wigner $6-j$ symbols (see~\cite{SteckTextbook} for example for the complete expressions). For the particular case of Alkali atoms in the large detuning regime the vector polarizability takes a simplified form~\cite{goldman_light-induced_2014}
 %
 \begin{equation}
-	\alpha^{(1)}= \frac{2\alpha^{(0)}\Delta_{\rm{fs}}}{3(\tilde{E}-\hbar\omega)}
+	\alpha^{(1)}= \frac{2\Delta_{\rm{fs}}\alpha^{(0)}}{3(\tilde{E}-\hbar\omega)}
 \end{equation}
 %
-where $\Delta_{\rm{fs}}=3A_{\rm{fs}}/2$ and $\tilde{E}=(2E_{\rm{D_1}}+E_{\rm{D2}})$. If we recall the Zeeman Hamiltonian introduced in Section~\ref{sec:zeeman_effect}, the term proportional to the vector polarizability in Equation~\ref{eq:light_matter_coupling} looks very similar to Equation~\ref{eq:zeeman_hamiltonian} for an effective magnetic field
+% \begin{equation}
+% 	\alpha^{(1)}= \sum_{J'}(-1)^{J'+3/2}\sqrt{\frac{6}{J(J+1)(2J+1)}}Fg_F\alpha^{(0)}.
+% \end{equation}
+where $\Delta_{\rm{fs}}=3A_{\rm{fs}}/2$ and $\tilde{E}=(2E_{\rm{D_1}}+E_{\rm{D2}})$. 
+
+If we recall the Zeeman Hamiltonian introduced in Section~\ref{sec:zeeman_effect}, the term proportional to the vector polarizability in Equation~\ref{eq:light_matter_coupling} looks very similar to Equation~\ref{eq:zeeman_hamiltonian} for an effective magnetic field
 %
 \begin{equation}
 	\mathbf{B}_{\rm{eff}}=-\frac{i\hbar}{\mu_Bg_J}\alpha^{(1)}(\mathbf{E}^*\times\mathbf{E}).
