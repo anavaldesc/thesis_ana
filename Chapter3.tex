@@ -8,7 +8,7 @@
 \chapter{Manipulation and detection of ultra-cold atoms}
 \label{ch:Ch3}
 
-All of the experiments described in this thesis were performed using ultracold clouds of $\Rb87$. In this Chapter I describe the techniques and interactions that make our experiments possible. This Chapter is not meant to be an extensive survey of atomic physics but rather covers the topics that are most relevant to my experiments. The references I included are helpful if the reader is interested in learning the details of the derivations or wants to expand on a given topic. I start by describing the electronic structure of $\Rb87$. Then I review the interactions of atoms with magnetic fields and its application to magnetic trapping. I describe the foundations of atom-light interactions that make possible both laser cooling and trapping of atoms and give rise to Raman induced transitions.  Finally I discuss coherent processes that use the magnetic and electric dipole interaction and are relevant to the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy}, \ref{ch:clock_states} and \ref{ch:Rashba}. Finally, I discuss resonant absorption imaging which is used to detect atoms after all our experiments are performed.
+All of the experiments described in this thesis were performed using ultracold clouds of $\Rb87$. In this Chapter I describe the techniques and interactions that make our experiments possible. This Chapter is not an extensive survey of atomic physics but rather covers the topics that are most relevant to my experiments. The references I included are helpful if the reader is interested in learning the details of the derivations or wants to expand on a given topic. I start by describing the electronic structure of $\Rb87$. Then I review the interactions of atoms with magnetic fields and its application to magnetic trapping. I describe the foundations of atom-light interactions that make possible both laser cooling and trapping of atoms and give rise to Raman induced transitions.  Finally I discuss coherent processes that use the magnetic and electric dipole interaction and are relevant to the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy}, \ref{ch:clock_states} and \ref{ch:Rashba}. Finally, I discuss resonant absorption imaging which is used to detect atoms after all our experiments are performed.
 
 %Both the cooling and trapping of atoms as well as the engineering of interesting potentials and detection of atoms rely on the interaction of atoms with electromagnetic fields as well as with static and oscillating magnetic fields. 
 \section{Electronic structure of $^{87}$Rb}
@@ -17,15 +17,14 @@ All of the experiments described in this thesis were performed using ultracold c
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/Rb_structure.pdf}
-\caption[$\Rb87$ level structure]{$\Rb87$ level structure (not to scale). {\bf a.} Ground and first excited state electronic configuration of $\Rb87$ given by the $\{n,\mathbf{L}\}$ quantum numbers. {\bf b.} The interaction between the orbital angular momentum and the spin of the electron leads to the fine splitting of orbitals with $L>0$. The splitting of the $5^2P$ line gives rise to the D1 and D2 lines. {\bf c.} The interaction between the total angular momentum and the nuclear spin causes the fine structure levels to split further into states characterized by the quantum number $F$.}
+\caption[$\Rb87$ level structure]{$\Rb87$ level structure (not to scale). {\bf a.} Ground and first excited state electronic configuration of $\Rb87$ given by the $\{n,\mathbf{L}\}$ quantum numbers. {\bf b.} The interaction between the orbital angular momentum and the spin of the electron leads to the fine structure splitting of orbitals with $L>0$. The splitting of the $5^2P$ line gives rise to the D1 and D2 lines. {\bf c.} The interaction between the total angular momentum and the nuclear spin causes the fine structure levels to split further into states characterized by the quantum number $F$.}
 \label{fig:Rb_structure}
 \end{center}
 \end{figure*}
 
-Rb is an Alkali metal (also Li, which exists in our vacuum chamber but was never used). Alkali metals correspond to the first group (leftmost column) of the periodic table and are characterized by having a single valence electron, which makes the description of their internal structure much simpler than that of other elements. We can describe the state of an electron in an atom by its angular momentum $\mathbf{\hat{L}}$ and its spin $\mathbf{\hat S}$. Because of Pauli's exclusion principle there can not be two electrons with the same quantum numbers and in multi-electron atoms they tend to fill `shells' of different angular momentum values, historically labeled by the letters $S,\ P,\ D,\ F,\ ...$\footnote{This terms were used to describe the lines in the emission spectra when they were first discovered. $S$ stands for sharp, $P$ for principal $D$ for diffuse and $F$ for further noted} (corresponding to $L=1,\ 2,\ 3,\ 4,\ ...$). In particular Rb has 4 filled shells and one electron in the $5S$ 
-shell, where the number $5$ corresponds to the principal quantum number $n$. Figure~\ref{fig:Rb_structure} shows the energy levels of the ground state $5S$ and its closest $5P$ orbital. %In the absence of interactions, the $m_l$ sublevels within an orbital are degenerate.
+Rb is an Alkali metal (also Li, which exists in our vacuum chamber but was never used). Alkali metals correspond to the first group (leftmost column) of the periodic table and are characterized by having a single valence electron, which makes the description of their internal structure much simpler than that of other elements. We can describe the state of an electron in an atom by its angular momentum $\mathbf{\hat{L}}$ and its spin $\mathbf{\hat S}$. Because of Pauli's exclusion principle there can not be two electrons with the same quantum numbers and in multi-electron atoms they tend to fill `shells' of different angular momentum values, historically labeled by the letters $S,\ P,\ D,\ F,\ ...$\footnote{This terms were used to describe the lines in the emission spectra when they were first discovered. $S$ stands for sharp, $P$ for principal $D$ for diffuse and $F$ for further noted} (corresponding to $L=0,\ 1,\ 2,\ 3,\  ...$). In particular Rb has 4 filled shells and one electron in the $5S$ shell, where the number $5$ corresponds to the principal quantum number $n$. Figure~\ref{fig:Rb_structure} shows the energy levels of the ground state $5S$ and its closest $5P$ orbital. %In the absence of interactions, the $m_l$ sublevels within an orbital are degenerate.
 
-The atomic level structure is modified by relativistic effects. In particular the relativistic treatment of the electron's motion gives rise to an interaction between the electron's intrinsic magnetic moment (the spin) $\mathbf{\hat S}$ and the orbital angular momentum $\mathbf{\hat L}$. This spin-orbit coupling interaction $\hat H_{\rm {fs}} = A_{\rm{fs}} \mathbf{L}\cdot\mathbf{S}$ causes the fine structure splitting of the electronic orbitals into levels with different total electronic angular momentum $\mathbf{\hat J}=\mathbf{\hat L}\cdot\mathbf{\hat S}$. Figure~\ref{fig:Rb_structure}b show the $5^2S_{1/2}$, $5^2P_{1/2}$ and $5^2P{3/2}$ electronic configurations that arise from this splitting, where the subscript indicates the value of $J$. For $S$ ($L=0$) orbitals $J=1/2$ is the only possible value and the levels are not split. For the $P$ orbital ($L=1$) $J$ and a single electron with $S=1/2$, $J$ can be $1/2$ or $3/2$ and the $P$ orbital splits into two levels. The $5^2S_{1/2}\rightarrow 5^2P_{1/2}$ is known as the D1 line and has wavelength $\lambda=\unit[794.979]{nm}$ and $5S_{1/2}\rightarrow 5P_{3/2}$ transition is known as the D2 line and has $\lambda=\unit[790.241]{nm}$ \cite{Steck}. 
+The atomic level structure is modified by relativistic effects. In particular the relativistic treatment of the electron's motion gives rise to an interaction between the electron's intrinsic magnetic moment (the spin) $\mathbf{\hat S}$ and the orbital angular momentum $\mathbf{\hat L}$. This spin-orbit coupling interaction $\hat H_{\rm {fs}} = A_{\rm{fs}} \mathbf{L}\cdot\mathbf{S}$ causes the fine structure splitting of the electronic orbitals into levels with different total electronic angular momentum $\mathbf{\hat J}=\mathbf{\hat L}\cdot\mathbf{\hat S}$. Figure~\ref{fig:Rb_structure}b show the $5^2S_{1/2}$, $5^2P_{1/2}$ and $5^2P{3/2}$ electronic configurations that arise from this splitting, where I introduced the spectroscopic notation $n^{2S+1}L_{J}$ that indicates the values of the relevant quantum numbers. For $S$ ($L=0$) orbitals $J=1/2$ is the only possible value and the levels are not split. For the $P$ orbital ($L=1$) $J$ and a single electron with $S=1/2$, $J$ can be $1/2$ or $3/2$ and the $P$ orbital splits into two levels. The $5^2S_{1/2}\rightarrow 5^2P_{1/2}$ is known as the D1 line and has wavelength $\lambda=\unit[794.979]{nm}$ and $5S_{1/2}\rightarrow 5P_{3/2}$ transition is known as the D2 line and has $\lambda=\unit[790.241]{nm}$ \cite{Steck}. 
 
 The atomic level structure gets further modified by the magnetic interaction of the electron with the nuclear spin $\mathbf{I}$. This is another kind of spin-orbit interaction that gives rise to the hyperfine splitting of the atomic levels which can be described by the Hamiltonian $\hat H_{\rm{hfs}} = A_{\rm{hfs}}\mathbf{I}\cdot\mathbf{J}$. A complete derivation of $\hat H_{\rm{hfs}}$ can be found in~\cite{schwartz_theory_1955}. The hyperfine levels correspond to different values of the total angular momentum $\mathbf{\hat F}=\mathbf{\hat J}+\mathbf{\hat I}$. For $\Rb87$ $I=3/2$~\cite{Steck} which results in the level structure shown in Figure~\ref{fig:Rb_structure}c. 
 
@@ -40,7 +39,7 @@ Atoms have have an intrinsic magnetic moment that is given by the sum of nuclear
 	\boldsymbol{\hat \mu}=-\frac{\mu_B}{\hbar}(g_S\mathbf{\hat{S}}+g_L\mathbf{\hat L}+g_I\mathbf{\hat I})%=\frac{\mu_B g_F}{\hbar} \mathbf{\hat F}
 \end{equation}
 %
-where $\mu_B$ is the Bohr magneton and $g_S$, $g_L$ and $g_I$ are the Land\'e `$g$-factors' corresponding to the spin, orbital and nuclear angular momentum. In the presence of an external magnetic field $\mathbf B$, the internal levels of an atom get modified due to the Zeeman~\cite{Zeeman_effect} interaction
+where $\mu_B$ is the Bohr magneton and $g_S$, $g_L$ and $g_I$ are the `$g$-factors' corresponding to the spin, orbital and nuclear angular momentum. In the presence of an external magnetic field $\mathbf B$, the internal levels of an atom get modified due to the Zeeman~\cite{Zeeman_effect} interaction
 %
 \begin{equation}
 	\hat{H}_{\rm{Zeeman}}=-\boldsymbol{\hat \mu}\cdot\mathbf{B}.
@@ -52,7 +51,7 @@ If the energy shift due to the Zeeman interaction is small compared to the hyper
 	\hat{H}_{\rm{Zeeman}}=\frac{\mu_B g_F}{\hbar}\mathbf{\hat F}\cdot\mathbf{B}
 \end{equation}
 %
-where the hyperfine Land\'e $g$-factor is
+where is the hyperfine Land\'e $g$-factor
 %
 \begin{equation}
 	g_F=g_J\frac{F(F+1)-I(I+1)+J(J+1)}{2F(F+1)}+g_I\frac{F(F+1)+I(I+1)-J(J+1)}{2F(F+1)}
@@ -62,7 +61,8 @@ and
 \begin{equation}
 	g_J\approx=1+\frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}.
 \end{equation}
- The total energy shifts can be calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. Figure~\ref{fig:Zeeman_splitting} shows the energies of the $m_F$ levels in the $F=1$ and $F=2$ manifolds of $\Rb87$ as a function of magnetic field. If the magnetic field is small then the Zeeman term can be treated as a perturbation to the atomic Hamiltonian and the energy split is linear with the magnitude of the field $E_{m_F}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' at large magnetic fields\footnote{A couple orders of magnitude larger than the fields we operate at.} the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$, the gray box in Figureº~\ref{fig:Zeeman_splitting}) where the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
+%
+is the Land\'e $g$-factor associated to the total electronic angular momentum $J$. The total energy shifts can be calculated by diagonalizing the full atomic Hamiltonian including the fine and hyperfine structure terms. Figure~\ref{fig:Zeeman_splitting} shows the energies of the $m_F$ levels in the $F=1$ and $F=2$ manifolds of the $5^2S_{1/2}$ electronic ground state of $\Rb87$ as a function of magnetic field. If the magnetic field is small then the Zeeman term can be treated as a perturbation to the atomic Hamiltonian and the energy split is linear with the magnitude of the field $E_{m_F}=g_F\mu_B m_FB$, what is known as the `linear Zeeman regime' where $F$ and $m_F$ are good quantum numbers. In contrast, in the `Pachen-Back regime' at large magnetic fields\footnote{A couple orders of magnitude larger than the fields we operate at.} the Zeeman term dominates over the fine and hyperfine terms and therefore the good quantum numbers of the system are $J$ and $m_J$. Our experiments typically operate in an intermediate regime ($B\sim 10-30\,\rm{G}$, the gray box in Figureº~\ref{fig:Zeeman_splitting}) where the energy of $m_F=0$ gets a small shift in energy that is quadratic in $B$. For atoms in $F=1$ we define this quadratic Zeeman shift as $\epsilon=E_0-(E_{+1}-E_{-1})/2$, where $E_{m_F}$ is the Zeeman shift for state $m_F$.
 
 \begin{figure*}[htb]
 \begin{center}
@@ -92,14 +92,17 @@ The sign of the Zeeman energy for different $m_F$ state can be used to create st
 where $\mathbf{B}_0$ is a constant magnetic field, for simplicity I will assume that $\mathbf{B}_0=B_0\ez$. The Zeeman Hamiltonian gives a trapping potential
 %
 \begin{align}
-	U(\mathbf{r})&=g_F\mu_B m_F B'\sqrt{x^2+y^2+4\left(z-\frac{B_0}{2B'}\right)^2} \nonumber \\
+	U(\mathbf{r})&=g_F\mu_B m_F B \nonumber \\
+	&=g_F\mu_B m_F B'\sqrt{x^2+y^2+4\left(z-\frac{B_0}{2B'}\right)^2} \nonumber \\
 	& \approx g_F\mu_B m_F B'\left(\rho+2\left\vert z-\frac{B_0}{2B'}\right\vert\right)
 	\label{eq:quadrupole_trap}
 \end{align}
 %
 where $\rho^2=x^2+y^2$ and the approximation on the second line is valid for small displacements from the trap center. 
 
-The sign of the magnetic moment determines which states can be trapped. For $\Rb87$ the $\ket{F=1, m_F=-1}$, $\ket{F=2, m_F=2,1}$ are magnetically trappable. 
+The sign of the magnetic moment determines which states can be trapped. For $\Rb87$ the $\ket{F=1, m_F=-1}$, $\ket{F=2, m_F=2,1}$ are magnetically trappable. The state $\ket{F=2, m_F=0}$ is also weakly magnetically trappable due to the quadratic Zeeman shift. 
+
+In addition to generating trapping potentials. We use quadrupole fields in the lab before imaging the atoms to generate state dependent forces that allow us to separate the different $m_F$ states.
 
 \section{Interaction between atoms and electric fields}
 \label{sec:atom-lignt_interactio n}
@@ -176,6 +179,7 @@ where the matrix element can be expressed in terms of the Clebsch-Gordan coeffic
 \begin{equation}
 	\alpha^{(0)}\approx\sum_{J'}\frac{2\omega_{JJ'}\vert\langle J=1/2 \| \mathbf{d}\|J'\rangle\vert^2}{3\hbar(\omega_{JJ'}^2-\omega^2)}.
 \end{equation}
+Due to the second order perturbation theory treatment, the scalar polarizability can be interpreted as arising from a two-photon process where the atom absorbs an off-resonant photon and then returns to its initial state by emitting a photon. 
 
 The dipole matrix elements needed to compute the polarizability are related to the transition scattering rate via Fermi's golden rule~\cite{Sakurai,SteckTextbook}
 \begin{equation}
@@ -194,7 +198,7 @@ where only the the most significant contribution from the closest transitions  (
 	\label{eq:scattering}
 \end{equation}
 
-The energy shift $U(\omega,\r)$ is a conservative term and is related to dipole trapping while the scattering term $\Gamma(\omega,\r)$ is dissipative and is important for laser cooling. In the context of engineering potentials for ultracold atoms with off-resonant light, the scattering is translated into heating because every time an atom emits a photon with angular frequency $\omega_L$ it gets a recoil momentum $\hbar\k_L$. If the frequency $\omega$ satisfies the relation $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$, as is often the case, we can neglect the terms proportional to $1/(\omega+\omega_{\rm D})$, an approximation typically known as the rotating wave approximation (RWA). If the RWA is valid then the frequency dependence of both the energy shifts and the scattering rates will be given by the detuning from the D1 and D2 transitions. 
+The energy shift $U(\omega,\r)$ is a conservative term and is related to dipole trapping, while the scattering term $\Gamma(\omega,\r)$ is dissipative and is important for laser cooling. In the context of engineering potentials for ultracold atoms with off-resonant light, the scattering is translated into heating because every time an atom emits a photon with angular frequency $\omega_L$ it gets a recoil momentum $\hbar\k_L$. If the frequency $\omega$ satisfies the relation $\omega+\omega_{\rm D}\gg\omega-\omega_{\rm D}$, as is often the case, we can neglect the terms proportional to $1/(\omega+\omega_{\rm D})$, an approximation typically known as the rotating wave approximation (RWA). If the RWA is valid then the frequency dependence of both the energy shifts and the scattering rates will be given by the detuning from the D1 and D2 transitions. 
 
 \subsubsection{Optical trapping}
 One important application of the scalar light-shift is to create optical traps for clouds of ultracold atoms. An optical field with non-uniform spatial intensity generates traps (and anti-traps) for the atoms which experience a force proportional to the intensity gradient $F_{\rm{dip}}=-\nabla U(\r)$. The attractive or repulsive nature of the trap depends on the sign of $U(\r)$ which is determined by the sign of the detuning (blue-detuned traps are repulsive and red-detuned traps are attractive)\note{TODO: make nice figure of dipole trap if I have time}. The production of BECs in our lab relies on the use of focused Gaussian laser beams with $\lambda=\unit[1064]{nm}$.  The intensity profile of a focused Gaussian beam propagating along $\ez$ is given by 
@@ -209,7 +213,7 @@ One important application of the scalar light-shift is to create optical traps f
  	U(\r) = -U_0\left(1-2\frac{x^2+y^2}{\omega_0^2}-\frac{z^2}{z_R^2}\right).
  \end{equation}
 %
-The oscillation frequencies of the trap along the radial direction are $\omega_r=(4U_0/m\omega_0^2)^{1/2}$ and along the axial direction $\omega_z=(2U_0/mz_R)^{1/2}$. The beam waist is usually much smaller than the Rayleigh range ($\omega_0\sim \unit[50-150]{nm}$ for my experiments) and therefore the trap is much stronger along the axial direction. To get around this we use a `crossed dipole trap' which is formed by a combination of two cross-polarized\footnote{The beams are cross-polarized to avoid interference between them} focused Gaussian beams propagating along perpendicular axes, ensuring that we get good confinement of atoms along all spatial directions. 
+The oscillation frequencies of the trap along the radial direction are $\omega_r=(4U_0/m\omega_0^2)^{1/2}$ and along the axial direction $\omega_z=(2U_0/mz_R)^{1/2}$. The beam waist is usually much smaller than the Rayleigh range ($\omega_0\sim \unit[50-150]{\mu m}$ for my experiments) and therefore the trap is much stronger along the axial direction. To get around this we use a `crossed dipole trap' which is formed by a combination of two cross-polarized\footnote{The beams are cross-polarized to avoid interference between them} and frequency shifted focused Gaussian beams propagating along perpendicular axes, ensuring that we get good confinement of atoms along all spatial directions. 
 
 \subsection{Vector polarizability and effective magnetic fields}
 \label{sec:vector_polarizability}
@@ -239,7 +243,7 @@ For the intensities that we typically operate at, the vector light shift is smal
 
 \subsubsection{Raman coupling}
 
-The vector light shift enables the realization of various spin dependent potentials in the lab. In the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy} and \ref{ch:Rashba} I used combinations of cross polarized laser beams such that the total electric field $\mathbf{E}^*\times\mathbf{E}\neq0$ and we induced two-photon Raman transitions. A Raman transition is a two-photon process between two ground states that uses an intermediate state that is off-resonantly coupled as is shown in Figure~\ref{fig:Raman_coupling}a. Due to the large detuning, the population transfered into the intermediate state is negligible and the state can be adiabatically eliminated~\cite{han_raman_2013}. In our experiments we typically couple the $m_F$ levels of the $F=1$ manifold after applying a bias magnetic field such that $\epsilon$ is non-negligible. %I describe the most simple case which considers coupling only two levels, in the later Chapters of the thesis this scheme is extended to couple multiple levels. 
+The vector light shift enables the realization of various spin dependent potentials in the lab. In the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy} and \ref{ch:Rashba} I used combinations of cross polarized laser beams such that the total electric field $\mathbf{E}^*\times\mathbf{E}\neq0$ and we induced two-photon Raman transitions. A Raman transition is also a two-photon process, but instead we consider two ground states and an intermediate state that is off-resonantly coupled as is shown in Figure~\ref{fig:Raman_coupling}a. Due to the large detuning, the population transfered into the intermediate state is negligible and the state can be adiabatically eliminated~\cite{han_raman_2013}. In our experiments we typically couple the $m_F$ levels of the $F=1$ manifold after applying a bias magnetic field such that $\epsilon$ is non-negligible. %I describe the most simple case which considers coupling only two levels, in the later Chapters of the thesis this scheme is extended to couple multiple levels. 
 
 \begin{figure*}[htb]
 \begin{center}
@@ -267,12 +271,12 @@ where $\omega_{a.b}=\omega_a-\omega_b$. The Raman Hamiltonian is given by
 	\hat{H}_{\rm R}=\Omega\cos(2\kl x-\omega_{a,b} t)\fx
 \end{equation}
 %
-where $\Omega=\alpha^{(1)}g_F E_a E_b/g_J\propto \sqrt{I_a I_b}$ is the Raman coupling strength. The geometry and wavelength of the Raman fields determine the natural units of the system: the single photon recoil momentum $k_{\mathrm{L}}=2\pi/\lambda_{\mathrm{R}}$ and its associated recoil energy $E_{\mathrm{L}}=\hbar^2k_{\mathrm{L}}^2/2m$, as well as the direction of the recoil momentum $\mathbf{k}_{\mathrm{L}}=k_{\mathrm{L}}\ex$. For most experiments we tune to what is known as the `magic wavelength' or tune-out wavelength~\cite{arora_tune-out_2011} $\lambda_{\mathrm{R}}=790.034\,\nm$, at which the ground-state scalar polarizability vanishes and the scattering rate is reduced  (Figure~\ref{fig:Raman_vs_lambda}a,c). We occasionally had to tune away from the magic wavelenth, for example when we were starving for laser power and wanted to increase our Raman coupling strength; Figure~\ref{fig:Raman_vs_lambda}b shows the dependence of the Raman coupling strength on wavelength and ~\ref{fig:Raman_vs_lambda}d shows the decay in number of Raman dressed atoms as a function of time for different wavelengths. 
+where $\Omega=\alpha^{(1)}g_F E_a E_b/g_J\propto \sqrt{I_a I_b}$ is the Raman coupling strength. The geometry and wavelength of the Raman fields determine the natural units of the system: the single photon recoil momentum $k_{\mathrm{L}}=2\pi/\lambda_{\mathrm{R}}$ and its associated recoil energy $E_{\mathrm{L}}=\hbar^2k_{\mathrm{L}}^2/2m$, as well as the direction of the recoil momentum $\mathbf{k}_{\mathrm{L}}=k_{\mathrm{L}}\ex$. For most experiments we tune to what is known as the `magic wavelength' or tune-out wavelength~\cite{arora_tune-out_2011} $\lambda_{\mathrm{R}}=790.034\,\nm$, at which the ground-state scalar polarizability vanishes and the scattering rate is reduced  (Figure~\ref{fig:Raman_vs_lambda}a,c). We occasionally had to tune away from the magic wavelenth, for example when we were starving for laser power and wanted to increase our Raman coupling strength. An important metric for us is Raman coupling strength and Figure~\ref{fig:Raman_vs_lambda}b shows its dependence on wavelength; tuning closer to resonance allows us to decrease the laser intensity for the same experiment but comes with increased scattering rates and reduced lifetime as can be seen in Figure~\ref{fig:Raman_vs_lambda}d which shows the decay in number of Raman dressed atoms as a function of time for different wavelengths. 
 
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/electric_polarizability_anotated.pdf}
-\caption[Electric realizabilities and scattering rates as a function of wavelength]{{\bf a.} Scalar polarizability as a function of wavelength near the D1 and D2 lines of $\Rb87$. We typically tune our Raman laser beams near the magic wavelength $\lambda=\unit[790.034]{nm}$. {\bf b.} Raman coupling strength as a function of wavelength measured for a pair of Raman beams with waist $w_0\sim \unit[150]{\mu m}$ and powers of $~\unit[50, 10]{\mu W}$. {\bf c.} Scattering rate as a function of wavelength, while it is not minimized at $\unit[790]{nm}$ its value is kept relatively low. {\bf d.} Decay in number of Raman dressed atoms as a function of hold time for the same beam parameters as in {\bf b.}. At $\lambda=\unit[786]{nm}$ the $1/e$ lifetime is $\tau=\unit[1.64]{s}$ and for $\lambda=\unit[792]{nm}$ it is reduced to $\tau=\unit[0.72]{s}$.}
+\caption[Electric realizabilities and scattering rates as a function of wavelength]{{\bf a.} Scalar polarizability as a function of wavelength near the D1 and D2 lines of $\Rb87$. We typically tune our Raman laser beams near the magic wavelength $\lambda=\unit[790.034]{nm}$. {\bf b.} Raman coupling strength as a function of wavelength measured for a pair of Raman beams with waist $w_0\sim \unit[150]{\mu m}$ and powers of $~\unit[50, 10]{mW}$. {\bf c.} Scattering rate as a function of wavelength, while it is not minimized at $\unit[790]{nm}$ its value is kept relatively low. {\bf d.} Decay in number of Raman dressed atoms as a function of hold time for the same beam parameters as in {\bf b.}. At $\lambda=\unit[786]{nm}$ the $1/e$ lifetime is $\tau=\unit[1.64]{s}$ and for $\lambda=\unit[792]{nm}$ it is reduced to $\tau=\unit[0.72]{s}$.}
 \label{fig:Raman_vs_lambda}
 \end{center}
 \end{figure*}
@@ -305,7 +309,7 @@ where $\sigma_{x,y,z}$ are the Pauli matrices. The Hamiltonian above corresponds
 \section{Coherent manipulation}
 \label{sec:quantum_coherent_dynamics}
 
-In this section I describe quantum coherent processes that are driven using the magnetic and electric dipole interactions described in previous sections. We rely on this techniques both for state preparation and characterization of our system. In all of the cases I consider a system described by the Hamiltonian 
+In this section I describe quantum coherent processes that are driven within the electronic grounds state using the magnetic and electric dipole interactions described in previous sections. We rely on this techniques both for state preparation and characterization of our system. In all of the cases I consider a system described by the Hamiltonian 
 %
 \begin{equation}
 	\hat{H}=\hat{H}_0+\hat{H}_I(t)
@@ -359,7 +363,7 @@ where $\delta=\omega-\omega_{ge}$ is a detuning and $\tilde{\Omega}=\sqrt{\Omega
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/rabi_cycle.pdf}
-\caption[The Rabi cycle]{The Rabi cycle. {\bf a.} Population transfered to the excited state as a function of detuning for a $\unit[60]{\mu s}$ pulse and $\Omega=\unit[7.1]{kHz}$. {\bf b.} Population transfered as a function of time for a $\Omega=\unit[14]{kHz}$ close to resonance.}
+\caption[The Rabi cycle]{The Rabi cycle. Population transfered from $\ket{F=1, m_F=-1}$ into $\ket{F=1, m_F=0}$ using an RF magnetic field with $\Omega=\unit[7.1]{kHz}$. The markers indicate experimental data points and the lines correspond to fits to the model in Equation~\ref{eq:Rabi_oscillations}{\bf a.} Population transfered for a $\unit[60]{\mu s}$ pulse as a function of detuning $\delta$. {\bf b.} Population transfered as a function of time close to resonance.}
 \label{fig:rabi_cycle}
 \end{center}
 \end{figure*}
@@ -374,7 +378,7 @@ The Hamiltonian after applying the RWA can be written as
 \end{pmatrix},
 \end{equation}
 %
-and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. Notice that the difference between the eigenenergies $E_+-E_-$is exactly equal to the frequency at which the populations in $\ket{g,e}$ oscillate, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure~\ref{fig:rabi_cycle}a shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve is as a way to find the transition frequency (we use this method in Chapter~\ref{ch:clock_states}). Figure~\ref{fig:rabi_cycle}b shows the population transfered into $m_F=0$ from $m_F=-1$ as a function of time; we typically look at the frequency of these Rabi oscillations to calibrate the coupling strength of an effective two-level system.
+and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. Notice that the difference between the eigenenergies $E_+-E_-$is exactly equal to the frequency at which the populations in $\ket{g,e}$ oscillate, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure~\ref{fig:rabi_cycle} shows an example of this process where we coupled an initial state $\ket{g}=\ket{F=1,m_F=-1}$ to $\ket{e}=\ket{F=1,m_F=0}$ using a radio-frequency (RF) magnetic field with $\Omega=\unit[7.1]{kHz}$. Figure~\ref{fig:rabi_cycle}a shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve is as a way to find the transition frequency (we use this method in Chapter~\ref{ch:clock_states}). Figure~\ref{fig:rabi_cycle}b shows the population transfered into $m_F=0$ from $m_F=-1$ as a function of time; we typically look at the frequency of these Rabi oscillations to calibrate the coupling strength of an effective two-level system.
 
 \subsection{Ramsey interferometer}
 \label{sec:Ramsey_interferometer}
@@ -529,7 +533,7 @@ where I have also added an additional dimensionless parameter $\alpha^{\star}$ w
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter3/flat_top_BEC.pdf}
-\caption[High intensity absorption image]{{\bf a.} A BEC imaged at low intensity shows a `flat-top' density profile. {\bf b.} In order to recover the Thomas-Fermi profile it is necessary to image high density BECs with intensities larger than $I_{\rm{sat}}.$ \note{TODO: I should try to find better images, this ones don't look great...}}
+\caption[High intensity absorption image]{{\bf a.} A BEC imaged at low intensity shows a `flat-top' density profile. {\bf b.} In order to recover the Thomas-Fermi profile it is necessary to image high density BECs with intensities larger than $I_{\rm{sat}}.$}
 \label{fig:flat_top_BEC}
 \end{center}
 \end{figure*}
