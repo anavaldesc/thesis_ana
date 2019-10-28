@@ -13,7 +13,7 @@ In this Chapter I describe the basic properties of Bose-Einstein condensation in
 
 \section{Bose-Einstein condensation of an ideal gas}
 
-At low temperatures and in thermodynamic equilibrium, the mean occupation number of non-interacting identical bosons occupying the state with energy $E$ is given by the Bose distribution
+At low temperatures and in thermodynamic equilibrium, the mean occupation number of non-interacting identical bosons occupying the state with energy $E$ is given by the Bose-Einstein distribution
 %
 \begin{equation}
 	n(E_j)=\frac{1}{e^{(E_j-\mu)/k_BT}-1}
@@ -26,7 +26,15 @@ where $T$ is the temperature, $\mu$ is the chemical potential (the energy cost o
 	n(E_j)\approx e^{-(E_j-\mu)/kT}
 \end{equation}
 %
-which applies to classical, distinguishable particles. The chemical potential is determined by the condition that the total number of particles $N$ is equal to the sum over all states in the distribution $N=\sum_jn(E_j)$ and is therefore a function of $N$ and $T$. Additionally, in order for $n(E_j)$ to be positive definite we must have $\mu\leq E_0$ where $E_0$ is the energy of the ground state. From the Bose distribution we can see that the occupation number of the ground state is unbounded when $\mu\rightarrow0$. As shown in Figure \note{TODO: make figure of Bose distribution} the temperature decreases the occupation number in the ground state increases until all atoms collapse into the lowest energy level and Bose condense. 
+which applies to classical, distinguishable particles. The chemical potential is determined by the condition that the total number of particles $N$ is equal to the sum over all states in the distribution $N=\sum_jn(E_j)$ and is therefore a function of $N$ and $T$. Additionally, in order for $n(E_j)$ to be positive definite we must have $\mu\leq E_0$ where $E_0$ is the energy of the ground state. From the Bose distribution we can see that the occupation number of the ground state is unbounded when $\mu\rightarrow0$ as is shown in Figure~\ref{eq:Bose_distribution}. The maximum occupation number in the excited state is bounded and when this number is reached, the remaining particles can occupy the ground state and thus Bose-Einstein condensation occurs. 
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter2/Bose_distribution.pdf}
+\caption[The Bose-Einstein distribution]{The Bose-Einstein distribution. Occupation number as a function of energy for different values of fugacity $\zeta=\exp(\mu /k_BT)$. Condensation occurs when $\mu=0$ ($\zeta=1$) and the occupation number in the ground state diverges.}
+\label{fig:Bose_distribution}
+\end{center}
+\end{figure}
 
 \subsection{Critical temperature}
 Now I will derive an analytical expression for the critical temperature at which atoms condense. For closely spaced energy levels (compared to $k_B T$) the sum representing the total number of particles can be replaced by the integral
@@ -140,7 +148,7 @@ which determines
 	U_{\rm{eff}}(\r-\r')=\frac{4\pi\hbar^2a}{m}\delta(\r-\r')=g\delta(\r-\r').
 \end{equation}
 %
-This is a nice approximation as it allows us to model the scattering between atoms as a hard sphere scattering process instead of considering the more complicated inter-atomic potentials. The sign of the scattering length determines the attractive or repulsive nature of the interactions and it  plays an important role in the experimental production of BECs as it determines the rate at which atoms thermalize during evaporative cooling.  For  $\Rb87$ at zero magnetic field $a=103 a_0$ where $a_0=\unit[5.29\times10^{-11}]{m}$ is the Bohr radius while for the more abundant isotope $^85$Rb $a=-\unit[23.44]{nm}$ which means that a BEC with density beyond a critical value can collapse~\cite{gerton_direct_2000}. \note{TODO: try to find references for the values of scattering lengths}
+This is a nice approximation as it allows us to model the scattering between atoms as a hard sphere scattering process instead of considering the more complicated inter-atomic potentials. The sign of the scattering length determines the attractive or repulsive nature of the interactions and it  plays an important role in the experimental production of BECs as it determines the rate at which atoms thermalize during evaporative cooling. 
 
 \subsection{Gross-Pitaevskii equation}
 
@@ -174,8 +182,8 @@ where $N(N-1)/2\approx N^2/2$ is counting the number of terms in the interaction
 	=0
 \end{align}
 %
-and we thus find that the condensate wave function obeys a non-linear Schr\"odinger equation known as the Gross-Pitaevskii (GP) equation
-\footnote{The GP equation is very minimally relevant to my experiment but it still feels good knowing where it comes from.}.  
+and we thus find that the condensate wave function obeys a non-linear Schr\"odinger equation known as the Gross-Pitaevskii (GP) equation.
+%\footnote{The GP equation is very minimally relevant to my experiment but it still feels good knowing where it comes from.}.  
 %
 \begin{equation}
 	\left[-\frac{\hbar^2}{2m}\nabla^2+V(\r)+g\vert\psi(\r)\vert^2\right]\psi(\r)=\mu\psi(\r)
@@ -189,6 +197,25 @@ where $\mu$ plays the role of the chemical potential. The dynamics of the conden
 
 The GP equation describing the relevant phenomena associated
 with BECs, for example the propagation of collective excitations and the expansion of the condensate when released from a trap. The crucial assumption when deriving these equations was the mean field approximation which should be valid for dilute BECs in which the condensate fraction is close to unity. The excitations of the system can be described by a set of equations similar to those of classical hydrodynamics derived from the GP equation or alternatively using Bogoliubov theory for weakly interacting bosons\cite{Pethick}.
+
+\subsection{Multiple component BECs}
+
+So far the discussion has been limited to single component BECs but most of our experiments are performed using a combination of multiple atomic internal states. In general, for a multiple component condensate the scattering lengths characterizing the interactions depend on the internal states of the incoming and outcoming scattering channels. 
+
+Two spin-$f$ particles colliding particles will be characterized by $2f$ scattering lengths $a_F$. For bosons the total spin $F$ takes even values and in particular for $\Rb87$ atoms in the $f=1$ hyperfine ground state there are two scattering lengths $a_0$ and $a_2$ corresponding to the two-particle total angular momentum states of $F=0$ and $F=2$ respectively. The values of scattering lengths are $a_0=101.8a_0$ and $a_2=100.4a_0$ where $a_0=5.29\times 10^{-11}$ is the Bohr radius. From the scattering lengths we can calculate the interaction coefficients
+%
+\begin{align}
+	c_0&=\frac{4\pi\hbar^2}{m}\frac{a_0+2a_2}{3}=100.84a_0\frac{4\pi\hbar^2}{m} \nonumber \\
+	c_2&=\frac{4\pi\hbar^2}{m}\frac{a_0-a_2}{3}\approx -4.7\times 10^{-3}c_0
+\end{align}
+%
+Here $c_0$ represents a spin-independent interaction strength that depends only on the total density while $c_2$ is a spin-dependent energy that is relevant only where there is non-zero density of both atoms in $m_F=\pm1$ and is much smaller than the spin-independent energy. The dynamics of multiple component BECs is governed by a spinor GP equation 
+
+Relationship between spin-dependent energy $nc_2$ and quadratic Zeeman shift gives time scale for spin-dependent interaction driven dynamics and is not very relevant for our experiments. 
+
+What should be taken away from these sections is that interactions matter and are necessary for the full description of a BEC of dilute gases, however for usual densities and interaction strengths in our $\Rb87$ BECs as well as the time scales of our experiments interactions play a very minimal role in the dynamics of the system and in fact they will be completely ignored in the remaining chapters. 
+
+% For  $\Rb87$ at zero magnetic field $a=103 a_0$\cite{stamper-kurn_spinor_2013} where $a_0=\unit[5.29\times10^{-11}]{m}$ is the Bohr radius while for the more abundant isotope $^85$Rb $a=-\unit[23.44]{nm}$ which means that a BEC with density beyond a critical value can collapse~\cite{gerton_direct_2000}. \note{TODO: try to find references for the values of scattering lengths}
 
 \subsection{Thomas-Fermi approximation}
 
@@ -227,6 +254,13 @@ By integrating over Equation~\ref{eq:n_tf} we find that
  %
  which is a useful quantity for determining the number of atoms in the condensate based on density profiles. In practice our images are taken after the atoms are released from the trap and the density profile is modified due to interactions. This will be discussed in more detail in the next following section. 
 
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter2/Thomas_fermi.pdf}
+\caption[The Thomas-Fermi distribution]{The Bose-Einstein distribution. Occupation number as a function of energy for different values of fugacity $\zeta=\exp(\mu /k_BT)$. Condensation occurs when $\mu=0$ ($\zeta=1$) and the occupation number in the ground state diverges.}
+\label{fig:Thomas_fermi}
+\end{center}
+\end{figure}
 \section{Density distributions}
 
 Most ultracold atoms experiments are probed by directly imaging the atoms (e.g. with absorption imaging, Section~\ref{sec:absorption imaging}). If the atoms are imaged in-situ we gain access to their spatial density profiles. If the atoms are released from the trap and allowed to expand in time of flight (TOF) we can measure their momentum distribution. In this section I summarize the signatures in the density distributions of BECs and thermal atoms confined in a harmonic potential both in-situ and after TOF. 
