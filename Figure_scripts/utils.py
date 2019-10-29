@@ -415,7 +415,7 @@ def data_processing(camera, date, sequence, sequence_type,
         plt.yticks([])
         plt.imsave(sequence_id[0]+'_long_image.jpg', long_image)
         
-    return df, sorted_od#, sorted_atoms#, sorted_probe
+    return df, sorted_od, sorted_atoms, sorted_probe
 
 
 def bin_trace(trace_arr, binsize):
@@ -1270,82 +1270,82 @@ def sequence_preparing(config_file,
     return t, sorted_od, rois_array
 
 
-def simple_data_processing(date, sequence, 
-                           scanned_parameter='Raman_pulse_time'):
-    
-
-"""
-Takes a camera, data and sequence number and returns a dataframe with 
-information such as run number, integrated od, scanned variable, microwave
-lock paremeters and an array with 
-"""
-
-    folder = getfolder(date, sequence)
-    print('Your current working directory is %s' %os.getcwd())
-    
-        
-    print('Looking for files in %s' %folder)
-    scanned_parameters = []
-    run_number = []
-    n_runs = []
-    sequence_id = []
-    sequence_index = []
-    status = []
-    int_od = []
-    od_0 = []
-    od_2 = []
-    od_2 = []
-     
-    try:
-        i = 0
-        j=0
-        for r, file in matchfiles(folder):
-            i += 1;
-        print('Found %s files in folder'%i)
-          
-        if i> 0:
-            
-            print('Preparing {} data...'.format(sequence_type)) 
-            for r, file in tqdm(matchfiles(folder)):
-                j+=1
-                with h5py.File(os.path.join(r, file), 'r') as h5_file:
-                                        
-                    try:
-                        attrs = h5_file['globals'].attrs
-                        scanned_parameters.append(attrs[scanned_parameter])  
-                        attrs = h5_file.attrs
-                        run_number.append(attrs['run number'])
-                        n_runs.append(attrs['n_runs'])
-                        sequence_id.append(attrs['sequence_id'])
-                        sequence_index.append(attrs['sequence_index'])
-                        rois_od_attrs = h5_file['results/rois_od'].attrs
-                        roi_0.append(rois_od_attrs['roi_0'])
-                        roi_1.append(rois_od_attrs['roi_1'])
-                        roi_2.append(rois_od_attrs['roi_2'])
-                        int_od.append(rois_od_attrs['opt_depth'])
-    #                            print(img.shape)
-                    
-                    except:
-                        print(j)
-                        scanned_parameters.append(np.nan)  
-                        run_number.append(np.nan)
-                        n_runs.append(np.nan)
-                        sequence_id.append(np.nan)
-                        sequence_index.append(np.nan)
-                        roi_0.append(np.nan)
-                        roi_1.append(np.nan)
-                        roi_2.append(np.nan)
-                        int_od.append(np.nan)
-                              
-        df = pd.DataFrame()
-        df[scanned_parameter] = scanned_parameters
-        df['run_number'] = run_number
-        df['roi_0'] = roi_0
-        df['roi_1'] = roi_1
-        df['roi_2'] = roi_2
-        df['int_od'] = int_od
-    
-    except Exception as e:
-        print(e)
-           
-    return df
+#def simple_data_processing(date, sequence, 
+#                           scanned_parameter='Raman_pulse_time'):
+#    
+#
+#    """
+#    Takes a camera, data and sequence number and returns a dataframe with 
+#    information such as run number, integrated od, scanned variable, microwave
+#    lock paremeters and an array with 
+#    """
+#
+#    folder = getfolder(date, sequence)
+#    print('Your current working directory is %s' %os.getcwd())
+#    
+#        
+#    print('Looking for files in %s' %folder)
+#    scanned_parameters = []
+#    run_number = []
+#    n_runs = []
+#    sequence_id = []
+#    sequence_index = []
+#    status = []
+#    int_od = []
+#    od_0 = []
+#    od_2 = []
+#    od_2 = []
+#     
+#    try:
+#        i = 0
+#        j=0
+#        for r, file in matchfiles(folder):
+#            i += 1;
+#        print('Found %s files in folder'%i)
+#          
+#        if i> 0:
+#            
+#            print('Preparing {} data...'.format(sequence_type)) 
+#            for r, file in tqdm(matchfiles(folder)):
+#                j+=1
+#                with h5py.File(os.path.join(r, file), 'r') as h5_file:
+#                                        
+#                    try:
+#                        attrs = h5_file['globals'].attrs
+#                        scanned_parameters.append(attrs[scanned_parameter])  
+#                        attrs = h5_file.attrs
+#                        run_number.append(attrs['run number'])
+#                        n_runs.append(attrs['n_runs'])
+#                        sequence_id.append(attrs['sequence_id'])
+#                        sequence_index.append(attrs['sequence_index'])
+#                        rois_od_attrs = h5_file['results/rois_od'].attrs
+#                        roi_0.append(rois_od_attrs['roi_0'])
+#                        roi_1.append(rois_od_attrs['roi_1'])
+#                        roi_2.append(rois_od_attrs['roi_2'])
+#                        int_od.append(rois_od_attrs['opt_depth'])
+#    #                            print(img.shape)
+#                    
+#                    except:
+#                        print(j)
+#                        scanned_parameters.append(np.nan)  
+#                        run_number.append(np.nan)
+#                        n_runs.append(np.nan)
+#                        sequence_id.append(np.nan)
+#                        sequence_index.append(np.nan)
+#                        roi_0.append(np.nan)
+#                        roi_1.append(np.nan)
+#                        roi_2.append(np.nan)
+#                        int_od.append(np.nan)
+#                              
+#        df = pd.DataFrame()
+#        df[scanned_parameter] = scanned_parameters
+#        df['run_number'] = run_number
+#        df['roi_0'] = roi_0
+#        df['roi_1'] = roi_1
+#        df['roi_2'] = roi_2
+#        df['int_od'] = int_od
+#    
+#    except Exception as e:
+#        print(e)
+#           
+#    return df
