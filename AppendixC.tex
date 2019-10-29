@@ -15,7 +15,7 @@ We consider an $F=1$ system that is subject to a constant magnetic field $B_0\ez
 \label{Eq:H_RF}
 \end{equation}
 %
-where $\omega_0 = g_F\mu_B B_0$ is the Larmor frequency, $\epsilon$ is a quadratic Zeeman shift that breaks the degeneracy of the $\ket{m_F=-1}\leftrightarrow$ $\ket{m_F=0}$ and $\ket{m_F=1}\leftrightarrow$ $\ket{m_F=0}$ transitions, and $\Omrf = g_F\mu_B B_{RF} / 2$ is the RF coupling strength. We then transform the Hamiltonian into a rotating frame using the unitary transformation $\hat U(t) = \exp(-i \omrf t \fz)$. The spin-1 operators under this transformation are
+where $\omega_0 = g_F\mu_B B_0$ is the Larmor frequency, $\epsilon$ is a quadratic Zeeman shift that breaks the degeneracy of the $\ket{m_F=-1}\leftrightarrow$ $\ket{m_F=0}$ and $\ket{m_F=1}\leftrightarrow$ $\ket{m_F=0}$ transitions, and $\Omrf = g_F\mu_B B_{RF} / 2$ is the RF coupling strength. We then transform the Hamiltonian into a rotating frame using the unitary transformation $\hat U(t) = \exp(-i \omrf t \fz)$. The spin-1 operators under this transformation are transformed as
 \begin{align}
 \begin{split}
 \fx  & \rightarrow \cos(\omrf t)\fx -\sin(\omrf t)\fy \\
@@ -34,30 +34,17 @@ The unitary evolution in the rotating frame is described by the transformed Hami
 \label{Eq:H_RWA}
 \end{equation}
 %
+The eigenstate of Equation~\ref{Eq:H_RWA} are the $\xyz$ states described in Chapter~\ref{ch:clock_states}. I will show later that all states can be coupled using a combination of the $\fx$, $\fy$, and $\fz$ operators in the lab frame, i.e. using different combinations of Raman laser beams with appropriately chosen polarizations. 
 
-For $\Delta=0$, the eigenstates of Eq.~\ref{Eq:H_RWA} are 
-\begin{align}
-\begin{split}
-\ket{x}=&-\frac{1}{\sqrt{2}}\ket{1}+\frac{1}{\sqrt{2}}\ket{-1}, \\
-%
-\ket{y} =& \frac{\Omega }{\sqrt{4 \Omega ^2-\epsilon  \sqrt{4 \Omega ^2+\epsilon ^2}+\epsilon ^2}}\ket{1}
-,\frac{\sqrt{4 \Omega ^2+\epsilon ^2}-\epsilon }{\Omega 
-   \sqrt{\frac{\left(\epsilon -\sqrt{4 \Omega ^2+\epsilon ^2}\right)^2}{\Omega ^2}+4}},\frac{\Omega }{\sqrt{4 \Omega ^2-\epsilon  \sqrt{4 \Omega
-   ^2+\epsilon ^2}+\epsilon ^2}}, \\
-%
-\ket{z} =& \frac{\Omega }{\sqrt{-\Omega_* \epsilon +\Omega_*^2}}\ket{1} +\frac{\Omega_*-\epsilon }{\Omega  \sqrt{\frac{(\epsilon
-   -\Omega_*)^2}{\Omega ^2}+4}}\ket{0} +\frac{\Omega }{\sqrt{-\Omega_* \epsilon +\Omega_*^2}}\ket{-1}.
-\end{split}
-\end{align}
-\textcolor{red}{This can be probably written in a prettier form. Write in terms of big XYZ basis?}
-%
-The $\xyz$ states are linear combinations of $m_F$ states and therefore transitions between these states are not subjected to angular momentum selection rules. I will show later that all states can be coupled using a combination of the $\fx$, $\fy$, and $\fz$ operators in the lab frame. 
+% \subsection{Raman dressing of the RF eigenstates}
 
-\subsection{Raman dressing of the RF eigenstates}
+% Our main goal is to engineer a Hamiltonian with Rashba SOC. It was shown in [Dan's PRA ref] that this can be done with a minimum of three states with nonzero Raman coupling matrix elements. The $\xyz$ RF dressed-states are therefore good candidates to construct the desired Rashba Hamiltonian as was shown in [Dan's Rashba RF paper].
+% %
+% I will derive the the Rashba Hamiltonian from first principles, without sweeping undesired off-resonant couplings under the rug. 
 
-Our main goal is to engineer a Hamiltonian with Rashba SOC. It was shown in [Dan's PRA ref] that this can be done with a minimum of three states with nonzero Raman coupling matrix elements. The $\xyz$ RF dressed-states are therefore good candidates to construct the desired Rashba Hamiltonian as was shown in [Dan's Rashba RF paper].
-%
-In this section I will go through a lengthy  derivation of the Rashba Hamiltonian, without sweeping undesired off-resonant couplings under the rug.  For simplicity I will start this description in the lab frame and I will not make any initial assumptions about direction of propagation or frequency each of the beams. Consider three linearly polarized Raman beams propagating along the $xy$ plane as shown in Fig.~\ref{fig:Rashba_layout}. 
+
+
+For simplicity I will start this description in the lab frame and I will not make any initial assumptions about direction of propagation or frequency each of the beams. Consider three linearly polarized Raman beams propagating along the $xy$ plane as shown in Fig.~\ref{fig:Rashba_layout}. 
 \begin{figure*}[hb]
 	\begin{center}
 		\includegraphics{Figures/AppendixC/Rashba_layout.pdf}
