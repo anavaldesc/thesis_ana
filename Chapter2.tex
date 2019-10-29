@@ -162,7 +162,7 @@ The full Hamiltonian describing $N$ identical bosons with contact interactions c
 	\label{eq:many_body_h}
 \end{equation}
 %
-where $V(\r)$ is an external potential and $\mathbf{p}_i=-i\hbar\nabla_i$. We now consider a normalized eigenstate of the Hamiltonian $\Psi(\r_1, \r_2, ..., \r_N)$. We can simplify this state by taking a mean field approach. If we assume that the system has undergone condensation so that the majority of the particles share the same single particle ground state $\phi(\r)$ the wavefunction can be approximated by a symmetrized product
+where $V(\r)$ is an external potential and $\mathbf{p}_i=-i\hbar\nabla_i$ is the momentum. We now consider a normalized eigenstate of the Hamiltonian $\Psi(\r_1, \r_2, ..., \r_N)$ that satisfies the Schr\"odinger equation. We can simplify this state by taking a mean field approach; we assume that the system has undergone condensation so that the majority of the particles share the same single particle ground state $\phi(\r)$ the wavefunction can be approximated by a symmetrized product
 %
 \begin{equation}
 	\Psi(\r_1, \r_2, ..., \r_N)=\prod_{i=1}^N\phi(\r_i),
@@ -173,16 +173,16 @@ where $\phi$ is normalized to unity. The energy of the state from Equation~\ref{
 %
 \begin{align}
 	E&=\int\Psi^*\hat{H}\Psi \,d\r \nonumber \\
-	&=N\int\left[-\frac{\hbar^2}{2m}\vert \nabla\phi(\r)\vert^2+V(\r)\vert\phi(\r)\vert^2+\frac{(N-1)}{2}g\vert \phi(\r)\vert^4\right]d\r,
+	&=N\int\phi^*(\r)\left[-\frac{\hbar^2}{2m}\nabla^2+V(\r)+\frac{(N-1)}{2}g\vert \phi(\r)\vert^2\right]\phi(\r) d\r,
 	\label{eq:mean_field_E}
 \end{align}
 %
-where $N(N-1)/2\approx N^2/2$ is counting the number of terms in the interaction energy. Now we introduce the wave function of the condensate $\psi(\r)=N^{1/2}\phi(\r)$, which when inserted in Equation~\ref{eq:mean_field_E} makes the $N$ factors disappear. The optimal form of $\psi$ should minimize the energy subject to the normalization condition $N=\int\vert\psi(\r)\vert^2\,d\r$. This can be done by introducing a Lagrange multiplier $\mu$
+where $N(N-1)/2\approx N^2/2$ counts the number of terms in the interaction energy. Now we introduce the wave function of the condensate $\psi(\r)=N^{1/2}\phi(\r)$, which when inserted in Equation~\ref{eq:mean_field_E} makes the $N$ factors cancel out. The optimal form of $\psi$ should minimize the energy subject to the normalization condition $N=\int\vert\psi(\r)\vert^2\,d\r$. This can be done by introducing a Lagrange multiplier $\mu$ so that
 %
 \begin{align}
 	\frac{\delta}{\delta \psi^*(\r)}\left(E-\mu\int\vert\psi\vert^2\,d\r \right) 
 	&= \left[-\frac{\hbar^2}{2m}\nabla^2+V(\r)+g\vert\psi(\r)\vert^2-\mu\right]\psi(\r)
-	=0
+	=0,
 \end{align}
 %
 and we thus find that the condensate wave function obeys a non-linear Schr\"odinger equation known as the Gross-Pitaevskii (GP) equation.
@@ -198,29 +198,29 @@ where $\mu$ plays the role of the chemical potential. The dynamics of the conden
 	i\hbar\frac{\partial}{\partial t}\psi(\r,t)=\left[-\frac{\hbar^2}{2m}+V(\r)+g\vert\psi(\r,t)\vert^2\right]\psi(\r,t)
 \end{equation}
 
-The GP equation describing the relevant phenomena associated
-with BECs, for example the propagation of collective excitations and the expansion of the condensate when released from a trap. The crucial assumption when deriving these equations was the mean field approximation which should be valid for dilute BECs in which the condensate fraction is close to unity. The excitations of the system can be described by a set of equations similar to those of classical hydrodynamics derived from the GP equation or alternatively using Bogoliubov theory for weakly interacting bosons\cite{Pethick}.
+The GP equation is useful for describing the relevant phenomena associated with BECs, for example the propagation of collective excitations and the expansion of the condensate when released from a trap. The crucial assumption when deriving these equations was the mean field approximation which should be valid for dilute BECs in which the condensate fraction is close to unity. The excitations of the system can be described by a set of equations similar to those of classical hydrodynamics derived from the GP equation or alternatively using Bogoliubov theory for weakly interacting bosons\cite{Pethick}.
 
 \subsection{Multiple component BECs}
 
-So far the discussion has been limited to single component BECs but most of our experiments are performed using a combination of multiple atomic internal states. In general, for a multiple component condensate the scattering lengths characterizing the interactions depend on the internal states of the incoming and outcoming scattering channels. 
-
-Two spin-$f$ particles colliding particles will be characterized by $2f$ scattering lengths $a_F$. For bosons the total spin $F$ takes even values and in particular for $\Rb87$ atoms in the $f=1$ hyperfine ground state there are two scattering lengths $a_0$ and $a_2$ corresponding to the two-particle total angular momentum states of $F=0$ and $F=2$ respectively. The values of scattering lengths are $a_0=101.8a_0$ and $a_2=100.4a_0$ where $a_0=5.29\times 10^{-11}$ is the Bohr radius. From the scattering lengths we can calculate the interaction coefficients
+So far the discussion has been limited to single component BECs but most of our experiments are performed using a combination of multiple atomic internal states. In general, for a multiple component condensate the scattering lengths characterizing the interactions depend on the internal states of the incoming and outcoming scattering channels. Two spin-$f$\footnote{Here I use the simbol $f$ to denote the angular momentum of the individual particles and $F$ to denote the total angular momentum of the two particles.} particles colliding particles will be characterized by $2f$ scattering lengths $a_F$. For bosons the total spin $F$ takes even values and in particular for $\Rb87$ atoms in the $f=1$ hyperfine ground state there are two scattering lengths $a_0$ and $a_2$ corresponding to the two-particle total angular momentum states of $F=0$ and $F=2$ respectively. The values of scattering lengths are $a_0=101.8a_0$ and $a_2=100.4a_0$~\cite{stamper-kurn_spinor_2013} where $a_0=5.29\times 10^{-11}$ is the Bohr radius. From the scattering lengths we can calculate two interaction coefficients
 %
 \begin{align}
 	c_0&=\frac{4\pi\hbar^2}{m}\frac{a_0+2a_2}{3}=100.84a_0\frac{4\pi\hbar^2}{m} \nonumber \\
-	c_2&=\frac{4\pi\hbar^2}{m}\frac{a_0-a_2}{3}\approx -4.7\times 10^{-3}c_0
+	c_2&=\frac{4\pi\hbar^2}{m}\frac{a_0-a_2}{3}\approx -4.7\times 10^{-3}c_0.
 \end{align}
 %
-Here $c_0$ represents a spin-independent interaction strength that depends only on the total density while $c_2$ is a spin-dependent energy that is relevant only where there is non-zero density of both atoms in $m_F=\pm1$ and is much smaller than the spin-independent energy. The dynamics of multiple component BECs is governed by a spinor GP equation 
+Here $c_0$ represents a spin-independent interaction strength that depends only on the total density while $c_2$ is a spin-dependent energy that is relevant only where there is non-zero density of both atoms in $m_F=\pm1$ and is much smaller than the spin-independent energy. Similar to the case of single component BECs, the dynamics of multiple component BECs is governed by a spinor GP equation (see\cite{Pethick,stamper-kurn_spinor_2013}). The spin-dependent interaction strength gives rise to processes like coherent spin-mixing oscillations and domain formation and coarsening which was previously studied in the our lab~\cite{de_quenched_2014}.
+i
+The time scale at which interactions become relevant is set by the interaction energies $n \vert c_i\vert$. The most noticeable effect of interactions in our system is the density profile of the condensate and its anisotropic expansion after it is released from a trap which I will describe in the following sections. For the typical densities and timescales of our experiments we do not observe noticeable effects from interactions in the dynamics of the system and in the remaining chapters I will describe the dynamics of the BEC using single particle physics (i.e. the regular time-dependent Schr\"odinger equation). 
 
-Relationship between spin-dependent energy $nc_2$ and quadratic Zeeman shift gives time scale for spin-dependent interaction driven dynamics and is not very relevant for our experiments. 
+% Relationship between spin-dependent energy $n\vert c_2\vert$ and quadratic Zeeman shift gives time scale for spin-dependent interaction driven dynamics and is not very relevant for our experiments. 
 
-What should be taken away from these sections is that interactions matter and are necessary for the full description of a BEC of dilute gases, however for usual densities and interaction strengths in our $\Rb87$ BECs as well as the time scales of our experiments interactions play a very minimal role in the dynamics of the system and in fact they will be completely ignored in the remaining chapters. 
+% What should be taken away from these sections is that interactions matter and are necessary for the full description of a BEC of dilute gases, however for usual densities and interaction strengths in our $\Rb87$ BECs as well as the time scales of our experiments interactions play a very minimal role in the dynamics of the system and in fact they will be completely ignored in the remaining chapters. 
 
 % For  $\Rb87$ at zero magnetic field $a=103 a_0$\cite{stamper-kurn_spinor_2013} where $a_0=\unit[5.29\times10^{-11}]{m}$ is the Bohr radius while for the more abundant isotope $^85$Rb $a=-\unit[23.44]{nm}$ which means that a BEC with density beyond a critical value can collapse~\cite{gerton_direct_2000}. \note{TODO: try to find references for the values of scattering lengths}
 
 \subsection{Thomas-Fermi approximation}
+\label{sec:Thomas-Fermi}
 
 For systems with large $N$, the interaction term in the GP equation is very large compared to the kinetic energy\footnote{It can be shown that the ratio of kinetic energy to interactions scales like $N^{-4/5}$}. As the kinetic energy becomes less important we enter the Thomas-Fermi (TF) regime where the energy of the system is given only by the external potential and the mean field energy and the GP equation is considerably simplified 
 %
@@ -248,14 +248,14 @@ The density of the condensate is described by an inverted parabola
 	\label{eq:n_tf}
 \end{equation}
  %
- 
-By integrating over Equation~\ref{eq:n_tf} we find that
+as is shown in Figure~\ref{fig:Thomas_fermi}a. By integrating over Equation~\ref{eq:n_tf} we find that
  %
  \begin{equation}
  	N=\frac{8\pi}{15}\frac{\mu}{g}R_xR_yR_z,
+ 	\label{eq:condensate_number}
  \end{equation}
  %
- which is a useful quantity for determining the number of atoms in the condensate based on density profiles. In practice our images are taken after the atoms are released from the trap and the density profile is modified due to interactions. This will be discussed in more detail in the next following section. 
+ which allows to determine the number of atoms in the condensate based on the density profile. In practice, in-situ BECs are very dense which can lead to some technical difficulties when trying to image directly their density profiles (see Section~\ref{sec:absorption imaging}) so instead our images are taken after the atoms are released from the trap and allowed to expand for some time. In the next section I will discuss how the density profiles of atomic clouds are modified after they are released from a confining potential. 
 
 \begin{figure}[htb]
 \begin{center}
@@ -266,7 +266,29 @@ By integrating over Equation~\ref{eq:n_tf} we find that
 \end{figure}
 \section{Density distributions}
 
-Most ultracold atoms experiments are probed by directly imaging the atoms (e.g. with absorption imaging, Section~\ref{sec:absorption imaging}). If the atoms are imaged in-situ we gain access to their spatial density profiles. If the atoms are released from the trap and allowed to expand in time of flight (TOF) we can measure their momentum distribution. In this section I summarize the signatures in the density distributions of BECs and thermal atoms confined in a harmonic potential both in-situ and after TOF. 
+Most ultracold atoms experiments are probed by directly imaging the atoms (e.g. with absorption imaging, Section~\ref{sec:absorption imaging}). If the atoms are imaged in-situ we gain access to their spatial density profiles. If the atoms are released from the trap and allowed to expand in time of flight (TOF) we gain access to their momentum distribution. In this section I summarize the signatures in the density distributions of BECs and thermal atoms confined in a harmonic potential both in-situ and after TOF. 
+
+For the case of a BEC confined in a harmonic potential at zero temperature (no thermal fraction) and in the Thomas-Fermi regime discussed in Section~\ref{sec:Thomas-Fermi}, the in-situ density distribution is described by 
+%
+\begin{align}
+	n(\r)&=n_0\left(1-\frac{x^2}{R_x^2}-\frac{y^2}{R_y^2}-\frac{z^2}{R_z^2}\right) \nonumber \\  
+	&= \frac{15N}{8\pi R_xR_yR_z}\left(1-\frac{x^2}{R_x^2}-\frac{y^2}{R_y^2}-\frac{z^2}{R_z^2}\right).
+\end{align}
+
+Even though the BEC is in the motional ground state, it will expand during TOF as a consequence of interactions. The expansion can be determined using the time dependent GP equation. A detail account of the procedure can be found in \cite{castin_bose-einstein_1996}, the procedure relies on using the ansatz that the TF radii expand as
+%
+\begin{equation}
+	R_i(t)=\lambda_i(t)R_i(t=0),
+	\label{eq:castin_dum_radius}
+\end{equation}
+%
+where I assumed that the condensate is in the trap at $t=0$ which implies that $\lambda_i(0)=1$. The trap is then suddenly turned off at $t>0$. If we insert the condensate wave function with TF radii given by Equation~\ref{eq:castin_dum_radius} into the time-dependent GP equation we find a series differential equations
+%
+\begin{equation}
+	\frac{d^2\lambda_i}{dt^2}=\frac{\omega_i^2}{\lambda_i\lambda_x\lambda_y\lambda_z}
+\end{equation}
+%
+which can be used to determine the density profile of the BEC in TOF. Alternatively if the density profile of the BEC is known from an image, these relations can used to back-propagate what the original TF radii of the confined condensate was. This is helpful for example to calculate the atom number in the condensate using Equation~\ref{eq:condensate_number}. 
 
 For a thermal gas in a harmonic potential at temperatures higher than the level spacing $k_BT>\hbar\omega_{x,y,z}$ the density is given by~\cite{ketterle_w._making_1999}
 %
@@ -274,7 +296,7 @@ For a thermal gas in a harmonic potential at temperatures higher than the level 
 	n_{\rm{th}}(\r)=\frac{1}{\lambda_{\rm{th}}^3}g_{3/2}(z(\r))
 \end{equation}
 %
-where $z(\r)=\exp(\mu-V(\r)/\k_BT$, $V(\r)$ is given by Equation~\ref{eq:ho}, $\mu$ is the chemical potential and $g_j(z)=\sum_iz^i/i^j$ is the Bose function. The Bose function introduces effects of quantum statistics and compared to a distribution of distinguishable particles, the peak density of a Bose gas is increased by $g_{3/2}(z)/z$, a phenomenon known as Bose-enhancement.
+where $z(\r)=\exp(\mu-V(\r)/\k_BT$, $V(\r)$ is given by Equation~\ref{eq:ho}, $\mu$ is the chemical potential and $g_j(z)=\sum_iz^i/i^j$ is the Bose function. The Bose function introduces effects of quantum statistics and compared to the Maxwell-Boltzmann distribution of distinguishable particles, the peak density of a Bose gas is increased by $g_{3/2}(z)/z$, a phenomenon known as Bose-enhancement.
 
 The distribution after TOF can be calculated considering that the trapped atoms fly ballistically from their position in the trap. An atom starting initially at the point $\r_0$ moves to the point $\r$ after a time $t$ if its momentum is given by $\mathbf{p}=m(\r-\r0)/t$, and it can be shown that
 %
@@ -290,29 +312,7 @@ where the approximation in the second line is valid for $t\gg \omega_i^{-1}$. Th
 	&\approx \frac{m}{2}\left(\frac{\sigma_i}{t}\right)^2
 \end{align}
 
-For the case of a BEC at zero temperature (no thermal fraction) the in-situ density distribution is described by the Thomas-Fermi distribution 
-%
-\begin{align}
-	n(\r)&=n_0\left(1-\frac{x^2}{R_x^2}-\frac{y^2}{R_y^2}-\frac{z^2}{R_z^2}\right) \nonumber \\  
-	&= \frac{15N}{8\pi R_xR_yR_z}\left(1-\frac{x^2}{R_x^2}-\frac{y^2}{R_y^2}-\frac{z^2}{R_z^2}\right) .
-\end{align}
-
-Even though the BEC is in the motional ground state, it will expand during TOF as a consequence of interactions. The expansion can be determined using the time dependent GP equation. A detail account of the procedure can be found in \cite{castin_bose-einstein_1996}, the procedure relies on using the ansatz that the TF radii expand as
-%
-\begin{equation}
-	R_i(t)=\lambda_i(t)R_i(t=0),
-	\label{eq:castin_dum_radius}
-\end{equation}
-%
-where I assumed that the condensate is in the trap at $t=0$ which implies that $\lambda_i(0)=1$. If the trap is suddenly turned off at $t>0$ from inserting the TF wave function with radii given by Equation~\ref{eq:castin_dum_radius} into the time-dependent GP equation we find a series differential equations
-%
-\begin{equation}
-	\frac{d^2\lambda_i}{dt^2}=\frac{\omega_i^2}{\lambda_i\lambda_x\lambda_y\lambda_z}
-\end{equation}
-%
-which can be used to determine the density profile of the BEC in TOF. Alternatively if the density profile of the BEC is known from an image, these relations can used to back-propagate what the original TF radii of the confined condensate was. 
-
-For partially condensed clouds the density profiles will be given by a combination of the thermal density profiles and the Thomas-Fermi density profile. 
+For partially condensed clouds the density profiles will be given by a combination of the thermal density profiles and the Thomas-Fermi density profile. Last figure goes here. 
 
 
 
