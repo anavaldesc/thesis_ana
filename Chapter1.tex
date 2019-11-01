@@ -6,12 +6,81 @@
 
 \chapter{Introduction}
 
-Bose-Einstein condensation in dilute atomic gases was observed for the first time in 1995 
+Bose statistics were first developed in 1924 to describe the quantum behavior of photons \cite{bose_plancks_1924}, quanta of light with integer valued spin. Today, we routinely produce atomic Bose-Einstein condensates in the laboratory and even use them as a platform for the analog simulation of complex systems. The field has certainly come a long way! 
 
-It has been more than 20 years since the first observation of Bose-Einstein condensation in dilute atomic gases
+Bose-Einstein condensathion (BEC) in atomic gases was observed for the first time in 1995 in dilute vapors of $\Rb87$~\cite{anderson_observation_1995} and $^{23}$Na~\cite{davis_bose-einstein_1995}. Even though the BEC phase had been predicted for a long time it wasn't until experimental techniques of laser cooling and trapping were developed that bosonic atoms were cooled down to temperatures low enough for condensation to occur\footnote{For a more in depth story of the BEC field I highly recommend reading~\cite{ketterle_w._making_1999}.}. The experimental realization of this new phase of matter opened new possibilities for studying macroscopic quantum phenomena such as superfluidity [xx] and and coherent matter waves [xx] and jump-started an ever growing filed of research. For this achievement Eric Cornell, Carl Wieman and Wolfgang Ketterle were awarded the 2001 Nobel Prize in physics. 
+
+It has been more than 20 years (and many more in the learning of atomic physics) and the field of quantum degenerate gases has expanded to include degenerate Fermi gases and spinor gases. As the field continues to grow, new control and detection techniques are being constantly developed, enabling the use of BECs and ultracold atomic systems in general not just as an object of study by themselves but as tools for a wide range of scientific endeavors, from precision measurements [add citation of clocks and edn]to the analog simulation of complex systems.
+
+Quantum degenerate gases have proven to be an ideal platform for quantum simulation. A very straightforward example is the use of optical lattices where the periodic potential imparted by standing waves of light serve as an analogue to the crystal structure of a solid. Perhaps the first iconic realization of a quantum simulation was the study of the Bose-Hubbard model in three-dimensional optical lattices, the bosonic analogue of a model which is believed to be relevant to high $T_c$ superconductors. 
 
 
-Quantum degenerate gases have proven to be an excellent platform for the analog simulation of complex quantum systems.
+ creating new exotic atomic `materials', with interaction-dominated or topologically non-trivial band structures that can help deepen our understanding of certain physical phenomena. 
+
+
+
+ 
+
+This thesis focuses on the development of new tools for the characterization and control of engineered quantum systems, and applies them to create and characterize a system with Rashba-type~\cite{bychkov_oscillatory_1984} spin-orbit coupling. The creation of new `atomic' materials requires the ability to characterize the single particle energies. We developed a  Fourier transform spectroscopy technique which allows us to probe the single particle spectrum of a system, and thereby verifying our quantum engineering, by only looking at quantum coherent evolution. 
+
+Atomic systems are susceptible to environmental noise, leading to undesirable effects such as the loss of coherence. In particular laboratories such as ours greatly suffer from noise in ambient magnetic fields and go through great efforts to diminish its effects. We implemented continuous dynamical decoupling (CDD) on a set of internal atomic states which renders them first order insensitive to changes in magnetic field, effectively turning them into clock-like states. These CDD states are not just a robust basis for performing experiments, they additionally gave us access to new matrix elements which were essential for the engineering of the Rashba Hamiltonian. (Talk about lattice and Hofstater) . 
+
+The simulation of the Rashba Hamiltonian is certainly condensed matter inspired. Spin-orbit coupling can be present in two-dimensional materials and it plays an important role in the quantum spin Hall effect and the realization of topological insulators. The beauty of our system is we can depart from conventional materials, for example, by considering a system with Rashba SOC but without an underlying crystalline structure. We do so in the last part of this thesis and find that our conventional understanding of the topology of Bloch bands is defied. 
+
+
+\section{Thesis overview}
+
+In Chapters 2 and 3 I will describe the basic theory of Bose-Einstein condensation and the technical details of our experimental apparatus that produces $\Rb87$ BECs. In Chapter 4 I will describe our quantum simulation toolkit, the standard techniques that we use to manipulate and detect ensembles of ultracold atoms that are necessary for all of our experiments. Chapter 5 describes a Fourier transform spectroscopy technique that exploits the relation between quantum coherent evolution and the underlying spectrum of a system and that was used to characterize experiments described later in the thesis. Chapter 6 describes an implementation of continuous dynamical decoupling that helped to both make our system more robust against environmental noise and also allowed us to couple the internal states of the atoms in new ways that were not possible before, opening the path for new kinds of quantum simulations described in Chapters 7 and 8. In Chapter 8 I describe the experimental realization of Rashba spin-orbit coupling for a quantum system without a crystalline structure and has unconventional topology characterized by non-integer topological invariants. Finally, Chapter 8 describes the experimental implementation of a fractional period adiabatic superlattice, an intermediate step necessary for us to generate Hofstadter cylinders with non-zero magnetic flux in the future. 
+
+Apendix are experiments that I contributed to but are not included in the thesis. Also things related to new apparatus?
+
+
+
+A great deal of current research focuses on understanding
+the physical consequences of these new materials, and
+experimental studies of topological insulators and superconductors in solid state systems continue apace. Furthermore,
+there is significant activity in exploring the nature of the
+strongly correlated phases of matter that arise in these
+materials, notably to construct strong-correlation variants of
+these topological states of weakly interacting electrons.
+Theory suggests many interesting possibilities, which are still
+seeking experimental realization and verification.
+Such questions are ideally addressed using realizations with
+cold atomic gases. Cold atomic gases allow strongly interacting phases of matter to be explored in controlled experimental
+settings. However, a prerequisite for quantum simulations of
+such issues is the ability to generate topological energy bands
+for cold atoms. This poses a significant challenge, even at this
+single-particle level. Realizing topological energy bands
+typically requires either the introduction of effective orbital
+magnetic fields acting on neutral atoms and/or the introduction of a spin-orbit coupling between the internal spin states of
+an atom and its center-of-mass motion. This is an area of
+research that has attracted significant attention over the last
+years, both theoretical and experimental. Much progress has
+been made in developing techniques to generate artificial
+magnetic fields and spin-orbit coupling for neutral atoms
+(Zhai, 2015; Dalibard, 2016; Aidelsburger, Nascimbene, and
+Goldman, 2017). The use of these techniques in the setting of
+optical lattices has led to the realization and characterization
+of topological Bloch bands for cold atoms
+
+\section{Graveyard}
+high degree of control and tunability 
+
+
+
+
+
+
+
+systems that do not exist in nature but can help us learn or understand something... or are just fun!
+That have no physical analogues that can help deepen our understanding of certain physical properties. This thesis falls mostly under the third point. 
+
+
+
+ BECs `in the wild' 
+
+
+
 
 Topological matter
 
@@ -37,52 +106,6 @@ Ultracold atoms systems could potentially enable the simulation of
 
 Additionally, such systems allow us to create new exotic atomic `materials' in the lab that can help deepen our understanding of certain physical phenomena such as the role of interactions and topology in band structures. 
 
-This thesis focuses on the development of new tools for the characterization and control of engineered quantum systems. We deployed a Fourier transform spectroscopy technique which allows us to probe the spectrum of a system by only looking at its quantum coherent evolution
-
-
-
- and applies them 
-
-
-
-
-ur main result shows the quantum engineering of a system with Rashba-like~\cite{bychkov_oscillatory_1984} spin-orbit coupling. Spin-orbit coupling in two-dimensional materials plays an important role in the quantum spin Hall effect and the realization of topological insulators. Unlike conventional materials, we can engineer the Rashba interaction without an underlying crystalline structure which gives rise to unconventional topology characterized by non-integer valued invariants. 
-
-
-Cold atoms for engineering topological matter. 
-
-The scope of this thesis mostly falls under the latter point. 
-
-In order for new advances in the field of quantum simulati 
-
-Our system 
-
-relies only on the unitary evolution of an initial state suddenly subjected t
-
-
-In particular, the properties of 
-
-
-
-systems that do not exist in nature but can help us learn or understand something... or are just fun!
-That have no physical analogues that can help deepen our understanding of certain physical properties. This thesis falls mostly under the third point. 
-
-
-
-
-
-
-Don't forget to talk about topology! It starts with condensed matter but has been relevant to many other systems. Many Noble prizes awarded, many applications and potential applications found. 
-
-Start with topology and move into quantum simulation? Or the other way around?
-
-
-\section{Thesis overview}
-
-In Chapters 2 and 3 I will describe the basic theory of Bose-Einstein condensation and the technical details of our experimental apparatus that produces $\Rb87$ BECs. In Chapter 4 I will describe our quantum simulation toolkit, the standard techniques that we use to manipulate and detect ensembles of ultracold atoms that are necessary for all of our experiments. Chapter 5 describes a Fourier transform spectroscopy technique that exploits the relation between quantum coherent evolution and the underlying spectrum of a system and that was used to characterize experiments described later in the thesis. Chapter 6 describes an implementation of continuous dynamical decoupling that helped to both make our system more robust against environmental noise and also allowed us to couple the internal states of the atoms in new ways that were not possible before, opening the path for new kinds of quantum simulations described in Chapters 7 and 8. In Chapter 8 I describe the experimental realization of Rashba spin-orbit coupling for a quantum system without a crystalline structure and has unconventional topology characterized by non-integer topological invariants. Finally, Chapter 8 describes the experimental implementation of a fractional period adiabatic superlattice, an intermediate step necessary for us to generate Hofstadter cylinders with non-zero magnetic flux in the future. 
-
-Apendix are experiments that I contributed to but are not included in the thesis. Also things related to new apparatus?
-
 % This is the story I'm telling: Cold atoms are a great platform. They are very controllable and 
 
 % \begin{itemize}
@@ -92,3 +115,13 @@ Apendix are experiments that I contributed to but are not included in the thesis
 % 	\item Combining the toolbox and characterization techniques 
 % 	%\subitem Is this a thing?	
 % \end{itemize}
+
+%  new possibilities for the study of macroscopic quantum phenomena
+
+% jump-started a new field of research 
+
+% It has been more than 20 years since the first observation of Bose-Einstein condensation in dilute atomic gases
+
+% The same 
+
+% Quantum degenerate gases have proven to be an ideal platform for the analog simulation of complex quantum systems.
