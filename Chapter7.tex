@@ -16,7 +16,7 @@ Before describing our experiments that characterize the unconventional topology 
  
 \section{Topology in mathematics} 
 
-Topology is a branch of mathematics that studies continuity~\cite{differential_topology_and_geometry}. The most familiar example might be that of objects being continuously deformed into one another. For example, a donut can be continuously deformed into a coffee mug but if we want to deform it into a pretzel we need to poke more holes in it. This gives us some intuition that the donut and the mug must share the same topology, which is different from that of the pretzel. Topology also studies more abstract objects but I will limit the discussion to closed two-dimensional surfaces in three dimensions, which will be enough to provide some intuition when we define topological invariants for band structures in the following sections.  
+Topology is a branch of mathematics that studies continuity~\cite{differential_topology_and_geometry}. The most familiar example might be that of objects being continuously deformed into one another. For example, a donut can be continuously deformed into a coffee mug but if we want to deform it into a pretzel we need to poke more holes in it. This gives us some intuition that the donut and the mug must share the same topology, which is different from that of the pretzel. Topology also studies more abstract objects but I will limit the discussion to closed two-dimensional surfaces (manifolds) in three dimensions, which will be enough to provide some intuition when we define topological invariants for band structures in the following sections.  
 
 The topology of 2D surfaces can be classified by the Euler characteristic, and it is related to the local Gaussian curvature of a surface by the Gauss-Bonet theorem. The Gaussian curvature can be interpreted in the following way: at any point in a surface we can find a normal vector which is orthogonal to the tangent plane of the surface. We can then define a family of planes containing the normal vector and their intersection with the surface defines a family of curves. The curvature of a any of these curves at the point where the planes intersect, which is equal to the quadratic coefficient in a Taylor expansion around that point, is called the normal curvature $\kappa$. When we consider all the normal curvatures, the minimum and maximum of these are called the principal curvatures and are used to define the Gaussian curvature at any point of a surface $K=\kappa_{min}\kappa_{max}$~\cite{differential_topology_and_geometry} 
 
@@ -133,10 +133,10 @@ For this particular example, the Berry connection is exactly equal to the magnet
 
 \subsection{Chern number}
 
-The Chern number is conventionally used to describe the topology of materials which have an underlying crystalline structure. According to Bloch's theorem, the wave functions of a space periodic Hamiltonian can be written as $\ket{\psi(\k)}=e^{i\k\cdot\mathbf{r}}\ket{u(\k)}$, where $\ket{u(\k)}$ are periodic wave functions. If we define the Bloch Hamiltonian
+The Chern number is conventionally used to describe the topology of materials which have an underlying crystalline structure. According to Bloch's theorem, the wave functions of a space periodic Hamiltonian can be written as $\ket{\psi(\k)}=e^{i\k\cdot\mathbf{r}}\ket{u(\k)}$, where $\r$ is the position and $\k$ the crystal momentum. The wave functions $\ket{u(\k)}$ are periodic and therefore invariant under the displacement operator $\hat{D}(d)\ket{u(\k)}=\ket{u(\k)}$ when $d$ is the unit cell size. If we define the Bloch Hamiltonian
 %
 \begin{equation}
-	\hat{H}(\k)=e^{i\k\cdot\mathbf{r}}\hat{H}(\mathbf{r})e^{-i\k\cdot\mathbf{r}}, 
+	\hat{H}(\k)=e^{i\k\cdot\mathbf{r}}\hat{H} e^{-i\k\cdot\mathbf{r}}, 
 \end{equation}
 %
 their eigenvectors are given by $\ket{u(\k)}$ and the eigenvalues define the band structure. Translational symmetry implies that $\hat{H}(\k+\mathbf{a})=\hat{H}(\k)$ where $\mathbf{a}$ is a reciprocal lattice vector. The crystal momentum or quasimomentum is only defined within the periodic Brillouin zone and therefore can be mapped into a torus in $d$ dimensions if we glue the edges together.  
@@ -144,7 +144,7 @@ their eigenvectors are given by $\ket{u(\k)}$ and the eigenvalues define the ban
 The Chern number of the $n$th band is defined as
 %
 \begin{equation}
-	C_n=\frac{1}{2\pi}\int_{BZ}\mathbf{\Omega}_n d\k,
+	C_n=\frac{1}{2\pi}\int_{BZ}\mathbf{\Omega}_\cdot n d\k,
 	\label{eq:chern_number}
 \end{equation}
 %
@@ -194,10 +194,10 @@ which can be recognized as the field of a Dirac monopole~\cite{dirac_paul_adrien
 For a Hamiltonian with arbitrary $\mathbf{h}(\k)$ we can define a normalized vector $\hat{h}=\mathbf{h}/\vert\mathbf{h}\vert$ and the Chern number takes the form
 %
 \begin{equation}
-	C=\frac{1}{4\pi}\int(\partial_{k_x}\hat{h}\times\partial_{k_y}\hat{h})\cdot\hat{h} \, d\k
+	C=\frac{1}{4\pi}\int(\partial_{k_x}\hat{h}\times\partial_{k_y}\hat{h})\cdot\hat{h} \, d^2k
 \end{equation}
 %
-and can be interpreted as the number of times that the vector $\hat{h}(\k)$ wraps around a unit sphere~\cite{kaufmann_notes_2016}, a quantity that is known as the winding number.
+which can be interpreted as the number of times that the vector $\hat{h}(\k)$ wraps around a unit sphere~\cite{kaufmann_notes_2016}, a quantity that is known as the winding number.
 
 % \note{My current points of confusion are the following:}
 % Why is the Chern number for a single Dirac point on a torus a half? I'm thinking in particular for the quantum hall effect and the example on section 2 on the review on topological insulators. Also how to go from closed paths in parameter space to closed surface integrals?
