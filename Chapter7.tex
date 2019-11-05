@@ -18,7 +18,15 @@ Before describing our experiments that characterize the unconventional topology 
 
 Topology is a branch of mathematics that studies continuity~\cite{differential_topology_and_geometry}. The most familiar example might be that of objects being continuously deformed into one another. For example, a donut can be continuously deformed into a coffee mug but if we want to deform it into a pretzel we need to poke more holes in it. This gives us some intuition that the donut and the mug must share the same topology, which is different from that of the pretzel. Topology also studies more abstract objects but I will limit the discussion to closed two-dimensional surfaces (manifolds) in three dimensions, which will be enough to provide some intuition when we define topological invariants for band structures in the following sections.  
 
-The topology of 2D surfaces can be classified by the Euler characteristic, and it is related to the local Gaussian curvature of a surface by the Gauss-Bonet theorem. The Gaussian curvature can be interpreted in the following way: at any point in a surface we can find a normal vector which is orthogonal to the tangent plane of the surface. We can then define a family of planes containing the normal vector. The intersection between a plane containing the normal vector and  and their intersection with the surface defines a family of curves. The curvature of a any of these curves at the point where the planes intersect, which is equal to the quadratic coefficient in a Taylor expansion around that point, is called the normal curvature $\kappa$. When we consider all the normal curvatures, the minimum and maximum of these are called the principal curvatures and are used to define the Gaussian curvature at any point of a surface $K=\kappa_{min}\kappa_{max}$~\cite{differential_topology_and_geometry} 
+The topology of 2D surfaces can be classified by the Euler characteristic, and it is related to the local Gaussian curvature of a surface by the Gauss-Bonet theorem. The Gaussian curvature can be interpreted in the following way: at any point $\x_0$ in a surface we can find a normal vector which is orthogonal to the tangent plane of the surface. We can then define a family of planes containing the normal vector and the intersection between one of this planes and the surface defines a curve. If we perform a Taylor expansion of the curve around $\x_0$ the quadratic term defines what is known as the normal curvature $\kappa$. The orange and blue lines in Figure~\ref{fig:gauss_bonnet} are two examples of such curves and their curvatures correspond to the minimum and maximum value in the surface; they are what is known as the principal curvatures $\kappa_{min}$ and $\kappa_{max}$. The Gaussian curvature at any point of a surface is defined in terms of the principal curvatures as $K=\kappa_{min}\kappa_{max}$~\cite{differential_topology_and_geometry}.
+%
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter7/gauss_bonnet.pdf}
+\caption[The Gaussian curvature of a surface]{The intersection of planes containing the normal vector $\hat{n}$ at $\x_0$ (red star) and the gray surface define a family of curves. The minimum and maximum curvatures, corresponding to the orange and blue lines respectively, correspond to the principal curvatures of the surface at $\x_0$.}
+\label{fig:gauss_bonnet}
+\end{center}
+\end{figure*}
 
 The Gauss-Bonnet theorem states that the integral of the local Gaussian curvature over the whole surface is equal to the integer valued Euler characteristic
 %
@@ -27,7 +35,7 @@ The Gauss-Bonnet theorem states that the integral of the local Gaussian curvatur
 	\label{eq:euler_characteristic}
 \end{equation}
 %
-which is related to the genus $g$ (number of holes or handles in the surface) by $\chi=2(1-g)$. The Gauss-Bonnet theorem is a very powerful result as it relates the local properties of a surface,the Gaussian curvature, with a global topological invariant, the Euler characteristic. \note{Add picture to describe principal curvatures?}
+which is related to the genus $g$ (number of holes or handles in the surface) by $\chi=2(1-g)$. The Gauss-Bonnet theorem is a very powerful result as it relates the local properties of a surface,the Gaussian curvature, with a global topological invariant, the Euler characteristic.
 
 In the following sections I will introduce topological invariants in the context of condensed matter physics, which even though might seem a bit more abstract, their interpretation can be closely related to the concepts just defined in this section. 
 \section{Topological order in condensed matter}
