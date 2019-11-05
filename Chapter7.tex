@@ -218,10 +218,10 @@ which can be interpreted as the number of times that the vector $\hat{h}(\k)$ wr
 We just gained some intuition about interpreting the Chern number as the flux from Dirac monopoles. But if we stick to our knowledge of electromagnetism we might remember that monopoles are forbidden since
 %
 \begin{equation}
-	\int_{\mathcal{S}}\mathbf{B}\cdot d\mathbf{S}=\int_{V}(\nabla\cdot\mathbf{B})dV
+	\nabla\cdot\mathbf{B}=\nabla\cdot(\nabla\times\mathbf{A})=0.
 \end{equation}
 %
-and $\nabla\cdot\mathbf{B}=\nabla\cdot(\nabla\times\mathbf{A})=0$. So how is this possible? The solution to this problem was envisioned by Dirac~\cite{dirac_paul_adrien_maurice_quantised_1931} and is now called a Dirac string. If we consider an semi-infinitely long and infinitesimally thin solenoid, the magnetic field in the finite end will resemble that of a monopole as can be seen in Figure~\ref{fig:monopole}. This tiny solenoid corresponds to the Dirac string. 
+So how is it possible to keep a vector potential and have $\nabla\cdot\mathbf{B}\neq0$? The solution to this problem was envisioned by Dirac~\cite{dirac_paul_adrien_maurice_quantised_1931} and is now called a Dirac string. If we consider an semi-infinitely long and infinitesimally thin solenoid, the magnetic field in the finite end will resemble that of a monopole as can be seen in Figure~\ref{fig:monopole}. This tiny solenoid corresponds to the Dirac string. 
 %
 \begin{figure*}[htb]
 \begin{center}
@@ -230,13 +230,13 @@ and $\nabla\cdot\mathbf{B}=\nabla\cdot(\nabla\times\mathbf{A})=0$. So how is thi
 \label{fig:monopole}
 \end{center}
 \end{figure*}
-A more mathematical interpretation of these strings comes from the fact that the vector potential of a monopole has `lines' where it becomes singular. For example for a particular gauge we can write
+A more mathematical interpretation of these strings comes from the fact that in order to have $\nabla\cdot\mathbf{B}\neq 0$ the vector potential of a monopole must have `lines' where it becomes singular. For example for a particular gauge we can write
 %
 \begin{equation}
 	\mathbf{A}(\r)=g\frac{-y\ex+x\ey}{r(r+z)}
 \end{equation}
 %
-which is singular for the negative $z$ axis where $z=-r$. The orientation of the Dirac string is gauge dependent, something that should not surprise or bother us at this point. However, the physical effects of the Dirac string should be gauge independent, or in other words, the Aharonov-Bohm phase gained by a charged particle moving in a path that encloses the string should be an integer multiple of $2\pi$. This is argument gives rise to the Dirac charge quantization~\cite{dirac_paul_adrien_maurice_quantised_1931}, and in the context of topology, it guarantees that when we calculate the Berry phase by integrating the Berry connection (vector field) along a path that enclose a Dirac string, its effect will be indistinguishable. 
+which is singular at the Dirac string located at the negative $z$ axis where $z=-r$ . The orientation of the Dirac string is gauge dependent, something that should not surprise or bother us at this point. However, the physical effects of the Dirac string should be gauge independent, or in other words, the Aharonov-Bohm phase gained by a charged particle moving in a path that encloses the string should be an integer multiple of $2\pi$. This is argument gives rise to the Dirac charge quantization~\cite{dirac_paul_adrien_maurice_quantised_1931}, and in the context of topology, it guarantees that when we calculate the Berry phase by integrating the Berry connection (vector potential) along a path that enclose a Dirac string, its effect will be indistinguishable. 
 
 
 % In order for the field resulting from this string to be indistinguishable from that of a monopole, the Aharonov-Bohm phase gained by an electron moving around it has to be indistinguishable. For a monopole with charge $g$ this means that $2\pi N=\Phi_g/\Phi_0$
