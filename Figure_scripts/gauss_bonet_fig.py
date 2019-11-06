@@ -30,13 +30,19 @@ x = np.linspace(-1, 1, 2**8)
 y = x
 x0 = np.zeros(2**8)
 y0 = x
-x1 = x
-y1 = x0
+
+theta = np.pi*0.1
+x1 = np.cos(theta)*x0 - np.sin(theta)*y0
+y1 = np.sin(theta)*x0 + np.cos(theta)*y0
 
 theta = np.pi*0.15
 x2 = np.cos(theta)*x0 - np.sin(theta)*y0
 y2 = np.sin(theta)*x0 + np.cos(theta)*y0
 x, y = np.meshgrid(x, y)
+
+theta = np.pi*0.4
+x3 = np.cos(theta)*x0 - np.sin(theta)*y0
+y3 = np.sin(theta)*x0 + np.cos(theta)*y0
 # Compute z to make the pringle surface.
 #z = np.sin(-x*y)
 z = x**2 - y**2
@@ -51,20 +57,28 @@ ax.xaxis._axinfo["grid"]['color'] =  (1,1,1,0)
 ax.yaxis._axinfo["grid"]['color'] =  (1,1,1,0)
 ax.zaxis._axinfo["grid"]['color'] =  (1,1,1,0)
 ax._axis3don = False
-ax.view_init(elev=20, azim=57.6+10)
-ax.plot_surface(x, y*0, y, antialiased=True, rstride=20, cstride=20, color='Gray', 
-                alpha=0.2, edgecolors='w', linewidth=0.8)
+ax.view_init(elev=10, azim=57.6+10)
+ax.plot(x0, y0, x0**2-y0**2, linewidth=2)
+ax.plot(y0, x0, -x0**2+y0**2, linewidth=2)
+#ax.plot_surface(x, y*0, y, antialiased=True, rstride=20, cstride=20, color='Gray', 
+#                alpha=0.2, edgecolors='w', linewidth=0.8)
 #ax.plot_surface(x*0, y, x, antialiased=True, rstride=20, cstride=20, color='Gray', 
 #                alpha=0.2, edgecolors='w', linewidth=0.8)
 ax.plot_surface(x, y, z, antialiased=True, rstride=20, cstride=20, color='Gray', 
-                alpha=0.7, edgecolors='w', linewidth=0.8)
-ax.plot(x0, y0, x0**2-y0**2, linewidth=2)
-ax.plot(y0, x0, -x0**2+y0**2, linewidth=2)
-ax.plot(x2, y2, x2**2-y2**2, linewidth=2)
+                alpha=0.8, edgecolors='w', linewidth=0.8)
+#ax.scatter(0,0,0,'o', color='k', s=50)
 
-#plt.savefig('gauss_bonet.pdf', transparent=True)
+
+#for fact in np.linspace(0.15, 0.35, 2):
+#    theta = np.pi*fact
+#    x1 = np.cos(theta)*x0 - np.sin(theta)*y0
+#    y1 = np.sin(theta)*x0 + np.cos(theta)*y0
+#    ax.plot(x1, y1, x1**2-y1**2, linewidth=1, color='k')
+
+plt.tight_layout()
+plt.savefig('gauss_bonet.pdf', transparent=True)
 plt.show()
-
+#%%
 fig = plt.figure()
 ax = fig.gca(projection='3d')
 ax.xaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
@@ -76,14 +90,19 @@ ax.yaxis._axinfo["grid"]['color'] =  (1,1,1,0)
 ax.zaxis._axinfo["grid"]['color'] =  (1,1,1,0)
 ax._axis3don = False
 ax.view_init(elev=20, azim=57.6+10)
-#ax.plot_surface(x, y*0, y, antialiased=True, rstride=20, cstride=20, color='Gray', 
+ax.plot_surface(x, y*0, y, antialiased=True, rstride=20, cstride=20, color='blue',
+                alpha=0.5, edgecolors='w', linewidth=0.8)
+#ax.plot_surface(x*0, y, x, antialiased=True, rstride=20, cstride=20, color='Gray', 
 #                alpha=0.2, edgecolors='w', linewidth=0.8)
-ax.plot_surface(x*0, y, x, antialiased=True, rstride=20, cstride=20, color='Gray', 
-                alpha=0.2, edgecolors='w', linewidth=0.8)
 ax.plot_surface(x, y, z, antialiased=True, rstride=20, cstride=20, color='Gray', 
                 alpha=0.7, edgecolors='w', linewidth=0.8)
-ax.plot(x0, y0, x0**2-y0**2, linewidth=2)
-#ax.plot(y0, x0, -x0**2+y0**2, linewidth=2)
+#ax.plot(x0, y0, x0**2-y0**2, linewidth=2)
+ax.plot(y0, x0, -x0**2+y0**2, linewidth=2, color='blue')
 
 #plt.savefig('gauss_bonet.pdf', transparent=True)
 plt.show()
+
+#%%
+
+x = np.linspace(0, 10, 100)
+plt.loglog(x, x**5)
