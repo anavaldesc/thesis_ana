@@ -8,7 +8,7 @@
 \chapter{Manipulation and detection of ultra-cold atoms}
 \label{ch:Ch3}
 
-All of the experiments described in this thesis were performed using ultracold clouds of $\Rb87$. In this Chapter I describe the techniques and interactions that make our experiments possible. This Chapter is not an extensive survey of atomic physics but rather covers the topics that are most relevant to my experiments. The references I included are helpful if the reader is interested in learning the details of the derivations or wants to expand on a given topic. I start by describing the electronic structure of $\Rb87$. Then I review the interactions of atoms with magnetic fields and its application to magnetic trapping. I describe the foundations of atom-light interactions that make possible both laser cooling and trapping of atoms and give rise to Raman induced transitions.  Finally I discuss coherent processes that use the magnetic and electric dipole interaction and are relevant to the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy}, \ref{ch:clock_states} and \ref{ch:Rashba}. Finally, I discuss resonant absorption imaging which is used to detect atoms after all our experiments are performed.
+All of the experiments described in this thesis were performed using ultracold clouds of $\Rb87$. In this Chapter I describe the techniques and interactions that make our experiments possible. This Chapter is not an extensive survey of atomic physics but rather covers the topics that are most relevant to my experiments. The references I included are helpful if the reader is interested in learning the details of the derivations or wants to expand on a given topic. I start by describing the electronic structure of $\Rb87$ in Section~\ref{sec:electronic_structure}. In Sections~\ref{sec:zeeman_effect} and~\ref{sec:atom-lignt_interactio n} I describe atomic interactions with external fields that are necessary for the creation, manipulation and detection of ultracold atoms. First I review the interactions of atoms with magnetic fields and its application to magnetic trapping. Then I describe the foundations of atom-light interactions that make possible both laser cooling and trapping of atoms and give rise to Raman induced transitions. In Section~\ref{sec:absorption imaging} I discuss resonant absorption imaging which is used to detect atoms after all our experiments are performed. Finally in Section~\ref{sec:quantum_coherent_dynamics} I discuss coherent processes that use the magnetic and electric dipole interaction and are relevant to the experiments presented in Chapters~\ref{ch:Fourier_spectroscopy}, \ref{ch:clock_states} and \ref{ch:Rashba}. 
 
 %Both the cooling and trapping of atoms as well as the engineering of interesting potentials and detection of atoms rely on the interaction of atoms with electromagnetic fields as well as with static and oscillating magnetic fields. 
 \section{Electronic structure of $^{87}$Rb}
@@ -306,6 +306,83 @@ where $\delta=E_-1-\omega_{a,b}$. We can go from a 3 level system to an effectiv
 %
 where $\sigma_{x,y,z}$ are the Pauli matrices. The Hamiltonian above corresponds to an equal superposition of Rashba-type~\cite{bychkov_oscillatory_1984} ($\propto \hat{\sigma}_xk_y-\hat{\sigma}_yk_x$) and Dresselhaus-type~\cite{dresselhaus_spin-orbit_1955} ($\propto -\sigma_xk_y-\sigma_y k_x$) SOC with an effective magnetic field $\propto\Omega$ in the $\ey-\ez$ plane~\cite{galitski_spin-orbit_2013,lin_spin-orbit-coupled_2011}. In Chapter~\ref{ch:Rashba} I discuss the Rashba term in more detail and introduce a way of engineering a system with only Rashba-type SOC using multiple internal levels and Raman transitions. 
 
+\section{Detection: Resonant absorption imaging}
+\label{sec:absorption imaging}
+
+Ultracold atom experiments rely on optical imaging as the main method to probe an characterize the system. In our lab we use resonant absorption imaging which uses a resonant probing laser that is shone at the atomic cloud and then imaged into a charged-coupled device (CCD) camera. From the absorption of the light we can then infer properties about the atoms such as number of atoms, temperature, integrated column density and momentum distribution if we allow the clouds to expand. 
+
+Consider a laser beam with intensity $I(x,y,z)$ and angular frequency $\omega$ propagating along $\ez$ through a cloud of atoms with density $n(x,y,z)$ as is shown in Figure~\ref{fig:abs_imaging_1}a. We define a (frequency dependent) scattering cross section $\sigma(\omega)$ which characterized the probability of an atom absorbing a probe photon and is given by the Lorentzian function
+%
+\begin{equation}
+	\sigma(\omega)=3A_{eg}\frac{\pi^2c^2}{\omega_0^2}\frac{1}{2\pi}\frac{\Gamma}{\delta^2+\Gamma^2/4}
+	\label{eq:scattering_cross_section}
+\end{equation}
+%
+plotted in Figure~\ref{fig:abs_imaging_1}b, where $\Gamma$ is the scattering rate, $\omega_0$ is the transition frequency, $\delta=\omega-\omega_0$ is the detuning and $A_{eg}$ is the Einstein coefficient associated to spontaneous emission. As the beam travels through the cloud it will be absorbed and its intensity is reduced at a rate given by
+%
+\begin{equation}
+	\frac{dI}{dz}(x,y,z)=-n(x,y,z)\sigma(\omega)I(x,y,z).
+	\label{eq:Beer_law}
+\end{equation}
+%
+\begin{figure*}[tb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/abs_imaging_1.pdf}
+\caption[The Beer-Lambert law]{{\bf a.} A laser beam traveling along $\ez$ through a medium with density $n(x,y,z$. The intensity decays exponentially with the integrated column density and the scattering cross section $\sigma{\omega}$. {\bf b.} The scattering cross section has a Lorentzian line shape with a full width half maximum equal to $\Gamma$. \note{TODO: add real data on panel b if I have time.}}
+\label{fig:abs_imaging_1}
+\end{center}
+\end{figure*}
+
+In the limit of small intensities we can integrate this expression over the thickness of the cloud and find that the intensity decays exponentially with the density and the scattering cross section
+%
+\begin{equation}
+	I(x,y,z)=I(x,y,0)e^{-\int_0^z n(x,y,z')\sigma(\omega)dz'},
+\end{equation}
+
+where ${\rm {OD}}=\int_0^z n(x,y,z')\sigma(\omega)dz'$ is the optical depth (OD) of the medium. If we measure the OD of the cloud it is then straightforward to obtain the integrated column density $n(x,y)$. This result, known as the Beer-Lambert law, works well when using low intensity beams. 
+
+In the experiment we measure the optical depth of a cloud by imaging the probe into a CCD camera under two different conditions:  first in the presence of atoms to measure the attenuated intensity $I_f=I(x,y,z)$ and then without any atoms to get a measure of the initial intensity $I_i=I(x,y,0)$. The optical depth can then be computed as
+%
+\begin{equation}
+	OD=\ln \left(\frac{I_f}{I_i}\right).
+\end{equation}
+%
+Figure~\ref{fig:abs_imaging_2} show the different images used to compute the OD. In practice we take a third image of the background intensity $I_{\rm {bg}}$ and subtract it from the other two images.  
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/abs_imaging_2.pdf}
+\caption[Resonant absorption imaging]{Resonant absorption imaging. An atomic sample is illuminated with a resonant probe whose intensity is later recorded on a CCD camera. Two additional images of the unabsorbed probe intensity and the background intensity are captured in order to reconstruct the optical density of the atoms.}
+\label{fig:abs_imaging_2}
+\end{center}
+\end{figure*}
+\subsection{High intensity absorption imaging}
+
+The use of the OD to infer the atomic density works well if we assume that the intensity of the probing laser is low such that the atoms mostly stay in the ground state. However at high intensities a significant fraction of the atoms can become excited and effects such as stimulated emission of light have to be taken into account. As a result of this the scattering cross section gets an additional dependence on intensity (see~\cite{Foot} for a complete derivation)
+%
+\begin{equation}
+	\sigma(\omega, I) = \sigma(\omega)\frac{1}{{1+I/I_{\rm{sat}}}},
+\end{equation}
+%
+where $I_{\rm{sat}}=\pi hc\Gamma/3\lambda_0^3$ is the saturation intensity, and when $I=I_{\rm{sat}}$ the population in the ground and excited state are equal. Integrating Equation~\ref{eq:Beer_law} using the modified expression for $\sigma(\omega, I)$ gives
+%
+\begin{equation}
+	n(x,y)\sigma(\omega)=-\alpha^{\star}\ln(I_f/I_i) + \frac{I_i-I_f}{I_{\rm{sat}}},
+	\label{eq:corrected_beer_law}
+\end{equation}
+%
+where I have also added an additional dimensionless parameter $\alpha^{\star}$ which can account for imperfections in the imaging process (see~\cite{reinaudi_strong_2007}).
+
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/flat_top_BEC.pdf}
+\caption[High intensity absorption image]{{\bf a.} A BEC imaged at low intensity shows a `flat-top' density profile. {\bf b.} In order to recover the Thomas-Fermi profile it is necessary to image high density BECs with intensities larger than $I_{\rm{sat}}.$}
+\label{fig:flat_top_BEC}
+\end{center}
+\end{figure*}
+
+It is hard reliably measure atomic clouds at low intensity  when the OD is of the order of 3 or 4 (such as our BECs) and a significant fraction of the imaging light is absorbed. Due to the limited dynamic range of CCD cameras the measured OD saturates, resulting for example in imaging `flat-top' BECs rather than the usual Thomas-Fermi distribution as shown in Figure~\ref{fig:flat_top_BEC}. To get around this issue we typically image with using intensities $I>I_{\rm{sat}}$. In order to correctly compute the column density including saturation effects we need a conversion of $I_{\rm{sat}}$ from mW/cm$^2$ to counts per pixel on the CCD camera. We follow the procedure described in~\cite{reinaudi_strong_2007} find the values of $\alpha^{\star}$ and $I_{\rm{sat}}$ in counts per pixel. To learn about other effects such as the recoil momentum from the imaging light that could affect absorption images see~\cite{genkina_feshbach_2015}. 
+
 \section{Coherent manipulation}
 \label{sec:quantum_coherent_dynamics}
 
@@ -463,82 +540,7 @@ with $\boldsymbol{\Omega}_1(x)/\Omega_1=\cos(2\kr x)\ex-\sin(2\kr x)\ey$,  $\hat
 \end{center}
 \end{figure*}
 
-\section{Detection: Resonant absorption imaging}
-\label{sec:absorption imaging}
-
-Ultracold atom experiments rely on optical imaging as the main method to probe an characterize the system. In our lab we use resonant absorption imaging which uses a resonant probing laser that is shone at the atomic cloud and then imaged into a charged-coupled device (CCD) camera. From the absorption of the light we can then infer properties about the atoms such as number of atoms, temperature, integrated column density and momentum distribution if we allow the clouds to expand. 
-
-Consider a laser beam with intensity $I(x,y,z)$ and angular frequency $\omega$ propagating along $\ez$ through a cloud of atoms with density $n(x,y,z)$ as is shown in Figure~\ref{fig:abs_imaging_1}a. We define a (frequency dependent) scattering cross section $\sigma(\omega)$ which characterized the probability of an atom absorbing a probe photon and is given by the Lorentzian function
-%
-\begin{equation}
-	\sigma(\omega)=3A_{eg}\frac{\pi^2c^2}{\omega_0^2}\frac{1}{2\pi}\frac{\Gamma}{\delta^2+\Gamma^2/4}
-	\label{eq:scattering_cross_section}
-\end{equation}
-%
-plotted in Figure~\ref{fig:abs_imaging_1}b, where $\Gamma$ is the scattering rate, $\omega_0$ is the transition frequency, $\delta=\omega-\omega_0$ is the detuning and $A_{eg}$ is the Einstein coefficient associated to spontaneous emission. As the beam travels through the cloud it will be absorbed and its intensity is reduced at a rate given by
-%
-\begin{equation}
-	\frac{dI}{dz}(x,y,z)=-n(x,y,z)\sigma(\omega)I(x,y,z).
-	\label{eq:Beer_law}
-\end{equation}
-%
-\begin{figure*}[tb]
-\begin{center}
-\includegraphics[]{Figures/Chapter3/abs_imaging_1.pdf}
-\caption[The Beer-Lambert law]{{\bf a.} A laser beam traveling along $\ez$ through a medium with density $n(x,y,z$. The intensity decays exponentially with the integrated column density and the scattering cross section $\sigma{\omega}$. {\bf b.} The scattering cross section has a Lorentzian line shape with a full width half maximum equal to $\Gamma$. \note{TODO: add real data on panel b if I have time.}}
-\label{fig:abs_imaging_1}
-\end{center}
-\end{figure*}
-
-In the limit of small intensities we can integrate this expression over the thickness of the cloud and find that the intensity decays exponentially with the density and the scattering cross section
-%
-\begin{equation}
-	I(x,y,z)=I(x,y,0)e^{-\int_0^z n(x,y,z')\sigma(\omega)dz'},
-\end{equation}
-
-where ${\rm {OD}}=\int_0^z n(x,y,z')\sigma(\omega)dz'$ is the optical depth (OD) of the medium. If we measure the OD of the cloud it is then straightforward to obtain the integrated column density $n(x,y)$. This result, known as the Beer-Lambert law, works well when using low intensity beams. 
-
-In the experiment we measure the optical depth of a cloud by imaging the probe into a CCD camera under two different conditions:  first in the presence of atoms to measure the attenuated intensity $I_f=I(x,y,z)$ and then without any atoms to get a measure of the initial intensity $I_i=I(x,y,0)$. The optical depth can then be computed as
-%
-\begin{equation}
-	OD=\ln \left(\frac{I_f}{I_i}\right).
-\end{equation}
-%
-Figure~\ref{fig:abs_imaging_2} show the different images used to compute the OD. In practice we take a third image of the background intensity $I_{\rm {bg}}$ and subtract it from the other two images.  
-
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter3/abs_imaging_2.pdf}
-\caption[Resonant absorption imaging]{Resonant absorption imaging. An atomic sample is illuminated with a resonant probe whose intensity is later recorded on a CCD camera. Two additional images of the unabsorbed probe intensity and the background intensity are captured in order to reconstruct the optical density of the atoms.}
-\label{fig:abs_imaging_2}
-\end{center}
-\end{figure*}
-\subsection{High intensity absorption imaging}
-
-The use of the OD to infer the atomic density works well if we assume that the intensity of the probing laser is low such that the atoms mostly stay in the ground state. However at high intensities a significant fraction of the atoms can become excited and effects such as stimulated emission of light have to be taken into account. As a result of this the scattering cross section gets an additional dependence on intensity (see~\cite{Foot} for a complete derivation)
-%
-\begin{equation}
-	\sigma(\omega, I) = \sigma(\omega)\frac{1}{{1+I/I_{\rm{sat}}}},
-\end{equation}
-%
-where $I_{\rm{sat}}=\pi hc\Gamma/3\lambda_0^3$ is the saturation intensity, and when $I=I_{\rm{sat}}$ the population in the ground and excited state are equal. Integrating Equation~\ref{eq:Beer_law} using the modified expression for $\sigma(\omega, I)$ gives
-%
-\begin{equation}
-	n(x,y)\sigma(\omega)=-\alpha^{\star}\ln(I_f/I_i) + \frac{I_i-I_f}{I_{\rm{sat}}},
-	\label{eq:corrected_beer_law}
-\end{equation}
-%
-where I have also added an additional dimensionless parameter $\alpha^{\star}$ which can account for imperfections in the imaging process (see~\cite{reinaudi_strong_2007}).
-
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter3/flat_top_BEC.pdf}
-\caption[High intensity absorption image]{{\bf a.} A BEC imaged at low intensity shows a `flat-top' density profile. {\bf b.} In order to recover the Thomas-Fermi profile it is necessary to image high density BECs with intensities larger than $I_{\rm{sat}}.$}
-\label{fig:flat_top_BEC}
-\end{center}
-\end{figure*}
-
-It is hard reliably measure atomic clouds at low intensity  when the OD is of the order of 3 or 4 (such as our BECs) and a significant fraction of the imaging light is absorbed. Due to the limited dynamic range of CCD cameras the measured OD saturates, resulting for example in imaging `flat-top' BECs rather than the usual Thomas-Fermi distribution as shown in Figure~\ref{fig:flat_top_BEC}. To get around this issue we typically image with using intensities $I>I_{\rm{sat}}$. In order to correctly compute the column density including saturation effects we need a conversion of $I_{\rm{sat}}$ from mW/cm$^2$ to counts per pixel on the CCD camera. We follow the procedure described in~\cite{reinaudi_strong_2007} find the values of $\alpha^{\star}$ and $I_{\rm{sat}}$ in counts per pixel. To learn about other effects such as the recoil momentum from the imaging light that could affect absorption images see~\cite{genkina_feshbach_2015}. %\note{TODO: if there is time I might add my own calibration data.}. 
+%\note{TODO: if there is time I might add my own calibration data.}. 
 
 
 
