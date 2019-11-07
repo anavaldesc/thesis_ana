@@ -7,44 +7,9 @@
 \chapter{Full derivation of the Raman coupled $\xyz$ states}
 \label{app:Rashba_derivation}
 
-In this Appendix I derive the full time-dependent Hamiltonian describing the Raman coupled $\xyz$ states. The system is based on the theoretical proposal in~\cite{campbell_rashba_2016} to engineer an effective Rashba-type Hamiltonian using three Raman laser beams.
+In this Appendix I derive the full time-dependent Hamiltonian describing the $\xyz$ states coupled by three Raman beams as shown in Figure~\ref{fig:Rashba_layout}. The system is based on the theoretical proposal in~\cite{campbell_rashba_2016} to engineer a system with Rashba-like SOC. 
 
-We consider an $F=1$ system that is subject to a constant magnetic field $B_0\ez$ and an RF magnetic field $B_{RF}\cos(\omrf t)\ex$. The system is described by the Hamiltonian
-\begin{equation}
-\hat H_{RF} = \omega_0 \fz - \frac{\epsilon}{\hbar} (\fz^2-\mathbb{I})+2\Omrf\cos(\omrf t)\fx,
-\label{Eq:H_RF}
-\end{equation}
-%
-where $\omega_0 = g_F\mu_B B_0$ is the Larmor frequency, $\epsilon$ is a quadratic Zeeman shift that breaks the degeneracy of the $\ket{m_F=-1}\leftrightarrow$ $\ket{m_F=0}$ and $\ket{m_F=1}\leftrightarrow$ $\ket{m_F=0}$ transitions, and $\Omrf = g_F\mu_B B_{RF} / 2$ is the RF coupling strength. We then transform the Hamiltonian into a rotating frame using the unitary transformation $\hat U(t) = \exp(-i \omrf t \fz)$. The spin-1 operators under this transformation are transformed as
-\begin{align}
-\begin{split}
-\fx  & \rightarrow \cos(\omrf t)\fx -\sin(\omrf t)\fy \\
-     & = e^{i\omega_{RF}t}\fp +e^{-i\omega_{RF}t}\fm\\
-\fy & \rightarrow \sin(\omrf t)\fx + \cos(\omrf t)\fy \\
-     &=\frac{1}{i}(e^{i\omega_{RF}t}\fp-e^{-i\omega_{RF}t}\fm) \\
-\fz & \rightarrow \fz.
-\label{eq:rotation_transformations}
-\end{split}
-\end{align}
-%
-The unitary evolution in the rotating frame is described by the transformed Hamiltonian $\hat U^{\dagger}(t)(\hat H_{RF} -i \hbar \partial_t)\hat U(t)$, which after neglecting terms that are oscillating at $2\omrf$ is 
-
-\begin{equation}
-\hat H_{RWA}= \Delta \fz - \frac{\epsilon}{\hbar} (\fz^2-\mathbb{I}) + \Omrf \fx
-\label{Eq:H_RWA}
-\end{equation}
-%
-The eigenstate of Equation~\ref{Eq:H_RWA} are the $\xyz$ states described in Chapter~\ref{ch:clock_states}. I will show later that all states can be coupled using a combination of the $\fx$, $\fy$, and $\fz$ operators in the lab frame, i.e. using different combinations of Raman laser beams with appropriately chosen polarizations. 
-
-% \subsection{Raman dressing of the RF eigenstates}
-
-% Our main goal is to engineer a Hamiltonian with Rashba SOC. It was shown in [Dan's PRA ref] that this can be done with a minimum of three states with nonzero Raman coupling matrix elements. The $\xyz$ RF dressed-states are therefore good candidates to construct the desired Rashba Hamiltonian as was shown in [Dan's Rashba RF paper].
-% %
-% I will derive the the Rashba Hamiltonian from first principles, without sweeping undesired off-resonant couplings under the rug. 
-
-
-
-For simplicity I will start this description in the lab frame and I will not make any initial assumptions about direction of propagation or frequency each of the beams. Consider three linearly polarized Raman beams propagating along the $xy$ plane as shown in Fig.~\ref{fig:Rashba_layout}. 
+We consider $\Rb87$ atoms in the ground hyperfine $F=1$ manifold subject to a constant magnetic field $B_0\ez$ and an RF magnetic field $B_{\rm{RF}}\cos(\omrf t)\ex$ as in Chapter~\ref{ch:clock_states}. The system is described by the Hamiltonian
 \begin{figure*}[hb]
 	\begin{center}
 		\includegraphics{Figures/AppendixC/Rashba_layout.pdf}
@@ -54,13 +19,53 @@ For simplicity I will start this description in the lab frame and I will not mak
 	\end{center}
 \end{figure*}
 %
-The electric field at the atoms is
+\begin{equation}
+\hat H_{\rm{RF}} = \omega_0 \fz - \frac{\epsilon}{\hbar} (\fz^2-\mathbb{I})+2\Omrf\cos(\omrf t)\fx,
+\label{Eq:H_RF}
+\end{equation}
+%
+where $\omega_0 = g_F\mu_B B_0$ is the Larmor frequency, $\epsilon$ is a quadratic Zeeman shift that breaks the degeneracy of the $\ket{m_F=-1}\leftrightarrow$ $\ket{m_F=0}$ and $\ket{m_F=1}\leftrightarrow$ $\ket{m_F=0}$ transitions, and $\Omrf = g_F\mu_B B_{\rm{RF}} / 2$ is the RF coupling strength. We transform the Hamiltonian into a rotating frame using the unitary transformation $\hat U(t) = \exp(-i \omrf t \fz)$. The spin-1 operators under this transformation become
+\begin{align}
+\begin{split}
+\fx  & \rightarrow \cos(\omrf t)\fx -\sin(\omrf t)\fy \\
+     & = e^{i\omega_{\rm{RF}}t}\fp +e^{-i\omega_{\rm{RF}}t}\fm\\
+\fy & \rightarrow \sin(\omrf t)\fx + \cos(\omrf t)\fy \\
+     &=\frac{1}{i}(e^{i\omega_{\rm{RF}}t}\fp-e^{-i\omega_{\rm{RF}}t}\fm) \\
+\fz & \rightarrow \fz.
+\label{eq:rotation_transformations}
+\end{split}
+\end{align}
+%
+The unitary evolution in the rotating frame is described by the transformed Hamiltonian $\hat U^{\dagger}(t)(\hat H_{\rm{RF}} -i \hbar \partial_t)\hat U(t)$, which after neglecting terms that are oscillating with angular frequency $2\omrf$ is 
+
+\begin{equation}
+\hat H_{RWA}= \Delta \fz - \frac{\epsilon}{\hbar} (\fz^2-\mathbb{I}) + \Omrf \fx
+\label{Eq:H_RWA}
+\end{equation}
+%
+The eigenstate of Equation~\ref{Eq:H_RWA} are the $\xyz$ states described in Chapter~\ref{ch:clock_states}. %I will show later that all states can be coupled using a combination of the $\fx$, $\fy$, and $\fz$ operators in the lab frame, i.e. using different combinations of Raman laser beams with appropriately chosen polarizations. 
+
+% \subsection{Raman dressing of the RF eigenstates}
+
+% Our main goal is to engineer a Hamiltonian with Rashba SOC. It was shown in [Dan's PRA ref] that this can be done with a minimum of three states with nonzero Raman coupling matrix elements. The $\xyz$ RF dressed-states are therefore good candidates to construct the desired Rashba Hamiltonian as was shown in [Dan's Rashba RF paper].
+% %
+% I will derive the the Rashba Hamiltonian from first principles, without sweeping undesired off-resonant couplings under the rug. 
+
+For simplicity I first describe the Raman coupling in the lab frame and I consider the geometry and polarization of the Raman beams as in Figure~\ref{fig:Rashba_layout}. The electric field at the atoms is
+%
 \begin{equation}
 \mathbf{E}(x, t)=\sum_{i=1}^{3}E_i\mathbf{e}_i e^{i(\mathbf{k}_i\cdot\mathbf{x}-\omega_i t)},
 \label{eq:Raman_basic}
 \end{equation}
 %
-where $E_i$ is the field amplitude, $\omega_i$ is the angular frequency, and $\mathbf{e}_i$ is the polarization of each of the beams. In order to generate the necessary Raman couplings proportional to $\fx$, $\fy$ and $\fz$ we need two horizontally polarized Raman beams and one vertically polarized beam. Without loss of generality we choose
+where $E_i$ is the field amplitude, $\omega_i$ is the angular frequency, $\k_i$ is the wave vector and $\mathbf{e}_i$ is the polarization of each of the beams. In order to have the right coupling matrix elements to cyclically couple all three states in a ring-like coupling as described in~\cite{campbell_realistic_2011} we need non-zero transition matrix elements we need a Hamiltonian of the form
+
+\begin{equation}
+	\hat{H}_{\rm{SOC}}=(\Omega_x, \Omega_y, \Omega_z)\cdot \hat{\mathbf{F}}
+\end{equation}
+%
+(see Section~\ref{sec:xyz_matrix_elements}). I show that this is possible if we choose two Raman beams to have in plane polarization and one vertically polarized beam:
+%
 \begin{align}
 \begin{split}
 \mathbf{e}_1&=\frac{(k_{1y}, -k_{1x}, 0)}{\vert\vert \mathbf k_1 \vert\vert^2}, \\
@@ -70,14 +75,15 @@ where $E_i$ is the field amplitude, $\omega_i$ is the angular frequency, and $\m
 \end{split}
 \end{align}
 %
-The Raman Hamiltonian is given by the vector component of the Stark shift generated by the atom-light interaction
+
+The Raman coupling strength is proportional to the vector polarizability (see Section~\ref{sec:vector_polarizability}) and the Hamiltonian describing the atom-light coupling is
 %
 \begin{equation}
 \hat{H}_R=(iu_v\mathbf E\times\mathbf E^*)\cdot\hat F,
 \label{eq:vector_stark}
 \end{equation}
 %
-where $u_v$ is the vector polarizability. Now let's expand Eq.~\ref{eq:vector_stark} using the field at the atoms from Eq.~\ref{eq:Raman_basic}.
+where $u_v$ is the vector polarizability. The expression for the cross product of the electric field at the atoms is quite messy, lets rewrite it in a more convenient way:
 
 \begin{align}
 \begin{split}
@@ -98,7 +104,8 @@ where $u_v$ is the vector polarizability. Now let's expand Eq.~\ref{eq:vector_st
 \end{split}
 \end{align}
 %
-also from the definitions of the polarization vectors we can calculate the cross products
+and using the definition of the polarization vectors (Equation~\ref{eq:polarization})
+%
 \begin{align}
 \begin{split}
 \e_1\times \e_2 &= \frac{(-k_{1x}, -k_{1y}, 0)}{\vert\vert \k_1\vert\vert^2} = -\hat\k_1 \\
@@ -107,16 +114,16 @@ also from the definitions of the polarization vectors we can calculate the cross
 \end{split}
 \end{align}
 %
-and putting everything together
+we obtain the Hamiltonian describing the atom light interaction
 \begin{align}
 \begin{split}
 iu_v\mathbf E^* \times\mathbf E \cdot\mathbf{\hat{F}}&= -2u_v\big[-\hat\k_1\text{Im}\{12\}+\ez\sin\theta_{13}\text{Im}\{13\}+\hat\k_3\text{Im}\{23\}\big] \cdot \hat{\mathbf{F}}\\
-&=(\Omega_x, \Omega_y, \Omega_z)\cdot \hat{\mathbf{F}}
+&=(\Omega_x, \Omega_y, \Omega_z)\cdot \hat{\mathbf{F}},
 \label{eq:full_Raman}
 \end{split}
 \end{align}
 %
-with
+where
 \begin{align}
 \begin{split}
 \Omega_x &=\frac{k_{1x}}{\vert\vert\k_1\vert\vert}\text{Im}\{\Omega_{12}e^{i(\k_{21}\cdot\x-\omega_{21}t)}\}
@@ -137,75 +144,76 @@ and
 
 \subsubsection{Going into rotating frame}
 
-This is where things start getting fun. We need to transform Eq.~\ref{eq:full_Raman} into the rotating frame. Which terms are `slow' and we get to keep and which are `fast' depends on the specific choice of Raman frequencies. Only the $\fx$ and $\fy$ operators are affected by the unitary transformation while $\fz$ remains unchanged. We therefore choose the beams that give a $\fz$ coupling to be close in frequency. 
+This is where things start getting fun. We need to transform Eq.~\ref{eq:full_Raman} into the rotating frame. Which terms are `slow' and we get to keep and which are `fast' depends on the specific choice of Raman frequencies. The frequencies of the beams should be such that each of the frequency differences $\omega_{ij}$ is resonant with a dressed state transition in the rotating frame as shown in Figure~\ref{fig:Rashba_frequencies}a. I showed in Equation~\ref{eq:rotation_transformations} that in the rotating frame the $\fx$ and $\fy$ operators get additional factors of $\exp(\pm i\omega_{\rm{RF}})$ while $\fz$ remains unchanged.
 
+We must therefore have the frequencies of beams giving rise to $\fx$ and $\fy$ coupling to differ in frequency by an additional $\omrf$ and the beams that give the $\fz$ coupling to be close in frequency. The two possible ways of doing so are shown in Figure~\ref{fig:Rashba_frequencies}b and they determine weather $\omega_{21}$ and $\omega_{31}$ are positive or negative.
 
-
-\begin{figure*}[hb]
+\begin{figure*}[htb]
 	\begin{center}
 		\includegraphics{Figures/AppendixC/laser_frequencies.pdf}
-		\caption
-		{Laser frequencies:  We have two frequency choices that allow us to address the three transitions between the $\xyz$ states. {\bf{a)}} The blue detuned case. There are 2 frequencies smaller by about $\omega_{RF}$ and one larger frequency. {\bf{b)}} The red detuned case. There are 2 frequencies that are larger by about $\omega_{RF}$ and one smaller frequency. Nice!
+		\caption[Raman coupling of the $\xyz$ states]
+		{{\bf a} The choice of laser frequencies should be such that in the frame rotating with frequency $\omrf$ we get resonant Raman coupling of the $\xyz$ states. {\bf b.} Possible laser frequency configurations: {\bf{i)}} Blue detuned configuration: There are 2 frequencies smaller by about $\omega_{\rm{RF}}$ and one larger frequency. {\bf{ii)}} The red detuned configuration: there are 2 frequencies that are larger by about $\omega_{\rm{RF}}$ and one smaller frequency. 
 		\label{fig:Rashba_frequencies}}
 	\end{center}
 \end{figure*}
+
 %
-There are two different frequency choices which Dan calls `blue' and `red' detuned which are shown in Fig.~\ref{fig:Rashba_frequencies}, and they determine wether $\omega_{21}$ and $\omega_{31}$ are positive or negative. 
-%
-I'm not sure if we can generalize something at this point. Lets look at the firs term of the $\Omega_x\fx$ coupling for practice. 
+Lets look at the firs term of the $\Omega_x\fx$ coupling to get an idea of how the RWA will work here:
 \begin{align}
 \begin{split}
 \Omega_x ^{(1)}\fx &\rightarrow\frac{1}{4i}\frac{k_{1x}}{\vert\vert\k_1\vert\vert}
-\left(\Omega_{12}e^{i(\k_{21}\cdot\x-\omega_{21})t} - \Omega_{12}^*e^{-i(\k_{21}\cdot\x-\omega_{21}t)}\right)\left(e^{i\omega_{RF}t}\fp +e^{-i\omega_{RF}t}\fm\right) \\
+\left(\Omega_{12}e^{i(\k_{21}\cdot\x-\omega_{21})t} - \Omega_{12}^*e^{-i(\k_{21}\cdot\x-\omega_{21}t)}\right)\left(e^{i\omega_{\rm{RF}}t}\fp +e^{-i\omega_{\rm{RF}}t}\fm\right) \\
 & \approx \frac{1}{4i}\frac{k_{1x}}{\vert\vert\k_1\vert\vert}
-\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t)}\hat{F}_{\pm} 
-- \Omega_{12}^*e^{-i(\k_{21}\cdot\x-(\omega_{21}\mp \omega_{RF})t)}\hat{F}_{\mp}\right) \\
-& = \frac{1}{4i}\frac{k_{1x}}{\vert\vert\k_1\vert\vert}
-\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t)}-c.c.\right)\fx
-\pm i\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t)}+c.c.\right)\fy \\
-& = \frac{1}{2}\frac{k_{1x}}{\vert\vert\k_1\vert\vert}\vert\Omega_{12}\vert
-\left(\sin[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t+\phi_{12}]\fx\pm\cos[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t+\phi_{12}]\fy\right)
+\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t)}\hat{F}_{\pm} 
+- \Omega_{12}^*e^{-i(\k_{21}\cdot\x-(\omega_{21}\mp \omega_{\rm{RF}})t)}\hat{F}_{\mp}\right) \\
+% & = \frac{1}{4i}\frac{k_{1x}}{\vert\vert\k_1\vert\vert}
+% \left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t)}-c.c.\right)\fx
+% \pm i\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t)}+c.c.\right)\fy \\
+& = \frac{1}{2}\frac{k_{1x}}{\vert\vert\k_1\vert\vert}\vert\Omega_{12}\vert\Big(\sin[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t+\phi_{12}]\fx \\
+&\pm\cos[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t+\phi_{12}]\fy\Big).
 \end{split}
 \end{align} 
-Where the upper sign corresponds to the $\omega_{21}>0$ case (blue detuned) and the lower sign to $\omega_{21}<0$ (red detuned). Similarly, the second therm of $\Omega_x\fx$ is
+%
+Here the upper sign corresponds to the $\omega_{21}>0$ case (blue detuned) and the lower sign to $\omega_{21}<0$ (red detuned) and I performed a RWA approximation in the second line by neglecting the terms oscillating with frequency close to $2\omrf$. Similarly, the second therm of $\Omega_x\fx$ is
 \begin{align}
 \begin{split}
 \Omega_x ^{(2)}\fx &\rightarrow\frac{1}{4i}\frac{k_{3x}}{\vert\vert\k_3\vert\vert}
-\left(\Omega_{23}e^{i(\k_{32}\cdot\x-\omega_{32})t} - \Omega_{23}^*e^{-i(\k_{32}\cdot\x-\omega_{32}t)}\right)\left(e^{i\omega_{RF}t}\fp +e^{-i\omega_{RF}t}\fm\right) \\
+\left(\Omega_{23}e^{i(\k_{32}\cdot\x-\omega_{32})t} - \Omega_{23}^*e^{-i(\k_{32}\cdot\x-\omega_{32}t)}\right)\left(e^{i\omega_{\rm{RF}}t}\fp +e^{-i\omega_{\rm{RF}}t}\fm\right) \\
 & \approx  \frac{1}{2}\frac{k_{3x}}{\vert\vert\k_3\vert\vert}\vert\Omega_{23}\vert
-\left(\sin[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{RF})t+\phi_{23}]\fx\pm\cos[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{RF})t+\phi_{23}]\fy\right)
+\Big(\sin[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{\rm{RF}})t+\phi_{23}]\fx \\
+&\pm\cos[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{\rm{RF}})t+\phi_{23}]\fy\Big)
 \end{split}
 \end{align}
 %
-where I used the same sign convention as before. It is important to keep in mind though that if $\omega_{21}$ is positive then $\omega_{32}$ must be negative and vice versa. \textcolor{red}{Double check again that signs are correct!}
+where I used the same sign convention as before. It is important to keep in mind that if $\omega_{21}$ is positive then $\omega_{32}$ must be negative and vice versa. 
 %
-Let's continue with the algebra galore...
+Lets keep cranking the algebra!
 \begin{align}
 \begin{split}
 \Omega_y^{(1)}\fy& \rightarrow -\frac{1}{4}\frac{k_{1y}}{\vert\vert\k_1\vert\vert}
 \left(\Omega_{12}e^{i(\k_{21}\cdot\x-\omega_{21}t} - \Omega_{12}^*e^{-i(\k_{21}\cdot\x-\omega_{21}t)}\right)
-\left(e^{i\omega_{RF}t}\fp-e^{-i\omega_{RF}t}\fm\right) \\
-& = \mp\frac{1}{4}\frac{k_{1y}}{\vert\vert\k_1\vert\vert} 
-\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t)}\hat{F}_{\pm} 
-+ \Omega_{12}^*e^{-i(\k_{21}\cdot\x-(\omega_{21}\mp \omega_{RF})t)}\hat{F}_{\mp}\right) \\
-&=\mp\frac{1}{4}\frac{k_{1y}}{\vert\vert\k_1\vert\vert} 
-\left(\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t)} + c.c.\right)\fx 
-+ i\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t)} - c.c.\right)\fy \right) \\
+\left(e^{i\omega_{\rm{RF}}t}\fp-e^{-i\omega_{\rm{RF}}t}\fm\right) \\
+& \approx \mp\frac{1}{4}\frac{k_{1y}}{\vert\vert\k_1\vert\vert} 
+\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t)}\hat{F}_{\pm} 
++ \Omega_{12}^*e^{-i(\k_{21}\cdot\x-(\omega_{21}\mp \omega_{\rm{RF}})t)}\hat{F}_{\mp}\right) \\
+% &=\mp\frac{1}{4}\frac{k_{1y}}{\vert\vert\k_1\vert\vert} 
+% \left(\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t)} + c.c.\right)\fx 
+% + i\left(\Omega_{12}e^{i(\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t)} - c.c.\right)\fy \right) \\
 &= \mp\frac{1}{2}\frac{k_{1y}}{\vert\vert\k_1\vert\vert} 
-\vert\Omega_{12}\vert\left(\cos[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t+\phi_{12}]\fx
--\sin[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t+\phi_{12}]\fy\right),
+\vert\Omega_{12}\vert\Big(\cos[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t+\phi_{12}]\fx \\
+&-\sin[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t+\phi_{12}]\fy\Big),
 \end{split}
 \end{align}
 %
-and
+
 \begin{align}
 \begin{split}
 \Omega_y^{(2)}\fy& \rightarrow -\frac{1}{4}\frac{k_{3y}}{\vert\vert\k_3\vert\vert}
 \left(\Omega_{23}e^{i(\k_{32}\cdot\x-\omega_{32}t} - \Omega_{23}^*e^{-i(\k_{32}\cdot\x-\omega_{32}t)}\right)
-\left(e^{i\omega_{RF}t}\fp-e^{-i\omega_{RF}t}\fm\right) \\
+\left(e^{i\omega_{\rm{RF}}t}\fp-e^{-i\omega_{\rm{RF}}t}\fm\right) \\
 &\approx \mp\frac{1}{2}\frac{k_{3y}}{\vert\vert\k_3\vert\vert} 
-\vert\Omega_{23}\vert\left(\cos[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{RF})t+\phi_{23}]\fx
--\sin[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{RF})t+\phi_{23}]\fy\right).
+\vert\Omega_{23}\vert\Big(\cos[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{\rm{RF}})t+\phi_{23}]\fx \\
+&-\sin[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{\rm{RF}})t+\phi_{23}]\fy\Big).
 \end{split}
 \end{align}
 %
@@ -214,32 +222,42 @@ The complete Hamiltonian in the rotating frame after doing the rotating wave app
 \begin{align}
 \begin{split}
 \hat{H}= \frac{1}{2}\frac{\vert\Omega_{12}\vert}{\vert\vert\k_1\vert\vert}
-\Bigg(&\Big(k_{1x}\sin[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t+\phi_{12}]
-\pm k_{1y}\cos[\k_{21}\cdot\x-(\omega_{21}\pm\omega_{RF})t+\phi_{12}]\Big)\fx \\
-+ &\Big(\pm k_{1x}\cos[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{RF})t+\phi_{12}]
-\mp k_{1y}\sin[\k_{21}\cdot\x-(\omega_{21}\pm\omega_{RF})t+\phi_{12}]\Big)\fy\Bigg) \\
+\Bigg(&\Big(k_{1x}\sin[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t+\phi_{12}]
+\pm k_{1y}\cos[\k_{21}\cdot\x-(\omega_{21}\pm\omega_{\rm{RF}})t+\phi_{12}]\Big)\fx \\
++ &\Big(\pm k_{1x}\cos[\k_{21}\cdot\x-(\omega_{21}\mp\omega_{\rm{RF}})t+\phi_{12}]
+\mp k_{1y}\sin[\k_{21}\cdot\x-(\omega_{21}\pm\omega_{\rm{RF}})t+\phi_{12}]\Big)\fy\Bigg) \\
 \frac{1}{2}\frac{\vert\Omega_{23}\vert}{\vert\vert\k_3\vert\vert}
-\Bigg(&\Big(k_{3x}\sin[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{RF})t+\phi_{23}]
-\pm k_{3y}\cos[\k_{32}\cdot\x-(\omega_{32}\pm\omega_{RF})t+\phi_{23}]\Big)\fx \\
-+ &\Big(\pm k_{3x}\cos[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{RF})t+\phi_{23}]
-\mp k_{3y}\sin[\k_{32}\cdot\x-(\omega_{32}\pm\omega_{RF})t+\phi_{23}]\Big)\fy \Bigg)\\
+\Bigg(&\Big(k_{3x}\sin[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{\rm{RF}})t+\phi_{23}]
+\pm k_{3y}\cos[\k_{32}\cdot\x-(\omega_{32}\pm\omega_{\rm{RF}})t+\phi_{23}]\Big)\fx \\
++ &\Big(\pm k_{3x}\cos[\k_{32}\cdot\x-(\omega_{32}\mp\omega_{\rm{RF}})t+\phi_{23}]
+\mp k_{3y}\sin[\k_{32}\cdot\x-(\omega_{32}\pm\omega_{\rm{RF}})t+\phi_{23}]\Big)\fy \Bigg)\\
 +&\vert\Omega_{13}\vert\sin(\k_{31}\cdot\x - \omega_{31}t+\phi_{13})\fz
+\label{eq:complete_Rashba}
 \end{split}
 \end{align}
 %
 
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter8/topological_eigenvecs.pdf}
-\caption{{\bfseries a} Probabilities as a function of quasimomentum for the three output ports of the interferometer at $t_{\rm free}=\unit[160]{\mu s}$ {\bfseries b} Probabilities as a function of free evolution time $t_{\mathrm{free}}$ for an input state with quasimomentum $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$ indicated by the blue star on {\bfseries a} and in the topological ground branch ($n=1$)}
-\label{fig:topological_eigenvecs}
-\end{center}
-\end{figure*}
+In order to go from this rather complicated looking Hamiltonian to the effective time independent Hamiltonian used in Chapter~\ref{ch:Rashba} we need to take two steps: first the off resonant coupling terms need to be neglected. This can be more or less safely done since they will be detuned by something on the order of tens to hundreds of kHz. Second we need to go into a second transformed frame using the unitary transformation
+%
+\begin{equation}
+\hat{U}=\sum_{i\in\{xyz\}}e^{i(\k_i\cdot\x-\omega_it)}	
+\end{equation}
+%
+and eliminate the terms that are proportional to $\exp(i\omega_{ij})$. The neglected terms of the Hamiltonian in Equation~\ref{eq:complete_Rashba} have the effect of slightly shifting the eigenenergies of the effective Hamiltonian from Equation~\ref{Eq:Rashba_atoms}. We interpret this shifts in energy as coming from new effective Raman coupling strengths that slightly differ from our calibrations performed by measuring the Rabi frequencies of individual pairs of Raman beams. 
 
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter8/nontopological_eigenvecs.pdf}
-\caption{{\bfseries a} Probabilities as a function of quasimomentum for the three output ports of the interferometer at $t_{\rm free}=\unit[160]{\mu s}$ {\bfseries b} Probabilities as a function of free evolution time $t_{\mathrm{free}}$ for an input state with quasimomentum $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$ indicated by the blue star on {\bfseries a} and in the topological ground branch ($n=1$)}
-\label{fig:nontopological_eigenvecs}
-\end{center}
-\end{figure*}
+
+% \begin{figure*}[htb]
+% \begin{center}
+% \includegraphics[]{Figures/Chapter8/topological_eigenvecs.pdf}
+% \caption{{\bfseries a} Probabilities as a function of quasimomentum for the three output ports of the interferometer at $t_{\rm free}=\unit[160]{\mu s}$ {\bfseries b} Probabilities as a function of free evolution time $t_{\mathrm{free}}$ for an input state with quasimomentum $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$ indicated by the blue star on {\bfseries a} and in the topological ground branch ($n=1$)}
+% \label{fig:topological_eigenvecs}
+% \end{center}
+% \end{figure*}
+
+% \begin{figure*}[htb]
+% \begin{center}
+% \includegraphics[]{Figures/Chapter8/nontopological_eigenvecs.pdf}
+% \caption{{\bfseries a} Probabilities as a function of quasimomentum for the three output ports of the interferometer at $t_{\rm free}=\unit[160]{\mu s}$ {\bfseries b} Probabilities as a function of free evolution time $t_{\mathrm{free}}$ for an input state with quasimomentum $(q_1, q_2)=(0.55,-0.92)\,k_{\rm L}$ indicated by the blue star on {\bfseries a} and in the topological ground branch ($n=1$)}
+% \label{fig:nontopological_eigenvecs}
+% \end{center}
+% \end{figure*}
