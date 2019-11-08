@@ -25,13 +25,21 @@ Our choice of chiller was the \noted{TF1LN400-LN} $\unit[1.4]{kW}$ recirculating
 \end{figure*}
 
 \section{Electrical installation}
-We have two \noted{Agilent 6690A} ($\unit[440]{A}$ at $\unit[15]{V}$ max. current) to provide all the necessary currents. The power supplies are located in the service corridor and are connected to three copper bars corresponding to $\unit[\pm 15]{V}$ and ground using welding cable (McMaster \noted{7818A17}) that is laid on cable trays (McMaster \noted{30065T11} e.g.). The cables are arranged in the pattern shown in Figure xxx so that the magnetic field produced by them is closer to a magnetic quadrupole which decays faster than the field of a magnetic dipole. We are not planing to use commercial bipolar power supplies in this lab (see Appendix~\ref{app:RbLi}) and instead we will be using a MOSFET based homemade device that will draw current from the $\unit[\pm15]{V}$ rails. 
+We have two \noted{Agilent 6690A} ($\unit[440]{A}$ at $\unit[15]{V}$ max. current) to provide all the necessary currents. The power supplies are located in the service corridor and are connected to three copper bars corresponding to $\unit[\pm 15]{V}$ and ground using welding cable (McMaster \noted{7818A17}) that is laid on cable trays (McMaster \noted{30065T11} e.g.). The positive and negative terminals of the power supples have two cables attached to them and they are all arranged in the pattern shown in Figure~\ref{fig:welding_cables} so that the magnetic field produced by them is closer to a magnetic quadrupole which decays faster than the field of a magnetic dipole. This means we disturb our lab as well as neighboring labs less whenever we are running high currents. We are not planing to use commercial bipolar power supplies in this lab (see Appendix~\ref{app:RbLi}) and instead we will be using a MOSFET based homemade device that will draw current from the $\unit[\pm15]{V}$ rails. 
 
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/AppendixB/welding_cables.pdf}
+\caption{Configuration of the welding cables connecting the power supplies to equipment in the lab.}
+\label{fig:welding_cables}
+\end{center}
+\end{figure*}
+%
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/AppendixB/electric.pdf}
 \caption[Electrical installation]{A roller coaster ride, from the power supplies in the service corridor to three copper bars that distribute the power.}
-\label{fig:plumbing}
+\label{fig:electric}
 \end{center}
 \end{figure*}
 
@@ -41,13 +49,15 @@ All the coils in the apparatus including magnetic transport, bias and gradient c
 \begin{figure*}[htb]
 \begin{center}
 \includegraphics[]{Figures/AppendixB/coil_winding.pdf}
-\caption[Electrical installation]{A roller coaster ride, from the power supplies in the service corridor to three copper bars that distribute the power.}
+\caption[Lathing of magnetic transport coils]{{\bf a.} I used a six jaw chuck and a diamond cutter on the lathe to remove the excess epoxy and kapton on the coils. {\bf b.} Coils before (left) and after lathing (right). {\bf c.} A good labeling system is important to keep to ensure uniformity of coils. The `Wartortle' coil shown here has 64 turns. During fabrication we keep track of all the number of turns and resistance of all coils in a table.}
 \label{fig:coil_winding}
 \end{center}
 \end{figure*}
 
 \section{Rb source and `oven'}
 The Rb source consists of a $1.33"$ CF flanged bellow (\noted{Kurt J. Lesker} \noted{MH-CF-A03}) with a Rb ampule . The bellow is housed in a cold `oven' which is designed to keep the source at a temperature $\approx \unit[1]{C}$ to keep the vapor pressure low. The oven is made of hollow aluminum cylinder with a slit on one side with tapped holes so that $1/4-20$ screws can be used to fix the oven to the source. The bottom of the oven attaches to the cold end of a TEC that provides the cooling. The hot side of the TEC is attached to a heat sink made of a hollow brass piece with tapped holes for $1/4"$ NPT pipes are used to provide water cooling. The left panel of Figure xxx shows CAD drawings of the oven both of this parts and the right panel shows the actual parts mounted on a test bench. The Rb source will be connected to the MOT glass cell; the plan is to use light induced atomic desorption (LIAD)\cite{anderson_loading_2001} to increase the Rb vapor pressure for MOT loading using non-thermal means. 
+
+We tested the performance of a prototype without any vacuum systems attached to it. We applied a $\unit[2]{A}$ current to two TECs (\noted{Digikey 102-1664-ND}) sandwiched in between the heat sink and oven. The heat sink was water cooled using $\approx[18]{C}$ water. Figure~\ref{fig:rb_source}b shows the temperature of both the oven side (top) and the heat sink side (bottom) of the assembly. We did not use any insulation for this test to prevent condensation (see Figure~\ref{fig:rb_source}c right) which should be done once its installed on the apparatus.
 
 Our initial hope was to control the temperature using a linear temperature controller designed at the JQI (the design is available at the \href{https://github.com/JQIamo/Linear-Temperature-Controller}{JQI GitHub}) interfaced to the lab computer andLabscript using a serial to ethernet adapter (\noted{WIZnet WIZ107SR}). Unfortunately this project is not completed to this date.  
 
@@ -60,7 +70,7 @@ Our initial hope was to control the temperature using a linear temperature contr
 \end{figure*}
 
 \section{Table enclosures}
-The enclosures of the optical tables are made of $\noted{Alumalite}$ from \noted{Laminators Inc.} mounted on frames made out of aluminum extrusions from \noted{80/20} and sliding tracks (\noted{2220} and \noted{2210}). Alumalite is a sandwich of a corrugated corrugated polypropylen material in between two thin sheets of aluminum. We chose this material because it is strong and lightweight. Its laser safety properties remain to be tested but we anticipate it is better than the acrylic panels at the RbLi lab. The initial frames were designed and built mostly by former graduate student Daniel Campbell and later finished and modified by former undergraduate student Eliot Fenton and me.  
+The enclosures of the optical tables are made of $\noted{Alumalite}$ from \noted{Laminators Inc.} mounted on frames made out of aluminum extrusions from \noted{80/20} and sliding tracks (\noted{2220} and \noted{2210}). Alumalite is a sandwich of a corrugated corrugated polypropylen material in between two thin sheets of aluminum. We chose this material because it is strong and lightweight. Its laser safety properties remain to be tested but we anticipate it is better than the acrylic panels at the RbLi lab. %The initial frames were designed and built mostly by former graduate student Daniel Campbell and later finished and modified by former undergraduate student Eliot Fenton, current graduate student Junheng Tao and me.  
 
 To the new and future members of the lab: I sincerely hope the things I designed and built don't cause you much pain!
 

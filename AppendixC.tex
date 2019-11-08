@@ -36,9 +36,7 @@ The unitary evolution in the rotating frame is described by the transformed Hami
 \label{Eq:H_RWA}
 \end{equation}
 %
-The eigenstate of Equation~\ref{Eq:H_RWA} are the $\xyz$ states described in Chapter~\ref{ch:clock_states}. Now we apply three Raman beams as shown in Figure~\ref{fig:Rashba_layout}. This configuration differs from the one proposed in~\cite{campbell_rashba_2016} for technical reasons as we wanted all the Raman recoil vectors to lie within the imaging plane of the experiment which in this Figure it corresponds to the $xy$ plane. 
-
-\begin{figure*}[hb]
+\begin{figure*}[!htb]
 	\begin{center}
 		\includegraphics{Figures/AppendixC/Rashba_layout.pdf}
 		\caption
@@ -46,16 +44,8 @@ The eigenstate of Equation~\ref{Eq:H_RWA} are the $\xyz$ states described in Cha
 		\label{fig:Rashba_layout}}
 	\end{center}
 \end{figure*}
-
-
-
- %I will show later that all states can be coupled using a combination of the $\fx$, $\fy$, and $\fz$ operators in the lab frame, i.e. using different combinations of Raman laser beams with appropriately chosen polarizations. 
-
-% \subsection{Raman dressing of the RF eigenstates}
-
-% Our main goal is to engineer a Hamiltonian with Rashba SOC. It was shown in [Dan's PRA ref] that this can be done with a minimum of three states with nonzero Raman coupling matrix elements. The $\xyz$ RF dressed-states are therefore good candidates to construct the desired Rashba Hamiltonian as was shown in [Dan's Rashba RF paper].
-% %
-% I will derive the the Rashba Hamiltonian from first principles, without sweeping undesired off-resonant couplings under the rug. 
+%
+The eigenstate of Equation~\ref{Eq:H_RWA} are the $\xyz$ states described in Chapter~\ref{ch:clock_states}. Now we apply three Raman beams as shown in Figure~\ref{fig:Rashba_layout}. This configuration differs from the one proposed in~\cite{campbell_rashba_2016} for technical reasons as we wanted all the Raman recoil vectors to lie within the imaging plane of the experiment which in this Figure it corresponds to the $xy$ plane. 
 
 The electric field at the atoms in the lab frame is
 %
@@ -148,13 +138,12 @@ and
 \end{split}
 \end{align}
 
-\subsubsection{Going into rotating frame}
 
-This is where things start getting fun. We need to transform Eq.~\ref{eq:full_Raman} into the rotating frame. Which terms are `slow' and we get to keep and which are `fast' depends on the specific choice of Raman frequencies. The frequencies of the beams should be such that each of the frequency differences $\omega_{ij}$ is resonant with a dressed state transition in the rotating frame as shown in Figure~\ref{fig:Rashba_frequencies}a. I showed in Equation~\ref{eq:rotation_transformations} that in the rotating frame the $\fx$ and $\fy$ operators get additional factors of $\exp(\pm i\omega_{\rm{RF}})$ while $\fz$ remains unchanged.
+Now we need to transform Eq.~\ref{eq:full_Raman} into the rotating frame, this is where things start getting fun. Which terms are `slow' and we get to keep and which are `fast' depends on the specific choice of Raman frequencies. The frequencies of the beams should be such that each of the frequency differences $\omega_{ij}$ is resonant with a dressed state transition in the rotating frame as shown in Figure~\ref{fig:Rashba_frequencies}a. I showed in Equation~\ref{eq:rotation_transformations} that in the rotating frame the $\fx$ and $\fy$ operators get additional factors of $\exp(\pm i\omega_{\rm{RF}})$ while $\fz$ remains unchanged.
 
 We must therefore have the frequencies of beams giving rise to $\fx$ and $\fy$ coupling to differ in frequency by an additional $\omrf$ and the beams that give the $\fz$ coupling to be close in frequency. The two possible ways of doing so are shown in Figure~\ref{fig:Rashba_frequencies}b and they determine weather $\omega_{21}$ and $\omega_{31}$ are positive or negative.
 
-\begin{figure*}[htb]
+\begin{figure*}[!htb]
 	\begin{center}
 		\includegraphics{Figures/AppendixC/laser_frequencies.pdf}
 		\caption[Raman coupling of the $\xyz$ states]
