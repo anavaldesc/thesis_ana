@@ -80,60 +80,11 @@ Once the atoms are succesfully pumped into $\ket{F=1, m_F=-1}$ we capture them i
 
 For the final stage of evaporative cooling we transfer the atoms from the magnetic trap into an optical dipole trap. We start by turning on only the `tight' arm of the trap at full power (about $\unit[11]{W}$) and slowly decompressing the quadrupole trap to $\unit[45]{G/cm}$ in $\unit[1.5]{s}$. We then turn on the second `cross' beam in $\unit[1]{s}$; splitting the power so that there the power split between the tight and cross beams is about $70-30\%$. As the cross dipole beam is being turned on we ramp the quadrupole field further down to $\unit[14]{G/cm}$, slightly above the value necessary for the trap to suspend atoms against gravity. We simultaneously shift the bias field along $\ez$ to align the center of the quadrupole trap to the dipole trap. 
 
-We evaporate the atoms in the dipole trap in two stages. First we exponentially ramp down the power to about $20\%$ of its initial power in $\unit[1.5]{s}$ (time constant $=\unit[0.5]{s}$). Before the final evaporation stage we completely turn off the quadrupole trap in $\unit[1]{s}$. Finally, we perform a second exponential ramp where the power is dropped to about $30\%$ of the intermediate power in $\unit[2]{s}$ (time constant $=\unit[1]{s}$. The slow ramps ensure that there is enough time for the atoms to thermalize as they evaporate.   During the second evaporation stage the atoms reach the critical temperature for Bose-Einstein condensation and we are able to produce BECs with about $4\times10^4$ atoms in the $\ket{F=1, m_F=-1}$ state.
-At this point we can prepare different $m_F$ states and set the Zeeman splitting between levels using the techniques described in the following sections. 
+We evaporate the atoms in the dipole trap in two stages. First we exponentially ramp down the power to about $20\%$ of its initial power in $\unit[1.5]{s}$ (time constant $=\unit[0.5]{s}$). Before the final evaporation stage we completely turn off the quadrupole trap in $\unit[1]{s}$. Finally, we perform a second exponential ramp where the power is dropped to about $30\%$ of the intermediate power in $\unit[2]{s}$ (time constant $=\unit[1]{s}$. The slow ramps ensure that there is enough time for the atoms to thermalize as they evaporate.   During the second evaporation stage the atoms reach the critical temperature for Bose-Einstein condensation and we are able to produce BECs with about $4\times10^4$ atoms in the $\ket{F=1, m_F=-1}$ state. To transfer atoms into different $\ket{F, m_F}$ states within the ground $5^2S_{1/2}$ manifold we use the ARP protocol described in Section~\ref{sec:arp}.
 
-\subsection{Adiabatic rapid passage}
-\label{sec:arp}
-\note{Consider moving these two subsections to the previous Chapter...}
+Our experiments are very sensitive to changes in the environmental magnetic field. In the past we used flux gate sensors (\noted{Stefan-Mayer} model \noted{FL1-100 f}) in the apparatus to feedback and stabilize the magnetic field (see~\cite{PriceThesis}). This sensors are a useful tool, however due to space constrains we were not able to measure the fields close to the atoms and additionally the range of magnetic fields that they operate at is small (only $\unit[1]{G}$, we typically operate at $B>\unit[10]{G}$). We built a $\unit[6.8]{GHz}$ microwave system (see Section~\ref{sec:microwave_system}) so that we could use the atoms themselves as sensors of magnetic field. Once BEC is achieved and before performing any experiment, we typically use a protocol involving two microwave assisted partial transfer absorption images as described in Section~\ref{sec:ptai} to monitor and stabilize the magnetic field at the atoms.  
 
-We prepare different $m_F$ states within the $F=1$ manifold using an adiabatic rapid\footnote{Rapid with respect to the spontaneous emission rate of the excited state being coupled.} passage protocol (ARP) which is based on the Landau-Zener model~\cite{zener_non-adiabatic_1932}. The technique relies on preparing dressed states; eigenstates of the atomic Hamiltonian with an oscillatory field magnetic field (RF or microwaves for our experiments). To perform ARP with RF we set the frequency of the field $\omega_{\rm{RF}}$ so that it matches the Zeeman splitting between the $m_F=-1$ and $m_F=0$ states for a target bias field $B_0\ez$.
-
-We start with atoms in $m_F=-1$ and at a bias field $B_i\approx B_0-\unit[380]{mG}$ ($\delta\approx\unit[30]{kHz}$). We ramp an $\Omega=\unit[20]{kHz}$ RF field and angular frequency $\omega_{\rm{RF}}$ in $\unit[50]{ms}$, effectively mapping atoms in the $m_f=-1$ state into the ground state of the RF Hamiltonian as shown in Figure~\ref{sec:arp}a. We then sweep the detuning by linearly changing the bias field. As the detuning is changed, the state decomposition of the ground state is modified and as long as the rate of change in detuning is small compared to $\Omega_{\rm{RF}}^2$ (or small compared to the gap in Figure~\ref{sec:arp}a) the system will adiabatically follow the ground state. After the detuning sweep the RF field is abruptly turned off, projecting the RF eigenstates into the $m_F$ states. In Figure~\ref{sec:arp} we set $\omega_{\rm{RF}}=\unit[23]{MHz}$ and when the Zeeman splitting between $m_F=-1$ and $m_F=0$ is equal to $\omega_{\rm{RF}}$ we observe an equal superposition of both states and if the detuning is swept beyond resonance we can reliably prepare the $m_F=0$ state. In general it is necessary to look at the eigenstates of the three-level RF Hamiltonian
-%
-\begin{equation}
-\hat{H}_{\rm{RF}}=\begin{pmatrix}
--\delta & \Omega_{\rm{RF}}/2 & 0  \\
-\Omega_{\rm{RF}}/2 & -\epsilon & \Omega_{\rm{RF}}/2  \\
-0 & \Omega_{\rm{RF}}/2 & \delta  
-\end{pmatrix},
-\end{equation}
-%
-but for large quadratic Zeeman shifts as is usually the case in our experiments we can only look at an effective two-level system.
-
-In order to keep the bias fields as stable as possible we also synchronize the timing of our experiments to the $\unit[60]{Hz}$ line; this step is performed in different stages of the experiment but perhaps were we have noted it has the biggest impact is right before ARP. For additional magnetic field control and stabilization we use a technique using microwave assisted partial transfer absorption imaging described in the following section. 
-
-\begin{figure*}[!thb]
-\begin{center}
-\includegraphics[]{Figures/Chapter3/arp_anotated.pdf}
-\caption[Adiabatic rapid passage]{{\bf a.} Eigenenergies and eigenstate decomposition of an RF dressed Hamiltonian for a two-level system (Equation~\ref{eq:h_rwa}) with $\Omega=10$as a function of detuning. The eigenstates are linear combinations of $m_F=-1$ and $m_F=0$ (red and blue respectively). {\bf b.} Population in the $m_F$ sates for different values of detuning}
-\label{fig:arp}
-\end{center}
-\end{figure*}
-
-\subsection{Magnetic field stabilization with microwave assisted partial transfer absorption imaging}
-\label{sec:ptai}
-
-Our experiments are very sensitive to changes in the environmental magnetic field. In the past we used flux gate sensors (\noted{Stefan-Mayer} model \noted{FL1-100 f}) in the apparatus to feedback and stabilize the magnetic field (see~\cite{PriceThesis}). This sensors are a useful tool, however due to space constrains we were not able to measure the fields close to the atoms and additionally the range of magnetic fields that they operate at is small (only $\unit[1]{G}$, we typically operate at $B>\unit[10]{G}$). We built a $\unit[6.8]{GHz}$ microwave system (see Section~\ref{sec:microwave_system}) so that we could use the atoms themselves as sensors of magnetic field.
-
-The method relies in transferring a small fraction of atoms into the $F=2$ manifold where they can be imaged without the use of repump light and therefore minimally disturbing the remaining atoms in $F=1$. We apply two microwave pulses for a total time $\tau$ with frequency $\omega_0-\delta_{\pm}$ where $\delta_{\pm}=\pm1/(2\tau)$. We typically set $\omega_0$ equal to the Zeeman splitting between the $\ket{F=1, m_f=-1}$ and $\ket{F=2, m_f=-2}$ states and we set the coupling strength $\Omega_0\ll 1/\tau$ such that only about $5\%$ of the atoms are transfered by each pulse. We image the transferred atoms following each pulse using absorption imaging and from the measured densities we calculate the imbalance
-%
-\begin{equation}
- 	n_{\rm{imb}}=\frac{n(\delta_+)-n(\delta_-)}{n(\delta_+)+n(\delta_-)}
- \end{equation} 
-%
-\begin{figure*}[htb]
-\begin{center}
-\includegraphics[]{Figures/Chapter4/uwave_lock.pdf}
-\caption[Magnetic field stabilization using microwave assisted PTAI]{Magnetic field stabilization using microwave assisted PTAI. {\bf a.} Population transfered into $\ket{F=2, m_F=-1}$ from $\ket{F=1, m_F=-1}$ as a function of bias magnetic field (global detuning $\delta$). Each microwave pulse was $\tau=\unit[250]{\mu s}$ and detuned by $\delta_{\pm}=\pm 1/(2\tau)$ transfer a small fraction of atoms from $\ket{F=1, m_F=-1}$ into $\ket{F=2, m_F=-1}$. {\bf b.} Error signal calculated using the transfered atoms by each pulse. We lock the magnetic field to the $\sim\unit[5]{kHz}$ ($\unit[\sim 7]{mG}$) wide linear portion of the signal.}
-\label{fig:uwave_lock}
-\end{center}
-\end{figure*}
-which gives us a signal that is both insensitive to fluctuations in the number of atoms and linearly sensitive to changes in magnetic field\footnote{A single pulse on resonance is quadratically sensitive to detuning (see Equation~\ref{eq:Rabi_oscillations})}. We use this error signal both to monitor the magnetic field before performing experiments and cancel long term drifts in the field. In most cases, we chose the states $\ket{F=1, m_F=-1}$ and $\ket{F=2, mf=-2}$ as their relative energies are the most sensitive to changes in magnetic field. Figure~\ref{fig:uwave_lock}a shows the transfered atoms by each microwave pulse for different values of bias magnetic field and Figure~\ref{fig:uwave_lock}b shows the imbalance. The microwave frequency $\omega_0$ is on resonance with the $\ket{F=1, m_F=-1}\rightarrow\ket{F=2, m_F=-2}$ transition when both pulses transfer the same number of atoms.
-
-
-In~\cite{seroka_repeated_2019} we studied partial transfer absorption imaging as minimally destructive technique for imaging ultracold atoms. See Chapter~\ref{ch:clock_states} for an alternative solution for dealing with magnetic field noise. 
-
+In order to keep the bias magnetic fields as stable as possible we also synchronize the timing of our experiments to the $\unit[60]{Hz}$ line; this step is performed in different stages of the experiment but its biggest impact is right before performing any magnetically sensitive experiment.
 
 \section{Upgrades to the RbLi Machine}
 \label{sec:RbLi_upgrades}

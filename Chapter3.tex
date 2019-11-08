@@ -457,6 +457,69 @@ The Hamiltonian after applying the RWA can be written as
 %
 and its eigenenergies correspond to $E_{\pm}=\pm{\tilde{\Omega}/2}$. Notice that the difference between the eigenenergies $E_+-E_-$is exactly equal to the frequency at which the populations in $\ket{g,e}$ oscillate, this will come up again in Chapter~\ref{ch:Fourier_spectroscopy}. Figure~\ref{fig:rabi_cycle} shows an example of this process where we coupled an initial state $\ket{g}=\ket{F=1,m_F=-1}$ to $\ket{e}=\ket{F=1,m_F=0}$ using a radio-frequency (RF) magnetic field with $\Omega=\unit[7.1]{kHz}$. Figure~\ref{fig:rabi_cycle}a shows the population in $\ket{e}$ as a function of $\delta$ for a $\pi$ pulse ($\delta=0$, $\Omega t =\pi$). The location of the peak in this curve is as a way to find the transition frequency (we use this method in Chapter~\ref{ch:clock_states}). Figure~\ref{fig:rabi_cycle}b shows the population transfered into $m_F=0$ from $m_F=-1$ as a function of time; we typically look at the frequency of these Rabi oscillations to calibrate the coupling strength of an effective two-level system.
 
+\subsection{Adiabatic rapid passage}
+\label{sec:arp}
+
+The Hamiltonian in Equation~\ref{eq:h_rwa} can in principle be used to transfer all the population from the initial state $\ket{g}$ into $\ket{e}$ if we set the detuning of our oscillating field to $\delta=0$ and pulse it for a time $\tau$ such that $\Omega\tau=\pi$. Unfortunately in the lab we are susceptible to noise in both $\delta$ and $\Omega$ and pulsing is not the most reliable technique for state preparation. To transfer atoms within different $\ket{F,m_F}$ states within the $5^2S_{1/2}$ hyperfine manifold we use instead an adiabatic rapid\footnote{The term rapid is with respect to the spontaneous emission rate of the excited state being coupled.} passage (ARP) protocol which is based on the Landau-Zener model~\cite{zener_non-adiabatic_1932}. 
+
+ARP relies on preparing dressed states; eigenstates of the atomic Hamiltonian (Equation~\ref{eq:h_rwa}) which I label using the symbols $\ket{\pm}$ and dynamically changing the detuning $\delta=\delta(t)$. We start at a large and negative detuning $\delta\ll-\Omega$ where the ground eigenstate $\ket{-}\approx\ket{g}$ and therefore by slowly turning $\Omega$ on we can adiabatically prepare $\ket{-}$. We consider $\partial_t\delta>0$ so that the detuning increases with time. As $\delta$ is varied, the state decomposition of $\ket{\pm}$ changes and when $\delta=0$ they become equal superpositions of the bare states 
+%
+\begin{equation}
+	\ket{\pm}=\frac{1}{2}\left(\ket{g}\pm\ket{e}\right).
+\end{equation}
+%
+Finally, when $\delta\gg\Omega$ we have $\ket{-}\approx\ket{e}$ and if the change in detuning is slow enough that the system can adiabatically follow the ground eigenstate $\ket{-}$ then at the end of this process the state can be successfully transfered from $\ket{g}$ into $\ket{e}$. It can be shown that the fraction that does not adiabatically follow the ground state is given by the Landau-Zenner tunnel probability~\cite{SteckTextbook}
+%
+\begin{equation}
+	P_{\rm{lost}}=\exp\left(-\frac{\pi\Omega^2}{2\vert\partial_t\delta\vert}\right)
+\end{equation}
+and in the limit of large coupling strength compared to the detuning sweep rate ($\Omega\gg\vert\partial_t\delta\vert$) all the population adiabatically follows the ground state.
+
+In the lab we mostly use ARP with RF magnetic fields to transfer between different $m_F$ states within the $F=1$ manifold. We set the frequency of the field $\omega_{\rm{RF}}$ so that it matches the Zeeman splitting between the $m_F=-1$ and $m_F=0$ states for a target bias field $B_0\ez$. We start with atoms in $m_F=-1$ and at a bias field $B_i\approx B_0-\unit[380]{mG}$ ($\delta\approx\unit[-30]{kHz}$). We ramp an $\Omega=\unit[20]{kHz}$ RF field with angular frequency $\omega_{\rm{RF}}$ in $\unit[50]{ms}$. We then sweep the detuning by linearly changing the bias field in $\unit[50]{ms}$. Finally the RF field is abruptly turned off, projecting the RF eigenstates back into the $m_F$ basis. In Figure~\ref{sec:arp} we set $\omega_{\rm{RF}}=\unit[23]{MHz}$ and when the Zeeman splitting between $m_F=-1$ and $m_F=0$ is equal to $\omega_{\rm{RF}}$ we observe an equal superposition of both states and if the detuning is swept beyond resonance we can reliably prepare the $m_F=0$ state. 
+
+In general it is necessary to look at the eigenstates of the three-level RF Hamiltonian
+%
+\begin{equation}
+\hat{H}_{\rm{RF}}=\begin{pmatrix}
+-\delta & \Omega_{\rm{RF}}/2 & 0  \\
+\Omega_{\rm{RF}}/2 & -\epsilon & \Omega_{\rm{RF}}/2  \\
+0 & \Omega_{\rm{RF}}/2 & \delta  
+\end{pmatrix},
+\end{equation}
+%
+but for large quadratic Zeeman shifts as is usually the case in our experiments we can only look at an effective two-level system.
+
+\begin{figure*}[!thb]
+\begin{center}
+\includegraphics[]{Figures/Chapter3/arp_anotated.pdf}
+\caption[Adiabatic rapid passage]{{\bf a.} Eigenenergies and eigenstate decomposition of an RF dressed Hamiltonian for a two-level system (Equation~\ref{eq:h_rwa}) with $\Omega=10$as a function of detuning. The eigenstates are linear combinations of $m_F=-1$ and $m_F=0$ (red and blue respectively). {\bf b.} Population in the $m_F$ sates for different values of detuning}
+\label{fig:arp}
+\end{center}
+\end{figure*}
+
+\subsection{Magnetic field stabilization with microwave assisted partial transfer absorption imaging}
+\label{sec:ptai}
+
+Most experiments in the lab are performed in the $F=1$ ground hyperfine manifold with some bias field $B_0\ez$ that shifts the energies of the different $\ket{m_F}$ states. Due to the linear dependence of the energies of the $\ket{m_F=\pm1}$ and the constant changes in the ambient magnetic field we use microwave assisted partial transfer absorption imaging (PTAI) to monitor and stabilize the magnetic field. 
+
+The method relies in transferring a small fraction of atoms into the $5^2S_{1/2}$ $F=2$ manifold using a magnetic field with frequency close to the $\unit[6.8]{GHz}$ ground hyperfine splitting. The atoms in $F=2$ can be imaged without the use of repump light and therefore minimally disturbing the remaining atoms in $F=1$. We apply two microwave pulses for a total time $\tau$ with frequency $\omega_0-\delta_{\pm}$ where $\delta_{\pm}=\pm1/(2\tau)$. We typically set $\omega_0$ equal to the Zeeman splitting between the $\ket{F=1, m_f=-1}$ and $\ket{F=2, m_f=-2}$ states and we set the coupling strength $\Omega_0\ll 1/\tau$ such that only about $5\%$ of the atoms are transfered by each pulse. We image the transferred atoms following each pulse using absorption imaging and from the measured densities we calculate the imbalance
+%
+\begin{equation}
+ 	n_{\rm{imb}}=\frac{n(\delta_+)-n(\delta_-)}{n(\delta_+)+n(\delta_-)}
+ \end{equation} 
+%
+\begin{figure*}[htb]
+\begin{center}
+\includegraphics[]{Figures/Chapter4/uwave_lock.pdf}
+\caption[Magnetic field stabilization using microwave assisted PTAI]{Magnetic field stabilization using microwave assisted PTAI. {\bf a.} Population transfered into $\ket{F=2, m_F=-1}$ from $\ket{F=1, m_F=-1}$ as a function of bias magnetic field (global detuning $\delta$). Each microwave pulse was $\tau=\unit[250]{\mu s}$ and detuned by $\delta_{\pm}=\pm 1/(2\tau)$ transfer a small fraction of atoms from $\ket{F=1, m_F=-1}$ into $\ket{F=2, m_F=-1}$. {\bf b.} Error signal calculated using the transfered atoms by each pulse. We lock the magnetic field to the $\sim\unit[5]{kHz}$ ($\unit[\sim 7]{mG}$) wide linear portion of the signal.}
+\label{fig:uwave_lock}
+\end{center}
+\end{figure*}
+which gives us a signal that is both insensitive to fluctuations in the number of atoms and linearly sensitive to changes in magnetic field\footnote{A single pulse on resonance is quadratically sensitive to detuning (see Equation~\ref{eq:Rabi_oscillations})}. We use this error signal both to monitor the magnetic field before performing experiments and cancel long term drifts in the field. In most cases, we chose the states $\ket{F=1, m_F=-1}$ and $\ket{F=2, mf=-2}$ as their relative energies are the most sensitive to changes in magnetic field. Figure~\ref{fig:uwave_lock}a shows the transfered atoms by each microwave pulse for different values of bias magnetic field and Figure~\ref{fig:uwave_lock}b shows the imbalance. The microwave frequency $\omega_0$ is on resonance with the $\ket{F=1, m_F=-1}\rightarrow\ket{F=2, m_F=-2}$ transition when both pulses transfer the same number of atoms.
+
+
+In~\cite{seroka_repeated_2019} we studied partial transfer absorption imaging as minimally destructive technique for imaging ultracold atoms. See Chapter~\ref{ch:clock_states} for an alternative solution for dealing with magnetic field noise. 
+
 \subsection{Ramsey interferometer}
 \label{sec:Ramsey_interferometer}
 
