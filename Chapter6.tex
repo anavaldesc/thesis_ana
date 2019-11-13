@@ -11,7 +11,7 @@
 \chapter{Synthetic clock transitions through continuous dynamical decoupling}
 \label{ch:clock_states}
 
-Most of the experiments and experimental techniques described so far have used the hyperfine $\ket{m_F}$ states as effective spins and dressed them with an RF or Raman field. However, due to the linear dependence of their energies with respect to magnetic field, and our lack of control of environmental changes we always had to take special care to stabilize the magnetic field in the lab (see Section~\ref{sec:ptai}). An alternative to doing active magnetic field stabilization is to use clock transitions which are first-order insensitive to changes in magnetic field but unfortunately they are not present in all systems or for arbitrary system parameters. However, under almost all circumstances, clock transitions can be synthesized using dynamical decoupling protocols. These protocols involve driving the system with an external oscillatory field, resulting in a dynamically protected `dressed' system.
+Most of the experiments techniques described so far have used the hyperfine $\ket{m_F}$ states as effective spins and dressed them with an RF or Raman field. However, due to the linear dependence of their energies with respect to magnetic field, and our lack of control of environmental changes we always had to take special care to stabilize the magnetic field in the lab (see Section~\ref{sec:ptai}). An alternative to doing active magnetic field stabilization is to use clock transitions which are first-order insensitive to changes in magnetic field but unfortunately they are not present in all systems or for arbitrary system parameters. However, under almost all circumstances, clock transitions can be synthesized using dynamical decoupling protocols. These protocols involve driving the system with an external oscillatory field, resulting in a dynamically protected `dressed' system.
 
 The idea of implementing continuous dynamical decoupling (CDD) in the lab came from a theoretical proposal to engineer Rashba type SOC using Raman beams and a strong RF field~\cite{campbell_rashba_2016}, the second being a necessary ingredient for CDD. We initially worked in implementing CDD protocols to create `synthetic clock states' as an intermediate step towards our final goal of engineering Rashba SOC. Just like with Fourier spectroscopy, CDD became a workhorse of the lab both for the stability it provides against environmental fluctuations and because it has given us access to non-zero matrix coupling elements that we otherwise would not have when working with the bare $\ket{m_F}$ states. We have continued to use CDD  not only for engineering Rashba SOC (Chapter~\ref{ch:Rashba}) but also to engineer subwavelength optical lattices\cite{anderson_realization_2019} and Hofstadter~\cite{hofstadter_energy_1976} cylinders (work in preparation). On the theory side, we developed a proposal that uses them as a platform for emulating $\mathcal{PT}$ symmetric Hamiltonians~\cite{trypogeorgos_perpetual_2018}. 
 
@@ -19,7 +19,7 @@ This Chapter discusses the implementation of CDD in the ground $F=1$ hyperfine m
 
 \section{Basic principles of CDD}
 
-Dynamical decoupling (DD) protocols consist in applying an external control Hamiltonian, generally implemented by a series of pulses, which has the effect of canceling out the dynamics that arise from ta quantum system coupling to the environment. DD was first introduced in the context of nuclear magnetic resonance (NMR) with the discovery of spin-echoes~\cite{hahn_spin_1950}, where a single `refocusing' pulse was applied to eliminate dephasing of spins resulting from variations in magnetic field. These ideas were later generalized in~\cite{viola_dynamical_1998} to protect a system from decoherence induced by interactions with a quantum environment. Continuous dynamical decoupling (CDD) relies on the application of time-periodic continuous control fields, rather than a series of pulses. Unlike conventional dynamical decoupling, CDD does not require any encoding overhead.% or quantum feedback measurements. 
+Dynamical decoupling (DD) protocols consist in applying an external control Hamiltonian, generally implemented by a series of pulses, which has the effect of canceling out the dynamics that arise from ta quantum system coupling to the environment. DD was first introduced in the context of nuclear magnetic resonance (NMR) with the discovery of spin-echoes~\cite{hahn_spin_1950}, where a single `refocusing' pulse was applied to eliminate dephasing of spins resulting from variations in magnetic field. These ideas were later generalized in~\cite{viola_dynamical_1998} to protect a system from decoherence induced by interactions with a quantum environment. Continuous dynamical decoupling (CDD) relies on the application of time-periodic continuous control fields, rather than a series of pulses. %Unlike conventional dynamical decoupling protocols, CDD does not require any encoding overhead.% or quantum feedback measurements. 
 
 A number of dynamical decoupling protocols, pulsed or continuous, have been shown to isolate quantum systems from low-frequency environmental noise~\cite{cohen_continuous_2017,fanchini_continuously_2007,aharon_fully_2016,biercuk_optimized_2009,cai_robust_2012,bermudez_robust_2012,baumgart_ultrasensitive_2016,kazakov_magic_2015,sarkany_controlling_2014}. Thus far, CDD has inoculated multi-level systems in nitrogen vacancy centers in diamond, nuclear magnetic resonance experiments, and trapped atomic ions~\cite{laucht_dressed_2017,farfurnik_experimental_2017,noguchi_generation_2012,golter_protecting_2014,timoney_quantum_2011,webster_simple_2013,barfuss_strong_2015,rohr_synchronizing_2014}, from spatiotemporal magnetic field fluctuations. 
 
@@ -41,7 +41,7 @@ The RF field was linearly polarized along ${\bf e}_x$, and had angular frequency
     \hat{H} = \hbar\Delta\fz+\hbar\epsilon(\fz^2-\hat{\mathbb{1}})+ \hbar\Omega \fx,
     \label{eq:h0}
 \end{equation}
-with detuning $\Delta=\omega-\omega_0$; quadratic Zeeman shift $\epsilon$; spin-1 angular momentum operators $\hat F_{x,y,z}$; and identity operator $\hat{\mathbb 1}$.% For a detailed derivation of Equation~\ref{eq:h0} see Section~\ref{seq:rf_coupling}.
+with detuning $\Delta=\omega-\omega_0$, quadratic Zeeman shift $\epsilon$, spin-1 angular momentum operators $\hat F_{x,y,z}$, and the identity operator $\hat{\mathbb 1}$.% For a detailed derivation of Equation~\ref{eq:h0} see Section~\ref{seq:rf_coupling}.
 
 \section{The $\xyz$ states}
 \label{seq:xyz_states}
@@ -50,7 +50,7 @@ The eigenstates of Equation~\ref{eq:h0} correspond to the CDD basis. In this sec
 
 \subsection{State decomposition}
 
-We denote the eigenstates of Equation~\ref{eq:h0} by $\ket{x}$, $\ket{y}$ and $\ket{z}$. They are linear combinations of the $\ket{m_F}$ basis states, and for $\Delta=0$ the (non-normalized) eigenvectors are:
+We denote the eigenstates of Equation~\ref{eq:h0} by $\ket{x}$, $\ket{y}$ and $\ket{z}$. The CDD states are linear combinations of the $\ket{m_F}$ basis states, and for $\Delta=0$ the (non-normalized) eigenvectors are:
 %
 \begin{align}
     \ket x =& \ket{-1} - \ket{1}, \nonumber \\
@@ -58,7 +58,7 @@ We denote the eigenstates of Equation~\ref{eq:h0} by $\ket{x}$, $\ket{y}$ and $\
     \ket z =& \ket{-1} -\frac{\epsilon - \tilde\Omega}{\sqrt 2 \Omega} \ket 0 + \ket 1. \nonumber
 \end{align}
 %
-Figure~{\ref{fig:s1}} shows the normalized full state decomposition as a function of $\Delta$, where it can be seen that the $\xyz$ states adiabatically map to the $\ket{m_F}$ states for $\Delta \gg \Omega$: for positive (negative) detuning $\ket z$ maps to $\ket 1$ ($\ket{-1}$); $\ket y$ maps in the exact opposite way to $\ket z$; and $\ket x$ always maps to $\ket 0$.
+Figure~{\ref{fig:s1}} shows the normalized full state decomposition as a function of $\Delta$, where it can be seen that the $\xyz$ states adiabatically map to the $\ket{m_F}$ states for $\vert\Delta\vert \gg \Omega$: for positive (negative) detuning $\ket z$ maps to $\ket 1$ ($\ket{-1}$); $\ket y$ maps in the exact opposite way to $\ket z$; and $\ket x$ always maps to $\ket 0$.
 \begin{figure*}[ht]
     \centering
     \includegraphics[]{Figures/Chapter6/figS11}
@@ -84,13 +84,13 @@ Finally, when $\Omega\to\infty$ they are independent of the driving field amplit
 
 \subsection{Energies}
 
-We understand the clock-like nature of these states by looking at their eigenvalues which are even functions with respect to $\Delta$ as can be seen by the leading order expansion of the eigenenergies $E_i=\hbar\omega_i$ for $\Delta\to 0$
+The clock-like nature of these states is determined by their eigenvalues which are even functions with respect to $\Delta$ as can be seen by the leading order expansion of the eigenenergies $E_i=\hbar\omega_i$ for $\Delta\to 0$
 \begin{align}
     \omega_x =& -\frac{\epsilon}{\Omega^2} \Delta^2 + \mathcal{O}(\Delta^4), \nonumber \\
     \omega_y =& \frac 12 (-\epsilon + \tilde\Omega) - \frac{(\epsilon + \tilde\Omega)}{-\epsilon^2-4\Omega^2+\epsilon\tilde\Omega} \Delta^2 + \mathcal{O}(\Delta^4), \label{eq:exp} \\
-    \omega_z =& \frac 12 (-\epsilon - \tilde\Omega) + \frac{(\epsilon - \tilde\Omega)}{\epsilon^2+4\Omega^2+\epsilon\tilde\Omega} \Delta^2 + \mathcal{O}(\Delta^4), \nonumber
+    \omega_z =& \frac 12 (-\epsilon - \tilde\Omega) + \frac{(\epsilon - \tilde\Omega)}{\epsilon^2+4\Omega^2+\epsilon\tilde\Omega} \Delta^2 \nonumber ,
 \end{align}
-where  we have defined $\tilde\Omega=\sqrt{4\Omega^2+\epsilon^2}$. The energy differences $\hbar\omega_{xy}$, $\hbar\omega_{zy}$ and $\hbar\omega_{zx}$ are only quadratically sensitive to $\Delta$ for $\Delta\ll\Omega$~\footnote{The energies are quadratic in $\Delta$ for $\Delta\ll\Omega$, and linear for $\Delta\gg\Omega$ with a slope of \SI{7}{MHz/mT}.} so that detuning fluctuations $\delta \Delta$ are suppressed to first order, making these a trio of synthetic clock states. For the $zx$ transition, the curvature of $\omega_x$ and $\omega_z$ has the same sign for $\epsilon < \tilde \Omega$ (\refeq{eq:exp}). Since the quadratic term changes curvature it can be made arbitrarily small. However, this cancellation does not take place when we consider the dependence of $\epsilon$ on $\Delta$ from the Breit-Rabi expression. However one can still find an optimal $\Omega$ for which $\omega_{zx}$ depends quartically on $\Delta$. 
+where  we have defined $\tilde\Omega=\sqrt{4\Omega^2+\epsilon^2}$. The energy differences $\hbar\omega_{xy}$, $\hbar\omega_{zy}$ and $\hbar\omega_{zx}$ are only quadratically sensitive to $\Delta$ for $\Delta\ll\Omega$~\footnote{The energies are quadratic in $\Delta$ for $\Delta\ll\Omega$, and linear for $\Delta\gg\Omega$ with a slope of \SI{7}{MHz/mT}.} so that detuning fluctuations $\delta \Delta$ are suppressed to first order, making these a trio of synthetic clock states. The curvatures of $\omega_x$ and $\omega_z$ have the same sign and in principle there is a critical value of $\Omega$ where the quadratic term in transition energy can be made arbitrarily small, making it quartic in $\Delta$. However, this cancellation does not take place when we consider the dependence of $\epsilon$ on $\Delta$ from the Breit-Rabi expression. It is still possible to find an optimal $\Omega$ for which $\omega_{zx}$ depends quartically on $\Delta$, but it does not occur at $\Delta=0$ as is predicted by Equation~\ref{eq:exp} for constant $\epsilon$. 
 
 \subsection{Transition matrix elements}
 \label{sec:xyz_matrix_elements}
@@ -120,7 +120,7 @@ Unlike the $\ket{m_F}$ basis, an oscillatory magnetic field with the right polar
 \label{eq:matrix_elements}
 \end{align}
 %
-where the states have been ordered by decreasing energy ($\ket{y}$, $\ket{x}$, $\ket{z}$). We therefore see that a term in a Hamiltonian that is proportional to $\fx$ can only drive transitions between $\ket{z}$ and $\ket{y}$ and that coupling teRMS proportional to $\fy$ and $\fz$ can drive both drive transitions between $\ket{z}$ and $\ket{x}$ or $\ket{x}$ and $\ket{y}$ with different strengths. It can be seen from Equation~\ref{eq:matrix_elements} that when $\Omega$ and $\epsilon$ are comparable in magnitude there exists at least one non-zero transition matrix element for each pair of dressed states and they can all be coupled cyclically.
+where the states have been ordered by decreasing energy ($\ket{y}$, $\ket{x}$, $\ket{z}$). We therefore see that a term in a Hamiltonian that is proportional to $\fx$ can only drive transitions between $\ket{z}$ and $\ket{y}$ and that a coupling term proportional to $\fy$ and $\fz$ can drive both drive transitions between $\ket{z}$ and $\ket{x}$ or $\ket{x}$ and $\ket{y}$ with different strengths. It can be seen from Equation~\ref{eq:matrix_elements} that when $\Omega$ and $\epsilon$ are comparable in magnitude there exists at least one non-zero transition matrix element for each pair of dressed states and they can all be coupled cyclically.
 
 %  are nonzero and the states can be coupled cyclically.
 
@@ -133,7 +133,7 @@ where the states have been ordered by decreasing energy ($\ket{y}$, $\ket{x}$, $
 %     \centering
 %     \includegraphics[]{Figures/Chapter6/figS12}
 %     \caption[Transition matrix elements over $\Omega$ and $\Delta$.]{Transition matrix elements over $\Omega$ and $\Delta$.
-%     There is an assymetry between coupling on the blue and red side of the resonance that corresponds to the counter- and co-rotating teRMS $\hat F_-$ and $\hat F_+$.}
+%     There is an assymetry between coupling on the blue and red side of the resonance that corresponds to the counter- and co-rotating terms $\hat F_-$ and $\hat F_+$.}
 %     \label{fig:s12}
 % \end{figure*}
 
@@ -156,18 +156,18 @@ After performing any experiment with the $\xyz$ states we measured their populat
 
 \section{Initial characterization of $\Omega$}
 
-Producing RF fields with large coupling strength was not a trivial task and when testing different antenna designs it was important to have an easy and quick way of characterizing them. We mostly relied on two different techniques to get an initial estimate of $\Omega$: first, we prepared atoms in $\ket{m_F=-1}$ and pulse on the RF to drive transitions between the three $\ket{m_F}$ states. We would then fit the populations in the three states as a function of pulsing time to the time evolution given by propagating the time dependent Sch\"odinger equation using the RF Hamiltonian (Equation~\ref{eq:h0}) with $\Omega$ and $\Delta$ as free parameters. 
+Producing RF fields with large coupling strength was not a trivial task and when testing different antenna designs it was important to have an easy and quick way of characterizing them. We mostly relied on two different techniques to get an initial estimate of $\Omega$: first, we prepared atoms in $\ket{m_F=-1}$ and pulse on the RF to drive transitions between the three $\ket{m_F}$ states. We would then fit the populations in the three states as a function of pulsing time to the time evolution given the time dependent Sch\"odinger equation for the RF Hamiltonian (Equation~\ref{eq:h0}) with $\Omega$ and $\Delta$ as free parameters. 
 
 \begin{figure*}[ht]
     \centering
     \includegraphics[]{Figures/Chapter6/Rabi_flop_calibrations.pdf}
-    \caption[Calibration of $\Omega$]{We prepared the system in the $\ket{m_F=0}$ state and pulsed $\Omega$ and fit the populations in the $\ket{m_F}$ states as a function of pulsing time to get an initial estimate of $\Omega$. The top panel shows the time evolution of $\Omega/2\pi\approx\unit[76]{kHz}$ and the bottom panel shows the evolution for $\Omega/2\pi\approx\unit[238]{kHz}$}
+    \caption[Calibration of $\Omega$]{We prepared the system in the $\ket{m_F=-1}$ state and pulsed $\Omega$ for variable times. We fit the populations in the $\ket{m_F}$ states as a function of pulsing time to get an initial estimate of $\Omega$. The top panel shows the time evolution of $\Omega/2\pi\approx\unit[76]{kHz}$ and the bottom panel shows the evolution for $\Omega/2\pi\approx\unit[238]{kHz}$}
     \label{fig:ccd_protocol}
 \end{figure*}
 
-Alternatively, we followed the loading procedure described in Section\ref{sec:xyz_state_preparation} but suddenly turned $\Omega$ off for different values of $\Delta$ to get the decomposition of the $\xyz$ states in teRMS of $\ket{m_F}$ states. We then fit the populations to the eigenstates of the Equation~\ref{eq:h0} with $\Omega$ and $\Delta$ as free parameters. Figure~\ref{fig:s1} is an example of such type of calibration. 
+Alternatively, we followed the loading procedure described in Section\ref{sec:xyz_state_preparation} but suddenly turned $\Omega$ off for different values of $\Delta$ to get the decomposition of the $\xyz$ states in terms of the $\ket{m_F}$ states. We then fit the populations to the eigenstates of the Equation~\ref{eq:h0} with $\Omega$ and $\Delta$ as free parameters. Figure~\ref{fig:s1} is an example of such type of calibration. 
 
-For an antenna with a high quality factor such as ours ($q\sim20$) we could not `suddenly' turn $\Omega$ on or off as it takes some time for power to build up and to die out when the RF fields are turned on or off. If we did not include this into the model used to calibrate $\Omega$ we could get some results that were slightly off so we only used these measurements as initial estimates and once we found an antenna design that could produce a large enough $\Omega$ we used the spectroscopy techniques described in the next section to fully characterize the system. 
+For an antenna with a high quality factor such as ours ($q\sim20$) we could not `suddenly' turn $\Omega$ on or off as it takes some time for power to build up and to die out when the RF fields are turned on or off. If we did not include this into the model used to calibrate $\Omega$ we could get some results that were slightly off. We only used these measurements as initial estimates and once we found an antenna design that could produce a large enough $\Omega$ we used the spectroscopy techniques described in the next section to fully characterize the system. 
 
 \section{Spectroscopy}
 We confirmed our control and measurement techniques spectroscopically by measuring the energy differences between the $\xyz$ states with an additional probing field with angular frequency $\omega+\omega_p$, coupling strength $\Omega_p$ and polarized along $\ey$. In the frame rotating with angular frequency $\omega$ and after using a RWA the system was described by the Hamiltonian 
@@ -180,8 +180,8 @@ We confirmed our control and measurement techniques spectroscopically by measuri
 %
 In this rotating frame the probe field initially polarized along $\ey$ has components along $\ex$ and $\ey$, resulting in at least one non-zero transition matrix element for all transitions between pairs of dressed states. If the probing field was polarized along $\ez$ we would not be able to drive the $zy$ transition as can be seen from the matrix elements in Equation~\ref{eq:matrix_elements}.
 
-To probe the dependence on detuning of the $\xyz$ state energies, we pulsed $\Omega_p$ on for a constant time and scanned $\omega_p$ for different values of $\Delta$. Figure~\ref{fig:1}b shows the spectroscopically resolved values of $\omega_{xy}/2\pi$, $\omega_{yz}/2\pi$, and $\omega_{zx}/2\pi$ for $\Omega/2\pi=\SI{194.5(1)}{kHz}$ and the side panel shows a sample spectra measured with coupling strength $\Omega_p/2\pi \approx \SI{1}{kHz}$ and $\Delta/2\pi \approx \SI{9}{kHz}$. The dashed curves were computed by diagonalizing \refeq{eq:h0}, and they clearly depart from our measurements for the $zx$ transition.
-This departure results from neglecting the weak dependence of the quadratic shift $\epsilon$ on bias field $B_0$.  In near-perfect agreement with experiment, the solid curves from the full Breit-Rabi expression account for this dependency.
+To probe the dependence of the $\xyz$ state energies on detuning, we performed Rabi spectroscopy (Section~\ref{sec:Rabi_oscillations}) by pulsing $\Omega_p$ on for a constant time and scanned $\omega_p$ for different values of $\Delta$. Figure~\ref{fig:1}b shows the spectroscopically resolved values of $\omega_{xy}/2\pi$, $\omega_{yz}/2\pi$, and $\omega_{zx}/2\pi$ for $\Omega/2\pi=\SI{194.5(1)}{kHz}$ and the side panel shows a sample spectra measured with coupling strength $\Omega_p/2\pi \approx \SI{1}{kHz}$ and $\Delta/2\pi \approx \SI{9}{kHz}$. The dashed curves were computed by diagonalizing \refeq{eq:h0}, and they clearly depart from our measurements for the $zx$ transition.
+This departure results from neglecting the weak dependence of the quadratic shift $\epsilon$ on bias field $B_0$. In near-perfect agreement with experiment, the solid curves from the full Breit-Rabi expression account for this dependency.
 %
 \begin{figure*}[ht]
     \centering
@@ -204,18 +204,18 @@ This departure results from neglecting the weak dependence of the quadratic shif
 \end{figure}
 
 \section{Robustness}
-To characterize the robustness of the $\xyz$ states, we focus on the $zx$ transition which can be made virtually independent of magnetic field variations due to the similar curvature of $\omega_z(\Delta)$ and $\omega_x(\Delta)$ (see the middle panel of \reffig{fig:1}b). We quantified the sensitivity of this transition to field variations with three methods corresponding to the different markers in \reffig{fig:2}b:
-(1) Triangles denote data using full spectroscopic measurements similar to \reffig{fig:2}a.
+We focus on the robustness of the $zx$ transition which can be made virtually independent of magnetic field variations due to the similar curvature of $\omega_z(\Delta)$ and $\omega_x(\Delta)$ (see the middle panel of \reffig{fig:1}b). We quantified the sensitivity of this transition to field variations with three methods corresponding to the different markers in \reffig{fig:2}b:
+(1) Triangles denote data using Rabi spectroscopy as in \reffig{fig:2}a.
 (2) Squares denote data in which a detuned $\pi$-pulse of the probe field transferred approximately half of the atoms from $\ket z$ to $\ket x$. This `side-of-peak' technique overcomes the limitation of Rabi spectroscopy being first-order insensitive to changes in $\omega_{zx}$.
 (3) Circles describe data using a double dressing technique that will be described in Section~\ref{sec:concatenated_cdd}.
 In each case we measured the energy shift from resonance as a function of detuning (magnetic field) and then used a fourth-order polynomial fit to extract the RMS residuals $\delta \omega_{zx}$ due to the known detuning noise~\footnote{Our procedure also quantifies the small fluctuations that survive for spectra that are flat beyond second order, as in \refeq{eq:h0}.}. The results are not consistent with the theory simple from \refeq{eq:h} (dashed) and instead require the Breit-Rabi expression (solid) to obtain full agreement~\footnote{The fluctuations can be even smaller for a given $\Omega$ if we allow for $\Delta \neq 0$.}.
 
-Even at our smallest coupling $\Omega/2\pi=\SI{69(1)}{kHz}$ the typical magnetic field noise was attenuated by two orders of magnitude, rendering it essentially undetectable. Ideally, the radius of curvature of $\omega_{zx}(\Delta)$ changes sign at about $\Omega/2\pi = \SI{220}{kHz}$, leaving only a $\Delta^4$ contribution, however, in practice the small dependence of $\epsilon$ on $B$ prevents this perfect cancellation.
+Even at our smallest coupling $\Omega/2\pi=\SI{69(1)}{kHz}$ the typical magnetic field noise was attenuated by two orders of magnitude, rendering it essentially undetectable. Ideally, the radius of curvature of $\omega_{zx}(\Delta)$ changes sign at about $\Omega/2\pi = \SI{220}{kHz}$, leaving only a $\Delta^4$ contribution, however, in practice the small dependence of $\epsilon$ on $B$ prevents this perfect cancellation. Still it is possible to see the changing curvature of $\omega_{zx}(\Delta)$ near $\Delta=0$ for different values of $\Omega$ in Figure~\ref{fig:2}a.
 
 \subsection{Optimal response to noise}
 
 The sensitivity of the $zx$ transition to detuning fluctuations can be optimized further by working at $\Delta \neq 0$ as shown in \reffig{fig:sopt}.
-This behavior can only be captured by including the dependence of the quadratic shift on $\Delta$ as given by the Breit-Rabi expression.
+%This behavior can only be captured by including the dependence of the quadratic shift on $\Delta$ as given by the Breit-Rabi expression.
 
 For small values of $\Omega$, the optimum value of $\Delta$ corresponds to one of the concave features of the $zx$ transition energy that arises due to the asymmetry introduced by the quadratic shift.
 As $\Omega$ gets larger, these features merge into a single one and the optimum value is $\Delta \approx 0$.
@@ -258,10 +258,10 @@ In comparison, we found that for both Rabi and Ramsey oscillations between the $
 
 \section{Concatenated CDD }
 \label{sec:concatenated_cdd}
-The driving field $\Omega$ coupled together the $\ket{m_F}$ states, giving us the $\xyz$ synthetic clock states that were nearly insensitive to magnetic field fluctuations. However, the spectrum of these states is first-order sensitive to fluctuations of the driving field $\delta \Omega$. Reference~\cite{cai_robust_2012} showed that an additional field coupling together with these $\xyz$ states can produce doubly-dressed states that are insensitive to both $\delta \Omega$ and $\delta \Delta$: a process called concatenated CDD.
+The driving field $\Omega$ coupled together the $\ket{m_F}$ states, giving us the $\xyz$ synthetic clock states that were first-order insensitive to magnetic field fluctuations. However, the spectrum of these states is still first-order sensitive to fluctuations of the driving field $\delta \Omega$. Reference~\cite{cai_robust_2012} showed that an additional field coupling together with these $\xyz$ states can produce doubly-dressed states that are insensitive to both $\delta \Omega$ and $\delta \Delta$: a process called concatenated CDD.
 In our experiment, the probe field provided the concatenating coupling field. 
 Because $\Omega_p\ll\Omega$, we focus on a near-resonant two-level system formed by a single pair of dressed states, here $\ket{z}$ and $\ket{x}$, which we consider as pseudospins $\ket{\!\uparrow}$ and $\ket{\!\downarrow}$.
-These are described by the effective two-level Hamiltonian
+These states are described by the effective two-level Hamiltonian
 \begin{equation}
     \hat H_p = \frac{\hbar\Delta'}{2} \hat \sigma_3 + \hbar\Omega' \cos(\omega_p t) \hat \sigma_1,
     \label{eq:h2}
@@ -293,9 +293,9 @@ $\Omega$, $\Omega'$ dependence & $\Omega+g_1(\Delta, \epsilon)\frac{1}{\Omega}$ 
 \label{table:CDD}
 \end{table}
 
-We produced doubly-dressed states by doing (one more!) ARP sequence. We initialized the system in the $\ket{\!\downarrow}$ state with RF coupling strength $\Omega_i$. We set the probe frequency to be $\sim\unit[20]{kHz}$ off resonant with respect to the $\ket{\, \downarrow}\rightarrow \ket{\, \uparrow}$ transition and ramped it on in $\unit[10]{ms}$. We then ramped $\Omega_i\rightarrow\Omega_f$ in $\unit[30]{ms}$. The experimental sequence can be visualized in Figure~\ref{fig:concatenated_cdd}. We chose the value of $\Omega_f$ such that it would bring $\omega_p$ to resonance at $\Delta=0$, creating double dressed states that were equal superposition of $\ket{\,\downarrow}$ and $\ket{\,\uparrow}$. We quantified the sensitivity of this transition to large changes in the detuning $\Delta$ in teRMS of the fractional population imbalance $\langle\hat\sigma_3\rangle = P_\downarrow(\Delta)-P_\uparrow(\Delta)$, shown in \reffig{fig:4}a for $\Omega_f/2\pi=\SI{138.2(1)}{kHz}$~\footnote{We chose the maximum value of $\Delta$ such that the population of \unexpanded{$\ket y$}, was negligible after deloading.}.
+We produced doubly-dressed states by doing (one more!) ARP sequence. We initialized the system in the $\ket{\!\downarrow}$ state with RF coupling strength $\Omega_i$. We set the probe frequency to be $\sim\unit[20]{kHz}$ off resonant with respect to the $\ket{\, \downarrow}\rightarrow \ket{\, \uparrow}$ transition and ramped it on in $\unit[10]{ms}$. We then ramped $\Omega_i\rightarrow\Omega_f$ in $\unit[30]{ms}$. The experimental sequence can be visualized in Figure~\ref{fig:concatenated_cdd}. We chose the value of $\Omega_f$ such that it would bring $\omega_p$ to resonance at $\Delta=0$, creating double dressed states that were equal superposition of $\ket{\,\downarrow}$ and $\ket{\,\uparrow}$. We quantified the sensitivity of this transition to large changes in the detuning $\Delta$ in terms of the fractional population imbalance $\langle\hat\sigma_3\rangle = P_\downarrow(\Delta)-P_\uparrow(\Delta)$, shown in \reffig{fig:4}a for $\Omega_f/2\pi=\SI{138.2(1)}{kHz}$~\footnote{We chose the maximum value of $\Delta$ such that the population of \unexpanded{$\ket y$}, was negligible after deloading.}.
 This signal is first-order sensitive to $\omega_{\downarrow, \uparrow}$, and provided our third measurement of sensitivity to detuning in \reffig{fig:2}b denoted by circles.
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[]{Figures/Chapter6/concatenated_cdd.pdf}
     \caption[Concatenated CDD protocol]{Experimental protocol for implementing concatenated CDD. We started an initial RF coupling strength $\Omega_i$ and ramped on the probe field $\Omega_p$ in a few ms with $\omega_p=\omega_{z,x}(\Omega_f)$ so that it was initially slightly off resonant with the $zx$ transition. We then ramped the RF field to $\Omega_f$, brining $\omega_p$ to resonance. 
@@ -323,7 +323,7 @@ We then measured how the population imbalance changes for small variations of $\
 We defined a sensitivity parameter $d\langle\hat\sigma_3\rangle / d\Omega$, obtained from the linear regime of the population imbalance measurements (see inset in \reffig{fig:4}c).
 The robustness of the doubly-dressed states against $\delta \Omega$ fluctuations increased with $\Omega_p$, thus verifying the concatenating effect of CDD in the $\xyz$ basis.
 
-However promising the application of multiple concatenating fields might seem, this procedure has a fundamental limitation. Each time a new coupling field is applied the energies of the dressed states are reduced to something on the order of magnitude of the applied concatenating field. For example, in the experiments we described here we started with $\ket{m_F}$ states with transition frequencies on the order of MHz. The transition frequencies of the $\ket{xyz}$ states were reduced to hundreds of kHz (or in general the magnitude of $\Omega$). After applying the second concatenating RF field the transition frequencies of the $\ket{\!\downarrow\uparrow}$ are of the order of $\Omega_p$ which needs to be smaller than $\Omega$ for the second RWA to be valid. Therefore we see that after applying multiple concatenating fields we are at the risk of having some very robust states that are also very closely spaced in energy which might not be desirable for some applications. 
+However promising the application of multiple concatenating fields might seem, this procedure has a fundamental limitation. Each time a new coupling field is applied the energies of the dressed states are reduced to something on the order of magnitude of the coupling strength from the applied concatenating field. For example, in the experiments we described here we started with $\ket{m_F}$ states with transition frequencies on the order of MHz. The transition frequencies of the $\ket{xyz}$ states were reduced to hundreds of kHz (or in general the magnitude of $\Omega$). After applying the second concatenating RF field the transition frequencies of the $\ket{\!\downarrow\uparrow}$ are of the order of $\Omega_p\sim\unit[10]{kHz}$ which needs to be smaller than $\Omega$ for the second RWA to be valid. Therefore we see that after applying multiple concatenating fields we are at the risk of having some very robust states that are also very closely spaced in energy which might not be desirable for some applications. 
 
 \section{Conclusions}
 We realized a three-level system that is dynamically decoupled from low-frequency noise in magnetic fields, measured now-allowed transitions between all three states, and demonstrated control techniques for creating arbitrary Hamiltonians.  These techniques add no heating or loss mechanisms, yet within the protected subspace retain the full complement of cold-atom coherent control tools such as optical lattices and Raman laser coupling, and permit new first-order transitions that are absent in the unprotected subspace.
