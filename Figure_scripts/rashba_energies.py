@@ -254,24 +254,23 @@ e1_full = eigarray(1, **kwargs)
 # plt.savefig('rashba_alien.pdf')
 # plt.show()
 
-
+delta=-2
 q_full = np.linspace(-1.5, 1.5, 100)
 #q2 = np.linspace(-2, 2, 100)
 qx_full, qy_full = np.meshgrid(q_full, q_full)
 kwargs = {'qx':qx_full, 'qy': qy_full, 'theta_rot':theta_rot, 
           'Omega1':Omega1, 'Omega2':Omega2, 'Omega3':Omega3, 
-          'delta1':delta1, 'delta2':delta2, 'delta3':delta3, 'regular':False}
-e0_full = eigarray(0, **kwargs)
+          'delta1':-delta, 'delta2':0, 'delta3':+delta, 'regular':True}
+e0_full = eigarray(1, **kwargs)*0 +eigarray(0, **kwargs)
 #e2_full = eigarray(2, **kwargs)
 #e1_full = eigarray(1, **kwargs)
 
 nn = 2.5
 kwargs = {'qx':qx_full, 'qy': qy_full, 'theta_rot':theta_rot, 
-          'Omega1':Omega*0.95, 'Omega2':Omega2*1, 'Omega3':Omega3*1.05, 
-          'delta1':delta1, 'delta2':0.2, 'delta3':delta3, 'regular':True}
-e0_big = eigarray(0, **kwargs)
+          'Omega1':Omega*1, 'Omega2':Omega2*1, 'Omega3':Omega3, 
+          'delta1':delta, 'delta2':0, 'delta3':-delta, 'regular':True}
+e0_big = eigarray(1, **kwargs)*0+ eigarray(0, **kwargs)
 
-#%%
 fig = plt.figure(figsize=(6./1.7,3./1.7))
 #    
 gs = GridSpec(1, 2)   
@@ -291,7 +290,7 @@ ax.set_aspect('equal')
 ax = plt.subplot(gs[1])
 plt.pcolormesh(qx_full, qy_full, e0_big.T, rasterized=True)
 plt.contour(qx_full, qy_full, e0_big.T, linewidths=1.,
-                levels=np.linspace(e0_big.min()*1.2, e0_big.max(), 10),
+                levels=np.linspace(e0_big.min()*1.25, e0_big.max(), 10),
                 colors='White',linestyles='-')
 plt.xlabel('$q_x$, $\mathrm{in\ units\ of\ } k_L$')
 #plt.ylabel('$q_y$, in units of $k_L$')
@@ -301,5 +300,5 @@ ax.set_yticklabels([])
 ax.set_aspect('equal')
 
 plt.tight_layout()
-plt.savefig('rashba_perturbed.pdf')
+plt.savefig('rashba_perturbed_dirac.pdf')
 plt.show()

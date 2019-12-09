@@ -40,9 +40,9 @@ rcParams['ytick.major.width'] = 0.75       # major tick width in points
 rcParams['ytick.minor.width'] = 0.75      # minor tick width in points
 
 x = np.linspace(0, 3, 2**8)
-y = np.cos(2*np.pi * x / 3)
+y = np.cos(2*np.pi * x / 3+np.pi)
 x_l = np.array([1, 2, 3])
-y_l = np.cos(2*np.pi * x_l / 3)
+y_l = np.cos(2*np.pi * x_l / 3+np.pi)
 
 fig = plt.figure(figsize=(5.5/1.5,3.7/1.5))
 plt.plot(x, y, linewidth=1.5)
@@ -54,6 +54,6 @@ plt.xlabel('$l$')
 plt.ylabel('$E_l$')
 plt.grid(True)
 plt.tight_layout()
-plt.savefig('ring_coupling_energies.pdf', transparent=True)
+plt.savefig('ring_coupling_energies_pi.pdf', transparent=True)
 plt.show()
 print('banana')
