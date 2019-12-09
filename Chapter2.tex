@@ -6,11 +6,11 @@
 \chapter{Overview of Bose-Einstein condensation}
 \label{ch:BECs}
 
-Bose-Einstein condensation (BEC) is a quantum state of matter in which particles with integer valued spin all tend to occupy or `condense' into the ground state. In dilute gases, condensation occurs when the temperature of the system goes bellow a critical temperature where the bosons become indistinguishable particles and quantum statistics become relevant. 
+Bose-Einstein condensate (BEC) is a quantum state of matter in which particles with integer valued spin all tend to occupy or `condense' into the ground state. In dilute gases, condensation occurs when the temperature of the system goes bellow a critical temperature where quantum statistics become relevant. 
 
-BECs enable the observation of macroscopic quantum phenomena and there have been a number of fascinating experiments studying the properties of these systems, from measuring interference fringes of a macroscopic wave function to studying collective effects such as the propagation of sound~\cite{ketterle_w._making_1999}, as well as extensive theoretical developments~\cite{dalfovo_theory_1999}. In our experiments however BECs are not the primary object of study, instead, they are used as a platform enabling the simulation of analog physical systems. 
+BECs enable the study, both theoretically and experimentally, of macroscopic quantum phenomena. There have been a number of fascinating experiments studying the properties of these systems, from measuring interference fringes of a macroscopic wave function to studying collective effects such as the propagation of sound~\cite{ketterle_w._making_1999}. In our experiments, however, BECs are not the primary object of study, instead, they are used as a platform enabling the simulation of analog physical systems. 
 
-In this Chapter I give an overview of Bose-Einstein condensation in dilute atomic gases and I describe the properties most relevant to our experiments. I start by describing the case of an ideal gas and then consider the effects of interactions and trapping potentials as are present in our case. A reader interested in learning about this subject in more depth is advised to read~\cite{Pethick} and~\cite{noauthor_bose-einstein_2003}.
+In this Chapter I give an overview of Bose-Einstein condensation in dilute atomic gases and I describe the properties most relevant to our experiments. I start by describing the case of an ideal gas and then consider the effects of interactions and trapping potentials as are present in our case. A reader interested in learning about Bose-Einstein condensation in dilute gases in more depth should read~\cite{Pethick} and~\cite{noauthor_bose-einstein_2003}.
 
 \section{Bose-Einstein condensation of an ideal gas}
 
@@ -21,13 +21,13 @@ At low temperatures and in thermodynamic equilibrium, the mean occupation number
 	\label{eq:Bose_distribution}	
 \end{equation}
 %
-where $T$ is the temperature, $\mu$ is the chemical potential (the energy cost of adding or removing a particle) and $k_B$ is the Boltzmann constant. In the limit of large temperatures the Bose distribution can be approximated by the Maxwell-Boltzmann distribution
+where $T$ is the temperature, $\mu$ is the chemical potential (the energy cost of adding or removing a particle) and $k_B$ is the Boltzmann constant. In the limit of large temperatures the Bose distribution approximates the Maxwell-Boltzmann distribution
 %
 \begin{equation}
 	n(E_j)\approx e^{-(E_j-\mu)/kT}
 \end{equation}
 %
-which applies to classical, distinguishable particles. The chemical potential is determined by the condition that the total number of particles $N$ is equal to the sum over all states in the distribution $N=\sum_jn(E_j)$ and is therefore a function of $N$ and $T$. Additionally, in order for $n(E_j)$ to be positive definite we must have $\mu\leq E_0$ where $E_0$ is the energy of the ground state. From the Bose distribution, we can see that the occupation number of the ground state is unbounded when $\mu\rightarrow0$ as is shown in Figure~\ref{eq:Bose_distribution}. The number of particles occupying the excited states is bounded and when that number is reached, the remaining particles can occupy the ground state and thus Bose-Einstein condensation occurs. 
+which applies to classical, distinguishable particles. The chemical potential is determined by the condition that the total number of particles $N$ is equal to the sum over all states in the distribution $N=\sum_jn(E_j)$ and is a function of $N$ and $T$. Additionally, in order for $n(E_j)$ to be positive definite we must have $\mu\leq E_0$ where $E_0$ is the energy of the ground state. From the Bose distribution, we can see that the occupation number of the ground state is unbounded when $\mu\rightarrow0$ as in Figure~\ref{eq:Bose_distribution}. The number of particles occupying the excited states is bounded and when that number is reached, the remaining particles can occupy the ground state and thus Bose-Einstein condensation occurs. 
 
 \begin{figure}[htb]
 \begin{center}
@@ -39,13 +39,13 @@ which applies to classical, distinguishable particles. The chemical potential is
 
 \subsection{Critical temperature}
 
-Bose-Einstein condensation can be understood in terms of the de Broglie waves associated with particles. The thermal de Broglie wavelength is defined as
+Bose-Einstein condensation can be understood in terms of the de Broglie waves associated with particles. The thermal de Broglie wavelength is
 %
 \begin{equation}
 	\lambda_{\rm{th}}=\left(\frac{2\pi\hbar^2}{mk_BT}\right)^{1/2}
 \end{equation}
 %
-and it characterizes the spatial extension of the wave packet an individual particle at temperature $T$. Condensation occurs when $\lambda_{\rm{th}}$ becomes comparable with the inter-particle separation $n^{-1/3}$, where $n=N/V$. The quantity $n\lambda_{\rm{th}}^3$ is known as the phase space density which describes the number of particles contained in a box with volume $\lambda_{\rm{th}}^3$. 
+and it characterizes the spatial extension of the wave packet an individual particle at temperature $T$. Condensation occurs when $\lambda_{\rm{th}}$ becomes comparable with the inter-particle separation $n^{-1/3}$, where $n=N/V$ and $V$ is the volume. The quantity $n\lambda_{\rm{th}}^3$ is known as the phase space density which describes the number of particles contained in a box with volume $\lambda_{\rm{th}}^3$. 
 
 An analytical expression for the critical temperature at which atoms condense can be derived using the Bose-Einstein distribution. For closely spaced energy levels (compared to $k_B T$) the sum representing the total number of particles can be replaced by the integral
 %
@@ -73,30 +73,30 @@ The integral in Equation~\ref{eq:N(E)} is not analytically solvable, however, we
 	\label{eq:finding_Tc}
 \end{align}
 %
-where I made the substitution $x=E/k_BT_c$, $\Gamma(\alpha)=\int_0^\infty x^{\alpha-1}e^{-x}dx$ is the Gamma function and $\zeta(\alpha)=\sum_{n=1}^\infty n^{-\alpha}$ is the Riemann zeta function. From Equation~\ref{eq:finding_Tc} we find that the critical temperature for Bose-Einstein condensation is
+where $x=E/k_BT_c$, $\Gamma(\alpha)=\int_0^\infty x^{\alpha-1}e^{-x}dx$ is the Gamma function and $\zeta(\alpha)=\sum_{n=1}^\infty n^{-\alpha}$ is the Riemann zeta function. From Equation~\ref{eq:finding_Tc} we find that the critical temperature for Bose-Einstein condensation is
 %
 \begin{equation}
 	k_BT_c=\left(\frac{N}{C_\alpha\Gamma(\alpha)\zeta(\alpha)}\right)^{1/\alpha}.
 \end{equation}
 
-If we compute the phase space density for free particles in 3D with density of states  given by Equation~\ref{eq:free_particle_dos} in combination with the expression for the critical temperature (Equation~\ref{eq:finding_Tc} we find that indeed when $T=T_c$
+If we compute the phase space density for free particles in 3D with density of states  given by Equation~\ref{eq:free_particle_dos} in combination with the expression for the critical temperature (Equation~\ref{eq:finding_Tc}) we find that when $T=T_c$
 %
 \begin{equation}
 	n\lambda_{\rm {th}}^3=\zeta\left(\frac{3}{2}\right)\approx 2.612,
 \end{equation}
 %
-the inter-particle spacing and the thermal wavelength are comparable. In order to experimentally produce BECs, a combination of laser and evaporative cooling techniques are deployed such that we can increase the density while minimizing the temperature and therefore maximize the phase space density. The densities for BECs of Alkali atoms typically range in of order $10^{13}$ to $10^{15}$ atoms/cm$^{-3}$.
+the inter-particle spacing and the thermal wavelength are comparable. In order to experimentally produce BECs, we deploy a combination of laser and evaporative cooling techniques such that we can increase the density while minimizing the temperature, maximizing the phase space density. The densities for BECs of Alkali atoms typically range between $10^{13}$ and $10^{15}$ atoms/cm$^{-3}$.
 
 \subsection{Condensate fraction}
 
-Now we look at the fraction of particles occupying the ground state at temperatures below $T_c$. The total number of particles is given by $N=N_0+N_{\rm{ex}}$. The number of particles in the excited state will be given by the integral in Equation~\ref{eq:N(E)}. For $g(E)=C_\alpha E^{\alpha-1}$and $\alpha>0$ the integral converges, we can then evaluate the integral in Equation~\ref{eq:finding_Tc} for $T<T_c$ and get
+The total number of particles is given by $N=N_0+N_{\rm{ex}}$, where $N_0$ is the number of particles in the condensate. The number of particles in the excited state will be given by the integral in Equation~\ref{eq:N(E)}. For $g(E)=C_\alpha E^{\alpha-1}$and $\alpha>0$ the integral converges, we can then evaluate the integral in Equation~\ref{eq:finding_Tc} for $T<T_c$ and get
 %
 \begin{align}
 	N_{\rm{ex}}&=c_\alpha (k_BT)^\alpha\Gamma(\alpha)\zeta(\alpha) \nonumber \\
 	&=N\left(\frac{T}{T_c}\right)^\alpha,
 \end{align}
 %
-where I used the fact that when $T=T_c$ the total number $N=N_{\rm{ex}}$. The number of particles in the ground state is therefore
+since for $T=T_c$ the total number $N=N_{\rm{ex}}$. The number of particles in the ground state is
 %
 \begin{align}
 	N_0&=N-N_{\rm{ex}} \nonumber \\
@@ -105,14 +105,14 @@ where I used the fact that when $T=T_c$ the total number $N=N_{\rm{ex}}$. The nu
 
 \subsection{Bose gas in a harmonic trapping potential}
 
-I consider the particular case of particles confined in a three-dimensional harmonic potential
+Our experiments are performed in optical dipole traps that can be described as harmonic potentials
 %
 \begin{equation}
 V(\r)=\frac{m}{2}\left(\omega_x^2x^2+\omega_y^2y^2+\omega_z^2z^2\right)
 \label{eq:ho}
 \end{equation}
 %
-as it is the most relevant to our experiments that are performed in optical dipole traps that can be described as harmonic potentials. The density of states for is 
+The density of states for this case is 
 
 \begin{equation}
 	g(E)=\frac{E^2}{2\hbar^2\omega_x\omega_y\omega_z},
@@ -130,15 +130,15 @@ where $\bar{\omega}=(\omega_x\omega_y\omega_z)^{1/3}$ is the geometric mean of t
 	N_0=N\left[1-\left(\frac{T}{T_c}\right)^3\right]
 \end{equation}
 
-Condensates in harmonic traps have some striking features that will be further explored in more detail in the following sections. The confining potential makes the BECs both finite-sized and inhomogeneous which means that the BEC can be observed both in momentum space and in coordinate space. Another consequence of the inhomogeneity of these systems is the role of two-body interactions, which gets enhanced and leads to noticeable effects in measurable quantities~\cite{dalfovo_theory_1999,castin_bose-einstein_1996} such as interaction driven expansion when they are released from the confining potential. Some of these features will be discussed in more detail in the following sections.
+Condensates in harmonic traps have some striking features that will be further explored in more detail in the following sections. The confining potential makes the BECs both finite-sized and inhomogeneous which means that the BEC can be observed both in momentum space and in coordinate space. Another consequence of the inhomogeneity of these systems is the role of two-body interactions, which gets enhanced and leads to noticeable effects in measurable quantities~\cite{dalfovo_theory_1999,castin_bose-einstein_1996} such as interaction driven expansion when they are released from the confining potential. %Some of these features will be discussed in more detail in the following sections.
 
 \section{Bose-Einstein condensation with atomic interactions}
 
-Even though atomic BECs are made from very dilute gases, the system is far from being an ideal gas and interactions need to be taken into account for a complete treatment.% of the system. 
+Even though atomic BECs are made from very dilute gases, the system is far from being an ideal gas and a complete treatment requires taking into account interactions.
 
 The collisional properties of particles at low energies, such as cold atoms in a condensate, are dominated by $s$-wave scattering which can be described in terms of a single parameter the scattering length $a$ that determines both the scattering cross-section $\sigma=4\pi a^2$ and the phase shift of the scattered wave function. 
 
-The magnitude of the scattering length is determined by the interatomic interaction potentials. For Alkali atoms at large distances, the two-body interactions are dominated by an attractive Van der walls interaction $U(r)=-C_6/r^6$ that arises from dipole-dipole interactions. At smaller distances, the attractive potential is replaced by a strong repulsive electron-exchange interaction $U(r)\rightarrow\infty$. This minimal model captures the most important properties of the inter-atomic potential and can be solved analytically~\cite{gribakin_calculation_1993}. 
+The magnitude of the scattering length is determined by the interatomic interaction potentials. For Alkali atoms at large distances, the two-body interactions are dominated by an attractive Van der Walls interaction $U(r)=-C_6/r^6$ that arises from dipole-dipole interactions. At smaller distances, the attractive potential is replaced by a strong repulsive electron-exchange interaction $U(r)\rightarrow\infty$. This minimal model captures the most important properties of the inter-atomic potential and can be solved analytically~\cite{gribakin_calculation_1993}. 
 
 If the range of the interaction is much shorter than the mean inter-atomic distance the interaction can be approximated by an effective pseudo-potential $U_{\rm{eff}}(\r-\r')$ such that
 %
@@ -152,18 +152,18 @@ which determines
 	U_{\rm{eff}}(\r-\r')=\frac{4\pi\hbar^2a}{m}\delta(\r-\r')=g\delta(\r-\r').
 \end{equation}
 %
-This is a nice approximation as it allows us to model the scattering between atoms as a hard-sphere scattering process instead of considering the more complicated inter-atomic potentials. The sign of the scattering length determines the attractive or repulsive nature of the interactions and it plays an important role in the experimental production of BECs as it determines the rate at which atoms thermalize during evaporative cooling. 
+This approximation allows us to model the scattering between atoms as a hard-sphere scattering process instead of considering the more complicated inter-atomic potentials. The sign of the scattering length determines the attractive or repulsive nature of the interactions and it plays an important role in the experimental production of BECs as it determines the rate at which atoms thermalize during evaporative cooling. 
 
 \subsection{Gross-Pitaevskii equation}
 
-The full Hamiltonian describing $N$ identical bosons with contact interactions can be written as
+The full Hamiltonian describing $N$ identical bosons with contact interactions is
 %
 \begin{equation}
 	\hat{H}=\sum_{i=1}^N\left[\frac{\mathbf{p}_i^2}{2m}+V(\r_i)\right]+g\sum_{i<j}\delta(\r_i-\r_j),
 	\label{eq:many_body_h}
 \end{equation}
 %
-where $V(\r)$ is an external potential and $\mathbf{p}_i=-i\hbar\nabla_i$ is the momentum. We now consider a normalized eigenstate of the Hamiltonian $\Psi(\r_1, \r_2, ..., \r_N)$ that satisfies the Schr\"odinger equation. We can simplify this state by taking a mean field approach; we assume that the system has undergone condensation so that the majority of the particles share the same single particle ground state $\phi(\r)$ the wavefunction can be approximated by a symmetrized product
+where $V(\r)$ is an external potential and $\mathbf{p}_i=-i\hbar\nabla_i$ is the individual momentum of each atom. We consider a normalized eigenstate of the Hamiltonian $\Psi(\r_1, \r_2, ..., \r_N)$ that satisfies the Schr\"odinger equation. We can simplify this state by taking a mean field approach; we assume that the system has undergone condensation so that the majority of the particles share the same single particle ground state $\phi(\r)$, then the wavefunction can be approximated by a symmetrized product
 %
 \begin{equation}
 	\Psi(\r_1, \r_2, ..., \r_N)=\prod_{i=1}^N\phi(\r_i),
@@ -178,7 +178,7 @@ where $\phi$ is normalized to unity. The energy of the state from Equation~\ref{
 	\label{eq:mean_field_E}
 \end{align}
 %
-where $N(N-1)/2\approx N^2/2$ counts the number of terms in the interaction energy. Now we introduce the wave function of the condensate $\psi(\r)=N^{1/2}\phi(\r)$, which when inserted in Equation~\ref{eq:mean_field_E} makes the $N$ factors cancel out. The optimal form of $\psi$ should minimize the energy subject to the normalization condition $N=\int\vert\psi(\r)\vert^2\,d\r$. This can be done by introducing a Lagrange multiplier $\mu$ so that
+where $N(N-1)/2\approx N^2/2$ counts the number of terms in the interaction energy. We introduce the wave function of the condensate $\psi(\r)=N^{1/2}\phi(\r)$, and inserting it in Equation~\ref{eq:mean_field_E} makes the $N$ factors cancel out. The optimal form of $\psi$ should minimize the energy, introducing a Lagrange multiplier $\mu$, subject to the normalization condition $N=\int\vert\psi(\r)\vert^2\,d\r$
 %
 \begin{align}
 	\frac{\delta}{\delta \psi^*(\r)}\left(E-\mu\int\vert\psi\vert^2\,d\r \right) 
@@ -186,11 +186,11 @@ where $N(N-1)/2\approx N^2/2$ counts the number of terms in the interaction ener
 	=0,
 \end{align}
 %
-and we thus find that the condensate wave function obeys a non-linear Schr\"odinger equation known as the Gross-Pitaevskii (GP) equation.
+and we find that the condensate wave function obeys a non-linear Schr\"odinger equation known as the Gross-Pitaevskii (GP) equation
 %\footnote{The GP equation is very minimally relevant to my experiment but it still feels good knowing where it comes from.}.  
 %
 \begin{equation}
-	\left[-\frac{\hbar^2}{2m}\nabla^2+V(\r)+g\vert\psi(\r)\vert^2\right]\psi(\r)=\mu\psi(\r)
+	\left[-\frac{\hbar^2}{2m}\nabla^2+V(\r)+g\vert\psi(\r)\vert^2\right]\psi(\r)=\mu\psi(\r),
 \end{equation}
 %
 where $\mu$ plays the role of the chemical potential. The dynamics of the condensate will similarly be described by the time-dependent GP equation
@@ -199,7 +199,7 @@ where $\mu$ plays the role of the chemical potential. The dynamics of the conden
 	i\hbar\frac{\partial}{\partial t}\psi(\r,t)=\left[-\frac{\hbar^2}{2m}+V(\r)+g\vert\psi(\r,t)\vert^2\right]\psi(\r,t)
 \end{equation}
 
-The GP equation is useful for describing the relevant phenomena associated with BECs, for example, the propagation of collective excitations and the expansion of the condensate when released from a trap. The crucial assumption when deriving these equations was the mean field approximation which should be valid for dilute BECs in which the condensate fraction is close to unity. The excitations of the system can be described by a set of equations similar to those of classical hydrodynamics derived from the GP equation or alternatively using Bogoliubov theory for weakly interacting bosons\cite{Pethick}.
+The GP equation describes the relevant phenomena associated with the propagation of collective excitations and the expansion of the condensate when released from a trap. The crucial assumption when deriving these equations is the mean field approximation. This should be valid for dilute BECs where the condensate fraction is close to unity. The excitations of the system can be described by a set of equations similar to those of classical hydrodynamics derived from the GP equation or alternatively using Bogoliubov theory for weakly interacting bosons\cite{Pethick}.
 
 \subsection{Multiple component BECs}
 
@@ -223,7 +223,7 @@ The time scale at which interactions become relevant is set by the interaction e
 \subsection{Thomas-Fermi approximation}
 \label{sec:Thomas-Fermi}
 
-For systems with large $N$, the interaction term in the GP equation is very large compared to the kinetic energy\footnote{It can be shown that the ratio of kinetic energy to interactions scales like $N^{-4/5}$}. As the kinetic energy becomes less important we enter the Thomas-Fermi (TF) regime where the energy of the system is given only by the external potential and the mean field energy and the GP equation is considerably simplified 
+For systems with large $N$, the interaction term in the GP equation is very large compared to the kinetic energy\footnote{It can be shown that the ratio of kinetic energy to interactions scales as $N^{-4/5}$}. As the kinetic energy becomes less important we enter the Thomas-Fermi (TF) regime where the energy of the system is given only by the external potential and the mean field energy and the GP equation is considerably simplified 
 %
 \begin{equation}
 	\left[V(\r)+g\vert\psi(\r)\vert\psi(\r)\vert^2\right]\psi(\r)=\mu\psi(\r).
@@ -256,19 +256,20 @@ as is shown in Figure~\ref{fig:Thomas_fermi}a. By integrating over Equation~\ref
  	\label{eq:condensate_number}
  \end{equation}
  %
- which allows to determine the number of atoms in the condensate based on the density profile. In practice, in-situ BECs are very dense which can lead to some technical difficulties when trying to image directly their density profiles (see Section~\ref{sec:absorption imaging}) so instead our images are taken after the atoms are released from the trap and allowed to expand for some time. In the next section I will discuss how the density profiles of atomic clouds are modified after they are released from a confining potential. 
+ which allows to determine the number of atoms in the condensate based on the density profile. In practice, in-situ BECs are very dense which can lead to some technical difficulties when trying to image directly their density profiles (see Section~\ref{sec:absorption imaging}) so instead our images are taken after the atoms are released from the trap and allowed to expand for some time. %In the next section I will discuss how the density profiles of atomic clouds are modified after they are released from a confining potential. 
 
 \begin{figure}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter2/Thomas_fermi.pdf}
-\caption[The Thomas-Fermi density distribution]{In the Thomas-Fermi regime where interactions are large compared to kinetic energy the density profile is determined by the external potential.{\bf a.}Density profile along $\ex$ of a BEC in a harmonic potential. {\bf b.} Interaction driven expansion of a BEC in time-of-flight for a trap with trapping frequencies $(\omega_x, \omega_y, \omega_z)=\unit[2\pi(42, 34, 133)]{Hz}$  obtained by numerically integrating Equation~\ref{eq:castin_dum_radius}.}
+\caption[The Thomas-Fermi density distribution]{In the Thomas-Fermi regime where interactions are large compared to kinetic energy the density profile is determined by the external potential. {\bf a.}Density profile along $\ex$ of a BEC in a harmonic potential. {\bf b.} Interaction driven expansion of a BEC in time-of-flight for a trap with trapping frequencies $(\omega_x, \omega_y, \omega_z)=\unit[2\pi(42, 34, 133)]{Hz}$  obtained by numerically integrating Equation~\ref{eq:castin_dum_radius}.}
 \label{fig:Thomas_fermi}
 \end{center}
 \end{figure}
 
 \section{Density profiles}
 
-Most ultracold atoms experiments are probed by directly imaging the atoms (e.g. with absorption imaging, Section~\ref{sec:absorption imaging}). If the atoms are imaged in-situ we gain access to their spatial density profiles. If the atoms are released from the trap and allowed to expand in time of flight (TOF) we gain access to their momentum distribution. In this section, I summarize the signatures in the density distributions of BECs and thermal atoms confined in a harmonic potential both in-situ and after TOF. 
+Direct imaging of the atoms probes most ultracold atom experiments.
+(e.g. with absorption imaging, Section~\ref{sec:absorption imaging}). If the atoms are imaged in-situ we access their spatial density profiles. If the atoms are released from the trap and allowed to expand in time of flight (TOF) we image their momentum distribution. %In this section, I summarize the signatures in the density distributions of BECs and thermal atoms confined in a harmonic potential both in-situ and after TOF. 
 
 For the case of a BEC confined in a harmonic potential at zero temperature (no thermal fraction) and in the Thomas-Fermi regime discussed in Section~\ref{sec:Thomas-Fermi}, the in-situ density distribution is described by 
 %
@@ -285,13 +286,13 @@ Even though the BEC is in the motional ground state, it will expand during TOF a
 	\label{eq:castin_dum_radius}
 \end{equation}
 %
-where I assumed that the condensate is in the trap at $t=0$ which implies that $\lambda_i(0)=1$. The trap is then suddenly turned off at $t>0$. If we insert the condensate wave function with TF radii given by Equation~\ref{eq:castin_dum_radius} into the time-dependent GP equation we find a series differential equations
+where the condensate is in the trap at $t=0$ which implies that $\lambda_i(0)=1$ and it is then suddenly turned off at $t>0$. If we insert the condensate wave function with TF radii given by Equation~\ref{eq:castin_dum_radius} into the time-dependent GP equation we find a series of differential equations
 %
 \begin{equation}
 	\frac{d^2\lambda_i}{dt^2}=\frac{\omega_i^2}{\lambda_i\lambda_x\lambda_y\lambda_z}
 \end{equation}
 %
-which can be used to determine the density profile of the BEC in TOF. Alternatively, if the density profile of the BEC is known from an image, these relations can be used to back-propagate what the original TF radii of the confined condensate were. This is helpful for example to calculate the atom number in the condensate using Equation~\ref{eq:condensate_number}. Figure~\ref{fig:Thomas_fermi}b shows the scaling factors $\lambda_i$ as a function of TOF that were obtained by numerically integrating Equation~\ref{eq:castin_dum_radius} for a harmonic potential with frequencies close to those characterizing the optical dipole trap used in the lab.
+whose solutions determine the density profile of the BEC in TOF. Alternatively, if the density profile of the BEC is known from an image, these relations can be used to back-propagate the original TF radii of the confined condensate. This is helpful for example to calculate the atom number in the condensate using Equation~\ref{eq:condensate_number}. Figure~\ref{fig:Thomas_fermi}b shows the scaling factors $\lambda_i$ as a function of TOF that were obtained by numerically integrating Equation~\ref{eq:castin_dum_radius} for a harmonic potential with frequencies close to those characterizing the optical dipole trap used in most of our experiments.
 
 For a thermal gas in a harmonic potential at temperatures higher than the level spacing $k_BT>\hbar\omega_{x,y,z}$ the density is given by~\cite{ketterle_w._making_1999}
 %
@@ -299,9 +300,9 @@ For a thermal gas in a harmonic potential at temperatures higher than the level 
 	n_{\rm{th}}(\r)=\frac{1}{\lambda_{\rm{th}}^3}g_{3/2}(z(\r))
 \end{equation}
 %
-where $z(\r)=\exp(\mu-V(\r)/\k_BT$, $V(\r)$ is given by Equation~\ref{eq:ho}, $\mu$ is the chemical potential and $g_j(z)=\sum_iz^i/i^j$ is the Bose function. The Bose function introduces effects of quantum statistics and compared to the Maxwell-Boltzmann distribution of distinguishable particles, the peak density of a Bose gas is increased by $g_{3/2}(z)/z$, a phenomenon known as Bose-enhancement.
+where $z(\r)=\exp(\mu-V(\r)/\k_BT$, $V(\r)$ is given by Equation~\ref{eq:ho}, $\mu$ is the chemical potential and $g_j(z)=\sum_iz^i/i^j$ is the Bose function. The Bose function introduces effects of quantum statistics and compared to the Maxwell-Boltzmann distribution of distinguishable particles, the peak density of a Bose gas increases by $g_{3/2}(z)/z$, a phenomenon known as Bose-enhancement.
 
-The distribution after TOF can be calculated considering that the trapped atoms fly ballistically from their position in the trap. An atom starting initially at the point $\r_0$ moves to the point $\r$ after a time $t$ if its momentum is given by $\mathbf{p}=m(\r-\r0)/t$, and it can be shown that
+The distribution after TOF is calculable considering that the trapped atoms fly ballistically from their position in the trap. An atom starting initially at the point $\r_0$ moves to the point $\r$ after a time $t$ if its momentum is given by $\mathbf{p}=m(\r-\r_0)/t$, then
 %
 \begin{align}
 	n_{\rm{tof}}&=\frac{1}{\lambda_{\rm{th}}}\prod_{i=1}^3g_{3/2}\left(\exp\left[\mu-\frac{m}{2}\sum_{i=1}^3x_i^2\left(\frac{\omega_i^2}{1+\omega_i^2t^2}\right)\right]\right) \nonumber \\
@@ -316,11 +317,11 @@ where the approximation in the second line is valid for $t\gg \omega_i^{-1}$. Th
 	&\approx \frac{m}{2}\left(\frac{\sigma_i}{t}\right)^2
 \end{align}
 
-For partially condensed clouds the density profiles will be given by a combination of the thermal density profiles and the Thomas-Fermi density profile. Figure~\ref{fig:BEC_transition} shows the density distributions of atoms extracted from images taken after a $\unit[21]{ms}$ TOF and therefore the position is mapped to momentum. The images also nicely summarize some of the main features discussed in this Chapter. Above $T_c$ the density profile of the atoms is described by the thermal distribution (Equation~\ref{eq:n_thermal}). When $T<T_c$ a small peak in the center of the thermal distribution appears indicating condensation and as temperature is decreased the fraction of atoms in the condensed state (and therefore the height of the peak) increases. The density distribution of the condensed atoms is given by Equation~\ref{eq:n_thomas-fermi}, where the TF radius increases due to interactions and the scaling factors can be found using Equation~\ref{eq:castin_dum_radius}. 
+For partially condensed clouds the density profiles will be given by a combination of the thermal density profiles and the Thomas-Fermi density profile. Figure~\ref{fig:BEC_transition} shows the density distributions of atoms extracted from images taken after a $\unit[21]{ms}$ TOF and therefore the position is mapped to momentum. The images summarize some of the main concepts discussed in this Chapter. Above $T_c$ the density profile of the atoms corresponds to the thermal distribution (Equation~\ref{eq:n_thermal}). When $T<T_c$ a small peak in the center of the thermal distribution appears indicating condensation. As the temperature decreases, the fraction of atoms in the condensed state (and therefore the height of the peak) increases. Equation~\ref{eq:n_thomas-fermi} gives density distribution of the condensed atoms, where the TF radius increases due to interactions and the scaling factors can be found using Equation~\ref{eq:castin_dum_radius}. 
 \begin{figure}[htb]
 \begin{center}
 \includegraphics[]{Figures/Chapter2/BEC_transition.pdf}
-\caption[Momentum distribution of atoms near $T_c$]{Momentum distribution of atoms near $T_c$ after a $\unit[21]{ms}$ TOF. As the atoms are cooled below $T_c$ a sharp peak in the momentum distribution appears indicating condensation.} 
+\caption[Momentum distribution of atoms near $T_c$]{Momentum distribution of atoms near $T_c$ after a $\unit[21]{ms}$ TOF. As the atoms cool below $T_c$ a sharp peak in the momentum distribution appears indicating condensation.} 
 \label{fig:BEC_transition}
 \end{center}
 \end{figure}
