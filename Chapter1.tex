@@ -6,9 +6,9 @@
 
 \chapter{Introduction}
 
-Bose statistics were first developed in 1924 to describe the quantum behavior of photons \cite{bose_plancks_1924}, quanta of light with integer-valued spin. Today, we routinely produce atomic Bose-Einstein condensates in the laboratory and even use them as a platform for the analog simulation of complex systems. The field has certainly come a long way! 
+Bose statistics were first developed in 1924 to describe the quantum behavior of photons \cite{bose_plancks_1924}, quanta of light with integer-valued spin. Einstein generalized this work to include massive particles~\cite{einstein_quantentheorie_2006} and predicted the macroscopic occupation of the ground state bellow a critical temperature. Today, we routinely produce atomic Bose-Einstein condensates (BECs) in the laboratory and even use them as a platform for the analog simulation of complex quantum systems. The field has certainly come a long way! 
 
-Bose-Einstein condensation (BEC) in atomic gases was observed for the first time in 1995 in dilute vapors of $\Rb87$~\cite{anderson_observation_1995} and $^{23}$Na~\cite{davis_bose-einstein_1995}. Even though the BEC phase had been predicted for a long time it wasn't until experimental techniques of laser cooling and trapping were developed that bosonic atoms were cooled down to temperatures low enough for condensation to occur\footnote{For a more in depth story of the BEC field I highly recommend reading~\cite{ketterle_w._making_1999}.}. The experimental realization of this new phase of matter opened new possibilities for studying macroscopic quantum phenomena such as the propagation of collective modes~\cite{jin_collective_1996,mewes_collective_1996} and interference of coherent matter waves~\cite{andrews_observation_1997} and jump-started an ever-growing field of research. For this achievement, Eric Cornell, Carl Wieman, and Wolfgang Ketterle were awarded the 2001 Nobel Prize in physics.
+A connection between Bose-Einstein condensation and the onset of superfluidity in liquid $^4$He was first made in 1938~\cite{london_bose-einstein_1938}. However, due to the strong interactions, the occupancy of the lowest energy state is dramatically reduced, leading to the search of this phase for weakly interacting Bose gases. Bose-Einstein condensation in dilute atomic gases was observed for the first time in 1995 in vapors of $\Rb87$~\cite{anderson_observation_1995}, $^{23}$Na~\cite{davis_bose-einstein_1995} and $^7$Li~\cite{bradley_evidence_1995}. The dilute nature of this gases required cooling down to temperatures never achieved before and it wasn't until experimental techniques of laser cooling and trapping were developed that bosonic atoms were cooled the critical condensation temperature\footnote{For a more in depth story of the BEC field I highly recommend reading~\cite{ketterle_w._making_1999}.}. The experimental realization of this new phase of matter opened new possibilities for studying macroscopic quantum phenomena such as the propagation of collective modes~\cite{jin_collective_1996,mewes_collective_1996} and interference of coherent matter waves~\cite{andrews_observation_1997} and jump-started an ever-growing field of research. For this achievement, Eric Cornell, Carl Wieman, and Wolfgang Ketterle were awarded the 2001 Nobel Prize in physics.
 
 It has been more than 20 years (and many more in the learning of atomic physics) and the field of quantum degenerate gases has expanded to include degenerate Fermi gases~\cite{demarco_onset_1999} and spinor gases~\cite{stamper-kurn_spinor_2013}. As the field continues to grow, new control and detection techniques are being constantly developed, enabling the use of BECs and ultracold atomic systems in general not just as an object of study by themselves but as tools for a wide range of scientific endeavors, from precision measurements~\cite{zhang_precision_2016} to the analog simulation of complex systems.
 
@@ -30,19 +30,25 @@ The engineering of Rashba spin-orbit coupling is certainly condensed matter insp
 
 This thesis describes both the standard experimental control and measurement techniques used to create BECs of $\Rb87$ as well as new techniques developed in our lab that were applied to the engineering of Rashba spin-orbit coupling. 
 
-Chapter 2 describes the basic theory of Bose-Einstein condensation in dilute gases. I focus on the properties of gases confined to harmonic potentials and their density and momentum distributions as they are most relevant to the experiments presented here.
+Chapter~\ref{ch:BECs} describes the basic theory of Bose-Einstein condensation in dilute gases. I focus on the properties of gases confined to harmonic potentials and their density and momentum distributions as they are most relevant to the experiments presented here.
 
-Chapter 3 describes the basic properties of Alkali atoms and their interactions with magnetic and electric fields which are used as standard tools for the creation, manipulation and detection of ultracold atomic systems.
+Chapter~\ref{ch:Ch3} describes the basic properties of Alkali atoms and their interactions with magnetic and electric fields which are used as standard tools for the creation, manipulation and detection of ultracold atomic systems.
 
-Chapter 4 summarizes the experimental apparatus where all the experiments were performed. It additionally mentions the most important upgrades to the apparatus that were not reported previously.
+Chapter~\ref{ch:RbLi} summarizes the experimental apparatus where all the experiments were performed. It additionally mentions the most important upgrades to the apparatus that were not reported previously.
 
-Chapter 5 describes a Fourier transform spectroscopy technique that exploits the relation between quantum coherent evolution and the underlying spectrum of a system and that was used to characterize experiments described later in the thesis.
+Chapter~\ref{ch:Fourier_spectroscopy} describes a Fourier transform spectroscopy technique that exploits the relation between quantum coherent evolution and the underlying spectrum of a system and that was used to characterize experiments described later in the thesis.
 
-Chapter 6 describes an implementation of continuous dynamical decoupling using a strong radio-frequency magnetic field that helped to both make our system more robust against environmental magnetic field noise and also allowed us to couple the internal states of the atoms in new ways that were not possible before, opening the path for new kinds of quantum simulations described in Chapters 8. 
+Chapter~\ref{ch:clock_states} describes an implementation of continuous dynamical decoupling using a strong radio-frequency magnetic field that helped to both make our system more robust against environmental magnetic field noise and also allowed us to couple the internal states of the atoms in new ways that were not possible before, opening the path for new kinds of quantum simulations described in Chapters 8. 
 
-Chapter 7 presents basic concepts of topology in physics and its application to the band theory of solids. These concepts will be important for a better understanding of the topological properties of our Rashba spin-orbit coupled system. 
+Chapter~\ref{ch:Topology} presents basic concepts of topology in physics and its application to the band theory of solids. These concepts will be important for a better understanding of the topological properties of our Rashba spin-orbit coupled system. 
 
-Chapter 8 I describes a new experimental realization of Rashba spin-orbit coupling using a combination of laser beams that couple a set of CDD states. The system described in this chapter has a topological dispersion relation but no underlying crystalline structure which allows for topological invariants to take non-integer values. 
+Chapter~\ref{ch:Rashba} I describes a new experimental realization of Rashba spin-orbit coupling using a combination of laser beams that couple a set of CDD states. The system described in this chapter has a topological dispersion relation but no underlying crystalline structure which allows for topological invariants to take non-integer values. 
+
+Appendix~\ref{app:RbLi} summarizes the best and worst aspects of the experimental apparatus as a guide for future generations working in BEC labs.
+
+Appendix~\ref{app:new_apparatus} describes my work related to the design and construction of a dual species apparatus for the production of BECs of $\Rb87$ and $^{39}$K.
+
+Appendix~\ref{app:Rashba_derivation} shows the derivation of the full time-dependent Hamiltonian describing the Raman dressing of the RF dressed states (Chapter~\ref{ch:clock_states}) used to generate Rashba-type spin-orbit coupling (Chapter~\ref{ch:Rashba}).
 
 
 % Apendix are experiments that I contributed to but are not included in the thesis. Also things related to new apparatus?
