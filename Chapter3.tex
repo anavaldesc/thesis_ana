@@ -569,7 +569,7 @@ where the term $\epsilon$ is known as the quasi-energy. Inserting this expressio
 In order for the equality to be true we must have $j'-j=-k$ because the complex exponentials form an orthonorormal basis and we can write
 %
 \begin{equation}
-	\epsilon\ket{\psi_{\epsilon,k}}=\sum_j\left(\hat{H}_{j-l}-\hbar\omega k\delta_{j,k}\times\hat{\mathds{1}}\right),
+	\epsilon\ket{\psi_{\epsilon,k}}=\sum_j\left(\hat{H}_{j-l}-\hbar\omega k\delta_{j,k}\times\hat{\mathds{1}}\right)\ket{\psi_{\epsilon,j}},
 \end{equation}
 %
 where $\hat{\mathds{1}}$ is the identity matrix. The expression can be recast into a matrix form
@@ -588,6 +588,13 @@ where $\hat{\mathds{1}}$ is the identity matrix. The expression can be recast in
   \hat{H}_-2  & \hat{H}_{-1} & \hat{H}_0 & \hat{H}_1  & \cdots\\
   \cdots  & \hat{H}_{-2} & \hat{H}_{-1} & \hat{H}_0-\hbar\omega & \hat{H}_1\\
   \cdots  & \cdots & \hat{H}_{-2} & \hat{H}_{-1} & \hat{H}_0-2\hbar\omega \\
+\end{pmatrix}
+\begin{pmatrix}
+\cdots  \\
+  \ket{\psi_{\epsilon,-1}}\\
+  \ket{\psi_{\epsilon,0}}\\
+  \ket{\psi_{\epsilon,1}}\\
+  \cdots
 \end{pmatrix}.
 \end{equation}
 
