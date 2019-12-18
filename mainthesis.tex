@@ -43,10 +43,14 @@
 	\end{title_env}
 
 	\begin{preface_env}
-		\include{Preface} 
-		% \include{Foreword}
-		\include{Dedication}
-		\include{Acknowledgements}
+		\addcontentsline{toc}{chapter}{Preface}
+		\include{Preface}  %(if present, start at lower-case Roman number ii)
+		% \addcontentsline{toc}{chapter}{Foreword}
+		% \include{Foreword} %(if present, lower-case Roman)
+		\addcontentsline{toc}{chapter}{Dedication}
+		\include{Dedication} %(if present, lower-case Roman)
+		\addcontentsline{toc}{chapter}{Acknowledgements}
+		\include{Acknowledgements} %(if present, lower-case Roman)	
 	\end{preface_env}
 	
 	\begin{lists_env}
